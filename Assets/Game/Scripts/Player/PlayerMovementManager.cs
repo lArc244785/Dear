@@ -37,6 +37,10 @@ public class PlayerMovementManager : MonoBehaviour
     private float m_defaultGravityScale;
     [SerializeField]
     private Rigidbody2D m_rig2D;
+
+    public delegate void AddMovement(PlayerMovementManager pmm);
+    private AddMovement m_addMovement;
+
     public enum MOVEMENT_TYPE
     {
         NOMAL, ROPE , CLIMBING,TOTAL
@@ -86,6 +90,8 @@ public class PlayerMovementManager : MonoBehaviour
         if (isControl)
         {
             m_movements[(int)currentType].Movement();
+            if (m_addMovement != null)
+                m_addMovement(this);
         }
 
             m_shoulderMovement.UpdateProcess();
@@ -97,6 +103,7 @@ public class PlayerMovementManager : MonoBehaviour
         {
             m_currentType = value;
             m_movements[(int)m_currentType].Enter();
+
         }
         get
         {
@@ -247,4 +254,11 @@ public class PlayerMovementManager : MonoBehaviour
         }
     }
 
+    public AddMovement DelAddMovement
+    {
+        set
+        {
+            m_addMovement = value;
+        }
+    }
 }
