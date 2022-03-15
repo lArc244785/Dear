@@ -20,10 +20,10 @@ public class GroundSensor : MonoBehaviour
     [SerializeField]
     private UnityEvent m_randingEvent;
 
-    public void init()
+    public void Init()
     {
         m_distance = Vector2.Distance(m_startTr.position, m_endTr.position);
-        updateSensor();
+        UpdateSensor();
     }
 
 
@@ -36,11 +36,11 @@ public class GroundSensor : MonoBehaviour
 
     private void Update()
     {
-        updateSensor();
+        UpdateSensor();
     }
 
 
-    private void updateSensor()
+    private void UpdateSensor()
     {
         m_newIsGround = Physics2D.Raycast(m_startTr.position, Vector2.down, m_distance, m_groundLayerMask);
 

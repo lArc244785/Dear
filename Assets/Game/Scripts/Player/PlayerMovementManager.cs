@@ -52,7 +52,7 @@ public class PlayerMovementManager : MonoBehaviour
 
         m_dirSensor.Init();
         m_climbingSensor.Init();
-        m_groundSensor.init();
+        m_groundSensor.Init();
 
         m_shoulderMovement.init();
 
