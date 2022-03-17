@@ -11,16 +11,18 @@ public class InputManager : SingleToon<InputManager>
     [SerializeField]
     PlayerMovementManager m_playerMovementManager;
     [SerializeField]
+    PlayerInteraction m_playerInteraction;
+    [SerializeField]
     GrapplingShooter m_shooter;
 
     private void Awake()
     {
-        init();
+        Init();
     }
 
-    protected override bool init()
+    protected override bool Init()
     {
-        return base.init();
+        return base.Init();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -36,10 +38,20 @@ public class InputManager : SingleToon<InputManager>
     {
         if (context.started)
         {
-            if (!m_playerMovementManager.isControl)
+            if (m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.SLINGSHOT)
+            {
+                Vector2 dir = inGameMousePosition2D - m_playerMovementManager.unitBase.unitPos;
+                dir.Normalize();
+
+                m_playerMovementManager.slingShotMovement.Shoot(dir);
+            }
+
+            if (!m_playerMovementManager.unitBase.isControl)
                 return;
 
-            m_shooter.Fire();
+            if (m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.NOMAL)
+                m_shooter.Fire();
+
         }
     }
 
@@ -47,7 +59,7 @@ public class InputManager : SingleToon<InputManager>
     {
         if (context.started)
         {
-            if (!m_playerMovementManager.isControl)
+            if (!m_playerMovementManager.unitBase.isControl)
                 return;
 
             if (m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.NOMAL)
@@ -66,7 +78,7 @@ public class InputManager : SingleToon<InputManager>
     {
         if (context.started)
         {
-            if (!m_playerMovementManager.isControl)
+            if (!m_playerMovementManager.unitBase.isControl)
                 return;
 
             if (m_shooter.isGrappling)
@@ -78,12 +90,20 @@ public class InputManager : SingleToon<InputManager>
     {
         if (context.started)
         {
-            if (!m_playerMovementManager.isControl)
+            if (!m_playerMovementManager.unitBase.isControl)
                 return;
+            if(m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.ROPE)
+            {
+                m_shooter.Cancel();
+                m_playerMovementManager.setTypeNomal();
+                m_playerMovementManager.shoulderMovement.SetMouse();
+            }
+            else if(m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.NOMAL && m_playerMovementManager.isSlingAction)
+            {
+                m_playerMovementManager.currentType = PlayerMovementManager.MOVEMENT_TYPE.SLINGSHOT;
+            }
 
-            m_shooter.Cancel();
-            m_playerMovementManager.setTypeNomal();
-            m_playerMovementManager.shoulderMovement.SetMouse();
+
         }
     }
 
@@ -93,7 +113,7 @@ public class InputManager : SingleToon<InputManager>
             m_shooter.isGrappling &&
             context.started)
         {
-            if (!m_playerMovementManager.isControl)
+            if (!m_playerMovementManager.unitBase.isControl)
                 return;
 
 
@@ -108,7 +128,7 @@ public class InputManager : SingleToon<InputManager>
             m_shooter.isGrappling &&
             context.started)
         {
-            if (!m_playerMovementManager.isControl)
+            if (!m_playerMovementManager.unitBase.isControl)
                 return;
 
             if (m_playerMovementManager.ropeMovement.isReboundAble)
@@ -118,7 +138,7 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnClimbing(InputAction.CallbackContext context)
     {
-        if (!m_playerMovementManager.isControl)
+        if (!m_playerMovementManager.unitBase.isControl)
             return;
 
         if (!context.canceled)
@@ -134,12 +154,37 @@ public class InputManager : SingleToon<InputManager>
         }
     }
 
+    public void OnInteraction(InputAction.CallbackContext context)
+    {
+        if (!m_playerMovementManager.unitBase.isControl || m_playerInteraction.InteractionEvent == null)
+            return;
+
+        if (context.started)
+            m_playerInteraction.Interaction();
+    }
+
 
     public Vector2 inGameMousePosition2D
     {
         get
         {
             return (Vector2)m_brainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        }
+    }
+
+    public Camera brainCam
+    {
+        get
+        {
+            return m_brainCam;
+        }
+    }
+
+    public Vector2 screenViewMousePos
+    {
+        get
+        {
+            return Mouse.current.position.ReadValue();
         }
     }
 }

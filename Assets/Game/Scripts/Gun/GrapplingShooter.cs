@@ -7,11 +7,11 @@ public class GrapplingShooter : MonoBehaviour
     [SerializeField]
     private GrapplingGun m_grpplingGun;
    
-
-    public void Start()
+    public void Init()
     {
         m_grpplingGun.init();
     }
+
 
     public void Fire()
     {
