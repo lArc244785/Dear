@@ -80,9 +80,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_trapActiveTime: 0.5
+  m_trapActiveTime: 1.5
   m_ropeTrap: 1
-  m_resetTime: 1
+  m_resetTime: 1.5
 --- !u!114 &4823484215362092413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.744998, y: 5.571331}
+  m_Size: {x: 13.69, y: 5.571331}
   m_EdgeRadius: 0
 --- !u!1 &4823484217172966559
 GameObject:
@@ -280,8 +280,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1220832799054883493, guid: 9080d100ed6466b4f971667d30122dee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.825
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220832799054883493, guid: 9080d100ed6466b4f971667d30122dee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0080414
       objectReference: {fileID: 0}
     - target: {fileID: 1220832799054883493, guid: 9080d100ed6466b4f971667d30122dee, type: 3}
       propertyPath: m_LocalPosition.y
