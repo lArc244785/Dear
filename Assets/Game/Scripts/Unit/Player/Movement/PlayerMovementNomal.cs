@@ -49,7 +49,9 @@ public class PlayerMovementNomal : PlayerMovementBase
 
     public void Jump()
     {
-        if (m_currentJump >= m_maxJumpCount)
+        if (!movementManager.unitBase.isJump)
+            return;
+        if (JumpCount == m_maxJumpCount)
             return;
 
         rig2D.AddForce(Vector2.up * m_jumpPower);
@@ -59,10 +61,21 @@ public class PlayerMovementNomal : PlayerMovementBase
 
     public void JumpReset()
     {
-        m_currentJump = 0;
+        JumpCount = 0;
     }
 
+    public int JumpCount
+    {
+        set
+        {
+            m_currentJump = Mathf.Clamp(value, 0, m_maxJumpCount);
 
+        }
+        get
+        {
+            return m_currentJump;
+        }
+    }
 
 
 

@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eventTime: 1
-  m_power: 10
 --- !u!1 &148518294160098840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,7 +1383,7 @@ MonoBehaviour:
   m_nomalMovement: {fileID: 6047211162984499982}
   m_ropeMovement: {fileID: 5981933600209700299}
   m_climbingMovement: {fileID: 4232361274457385942}
-  m_slingShotMovement: {fileID: 2096962231}
+  m_bustMovement: {fileID: 2096962231}
   m_shoulderMovement: {fileID: 6192933549490118021}
   m_grapplingShooter: {fileID: 148518295810701730}
   m_dirSensor: {fileID: 148518295704145401}
