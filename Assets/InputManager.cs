@@ -38,12 +38,12 @@ public class InputManager : SingleToon<InputManager>
     {
         if (context.started)
         {
-            if (m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.SLINGSHOT)
+            if (UIManager.instance.inGameView.slingShot.isToggle)
             {
                 Vector2 dir = inGameMousePosition2D - m_playerMovementManager.unitBase.unitPos;
                 dir.Normalize();
 
-                m_playerMovementManager.slingShotMovement.Shoot(dir);
+                m_playerMovementManager.bustMovement.Bust(dir);
             }
 
             if (!m_playerMovementManager.unitBase.isControl)
@@ -100,7 +100,7 @@ public class InputManager : SingleToon<InputManager>
             }
             else if(m_playerMovementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.NOMAL && m_playerMovementManager.isSlingAction)
             {
-                m_playerMovementManager.currentType = PlayerMovementManager.MOVEMENT_TYPE.SLINGSHOT;
+                m_playerMovementManager.currentType = PlayerMovementManager.MOVEMENT_TYPE.BUST;
             }
 
 

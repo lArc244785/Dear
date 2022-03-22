@@ -22,6 +22,7 @@ public class Unit_Player : UnitBase
         base.Init(mmb);
         m_interaction.Init();
         m_shooter.Init();
+        isJump = true;
     }
 
     public PlayerMovementManager playerMovemntManager

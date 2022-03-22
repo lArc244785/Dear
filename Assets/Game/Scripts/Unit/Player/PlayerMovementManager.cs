@@ -13,7 +13,7 @@ public class PlayerMovementManager : MovementMangerBase
     [SerializeField]
     private PlayerMovemnetClimbing m_climbingMovement;
     [SerializeField]
-    private PlayerMovementSlingShot m_slingShotMovement;
+    private PlayerMovementBust m_bustMovement;
 
 
     [SerializeField]
@@ -38,7 +38,7 @@ public class PlayerMovementManager : MovementMangerBase
 
     public enum MOVEMENT_TYPE
     {
-        NOMAL, ROPE , CLIMBING, SLINGSHOT, TOTAL
+        NOMAL, ROPE , CLIMBING, BUST, TOTAL
     }
 
     private MOVEMENT_TYPE m_currentType;
@@ -72,7 +72,7 @@ public class PlayerMovementManager : MovementMangerBase
         m_movements[(int)MOVEMENT_TYPE.NOMAL] = nomalMovement;
         m_movements[(int)MOVEMENT_TYPE.ROPE] = ropeMovement;
         m_movements[(int)MOVEMENT_TYPE.CLIMBING] = climbingMovement;
-        m_movements[(int)MOVEMENT_TYPE.SLINGSHOT] = slingShotMovement;
+        m_movements[(int)MOVEMENT_TYPE.BUST] = bustMovement;
 
         foreach (PlayerMovementBase pm in m_movements)
             pm.Init(this);
@@ -151,11 +151,11 @@ public class PlayerMovementManager : MovementMangerBase
             return m_climbingMovement;
         }
     }
-    public PlayerMovementSlingShot slingShotMovement
+    public PlayerMovementBust bustMovement
     {
         get
         {
-            return m_slingShotMovement;
+            return m_bustMovement;
         }
     }
 

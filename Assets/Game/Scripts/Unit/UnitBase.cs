@@ -10,7 +10,7 @@ public abstract class UnitBase : MonoBehaviour
     protected MovementMangerBase m_MovementManager;
 
     private bool m_control;
-
+    private bool m_jump;
 
     protected virtual void Init(MovementMangerBase mmb)
     {
@@ -29,6 +29,19 @@ public abstract class UnitBase : MonoBehaviour
             return m_control;
         }
     }
+
+    public bool isJump
+    {
+        set
+        {
+            m_jump = value;
+        }
+        get
+        {
+            return m_jump;
+        }
+    }
+
 
     public MovementMangerBase movementManager
     {
