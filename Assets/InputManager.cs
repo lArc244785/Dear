@@ -15,6 +15,8 @@ public class InputManager : SingleToon<InputManager>
     [SerializeField]
     GrapplingShooter m_shooter;
 
+    private bool m_jumpKeyPush;
+
     private void Awake()
     {
         Init();
@@ -28,6 +30,8 @@ public class InputManager : SingleToon<InputManager>
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 moveDir = context.ReadValue<Vector2>();
+
+        Debug.Log("Input Dir " + moveDir);
         m_playerMovementManager.moveDir = moveDir;
 
     }
@@ -59,6 +63,8 @@ public class InputManager : SingleToon<InputManager>
     {
         if (context.started)
         {
+            isJumpKeyPush = true;
+
             if (!m_playerMovementManager.unitBase.isControl)
                 return;
 
@@ -71,6 +77,9 @@ public class InputManager : SingleToon<InputManager>
                 m_playerMovementManager.climbingMovement.Jump();
             }
         }
+
+        if (context.canceled)
+            isJumpKeyPush = false;
 
     }
 
@@ -185,6 +194,18 @@ public class InputManager : SingleToon<InputManager>
         get
         {
             return Mouse.current.position.ReadValue();
+        }
+    }
+
+    public bool isJumpKeyPush
+    {
+        set
+        {
+            m_jumpKeyPush = value;
+        }
+        get
+        {
+            return m_jumpKeyPush;
         }
     }
 }

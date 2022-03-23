@@ -1466,7 +1466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_moveSpeed: 10
-  m_jumpPower: 670
+  m_coolJumpTime: 0.3
+  m_jumpSpeed: 10
   m_maxJumpCount: 2
 --- !u!1 &2829639916771793815
 GameObject:

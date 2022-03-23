@@ -60,6 +60,8 @@ public class PlayerMovementManager : MovementMangerBase
         MovementSetting();
 
         unitBase.isControl = true;
+
+
     }
 
 
@@ -88,11 +90,16 @@ public class PlayerMovementManager : MovementMangerBase
         if (unitBase.isControl)
         {
             m_movements[(int)currentType].Movement();
+
             if (addMovement != null)
                 addMovement.Movement(this);
         }
 
             m_shoulderMovement.UpdateProcess();
+
+        if (areaImfect != null)
+            areaImfect.Movement(this);
+
     }
 
     public MOVEMENT_TYPE currentType
@@ -223,7 +230,13 @@ public class PlayerMovementManager : MovementMangerBase
         }
     }
 
-
+    public bool isGround
+    {
+        get
+        {
+            return m_groundSensor.isGround;
+        }
+    }
 
 
 }

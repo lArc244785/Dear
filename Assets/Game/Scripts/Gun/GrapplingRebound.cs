@@ -79,7 +79,7 @@ public class GrapplingRebound : MonoBehaviour
         {
             debugStr += range.m_rightRad + "  " + range.m_leftRad + "|";
         }
-        Debug.Log(debugStr);
+        //Debug.Log(debugStr);
     }
 
     private void calculateGizmoPoints(ref RangePosition[] returnPoints)

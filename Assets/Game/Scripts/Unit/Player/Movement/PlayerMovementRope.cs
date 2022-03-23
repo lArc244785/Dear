@@ -60,6 +60,9 @@ public class PlayerMovementRope : PlayerMovementBase
 
     public void CancleReboundEvent()
     {
+        if (movementManager.isGround)
+            return;
+
         movementManager.unitBase.isControl = false;
 
         float xVelocity = m_reboundVelocityX;

@@ -51,5 +51,11 @@ public class GroundSensor : MonoBehaviour
         m_oldIsGround = m_newIsGround;
     }
 
-
+    public bool isGround
+    {
+        get
+        {
+            return m_newIsGround;
+        }
+    }
 }

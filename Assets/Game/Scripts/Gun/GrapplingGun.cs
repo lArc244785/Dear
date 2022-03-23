@@ -76,12 +76,12 @@ public class GrapplingGun : MonoBehaviour
         m_hook.Fire(dir);
         m_ropeRenderer.isDraw = true;
 
-        StartCoroutine(hookDistanceChack());
+        StartCoroutine(HookDistanceChack());
     }
 
     public void Grappling()
     {
-        float distance = getHookDistance();
+        float distance = GetHookDistance();
 
         m_springJoint2D.distance = distance;
         m_springJoint2D.enabled = true;
@@ -122,7 +122,7 @@ public class GrapplingGun : MonoBehaviour
     {
         get
         {
-            if (getHookDistance() >= m_ropeMaxDistance)
+            if (GetHookDistance() >= m_ropeMaxDistance)
                 return true;
 
             return false;
@@ -161,12 +161,12 @@ public class GrapplingGun : MonoBehaviour
         m_playerMovementManager.unitBase.isControl = true;
     }
 
-    private float getHookDistance()
+    private float GetHookDistance()
     {
         return Vector2.Distance(m_hook.transform.position, m_springRig2D.transform.position);
     }
 
-    private IEnumerator hookDistanceChack()
+    private IEnumerator HookDistanceChack()
     {
         while(m_eState == E_State.E_HOOKFIRE && !isRopeDistanceMax)
         {

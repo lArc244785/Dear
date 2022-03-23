@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerMovementNomal : PlayerMovementBase
 {
 
-    [Header("NomalMovement Parameter")]
+    [Header("Move Parameter")]
     [SerializeField]
     private float m_moveSpeed;
 
-
-
+    [Header("Jump Parameter")]
     [SerializeField]
-    private float m_jumpPower;
+    private float m_coolJumpTime;
+    [SerializeField]
+    private float m_jumpSpeed;
     [SerializeField]
     private int m_maxJumpCount;
     private int m_currentJump;
@@ -39,11 +40,14 @@ public class PlayerMovementNomal : PlayerMovementBase
 
     public void Move()
     {
+        float moveVelocityX = .0f;
 
         if (!movementManager.isWall)
         {
-            rig2D.velocity = new Vector2(movementManager.moveDir.x * m_moveSpeed, rig2D.velocity.y);
+            moveVelocityX = movementManager.moveDir.x * m_moveSpeed;
         }
+
+        rig2D.velocity = new Vector2(moveVelocityX, rig2D.velocity.y);
 
     }
 
@@ -54,10 +58,28 @@ public class PlayerMovementNomal : PlayerMovementBase
         if (JumpCount == m_maxJumpCount)
             return;
 
-        rig2D.AddForce(Vector2.up * m_jumpPower);
+        float jumpVelocity = m_jumpSpeed;
+
+        if (m_currentJump == 0)
+            StartCoroutine(CoolJumpCoroutine(jumpVelocity));
+        else
+            rig2D.velocity = new Vector2(rig2D.velocity.x, jumpVelocity);
 
         m_currentJump++;
     }
+
+    private IEnumerator CoolJumpCoroutine(float jumpVelocity)
+    {
+        float time = .0f;
+        while(InputManager.instance.isJumpKeyPush && time < m_coolJumpTime)
+        {
+            rig2D.velocity = new Vector2(rig2D.velocity.x, jumpVelocity);
+            time += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+
 
     public void JumpReset()
     {

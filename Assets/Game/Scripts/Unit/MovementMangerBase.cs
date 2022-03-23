@@ -8,6 +8,7 @@ public abstract class MovementMangerBase : MonoBehaviour
     protected UnitBase m_unitBase;
 
     private I_AddMovement m_addMovement;
+    private I_AddMovement m_areaEffect;
 
     private Vector2 m_moveDir;
     private float m_lookDirX;
@@ -23,6 +24,9 @@ public abstract class MovementMangerBase : MonoBehaviour
     public virtual void Init(UnitBase unitBase)
     {
         m_unitBase = unitBase;
+
+        m_addMovement = null;
+        m_areaEffect = null;
     }
 
 
@@ -46,6 +50,18 @@ public abstract class MovementMangerBase : MonoBehaviour
         get
         {
             return m_addMovement;
+        }
+    }
+
+    public I_AddMovement areaImfect
+    {
+        set
+        {
+            m_areaEffect = value;
+        }
+        get
+        {
+            return m_areaEffect;
         }
     }
 
