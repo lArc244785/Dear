@@ -19,6 +19,12 @@ public class NewPlayerMovementManager : MonoBehaviour
     [SerializeField]
     private WallSensorManager m_wallSensorManager;
 
+    [Header("Model")]
+    [SerializeField]
+    private SpriteRenderer m_model;
+
+    private float m_lookDir;
+    private float m_oldLookDir;
 
     private void Start()
     {
@@ -27,7 +33,7 @@ public class NewPlayerMovementManager : MonoBehaviour
 
     public void Init()
     {
-        m_movement.Init(this);
+       // m_movement.Init(this);
     }
 
 
@@ -56,5 +62,13 @@ public class NewPlayerMovementManager : MonoBehaviour
         }
     }
 
-    public WallSensorManager WallSensorManager { get => m_wallSensorManager; set => m_wallSensorManager = value; }
+    public void Turn()
+    {
+        m_model.flipX = !m_model.flipX;
+    }
+
+
+    public WallSensorManager wallSensorManager { get => m_wallSensorManager; set => m_wallSensorManager = value; }
+    public float lookDir { get => m_lookDir; set => m_lookDir = value; }
+    public float oldLookDir { get => m_oldLookDir; set => m_oldLookDir = value; }
 }

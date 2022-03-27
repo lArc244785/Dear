@@ -10,26 +10,26 @@ public class InputPlayer : MonoBehaviour
     private Vector2 m_moveDir;
 
     private bool m_isJumpPressed;
-    public bool IsJumpPressed { get => m_isJumpPressed; private set => m_isJumpPressed = value; }
+    public bool isJumpPressed { get => m_isJumpPressed; private set => m_isJumpPressed = value; }
 
-    private float m_lastJumpPressedTime;
+    private bool m_isJumpEnter;
 
+    private float m_lastOnJumpPressedTime;
+    private float m_lastOnJumpEnterTime;
 
-    [SerializeField]
-    private float m_jumpPressedTime;
 
 
 
     public void JumpEnter()
     {
-        IsJumpPressed = true;
-        m_movement.LastJumpTimeReset();
-        m_movement.LastWallJumpTimeReset();
+        isJumpPressed = true;
+        //m_lastOnJumpEnterTime = m_movement.coyoteTime;
     }
 
     public void JumpUp()
     {
-        IsJumpPressed = false;
+        isJumpPressed = false;
+
     }
 
     public void JumpPressed()
@@ -57,11 +57,7 @@ public class InputPlayer : MonoBehaviour
 
     }
 
-    public void ChackJumpPressed()
-    {
-        if(IsJumpPressed)
-            lastJumpPressedTime = m_jumpPressedTime;
-    }
+
 
 
 
@@ -85,16 +81,17 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
-    public float lastJumpPressedTime
+    public float lastOnJumpPressedTime
     {
         set
         {
-            m_lastJumpPressedTime = value;
+            m_lastOnJumpPressedTime = value;
         }
         get
         {
-            return m_lastJumpPressedTime;
+            return m_lastOnJumpPressedTime;
         }
     }
 
+    public float lastOnJumpEnterTime { get => m_lastOnJumpEnterTime; set => m_lastOnJumpEnterTime = value; }
 }
