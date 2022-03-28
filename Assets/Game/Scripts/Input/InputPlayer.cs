@@ -14,7 +14,6 @@ public class InputPlayer : MonoBehaviour
 
     private bool m_isJumpEnter;
 
-    private float m_lastOnJumpPressedTime;
     private float m_lastOnJumpEnterTime;
 
 
@@ -23,28 +22,30 @@ public class InputPlayer : MonoBehaviour
     public void JumpEnter()
     {
         isJumpPressed = true;
-        //m_lastOnJumpEnterTime = m_movement.coyoteTime;
+        m_movement.OnJumpEnter();
     }
 
     public void JumpUp()
     {
         isJumpPressed = false;
-
+        m_movement.OnJumpUp();
+        
     }
 
     public void JumpPressed()
     {
+
     }
 
 
     public void WallGripEnter()
     {
-
+        m_movement.OnWallGripEnter();
     }
 
     public void WallGripUp()
     {
-
+        m_movement.OnWallGripUp();
     }
 
     public void LeftMouseEnter()
@@ -81,17 +82,6 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
-    public float lastOnJumpPressedTime
-    {
-        set
-        {
-            m_lastOnJumpPressedTime = value;
-        }
-        get
-        {
-            return m_lastOnJumpPressedTime;
-        }
-    }
 
     public float lastOnJumpEnterTime { get => m_lastOnJumpEnterTime; set => m_lastOnJumpEnterTime = value; }
 }

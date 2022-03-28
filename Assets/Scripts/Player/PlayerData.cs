@@ -15,6 +15,7 @@ public class PlayerData : ScriptableObject
 	public float dragAmount; //drag in air
 	public float frictionAmount; //drag on ground
 
+
 	[Header("Other Physics")]
 	[Range(0, 0.5f)] public float coyoteTime; //grace time to Jump after the player has fallen off a platformer
 
@@ -47,9 +48,14 @@ public class PlayerData : ScriptableObject
 
 
 	//WALL
-	[Header("Slide")]
-	public float slideAccel;
-	[Range(.5f, 2f)] public float slidePower;
+	[Header("Wall Slide")]
+	public float wallSlideVelocity;
+
+	[Header("Climbing")]
+	public float climbingAccel;
+	public float climbingDeccel;
+
+
 
 
 	//ABILITIES

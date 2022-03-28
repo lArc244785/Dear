@@ -48,10 +48,6 @@ public class InputManager : SingleToon<InputManager>
             m_inputPlayer.JumpEnter();
         else if (context.canceled)
             m_inputPlayer.JumpUp();
-
-
-
-
     }
 
     public void OnPull(InputAction.CallbackContext context)

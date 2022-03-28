@@ -55,4 +55,15 @@ public class WallSensorManager : MonoBehaviour
             return isGrounded;
         }
     }
+
+    public bool UpSensorGrounded()
+    {
+        return m_rightSensors[0].isWallGrounded || m_leftSensors[0].isWallGrounded;
+    }
+
+
+    public bool DownSensorGrounded()
+    {
+        return m_rightSensors[1].isWallGrounded || m_leftSensors[1].isWallGrounded;
+    }
 }
