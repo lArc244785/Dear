@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractionBust : InteractionBase
 {
     [SerializeField]
-    private float m_power;
+    private BustMoveData m_bustMoveData;
 
     protected override void Enter(Collider2D collision)
     {
@@ -17,7 +17,7 @@ public class InteractionBust : InteractionBase
         Vector2 dir = pmm.unitBase.unitPos -(Vector2)transform.position;
         dir.Normalize();
 
-        pmm.bustMovement.power = m_power;
+        pmm.bustMovement.bustMoveData = m_bustMoveData;
         pmm.bustMovement.Bust(dir);
     }
     

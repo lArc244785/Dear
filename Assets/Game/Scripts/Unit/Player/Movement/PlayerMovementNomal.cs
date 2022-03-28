@@ -70,13 +70,14 @@ public class PlayerMovementNomal : PlayerMovementBase
 
     private IEnumerator CoolJumpCoroutine(float jumpVelocity)
     {
-        float time = .0f;
-        while(InputManager.instance.isJumpKeyPush && time < m_coolJumpTime)
-        {
-            rig2D.velocity = new Vector2(rig2D.velocity.x, jumpVelocity);
-            time += Time.deltaTime;
-            yield return null;
-        }
+        //float time = .0f;
+        //while(InputManager.instance.isJumpKeyPush && time < m_coolJumpTime)
+        //{
+        //    rig2D.velocity = new Vector2(rig2D.velocity.x, jumpVelocity);
+        //    time += Time.deltaTime;
+        //    yield return null;
+        //}
+        yield return null;
     }
 
 
