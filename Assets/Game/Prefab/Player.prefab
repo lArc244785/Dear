@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_eventTime: 1
+  m_distance: 0
+  m_posPaths: []
 --- !u!1 &148518294160098840
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,11 +803,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460b8c170f472094ea5b9ac49aacd5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerMovementManager: {fileID: 7066800755353033834}
+  m_springJoint2D: {fileID: 0}
+  m_springRig2D: {fileID: 0}
   m_hook: {fileID: 148518294160098843}
   m_hookSpeed: 30
   m_ropeRenderer: {fileID: 148518294229179941}
   m_firePoint: {fileID: 148518296105257636}
+  m_shouderMovement: {fileID: 0}
+  m_shooter: {fileID: 0}
   m_bBodyFix: 0
   m_pullLayerMask:
     serializedVersion: 2
@@ -816,21 +821,9 @@ MonoBehaviour:
   m_cancelMaxClampLength: 50
   m_ropeMaxDistance: 15
   m_rebound: {fileID: 5784921773571014576}
-  m_reboundEvent:
+  m_cancleReboundEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5981933600209700299}
-        m_TargetAssemblyTypeName: PlayerMovementRope, Assembly-CSharp
-        m_MethodName: CancleReboundEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_eState: 0
 --- !u!114 &5784921773571014576
 MonoBehaviour:
@@ -1104,7 +1097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148518295810701732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -14.64, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 148518294710063278}
