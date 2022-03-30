@@ -8,9 +8,11 @@ public class ItemJump : InteractionBase, ItemBase
 
     protected override void Enter(Collider2D collision)
     {
-        base.Enter(collision);
-        Unit_Player player = collision.GetComponent<Unit_Player>();
-        Use(player);
+            base.Enter(collision);
+        PlayerMovement movement = collision.GetComponent<PlayerMovement>();
+        movement.currentJump--;
+
+        gameObject.SetActive(false);
     }
 
 
