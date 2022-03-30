@@ -63951,7 +63951,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &225664402
 MonoBehaviour:
@@ -64047,82 +64047,8 @@ Transform:
   m_LocalScale: {x: 3.3047402, y: 5.305221, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &277917465
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.5308032
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469681, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469682, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_dir.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469682, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_dir.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469683, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0034914
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469683, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0017457008
-      objectReference: {fileID: 0}
-    - target: {fileID: 3930157879230469684, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-      propertyPath: m_Name
-      value: InteractionSpring
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3930157879462661521, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
 --- !u!1 &318952155
 GameObject:
   m_ObjectHideFlags: 0
@@ -64448,7 +64374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 49.801556, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615297590
 GameObject:
@@ -64937,7 +64863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740555093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.38, y: 3.39, z: 2.5186794}
+  m_LocalPosition: {x: 0.01, y: 3.33, z: 2.5186794}
   m_LocalScale: {x: 8.969067, y: 1.0030084, z: 1}
   m_Children: []
   m_Father: {fileID: 1535578793}
@@ -65008,9 +64934,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -65229,7 +65155,19 @@ MonoBehaviour:
     m_ActionId: 034708ad-3850-4050-80a6-9e25ad9bcffb
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 757695919}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnPull
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b6cac254-1a6f-429c-a955-a8b8ed9809b0
     m_ActionName: Player/New action
   - m_PersistentCalls:
@@ -65317,7 +65255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &805468502
 GameObject:
@@ -65995,7 +65933,7 @@ Transform:
   - {fileID: 1960002342}
   - {fileID: 1680939234}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1309691293
 GameObject:
@@ -66148,7 +66086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339417766
 GameObject:
@@ -66590,7 +66528,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1563009627
 MonoBehaviour:
@@ -104061,7 +103999,7 @@ RectTransform:
   - {fileID: 736572352}
   - {fileID: 751389255}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -119641,7 +119579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110831678008170607, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8110831678008170607, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -120528,21 +120466,9 @@ MonoBehaviour:
   m_cancelMaxClampLength: 50
   m_ropeMaxDistance: 15
   m_rebound: {fileID: 5784921773692985213}
-  m_reboundEvent:
+  m_cancleReboundEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 148518295686519150}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: CancleRebound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_eState: 0
 --- !u!1 &148518295427574434
 GameObject:
@@ -120673,7 +120599,7 @@ Transform:
   - {fileID: 148518295982070366}
   - {fileID: 5789205656378719651}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148518295686519145
 GameObject:
@@ -120954,7 +120880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerTr: {fileID: 148518295686519144}
-  m_notXReboundAngleRange: 10
+  m_notXReboundAngleRange: 20
   m_drawRange: 1
   m_isDebugDraw: 1
   m_gizomColor: {r: 0, g: 0, b: 0, a: 1}

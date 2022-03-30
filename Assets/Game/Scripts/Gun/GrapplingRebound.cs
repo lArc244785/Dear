@@ -42,7 +42,7 @@ public class GrapplingRebound : MonoBehaviour
 
     public void init()
     {
-        caculationRangeRad(m_notXReboundAngleRange);
+        CaculationRangeRad(m_notXReboundAngleRange);
         m_isDebugDraw = false;
         m_deg90toRad = Mathf.PI * 0.5f;
     }
@@ -62,7 +62,7 @@ public class GrapplingRebound : MonoBehaviour
         }
     }
 
-    private void caculationRangeRad(float angle)
+    private void CaculationRangeRad(float angle)
     {
         float leftTheta = 90.0f + angle;
         float rightTheta = 90.0f - angle;
@@ -85,7 +85,7 @@ public class GrapplingRebound : MonoBehaviour
     private void calculateGizmoPoints(ref RangePosition[] returnPoints)
     {
         if(m_isDebugDraw)
-            caculationRangeRad(m_notXReboundAngleRange);
+            CaculationRangeRad(m_notXReboundAngleRange);
 
         float leftPosX;
         float leftPosY;
@@ -117,7 +117,7 @@ public class GrapplingRebound : MonoBehaviour
         Vector2 diff = (Vector2)m_playerTr.position - hookPos;
         float angle = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
-        float finalAngle = angle - 90.0f;
+        float finalAngle = angle;
         if (finalAngle < 0)
             finalAngle = 360.0f + finalAngle;
 

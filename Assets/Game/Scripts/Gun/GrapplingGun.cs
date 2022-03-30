@@ -47,7 +47,7 @@ public class GrapplingGun : MonoBehaviour
     private GrapplingRebound m_rebound;
 
     [SerializeField]
-    private UnityEvent m_reboundEvent;
+    private UnityEvent m_cancleReboundEvent;
 
 
     public enum E_State
@@ -103,7 +103,7 @@ public class GrapplingGun : MonoBehaviour
 
         if(m_eState == E_State.E_GRAPPLING && m_rebound.isRebound((Vector2)m_hook.transform.position))
         {
-            m_reboundEvent.Invoke();
+            m_cancleReboundEvent.Invoke();
         }
 
         m_hook.Reset(m_firePoint);
