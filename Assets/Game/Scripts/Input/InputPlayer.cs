@@ -6,30 +6,21 @@ public class InputPlayer : MonoBehaviour
 {
     [SerializeField]
     private PlayerMovement m_movement;
+    [SerializeField]
+    private GrapplingShooter m_shooter;
 
     private Vector2 m_moveDir;
-
-    private bool m_isJumpPressed;
-    public bool isJumpPressed { get => m_isJumpPressed; private set => m_isJumpPressed = value; }
-
-    private bool m_isJumpEnter;
-
-    private float m_lastOnJumpEnterTime;
-
-
 
 
     public void JumpEnter()
     {
-        isJumpPressed = true;
+
         m_movement.OnJumpEnter();
     }
 
     public void JumpUp()
-    {
-        isJumpPressed = false;
-        m_movement.OnJumpUp();
-        
+    { 
+        m_movement.OnJumpUp();  
     }
 
     public void JumpPressed()
@@ -50,14 +41,25 @@ public class InputPlayer : MonoBehaviour
 
     public void LeftMouseEnter()
     {
-
+        m_shooter.Fire();
     }
 
     public void LeftMouseUp()
     {
-
+        m_shooter.Cancel();
     }
 
+    public void ReboundRight()
+    {
+        if(m_movement.isRope)
+            m_movement.Rebound(true);
+    }
+
+    public void ReboundLeft()
+    {
+        if (m_movement.isRope)
+            m_movement.Rebound(false);
+    }
 
 
 
@@ -83,5 +85,4 @@ public class InputPlayer : MonoBehaviour
     }
 
 
-    public float lastOnJumpEnterTime { get => m_lastOnJumpEnterTime; set => m_lastOnJumpEnterTime = value; }
 }

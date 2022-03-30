@@ -7,7 +7,9 @@ public class GrapplingGun : MonoBehaviour
 {
     [Header("General Reference")]
     [SerializeField]
-    private PlayerMovementManager m_playerMovementManager;
+    private SpringJoint2D m_springJoint2D;
+    [SerializeField]
+    private Rigidbody2D m_springRig2D;
     [SerializeField]
     private Hook m_hook;
     [SerializeField]
@@ -16,11 +18,14 @@ public class GrapplingGun : MonoBehaviour
     private RopeRenderer m_ropeRenderer;
     [SerializeField]
     private Transform m_firePoint;
+    [SerializeField]
+    private ShoulderMovement m_shouderMovement;
+    [SerializeField]
+    private GrapplingShooter m_shooter;
+    //----------------
+    private ShoulderMovement shouder { get => m_shouderMovement; }
+    private GrapplingShooter shooter { get => m_shooter; }
 
-
-
-    private SpringJoint2D m_springJoint2D;
-    private Rigidbody2D m_springRig2D;
 
 
     [Header("Option")]
@@ -44,6 +49,7 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField]
     private UnityEvent m_reboundEvent;
 
+
     public enum E_State
     {
         E_NONE, E_HOOKFIRE, E_GRAPPLING, E_PULL
@@ -54,9 +60,6 @@ public class GrapplingGun : MonoBehaviour
 
     public void init()
     {
-        m_springJoint2D = m_playerMovementManager.ropeMovement.SpringJoint2D;
-        m_springRig2D = m_playerMovementManager.rig2D;
-
         m_hook.init(m_hookSpeed, this);
         m_rebound.init();
     }
@@ -71,7 +74,7 @@ public class GrapplingGun : MonoBehaviour
         Vector2 dir = InputManager.instance.inGameMousePosition2D - (Vector2)m_hook.transform.position;
         dir.Normalize();
 
-        m_playerMovementManager.shoulderMovement.setLookPosition(InputManager.instance.inGameMousePosition2D);
+        shouder.setLookPosition(InputManager.instance.inGameMousePosition2D);
 
         m_hook.Fire(dir);
         m_ropeRenderer.isDraw = true;
@@ -86,9 +89,7 @@ public class GrapplingGun : MonoBehaviour
         m_springJoint2D.distance = distance;
         m_springJoint2D.enabled = true;
 
-        m_playerMovementManager.setTypeGrappling((Vector2)m_hook.transform.position, m_bBodyFix);
-
-
+        shouder.setLookPosition((Vector2)m_hook.transform.position);
 
         m_eState = GrapplingGun.E_State.E_GRAPPLING;
     }
@@ -106,6 +107,8 @@ public class GrapplingGun : MonoBehaviour
         }
 
         m_hook.Reset(m_firePoint);
+
+        shouder.SetMouse();
 
         m_eState = GrapplingGun.E_State.E_NONE;
     }
@@ -138,7 +141,7 @@ public class GrapplingGun : MonoBehaviour
 
     private IEnumerator PullProcesses()
     {
-        m_playerMovementManager.unitBase.isControl = false;
+        //m_playerMovementManager.unitBase.isControl = false;
 
         m_springJoint2D.distance = m_pullDistance;
         m_springJoint2D.frequency = m_pullFrequency;
@@ -158,7 +161,7 @@ public class GrapplingGun : MonoBehaviour
             m_springJoint2D.frequency = 0.0f;
         }
         m_eState = GrapplingGun.E_State.E_GRAPPLING;
-        m_playerMovementManager.unitBase.isControl = true;
+       // m_playerMovementManager.unitBase.isControl = true;
     }
 
     private float GetHookDistance()

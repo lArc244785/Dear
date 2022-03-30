@@ -43,5 +43,9 @@ MonoBehaviour:
   dashUpEndMult: 0.6
   dashEndRunLerp: 0.3
   dashBufferTime: 0.05
+  ropeReboundPower: 10
+  ropeReboundTime: 1
+  reopCancleReboundPower: 10
+  repeCancleReboundTime: 0.1
   doKeepRunMomentum: 0
   doTurnOnWallJump: 0

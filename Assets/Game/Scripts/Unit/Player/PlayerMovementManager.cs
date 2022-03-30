@@ -55,7 +55,6 @@ public class PlayerMovementManager : MovementMangerBase
         m_climbingSensor.Init();
         m_groundSensor.Init();
 
-        m_shoulderMovement.Init(this);
 
         MovementSetting();
 
@@ -95,7 +94,7 @@ public class PlayerMovementManager : MovementMangerBase
                 addMovement.Movement(this);
         }
 
-            m_shoulderMovement.UpdateProcess();
+
 
         if (areaImfect != null)
             areaImfect.Movement(this);

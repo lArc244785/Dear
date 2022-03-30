@@ -6,7 +6,13 @@ public class GrapplingShooter : MonoBehaviour
 {
     [SerializeField]
     private GrapplingGun m_grpplingGun;
-   
+
+    private void Start()
+    {
+        Init();
+    }
+
+
     public void Init()
     {
         m_grpplingGun.init();
@@ -37,6 +43,15 @@ public class GrapplingShooter : MonoBehaviour
         }
     }
 
+    public bool isNoneGrappling
+    {
+        get
+        {
+            return m_grpplingGun.m_eState == GrapplingGun.E_State.E_NONE;
+        }
+    }
+
+
     public bool isGrapplingFireAction
     {
         get
@@ -44,7 +59,13 @@ public class GrapplingShooter : MonoBehaviour
             return m_grpplingGun.m_eState == GrapplingGun.E_State.E_HOOKFIRE;
         }
     }
-
+    public Transform unitTransfrom
+    {
+        get
+        {
+            return transform;
+        }
+    }
 
 
 }

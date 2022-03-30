@@ -12,7 +12,7 @@ public class NewGroundSensor : MonoBehaviour
     private float m_radius;
 
 
-    public bool isGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(transform.position, m_radius, m_groundLayer);
     }

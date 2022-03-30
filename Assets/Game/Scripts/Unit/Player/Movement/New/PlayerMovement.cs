@@ -6,11 +6,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerData m_movementData;
     [SerializeField]
-    private NewPlayerMovementManager m_movementManager;
+    private Rigidbody2D m_rig2D;
+    [SerializeField]
+    private WallSensorManager m_wallSensorManager;
+    [SerializeField]
+    private NewGroundSensor m_groundSensor;
+    [SerializeField]
+    private InputPlayer m_input;
+    [SerializeField]
+    private SpringJoint2D m_springJoint2D;
+    [SerializeField]
+    private GrapplingShooter m_shooter;
 
-    public NewPlayerMovementManager movementManager { get => m_movementManager; }
+
     private PlayerData movementData { get => m_movementData; }
-    private Rigidbody2D rig2D { get => m_movementManager.rig2D; }
+    public Rigidbody2D rig2D { get => m_rig2D; }
+    private InputPlayer input { get => m_input; }
+    private NewGroundSensor groundSensor { get => m_groundSensor; }
+    private WallSensorManager wallSensorManager { get => m_wallSensorManager; }
+    private SpringJoint2D springJoint2D { get => m_springJoint2D; }
+    private GrapplingShooter shooter { get => m_shooter; }
     #endregion
 
     #region State Parameter
@@ -19,13 +34,13 @@ public class PlayerMovement : MonoBehaviour
     private float lastOnWallRightTime { set; get; }
     private float lastOnWallLeftTime { set; get; }
 
- 
 
 
     private bool isJump { set; get; }
     private bool isDash { set; get; }
     private bool isWallJump { set; get; }
     private bool isWallGrip { set; get; }
+    public bool isRope { set; get; }
     #endregion
 
     #region Wall Jump Parameter
@@ -44,11 +59,23 @@ public class PlayerMovement : MonoBehaviour
     private float dashStartTime { set; get; }
     #endregion
 
+    #region Rope Parmeters
+    private float ropeReboundTime { set; get; }
+
+    private bool isRopeCancle { set; get; }
+    private float ropeCancleStartTime { set; get; }
+    #endregion
 
 
-    public void Init(NewPlayerMovementManager movementManager)
+    private void Start()
     {
-        m_movementManager = movementManager;
+        Init();
+    }
+
+
+    public void Init()
+    {
+
     }
 
     private void Update()
@@ -57,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
 
         PhysicsUpdate();
 
+
+
         GravityUpdate();
 
         JumpUpdate();
@@ -64,10 +93,13 @@ public class PlayerMovement : MonoBehaviour
         DashUpdate();
 
         WallGripUpdate();
+
+        RopeUpdate();
     }
 
     private void FixedUpdate()
     {
+
         ResistanceUpdate();
 
 
@@ -92,7 +124,9 @@ public class PlayerMovement : MonoBehaviour
     #region Run
     private void RunUpdate()
     {
-        if (!isDash && !isWallGrip)
+
+
+        if (!isDash && !isWallGrip && !isRope)
         {
             if (isWallJump)
                 Run(movementData.wallJumpRunLerp);
@@ -102,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Run(float lerpAmount)
     {
-        float inputMoveDirX = movementManager.input.moveDir.x;
+        float inputMoveDirX = input.moveDir.x;
         float rigVelocityX = rig2D.velocity.x;
 
         float targetSpeed = inputMoveDirX * movementData.runMaxSpeed;
@@ -143,7 +177,7 @@ public class PlayerMovement : MonoBehaviour
 
         float movement = Mathf.Pow(Mathf.Abs(SpeedDif) * accleRate, velocityPower) * Mathf.Sign(SpeedDif);
         movement = Mathf.Lerp(rigVelocityX, movement, lerpAmount);
-
+        Debug.Log("Run");
         rig2D.AddForce(movement * Vector2.right);
     }
     #endregion
@@ -154,8 +188,11 @@ public class PlayerMovement : MonoBehaviour
     #region Resistance
     private void ResistanceUpdate()
     {
+        if (isRope)
+            return;
+
         if (isDash || lastOnGroundTime <= 0.0f)
-            Resistance(movementData.dragAmount);
+            Resistance(movementData.resistanceInAirAmount);
         else
             Resistance(movementData.frictionAmount);
 
@@ -170,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
         force.x *= Mathf.Sign(rig2D.velocity.x);
         force.y *= Mathf.Sign(rig2D.velocity.y);
 
+        Debug.Log("Resistance");
         rig2D.AddForce(-force, ForceMode2D.Impulse);
 
     }
@@ -178,6 +216,8 @@ public class PlayerMovement : MonoBehaviour
     #region Jump Funtions
     private void JumpUpdate()
     {
+        
+
         if (rig2D.velocity.y <= 0.0f && isJump)
             isJump = false;
         if (isWallJump && Time.time - wallJumpStartTime >= movementData.wallJumpTime)
@@ -200,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
                     wallJumpStartTime = Time.time;
 
                     int dir;
-                    if (movementManager.wallSensorManager.isLeftSensorGrounded)
+                    if (wallSensorManager.isLeftSensorGrounded)
                         dir = 1;
                     else
                         dir = -1;
@@ -225,6 +265,7 @@ public class PlayerMovement : MonoBehaviour
         if (rig2D.velocity.y < 0.0f)
             force.y -= rig2D.velocity.y;
 
+        Debug.Log("WallJump");
         rig2D.AddForce(force, ForceMode2D.Impulse);
 
         lastOnGroundTime = 0.0f;
@@ -245,11 +286,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("JUmp");
+
         float force = movementData.jumpForce;
         if (rig2D.velocity.y < 0.0f)
             force -= rig2D.velocity.y;
-
+        Debug.Log("JUmp");
         rig2D.AddForce(force * Vector2.up, ForceMode2D.Impulse);
 
         lastJumpEnterTime = 0.0f;
@@ -264,6 +305,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpCut()
     {
+        Debug.Log("JumpCut");
         rig2D.AddForce(Vector2.down * rig2D.velocity.y * (1 - movementData.jumpCutMultiplier), ForceMode2D.Impulse);
     }
 
@@ -294,7 +336,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (CanDash() && lastDashEnterTime > 0.0f)
         {
-            StartDash(movementManager.input.moveDir * Vector2.right);
+            StartDash(input.moveDir * Vector2.right);
 
             dashCount--;
         }
@@ -307,12 +349,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isJump && !isWallJump)
         {
-            if (movementManager.isGrounded)
+            if (groundSensor.IsGrounded())
                 lastOnGroundTime = movementData.coyoteTime;
 
-            if (movementManager.wallSensorManager.isLeftSensorGrounded)
+            if (wallSensorManager.isLeftSensorGrounded)
                 lastOnWallLeftTime = movementData.coyoteTime;
-            if (movementManager.wallSensorManager.isRightSensorGrounded)
+            if (wallSensorManager.isRightSensorGrounded)
                 lastOnWallRightTime = movementData.coyoteTime;
 
             lastOnWallTime = Mathf.Max(lastOnWallLeftTime, lastOnWallRightTime);
@@ -323,7 +365,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GravityUpdate()
     {
-        if (isDash || isWallGrip)
+        if (isDash || isWallGrip || isRope)
             return;
 
         if (rig2D.velocity.y < 0.0f)
@@ -376,7 +418,7 @@ public class PlayerMovement : MonoBehaviour
     #region WallGrip
     private void WallGripUpdate()
     {
-        if(isWallGrip)
+        if (isWallGrip)
         {
             Resistance(movementData.frictionAmount);
 
@@ -388,7 +430,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Climbing()
     {
-        float targetSpeed = movementManager.input.moveDir.y * movementData.runMaxSpeed;
+        float targetSpeed = input.moveDir.y * movementData.runMaxSpeed;
         float speedDif = targetSpeed - rig2D.velocity.y;
         float accleRate = targetSpeed > 0.01f ? movementData.climbingAccel : movementData.climbingDeccel;
         float velocityPower = movementData.accelPower;
@@ -401,21 +443,22 @@ public class PlayerMovement : MonoBehaviour
         float movement = Mathf.Pow(Mathf.Abs(speedDif) * accleRate, velocityPower) * Mathf.Sign(speedDif);
         Debug.Log(movement);
 
+        Debug.Log("Climbing");
         rig2D.AddForce(movement * Vector2.up);
 
     }
 
     private bool CanClimbing()
     {
-        float moveDirY = movementManager.input.moveDir.y;
+        float moveDirY = input.moveDir.y;
 
-        return (moveDirY > 0.0f && movementManager.wallSensorManager.UpSensorGrounded()) || 
-            (moveDirY < 0.0f && movementManager.wallSensorManager.DownSensorGrounded());
+        return (moveDirY > 0.0f && wallSensorManager.UpSensorGrounded()) ||
+            (moveDirY < 0.0f && wallSensorManager.DownSensorGrounded());
     }
 
     private bool CanWallGrip()
     {
-        return lastOnWallTime > 0.0f ;
+        return lastOnWallTime > 0.0f;
     }
     private void WallGrip()
     {
@@ -467,6 +510,92 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CanWallGripCancle())
             WallGripCancle();
+    }
+
+
+    #endregion
+
+    #region Rope Funtion
+    private void RopeUpdate()
+    {
+        if (!isRope)
+        {
+            if (shooter.isGrappling)
+            {
+                isRope = true;
+                ropeReboundTime = 0.0f;
+                ropeCancleStartTime = 0.0f;
+            }
+            else
+                return;
+        }
+
+        if (isRopeCancle)
+        {
+            if (Time.time - ropeReboundTime >= 0.0f || groundSensor.IsGrounded() || lastOnWallTime > 0.0f)
+            {
+                isRope = false;
+                isRopeCancle = false;
+            }
+
+        }
+        else if (shooter.isNoneGrappling)
+        {
+            isRope = false;
+        }
+
+
+    }
+
+    private void OnRebound(bool isRight)
+    {
+        if (CanRopeRebound())
+        {
+            ropeReboundTime = movementData.ropeReboundTime;
+        }
+    }
+
+    private bool CanRopeRebound()
+    {
+        return isRope && ropeReboundTime <= 0.0f;
+    }
+
+
+
+    public void Rebound(bool isRight)
+    {
+        Vector2 reboundDir = Vector2.right;
+        if (!isRight)
+            reboundDir *= -1.0f;
+
+        float reboundPower = movementData.ropeReboundPower;
+
+
+
+        Debug.Log("Rebound");
+        rig2D.AddForce(reboundDir * reboundPower, ForceMode2D.Impulse);
+
+        ropeReboundTime = movementData.ropeReboundTime;
+
+    }
+
+    public void CancleRebound()
+    {
+        if (groundSensor.IsGrounded())
+            return;
+
+
+
+        float xVelocity = movementData.ropeReboundPower;
+        if (rig2D.velocity.x < 0.0f)
+            xVelocity *= -1.0f;
+
+        rig2D.velocity = new Vector2(xVelocity, rig2D.velocity.y);
+
+
+        isRopeCancle = true;
+
+        ropeCancleStartTime = Time.time;
     }
 
 

@@ -62,11 +62,14 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnRightRopeRebound(InputAction.CallbackContext context)
     {
+        if (context.started)
+            m_inputPlayer.ReboundRight();
     }
 
     public void OnLeftRopeRebound(InputAction.CallbackContext context)
     {
-
+        if (context.started)
+            m_inputPlayer.ReboundLeft();
     }
 
     public void OnWallGrip(InputAction.CallbackContext context)

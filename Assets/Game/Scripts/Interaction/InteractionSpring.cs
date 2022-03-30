@@ -7,10 +7,19 @@ public class InteractionSpring : InteractionBase
     [SerializeField]
     private float m_power;
 
+
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-        PlayerMovementManager pmm = collision.GetComponent<Unit_Player>().playerMovemntManager;
-        pmm.rig2D.velocity = Vector2.up * m_power;
+        PlayerMovement movement = collision.GetComponent<PlayerMovement>(); ;
+        Rigidbody2D rig2D = movement.rig2D;
+
+        float power = m_power;
+
+        if(rig2D.velocity.y < 0.0f)
+            power -= rig2D.velocity.y;
+
+        
+        rig2D.AddForce(Vector2.up * power, ForceMode2D.Impulse);
     }
 }

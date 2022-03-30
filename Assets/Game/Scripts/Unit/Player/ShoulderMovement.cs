@@ -21,26 +21,25 @@ public class ShoulderMovement : MonoBehaviour
 
     private Type m_currentType;
 
-    private PlayerMovementManager m_movementManager;
 
-    public void Init(PlayerMovementManager pmm)
+    private void Start()
     {
-        m_movementManager = pmm;
+        Init();
+    }
+
+    public void Init()
+    {
         m_currentType = Type.E_MOUSE;
     }
 
-
-    public void UpdateProcess()
+    private void Update()
     {
-        if (!(m_movementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.NOMAL ||
-            m_movementManager.currentType == PlayerMovementManager.MOVEMENT_TYPE.ROPE))
-            return;
 
-        if(m_currentType == Type.E_MOUSE)
+        if (m_currentType == Type.E_MOUSE)
         {
             targetPostion = InputManager.instance.inGameMousePosition2D;
         }
-        else if(m_currentType == Type.E_POSITION)
+        else if (m_currentType == Type.E_POSITION)
         {
             targetPostion = m_lookPosition;
         }
