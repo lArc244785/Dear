@@ -37,7 +37,9 @@ public class PlayerData : ScriptableObject
 	public float jumpForce;
 	[Range(0, 1)] public float jumpCutMultiplier;
 	[Space(10)]
-	[Range(0, 0.5f)] public float jumpBufferTime; 
+	[Range(0, 0.5f)] public float jumpBufferTime;
+	public int maxJumpCount;
+	public float airJumpForce;
 
 	[Header("Wall Jump")]
 	public Vector2 wallJumpForce;
@@ -61,13 +63,7 @@ public class PlayerData : ScriptableObject
 	[Header("Dash")]
 	public int dashAmount;
 	public float dashSpeed;
-	[Space(5)]
-	public float dashAttackTime;
-	public float dashAttackDragAmount;
-	[Space(5)]
 	public float dashEndTime; 
-	[Range(0f, 1f)] public float dashUpEndMult; 
-	[Range(0f, 1f)] public float dashEndRunLerp; 
 	[Space(5)]
 	[Range(0, 0.5f)] public float dashBufferTime;
 
@@ -75,8 +71,8 @@ public class PlayerData : ScriptableObject
 	[Header("Rope")]
 	public float ropeReboundPower;
 	public float ropeReboundTime;
-	public float reopCancleReboundPower;
-	public float repeCancleReboundTime;
+	public float ropeCancleReboundPower;
+	public float ropeCancleReboundTime;
 
 }
 

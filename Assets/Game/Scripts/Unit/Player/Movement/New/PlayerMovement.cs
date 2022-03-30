@@ -47,6 +47,21 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpStartTime { set; get; }
     #endregion
 
+    #region Jump Parameter
+    private int m_currentJump;
+
+    public int currentJump
+    {
+        set
+        {
+            m_currentJump = Mathf.Clamp(value, 0, movementData.maxJumpCount);
+        }
+        get
+        {
+            return m_currentJump;
+        }
+    }
+    #endregion
 
     #region Input Parameter
     private float lastJumpEnterTime { set; get; }
@@ -227,11 +242,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (lastJumpEnterTime > 0.0f)
             {
-                if (CanJump())
+                if (CanFirstJump())
                 {
                     isJump = true;
                     isWallJump = false;
-                    Jump();
+                    Jump(movementData.jumpForce);
+                }
+                else if(CanAirJump())
+                {
+                    isJump = true;
+                    isWallJump = false;
+                    Jump(movementData.airJumpForce);
                 }
                 else if (CanWallJump())
                 {
@@ -284,23 +305,26 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void Jump()
+    private void Jump(float force)
     {
-
-        float force = movementData.jumpForce;
         if (rig2D.velocity.y < 0.0f)
             force -= rig2D.velocity.y;
-        Debug.Log("JUmp");
+        Debug.Log("Jump");
         rig2D.AddForce(force * Vector2.up, ForceMode2D.Impulse);
 
         lastJumpEnterTime = 0.0f;
         lastOnGroundTime = 0.0f;
-
+        currentJump++;
     }
 
-    private bool CanJump()
+    private bool CanFirstJump()
     {
         return lastOnGroundTime > 0.0f && !isJump;
+    }
+
+    private bool CanAirJump()
+    {
+        return lastOnGroundTime <= 0.0f && !isJump && currentJump < movementData.maxJumpCount;
     }
 
     private void JumpCut()
@@ -311,7 +335,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool CanJumpCut()
     {
-        return rig2D.velocity.y > 0.0f && isJump;
+        return rig2D.velocity.y > 0.0f && isJump && currentJump == 1;
     }
 
     private bool CanDash()
@@ -350,7 +374,11 @@ public class PlayerMovement : MonoBehaviour
         if (!isJump && !isWallJump)
         {
             if (groundSensor.IsGrounded())
+            {
                 lastOnGroundTime = movementData.coyoteTime;
+                currentJump = 0;
+            }
+
 
             if (wallSensorManager.isLeftSensorGrounded)
                 lastOnWallLeftTime = movementData.coyoteTime;
