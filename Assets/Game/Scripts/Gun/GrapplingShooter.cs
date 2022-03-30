@@ -59,14 +59,6 @@ public class GrapplingShooter : MonoBehaviour
             return m_grpplingGun.m_eState == GrapplingGun.E_State.E_HOOKFIRE;
         }
     }
-
-    public bool isGrapplingPull
-    {
-        get
-        {
-            return m_grpplingGun.m_eState == GrapplingGun.E_State.E_PULL;
-        }
-    }
     public Transform unitTransfrom
     {
         get

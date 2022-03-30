@@ -52,8 +52,7 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnPull(InputAction.CallbackContext context)
     {
-        if(context.started)
-            m_inputPlayer.RopePull();
+
     }
 
     public void OnRightMouseButton(InputAction.CallbackContext context)

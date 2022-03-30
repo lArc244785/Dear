@@ -61,11 +61,7 @@ public class InputPlayer : MonoBehaviour
             m_movement.Rebound(false);
     }
 
-    public void RopePull()
-    {
-        if (m_movement.isRope)
-            m_shooter.Pull();
-    }
+
 
 
 

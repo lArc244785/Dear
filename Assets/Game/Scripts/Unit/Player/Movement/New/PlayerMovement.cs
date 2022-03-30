@@ -530,7 +530,7 @@ public class PlayerMovement : MonoBehaviour
                 return;
         }
 
-        if (isRopeCancle && !m_shooter.isGrapplingPull)
+        if (isRopeCancle)
         {
             if (Time.time - ropeReboundTime >= 0.0f || groundSensor.IsGrounded() || lastOnWallTime > 0.0f)
             {
