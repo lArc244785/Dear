@@ -7,10 +7,7 @@ public class GrapplingShooter : MonoBehaviour
     [SerializeField]
     private GrapplingGun m_grpplingGun;
 
-    private void Start()
-    {
-        Init();
-    }
+
 
 
     public void Init()

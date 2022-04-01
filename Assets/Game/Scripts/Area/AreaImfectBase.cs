@@ -16,7 +16,7 @@ public abstract class AreaImfectBase : InteractionBase, I_AddMovement
 
         UnitBase unit = collision.GetComponent<UnitBase>();
         EnterUnitSetting(unit);
-        unit.movementManager.areaImfect = this;
+       // unit.movementManager.areaImfect = this;
     }
     //SubClass에서 구현해줘야됩니다.
     protected virtual void EnterUnitSetting(UnitBase unit)
@@ -30,7 +30,7 @@ public abstract class AreaImfectBase : InteractionBase, I_AddMovement
         base.Exit(collision);
         UnitBase unit = collision.GetComponent<UnitBase>();
         ExitUnitSetting(unit);
-        unit.movementManager.areaImfect = null;
+        //unit.movementManager.areaImfect = null;
     }
 
     //SubClass에서 구현해줘야됩니다.

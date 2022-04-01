@@ -18,7 +18,6 @@ public class ItemJump : InteractionBase, ItemBase
 
     public void Use(Unit_Player player)
     {
-        player.playerMovemntManager.nomalMovement.JumpCount--;
-        gameObject.SetActive(false);
+
     }
 }

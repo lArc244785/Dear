@@ -26,13 +26,13 @@ public class AreaImfectSwamp : AreaImfectBase
     protected override void EnterUnitSetting(UnitBase unit)
     {
         base.EnterUnitSetting(unit);
-        unit.isJump = false;
+        //unit.isJump = false;
     }
 
     protected override void ExitUnitSetting(UnitBase unit)
     {
         base.ExitUnitSetting(unit);
-        unit.isJump = true;
+        //unit.isJump = true;
     }
 
 

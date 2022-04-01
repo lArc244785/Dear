@@ -5,17 +5,18 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField]
-    PlayerMovementManager m_pmm;
-    [SerializeField]
-    Animator ani;
+    private Animator m_animation;
 
 
-    private void Update()
+
+
+
+
+
+
+
+    public Animator animation
     {
-        float move = Mathf.Abs(m_pmm.moveDir.x);
-
-        ani.SetFloat("Move", move);
+        get { return m_animation; }
     }
-
-
 }

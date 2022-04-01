@@ -7,15 +7,11 @@ public abstract class UnitBase : MonoBehaviour
     [SerializeField]
     private Health m_health;
 
-    protected MovementMangerBase m_MovementManager;
-
     private bool m_control;
-    private bool m_jump;
 
-    protected virtual void Init(MovementMangerBase mmb)
+    protected virtual void Init()
     {
-        m_MovementManager = mmb;
-        m_MovementManager.Init(this);
+        health.Init();
     }
 
     public bool isControl
@@ -30,26 +26,6 @@ public abstract class UnitBase : MonoBehaviour
         }
     }
 
-    public bool isJump
-    {
-        set
-        {
-            m_jump = value;
-        }
-        get
-        {
-            return m_jump;
-        }
-    }
-
-
-    public MovementMangerBase movementManager
-    {
-        get
-        {
-            return m_MovementManager;
-        }
-    }
 
     public Vector2 unitPos
     {
@@ -58,6 +34,9 @@ public abstract class UnitBase : MonoBehaviour
             return (Vector2)transform.position;
         }
     }
+
+    public Health health
+        { get { return m_health; } }
 
 
 }

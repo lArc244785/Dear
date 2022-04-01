@@ -5,32 +5,29 @@ using UnityEngine;
 public class Unit_Player : UnitBase
 {
     [SerializeField]
-    private PlayerInteraction m_interaction;
+    private PlayerMovement m_movement;
     [SerializeField]
-    private GrapplingShooter m_shooter;
+    private GrapplingShooter m_grapplingShooter;
     [SerializeField]
-    private PlayerMovementManager m_playerMovementManger;
+    private PlayerAnimation m_animation;
 
-
-    private void Start()
+    public void Start()
     {
-        Init(m_playerMovementManger);
+        Init();
+        health.Hit(1);
     }
 
-    protected override void Init(MovementMangerBase mmb)
+
+    protected override void Init()
     {
-        base.Init(mmb);
-        m_interaction.Init();
-        m_shooter.Init();
-        isJump = true;
+        base.Init();
+        m_movement.Init();
+
+        m_grapplingShooter.Init();
     }
 
-    public PlayerMovementManager playerMovemntManager
-    {
-        get
-        {
-            return m_playerMovementManger;
-        }
-    }
+
+
+
 
 }
