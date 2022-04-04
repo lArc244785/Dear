@@ -11,14 +11,6 @@ public class InteractionBust : InteractionBase
     {
         base.Enter(collision);
 
-        PlayerMovementManager pmm = collision.GetComponent<Unit_Player>().playerMovemntManager;
-        pmm.currentType = PlayerMovementManager.MOVEMENT_TYPE.BUST;
-
-        Vector2 dir = pmm.unitBase.unitPos -(Vector2)transform.position;
-        dir.Normalize();
-
-        pmm.bustMovement.bustMoveData = m_bustMoveData;
-        pmm.bustMovement.Bust(dir);
     }
     
 

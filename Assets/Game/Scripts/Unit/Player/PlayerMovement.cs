@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private SpringJoint2D m_springJoint2D;
     [SerializeField]
     private GrapplingShooter m_shooter;
+    [SerializeField]
+    private Transform m_modelTr;
 
 
     private PlayerData movementData { get => m_movementData; }
@@ -81,16 +83,15 @@ public class PlayerMovement : MonoBehaviour
     private float ropeCancleStartTime { set; get; }
     #endregion
 
+    #region Trun Parmeters
+    private Vector2 oldLookDir { set; get; }  
+    #endregion
 
-    private void Start()
-    {
-        Init();
-    }
 
 
     public void Init()
     {
-
+        oldLookDir = Vector2.left;
     }
 
     private void Update()
@@ -99,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
         PhysicsUpdate();
 
-
+        TrunUpdate();
 
         GravityUpdate();
 
@@ -192,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
 
         float movement = Mathf.Pow(Mathf.Abs(SpeedDif) * accleRate, velocityPower) * Mathf.Sign(SpeedDif);
         movement = Mathf.Lerp(rigVelocityX, movement, lerpAmount);
-        Debug.Log("Run");
+        //Debug.Log("Run");
         rig2D.AddForce(movement * Vector2.right);
     }
     #endregion
@@ -222,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
         force.x *= Mathf.Sign(rig2D.velocity.x);
         force.y *= Mathf.Sign(rig2D.velocity.y);
 
-        Debug.Log("Resistance");
+        //Debug.Log("Resistance");
         rig2D.AddForce(-force, ForceMode2D.Impulse);
 
     }
@@ -261,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
                     wallJumpStartTime = Time.time;
 
                     int dir;
-                    if (wallSensorManager.isLeftSensorGrounded)
+                    if (lastOnWallLeftTime > 0.0f)
                         dir = 1;
                     else
                         dir = -1;
@@ -288,6 +289,12 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("WallJump");
         rig2D.AddForce(force, ForceMode2D.Impulse);
+
+        if (lastOnWallLeftTime > 0.0f)
+            Trun(Vector2.right);
+        else
+            Trun(Vector2.left);
+
 
         lastOnGroundTime = 0.0f;
         lastOnWallLeftTime = 0.0f;
@@ -510,7 +517,34 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
+    #region Trun
+    private void TrunUpdate()
+    {
+        if (isRope || isDash|| isWallJump || isWallGrip)
+            return;
 
+        if (input.moveDir.x == 0)
+            return;
+
+
+        Trun(input.moveDir);
+
+
+
+    }
+
+    private void Trun(Vector2 lookDir)
+    {
+        if(lookDir.x != oldLookDir.x)
+        {
+            Vector3 scale = m_modelTr.localScale;
+            scale.x *= -1;
+            m_modelTr.localScale = scale;
+        }
+        oldLookDir = lookDir;
+    }
+
+    #endregion
 
     #region Input
     public void OnJumpUp()

@@ -7,16 +7,14 @@ public class InteractionSlingShot : InteractionBase
     [SerializeField]
     private BustMoveData m_bustMoveData;
 
-    private PlayerMovementManager m_playerMovementManager;
+
 
 
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
 
-        m_playerMovementManager = collision.GetComponent<Unit_Player>().playerMovemntManager;
 
-        m_playerMovementManager.bustMovement.enterSlingShot = this;
 
     }
 
@@ -24,7 +22,6 @@ public class InteractionSlingShot : InteractionBase
     {
         base.Exit(collision);
 
-        m_playerMovementManager.bustMovement.enterSlingShot = null;
     }
 
     public BustMoveData bustMoveData
