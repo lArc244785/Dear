@@ -10,7 +10,7 @@ public class DialogueNode
     [TextArea(5,10)]
     public string data;
 
-    public UnityEvent dialogueEvent;
+    public UnityEvent[] dialogueEvent;
 
     public DialogueNode[] nextNode;
     public DialogueNode previousNode;

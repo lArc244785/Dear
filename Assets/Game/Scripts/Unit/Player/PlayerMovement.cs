@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private SpringJoint2D m_springJoint2D;
     [SerializeField]
     private GrapplingShooter m_shooter;
+    [SerializeField]
+    private Transform m_modelTr;
 
 
     private PlayerData movementData { get => m_movementData; }
@@ -535,9 +537,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(lookDir.x != oldLookDir.x)
         {
-            Vector3 scale = transform.localScale;
+            Vector3 scale = m_modelTr.localScale;
             scale.x *= -1;
-            transform.localScale = scale;
+            m_modelTr.localScale = scale;
         }
         oldLookDir = lookDir;
     }

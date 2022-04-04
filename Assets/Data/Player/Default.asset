@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 1.1
   fallGravityMult: 1.35
-  quickFallGravityMult: 2.2
-  dragAmount: 0.22
+  resistanceInAirAmount: 0
   frictionAmount: 0.55
   coyoteTime: 0.1
   runMaxSpeed: 9.5
@@ -29,6 +28,8 @@ MonoBehaviour:
   jumpForce: 12
   jumpCutMultiplier: 0.5
   jumpBufferTime: 0.08
+  maxJumpCount: 2
+  airJumpForce: 8
   wallJumpForce: {x: 9, y: 12}
   wallJumpRunLerp: 0.3
   wallJumpTime: 0.35
@@ -37,15 +38,9 @@ MonoBehaviour:
   climbingDeccel: 15
   dashAmount: 1
   dashSpeed: 17
-  dashAttackTime: 0.15
-  dashAttackDragAmount: 0.22
   dashEndTime: 0.1
-  dashUpEndMult: 0.6
-  dashEndRunLerp: 0.3
   dashBufferTime: 0.05
   ropeReboundPower: 10
   ropeReboundTime: 1
-  reopCancleReboundPower: 10
-  repeCancleReboundTime: 0.1
-  doKeepRunMomentum: 0
-  doTurnOnWallJump: 0
+  ropeCancleReboundPower: 0
+  ropeCancleReboundTime: 0

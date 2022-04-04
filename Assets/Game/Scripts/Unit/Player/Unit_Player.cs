@@ -10,6 +10,8 @@ public class Unit_Player : UnitBase
     private GrapplingShooter m_grapplingShooter;
     [SerializeField]
     private PlayerAnimation m_animation;
+    [SerializeField]
+    private ShoulderMovement m_shoulder;
 
     public void Start()
     {
@@ -24,6 +26,7 @@ public class Unit_Player : UnitBase
         m_movement.Init();
 
         m_grapplingShooter.Init();
+        m_shoulder.Init();
     }
 
 

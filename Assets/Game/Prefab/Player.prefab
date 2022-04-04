@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 3510330267994889924}
   - component: {fileID: 3244443175461844836}
   - component: {fileID: 5757603540532931301}
+  - component: {fileID: 5851716288574081669}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -542,7 +543,21 @@ MonoBehaviour:
   m_health: {fileID: 3244443175461844836}
   m_movement: {fileID: 3510330267994889925}
   m_grapplingShooter: {fileID: 3510330267994889924}
-  m_animation: {fileID: 0}
+  m_animation: {fileID: 5851716288574081669}
+  m_shoulder: {fileID: 7442530564426922723}
+--- !u!114 &5851716288574081669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3510330267994889922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b347340d757004faa33c15f0246978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animation: {fileID: 5737190244033851874}
 --- !u!1 &3510330268134148644
 GameObject:
   m_ObjectHideFlags: 0

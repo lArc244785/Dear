@@ -7,3 +7,4 @@ public class DialoguData : ScriptableObject
 {
     public DialogueNode node;
 }
+ 
