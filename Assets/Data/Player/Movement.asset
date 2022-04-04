@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a877d0a61ac8e64a9aed1c68cfdc5fd, type: 3}
-  m_Name: Default
+  m_Name: Movement
   m_EditorClassIdentifier: 
-  gravityScale: 1.1
-  fallGravityMult: 1.35
-  resistanceInAirAmount: 0
-  frictionAmount: 0.55
+  gravityScale: 1
+  fallGravityMult: 1.5
+  resistanceInAirAmount: 0.1
+  frictionAmount: 0.85
   coyoteTime: 0.1
-  runMaxSpeed: 9.5
-  runAccel: 9.3
+  runMaxSpeed: 10
+  runAccel: 9
   runDeccel: 15
   accelInAir: 0.65
   deccelInAir: 0.65
   accelPower: 1.05
-  stopPower: 1.23
+  stopPower: 1.2
   turnPower: 1.13
   jumpForce: 12
   jumpCutMultiplier: 0.5
   jumpBufferTime: 0.08
   maxJumpCount: 2
   airJumpForce: 8
-  wallJumpForce: {x: 9, y: 12}
+  wallJumpForce: {x: 8, y: 12}
   wallJumpRunLerp: 0.3
   wallJumpTime: 0.35
   wallSlideVelocity: -3
