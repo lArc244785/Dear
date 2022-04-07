@@ -17,7 +17,7 @@ MonoBehaviour:
   resistanceInAirAmount: 0.1
   frictionAmount: 0.85
   coyoteTime: 0.1
-  runMaxSpeed: 10
+  runMaxSpeed: 13
   runAccel: 9
   runDeccel: 15
   accelInAir: 0.65
@@ -28,9 +28,9 @@ MonoBehaviour:
   jumpForce: 12
   jumpCutMultiplier: 0.5
   jumpBufferTime: 0.08
-  maxJumpCount: 2
+  maxJumpCount: 1
   airJumpForce: 8
-  wallJumpForce: {x: 10, y: 14}
+  wallJumpForce: {x: 10, y: 15}
   wallJumpRunLerp: 0.3
   wallJumpTime: 0.35
   wallSlideVelocity: -3
@@ -40,7 +40,7 @@ MonoBehaviour:
   dashSpeed: 17
   dashEndTime: 0.1
   dashBufferTime: 0.05
-  ropeReboundPower: 10
+  ropeReboundPower: 20
   ropeReboundTime: 1
   ropeCancleReboundPower: 0
   ropeCancleReboundTime: 0

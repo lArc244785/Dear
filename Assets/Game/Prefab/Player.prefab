@@ -195,7 +195,7 @@ MonoBehaviour:
   m_springJoint2D: {fileID: 3510330267994889926}
   m_springRig2D: {fileID: 3510330267994889921}
   m_hook: {fileID: 3510330268367790461}
-  m_hookSpeed: 32
+  m_hookSpeed: 50
   m_ropeRenderer: {fileID: 3510330268571351363}
   m_firePoint: {fileID: 3510330267763109314}
   m_shouderMovement: {fileID: 7442530564426922723}
@@ -1145,7 +1145,7 @@ SpriteRenderer:
   m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 127ba7d30c2f1a444892400f892e3580, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
