@@ -13,8 +13,19 @@ MonoBehaviour:
   m_Name: TestDialogu
   m_EditorClassIdentifier: 
   node:
-    data: <Name Test>
-    dialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    nextNode: []
+    data: '<$UI_ON>
+
+      <$Name>Test</Name>
+
+      <$Sentences>Sentences....</Sentences>'
+    nextNode:
+    - data: '<$Name>Test1</Name>
+
+        <$Sentences>Sentences....</Sentences>'
+      nextNode:
+      - data: '<$Name>Test2</Name>
+
+          <$Sentences>Seasdasdasdasdasdasd
+
+          asdasdntences....</Sentences>'
+        nextNode: []

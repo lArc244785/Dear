@@ -19,11 +19,11 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField]
     private Transform m_firePoint;
     [SerializeField]
-    private ShoulderMovement m_shouderMovement;
+    private Shoulder m_shouderMovement;
     [SerializeField]
     private GrapplingShooter m_shooter;
     //----------------
-    private ShoulderMovement shouder { get => m_shouderMovement; }
+    private Shoulder shouder { get => m_shouderMovement; }
     private GrapplingShooter shooter { get => m_shooter; }
 
 
@@ -92,6 +92,7 @@ public class GrapplingGun : MonoBehaviour
         shouder.setLookPosition((Vector2)m_hook.transform.position);
 
         m_eState = GrapplingGun.E_State.E_GRAPPLING;
+        m_shooter.RopeMovementChange();
     }
 
     public void Cancel()

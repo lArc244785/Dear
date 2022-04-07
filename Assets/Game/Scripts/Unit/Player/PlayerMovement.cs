@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Reference
     [SerializeField]
-    private PlayerData m_movementData;
+    private MovementData m_movementData;
     [SerializeField]
     private Rigidbody2D m_rig2D;
     [SerializeField]
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform m_modelTr;
 
 
-    private PlayerData movementData { get => m_movementData; }
+    private MovementData movementData { get => m_movementData; }
     public Rigidbody2D rig2D { get => m_rig2D; }
     private InputPlayer input { get => m_input; }
     private NewGroundSensor groundSensor { get => m_groundSensor; }
@@ -353,24 +353,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void DashUpdate()
     {
-        if (isDash && Time.time - dashStartTime >= movementData.dashEndTime)
-        {
-            isDash = false;
-        }
-        if (isDash && lastOnWallTime > 0.0f)
-        {
-            StopDash();
-        }
-        if (!isDash && lastOnGroundTime > 0.0f)
-            dashCount = movementData.dashAmount;
+        //if (isDash && Time.time - dashStartTime >= movementData.dashEndTime)
+        //{
+        //    isDash = false;
+        //}
+        //if (isDash && lastOnWallTime > 0.0f)
+        //{
+        //    StopDash();
+        //}
+        //if (!isDash && lastOnGroundTime > 0.0f)
+        //    dashCount = movementData.dashAmount;
 
 
-        if (CanDash() && lastDashEnterTime > 0.0f)
-        {
-            StartDash(input.moveDir * Vector2.right);
+        //if (CanDash() && lastDashEnterTime > 0.0f)
+        //{
+        //    StartDash(input.moveDir * Vector2.right);
 
-            dashCount--;
-        }
+        //    dashCount--;
+        //}
     }
 
     #endregion
@@ -387,9 +387,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
 
-            if (wallSensorManager.isLeftSensorGrounded)
+            if (wallSensorManager.IsLeftSensorGrounded())
                 lastOnWallLeftTime = movementData.coyoteTime;
-            if (wallSensorManager.isRightSensorGrounded)
+            if (wallSensorManager.IsRightSensorGrounded())
                 lastOnWallRightTime = movementData.coyoteTime;
 
             lastOnWallTime = Mathf.Max(lastOnWallLeftTime, lastOnWallRightTime);
@@ -434,13 +434,13 @@ public class PlayerMovement : MonoBehaviour
     #region Dash
     private void StartDash(Vector2 dir)
     {
-        SetGravity(0.0f);
-        rig2D.velocity = dir * movementData.dashSpeed;
+        //SetGravity(0.0f);
+        //rig2D.velocity = dir * movementData.dashSpeed;
 
-        isDash = true;
-        dashStartTime = Time.time;
+        //isDash = true;
+        //dashStartTime = Time.time;
 
-        lastOnGroundTime = 0.0f;
+        //lastOnGroundTime = 0.0f;
     }
 
     private void StopDash()
@@ -559,7 +559,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDashEnter()
     {
-        lastDashEnterTime = movementData.dashBufferTime;
+        //lastDashEnterTime = movementData.dashBufferTime;
     }
 
     public void OnWallGripEnter()
@@ -611,10 +611,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnRebound(bool isRight)
     {
-        if (CanRopeRebound())
-        {
-            ropeReboundTime = movementData.ropeReboundTime;
-        }
+        //if (CanRopeRebound())
+        //{
+        //    ropeReboundTime = movementData.ropeReboundTime;
+        //}
     }
 
     private bool CanRopeRebound()
@@ -626,38 +626,38 @@ public class PlayerMovement : MonoBehaviour
 
     public void Rebound(bool isRight)
     {
-        Vector2 reboundDir = Vector2.right;
-        if (!isRight)
-            reboundDir *= -1.0f;
+        //Vector2 reboundDir = Vector2.right;
+        //if (!isRight)
+        //    reboundDir *= -1.0f;
 
-        float reboundPower = movementData.ropeReboundPower;
+        //float reboundPower = movementData.ropeReboundPower;
 
 
 
-        Debug.Log("Rebound");
-        rig2D.AddForce(reboundDir * reboundPower, ForceMode2D.Impulse);
+        //Debug.Log("Rebound");
+        //rig2D.AddForce(reboundDir * reboundPower, ForceMode2D.Impulse);
 
-        ropeReboundTime = movementData.ropeReboundTime;
+        //ropeReboundTime = movementData.ropeReboundTime;
 
     }
 
     public void CancleRebound()
     {
-        if (groundSensor.IsGrounded())
-            return;
+        //if (groundSensor.IsGrounded())
+        //    return;
 
 
 
-        float xVelocity = movementData.ropeReboundPower;
-        if (rig2D.velocity.x < 0.0f)
-            xVelocity *= -1.0f;
+        //float xVelocity = movementData.ropeReboundPower;
+        //if (rig2D.velocity.x < 0.0f)
+        //    xVelocity *= -1.0f;
 
-        rig2D.velocity = new Vector2(xVelocity, rig2D.velocity.y);
+        //rig2D.velocity = new Vector2(xVelocity, rig2D.velocity.y);
 
 
-        isRopeCancle = true;
+        //isRopeCancle = true;
 
-        ropeCancleStartTime = Time.time;
+        //ropeCancleStartTime = Time.time;
     }
 
 

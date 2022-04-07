@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ShoulderMovement : MonoBehaviour
+public class Shoulder : MonoBehaviour
 {
-    private bool m_bBodyFix;
 
-    private enum Type
+    private enum LookType
     {
-        E_MOUSE, E_POSITION
+        Mouse, Position
     }
 
 
     [SerializeField]
-    private Transform m_shoulder;
+    private Transform m_shoulderTr;
+    [SerializeField]
+    private GameObject m_hand;
+    [SerializeField]
+    private GrapplingShooter m_shooter;
+
+
 
     private Vector2 m_targetPostion;
 
 
-    private Type m_currentType;
+    private LookType m_currentType;
 
 
     private void Start()
@@ -29,17 +34,21 @@ public class ShoulderMovement : MonoBehaviour
 
     public void Init()
     {
-        m_currentType = Type.E_MOUSE;
+        m_currentType = LookType.Mouse;
     }
 
     private void Update()
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
 
-        if (m_currentType == Type.E_MOUSE)
+        m_hand.SetActive(m_shooter.CanShoot());
+
+        if (m_currentType == LookType.Mouse)
         {
             targetPostion = InputManager.instance.inGameMousePosition2D;
         }
-        else if (m_currentType == Type.E_POSITION)
+        else if (m_currentType == LookType.Position)
         {
             targetPostion = m_lookPosition;
         }
@@ -52,17 +61,8 @@ public class ShoulderMovement : MonoBehaviour
 
 
 
-    public bool isBodyFix
-    {
-        set
-        {
-            m_bBodyFix = value;
-        }
-        get
-        {
-            return m_bBodyFix;
-        }
-    }
+
+
 
 
     [SerializeField]
@@ -73,10 +73,7 @@ public class ShoulderMovement : MonoBehaviour
 
         float updateRotionAngle = Utility.GetRotaionAngleByTargetPosition(transform.position, targetPostion, .0f);
 
-        m_shoulder.rotation = Quaternion.Euler(0.0f, 0.0f, updateRotionAngle);
-
-        if (isBodyFix)
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, updateRotionAngle);
+        m_shoulderTr.rotation = Quaternion.Euler(0.0f, 0.0f, updateRotionAngle);
 
     }
 
@@ -84,7 +81,7 @@ public class ShoulderMovement : MonoBehaviour
     public void setLookPosition(Vector2 pos)
     {
         m_lookPosition = pos;
-        m_currentType = Type.E_POSITION;
+        m_currentType = LookType.Position;
 
         UpdateShoulder();
     }
@@ -92,7 +89,7 @@ public class ShoulderMovement : MonoBehaviour
 
     public void SetMouse()
     {
-        m_currentType = Type.E_MOUSE;
+        m_currentType = LookType.Mouse;
     }
 
     public Vector2 targetPostion

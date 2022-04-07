@@ -6,8 +6,13 @@ public class GrapplingShooter : MonoBehaviour
 {
     [SerializeField]
     private GrapplingGun m_grpplingGun;
+    [SerializeField]
+    private A_MovementManager m_movementManager;
 
-
+    private void Start()
+    {
+        Init();
+    }
 
 
     public void Init()
@@ -18,7 +23,7 @@ public class GrapplingShooter : MonoBehaviour
 
     public void Fire()
     {
-        if(m_grpplingGun.m_eState == GrapplingGun.E_State.E_NONE)
+        if(m_grpplingGun.m_eState == GrapplingGun.E_State.E_NONE && CanShoot())
             m_grpplingGun.Fire();
     }
 
@@ -56,6 +61,20 @@ public class GrapplingShooter : MonoBehaviour
             return m_grpplingGun.m_eState == GrapplingGun.E_State.E_HOOKFIRE;
         }
     }
+
+    public bool CanShoot()
+    {
+        return m_movementManager.currentState == A_MovementManager.State.Ground ||
+            m_movementManager.currentState == A_MovementManager.State.Air ||
+            m_movementManager.currentState == A_MovementManager.State.Rope;
+    }
+
+    public void RopeMovementChange()
+    {
+        m_movementManager.currentState = A_MovementManager.State.Rope;
+    }
+
+
     public Transform unitTransfrom
     {
         get

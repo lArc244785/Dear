@@ -10,7 +10,7 @@ public class InputManager : SingleToon<InputManager>
     private Camera m_brainCam;
     [SerializeField]
     private InputPlayer m_inputPlayer;
-
+    
 
 
     private void Awake()
@@ -25,6 +25,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         m_inputPlayer.moveDir = context.ReadValue<Vector2>();
     }
 
@@ -32,6 +35,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnLeftMouseButton(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (context.started)
         {
             m_inputPlayer.LeftMouseEnter();
@@ -44,6 +50,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (context.started)
             m_inputPlayer.JumpEnter();
         else if (context.canceled)
@@ -52,6 +61,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnPull(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
 
     }
 
@@ -62,18 +74,27 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnRightRopeRebound(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (context.started)
             m_inputPlayer.ReboundRight();
     }
 
     public void OnLeftRopeRebound(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (context.started)
             m_inputPlayer.ReboundLeft();
     }
 
     public void OnWallGrip(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (context.started)
             m_inputPlayer.WallGripEnter();
         else if (context.canceled)
@@ -82,6 +103,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnInteraction(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
 
     }
 

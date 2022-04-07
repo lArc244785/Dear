@@ -500,6 +500,7 @@ MonoBehaviour:
   m_input: {fileID: 3510330267994889920}
   m_springJoint2D: {fileID: 3510330267994889926}
   m_shooter: {fileID: 3510330267994889924}
+  m_modelTr: {fileID: 3510330268907304904}
 --- !u!114 &3510330267994889924
 MonoBehaviour:
   m_ObjectHideFlags: 0

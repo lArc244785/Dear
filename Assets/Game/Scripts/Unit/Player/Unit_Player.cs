@@ -11,7 +11,7 @@ public class Unit_Player : UnitBase
     [SerializeField]
     private PlayerAnimation m_animation;
     [SerializeField]
-    private ShoulderMovement m_shoulder;
+    private Shoulder m_shoulder;
 
     public void Start()
     {
