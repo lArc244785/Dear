@@ -639,11 +639,35 @@ MonoBehaviour:
     m_ActionId: 0ceeb75f-a4b7-4a37-bd9f-0549cb2e4f0f
     m_ActionName: Player/Cancel[/Mouse/rightButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 720362631}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnRightRopeRebound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3fe476e9-13a9-4bb4-8478-21b554b678df
     m_ActionName: Player/RightBuster[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 720362631}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnLeftRopeRebound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 900ed00c-618c-4e7f-8683-4b0d241000d5
     m_ActionName: Player/LeftBuster[/Keyboard/q]
   - m_PersistentCalls:
@@ -1144,7 +1168,7 @@ Transform:
   m_GameObject: {fileID: 2004220373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.18, y: 0.71, z: 2.5186794}
-  m_LocalScale: {x: 22.797241, y: -0.5648814, z: 1}
+  m_LocalScale: {x: 1, y: -0.5648814, z: 1}
   m_Children: []
   m_Father: {fileID: 1943721060}
   m_RootOrder: 2
@@ -2233,6 +2257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rig2D: {fileID: 3048255582376132503}
   m_inputPlayer: {fileID: 3048255582376132502}
+  m_shooter: {fileID: 0}
   m_movementData: {fileID: 11400000, guid: d974a7ea26c120b4382e82a04122f961, type: 2}
   m_currentState: 0
   m_groundSensor: {fileID: 3048255582557012523}
@@ -2271,7 +2296,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 15.123971
   m_DampingRatio: 0
-  m_Frequency: 1
+  m_Frequency: 0
 --- !u!1 &3048255582557012520
 GameObject:
   m_ObjectHideFlags: 0

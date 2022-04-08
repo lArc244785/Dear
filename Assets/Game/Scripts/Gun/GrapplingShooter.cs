@@ -74,6 +74,12 @@ public class GrapplingShooter : MonoBehaviour
         m_movementManager.currentState = A_MovementManager.State.Rope;
     }
 
+    public void CancleRopeRebound()
+    {
+        m_movementManager.coyoteSystem.OnRopeCancleJumpTime(); ;
+    }
+
+
 
     public Transform unitTransfrom
     {

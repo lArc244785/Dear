@@ -50,14 +50,18 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundRight()
     {
-        //if(m_movement.isRope)
-        //    m_movement.Rebound(true);
+        if (m_MovementManager.currentState != A_MovementManager.State.Rope)
+            return;
+        m_MovementManager.isRopeReboundDirRight = true;
+        m_MovementManager.coyoteSystem.OnRopeReboundTime();
     }
 
     public void ReboundLeft()
     {
-        //if (m_movement.isRope)
-        //    m_movement.Rebound(false);
+        if (m_MovementManager.currentState != A_MovementManager.State.Rope)
+            return;
+        m_MovementManager.isRopeReboundDirRight = false;
+        m_MovementManager.coyoteSystem.OnRopeReboundTime();
     }
 
 

@@ -18,6 +18,17 @@ public class A_MovementManager : MonoBehaviour
     public InputPlayer inputPlayer { get { return m_inputPlayer; } }
     #endregion
 
+    #region Shooter
+    [SerializeField]
+    private GrapplingShooter m_shooter;
+    public GrapplingShooter shooter 
+    { 
+        get
+        {
+            return m_shooter;
+        } 
+    }
+    #endregion
 
     #region MovementData
     [Header("MovementData")]
@@ -57,9 +68,15 @@ public class A_MovementManager : MonoBehaviour
 
     
     public bool isJump { set; get; }
+
     public bool isWallJump { set; get; }
     public bool isWallSilde { set; get; }
     public bool isWallGrip { set; get; }
+
+    public bool isRopeCancleRebound { set; get; }
+    public bool isRopeRebound { set; get; }
+
+    public bool isRopeReboundDirRight { set; get; }
     #endregion
 
 
@@ -179,9 +196,12 @@ public class A_MovementManager : MonoBehaviour
         return m_wallSensor.IsLeftSensorGrounded();
     }
 
-   public void Run(float lerpAmount)
+   public void Run(float lerpAmount, bool isGetInput)
     {
-        float inputMoveDirX = inputPlayer.moveDir.x;
+        float inputMoveDirX = 0.0f;
+        if (isGetInput)
+            inputMoveDirX = inputPlayer.moveDir.x;
+
         float rigVelocityX = rig2D.velocity.x;
 
         float targetSpeed = inputMoveDirX * movementData.runMaxSpeed;
@@ -279,5 +299,13 @@ public class A_MovementManager : MonoBehaviour
             return;
 
         Trun(inputPlayer.moveDir);
+    }
+
+    public Vector2 lookDir
+    {
+        get
+        {
+            return m_oldLookDir;
+        }
     }
 }

@@ -104,7 +104,7 @@ public class GrapplingGun : MonoBehaviour
 
         if(m_eState == E_State.E_GRAPPLING && m_rebound.isRebound((Vector2)m_hook.transform.position))
         {
-            m_reboundEvent.Invoke();
+            shooter.CancleRopeRebound();
         }
 
         m_hook.Reset(m_firePoint);

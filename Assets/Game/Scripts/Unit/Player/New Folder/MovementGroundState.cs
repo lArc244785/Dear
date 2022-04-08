@@ -17,7 +17,7 @@ public class MovementGroundState : I_MovementState
     public void FixedExcute(A_MovementManager manager)
     {
         manager.Resistance(manager.movementData.frictionAmount);
-        manager.Run(1.0f);
+        manager.Run(1.0f, true);
     }
 
     public void UpdateExcute(A_MovementManager manager)

@@ -21,7 +21,7 @@ public class MovementWallState : I_MovementState
 
         if (manager.isWallJump)
         {
-            manager.Run(manager.movementData.wallJumpRunLerp);
+            manager.Run(manager.movementData.wallJumpRunLerp, true);
         }
         else if (manager.isWallGrip)
         {
@@ -29,7 +29,7 @@ public class MovementWallState : I_MovementState
         }
         else
         {
-            manager.Run(1.0f);
+            manager.Run(1.0f,true);
             WallSildeUpdate(manager);
 
         }
@@ -178,11 +178,11 @@ public class MovementWallState : I_MovementState
     {
         if (!manager.isWallJump)
         {
-            manager.Run(1.0f);
+            manager.Run(1.0f,true);
         }
         else
         {
-            manager.Run(manager.movementData.wallJumpRunLerp);
+            manager.Run(manager.movementData.wallJumpRunLerp,true);
         }
     }
 

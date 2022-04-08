@@ -129,7 +129,7 @@ public class MovementData : ScriptableObject
 	private float m_climbingDeccel;
 	public float climbingDeccel { get { return m_climbingDeccel; } }
 
-	/*
+    /*
 	 * 현재는 사용하지 않는 파라미터 입니다.
 	//ABILITIES
 	[Header("Dash")]
@@ -151,22 +151,27 @@ public class MovementData : ScriptableObject
 	public float dashBufferTime { get { return m_dashBufferTime; } }
 	*/
 
-	//[Header("Rope")]
-	//[SerializeField]
-	//private float m_ropeReboundPower;
-	//public float ropeReboundPower { get { return m_ropeReboundPower; } }
+    [Header("Rope")]
+    [SerializeField]
+    private float m_ropeReboundPower;
+    public float ropeReboundPower { get { return m_ropeReboundPower; } }
 
-	//[SerializeField]
-	//private float m_ropeReboundTime;
-	//public float ropeReboundTime { get { return m_ropeReboundTime; } }
+    [SerializeField]
+    private float m_ropeReboundCoolTime;
+    public float ropeReboundCoolTime { get { return m_ropeReboundCoolTime; } }
 
-	//[SerializeField]
-	//private float m_ropeCancleReboundPower;
-	//public float ropeCancleReboundPower { get { return m_ropeCancleReboundPower; } }
+	[Space(5)]
+	[SerializeField]
+    private Vector2 m_ropeCancleJumpForce;
+    public Vector2 ropeCancleJumpForce { get { return m_ropeCancleJumpForce; } }
 
-	//[SerializeField]
-	//private float m_ropeCancleReboundTime;
-	//public float ropeCancleReboundTime { get { return m_ropeCancleReboundTime; } }
+    [SerializeField]
+    private float m_ropeCancleReboundTime;
+    public float ropeCancleReboundTime { get { return m_ropeCancleReboundTime; } }
+	[SerializeField]
+	[Range(0f, 1f)]
+	private float m_ropeCancleReboundRunLerp;
+	public float ropeCancleReboundRunLerp { get { return m_ropeCancleReboundRunLerp; } }
 
 }
 

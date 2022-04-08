@@ -89,6 +89,34 @@ public class CoyoteSystem
     }
     #endregion
 
+    #region Rope Time
+    private float m_lastOnCancleRopeJump;
+    public float lastOnCancleRopeJump
+    {
+        private set
+        {
+            m_lastOnCancleRopeJump = value;
+        }
+        get
+        {
+            return m_lastOnCancleRopeJump;
+        }
+    }
+
+    private float m_lastOnRopeReboundTime;
+    public float lastOnRopeReboundTime 
+    {
+        private set
+        {
+            m_lastOnRopeReboundTime = value;
+        }
+        get
+        {
+            return m_lastOnRopeReboundTime;
+        }
+    }
+
+    #endregion
 
 
     public void Init(MovementData classicMovementData)
@@ -181,4 +209,37 @@ public class CoyoteSystem
 
     #endregion
 
+    #region Rope
+    public void OnRopeCancleJumpTime()
+    {
+        lastOnCancleRopeJump = m_classicMovementData.coyoteTime;
+    }
+
+    public void RestRopeCancleJumpTime()
+    {
+        lastOnCancleRopeJump = 0.0f;
+    }
+
+    public void RopeCancleJumpCototeTime()
+    {
+        lastOnCancleRopeJump -= Time.deltaTime;
+    }
+
+    public void OnRopeReboundTime()
+    {
+        lastOnRopeReboundTime = m_classicMovementData.coyoteTime;
+    }
+
+    public void RestRopeReboundTime()
+    {
+        lastOnRopeReboundTime = 0.0f;
+    }
+
+    public void RopeReboundCototeTime()
+    {
+        lastOnRopeReboundTime -= Time.deltaTime;
+    }
+
+
+    #endregion
 }
