@@ -21,10 +21,11 @@ public class MovementRopeState : I_MovementState
 
     public void FixedExcute(A_MovementManager manager)
     {
+       // Debug.Log(m_changeState + "  " + manager.isRopeCancleRebound);
         if (m_changeState)
             return;
 
-        if (!manager.isRopeCancleRebound || !manager.isRopeRebound)
+        if (!manager.isRopeCancleRebound && !manager.isRopeRebound)
         {
             if (Mathf.Abs(manager.inputPlayer.moveDir.x) >= 0.0f)
                 manager.Run(1.0f, true);
@@ -32,7 +33,8 @@ public class MovementRopeState : I_MovementState
         else if(manager.isRopeCancleRebound)
         {
             manager.Resistance(manager.movementData.resistanceInAirAmount);
-            manager.Run(manager.movementData.ropeCancleReboundRunLerp, false);
+            Debug.Log("CancleRun " + manager.inputPlayer.moveDir);
+            manager.Run(1.0f, true);
 
         }
 
@@ -45,7 +47,7 @@ public class MovementRopeState : I_MovementState
         if (m_changeState)
             return;
         ReboundUpdate(manager);
-
+        ChangeStaetUpdate(manager);
     }
 
 
@@ -98,7 +100,7 @@ public class MovementRopeState : I_MovementState
 
     private bool CanCancleJump(A_MovementManager manager)
     {
-        return !manager.isRopeCancleRebound && manager.coyoteSystem.lastOnCancleRopeJump > 0.0f;
+        return !manager.isRopeCancleRebound && manager.coyoteSystem.lastOnCancleRopeJump > 0.0f  && !manager.IsGrounded();
     }
     #endregion
 
@@ -125,8 +127,9 @@ public class MovementRopeState : I_MovementState
         if (!isRight)
             reboundDir *= -1.0f;
 
-        float reboundPower = manager.movementData.ropeReboundPower + Mathf.Abs(manager.rig2D.velocity.x);
+        float reboundPower = manager.movementData.ropeReboundPower;
 
+        manager.rig2D.velocity = Vector2.zero;
 
 
         Debug.Log("Rebound");
@@ -154,7 +157,7 @@ public class MovementRopeState : I_MovementState
 
     private void ChangeStaetUpdate(A_MovementManager manager)
     {
-        if (manager.shooter.isNoneGrappling)
+        if (manager.shooter.isNoneGrappling && !manager.isRopeCancleRebound)
             ChangeStae(manager);
     }
 

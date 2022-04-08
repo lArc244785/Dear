@@ -36,8 +36,8 @@ MonoBehaviour:
   m_wallSlideVelocity: 0.8
   m_climbingAccel: 8
   m_climbingDeccel: 13
-  m_ropeReboundPower: 10
+  m_ropeReboundPower: 50
   m_ropeReboundCoolTime: 0
-  m_ropeCancleJumpForce: {x: 8, y: 10}
+  m_ropeCancleJumpForce: {x: 0, y: 5}
   m_ropeCancleReboundTime: 0.5
   m_ropeCancleReboundRunLerp: 0.5
