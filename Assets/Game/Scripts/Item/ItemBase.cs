@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ItemBase
 {
-    void Use(Unit_Player player);
+    void Use(UnitPlayer player);
 }

@@ -2,37 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaImfectSwamp : AreaImfectBase
+public class AreaImfectSwamp : InteractionBase
 {
     [SerializeField]
-    private float m_attenuationX;
+    MovementData m_areaMovementData;
+    private MovementData m_beforeMovementData;
 
-    public override void Movement(MovementMangerBase mmb)
+    private A_MovementManager movementManager;
+
+    protected override void Enter(Collider2D collision)
     {
-        base.Movement(mmb);
+        base.Enter(collision);
 
-        if (mmb.moveDir == Vector2.zero)
-            return;
-        if (Mathf.Abs(mmb.rig2D.velocity.x) <= Mathf.Epsilon)
-            return;
-            
-        Vector2 attenuation = new Vector2(m_attenuationX, 0.0f);
-        attenuation *= mmb.lookDirX;
+        movementManager = collision.GetComponent<A_MovementManager>();
 
-        mmb.rig2D.velocity -= attenuation;
+        m_beforeMovementData = movementManager.movementData;
+
+        movementManager.movementData = m_areaMovementData;
 
     }
 
-    protected override void EnterUnitSetting(UnitBase unit)
+    protected override void Exit(Collider2D collision)
     {
-        base.EnterUnitSetting(unit);
-        //unit.isJump = false;
-    }
+        base.Exit(collision);
 
-    protected override void ExitUnitSetting(UnitBase unit)
-    {
-        base.ExitUnitSetting(unit);
-        //unit.isJump = true;
+        movementManager.movementData = m_beforeMovementData;
     }
 
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WallSensorManager : MonoBehaviour
@@ -33,37 +31,30 @@ public class WallSensorManager : MonoBehaviour
         }
     }
 
-    public bool isRightSensorGrounded
+    public bool IsRightSensorGrounded()
     {
-        get
-        {
-            bool isGrounded = false;
-            foreach (RaySensor sensor in m_rightSensors)
-                isGrounded = sensor.isWallGrounded;
-            return isGrounded;
-        }
+        bool isGrounded = false;
+        foreach (RaySensor sensor in m_rightSensors)
+            isGrounded = sensor.isWallGrounded;
+        return isGrounded;
+
     }
-
-
-    public bool isLeftSensorGrounded
+    public bool IsLeftSensorGrounded()
     {
-        get
-        {
-            bool isGrounded = false;
-            foreach (RaySensor sensor in m_leftSensors)
-                isGrounded = sensor.isWallGrounded;
-            return isGrounded;
-        }
+        bool isGrounded = false;
+        foreach (RaySensor sensor in m_leftSensors)
+            isGrounded = sensor.isWallGrounded;
+        return isGrounded;
     }
-
     public bool UpSensorGrounded()
     {
         return m_rightSensors[0].isWallGrounded || m_leftSensors[0].isWallGrounded;
     }
-
-
     public bool DownSensorGrounded()
     {
         return m_rightSensors[1].isWallGrounded || m_leftSensors[1].isWallGrounded;
     }
+
+
+
 }

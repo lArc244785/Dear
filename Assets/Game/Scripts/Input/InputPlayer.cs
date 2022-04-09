@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputPlayer : MonoBehaviour
 {
     [SerializeField]
-    private PlayerMovement m_movement;
+    private A_MovementManager m_MovementManager;
     [SerializeField]
     private GrapplingShooter m_shooter;
 
@@ -14,13 +14,12 @@ public class InputPlayer : MonoBehaviour
 
     public void JumpEnter()
     {
-
-        m_movement.OnJumpEnter();
+        m_MovementManager.coyoteSystem.OnJumpEnterTime();        
     }
 
     public void JumpUp()
-    { 
-        m_movement.OnJumpUp();  
+    {
+         m_MovementManager.coyoteSystem.OnJumpExitTime();
     }
 
     public void JumpPressed()
@@ -31,12 +30,12 @@ public class InputPlayer : MonoBehaviour
 
     public void WallGripEnter()
     {
-        m_movement.OnWallGripEnter();
+        m_MovementManager.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
-        m_movement.OnWallGripUp();
+        m_MovementManager.isWallGrip = false;
     }
 
     public void LeftMouseEnter()
@@ -51,14 +50,18 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundRight()
     {
-        if(m_movement.isRope)
-            m_movement.Rebound(true);
+        if (m_MovementManager.currentState != A_MovementManager.State.Rope)
+            return;
+        m_MovementManager.isRopeReboundDirRight = true;
+        m_MovementManager.coyoteSystem.OnRopeReboundTime();
     }
 
     public void ReboundLeft()
     {
-        if (m_movement.isRope)
-            m_movement.Rebound(false);
+        if (m_MovementManager.currentState != A_MovementManager.State.Rope)
+            return;
+        m_MovementManager.isRopeReboundDirRight = false;
+        m_MovementManager.coyoteSystem.OnRopeReboundTime();
     }
 
 

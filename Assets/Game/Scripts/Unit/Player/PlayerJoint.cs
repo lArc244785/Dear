@@ -17,7 +17,7 @@ public class PlayerJoint : MonoBehaviour
     private Rigidbody2D m_handRig2D;
 
     [SerializeField]
-    private ShoulderMovement m_shoulderMovement;
+    private Shoulder m_shoulderMovement;
 
     public void Start()
     {

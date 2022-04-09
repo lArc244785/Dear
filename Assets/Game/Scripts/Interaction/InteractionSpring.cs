@@ -11,7 +11,7 @@ public class InteractionSpring : InteractionBase
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-        PlayerMovement movement = collision.GetComponent<PlayerMovement>(); ;
+        A_MovementManager movement = collision.GetComponent<A_MovementManager>(); ;
         Rigidbody2D rig2D = movement.rig2D;
 
         float power = m_power;
