@@ -73,4 +73,4 @@ MonoBehaviour:
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
-  m_attenuationX: 5
+  m_areaMovementData: {fileID: 11400000, guid: c51247902f3ba4f4b938d27c55d78a09, type: 2}
