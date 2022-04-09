@@ -41,7 +41,7 @@ public class Interaction_ConveyerBelt_Y : InteractionBase
         {
             m_unitRig2D.AddForce((Vector2.up*m_dirY) * m_maxSpeed);
         }
-        else
+        else if(!m_movementManager.isWallJump)
         {
             m_unitRig2D.velocity = Vector2.zero;
         }
