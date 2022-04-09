@@ -50,16 +50,16 @@ public class MovementGroundState : I_MovementState
 
     private void JumpUpdate(A_MovementManager manager)
     {
-        if(CanJump(manager.coyoteSystem))
+        if(CanJump(manager))
         {
             manager.Jump(manager.movementData.jumpForce);
             manager.currentState = A_MovementManager.State.Air;
         }
     }
 
-    private bool CanJump(CoyoteSystem coyoteSystem)
+    private bool CanJump(A_MovementManager manager)
     {
-        return coyoteSystem.lastJumpEnterTime > 0.0f && coyoteSystem.lastOnGroundTime > 0.0f;
+        return manager.coyoteSystem.lastJumpEnterTime > 0.0f && manager.coyoteSystem.lastOnGroundTime > 0.0f && manager.movementData.maxJumpCount > 0;
     }
 
 

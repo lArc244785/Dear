@@ -122,6 +122,10 @@ public class MovementData : ScriptableObject
 
 	[Header("Climbing")]
 	[SerializeField]
+	private float m_climbingMaxSpeed;
+	public float climbingMaxSpeed { get { return m_climbingMaxSpeed; } }
+
+	[SerializeField]
 	private float m_climbingAccel;
 	public float climbingAccel { get { return m_climbingAccel; } }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class A_MovementManager : MonoBehaviour
@@ -18,15 +16,18 @@ public class A_MovementManager : MonoBehaviour
     public InputPlayer inputPlayer { get { return m_inputPlayer; } }
     #endregion
 
-    #region Shooter
-    [SerializeField]
-    private GrapplingShooter m_shooter;
-    public GrapplingShooter shooter 
-    { 
+    #region UnitBase
+    private UnitPlayer m_playerManager;
+    public UnitPlayer playerManager
+    {
+        set
+        {
+            m_playerManager = value;
+        }
         get
         {
-            return m_shooter;
-        } 
+            return m_playerManager;
+        }
     }
     #endregion
 
@@ -34,13 +35,23 @@ public class A_MovementManager : MonoBehaviour
     [Header("MovementData")]
     [SerializeField]
     private MovementData m_movementData;
-    public MovementData movementData { get { return m_movementData; } }
+    public MovementData movementData
+    {
+        set
+        {
+            m_movementData = value;
+        }
+        get
+        {
+            return m_movementData;
+        }
+    }
     #endregion
 
     #region State
     public enum State
     {
-        None = -1,Ground, Air, Wall,Rope,
+        None = -1, Ground, Air, Wall, Rope,
         Total
     }
 
@@ -66,12 +77,14 @@ public class A_MovementManager : MonoBehaviour
         }
     }
 
-    
+
     public bool isJump { set; get; }
 
     public bool isWallJump { set; get; }
     public bool isWallSilde { set; get; }
+
     public bool isWallGrip { set; get; }
+    public bool isWallGripInteraction { set; get; }
 
     public bool isRopeCancleRebound { set; get; }
     public bool isRopeRebound { set; get; }
@@ -101,16 +114,16 @@ public class A_MovementManager : MonoBehaviour
 
     #region JumpCount
     private float m_jumpCount;
-    public float jumpCount 
-    { 
-        get 
-        { 
-            return m_jumpCount; 
-        } 
-        set 
-        { 
-            m_jumpCount = Mathf.Clamp(value, 0, m_movementData.maxJumpCount); 
-        } 
+    public float jumpCount
+    {
+        get
+        {
+            return m_jumpCount;
+        }
+        set
+        {
+            m_jumpCount = Mathf.Clamp(value, 0, m_movementData.maxJumpCount);
+        }
     }
     #endregion
 
@@ -123,14 +136,12 @@ public class A_MovementManager : MonoBehaviour
     #endregion
 
 
-    private void Start()
-    {
-        Init();
-    }
 
-    public void Init()
+    public void Init(UnitPlayer unit)
     {
         StatesInit();
+
+        playerManager = unit;
 
         m_coyoteSystem = new CoyoteSystem();
         m_coyoteSystem.Init(m_movementData);
@@ -196,7 +207,7 @@ public class A_MovementManager : MonoBehaviour
         return m_wallSensor.IsLeftSensorGrounded();
     }
 
-   public void Run(float lerpAmount, bool isGetInput)
+    public void Run(float lerpAmount, bool isGetInput)
     {
         float inputMoveDirX = 0.0f;
         if (isGetInput)
@@ -307,5 +318,23 @@ public class A_MovementManager : MonoBehaviour
         {
             return m_oldLookDir;
         }
+    }
+
+    public void Climbing(float maxSpeed, float dirY)
+    {
+        float targetSpeed = dirY * movementData.runMaxSpeed;
+
+        float speedDif = targetSpeed - rig2D.velocity.y;
+        float accleRate = targetSpeed > 0.01f ? movementData.climbingAccel : movementData.climbingDeccel;
+        float velocityPower = movementData.accelPower;
+
+        if (Mathf.Abs(rig2D.velocity.y) > Mathf.Abs(targetSpeed))
+            accleRate = 0.0f;
+
+        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accleRate, velocityPower) * Mathf.Sign(speedDif);
+        Debug.Log(movement);
+
+        Debug.Log("Climbing");
+        rig2D.AddForce(movement * Vector2.up);
     }
 }

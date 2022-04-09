@@ -16,7 +16,7 @@ public class ItemJump : InteractionBase, ItemBase
     }
 
 
-    public void Use(Unit_Player player)
+    public void Use(UnitPlayer player)
     {
 
     }

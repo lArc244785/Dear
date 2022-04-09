@@ -23,7 +23,7 @@ public class MovementWallState : I_MovementState
         {
             manager.Run(manager.movementData.wallJumpRunLerp, true);
         }
-        else if (manager.isWallGrip)
+        else if (manager.isWallGrip || manager.isWallGripInteraction)
         {
             ClimbingUpdate(manager);
         }
@@ -76,7 +76,7 @@ public class MovementWallState : I_MovementState
     {
         manager.Resistance(manager.movementData.frictionAmount);
         if (CanClimbing(manager))
-            Climbing(manager);
+            manager.Climbing(manager.movementData.climbingMaxSpeed, manager.inputPlayer.moveDir.y);
     }
 
     private bool CanClimbing(A_MovementManager manager)
@@ -88,23 +88,7 @@ public class MovementWallState : I_MovementState
     }
 
 
-    private void Climbing(A_MovementManager manager)
-    {
-        float targetSpeed = manager.inputPlayer.moveDir.y * manager.movementData.runMaxSpeed;
 
-        float speedDif = targetSpeed - manager.rig2D.velocity.y;
-        float accleRate = targetSpeed > 0.01f ? manager.movementData.climbingAccel : manager.movementData.climbingDeccel;
-        float velocityPower = manager.movementData.accelPower;
-
-        if (Mathf.Abs(manager.rig2D.velocity.y) > Mathf.Abs(targetSpeed))
-            accleRate = 0.0f;
-
-        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accleRate, velocityPower) * Mathf.Sign(speedDif);
-        Debug.Log(movement);
-
-        Debug.Log("Climbing");
-        manager.rig2D.AddForce(movement * Vector2.up);
-    }
 
 
     private void TimeUpdate(CoyoteSystem coyoteSystem)
@@ -188,7 +172,7 @@ public class MovementWallState : I_MovementState
 
     private void GravityUpdate(A_MovementManager manager)
     {
-        if (manager.isWallGrip && !manager.isWallJump)
+        if ((manager.isWallGrip || manager.isWallGripInteraction) && !manager.isWallJump)
             manager.SetGravity(0.0f);
         else
             manager.SetGravity(manager.movementData.gravityScale);

@@ -157,7 +157,7 @@ public class MovementRopeState : I_MovementState
 
     private void ChangeStaetUpdate(A_MovementManager manager)
     {
-        if (manager.shooter.isNoneGrappling && !manager.isRopeCancleRebound)
+        if (manager.playerManager.grapplingShooter.isNoneGrappling && !manager.isRopeCancleRebound)
             ChangeStae(manager);
     }
 
