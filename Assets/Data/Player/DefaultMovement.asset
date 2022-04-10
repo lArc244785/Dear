@@ -17,7 +17,7 @@ MonoBehaviour:
   m_resistanceInAirAmount: 0.1
   m_frictionAmount: 0.85
   m_coyoteTime: 0.1
-  m_runMaxSpeed: 10
+  m_runMaxSpeed: 13
   m_runAccel: 9
   m_runDeccel: 15
   m_accelInAir: 0.65
@@ -30,14 +30,15 @@ MonoBehaviour:
   m_jumpBufferTime: 0.08
   m_maxJumpCount: 1
   m_airJumpForce: 8
-  m_wallJumpForce: {x: 10, y: 14}
+  m_wallJumpForce: {x: 10, y: 15}
   m_wallJumpRunLerp: 0.3
   m_wallJumpTime: 0.35
   m_wallSlideVelocity: 0.8
+  m_climbingMaxSpeed: 0
   m_climbingAccel: 8
   m_climbingDeccel: 13
-  m_ropeReboundPower: 50
-  m_ropeReboundCoolTime: 0
+  m_ropeReboundPower: 30
+  m_ropeReboundCoolTime: 1
   m_ropeCancleJumpForce: {x: 0, y: 5}
   m_ropeCancleReboundTime: 0.5
   m_ropeCancleReboundRunLerp: 0.5
