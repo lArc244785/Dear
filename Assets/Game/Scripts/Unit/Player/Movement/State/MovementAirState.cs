@@ -1,22 +1,22 @@
 public class MovementAirState : I_MovementState
 {
-    public void Enter(A_MovementManager manager)
+    public void Enter(PlayerMovementManager manager)
     {
        
     }
 
-    public void Exit(A_MovementManager manager)
+    public void Exit(PlayerMovementManager manager)
     {
         manager.coyoteSystem.ResetJumpExitTime();
     }
 
-    public void FixedExcute(A_MovementManager manager)
+    public void FixedExcute(PlayerMovementManager manager)
     {
         manager.Resistance(manager.movementData.resistanceInAirAmount);
         manager.Run(1.0f, true);
     }
 
-    public void UpdateExcute(A_MovementManager manager)
+    public void UpdateExcute(PlayerMovementManager manager)
     {
         TimeUpdate(manager.coyoteSystem);
         GracityUpdate(manager);
@@ -39,20 +39,20 @@ public class MovementAirState : I_MovementState
 
 
 
-    private void ChangeState(A_MovementManager manager)
+    private void ChangeState(PlayerMovementManager manager)
     {
         if (manager.IsWallGrouned())
-            manager.currentState = A_MovementManager.State.Wall;
+            manager.currentState = PlayerMovementManager.State.Wall;
         else if(!manager.isJump && manager.IsGrounded())
         {
             manager.jumpCount = 0;
-            manager.currentState = A_MovementManager.State.Ground;
+            manager.currentState = PlayerMovementManager.State.Ground;
         }
 
     }
 
 
-    private void GracityUpdate(A_MovementManager manager)
+    private void GracityUpdate(PlayerMovementManager manager)
     {
         if (manager.rig2D.velocity.y < 0.0f)
             manager.SetGravity(manager.movementData.gravityScale * manager.movementData.fallGravityMult);
@@ -60,7 +60,7 @@ public class MovementAirState : I_MovementState
             manager.SetGravity(manager.movementData.gravityScale);
     }
 
-    private void JumpUpdate(A_MovementManager manager)
+    private void JumpUpdate(PlayerMovementManager manager)
     {
         if (manager.isJump && manager.rig2D.velocity.y <= 0.0f)
         {
@@ -80,14 +80,14 @@ public class MovementAirState : I_MovementState
 
     }
 
-    private bool CanAirJump(A_MovementManager manager)
+    private bool CanAirJump(PlayerMovementManager manager)
     {
         return !manager.isJump &&
             manager.jumpCount < manager.movementData.maxJumpCount &&
             manager.coyoteSystem.lastJumpEnterTime > 0.0f;
     }
 
-    private bool CanJumpCut(A_MovementManager manager)
+    private bool CanJumpCut(PlayerMovementManager manager)
     {
         return
             manager.coyoteSystem.lastJumpExitTime > 0.0f &&

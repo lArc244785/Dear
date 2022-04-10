@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class A_MovementManager : MonoBehaviour
+public class PlayerMovementManager : MonoBehaviour
 {
     #region Rigidbody
     [Header("Rigidbody")]

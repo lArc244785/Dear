@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class MovementGroundState : I_MovementState
 {
-    public void Enter(A_MovementManager manager)
+    public void Enter(PlayerMovementManager manager)
     {
         manager.SetGravity(manager.movementData.gravityScale);
     }
 
-    public void Exit(A_MovementManager manager)
+    public void Exit(PlayerMovementManager manager)
     {
         
     }
 
-    public void FixedExcute(A_MovementManager manager)
+    public void FixedExcute(PlayerMovementManager manager)
     {
         manager.Resistance(manager.movementData.frictionAmount);
         manager.Run(1.0f, true);
     }
 
-    public void UpdateExcute(A_MovementManager manager)
+    public void UpdateExcute(PlayerMovementManager manager)
     {
         TimeUpdate(manager.coyoteSystem);
         PhysicUpdate(manager.groundSensor,manager.coyoteSystem);
@@ -31,7 +31,7 @@ public class MovementGroundState : I_MovementState
 
 
         if (manager.coyoteSystem.lastOnGroundTime <= 0.0f)
-            manager.currentState = A_MovementManager.State.Air;
+            manager.currentState = PlayerMovementManager.State.Air;
     }
 
     private void TimeUpdate(CoyoteSystem coyoteSystem)
@@ -48,16 +48,16 @@ public class MovementGroundState : I_MovementState
         }
     }
 
-    private void JumpUpdate(A_MovementManager manager)
+    private void JumpUpdate(PlayerMovementManager manager)
     {
         if(CanJump(manager))
         {
             manager.Jump(manager.movementData.jumpForce);
-            manager.currentState = A_MovementManager.State.Air;
+            manager.currentState = PlayerMovementManager.State.Air;
         }
     }
 
-    private bool CanJump(A_MovementManager manager)
+    private bool CanJump(PlayerMovementManager manager)
     {
         return manager.coyoteSystem.lastJumpEnterTime > 0.0f && manager.coyoteSystem.lastOnGroundTime > 0.0f && manager.movementData.maxJumpCount > 0;
     }

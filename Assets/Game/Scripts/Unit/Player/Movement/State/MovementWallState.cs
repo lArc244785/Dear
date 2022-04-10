@@ -4,18 +4,18 @@ public class MovementWallState : I_MovementState
 {
     private float m_wallJumpStartTime;
 
-    public void Enter(A_MovementManager manager)
+    public void Enter(PlayerMovementManager manager)
     {
         manager.coyoteSystem.ResetJumpEnterTime();
         manager.rig2D.velocity = new Vector2(manager.rig2D.velocity.x, 0.0f);
     }
 
-    public void Exit(A_MovementManager manager)
+    public void Exit(PlayerMovementManager manager)
     {
 
     }
 
-    public void FixedExcute(A_MovementManager manager)
+    public void FixedExcute(PlayerMovementManager manager)
     {
         manager.Resistance(manager.movementData.resistanceInAirAmount);
 
@@ -38,7 +38,7 @@ public class MovementWallState : I_MovementState
 
 
 
-    public void UpdateExcute(A_MovementManager manager)
+    public void UpdateExcute(PlayerMovementManager manager)
     {
         TimeUpdate(manager.coyoteSystem);
 
@@ -51,7 +51,7 @@ public class MovementWallState : I_MovementState
         ChangeState(manager);
     }
 
-    private void PhysicesUpdate(A_MovementManager manager)
+    private void PhysicesUpdate(PlayerMovementManager manager)
     {
         if (!manager.isWallJump)
         {
@@ -72,14 +72,14 @@ public class MovementWallState : I_MovementState
 
     }
 
-    private void ClimbingUpdate(A_MovementManager manager)
+    private void ClimbingUpdate(PlayerMovementManager manager)
     {
         manager.Resistance(manager.movementData.frictionAmount);
         if (CanClimbing(manager))
             manager.Climbing(manager.movementData.climbingMaxSpeed, manager.inputPlayer.moveDir.y);
     }
 
-    private bool CanClimbing(A_MovementManager manager)
+    private bool CanClimbing(PlayerMovementManager manager)
     {
         float moveDirY = manager.inputPlayer.moveDir.y;
 
@@ -105,7 +105,7 @@ public class MovementWallState : I_MovementState
 
     }
 
-    private void WallSildeUpdate(A_MovementManager manager)
+    private void WallSildeUpdate(PlayerMovementManager manager)
     {
         manager.isWallSilde = false;
 
@@ -117,7 +117,7 @@ public class MovementWallState : I_MovementState
         }
     }
 
-    private void WallJumpUpdate(A_MovementManager manager)
+    private void WallJumpUpdate(PlayerMovementManager manager)
     {
         if (manager.isWallJump)
         {
@@ -139,7 +139,7 @@ public class MovementWallState : I_MovementState
 
     }
 
-    private bool CanWallJump(A_MovementManager manager)
+    private bool CanWallJump(PlayerMovementManager manager)
     {
         return
             manager.coyoteSystem.lastJumpEnterTime > 0.0f &&
@@ -148,17 +148,17 @@ public class MovementWallState : I_MovementState
     }
 
 
-    private void ChangeState(A_MovementManager manager)
+    private void ChangeState(PlayerMovementManager manager)
     {
         if (manager.coyoteSystem.lastOnWallTime < 0.0f && !manager.isWallJump)
         {
-            manager.currentState = A_MovementManager.State.Air;
+            manager.currentState = PlayerMovementManager.State.Air;
         }
         else if (manager.IsGrounded())
-            manager.currentState = A_MovementManager.State.Ground;
+            manager.currentState = PlayerMovementManager.State.Ground;
     }
 
-    private void RunUpdate(A_MovementManager manager)
+    private void RunUpdate(PlayerMovementManager manager)
     {
         if (!manager.isWallJump)
         {
@@ -170,7 +170,7 @@ public class MovementWallState : I_MovementState
         }
     }
 
-    private void GravityUpdate(A_MovementManager manager)
+    private void GravityUpdate(PlayerMovementManager manager)
     {
         if ((manager.isWallGrip || manager.isWallGripInteraction) && !manager.isWallJump)
             manager.SetGravity(0.0f);
@@ -178,7 +178,7 @@ public class MovementWallState : I_MovementState
             manager.SetGravity(manager.movementData.gravityScale);
     }
 
-    private void WallJump(int dir, A_MovementManager manager)
+    private void WallJump(int dir, PlayerMovementManager manager)
     {
         Debug.Log("WallJump | Dir: " + dir);
         Vector2 force = manager.movementData.wallJumpForce;

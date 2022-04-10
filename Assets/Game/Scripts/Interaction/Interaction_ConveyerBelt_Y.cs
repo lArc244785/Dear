@@ -11,13 +11,13 @@ public class Interaction_ConveyerBelt_Y : InteractionBase
 
 
     private Rigidbody2D m_unitRig2D;
-    private A_MovementManager m_movementManager;
+    private PlayerMovementManager m_movementManager;
 
 
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-        m_movementManager = collision.GetComponent<A_MovementManager>();
+        m_movementManager = collision.GetComponent<PlayerMovementManager>();
         m_unitRig2D = m_movementManager.rig2D;
         m_movementManager.isWallGripInteraction = true;
 

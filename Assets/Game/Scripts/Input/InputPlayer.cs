@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputPlayer : MonoBehaviour
 {
     [SerializeField]
-    private A_MovementManager m_MovementManager;
+    private PlayerMovementManager m_MovementManager;
     [SerializeField]
     private GrapplingShooter m_shooter;
 
@@ -50,7 +50,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundRight()
     {
-        if (m_MovementManager.currentState != A_MovementManager.State.Rope)
+        if (m_MovementManager.currentState != PlayerMovementManager.State.Rope)
             return;
         m_MovementManager.isRopeReboundDirRight = true;
         m_MovementManager.coyoteSystem.OnRopeReboundTime();
@@ -58,7 +58,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundLeft()
     {
-        if (m_MovementManager.currentState != A_MovementManager.State.Rope)
+        if (m_MovementManager.currentState != PlayerMovementManager.State.Rope)
             return;
         m_MovementManager.isRopeReboundDirRight = false;
         m_MovementManager.coyoteSystem.OnRopeReboundTime();
