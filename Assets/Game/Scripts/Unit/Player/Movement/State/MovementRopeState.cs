@@ -8,18 +8,18 @@ public class MovementRopeState : I_MovementState
     private float reboundJumpEnterTime { set; get; }
     private bool m_changeState = false;
 
-    public void Enter(A_MovementManager manager)
+    public void Enter(PlayerMovementManager manager)
     {
         manager.isRopeCancleRebound = false;
         m_changeState = false;
     }
 
-    public void Exit(A_MovementManager manager)
+    public void Exit(PlayerMovementManager manager)
     {
 
     }
 
-    public void FixedExcute(A_MovementManager manager)
+    public void FixedExcute(PlayerMovementManager manager)
     {
        // Debug.Log(m_changeState + "  " + manager.isRopeCancleRebound);
         if (m_changeState)
@@ -40,7 +40,7 @@ public class MovementRopeState : I_MovementState
 
     }
 
-    public void UpdateExcute(A_MovementManager manager)
+    public void UpdateExcute(PlayerMovementManager manager)
     {
         TimeUpdate(manager.coyoteSystem);
         CancleJumpUpdate(manager);
@@ -52,7 +52,7 @@ public class MovementRopeState : I_MovementState
 
 
     #region CancleJump
-    private void CancleJumpUpdate(A_MovementManager manager)
+    private void CancleJumpUpdate(PlayerMovementManager manager)
     {
         if (manager.isRopeCancleRebound)
         {
@@ -75,7 +75,7 @@ public class MovementRopeState : I_MovementState
         }
     }
 
-    private void CancleReboundJump(int dir, A_MovementManager manager)
+    private void CancleReboundJump(int dir, PlayerMovementManager manager)
     {
         Debug.Log("CancleReboundJump");
         Vector2 force = manager.movementData.ropeCancleJumpForce;
@@ -98,7 +98,7 @@ public class MovementRopeState : I_MovementState
 
     }
 
-    private bool CanCancleJump(A_MovementManager manager)
+    private bool CanCancleJump(PlayerMovementManager manager)
     {
         return !manager.isRopeCancleRebound && manager.coyoteSystem.lastOnCancleRopeJump > 0.0f  && !manager.IsGrounded();
     }
@@ -106,7 +106,7 @@ public class MovementRopeState : I_MovementState
 
     #region Rebound
 
-    private void ReboundUpdate(A_MovementManager manager)
+    private void ReboundUpdate(PlayerMovementManager manager)
     {
         if(manager.isRopeRebound)
         {
@@ -121,7 +121,7 @@ public class MovementRopeState : I_MovementState
         }
     }
 
-    private void Rebound(bool isRight, A_MovementManager manager)
+    private void Rebound(bool isRight, PlayerMovementManager manager)
     {
         Vector2 reboundDir = Vector2.right;
         if (!isRight)
@@ -142,7 +142,7 @@ public class MovementRopeState : I_MovementState
 
     }
 
-    private bool CanRebound(A_MovementManager manager)
+    private bool CanRebound(PlayerMovementManager manager)
     {
         return !manager.isRopeRebound && manager.coyoteSystem.lastOnRopeReboundTime > 0.0f;
     }
@@ -155,18 +155,18 @@ public class MovementRopeState : I_MovementState
         coyoteSystem.RopeReboundCototeTime();
     }
 
-    private void ChangeStaetUpdate(A_MovementManager manager)
+    private void ChangeStaetUpdate(PlayerMovementManager manager)
     {
         if (manager.playerManager.grapplingShooter.isNoneGrappling && !manager.isRopeCancleRebound)
             ChangeStae(manager);
     }
 
-    private void ChangeStae(A_MovementManager manager)
+    private void ChangeStae(PlayerMovementManager manager)
     {
         if (!manager.IsGrounded())
-            manager.currentState = A_MovementManager.State.Air;
+            manager.currentState = PlayerMovementManager.State.Air;
         else
-            manager.currentState = A_MovementManager.State.Ground;
+            manager.currentState = PlayerMovementManager.State.Ground;
         m_changeState = true;
     }
 }

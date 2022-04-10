@@ -8,13 +8,13 @@ public class AreaImfectSwamp : InteractionBase
     MovementData m_areaMovementData;
     private MovementData m_beforeMovementData;
 
-    private A_MovementManager movementManager;
+    private PlayerMovementManager movementManager;
 
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
 
-        movementManager = collision.GetComponent<A_MovementManager>();
+        movementManager = collision.GetComponent<PlayerMovementManager>();
 
         m_beforeMovementData = movementManager.movementData;
 

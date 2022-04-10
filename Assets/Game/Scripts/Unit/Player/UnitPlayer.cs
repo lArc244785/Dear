@@ -3,8 +3,8 @@ using UnityEngine;
 public class UnitPlayer : UnitBase
 {
     [SerializeField]
-    private A_MovementManager m_movement;
-    public A_MovementManager movement
+    private PlayerMovementManager m_movement;
+    public PlayerMovementManager movement
     {
         get
         {

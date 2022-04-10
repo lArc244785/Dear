@@ -2,13 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AreaImfectBase : InteractionBase, I_AddMovement
+public abstract class AreaImfectBase : InteractionBase
 {
 
-    //SubClass에서 구현해줘야됩니다.
-    public virtual void Movement(MovementMangerBase mmb)
-    {
-    }
 
     protected override void Enter(Collider2D collision)
     {

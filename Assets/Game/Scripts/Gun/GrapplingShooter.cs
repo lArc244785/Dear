@@ -7,7 +7,7 @@ public class GrapplingShooter : MonoBehaviour
     [SerializeField]
     private GrapplingGun m_grpplingGun;
     [SerializeField]
-    private A_MovementManager m_movementManager;
+    private PlayerMovementManager m_movementManager;
 
     private void Start()
     {
@@ -64,14 +64,14 @@ public class GrapplingShooter : MonoBehaviour
 
     public bool CanShoot()
     {
-        return m_movementManager.currentState == A_MovementManager.State.Ground ||
-            m_movementManager.currentState == A_MovementManager.State.Air ||
-            m_movementManager.currentState == A_MovementManager.State.Rope;
+        return m_movementManager.currentState == PlayerMovementManager.State.Ground ||
+            m_movementManager.currentState == PlayerMovementManager.State.Air ||
+            m_movementManager.currentState == PlayerMovementManager.State.Rope;
     }
 
     public void RopeMovementChange()
     {
-        m_movementManager.currentState = A_MovementManager.State.Rope;
+        m_movementManager.currentState = PlayerMovementManager.State.Rope;
     }
 
     public void CancleRopeRebound()

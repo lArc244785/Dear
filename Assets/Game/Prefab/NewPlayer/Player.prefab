@@ -353,10 +353,10 @@ GameObject:
   - component: {fileID: 8816093289123873398}
   - component: {fileID: 1492685596574932651}
   - component: {fileID: 8816093289123873388}
-  - component: {fileID: 8816093289123873378}
   - component: {fileID: 8816093289123873379}
   - component: {fileID: 8816093289123873376}
   - component: {fileID: 2667617176328235473}
+  - component: {fileID: 5117664990786437012}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: {fileID: 2667617176328235473}
-  m_movement: {fileID: 8816093289123873378}
+  m_movement: {fileID: 5117664990786437012}
   m_grapplingShooter: {fileID: 8816093289123873379}
   m_animation: {fileID: 4461072238202895379}
   m_shoulder: {fileID: 3289618913514186319}
@@ -447,27 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da385a8132c6aca488145ea3c1a2521f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementManager: {fileID: 8816093289123873378}
+  m_MovementManager: {fileID: 5117664990786437012}
   m_shooter: {fileID: 8816093289123873379}
---- !u!114 &8816093289123873378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8816093289123873390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940a018b462077748b0399c39723b28c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_rig2D: {fileID: 8816093289123873389}
-  m_inputPlayer: {fileID: 8816093289123873388}
-  m_movementData: {fileID: 11400000, guid: d974a7ea26c120b4382e82a04122f961, type: 2}
-  m_currentState: 0
-  m_groundSensor: {fileID: 8816093289278603217}
-  m_wallSensor: {fileID: 8671305844633974291}
-  m_modelTr: {fileID: 8816093290287426404}
 --- !u!114 &8816093289123873379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grpplingGun: {fileID: 8816093289685775874}
-  m_movementManager: {fileID: 8816093289123873378}
+  m_movementManager: {fileID: 5117664990786437012}
 --- !u!231 &8816093289123873376
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -517,6 +498,25 @@ MonoBehaviour:
   m_maxHP: 10
   m_model: {fileID: 8816093290287426405}
   m_color: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &5117664990786437012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816093289123873390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d912a1dd1f4ea428a2b205901fcb32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rig2D: {fileID: 8816093289123873389}
+  m_inputPlayer: {fileID: 8816093289123873388}
+  m_movementData: {fileID: 11400000, guid: d974a7ea26c120b4382e82a04122f961, type: 2}
+  m_currentState: 0
+  m_groundSensor: {fileID: 8816093289278603217}
+  m_wallSensor: {fileID: 8671305844633974291}
+  m_modelTr: {fileID: 8816093290287426404}
 --- !u!1 &8816093289278603218
 GameObject:
   m_ObjectHideFlags: 0
