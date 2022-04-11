@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class UnitPlayer : UnitBase
 {
@@ -42,11 +43,15 @@ public class UnitPlayer : UnitBase
         }
     }
 
+    [SerializeField]
+    private Transform m_model;
+    public Transform model { get { return m_model; } }
+
+
 
     public void Start()
     {
         Init();
-        health.Hit(1);
     }
 
 
@@ -57,9 +62,20 @@ public class UnitPlayer : UnitBase
 
         m_grapplingShooter.Init();
         m_shoulder.Init();
+
+        
     }
 
+    public override void HitEvent(Vector2 hitPoint)
+    {
+        base.HitEvent(hitPoint);
 
+        Vector2 hitToUnitDir = (Vector2)m_model.position - hitPoint;
+        hitToUnitDir.Normalize();
+
+        movement.HitMovement(hitToUnitDir);
+
+    }
 
 
 
