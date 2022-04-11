@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+
 
 public class Health : MonoBehaviour
 {
     [SerializeField]
     private int m_maxHP;
     private int m_hp;
-    [SerializeField]
-    private SpriteRenderer m_model;
 
+    [Header("Hit Ghost")]
     [SerializeField]
-    private Color m_color;
+    private float m_hitDuringTime;
+    [SerializeField]
+    private float m_ghostDuringTime;
 
-    public void Init()
+    [Header("GhostLayer")]
+    [SerializeField]
+    private int m_ghostLayer;
+
+    private int m_oldLayer;
+
+    private UnitBase m_unit;
+
+    public void Init(UnitBase unit)
     {
         hp = m_maxHP;
-
+        m_unit = unit;
     }
 
     private int hp
@@ -32,11 +41,19 @@ public class Health : MonoBehaviour
         }
     }
 
-   public void Hit(int damage)
+   public void Hit(int damage , Vector2 hitPoint)
     {
         Debug.Log("Hit");
         hp -= damage;
-        m_model.DOColor(m_color, 0.1f).SetLoops(10).OnComplete(() => { m_model.color = Color.white; });
+       
+        m_unit.HitEvent(hitPoint);
+        m_unit.stateImfect.HitImfect(m_hitDuringTime,m_ghostDuringTime);
+
+        UIManager.instance.inGameView.HitImageToggle(true);
+
+        float ghostDuringTime = m_hitDuringTime + m_ghostDuringTime;
+        GhostMode(ghostDuringTime);
+
 
     }
 
@@ -44,6 +61,18 @@ public class Health : MonoBehaviour
     {
         Debug.Log("Healing");
         hp += healing;
+    }
+
+    private void GhostMode(float duringTime)
+    {
+        m_oldLayer = gameObject.layer;
+        gameObject.layer = m_ghostLayer;
+        Invoke("GhostModeOff", duringTime);
+    }
+    private void GhostModeOff()
+    {
+        UIManager.instance.inGameView.HitImageToggle(false);
+        gameObject.layer = m_oldLayer;
     }
      
 }

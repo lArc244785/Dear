@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class GameManager : SingleToon<GameManager>
 {
     #region GameState
@@ -42,6 +42,9 @@ public class GameManager : SingleToon<GameManager>
             return false;
 
         GameStateInit();
+
+        DOTween.Init(false, false, LogBehaviour.Default);
+        DOTween.defaultAutoPlay = AutoPlay.None;
 
         return true;
     }
