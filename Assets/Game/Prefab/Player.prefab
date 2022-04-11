@@ -195,7 +195,7 @@ MonoBehaviour:
   m_springJoint2D: {fileID: 3510330267994889926}
   m_springRig2D: {fileID: 3510330267994889921}
   m_hook: {fileID: 3510330268367790461}
-  m_hookSpeed: 30
+  m_hookSpeed: 50
   m_ropeRenderer: {fileID: 3510330268571351363}
   m_firePoint: {fileID: 3510330267763109314}
   m_shouderMovement: {fileID: 7442530564426922723}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_pullMaxClampLength: 100
   m_pullFrequency: 2.5
   m_cancelMaxClampLength: 50
-  m_ropeMaxDistance: 15
+  m_ropeMaxDistance: 20
   m_rebound: {fileID: 7129407022097570006}
   m_reboundEvent:
     m_PersistentCalls:
@@ -345,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3510330267907384190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -1.484, z: 0}
+  m_LocalPosition: {x: -0.06, y: -1.561, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7129186677688056328}
@@ -1211,7 +1211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3654836426056621342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.553, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3654836427650710690}
@@ -1339,7 +1339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3654836426301105923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5529991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3654836426277558301}

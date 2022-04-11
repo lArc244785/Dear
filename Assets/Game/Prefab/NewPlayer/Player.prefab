@@ -714,7 +714,7 @@ MonoBehaviour:
   m_springJoint2D: {fileID: 8816093289123873376}
   m_springRig2D: {fileID: 8816093289123873389}
   m_hook: {fileID: 8816093290829004241}
-  m_hookSpeed: 30
+  m_hookSpeed: 50
   m_ropeRenderer: {fileID: 8816093290764117487}
   m_firePoint: {fileID: 8816093289420583278}
   m_shouderMovement: {fileID: 3289618913514186319}
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_pullMaxClampLength: 100
   m_pullFrequency: 2.5
   m_cancelMaxClampLength: 50
-  m_ropeMaxDistance: 15
+  m_ropeMaxDistance: 20
   m_rebound: {fileID: 2890889905456612474}
   m_reboundEvent:
     m_PersistentCalls:
