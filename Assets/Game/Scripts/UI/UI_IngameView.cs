@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_IngameView : UI_ViewBase
 {
+
     [SerializeField]
-    private UI_SlingShot m_slingShot;
+    private Image m_hitImage;
+    
+
 
     public override void Init()
     {
         base.Init();
-        slingShot.Init();
+        HitImageToggle(false);
     }
 
-    public UI_SlingShot slingShot
+   
+    public void HitImageToggle(bool toggle)
     {
-        get
-        {
-            return m_slingShot;
-        }
+        m_hitImage.gameObject.SetActive(toggle);
     }
-
   
 }

@@ -7,11 +7,20 @@ public abstract class UnitBase : MonoBehaviour
     [SerializeField]
     private Health m_health;
 
+    [SerializeField]
+    private StateImfectTween m_stateImfect;
+    public StateImfectTween stateImfect { get { return m_stateImfect; } }
+
+    [SerializeField]
+    private SpriteRenderer m_spriteRenderer;
+
+
     private bool m_control;
 
     protected virtual void Init()
     {
-        health.Init();
+        health.Init(this);
+        stateImfect.Init(m_spriteRenderer);
     }
 
     public bool isControl
@@ -38,5 +47,8 @@ public abstract class UnitBase : MonoBehaviour
     public Health health
         { get { return m_health; } }
 
+    public virtual void HitEvent(Vector2 hitPoint)
+    {
 
+    }
 }

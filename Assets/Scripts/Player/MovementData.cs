@@ -177,6 +177,20 @@ public class MovementData : ScriptableObject
 	private float m_ropeCancleReboundRunLerp;
 	public float ropeCancleReboundRunLerp { get { return m_ropeCancleReboundRunLerp; } }
 
+	[Header("Hit")]
+	[SerializeField]
+	private float m_hitImfectPower;
+	public float hitImfectPower { get { return m_hitImfectPower; } }
+
+	[SerializeField]
+	private float m_hitImfectDuringTime;
+	public float hitImfectDuringTime { get { return m_hitImfectDuringTime; } }
+
+	[SerializeField]
+	[Range(0.0f, 1.0f)]
+	private float m_hitImfectRunLerp;
+	public float hitImfectRunLerp { get { return m_hitImfectRunLerp; } }
+
 }
 
 
