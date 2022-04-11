@@ -49,6 +49,8 @@ public class Health : MonoBehaviour
         m_unit.HitEvent(hitPoint);
         m_unit.stateImfect.HitImfect(m_hitDuringTime,m_ghostDuringTime);
 
+        UIManager.instance.inGameView.HitImageToggle(true);
+
         float ghostDuringTime = m_hitDuringTime + m_ghostDuringTime;
         GhostMode(ghostDuringTime);
 
@@ -69,6 +71,7 @@ public class Health : MonoBehaviour
     }
     private void GhostModeOff()
     {
+        UIManager.instance.inGameView.HitImageToggle(false);
         gameObject.layer = m_oldLayer;
     }
      
