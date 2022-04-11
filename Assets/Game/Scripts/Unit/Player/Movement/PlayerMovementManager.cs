@@ -51,7 +51,7 @@ public class PlayerMovementManager : MonoBehaviour
     #region State
     public enum State
     {
-        None = -1, Ground, Air, Wall, Rope,
+        None = -1, Ground, Air, Wall, Rope,Hit,
         Total
     }
 
@@ -157,6 +157,7 @@ public class PlayerMovementManager : MonoBehaviour
         m_States[(int)State.Air] = new MovementAirState();
         m_States[(int)State.Wall] = new MovementWallState();
         m_States[(int)State.Rope] = new MovementRopeState();
+        m_States[(int)State.Hit] = new MovementHitState();
 
         currentState = State.Ground;
     }
@@ -336,5 +337,36 @@ public class PlayerMovementManager : MonoBehaviour
 
         Debug.Log("Climbing");
         rig2D.AddForce(movement * Vector2.up);
+    }
+
+    private Vector2 m_hitImfectDir;
+    public Vector2 hitImfectDir
+    {
+        private set
+        {
+            m_hitImfectDir = value;
+        }
+         get
+        {
+            return m_hitImfectDir;
+        }
+    }
+
+    public void VectorJump(Vector2 force)
+    {
+        if (Mathf.Sign(rig2D.velocity.x) != Mathf.Sign(force.x))
+            force.x -= rig2D.velocity.x;
+
+        if (rig2D.velocity.y < 0.0f)
+            force.y -= rig2D.velocity.y;
+        rig2D.AddForce(force, ForceMode2D.Impulse);
+    }
+
+
+
+    public void HitMovement(Vector2 imfectDir)
+    {
+        hitImfectDir = imfectDir;
+        currentState = State.Hit;
     }
 }

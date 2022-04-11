@@ -185,14 +185,17 @@ public class MovementWallState : I_MovementState
 
         force.x *= Mathf.Sign(dir);
 
-        if (Mathf.Sign(manager.rig2D.velocity.x) != Mathf.Sign(force.x))
-            force.x -= manager.rig2D.velocity.x;
+        //if (Mathf.Sign(manager.rig2D.velocity.x) != Mathf.Sign(force.x))
+        //    force.x -= manager.rig2D.velocity.x;
 
-        if (manager.rig2D.velocity.y < 0.0f)
-            force.y -= manager.rig2D.velocity.y;
+        //if (manager.rig2D.velocity.y < 0.0f)
+        //    force.y -= manager.rig2D.velocity.y;
 
 
-        manager.rig2D.AddForce(force, ForceMode2D.Impulse);
+        //manager.rig2D.AddForce(force, ForceMode2D.Impulse);
+
+        manager.VectorJump(force);
+
 
         if (manager.coyoteSystem.lastOnWallLeftTime > 0.0f)
             manager.Trun(Vector2.right);

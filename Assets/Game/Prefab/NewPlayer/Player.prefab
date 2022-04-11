@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 8816093289123873376}
   - component: {fileID: 2667617176328235473}
   - component: {fileID: 5117664990786437012}
+  - component: {fileID: 7260579055352357244}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -431,10 +432,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: {fileID: 2667617176328235473}
+  m_stateImfect: {fileID: 7260579055352357244}
+  m_spriteRenderer: {fileID: 8816093290287426405}
   m_movement: {fileID: 5117664990786437012}
   m_grapplingShooter: {fileID: 8816093289123873379}
   m_animation: {fileID: 4461072238202895379}
   m_shoulder: {fileID: 3289618913514186319}
+  m_model: {fileID: 8816093290287426404}
 --- !u!114 &8816093289123873388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,8 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHP: 10
-  m_model: {fileID: 8816093290287426405}
-  m_color: {r: 1, g: 0, b: 0, a: 1}
+  m_hitDuringTime: 0.5
+  m_ghostDuringTime: 1
+  m_ghostLayer: 0
 --- !u!114 &5117664990786437012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +522,22 @@ MonoBehaviour:
   m_groundSensor: {fileID: 8816093289278603217}
   m_wallSensor: {fileID: 8671305844633974291}
   m_modelTr: {fileID: 8816093290287426404}
+--- !u!114 &7260579055352357244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816093289123873390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27e9734dce2dcf4cb8d9a8c66f17e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitColor: {r: 1, g: 0, b: 0, a: 1}
+  m_hitTickTime: 0.1
+  m_ghostColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.44705883}
+  m_ghostTickTime: 0.1
 --- !u!1 &8816093289278603218
 GameObject:
   m_ObjectHideFlags: 0
