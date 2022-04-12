@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class MovementAirState : I_MovementState
 {
     public void Enter(PlayerMovementManager manager)
@@ -47,6 +49,20 @@ public class MovementAirState : I_MovementState
         {
             manager.jumpCount = 0;
             manager.currentState = PlayerMovementManager.State.Ground;
+
+            Collider2D groundCollider = manager.groundSensor.GetGroundCollider2D();
+
+            float value = 0.0f;
+            if (groundCollider.tag == "Forest")
+            {
+                value = 1.0f;
+            }
+            else if (groundCollider.tag == "Asphalt")
+            {
+                value = 2.0f;
+            }
+
+            manager.playerManager.sound.Landing(value);
         }
 
     }
