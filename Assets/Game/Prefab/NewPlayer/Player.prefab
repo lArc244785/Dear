@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 2667617176328235473}
   - component: {fileID: 5117664990786437012}
   - component: {fileID: 7260579055352357244}
+  - component: {fileID: 5770406820892802556}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -434,11 +435,13 @@ MonoBehaviour:
   m_health: {fileID: 2667617176328235473}
   m_stateImfect: {fileID: 7260579055352357244}
   m_spriteRenderer: {fileID: 8816093290287426405}
+  m_rig2D: {fileID: 8816093289123873389}
   m_movement: {fileID: 5117664990786437012}
   m_grapplingShooter: {fileID: 8816093289123873379}
   m_animation: {fileID: 4461072238202895379}
   m_shoulder: {fileID: 3289618913514186319}
   m_model: {fileID: 8816093290287426404}
+  m_sound: {fileID: 5770406820892802556}
 --- !u!114 &8816093289123873388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +505,7 @@ MonoBehaviour:
   m_maxHP: 10
   m_hitDuringTime: 0.5
   m_ghostDuringTime: 1
-  m_ghostLayer: 0
+  m_ghostLayer: 11
 --- !u!114 &5117664990786437012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d912a1dd1f4ea428a2b205901fcb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rig2D: {fileID: 8816093289123873389}
   m_inputPlayer: {fileID: 8816093289123873388}
   m_movementData: {fileID: 11400000, guid: d974a7ea26c120b4382e82a04122f961, type: 2}
   m_currentState: 0
@@ -538,6 +540,96 @@ MonoBehaviour:
   m_hitTickTime: 0.1
   m_ghostColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.44705883}
   m_ghostTickTime: 0.1
+--- !u!114 &5770406820892802556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816093289123873390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd24cee6a8eb464d8227d64b9931daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEvent:
+    Guid:
+      Data1: -1561663726
+      Data2: 1215952687
+      Data3: -1332279124
+      Data4: 471094409
+    Path: event:/char/yuz/hit
+  m_deathEvent:
+    Guid:
+      Data1: 1887810245
+      Data2: 1284363618
+      Data3: 1596923838
+      Data4: 307497687
+    Path: event:/char/yuz/death
+  m_footStepEvent:
+    Guid:
+      Data1: -319173536
+      Data2: 1137106050
+      Data3: -281959250
+      Data4: 1634467276
+    Path: event:/char/yuz/footstep
+  m_footStepPlayTick: 0.2
+  m_jumpEvent:
+    Guid:
+      Data1: -246492809
+      Data2: 1130764752
+      Data3: 1777226676
+      Data4: -1080097460
+    Path: event:/char/yuz/jump
+  m_landingEvent:
+    Guid:
+      Data1: 85030585
+      Data2: 1116072545
+      Data3: -1853977211
+      Data4: -873796072
+    Path: event:/char/yuz/landing
+  m_wallJumpLeftEvent:
+    Guid:
+      Data1: 1733268410
+      Data2: 1218770258
+      Data3: -1827004019
+      Data4: 1200290842
+    Path: event:/char/yuz/climb_jump_left
+  m_wallJumpRightEvent:
+    Guid:
+      Data1: 19044872
+      Data2: 1105154933
+      Data3: 504168595
+      Data4: 1781228501
+    Path: event:/char/yuz/climb_jump_right
+  m_wallGripEvent:
+    Guid:
+      Data1: 1787239839
+      Data2: 1142772132
+      Data3: -1183673171
+      Data4: -2002764612
+    Path: event:/char/yuz/hold_climb
+  m_ropeCheckEvent:
+    Guid:
+      Data1: 986865551
+      Data2: 1246281112
+      Data3: 2131377853
+      Data4: -1677824422
+    Path: event:/char/yuz/rope_check
+  m_ropeAccelEvent:
+    Guid:
+      Data1: -2041877065
+      Data2: 1307586988
+      Data3: -1093674562
+      Data4: -1714115620
+    Path: event:/char/yuz/rope_accel
+  m_ropeQuitEvent:
+    Guid:
+      Data1: 108437380
+      Data2: 1286789652
+      Data3: -898157942
+      Data4: 1280256673
+    Path: event:/char/yuz/rope_quit
 --- !u!1 &8816093289278603218
 GameObject:
   m_ObjectHideFlags: 0

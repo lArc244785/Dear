@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{56324c51-11b9-4ac9-9b96-619efac28e33}">
+		<property name="assetPath">
+			<value>game_general_falling_shake.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.1024263038548754</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0c963700-a798-4bc7-aa73-7080f677600c}</destination>
+		</relationship>
+	</object>
+</objects>

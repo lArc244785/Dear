@@ -17,6 +17,11 @@ public class NewGroundSensor : MonoBehaviour
         return Physics2D.OverlapCircle(transform.position, m_radius, m_groundLayer);
     }
 
+    public Collider2D GetGroundCollider2D()
+    {
+        return Physics2D.OverlapCircle(transform.position, m_radius, m_groundLayer);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = m_gizomColor;

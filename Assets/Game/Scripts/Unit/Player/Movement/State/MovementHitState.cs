@@ -11,7 +11,7 @@ public class MovementHitState : I_MovementState
         m_enterTime = Time.time;
 
         Vector2 force = manager.hitImfectDir * manager.movementData.hitImfectPower;
-
+        manager.rig2D.velocity = Vector2.zero;
         manager.VectorJump(force);
     }
 

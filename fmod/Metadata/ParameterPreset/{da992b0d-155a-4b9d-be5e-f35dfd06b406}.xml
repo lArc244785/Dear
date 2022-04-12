@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{da992b0d-155a-4b9d-be5e-f35dfd06b406}">
+		<property name="name">
+			<value>rope_index</value>
+		</property>
+		<relationship name="folder">
+			<destination>{313b9f00-5d5e-4501-8a81-d5a38739fdcd}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1f7728bc-140c-4a1d-9b1b-99de756161ee}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1f7728bc-140c-4a1d-9b1b-99de756161ee}">
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

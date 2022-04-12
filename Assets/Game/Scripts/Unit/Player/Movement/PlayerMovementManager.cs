@@ -3,10 +3,18 @@ using UnityEngine;
 public class PlayerMovementManager : MonoBehaviour
 {
     #region Rigidbody
-    [Header("Rigidbody")]
-    [SerializeField]
     private Rigidbody2D m_rig2D;
-    public Rigidbody2D rig2D { get { return m_rig2D; } }
+    public Rigidbody2D rig2D 
+    { 
+        private set 
+        { 
+            m_rig2D = value; 
+        } 
+        get 
+        { 
+            return m_rig2D; 
+        } 
+    }
     #endregion
 
     #region Input
@@ -20,7 +28,7 @@ public class PlayerMovementManager : MonoBehaviour
     private UnitPlayer m_playerManager;
     public UnitPlayer playerManager
     {
-        set
+        private set
         {
             m_playerManager = value;
         }
@@ -54,6 +62,7 @@ public class PlayerMovementManager : MonoBehaviour
         None = -1, Ground, Air, Wall, Rope,Hit,
         Total
     }
+    
 
     private I_MovementState[] m_States;
 
@@ -139,14 +148,16 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Init(UnitPlayer unit)
     {
-        StatesInit();
-
         playerManager = unit;
+        rig2D = unit.rig2D;
 
         m_coyoteSystem = new CoyoteSystem();
         m_coyoteSystem.Init(m_movementData);
 
         m_oldLookDir = Vector2.left;
+
+        StatesInit();
+        currentState = State.Ground;
     }
 
     private void StatesInit()
@@ -159,7 +170,7 @@ public class PlayerMovementManager : MonoBehaviour
         m_States[(int)State.Rope] = new MovementRopeState();
         m_States[(int)State.Hit] = new MovementHitState();
 
-        currentState = State.Ground;
+
     }
 
 
@@ -274,6 +285,8 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Jump(float force)
     {
+        playerManager.sound.Jump();
+
         if (rig2D.velocity.y < 0.0f)
             force -= rig2D.velocity.y;
         Debug.Log("Jump " + jumpCount);

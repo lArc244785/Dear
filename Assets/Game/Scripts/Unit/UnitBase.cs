@@ -14,6 +14,9 @@ public abstract class UnitBase : MonoBehaviour
     [SerializeField]
     private SpriteRenderer m_spriteRenderer;
 
+    [SerializeField]
+    private Rigidbody2D m_rig2D;
+    public Rigidbody2D rig2D { get { return m_rig2D; } }
 
     private bool m_control;
 

@@ -180,6 +180,11 @@ public class MovementWallState : I_MovementState
 
     private void WallJump(int dir, PlayerMovementManager manager)
     {
+        if (dir == 1)
+            manager.playerManager.sound.WallJumpRight();
+        else
+            manager.playerManager.sound.WallJumpLeft();
+
         Debug.Log("WallJump | Dir: " + dir);
         Vector2 force = manager.movementData.wallJumpForce;
 

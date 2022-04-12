@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MovementGroundState : I_MovementState
 {
+    private IEnumerator m_footStepCoroutine;
+
     public void Enter(PlayerMovementManager manager)
     {
         manager.SetGravity(manager.movementData.gravityScale);
@@ -11,13 +14,13 @@ public class MovementGroundState : I_MovementState
 
     public void Exit(PlayerMovementManager manager)
     {
-        
+        manager.playerManager.sound.footStepLoop = false;
     }
 
     public void FixedExcute(PlayerMovementManager manager)
     {
         manager.Resistance(manager.movementData.frictionAmount);
-        manager.Run(1.0f, true);
+        RunUpdate(manager);
     }
 
     public void UpdateExcute(PlayerMovementManager manager)
@@ -60,6 +63,20 @@ public class MovementGroundState : I_MovementState
     private bool CanJump(PlayerMovementManager manager)
     {
         return manager.coyoteSystem.lastJumpEnterTime > 0.0f && manager.coyoteSystem.lastOnGroundTime > 0.0f && manager.movementData.maxJumpCount > 0;
+    }
+
+    private void RunUpdate(PlayerMovementManager manager)
+    {
+        if(Mathf.Abs( manager.inputPlayer.moveDir.x) > 0)
+        {
+            manager.playerManager.sound.footStepLoop  = true;
+        }
+        else
+        {
+            manager.playerManager.sound.footStepLoop = false;
+        }
+
+        manager.Run(1.0f, true);
     }
 
 

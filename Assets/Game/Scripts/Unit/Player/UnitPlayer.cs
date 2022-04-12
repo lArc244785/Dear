@@ -47,6 +47,9 @@ public class UnitPlayer : UnitBase
     private Transform m_model;
     public Transform model { get { return m_model; } }
 
+    [SerializeField]
+    private PlayerSound m_sound;
+    public PlayerSound sound { get { return m_sound; } }
 
 
     public void Start()
@@ -62,7 +65,7 @@ public class UnitPlayer : UnitBase
 
         m_grapplingShooter.Init();
         m_shoulder.Init();
-
+        m_sound.Init(this);
         
     }
 
