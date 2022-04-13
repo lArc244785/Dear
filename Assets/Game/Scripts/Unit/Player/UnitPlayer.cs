@@ -52,13 +52,7 @@ public class UnitPlayer : UnitBase
     public PlayerSound sound { get { return m_sound; } }
 
 
-    public void Start()
-    {
-        Init();
-    }
-
-
-    protected override void Init()
+    public override void Init()
     {
         base.Init();
         m_movement.Init(this);

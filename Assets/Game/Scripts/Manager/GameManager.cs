@@ -57,6 +57,7 @@ public class GameManager : SingleToon<GameManager>
 
         m_changeGameStaet[(int)GameSate.GamePlaying] = ChangeGamePlaying;
         m_changeGameStaet[(int)GameSate.Load] = ChangeLoad;
+        m_changeGameStaet[(int)GameSate.GameStart] = ChageGameStart;
         m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeGamePlaying;
     }
 
@@ -90,6 +91,10 @@ public class GameManager : SingleToon<GameManager>
         UIManager.instance.AllToggleFase();
     }
 
+    private void ChageGameStart()
+    {
+        StartCoroutine(GameStartProcessCoroutine());
+    }
 
     #endregion
 
@@ -125,15 +130,27 @@ public class GameManager : SingleToon<GameManager>
             yield return null;
         }
 
+        gameState = GameSate.GameStart;
+    }
+
+    private IEnumerator GameStartProcessCoroutine()
+    {
+        UIManager.instance.AllToggleFase();
+        UIManager.instance.inGameView.Toggle(true);
         UIManager.instance.produtionView.Toggle(true);
         UIManager.instance.produtionView.fade.FadeIn();
+
+        StageManager stageManager = GameObject.FindObjectOfType<StageManager>();
+        stageManager.Init();
+
+        stageManager.player.isControl = false;
 
         while (!UIManager.instance.produtionView.fade.fadeProcessed)
             yield return null;
 
-        gameState = GameSate.GameStart;
+        stageManager.player.isControl = true;
+        gameState = GameSate.GamePlaying;
+
     }
-
-
 
 }

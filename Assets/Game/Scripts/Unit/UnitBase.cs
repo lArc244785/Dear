@@ -20,11 +20,13 @@ public abstract class UnitBase : MonoBehaviour
 
     private bool m_control;
 
-    protected virtual void Init()
+    public virtual void Init()
     {
         health.Init(this);
         stateImfect.Init(m_spriteRenderer);
     }
+
+
 
     public bool isControl
     {

@@ -23,6 +23,12 @@ public class InputManager : SingleToon<InputManager>
         return base.Init();
     }
 
+    public void SetStage(InputPlayer inputPlayer, Camera cam)
+    {
+        m_inputPlayer = inputPlayer;
+        m_brainCam = cam;
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)

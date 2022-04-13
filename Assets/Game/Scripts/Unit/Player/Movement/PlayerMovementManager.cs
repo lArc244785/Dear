@@ -179,7 +179,10 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentState == State.None)
+        if (playerManager == null)
+            return;
+
+        if (currentState == State.None || !playerManager.isControl)
             return;
 
         m_States[(int)currentState].UpdateExcute(this);
@@ -188,7 +191,10 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (currentState == State.None)
+        if (playerManager == null)
+            return;
+
+        if (currentState == State.None|| !playerManager.isControl)
             return;
 
         m_States[(int)currentState].FixedExcute(this);
