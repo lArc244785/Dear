@@ -17,7 +17,7 @@ public abstract class SingleToon<T> : MonoBehaviour where T : SingleToon<T>
     {
         if(instance != null)
         {
-            Debug.LogError("overlap SingleToon " + this.ToString());
+            Debug.LogWarning("overlap SingleToon " + this.ToString());
             Destroy(gameObject);
             return false;
         }

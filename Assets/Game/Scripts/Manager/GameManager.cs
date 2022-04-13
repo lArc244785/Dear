@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 public class GameManager : SingleToon<GameManager>
 {
     #region GameState
@@ -54,6 +56,7 @@ public class GameManager : SingleToon<GameManager>
         m_changeGameStaet = new ChangeGameState[(int)GameSate.Total];
 
         m_changeGameStaet[(int)GameSate.GamePlaying] = ChangeGamePlaying;
+        m_changeGameStaet[(int)GameSate.Load] = ChangeLoad;
         m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeGamePlaying;
     }
 
@@ -62,8 +65,13 @@ public class GameManager : SingleToon<GameManager>
     private void Awake()
     {
         Init();
-        gameState = GameSate.GamePlaying;
     }
+
+    private void Start()
+    {
+        NextState(1);
+    }
+
 
     #region State Funtion
 
@@ -76,6 +84,12 @@ public class GameManager : SingleToon<GameManager>
     {
         //Player.isControl = false;
     }
+
+    private void ChangeLoad()
+    {
+        UIManager.instance.AllToggleFase();
+    }
+
 
     #endregion
 
@@ -93,7 +107,32 @@ public class GameManager : SingleToon<GameManager>
     }
     #endregion
 
+    public void NextState(int index)
+    {
+        gameState = GameSate.Load;
+        UIManager.instance.loadingView.Toggle(true);
+        StartCoroutine(SceneLoadCorutine(1));
+    }
 
+    private IEnumerator SceneLoadCorutine(int index)
+    {
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
+        UIManager.instance.loadingView.LoadingProduction();
+
+        while(!operation.isDone || !UIManager.instance.loadingView.fakeLoadingEnd)
+        {
+            yield return null;
+        }
+
+        UIManager.instance.produtionView.Toggle(true);
+        UIManager.instance.produtionView.fade.FadeIn();
+
+        while (!UIManager.instance.produtionView.fade.fadeProcessed)
+            yield return null;
+
+        gameState = GameSate.GameStart;
+    }
 
 
 

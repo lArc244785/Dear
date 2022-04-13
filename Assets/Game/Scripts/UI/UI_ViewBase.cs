@@ -14,6 +14,7 @@ public abstract class UI_ViewBase : MonoBehaviour
         m_RectTransform = GetComponent<RectTransform>();
         m_canvas = GetComponent<Canvas>();
         m_offRectPos = m_RectTransform.localPosition;
+        Toggle(false);
     }
 
     public void Toggle(bool isToggle)

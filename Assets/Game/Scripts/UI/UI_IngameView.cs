@@ -15,6 +15,7 @@ public class UI_IngameView : UI_ViewBase
     {
         base.Init();
         HitImageToggle(false);
+
     }
 
    

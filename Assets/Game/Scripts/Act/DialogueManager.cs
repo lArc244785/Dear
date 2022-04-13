@@ -27,7 +27,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
     #region Reference
     [Header("Reference")]
-    private UI_Dialogue m_uiDialogue;
+    private UI_DialogueView m_uiDialogue;
     #endregion
 
     #region Text
@@ -45,7 +45,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
 
         DialogueEventInit();
-        m_uiDialogue = UIManager.instance.dialogue;
+        m_uiDialogue = UIManager.instance.dialogueView;
 
         return true;
     }
