@@ -4,7 +4,8 @@ public class MovementAirState : I_MovementState
 {
     public void Enter(PlayerMovementManager manager)
     {
-       
+        if (!manager.isJump && manager.playerManager.grapplingShooter.isNoneGrappling)
+            manager.playerManager.animation.TriggerAir();
     }
 
     public void Exit(PlayerMovementManager manager)
@@ -28,7 +29,7 @@ public class MovementAirState : I_MovementState
         JumpUpdate(manager);
 
 
-       ChangeState(manager);
+        ChangeState(manager);
     }
 
     private void TimeUpdate(CoyoteSystem coyoteSystem)
@@ -43,12 +44,15 @@ public class MovementAirState : I_MovementState
 
     private void ChangeState(PlayerMovementManager manager)
     {
+
+
         if (manager.IsWallGrouned())
             manager.currentState = PlayerMovementManager.State.Wall;
-        else if(!manager.isJump && manager.IsGrounded())
+        else if (!manager.isJump && manager.IsGrounded())
         {
             manager.jumpCount = 0;
             manager.currentState = PlayerMovementManager.State.Ground;
+
 
             Collider2D groundCollider = manager.groundSensor.GetGroundCollider2D();
 
@@ -81,6 +85,8 @@ public class MovementAirState : I_MovementState
         if (manager.isJump && manager.rig2D.velocity.y <= 0.0f)
         {
             manager.isJump = false;
+            if (manager.playerManager.grapplingShooter.isNoneGrappling)
+                manager.playerManager.animation.TriggerAir();
         }
 
         if (CanJumpCut(manager))
@@ -90,7 +96,7 @@ public class MovementAirState : I_MovementState
 
         if (CanAirJump(manager))
         {
-            
+
             manager.Jump(manager.movementData.airJumpForce);
         }
 

@@ -8,6 +8,16 @@ public class MovementWallState : I_MovementState
     {
         manager.coyoteSystem.ResetJumpEnterTime();
         manager.rig2D.velocity = new Vector2(manager.rig2D.velocity.x, 0.0f);
+
+        if (manager.IsWallLeft())
+            manager.Trun(Vector2.left);
+        else
+            manager.Trun(Vector2.right);
+
+        
+        manager.playerManager.animation.TriggerWall();
+
+
     }
 
     public void Exit(PlayerMovementManager manager)
@@ -180,6 +190,8 @@ public class MovementWallState : I_MovementState
 
     private void WallJump(int dir, PlayerMovementManager manager)
     {
+        manager.playerManager.animation.TriggerJump();
+
         if (dir == 1)
             manager.playerManager.sound.WallJumpRight();
         else

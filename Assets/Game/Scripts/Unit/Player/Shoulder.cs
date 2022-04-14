@@ -18,7 +18,8 @@ public class Shoulder : MonoBehaviour
     private GameObject m_hand;
     [SerializeField]
     private GrapplingShooter m_shooter;
-
+    [SerializeField]
+    private GameObject m_armModel;
 
 
     private Vector2 m_targetPostion;
@@ -35,6 +36,7 @@ public class Shoulder : MonoBehaviour
     public void Init()
     {
         m_currentType = LookType.Mouse;
+        SetArmVisible(false);
     }
 
     private void Update()
@@ -102,5 +104,11 @@ public class Shoulder : MonoBehaviour
         {
             return m_targetPostion;
         }
+    }
+
+    public void SetArmVisible(bool isVisible)
+    {
+        m_armModel.SetActive(isVisible);
+        
     }
 }

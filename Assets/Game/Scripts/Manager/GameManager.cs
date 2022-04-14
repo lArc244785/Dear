@@ -70,7 +70,8 @@ public class GameManager : SingleToon<GameManager>
 
     private void Start()
     {
-        NextState(1);
+        //NextState(1);
+        gameState = GameSate.GameStart;
     }
 
 

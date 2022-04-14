@@ -122,8 +122,8 @@ public class PlayerMovementManager : MonoBehaviour
     #endregion
 
     #region JumpCount
-    private float m_jumpCount;
-    public float jumpCount
+    private int m_jumpCount;
+    public int jumpCount
     {
         get
         {
@@ -132,6 +132,7 @@ public class PlayerMovementManager : MonoBehaviour
         set
         {
             m_jumpCount = Mathf.Clamp(value, 0, m_movementData.maxJumpCount);
+            playerManager.animation.jumpCount = m_jumpCount;
         }
     }
     #endregion
@@ -292,6 +293,7 @@ public class PlayerMovementManager : MonoBehaviour
     public void Jump(float force)
     {
         playerManager.sound.Jump();
+        playerManager.animation.TriggerJump();
 
         if (rig2D.velocity.y < 0.0f)
             force -= rig2D.velocity.y;
@@ -304,6 +306,7 @@ public class PlayerMovementManager : MonoBehaviour
         isJump = true;
 
         jumpCount++;
+       
     }
 
     public void JumpCut()

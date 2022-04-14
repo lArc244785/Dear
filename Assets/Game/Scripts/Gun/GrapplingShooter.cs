@@ -8,6 +8,7 @@ public class GrapplingShooter : MonoBehaviour
     private GrapplingGun m_grpplingGun;
     [SerializeField]
     private PlayerMovementManager m_movementManager;
+    public PlayerMovementManager movementManager { get { return m_movementManager; } }
 
     private void Start()
     {
@@ -24,7 +25,13 @@ public class GrapplingShooter : MonoBehaviour
     public void Fire()
     {
         if(m_grpplingGun.m_eState == GrapplingGun.E_State.E_NONE && CanShoot())
+        {
             m_grpplingGun.Fire();
+
+
+
+        }
+
     }
 
     public void Pull()
@@ -35,6 +42,7 @@ public class GrapplingShooter : MonoBehaviour
     public void Cancel()
     {
         m_grpplingGun.Cancel();
+
     }
 
     public bool isGrappling

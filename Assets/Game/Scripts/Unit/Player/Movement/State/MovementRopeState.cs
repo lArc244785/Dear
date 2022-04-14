@@ -77,6 +77,7 @@ public class MovementRopeState : I_MovementState
 
     private void CancleReboundJump(int dir, PlayerMovementManager manager)
     {
+        manager.playerManager.animation.TriggerAir();
         Debug.Log("CancleReboundJump");
         Vector2 force = manager.movementData.ropeCancleJumpForce;
         if (dir == -1)

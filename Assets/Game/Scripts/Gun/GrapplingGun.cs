@@ -80,6 +80,16 @@ public class GrapplingGun : MonoBehaviour
         m_ropeRenderer.isDraw = true;
 
         StartCoroutine(HookDistanceChack());
+
+
+        if (shooter.movementManager.IsGrounded())
+            shooter.movementManager.playerManager.animation.ropeMovement = 0.5f;
+        else
+            shooter.movementManager.playerManager.animation.ropeMovement = 0.0f;
+
+        shooter.movementManager.playerManager.animation.TriggerRope();
+        shooter.movementManager.playerManager.shoulder.SetArmVisible(true);
+
     }
 
     public void Grappling()
@@ -101,8 +111,7 @@ public class GrapplingGun : MonoBehaviour
         JointDisable();
         m_ropeRenderer.isDraw = false;
 
-
-        if(m_eState == E_State.E_GRAPPLING && m_rebound.isRebound((Vector2)m_hook.transform.position))
+        if (m_eState == E_State.E_GRAPPLING && m_rebound.isRebound((Vector2)m_hook.transform.position))
         {
             shooter.CancleRopeRebound();
         }
@@ -110,6 +119,13 @@ public class GrapplingGun : MonoBehaviour
         m_hook.Reset(m_firePoint);
 
         shouder.SetMouse();
+
+
+        shooter.movementManager.playerManager.shoulder.SetArmVisible(false);
+        if (shooter.movementManager.currentState == PlayerMovementManager.State.Ground)
+            shooter.movementManager.playerManager.animation.TriggerLanding();
+        else if(shooter.movementManager.currentState == PlayerMovementManager.State.Air)
+            shooter.movementManager.playerManager.animation.TriggerAir();
 
         m_eState = GrapplingGun.E_State.E_NONE;
     }

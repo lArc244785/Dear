@@ -9,6 +9,10 @@ public class MovementGroundState : I_MovementState
 
     public void Enter(PlayerMovementManager manager)
     {
+        if (manager.playerManager.grapplingShooter.isNoneGrappling)
+            manager.playerManager.animation.TriggerLanding();
+        else
+            manager.playerManager.animation.ropeMovement = 0.5f;
         manager.SetGravity(manager.movementData.gravityScale);
     }
 
@@ -34,7 +38,10 @@ public class MovementGroundState : I_MovementState
 
 
         if (manager.coyoteSystem.lastOnGroundTime <= 0.0f)
+        {
             manager.currentState = PlayerMovementManager.State.Air;
+        }
+
     }
 
     private void TimeUpdate(CoyoteSystem coyoteSystem)
@@ -67,7 +74,11 @@ public class MovementGroundState : I_MovementState
 
     private void RunUpdate(PlayerMovementManager manager)
     {
-        if(Mathf.Abs( manager.inputPlayer.moveDir.x) > 0)
+        float moveDirXAbs = Mathf.Abs(manager.inputPlayer.moveDir.x);
+
+        manager.playerManager.animation.movement = moveDirXAbs;
+
+        if (moveDirXAbs > 0)
         {
             manager.playerManager.sound.footStepLoop  = true;
         }
