@@ -17,8 +17,8 @@ MonoBehaviour:
   m_resistanceInAirAmount: 0.1
   m_frictionAmount: 0.85
   m_coyoteTime: 0.1
-  m_runMaxSpeed: 5
-  m_runAccel: 4.5
+  m_runMaxSpeed: 10
+  m_runAccel: 9
   m_runDeccel: 15
   m_accelInAir: 0.65
   m_deccelInAir: 0.65
@@ -42,3 +42,6 @@ MonoBehaviour:
   m_ropeCancleJumpForce: {x: 0, y: 5}
   m_ropeCancleReboundTime: 0.5
   m_ropeCancleReboundRunLerp: 0.5
+  m_hitImfectPower: 0
+  m_hitImfectDuringTime: 0
+  m_hitImfectRunLerp: 0
