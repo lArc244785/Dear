@@ -65,6 +65,8 @@ public class GrapplingGun : MonoBehaviour
 
         m_eState = E_State.E_HOOKFIRE;
 
+        shooter.movementManager.playerManager.animation.TriggerRope();
+        shooter.movementManager.playerManager.shoulder.SetArmVisible(true);
 
 
         Vector2 dir = InputManager.instance.inGameMousePosition2D - (Vector2)m_hook.transform.position;
@@ -83,8 +85,7 @@ public class GrapplingGun : MonoBehaviour
         else
             shooter.movementManager.playerManager.animation.ropeMovement = 0.0f;
 
-        shooter.movementManager.playerManager.animation.TriggerRope();
-        shooter.movementManager.playerManager.shoulder.SetArmVisible(true);
+
 
     }
 
@@ -106,10 +107,20 @@ public class GrapplingGun : MonoBehaviour
 
         JointDisable();
         m_ropeRenderer.isDraw = false;
+        shooter.movementManager.playerManager.shoulder.SetArmVisible(false);
 
         if (m_eState == E_State.E_GRAPPLING && m_rebound.isRebound((Vector2)m_hook.transform.position))
         {
             shooter.CancleRopeRebound();
+        }
+        else
+        {
+            if (shooter.movementManager.currentState == PlayerMovementManager.State.Ground)
+                shooter.movementManager.playerManager.animation.TriggerLanding();
+            else 
+            {
+                shooter.movementManager.playerManager.animation.TriggerAir();
+            }
         }
 
         m_hook.Reset(m_firePoint);

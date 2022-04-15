@@ -80,7 +80,7 @@ public class MovementRopeState : I_MovementState
     {
         Debug.Log("CancleReboundJump");
         manager.playerManager.animation.TriggerAir();
-        manager.playerManager.shoulder.SetArmVisible(false);
+
 
 
         Vector2 force = manager.movementData.ropeCancleJumpForce;
