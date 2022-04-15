@@ -79,9 +79,6 @@ public class MovementRopeState : I_MovementState
     private void CancleReboundJump(int dir, PlayerMovementManager manager)
     {
         Debug.Log("CancleReboundJump");
-        manager.playerManager.animation.TriggerAir();
-
-
 
         Vector2 force = manager.movementData.ropeCancleJumpForce;
         if (dir == -1)
@@ -168,7 +165,6 @@ public class MovementRopeState : I_MovementState
 
     private void ChangeStae(PlayerMovementManager manager)
     {
-        manager.playerManager.shoulder.SetArmVisible(false);
         if (!manager.IsGrounded())
             manager.currentState = PlayerMovementManager.State.Air;
         else

@@ -145,6 +145,29 @@ public class PlayerMovementManager : MonoBehaviour
     private Vector2 m_oldLookDir;
     #endregion
 
+    public PlayerAnimation animation
+    {
+        get
+        {
+            return playerManager.animation;
+        }
+    }
+
+    public Shoulder shoulder
+    {
+        get
+        {
+            return playerManager.shoulder;
+        }
+    }
+
+    public GrapplingShooter grapplingShooter
+    {
+        get
+        {
+            return playerManager.grapplingShooter;
+        }
+    }
 
 
     public void Init(UnitPlayer unit)
@@ -293,7 +316,7 @@ public class PlayerMovementManager : MonoBehaviour
     public void Jump(float force)
     {
         playerManager.sound.Jump();
-        playerManager.animation.TriggerJump();
+        animation.TriggerJump();
 
         if (rig2D.velocity.y < 0.0f)
             force -= rig2D.velocity.y;
@@ -391,4 +414,17 @@ public class PlayerMovementManager : MonoBehaviour
         hitImfectDir = imfectDir;
         currentState = State.Hit;
     }
+
+    public void RopeToAirAnimation()
+    {
+        shoulder.SetArmVisible(false);
+        animation.TriggerAir();
+    }
+
+    public void RopeAnimation()
+    {
+        shoulder.SetArmVisible(true);
+        animation.TriggerRope();
+    }
+
 }
