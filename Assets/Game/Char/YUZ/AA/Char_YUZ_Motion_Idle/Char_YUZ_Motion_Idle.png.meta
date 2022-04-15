@@ -110,9 +110,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 133
-        width: 31
-        height: 64
+        y: 165
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,10 +130,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 133
-        width: 31
-        height: 64
+        x: 70
+        y: 165
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +151,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 133
-        width: 31
-        height: 64
+        x: 139
+        y: 165
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 133
-        width: 31
-        height: 64
+        x: 208
+        y: 165
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle4
       rect:
         serializedVersion: 2
-        x: 133
-        y: 133
-        width: 31
-        height: 64
+        x: 1
+        y: 83
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 67
-        width: 31
-        height: 64
+        x: 70
+        y: 83
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle6
       rect:
         serializedVersion: 2
-        x: 34
-        y: 67
-        width: 31
-        height: 64
+        x: 139
+        y: 83
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle7
       rect:
         serializedVersion: 2
-        x: 67
-        y: 67
-        width: 31
-        height: 64
+        x: 208
+        y: 83
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: Char_YUZ_Motion_Idle8
       rect:
         serializedVersion: 2
-        x: 100
-        y: 67
-        width: 31
-        height: 64
+        x: 1
+        y: 1
+        width: 67
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
