@@ -10,6 +10,22 @@ public class GrapplingShooter : MonoBehaviour
     private PlayerMovementManager m_movementManager;
     public PlayerMovementManager movementManager { get { return m_movementManager; } }
 
+    [SerializeField]
+    private float m_fireCoolTime;
+
+    private bool m_isFireCoolTime;
+    public bool isFireCoolTime
+    {
+        private set
+        {
+            m_isFireCoolTime = value;
+        }
+        get
+        {
+            return m_isFireCoolTime;
+        }
+    }
+
     private void Start()
     {
         Init();
@@ -19,6 +35,7 @@ public class GrapplingShooter : MonoBehaviour
     public void Init()
     {
         m_grpplingGun.init();
+        isFireCoolTime = false;
     }
 
 
@@ -27,9 +44,6 @@ public class GrapplingShooter : MonoBehaviour
         if(m_grpplingGun.m_eState == GrapplingGun.E_State.E_NONE && CanShoot())
         {
             m_grpplingGun.Fire();
-
-
-
         }
 
     }
@@ -41,9 +55,19 @@ public class GrapplingShooter : MonoBehaviour
 
     public void Cancel()
     {
-        m_grpplingGun.Cancel();
+        if (isNoneGrappling)
+            return;
 
+        m_grpplingGun.Cancel();
+        isFireCoolTime = true;
+        Invoke("FireCoolEnd", m_fireCoolTime);
     }
+
+    private void FireCoolEnd()
+    {
+        isFireCoolTime = false;
+    }
+
 
     public bool isGrappling
     {
@@ -72,9 +96,10 @@ public class GrapplingShooter : MonoBehaviour
 
     public bool CanShoot()
     {
-        return m_movementManager.currentState == PlayerMovementManager.State.Ground ||
+        return isFireCoolTime == false &&
+            (m_movementManager.currentState == PlayerMovementManager.State.Ground ||
             m_movementManager.currentState == PlayerMovementManager.State.Air ||
-            m_movementManager.currentState == PlayerMovementManager.State.Rope;
+            m_movementManager.currentState == PlayerMovementManager.State.Rope);
     }
 
     public void RopeMovementChange()

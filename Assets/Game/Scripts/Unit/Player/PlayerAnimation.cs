@@ -63,12 +63,17 @@ public class PlayerAnimation : MonoBehaviour
 
     public void TriggerRope()
     {
+        Debug.Log("Rope Ani");
+        ResetTrigger("Air");
+        ResetTrigger("Wall");
         ResetTrigger("Jump");
         SetTrigger("Rope");
     }
 
     public void TriggerAir()
     {
+        Debug.Log("Air Ani");
+
         ResetTrigger("LandingA");
         SetTrigger("Air");
     }

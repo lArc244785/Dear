@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class GrapplingGun : MonoBehaviour
 {
@@ -46,8 +44,6 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField]
     private GrapplingRebound m_rebound;
 
-    [SerializeField]
-    private UnityEvent m_reboundEvent;
 
 
     public enum E_State
@@ -66,7 +62,7 @@ public class GrapplingGun : MonoBehaviour
 
     public void Fire()
     {
-        
+
         m_eState = E_State.E_HOOKFIRE;
 
 
@@ -121,11 +117,7 @@ public class GrapplingGun : MonoBehaviour
         shouder.SetMouse();
 
 
-        shooter.movementManager.playerManager.shoulder.SetArmVisible(false);
-        if (shooter.movementManager.currentState == PlayerMovementManager.State.Ground)
-            shooter.movementManager.playerManager.animation.TriggerLanding();
-        else if(shooter.movementManager.currentState == PlayerMovementManager.State.Air)
-            shooter.movementManager.playerManager.animation.TriggerAir();
+
 
         m_eState = GrapplingGun.E_State.E_NONE;
     }
@@ -178,7 +170,7 @@ public class GrapplingGun : MonoBehaviour
             m_springJoint2D.frequency = 0.0f;
         }
         m_eState = GrapplingGun.E_State.E_GRAPPLING;
-       // m_playerMovementManager.unitBase.isControl = true;
+        // m_playerMovementManager.unitBase.isControl = true;
     }
 
     private float GetHookDistance()
@@ -188,7 +180,7 @@ public class GrapplingGun : MonoBehaviour
 
     private IEnumerator HookDistanceChack()
     {
-        while(m_eState == E_State.E_HOOKFIRE && !isRopeDistanceMax)
+        while (m_eState == E_State.E_HOOKFIRE && !isRopeDistanceMax)
         {
             yield return null;
         }
@@ -196,7 +188,7 @@ public class GrapplingGun : MonoBehaviour
         if (isRopeDistanceMax)
             Cancel();
 
-            
+
     }
 
 }

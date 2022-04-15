@@ -10,6 +10,8 @@ public class MovementRopeState : I_MovementState
 
     public void Enter(PlayerMovementManager manager)
     {
+        manager.coyoteSystem.RestRopeCancleJumpTime();
+
         manager.isRopeCancleRebound = false;
         m_changeState = false;
     }
@@ -33,7 +35,7 @@ public class MovementRopeState : I_MovementState
         else if(manager.isRopeCancleRebound)
         {
             manager.Resistance(manager.movementData.resistanceInAirAmount);
-            Debug.Log("CancleRun " + manager.inputPlayer.moveDir);
+            //Debug.Log("CancleRun " + manager.inputPlayer.moveDir);
             manager.Run(1.0f, true);
 
         }
@@ -60,7 +62,6 @@ public class MovementRopeState : I_MovementState
             if (cancleDurringTime >= manager.movementData.ropeCancleReboundTime)
             {
                 manager.isRopeCancleRebound = false;
-                ChangeStae(manager);
             }
 
         }
@@ -77,8 +78,11 @@ public class MovementRopeState : I_MovementState
 
     private void CancleReboundJump(int dir, PlayerMovementManager manager)
     {
-        manager.playerManager.animation.TriggerAir();
         Debug.Log("CancleReboundJump");
+        manager.playerManager.animation.TriggerAir();
+        manager.playerManager.shoulder.SetArmVisible(false);
+
+
         Vector2 force = manager.movementData.ropeCancleJumpForce;
         if (dir == -1)
             force.x = -force.x;
@@ -164,10 +168,18 @@ public class MovementRopeState : I_MovementState
 
     private void ChangeStae(PlayerMovementManager manager)
     {
+        manager.playerManager.shoulder.SetArmVisible(false);
         if (!manager.IsGrounded())
             manager.currentState = PlayerMovementManager.State.Air;
         else
             manager.currentState = PlayerMovementManager.State.Ground;
+
+
+        //shooter.movementManager.playerManager.shoulder.SetArmVisible(false);
+        //if (shooter.movementManager.currentState == PlayerMovementManager.State.Ground)
+        //    shooter.movementManager.playerManager.animation.TriggerLanding();
+        //else if (shooter.movementManager.currentState == PlayerMovementManager.State.Air)
+        //    shooter.movementManager.playerManager.animation.TriggerAir();
         m_changeState = true;
     }
 }
