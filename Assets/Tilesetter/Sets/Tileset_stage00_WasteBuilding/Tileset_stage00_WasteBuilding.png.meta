@@ -1,0 +1,1365 @@
+fileFormatVersion: 2
+guid: 08ef7d8b732a4bc4f4c02661796d8cd2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_0"
+  - first:
+      213: 21300002
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_1"
+  - first:
+      213: 21300004
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_2"
+  - first:
+      213: 21300006
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_3"
+  - first:
+      213: 21300008
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_4"
+  - first:
+      213: 21300010
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_5"
+  - first:
+      213: 21300012
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_6"
+  - first:
+      213: 21300014
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_7"
+  - first:
+      213: 21300016
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_8"
+  - first:
+      213: 21300018
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_9"
+  - first:
+      213: 21300020
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_10"
+  - first:
+      213: 21300022
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_11"
+  - first:
+      213: 21300024
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_12"
+  - first:
+      213: 21300026
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_13"
+  - first:
+      213: 21300028
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_14"
+  - first:
+      213: 21300030
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_15"
+  - first:
+      213: 21300032
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_16"
+  - first:
+      213: 21300034
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_17"
+  - first:
+      213: 21300036
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_18"
+  - first:
+      213: 21300038
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_19"
+  - first:
+      213: 21300040
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_20"
+  - first:
+      213: 21300042
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_21"
+  - first:
+      213: 21300044
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_22"
+  - first:
+      213: 21300046
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_23"
+  - first:
+      213: 21300048
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_24"
+  - first:
+      213: 21300050
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_25"
+  - first:
+      213: 21300052
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_26"
+  - first:
+      213: 21300054
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_27"
+  - first:
+      213: 21300056
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_28"
+  - first:
+      213: 21300058
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_29"
+  - first:
+      213: 21300060
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_30"
+  - first:
+      213: 21300062
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_31"
+  - first:
+      213: 21300064
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_32"
+  - first:
+      213: 21300066
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_33"
+  - first:
+      213: 21300068
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_34"
+  - first:
+      213: 21300070
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_35"
+  - first:
+      213: 21300072
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_36"
+  - first:
+      213: 21300074
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_37"
+  - first:
+      213: 21300076
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_38"
+  - first:
+      213: 21300078
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_39"
+  - first:
+      213: 21300080
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_40"
+  - first:
+      213: 21300082
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_41"
+  - first:
+      213: 21300084
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_42"
+  - first:
+      213: 21300086
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_43"
+  - first:
+      213: 21300088
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_44"
+  - first:
+      213: 21300090
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_45"
+  - first:
+      213: 21300092
+    second: "\uD3D0\uD5C8\uD0C0\uC77C_\uC218\uC815_46"
+  - first:
+      213: -4601996553174625949
+    second: Tileset_stage00_WasteBuilding_0
+  - first:
+      213: 3592720196952446679
+    second: Tileset_stage00_WasteBuilding_1
+  - first:
+      213: -8959500697592039300
+    second: Tileset_stage00_WasteBuilding_2
+  - first:
+      213: 5323771206040841242
+    second: Tileset_stage00_WasteBuilding_3
+  - first:
+      213: -6717143989227175952
+    second: Tileset_stage00_WasteBuilding_4
+  - first:
+      213: 3406095917898692323
+    second: Tileset_stage00_WasteBuilding_5
+  - first:
+      213: 1689209766099388498
+    second: Tileset_stage00_WasteBuilding_6
+  - first:
+      213: -473764915552076106
+    second: Tileset_stage00_WasteBuilding_7
+  - first:
+      213: -5018968150291387496
+    second: Tileset_stage00_WasteBuilding_8
+  - first:
+      213: 3229451432342922322
+    second: Tileset_stage00_WasteBuilding_9
+  - first:
+      213: 838388276012528204
+    second: Tileset_stage00_WasteBuilding_10
+  - first:
+      213: -1659416329230381952
+    second: Tileset_stage00_WasteBuilding_11
+  - first:
+      213: -6864743105168643117
+    second: Tileset_stage00_WasteBuilding_12
+  - first:
+      213: -1398173656544213884
+    second: Tileset_stage00_WasteBuilding_13
+  - first:
+      213: 8287183105080900405
+    second: Tileset_stage00_WasteBuilding_14
+  - first:
+      213: 801962031658069072
+    second: Tileset_stage00_WasteBuilding_15
+  - first:
+      213: -6081003919993011656
+    second: Tileset_stage00_WasteBuilding_16
+  - first:
+      213: 5075270650478499128
+    second: Tileset_stage00_WasteBuilding_17
+  - first:
+      213: 3462823701892929729
+    second: Tileset_stage00_WasteBuilding_18
+  - first:
+      213: 1869740919367391250
+    second: Tileset_stage00_WasteBuilding_19
+  - first:
+      213: 1965947294996186705
+    second: Tileset_stage00_WasteBuilding_20
+  - first:
+      213: -1960923343377087683
+    second: Tileset_stage00_WasteBuilding_21
+  - first:
+      213: -3301270394346812955
+    second: Tileset_stage00_WasteBuilding_22
+  - first:
+      213: -1314647872945046977
+    second: Tileset_stage00_WasteBuilding_23
+  - first:
+      213: 4835126598977378707
+    second: Tileset_stage00_WasteBuilding_24
+  - first:
+      213: -7377437512806178893
+    second: Tileset_stage00_WasteBuilding_25
+  - first:
+      213: -5504615416856374411
+    second: Tileset_stage00_WasteBuilding_26
+  - first:
+      213: -4312761935261475029
+    second: Tileset_stage00_WasteBuilding_27
+  - first:
+      213: 3569836437484939262
+    second: Tileset_stage00_WasteBuilding_28
+  - first:
+      213: -8718911891161315933
+    second: Tileset_stage00_WasteBuilding_29
+  - first:
+      213: 5236619413649646893
+    second: Tileset_stage00_WasteBuilding_30
+  - first:
+      213: -240443629760482597
+    second: Tileset_stage00_WasteBuilding_31
+  - first:
+      213: 552396587236230166
+    second: Tileset_stage00_WasteBuilding_32
+  - first:
+      213: 7432622357098536871
+    second: Tileset_stage00_WasteBuilding_33
+  - first:
+      213: -5695677674436885806
+    second: Tileset_stage00_WasteBuilding_34
+  - first:
+      213: 289472478790368186
+    second: Tileset_stage00_WasteBuilding_35
+  - first:
+      213: 4757516735642435389
+    second: Tileset_stage00_WasteBuilding_36
+  - first:
+      213: -5986024897733053959
+    second: Tileset_stage00_WasteBuilding_37
+  - first:
+      213: -5735969897075345936
+    second: Tileset_stage00_WasteBuilding_38
+  - first:
+      213: 935990780937660151
+    second: Tileset_stage00_WasteBuilding_39
+  - first:
+      213: 3001838056706915213
+    second: Tileset_stage00_WasteBuilding_40
+  - first:
+      213: 1417236170388056636
+    second: Tileset_stage00_WasteBuilding_41
+  - first:
+      213: 6729955411396966845
+    second: Tileset_stage00_WasteBuilding_42
+  - first:
+      213: 4866714952164627586
+    second: Tileset_stage00_WasteBuilding_43
+  - first:
+      213: -647388342404336516
+    second: Tileset_stage00_WasteBuilding_44
+  - first:
+      213: 3829336275509425875
+    second: Tileset_stage00_WasteBuilding_45
+  - first:
+      213: -7146010503715884461
+    second: Tileset_stage00_WasteBuilding_46
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361547e648c6220c0800000000000000
+      internalID: -4601996553174625949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6d8bcebf7ebd130800000000000000
+      internalID: 3592720196952446679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c787923c59579a380800000000000000
+      internalID: -8959500697592039300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c648194b5d1e940800000000000000
+      internalID: 5323771206040841242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffb6f87129e7c2a0800000000000000
+      internalID: -6717143989227175952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e67249e032e44f20800000000000000
+      internalID: 3406095917898692323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258897b1557417710800000000000000
+      internalID: 1689209766099388498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6beb975c159dc69f0800000000000000
+      internalID: -473764915552076106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89be1e61f0b095ab0800000000000000
+      internalID: -5018968150291387496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2542d24a7f051dc20800000000000000
+      internalID: 3229451432342922322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42349fe1bd82ab00800000000000000
+      internalID: 838388276012528204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c8db9f3a198f8e0800000000000000
+      internalID: -1659416329230381952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db6c1e44888bb0a0800000000000000
+      internalID: -6864743105168643117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4848f5b9770b89ce0800000000000000
+      internalID: -1398173656544213884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b37fe602df10370800000000000000
+      internalID: 8287183105080900405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c64540834212b00800000000000000
+      internalID: 801962031658069072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8320f0f372feb9ba0800000000000000
+      internalID: -6081003919993011656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_17
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8359cb444cbfe6640800000000000000
+      internalID: 5075270650478499128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8912f5fcb6e0030800000000000000
+      internalID: 3462823701892929729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218d7e8b577a2f910800000000000000
+      internalID: 1869740919367391250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156436516a2784b10800000000000000
+      internalID: 1965947294996186705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_21
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33cc3ecb9669c4e0800000000000000
+      internalID: -1960923343377087683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9c17531188f22d0800000000000000
+      internalID: -3301270394346812955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_23
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a336099be61cde0800000000000000
+      internalID: -1314647872945046977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399d6103602d91340800000000000000
+      internalID: 4835126598977378707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfdb806ba31e9990800000000000000
+      internalID: -7377437512806178893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573132d617dab93b0800000000000000
+      internalID: -5504615416856374411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2fd9efaeddf524c0800000000000000
+      internalID: -4312761935261475029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7298a735b9a8130800000000000000
+      internalID: 3569836437484939262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5866b64d3300780800000000000000
+      internalID: -8718911891161315933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_30
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d256086ac953ca840800000000000000
+      internalID: 5236619413649646893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2fe9beac5c9acf0800000000000000
+      internalID: -240443629760482597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_32
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6148a55f4c18aa700800000000000000
+      internalID: 552396587236230166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af1c7077aaf52760800000000000000
+      internalID: 7432622357098536871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_34
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d201140553e4f0b0800000000000000
+      internalID: -5695677674436885806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_35
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb3d8e8fa9640400800000000000000
+      internalID: 289472478790368186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f71f0c348160240800000000000000
+      internalID: 4757516735642435389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f13af1221e5deca0800000000000000
+      internalID: -5986024897733053959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f57d72e4cdb560b0800000000000000
+      internalID: -5735969897075345936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f664daf7ae4dfc00800000000000000
+      internalID: 935990780937660151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_40
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8bb343eecba8a920800000000000000
+      internalID: 3001838056706915213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3aa0d2c9c80ba310800000000000000
+      internalID: 1417236170388056636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_42
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9b8823aca956d50800000000000000
+      internalID: 6729955411396966845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284dadac67b0a8340800000000000000
+      internalID: 4866714952164627586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_44
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74b24b8bb30407f0800000000000000
+      internalID: -647388342404336516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_45
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6b14bcd09842530800000000000000
+      internalID: 3829336275509425875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_stage00_WasteBuilding_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352fdccde4544dc90800000000000000
+      internalID: -7146010503715884461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 462ea9388f1112344a774e458e8de943
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
