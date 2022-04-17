@@ -14,12 +14,16 @@ public class InputPlayer : MonoBehaviour
 
     public void JumpEnter()
     {
+        if (!m_MovementManager.playerManager.isControl)
+            return;
         m_MovementManager.coyoteSystem.OnJumpEnterTime();        
     }
 
     public void JumpUp()
     {
-         m_MovementManager.coyoteSystem.OnJumpExitTime();
+        if (!m_MovementManager.playerManager.isControl)
+            return;
+        m_MovementManager.coyoteSystem.OnJumpExitTime();
     }
 
     public void JumpPressed()
@@ -30,26 +34,37 @@ public class InputPlayer : MonoBehaviour
 
     public void WallGripEnter()
     {
-        m_MovementManager.isWallGrip = true;
+        if (!m_MovementManager.playerManager.isControl)
+            return;
+            m_MovementManager.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
+        if (!m_MovementManager.playerManager.isControl)
+            return;
         m_MovementManager.isWallGrip = false;
     }
 
     public void LeftMouseEnter()
     {
+        if (!m_MovementManager.playerManager.isControl)
+            return;
         m_shooter.Fire();
     }
 
     public void LeftMouseUp()
     {
+        if (!m_MovementManager.playerManager.isControl)
+            return;
         m_shooter.Cancel();
     }
 
     public void ReboundRight()
     {
+        if (!m_MovementManager.playerManager.isControl)
+            return;
+
         if (m_MovementManager.currentState != PlayerMovementManager.State.Rope)
             return;
         m_MovementManager.isRopeReboundDirRight = true;
@@ -58,6 +73,9 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundLeft()
     {
+        if (!m_MovementManager.playerManager.isControl)
+            return;
+
         if (m_MovementManager.currentState != PlayerMovementManager.State.Rope)
             return;
         m_MovementManager.isRopeReboundDirRight = false;

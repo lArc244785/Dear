@@ -35,8 +35,18 @@ public class GameManager : SingleToon<GameManager>
 
     private delegate void ChangeGameState();
     private ChangeGameState[] m_changeGameStaet;
-
-
+    private StageManager m_stageManager;
+    public StageManager stageManager
+    {
+        private set
+        {
+            m_stageManager = value;
+        }
+        get
+        {
+            return m_stageManager;
+        }
+    }
 
     protected override bool Init()
     {
@@ -141,7 +151,7 @@ public class GameManager : SingleToon<GameManager>
         UIManager.instance.produtionView.Toggle(true);
         UIManager.instance.produtionView.fade.FadeIn();
 
-        StageManager stageManager = GameObject.FindObjectOfType<StageManager>();
+        stageManager = GameObject.FindObjectOfType<StageManager>();
         stageManager.Init();
 
         stageManager.player.isControl = false;

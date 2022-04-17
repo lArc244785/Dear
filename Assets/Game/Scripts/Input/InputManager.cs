@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +8,7 @@ public class InputManager : SingleToon<InputManager>
     private Camera m_brainCam;
     [SerializeField]
     private InputPlayer m_inputPlayer;
-    
+
 
 
     private void Awake()
@@ -34,7 +32,9 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-        m_inputPlayer.moveDir = context.ReadValue<Vector2>();
+            m_inputPlayer.moveDir = context.ReadValue<Vector2>();
+
+
     }
 
 
@@ -48,7 +48,7 @@ public class InputManager : SingleToon<InputManager>
         {
             m_inputPlayer.LeftMouseEnter();
         }
-        else if(context.canceled)
+        else if (context.canceled)
         {
             m_inputPlayer.LeftMouseUp();
         }

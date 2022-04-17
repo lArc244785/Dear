@@ -525,6 +525,7 @@ MonoBehaviour:
   m_shoulder: {fileID: 3289618913514186319}
   m_model: {fileID: 8816093290287426404}
   m_sound: {fileID: 5770406820892802556}
+  m_inputPlayer: {fileID: 8816093289123873388}
 --- !u!114 &8816093289123873388
 MonoBehaviour:
   m_ObjectHideFlags: 0
