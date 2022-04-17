@@ -18,6 +18,8 @@ public abstract class UnitBase : MonoBehaviour
     private Rigidbody2D m_rig2D;
     public Rigidbody2D rig2D { get { return m_rig2D; } }
 
+
+
     private bool m_control;
 
     public virtual void Init()
@@ -28,7 +30,7 @@ public abstract class UnitBase : MonoBehaviour
 
 
 
-    public bool isControl
+    public virtual bool isControl
     {
         set
         {

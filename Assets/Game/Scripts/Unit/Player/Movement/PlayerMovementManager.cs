@@ -206,7 +206,7 @@ public class PlayerMovementManager : MonoBehaviour
         if (playerManager == null)
             return;
 
-        if (currentState == State.None || !playerManager.isControl)
+        if (currentState == State.None)
             return;
 
         m_States[(int)currentState].UpdateExcute(this);
@@ -218,7 +218,7 @@ public class PlayerMovementManager : MonoBehaviour
         if (playerManager == null)
             return;
 
-        if (currentState == State.None|| !playerManager.isControl)
+        if (currentState == State.None)
             return;
 
         m_States[(int)currentState].FixedExcute(this);
@@ -254,6 +254,8 @@ public class PlayerMovementManager : MonoBehaviour
         float inputMoveDirX = 0.0f;
         if (isGetInput)
             inputMoveDirX = inputPlayer.moveDir.x;
+
+        Debug.Log(inputMoveDirX);
 
         float rigVelocityX = rig2D.velocity.x;
 

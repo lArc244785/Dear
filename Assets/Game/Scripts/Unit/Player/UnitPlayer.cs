@@ -51,12 +51,14 @@ public class UnitPlayer : UnitBase
     private PlayerSound m_sound;
     public PlayerSound sound { get { return m_sound; } }
 
+    [SerializeField]
+    private InputPlayer m_inputPlayer;
+    public InputPlayer inputPlayer { get { return m_inputPlayer; } }
 
     public override void Init()
     {
         base.Init();
         m_movement.Init(this);
-
         m_grapplingShooter.Init();
         m_shoulder.Init();
         m_sound.Init(this);
@@ -74,8 +76,28 @@ public class UnitPlayer : UnitBase
 
     }
 
+    private Vector2 m_oldMoveDir;
 
 
+    public override bool isControl 
+    { 
+        get => base.isControl;
+        set
+        {
+            if (!value)
+            {
+                m_oldMoveDir = inputPlayer.moveDir;
+                inputPlayer.moveDir = Vector2.zero;
+            }
+            else if(value && !isControl)
+            {
+                inputPlayer.moveDir = m_oldMoveDir;
+            }
+
+            base.isControl = value;
+
+        }
+    }
 
 
 
