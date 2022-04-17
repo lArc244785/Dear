@@ -5,7 +5,14 @@ using UnityEngine;
 public class ParallaxCamera : MonoBehaviour
 {
     [SerializeField]
-    private ParallaxBackGround m_backGround;
+    private AreaManager m_areaManger;
+    private AreaManager areaManager
+    {
+        get
+        {
+            return m_areaManger;
+        }
+    }
 
     private Vector2 m_oldPos;
 
@@ -17,7 +24,7 @@ public class ParallaxCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (m_backGround == null)
+        if (areaManager == null)
             return;
 
         Vector2 currentPos = (Vector2)transform.position;
@@ -25,7 +32,7 @@ public class ParallaxCamera : MonoBehaviour
             return;
 
         Vector2 deltaMove = currentPos - m_oldPos;
-        m_backGround.Move(deltaMove);
+
 
         m_oldPos = currentPos;
     }

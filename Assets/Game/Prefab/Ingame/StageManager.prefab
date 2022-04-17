@@ -45,4 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
   m_inputPlayer: {fileID: 0}
+  m_roomManager: {fileID: 0}
   m_brainCam: {fileID: 0}
