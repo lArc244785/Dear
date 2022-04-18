@@ -165,7 +165,6 @@ related with footstep
 	<object class="MixerBusEffectChain" id="{b9791f15-5ab0-403a-9342-c276b20c91f9}">
 		<relationship name="effects">
 			<destination>{48dc35fd-d267-44a3-b475-22b610017534}</destination>
-			<destination>{a61250d8-0935-4294-b2f8-e47e35c19c3d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0989defd-1994-4555-842c-5be5c4b9bc8f}">
@@ -226,13 +225,5 @@ related with footstep
 	</object>
 	<object class="MixerBusPanner" id="{92fc960e-0cc2-4245-87e2-388740b85897}" />
 	<object class="MixerBusFader" id="{48dc35fd-d267-44a3-b475-22b610017534}" />
-	<object class="ProxyEffect" id="{a61250d8-0935-4294-b2f8-e47e35c19c3d}">
-		<property name="inputFormat">
-			<value>0</value>
-		</property>
-		<relationship name="preset">
-			<destination>{61f1a103-2a09-4858-8aad-cf986c0bce84}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusFader" id="{4d0162e4-8263-4686-9578-c9519f98a694}" />
 </objects>
