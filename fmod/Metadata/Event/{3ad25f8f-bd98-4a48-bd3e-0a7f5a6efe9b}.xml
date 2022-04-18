@@ -2,9 +2,9 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3ad25f8f-bd98-4a48-bd3e-0a7f5a6efe9b}">
 		<property name="note">
-			<value>checking is rope got on surface or not
-if success [ rope_index ] got 1
-if failed [ rope_index ] got 0
+			<value>checking is rope able to attatched on surface or not
+if able [ rope_index ] got 1
+if not [ rope_index ] got 0
 
 need surface type for layering surface type
 
@@ -16,10 +16,10 @@ need surface type for layering surface type
 </value>
 		</property>
 		<property name="name">
-			<value>rope_check</value>
+			<value>rope_shoot</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{46532440-c046-46a4-a1ef-d1bcd84c237c}</destination>
@@ -40,15 +40,10 @@ need surface type for layering surface type
 			<destination>{3c14726e-4e78-456a-9fc2-782ea7ac8e20}</destination>
 		</relationship>
 		<relationship name="groupTracks">
-			<destination>{baecf060-1ee0-4ca9-8414-a4d93f94adc6}</destination>
 			<destination>{70ed9114-340e-4ffd-9fc4-60c5e3e148e1}</destination>
 		</relationship>
 		<relationship name="timeline">
 			<destination>{3d5be2e0-7418-46d8-9b4f-118f2bdba4d3}</destination>
-		</relationship>
-		<relationship name="parameters">
-			<destination>{db5e7e5e-0580-456d-9d4f-64e88624a574}</destination>
-			<destination>{4d93bd82-77b4-430a-a951-15d2dc2fb3a4}</destination>
 		</relationship>
 		<relationship name="banks">
 			<destination>{847ad7d1-18ee-4d96-889a-e316ba0daa7c}</destination>
@@ -77,25 +72,17 @@ need surface type for layering surface type
 	</object>
 	<object class="EventAutomatableProperties" id="{71aa8ea2-a9c0-4e4c-ba19-4c855b7d4879}" />
 	<object class="MarkerTrack" id="{3c14726e-4e78-456a-9fc2-782ea7ac8e20}" />
-	<object class="GroupTrack" id="{baecf060-1ee0-4ca9-8414-a4d93f94adc6}">
-		<relationship name="mixerGroup">
-			<destination>{f37998ea-ddf1-4c70-ac7f-53e8e8c19239}</destination>
-		</relationship>
-	</object>
 	<object class="GroupTrack" id="{70ed9114-340e-4ffd-9fc4-60c5e3e148e1}">
+		<relationship name="modules">
+			<destination>{2138edb1-50ee-4ad5-9850-0ea434c421f9}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{84e6f202-75bc-467f-8939-b11d74667395}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{3d5be2e0-7418-46d8-9b4f-118f2bdba4d3}" />
-	<object class="ParameterProxy" id="{db5e7e5e-0580-456d-9d4f-64e88624a574}">
-		<relationship name="preset">
-			<destination>{9c97979e-d554-4725-9fc0-89b7979c4073}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{4d93bd82-77b4-430a-a951-15d2dc2fb3a4}">
-		<relationship name="preset">
-			<destination>{1f7728bc-140c-4a1d-9b1b-99de756161ee}</destination>
+	<object class="Timeline" id="{3d5be2e0-7418-46d8-9b4f-118f2bdba4d3}">
+		<relationship name="modules">
+			<destination>{2138edb1-50ee-4ad5-9850-0ea434c421f9}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{75e04ac7-2526-43f5-862e-9f56651ea7b5}">
@@ -115,21 +102,24 @@ need surface type for layering surface type
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{bcf0544c-b58d-4687-9fb1-607d56199e11}" />
-	<object class="EventMixerGroup" id="{f37998ea-ddf1-4c70-ac7f-53e8e8c19239}">
-		<property name="name">
-			<value>surface</value>
+	<object class="SingleSound" id="{2138edb1-50ee-4ad5-9850-0ea434c421f9}">
+		<property name="length">
+			<value>0.14000000000000001</value>
 		</property>
-		<relationship name="effectChain">
-			<destination>{13f0df14-9800-41f7-913e-6e15e05663ab}</destination>
+		<property name="timelockedOffset">
+			<value>0.02</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{85020ecb-26fd-4768-bee8-9251095697e5}</destination>
 		</relationship>
-		<relationship name="panner">
-			<destination>{b26d2cad-7f3d-4499-8991-c5d353efac7f}</destination>
-		</relationship>
-		<relationship name="output">
-			<destination>{75e04ac7-2526-43f5-862e-9f56651ea7b5}</destination>
+		<relationship name="audioFile">
+			<destination>{024c6f43-26be-4b9e-97d5-e907a979cd57}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{84e6f202-75bc-467f-8939-b11d74667395}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<property name="name">
 			<value>rope</value>
 		</property>
@@ -150,13 +140,14 @@ need surface type for layering surface type
 	</object>
 	<object class="MixerBusPanner" id="{7375afa1-2dc3-4837-9d66-15833a26a196}" />
 	<object class="MixerBusFader" id="{dc2f8680-ecf2-444d-9157-f613814e3bf3}" />
-	<object class="MixerBusEffectChain" id="{13f0df14-9800-41f7-913e-6e15e05663ab}">
-		<relationship name="effects">
-			<destination>{883ba167-d873-4f74-b7a4-45ec688ede7d}</destination>
-			<destination>{5802cc93-d8c2-4f7b-b046-dab1da5aa2b9}</destination>
-		</relationship>
+	<object class="RandomizerModulator" id="{85020ecb-26fd-4768-bee8-9251095697e5}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6</value>
+		</property>
 	</object>
-	<object class="MixerBusPanner" id="{b26d2cad-7f3d-4499-8991-c5d353efac7f}" />
 	<object class="MixerBusEffectChain" id="{43a33fa4-c884-4ac6-9ada-0d19c81ec177}">
 		<relationship name="effects">
 			<destination>{c4ad6112-9eb4-4f9c-ba1d-2f16d09175c1}</destination>
@@ -164,14 +155,5 @@ need surface type for layering surface type
 	</object>
 	<object class="MixerBusPanner" id="{9614397f-9c42-4e4f-bac5-f89e6b370c88}" />
 	<object class="MixerBusFader" id="{1d77aeca-c339-41bd-ad7c-c16f2061c6e2}" />
-	<object class="MixerBusFader" id="{883ba167-d873-4f74-b7a4-45ec688ede7d}" />
-	<object class="ProxyEffect" id="{5802cc93-d8c2-4f7b-b046-dab1da5aa2b9}">
-		<property name="inputFormat">
-			<value>0</value>
-		</property>
-		<relationship name="preset">
-			<destination>{33042a7f-d169-4b66-9b76-a53bb8b87375}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusFader" id="{c4ad6112-9eb4-4f9c-ba1d-2f16d09175c1}" />
 </objects>

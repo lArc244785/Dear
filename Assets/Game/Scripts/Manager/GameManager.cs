@@ -90,6 +90,7 @@ public class GameManager : SingleToon<GameManager>
     private void ChangeGamePlaying()
     {
         //Player.isControl = true;
+        
     }
 
     private void ChangeInGameUISetting()
@@ -155,6 +156,8 @@ public class GameManager : SingleToon<GameManager>
         stageManager.Init();
 
         stageManager.player.isControl = false;
+
+        GameManager.instance.stageManager.stageBgm.BgmStart();
 
         while (!UIManager.instance.produtionView.fade.fadeProcessed)
             yield return null;
