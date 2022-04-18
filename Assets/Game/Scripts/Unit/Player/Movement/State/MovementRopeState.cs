@@ -120,6 +120,7 @@ public class MovementRopeState : I_MovementState
         if(CanRebound(manager))
         {
             Rebound(manager.isRopeReboundDirRight, manager);
+            manager.playerManager.sound.RopeAccel();
         }
     }
 

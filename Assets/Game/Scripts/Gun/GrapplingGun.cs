@@ -24,7 +24,8 @@ public class GrapplingGun : MonoBehaviour
     private Shoulder shouder { get => m_shouderMovement; }
     private GrapplingShooter shooter { get => m_shooter; }
 
-
+    private PlayerSound m_ropeSound;
+    private PlayerSound ropeSound { get { return m_ropeSound; } }
 
     [Header("Option")]
     [SerializeField]
@@ -58,6 +59,7 @@ public class GrapplingGun : MonoBehaviour
     {
         m_hook.init(m_hookSpeed, this);
         m_rebound.init();
+        m_ropeSound = m_shooter.movementManager.playerManager.sound;
     }
 
     public void Fire()
@@ -66,7 +68,7 @@ public class GrapplingGun : MonoBehaviour
         m_eState = E_State.E_HOOKFIRE;
 
         shooter.movementManager.RopeAnimation();
-
+        ropeSound.RopeShoot();
 
         Vector2 dir = InputManager.instance.inGameMousePosition2D - (Vector2)m_hook.transform.position;
         dir.Normalize();
@@ -91,6 +93,8 @@ public class GrapplingGun : MonoBehaviour
     public void Grappling()
     {
         float distance = GetHookDistance();
+
+        ropeSound.RopeCheck();
 
         m_springJoint2D.distance = distance;
         m_springJoint2D.enabled = true;
@@ -123,7 +127,7 @@ public class GrapplingGun : MonoBehaviour
         shouder.SetMouse();
 
 
-
+        ropeSound.RopeQuit();
 
         m_eState = GrapplingGun.E_State.E_NONE;
     }
