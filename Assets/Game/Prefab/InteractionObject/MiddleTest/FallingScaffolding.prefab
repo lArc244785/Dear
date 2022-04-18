@@ -53,6 +53,20 @@ MonoBehaviour:
   m_eventTime: 1
   m_isReset: 1
   m_resetTime: 1
+  m_shakeEvent:
+    Guid:
+      Data1: -1126777754
+      Data2: 1329463775
+      Data3: 1527986838
+      Data4: 109027660
+    Path: event:/game/general/falling_shake
+  m_impactEvent:
+    Guid:
+      Data1: -2088370331
+      Data2: 1126004461
+      Data3: -351675484
+      Data4: 738323879
+    Path: event:/game/general/falling_impact
 --- !u!61 &3490423383665135352
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -27,7 +27,10 @@ public class InteractionFalling : InteractionBase
 
     private bool m_trapActive = true;
 
-
+    [SerializeField]
+    private FMODUnity.EventReference m_shakeEvent;
+    [SerializeField]
+    private FMODUnity.EventReference m_impactEvent;
 
 
     protected override void Enter(Collider2D collision)
@@ -41,6 +44,7 @@ public class InteractionFalling : InteractionBase
         m_evnetRun = true;
         m_trapActive = false;
 
+        SoundManager.instance.SoundOneShot(m_shakeEvent);
     }
 
     protected override void Exit(Collider2D collision)
@@ -56,6 +60,7 @@ public class InteractionFalling : InteractionBase
             if(runTime >= m_eventTime)
             {
                 m_rig2D.bodyType = RigidbodyType2D.Dynamic;
+                SoundManager.instance.SoundOneShot(m_impactEvent);
 
                 if (m_isReset)
                     Invoke("Reset", m_resetTime);

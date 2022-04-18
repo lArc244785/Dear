@@ -42,6 +42,8 @@ public class PlayerSound : MonoBehaviour
 
     [Header("Rope")]
     [SerializeField]
+    private FMODUnity.EventReference m_ropeShoot;
+    [SerializeField]
     private FMODUnity.EventReference m_ropeCheckEvent;
     [SerializeField]
     private FMODUnity.EventReference m_ropeAccelEvent;
@@ -172,6 +174,11 @@ public class PlayerSound : MonoBehaviour
     #endregion
 
     #region Rope Sound Funtion
+    public void RopeShoot()
+    {
+        SoundManager.instance.SoundOneShot(m_ropeShoot);
+    }
+
     public void RopeCheck()
     {
         SoundManager.instance.SoundOneShot(m_ropeCheckEvent);

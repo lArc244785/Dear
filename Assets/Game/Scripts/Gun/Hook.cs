@@ -42,6 +42,9 @@ public class Hook : MonoBehaviour
 
     private void Update()
     {
+        if (m_grapplingGun == null)
+            return;
+
         if (m_grapplingGun.m_eState == GrapplingGun.E_State.E_NONE)
             return;
 
