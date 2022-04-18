@@ -15,7 +15,7 @@
 			<value>footstep</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{46532440-c046-46a4-a1ef-d1bcd84c237c}</destination>
@@ -162,7 +162,6 @@
 	<object class="MixerBusEffectChain" id="{6b147eb6-4e55-43c3-96f5-6c14f6790fd9}">
 		<relationship name="effects">
 			<destination>{62d0c359-c8a7-43eb-9722-ef9455cc7bd1}</destination>
-			<destination>{176ce000-3733-43bb-8283-ae307b41cc4d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{375fa36a-b7e5-4426-be37-e784a8b2b221}" />
@@ -215,7 +214,6 @@
 	<object class="MixerBusEffectChain" id="{944ef59c-1108-4b62-850e-a17c488962d2}">
 		<relationship name="effects">
 			<destination>{09f47607-2e32-4d70-b29c-99e4ecb9bd14}</destination>
-			<destination>{5102e72d-8b5f-4f57-a3d0-a3b3929af024}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a2e1870d-ab57-4ee3-9eb7-4224e08995a5}">
@@ -224,21 +222,5 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{62d0c359-c8a7-43eb-9722-ef9455cc7bd1}" />
-	<object class="ProxyEffect" id="{176ce000-3733-43bb-8283-ae307b41cc4d}">
-		<property name="inputFormat">
-			<value>1</value>
-		</property>
-		<relationship name="preset">
-			<destination>{61f1a103-2a09-4858-8aad-cf986c0bce84}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusFader" id="{09f47607-2e32-4d70-b29c-99e4ecb9bd14}" />
-	<object class="ProxyEffect" id="{5102e72d-8b5f-4f57-a3d0-a3b3929af024}">
-		<property name="inputFormat">
-			<value>0</value>
-		</property>
-		<relationship name="preset">
-			<destination>{61f1a103-2a09-4858-8aad-cf986c0bce84}</destination>
-		</relationship>
-	</object>
 </objects>

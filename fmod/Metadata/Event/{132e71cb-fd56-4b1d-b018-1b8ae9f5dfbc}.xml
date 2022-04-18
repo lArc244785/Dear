@@ -268,7 +268,7 @@ outdoor = 0</value>
 			<value>0.0049261083743842365</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-6</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{f04fc09d-cb5e-4691-a8ff-3d270e1986c6}">
@@ -276,7 +276,7 @@ outdoor = 0</value>
 			<value>0.20000000000000001</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-6</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d58b79e3-cd7d-4852-be04-86617b2fdaf8}">
@@ -284,7 +284,7 @@ outdoor = 0</value>
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-12.8999996</value>
+			<value>-18.8999996</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{664c6057-e3fd-4ad4-9864-f8e05868e5af}">
@@ -292,7 +292,7 @@ outdoor = 0</value>
 			<value>0.59999999999999998</value>
 		</property>
 		<property name="value">
-			<value>-12.8999996</value>
+			<value>-18.8999996</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{0046011c-4bd0-4957-8d16-1971147501b6}">
