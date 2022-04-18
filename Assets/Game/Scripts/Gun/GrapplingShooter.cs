@@ -26,10 +26,7 @@ public class GrapplingShooter : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        Init();
-    }
+
 
 
     public void Init()

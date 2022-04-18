@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7903693310730102107}
   - component: {fileID: 7903693310730102106}
   - component: {fileID: 7903693310730102105}
+  - component: {fileID: 6100753355468379791}
   m_Layer: 0
   m_Name: Disable Scaffolding
   m_TagString: Untagged
@@ -188,3 +189,25 @@ MonoBehaviour:
   m_disabledTime: 1
   m_isReturnActive: 1
   m_returnActiveTime: 0.5
+--- !u!114 &6100753355468379791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903693310730102104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8341ec02380bc134bb2d5154272656b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_imfectEvnet:
+    Guid:
+      Data1: -2088370331
+      Data2: 1126004461
+      Data3: -351675484
+      Data4: 738323879
+    Path: event:/game/general/falling_impact

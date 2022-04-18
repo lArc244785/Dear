@@ -694,13 +694,20 @@ MonoBehaviour:
       Data3: -1183673171
       Data4: -2002764612
     Path: event:/char/yuz/hold_climb
-  m_ropeCheckEvent:
+  m_ropeShoot:
     Guid:
       Data1: 986865551
       Data2: 1246281112
       Data3: 2131377853
       Data4: -1677824422
-    Path: event:/char/yuz/rope_check
+    Path: event:/char/yuz/rope_shoot
+  m_ropeCheckEvent:
+    Guid:
+      Data1: -1857528762
+      Data2: 1273739780
+      Data3: 1024485814
+      Data4: -246441281
+    Path: event:/char/yuz/rope_attach
   m_ropeAccelEvent:
     Guid:
       Data1: -2041877065
