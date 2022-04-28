@@ -306,6 +306,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1357,6 +1358,54 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tileset_stage00_WasteBuilding_23: -1314647872945046977
+      Tileset_stage00_WasteBuilding_45: 3829336275509425875
+      Tileset_stage00_WasteBuilding_36: 4757516735642435389
+      Tileset_stage00_WasteBuilding_15: 801962031658069072
+      Tileset_stage00_WasteBuilding_12: -6864743105168643117
+      Tileset_stage00_WasteBuilding_11: -1659416329230381952
+      Tileset_stage00_WasteBuilding_7: -473764915552076106
+      Tileset_stage00_WasteBuilding_33: 7432622357098536871
+      Tileset_stage00_WasteBuilding_18: 3462823701892929729
+      Tileset_stage00_WasteBuilding_21: -1960923343377087683
+      Tileset_stage00_WasteBuilding_6: 1689209766099388498
+      Tileset_stage00_WasteBuilding_25: -7377437512806178893
+      Tileset_stage00_WasteBuilding_39: 935990780937660151
+      Tileset_stage00_WasteBuilding_26: -5504615416856374411
+      Tileset_stage00_WasteBuilding_41: 1417236170388056636
+      Tileset_stage00_WasteBuilding_34: -5695677674436885806
+      Tileset_stage00_WasteBuilding_10: 838388276012528204
+      Tileset_stage00_WasteBuilding_40: 3001838056706915213
+      Tileset_stage00_WasteBuilding_35: 289472478790368186
+      Tileset_stage00_WasteBuilding_46: -7146010503715884461
+      Tileset_stage00_WasteBuilding_31: -240443629760482597
+      Tileset_stage00_WasteBuilding_29: -8718911891161315933
+      Tileset_stage00_WasteBuilding_27: -4312761935261475029
+      Tileset_stage00_WasteBuilding_42: 6729955411396966845
+      Tileset_stage00_WasteBuilding_43: 4866714952164627586
+      Tileset_stage00_WasteBuilding_2: -8959500697592039300
+      Tileset_stage00_WasteBuilding_17: 5075270650478499128
+      Tileset_stage00_WasteBuilding_9: 3229451432342922322
+      Tileset_stage00_WasteBuilding_1: 3592720196952446679
+      Tileset_stage00_WasteBuilding_16: -6081003919993011656
+      Tileset_stage00_WasteBuilding_14: 8287183105080900405
+      Tileset_stage00_WasteBuilding_8: -5018968150291387496
+      Tileset_stage00_WasteBuilding_19: 1869740919367391250
+      Tileset_stage00_WasteBuilding_4: -6717143989227175952
+      Tileset_stage00_WasteBuilding_37: -5986024897733053959
+      Tileset_stage00_WasteBuilding_24: 4835126598977378707
+      Tileset_stage00_WasteBuilding_20: 1965947294996186705
+      Tileset_stage00_WasteBuilding_28: 3569836437484939262
+      Tileset_stage00_WasteBuilding_30: 5236619413649646893
+      Tileset_stage00_WasteBuilding_32: 552396587236230166
+      Tileset_stage00_WasteBuilding_5: 3406095917898692323
+      Tileset_stage00_WasteBuilding_0: -4601996553174625949
+      Tileset_stage00_WasteBuilding_22: -3301270394346812955
+      Tileset_stage00_WasteBuilding_3: 5323771206040841242
+      Tileset_stage00_WasteBuilding_44: -647388342404336516
+      Tileset_stage00_WasteBuilding_13: -1398173656544213884
+      Tileset_stage00_WasteBuilding_38: -5735969897075345936
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

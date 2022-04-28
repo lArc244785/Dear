@@ -27,6 +27,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -90,7 +91,7 @@ TextureImporter:
         width: 73
         height: 83
       alignment: 9
-      pivot: {x: 0.52287596, y: 0.41281432}
+      pivot: {x: 0.5254177, y: 0.40834326}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -112,6 +113,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Char_Motion_Rope_Air_Arm0: 4394137193897241638
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -150,6 +150,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1096,6 +1097,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Object_temporary_thron_3: 21300006
+      Object_temporary_thron_24: 21300048
+      Object_temporary_thron_19: 21300038
+      Object_temporary_thron_31: 21300062
+      Object_temporary_thron_21: 21300042
+      Object_temporary_thron_36: 21300072
+      Object_temporary_thron_15: 21300030
+      Object_temporary_thron_32: 21300064
+      Object_temporary_thron_41: 21300082
+      Object_temporary_thron_6: 21300012
+      Object_temporary_thron_9: 21300018
+      Object_temporary_thron_33: 21300066
+      Object_temporary_thron_30: 21300060
+      Object_temporary_thron_29: 21300058
+      Object_temporary_thron_2: 21300004
+      Object_temporary_thron_39: 21300078
+      Object_temporary_thron_10: 21300020
+      Object_temporary_thron_20: 21300040
+      Object_temporary_thron_26: 21300052
+      Object_temporary_thron_37: 21300074
+      Object_temporary_thron_22: 21300044
+      Object_temporary_thron_5: 21300010
+      Object_temporary_thron_13: 21300026
+      Object_temporary_thron_18: 21300036
+      Object_temporary_thron_16: 21300032
+      Object_temporary_thron_7: 21300014
+      Object_temporary_thron_0: 21300000
+      Object_temporary_thron_25: 21300050
+      Object_temporary_thron_1: 21300002
+      Object_temporary_thron_12: 21300024
+      Object_temporary_thron_34: 21300068
+      Object_temporary_thron_8: 21300016
+      Object_temporary_thron_11: 21300022
+      Object_temporary_thron_40: 21300080
+      Object_temporary_thron_17: 21300034
+      Object_temporary_thron_35: 21300070
+      Object_temporary_thron_14: 21300028
+      Object_temporary_thron_28: 21300056
+      Object_temporary_thron_23: 21300046
+      Object_temporary_thron_4: 21300008
+      Object_temporary_thron_27: 21300054
+      Object_temporary_thron_38: 21300076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

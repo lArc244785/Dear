@@ -306,6 +306,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2368,6 +2369,101 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tileset_stage00_indoor_11: 21300022
+      Tileset_stage00_indoor_41: 21300082
+      Tileset_stage00_indoor_36: 21300072
+      Tileset_stage00_indoor_27: 21300054
+      Tileset_stage00_indoor_32: 21300064
+      Tileset_stage00_indoor_76: 21300152
+      Tileset_stage00_indoor_80: 21300160
+      Tileset_stage00_indoor_70: 21300140
+      Tileset_stage00_indoor_53: 21300106
+      Tileset_stage00_indoor_73: 21300146
+      Tileset_stage00_indoor_63: 21300126
+      Tileset_stage00_indoor_23: 21300046
+      Tileset_stage00_indoor_19: 21300038
+      Tileset_stage00_indoor_82: 21300164
+      Tileset_stage00_indoor_93: 21300186
+      Tileset_stage00_indoor_46: 21300092
+      Tileset_stage00_indoor_51: 21300102
+      Tileset_stage00_indoor_14: 21300028
+      Tileset_stage00_indoor_88: 21300176
+      Tileset_stage00_indoor_15: 21300030
+      Tileset_stage00_indoor_55: 21300110
+      Tileset_stage00_indoor_24: 21300048
+      Tileset_stage00_indoor_44: 21300088
+      Tileset_stage00_indoor_38: 21300076
+      Tileset_stage00_indoor_65: 21300130
+      Tileset_stage00_indoor_72: 21300144
+      Tileset_stage00_indoor_22: 21300044
+      Tileset_stage00_indoor_84: 21300168
+      Tileset_stage00_indoor_8: 21300016
+      Tileset_stage00_indoor_30: 21300060
+      Tileset_stage00_indoor_56: 21300112
+      Tileset_stage00_indoor_20: 21300040
+      Tileset_stage00_indoor_59: 21300118
+      Tileset_stage00_indoor_61: 21300122
+      Tileset_stage00_indoor_7: 21300014
+      Tileset_stage00_indoor_52: 21300104
+      Tileset_stage00_indoor_58: 21300116
+      Tileset_stage00_indoor_13: 21300026
+      Tileset_stage00_indoor_18: 21300036
+      Tileset_stage00_indoor_74: 21300148
+      Tileset_stage00_indoor_77: 21300154
+      Tileset_stage00_indoor_28: 21300056
+      Tileset_stage00_indoor_79: 21300158
+      Tileset_stage00_indoor_29: 21300058
+      Tileset_stage00_indoor_6: 21300012
+      Tileset_stage00_indoor_0: 21300000
+      Tileset_stage00_indoor_68: 21300136
+      Tileset_stage00_indoor_35: 21300070
+      Tileset_stage00_indoor_34: 21300068
+      Tileset_stage00_indoor_40: 21300080
+      Tileset_stage00_indoor_12: 21300024
+      Tileset_stage00_indoor_21: 21300042
+      Tileset_stage00_indoor_17: 21300034
+      Tileset_stage00_indoor_37: 21300074
+      Tileset_stage00_indoor_5: 21300010
+      Tileset_stage00_indoor_75: 21300150
+      Tileset_stage00_indoor_71: 21300142
+      Tileset_stage00_indoor_31: 21300062
+      Tileset_stage00_indoor_85: 21300170
+      Tileset_stage00_indoor_69: 21300138
+      Tileset_stage00_indoor_62: 21300124
+      Tileset_stage00_indoor_25: 21300050
+      Tileset_stage00_indoor_64: 21300128
+      Tileset_stage00_indoor_1: 21300002
+      Tileset_stage00_indoor_92: 21300184
+      Tileset_stage00_indoor_9: 21300018
+      Tileset_stage00_indoor_2: 21300004
+      Tileset_stage00_indoor_87: 21300174
+      Tileset_stage00_indoor_3: 21300006
+      Tileset_stage00_indoor_89: 21300178
+      Tileset_stage00_indoor_50: 21300100
+      Tileset_stage00_indoor_66: 21300132
+      Tileset_stage00_indoor_39: 21300078
+      Tileset_stage00_indoor_26: 21300052
+      Tileset_stage00_indoor_67: 21300134
+      Tileset_stage00_indoor_90: 21300180
+      Tileset_stage00_indoor_54: 21300108
+      Tileset_stage00_indoor_57: 21300114
+      Tileset_stage00_indoor_83: 21300166
+      Tileset_stage00_indoor_78: 21300156
+      Tileset_stage00_indoor_91: 21300182
+      Tileset_stage00_indoor_33: 21300066
+      Tileset_stage00_indoor_4: 21300008
+      Tileset_stage00_indoor_60: 21300120
+      Tileset_stage00_indoor_86: 21300172
+      Tileset_stage00_indoor_81: 21300162
+      Tileset_stage00_indoor_16: 21300032
+      Tileset_stage00_indoor_43: 21300086
+      Tileset_stage00_indoor_42: 21300084
+      Tileset_stage00_indoor_48: 21300096
+      Tileset_stage00_indoor_47: 21300094
+      Tileset_stage00_indoor_45: 21300090
+      Tileset_stage00_indoor_10: 21300020
+      Tileset_stage00_indoor_49: 21300098
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
