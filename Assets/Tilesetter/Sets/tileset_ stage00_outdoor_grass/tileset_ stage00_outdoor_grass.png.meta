@@ -165,6 +165,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1216,6 +1217,54 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      tileset_ stage00_outdoor_grass_2: 21300004
+      tileset_ stage00_outdoor_grass_4: 21300008
+      tileset_ stage00_outdoor_grass_20: 21300040
+      tileset_ stage00_outdoor_grass_35: 21300070
+      tileset_ stage00_outdoor_grass_6: 21300012
+      tileset_ stage00_outdoor_grass_0: 21300000
+      tileset_ stage00_outdoor_grass_18: 21300036
+      tileset_ stage00_outdoor_grass_22: 21300044
+      tileset_ stage00_outdoor_grass_19: 21300038
+      tileset_ stage00_outdoor_grass_42: 21300084
+      tileset_ stage00_outdoor_grass_41: 21300082
+      tileset_ stage00_outdoor_grass_10: 21300020
+      tileset_ stage00_outdoor_grass_9: 21300018
+      tileset_ stage00_outdoor_grass_31: 21300062
+      tileset_ stage00_outdoor_grass_14: 21300028
+      tileset_ stage00_outdoor_grass_5: 21300010
+      tileset_ stage00_outdoor_grass_7: 21300014
+      tileset_ stage00_outdoor_grass_37: 21300074
+      tileset_ stage00_outdoor_grass_11: 21300022
+      tileset_ stage00_outdoor_grass_1: 21300002
+      tileset_ stage00_outdoor_grass_44: 21300088
+      tileset_ stage00_outdoor_grass_46: 21300092
+      tileset_ stage00_outdoor_grass_8: 21300016
+      tileset_ stage00_outdoor_grass_28: 21300056
+      tileset_ stage00_outdoor_grass_3: 21300006
+      tileset_ stage00_outdoor_grass_39: 21300078
+      tileset_ stage00_outdoor_grass_34: 21300068
+      tileset_ stage00_outdoor_grass_26: 21300052
+      tileset_ stage00_outdoor_grass_13: 21300026
+      tileset_ stage00_outdoor_grass_43: 21300086
+      tileset_ stage00_outdoor_grass_33: 21300066
+      tileset_ stage00_outdoor_grass_45: 21300090
+      tileset_ stage00_outdoor_grass_24: 21300048
+      tileset_ stage00_outdoor_grass_16: 21300032
+      tileset_ stage00_outdoor_grass_21: 21300042
+      tileset_ stage00_outdoor_grass_25: 21300050
+      tileset_ stage00_outdoor_grass_29: 21300058
+      tileset_ stage00_outdoor_grass_12: 21300024
+      tileset_ stage00_outdoor_grass_36: 21300072
+      tileset_ stage00_outdoor_grass_40: 21300080
+      tileset_ stage00_outdoor_grass_38: 21300076
+      tileset_ stage00_outdoor_grass_32: 21300064
+      tileset_ stage00_outdoor_grass_30: 21300060
+      tileset_ stage00_outdoor_grass_15: 21300030
+      tileset_ stage00_outdoor_grass_23: 21300046
+      tileset_ stage00_outdoor_grass_27: 21300054
+      tileset_ stage00_outdoor_grass_17: 21300034
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

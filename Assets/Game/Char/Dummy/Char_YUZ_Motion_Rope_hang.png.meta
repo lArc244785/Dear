@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -268,6 +269,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Char_YUZ_Motion_Rope_hang_6: -6292218610915790891
+      Char_YUZ_Motion_Rope_hang_0: -4305413219610231445
+      Char_YUZ_Motion_Rope_hang_4: -5533319533565948350
+      Char_YUZ_Motion_Rope_hang_5: -7442070695833175043
+      Char_YUZ_Motion_Rope_hang_3: -3166531659560736917
+      Char_YUZ_Motion_Rope_hang_2: 8776397515468858213
+      Char_YUZ_Motion_Rope_hang_1: 4378697659430021820
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -24,6 +24,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1087,6 +1088,54 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      temporary tilesets_indoor_14: 2485128969866262375
+      temporary tilesets_indoor_23: -4451412547177955380
+      temporary tilesets_indoor_34: -955161548038437191
+      temporary tilesets_indoor_39: -2220406307427255300
+      temporary tilesets_indoor_0: -6393528647749304218
+      temporary tilesets_indoor_9: -3114447740872660024
+      temporary tilesets_indoor_40: -447305033116950065
+      temporary tilesets_indoor_41: 1373252227797397954
+      temporary tilesets_indoor_18: 3152392980201908687
+      temporary tilesets_indoor_15: -5436719879891041235
+      temporary tilesets_indoor_2: -1546891770437358500
+      temporary tilesets_indoor_33: -3448404035081634092
+      temporary tilesets_indoor_20: 1793170163290133588
+      temporary tilesets_indoor_51: -4083494726860370532
+      temporary tilesets_indoor_16: 4854441363937512977
+      temporary tilesets_indoor_42: 1624034295173516959
+      temporary tilesets_indoor_26: -9145094023550800355
+      temporary tilesets_indoor_6: 8073720890536235594
+      temporary tilesets_indoor_12: 2598802704892400449
+      temporary tilesets_indoor_29: 3426674755883936012
+      temporary tilesets_indoor_5: -8348511739659652710
+      temporary tilesets_indoor_28: -8040002002002668381
+      temporary tilesets_indoor_49: -5724167498050111727
+      temporary tilesets_indoor_8: 8840299700394946916
+      temporary tilesets_indoor_32: -436200282505849219
+      temporary tilesets_indoor_37: 4324343232840700518
+      temporary tilesets_indoor_30: -990745434491191070
+      temporary tilesets_indoor_4: -4705708506321229286
+      temporary tilesets_indoor_31: 754469172120954961
+      temporary tilesets_indoor_43: 7278485040151116056
+      temporary tilesets_indoor_19: 85342098063127562
+      temporary tilesets_indoor_17: -2292749146834664537
+      temporary tilesets_indoor_38: -3713261737173128602
+      temporary tilesets_indoor_25: -8757459430983853405
+      temporary tilesets_indoor_11: 884988167740554561
+      temporary tilesets_indoor_35: 4947035111024322238
+      temporary tilesets_indoor_48: -5729679077305075711
+      temporary tilesets_indoor_36: 5468564891140177402
+      temporary tilesets_indoor_3: 2879164205522483914
+      temporary tilesets_indoor_7: -6379949978363684491
+      temporary tilesets_indoor_22: -22186257159177537
+      temporary tilesets_indoor_1: -3799436987472338273
+      temporary tilesets_indoor_13: -1096638502510343667
+      temporary tilesets_indoor_50: 7210759498036197658
+      temporary tilesets_indoor_52: 6101221787949630718
+      temporary tilesets_indoor_24: -94838317698120470
+      temporary tilesets_indoor_27: 1086131606869684270
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
