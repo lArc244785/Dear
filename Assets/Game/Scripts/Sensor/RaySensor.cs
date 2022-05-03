@@ -10,7 +10,7 @@ public class RaySensor : MonoBehaviour
     [SerializeField]
     private bool m_isRightDir;
 
-    private WallSensorManager m_manager;
+    private WallSensor m_manager;
 
     //Gizom Defalute Distance
     private float distance
@@ -24,7 +24,7 @@ public class RaySensor : MonoBehaviour
     [SerializeField]
     private Color m_gizomColor;
 
-    public void Init(WallSensorManager manager)
+    public void Init(WallSensor manager)
     {
         m_manager = manager;
     }

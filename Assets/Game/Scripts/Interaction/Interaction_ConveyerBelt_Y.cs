@@ -18,7 +18,7 @@ public class Interaction_ConveyerBelt_Y : InteractionBase
     {
         base.Enter(collision);
         m_movementManager = collision.GetComponent<PlayerMovementManager>();
-        m_unitRig2D = m_movementManager.rig2D;
+        m_unitRig2D = m_movementManager.player.rig2D;
         m_movementManager.isWallGripInteraction = true;
 
     }
@@ -36,8 +36,8 @@ public class Interaction_ConveyerBelt_Y : InteractionBase
         if (m_movementManager == null)
             return;
 
-        if(m_dirY > 0.0f && (m_movementManager.wallSensor.UpSensorGrounded()|| m_movementManager.inputPlayer.moveDir.y < 0.0f  )||
-            m_dirY < 0.0f && (m_movementManager.wallSensor.DownSensorGrounded() || m_movementManager.inputPlayer.moveDir.y > 0.0f))
+        if(m_dirY > 0.0f && (m_movementManager.wallSensor.UpSensorGrounded()|| m_movementManager.player.inputPlayer.moveDir.y < 0.0f  )||
+            m_dirY < 0.0f && (m_movementManager.wallSensor.DownSensorGrounded() || m_movementManager.player.inputPlayer.moveDir.y > 0.0f))
         {
             m_unitRig2D.AddForce((Vector2.up*m_dirY) * m_maxSpeed);
         }

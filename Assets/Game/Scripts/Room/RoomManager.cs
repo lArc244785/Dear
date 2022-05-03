@@ -35,7 +35,7 @@ public class RoomManager : MonoBehaviour
 
     private IEnumerator RoomMoveCoroutine(int index)
     {
-        GameManager.instance.stageManager.player.isControl = false;
+        GameManager.instance.stageManager.player.inputPlayer.isControl = false;
 
         GameManager.instance.stageManager.player.rig2D.velocity = Vector2.zero;
 
@@ -54,7 +54,7 @@ public class RoomManager : MonoBehaviour
         UIManager.instance.produtionView.fade.FadeIn();
 
         yield return new WaitForSeconds(0.5f);
-        GameManager.instance.stageManager.player.isControl = true;
+        GameManager.instance.stageManager.player.inputPlayer.isControl = true;
     }
 
 }

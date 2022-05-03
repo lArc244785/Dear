@@ -4,58 +4,128 @@ using UnityEngine;
 
 public abstract class UnitBase : MonoBehaviour
 {
-    [SerializeField]
+    #region Health
     private Health m_health;
-
-    [SerializeField]
-    private StateImfectTween m_stateImfect;
-    public StateImfectTween stateImfect { get { return m_stateImfect; } }
-
-    [SerializeField]
-    private SpriteRenderer m_spriteRenderer;
-
-    [SerializeField]
-    private Rigidbody2D m_rig2D;
-    public Rigidbody2D rig2D { get { return m_rig2D; } }
-
-
-
-    private bool m_control;
-
-    public virtual void Init()
+    public Health health
     {
-        health.Init(this);
-        stateImfect.Init(m_spriteRenderer);
+        get { return m_health; }
     }
+    #endregion
+
+    #region Model
+    private SpriteRenderer m_model;
+    public SpriteRenderer model
+    {
+        get
+        {
+            return m_model;
+        }
+    }
+    #endregion
+
+    #region animator
+    private Animator m_modelAnimator;
+    public Animator modelAnimator
+    {
+        get
+        {
+            return m_modelAnimator;
+        }
+    }
+    #endregion
+
+    #region rig2D
+    private Rigidbody2D m_rig2D;
+    public Rigidbody2D rig2D
+    {
+        get
+        {
+            return m_rig2D;
+        }
+    }
+    #endregion
 
 
+    #region isInit
+    private bool m_isInit = false;
+    public bool isInit
+    {
+        protected set
+        {
+            m_isInit = value;
+        }
+        get 
+        {
+            return m_isInit; 
+        }
+    }
+    #endregion
 
-    public virtual bool isControl
+
+    #region isMoveAble
+    private bool m_isMoveAble;
+    public bool isMoveAble
     {
         set
         {
-            m_control = value;
+            m_isMoveAble = value;
         }
         get
         {
-            return m_control;
+            return m_isMoveAble;
         }
     }
+    #endregion
 
 
     public Vector2 unitPos
     {
         get
         {
-            return (Vector2)transform.position;
+            return transform.position;
         }
     }
 
-    public Health health
-        { get { return m_health; } }
+    //�ʱ�ȭ �۾��� �Ϸ�Ǹ� isInit�� True�� ������ ��
+    public virtual void Init()
+    {
+        ComponentInit();
+    }
 
-    public virtual void HitEvent(Vector2 hitPoint)
+    protected virtual void ComponentInit()
+    {
+        m_health = GetComponent<Health>();
+
+        Transform modelTr = transform.Find("model");
+        m_model = modelTr.GetComponent<SpriteRenderer>();
+        m_modelAnimator = modelTr.GetComponent<Animator>();
+
+        m_rig2D = GetComponent<Rigidbody2D>();
+
+        health.Init();
+        
+    }
+
+
+    #region Hit Method
+    public virtual void OnHit(UnitBase attackUnit, int damage)
+    {
+        HitHp(damage);
+        HitUniqueEvent(attackUnit);
+    }
+
+    protected virtual void HitHp(int damage)
+    {
+    }
+
+    protected virtual void HitUniqueEvent(UnitBase attackUnit)
     {
 
+    }
+    #endregion
+
+    public bool IsDead()
+    {
+        return health.hp == 0;
     }
 }

@@ -4,26 +4,62 @@ using UnityEngine;
 
 public class InputPlayer : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerMovementManager m_MovementManager;
-    [SerializeField]
-    private GrapplingShooter m_shooter;
+
+    private PlayerMovementManager m_movementManager;
+    private PlayerMovementManager movementManger
+    {
+        get
+        {
+            return m_movementManager;
+        }
+    }
+
+    private ToolManager m_toolManager;
+    private ToolManager toolManager
+    {
+        get
+        {
+            return m_toolManager;
+        }
+    }
+
 
     private Vector2 m_moveDir;
 
+    private bool m_isControl;
+    public bool isControl
+    {
+        set
+        {
+            m_isControl = value;
+        }
+        get
+        {
+            return m_isControl;
+        }
+    }
+
+
+    public void Init(PlayerMovementManager movementManger, ToolManager toolManager)
+    {
+       m_movementManager = movementManger;
+        m_toolManager = toolManager;
+        isControl = true;
+    }
 
     public void JumpEnter()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
-        m_MovementManager.coyoteSystem.OnJumpEnterTime();        
+
+        movementManger.coyoteSystem.OnJumpEnterTime();        
     }
 
     public void JumpUp()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
-        m_MovementManager.coyoteSystem.OnJumpExitTime();
+        movementManger.coyoteSystem.OnJumpExitTime();
     }
 
     public void JumpPressed()
@@ -34,55 +70,70 @@ public class InputPlayer : MonoBehaviour
 
     public void WallGripEnter()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
-            m_MovementManager.isWallGrip = true;
+        movementManger.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
-        m_MovementManager.isWallGrip = false;
+        movementManger.isWallGrip = false;
     }
 
     public void LeftMouseEnter()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
-        m_shooter.Fire();
+        
     }
 
     public void LeftMouseUp()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
-        m_shooter.Cancel();
+        
     }
 
     public void ReboundRight()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
 
-        if (m_MovementManager.currentState != PlayerMovementManager.State.Rope)
+        if (movementManger.currentState != PlayerMovementManager.State.Rope)
             return;
-        m_MovementManager.isRopeReboundDirRight = true;
-        m_MovementManager.coyoteSystem.OnRopeReboundTime();
+        movementManger.isRopeReboundDirRight = true;
+        movementManger.coyoteSystem.OnRopeReboundTime();
     }
 
     public void ReboundLeft()
     {
-        if (!m_MovementManager.playerManager.isControl)
+        if (!isControl)
             return;
 
-        if (m_MovementManager.currentState != PlayerMovementManager.State.Rope)
+        if (movementManger.currentState != PlayerMovementManager.State.Rope)
             return;
-        m_MovementManager.isRopeReboundDirRight = false;
-        m_MovementManager.coyoteSystem.OnRopeReboundTime();
+        movementManger.isRopeReboundDirRight = false;
+        movementManger.coyoteSystem.OnRopeReboundTime();
     }
 
+    public void ToolUseLeft()
+    {
+        if (!isControl)
+            return;
 
+
+        toolManager.LeftUse();
+    }
+
+    public void ToolUseRight()
+    {
+        if (!isControl)
+            return;
+
+        toolManager.RightUse();
+    }
 
 
 

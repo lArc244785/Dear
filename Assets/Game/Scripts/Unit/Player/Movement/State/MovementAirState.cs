@@ -2,34 +2,34 @@ using UnityEngine;
 
 public class MovementAirState : I_MovementState
 {
-    public void Enter(PlayerMovementManager manager)
+    public void Enter(PlayerMovementManager movementManager)
     {
-        if (!manager.isJump && manager.playerManager.grapplingShooter.isNoneGrappling)
-            manager.playerManager.animation.TriggerAir();
+        if (!movementManager.isJump)
+            movementManager.player.animationManager.TriggerAir();
     }
 
-    public void Exit(PlayerMovementManager manager)
+    public void Exit(PlayerMovementManager movementManager)
     {
-        manager.coyoteSystem.ResetJumpExitTime();
+        movementManager.coyoteSystem.ResetJumpExitTime();
     }
 
-    public void FixedExcute(PlayerMovementManager manager)
+    public void FixedExcute(PlayerMovementManager movementManager)
     {
-        manager.Resistance(manager.movementData.resistanceInAirAmount);
-        manager.Run(1.0f, true);
+        movementManager.Resistance(movementManager.movementData.resistanceInAirAmount);
+        movementManager.Run(1.0f, true);
     }
 
-    public void UpdateExcute(PlayerMovementManager manager)
+    public void UpdateExcute(PlayerMovementManager movementManager)
     {
-        TimeUpdate(manager.coyoteSystem);
-        GracityUpdate(manager);
+        TimeUpdate(movementManager.coyoteSystem);
+        GracityUpdate(movementManager);
 
-        manager.TrunUpdate();
+        movementManager.TrunUpdate();
 
-        JumpUpdate(manager);
+        JumpUpdate(movementManager);
 
 
-        ChangeState(manager);
+        ChangeState(movementManager);
     }
 
     private void TimeUpdate(CoyoteSystem coyoteSystem)
@@ -42,19 +42,19 @@ public class MovementAirState : I_MovementState
 
 
 
-    private void ChangeState(PlayerMovementManager manager)
+    private void ChangeState(PlayerMovementManager movementManager)
     {
 
 
-        if (manager.IsWallGrouned())
-            manager.currentState = PlayerMovementManager.State.Wall;
-        else if (!manager.isJump && manager.IsGrounded())
+        if (movementManager.IsWallGrouned())
+            movementManager.currentState = PlayerMovementManager.State.Wall;
+        else if (!movementManager.isJump && movementManager.IsGrounded())
         {
-            manager.jumpCount = 0;
-            manager.currentState = PlayerMovementManager.State.Ground;
+            movementManager.jumpCount = 0;
+            movementManager.currentState = PlayerMovementManager.State.Ground;
 
 
-            Collider2D groundCollider = manager.groundSensor.GetGroundCollider2D();
+            Collider2D groundCollider = movementManager.groundSensor.GetGroundCollider2D();
 
             float value = 0.0f;
             if (groundCollider.tag == "Forest")
@@ -66,55 +66,53 @@ public class MovementAirState : I_MovementState
                 value = 2.0f;
             }
 
-            manager.playerManager.sound.Landing(value);
+            movementManager.player.sound.Landing(value);
         }
 
     }
 
 
-    private void GracityUpdate(PlayerMovementManager manager)
+    private void GracityUpdate(PlayerMovementManager movementManager)
     {
-        if (manager.rig2D.velocity.y < 0.0f)
-            manager.SetGravity(manager.movementData.gravityScale * manager.movementData.fallGravityMult);
+        if (movementManager.player.rig2D.velocity.y < 0.0f)
+            movementManager.SetGravity(movementManager.movementData.gravityScale * movementManager.movementData.fallGravityMult);
         else
-            manager.SetGravity(manager.movementData.gravityScale);
+            movementManager.SetGravity(movementManager.movementData.gravityScale);
     }
 
-    private void JumpUpdate(PlayerMovementManager manager)
+    private void JumpUpdate(PlayerMovementManager movementManager)
     {
-        if (manager.isJump && manager.rig2D.velocity.y <= 0.0f)
+        if (movementManager.isJump && movementManager.player.rig2D.velocity.y <= 0.0f)
         {
-            manager.isJump = false;
-            if (manager.playerManager.grapplingShooter.isNoneGrappling)
-                manager.playerManager.animation.TriggerAir();
+            movementManager.isJump = false;
         }
 
-        if (CanJumpCut(manager))
+        if (CanJumpCut(movementManager))
         {
-            manager.JumpCut();
+            movementManager.JumpCut();
         }
 
-        if (CanAirJump(manager))
+        if (CanAirJump(movementManager))
         {
 
-            manager.Jump(manager.movementData.airJumpForce);
+            movementManager.Jump(movementManager.movementData.airJumpForce);
         }
 
     }
 
-    private bool CanAirJump(PlayerMovementManager manager)
+    private bool CanAirJump(PlayerMovementManager movementManager)
     {
-        return !manager.isJump &&
-            manager.jumpCount < manager.movementData.maxJumpCount &&
-            manager.coyoteSystem.lastJumpEnterTime > 0.0f;
+        return !movementManager.isJump &&
+            movementManager.jumpCount < movementManager.movementData.maxJumpCount &&
+            movementManager.coyoteSystem.lastJumpEnterTime > 0.0f;
     }
 
-    private bool CanJumpCut(PlayerMovementManager manager)
+    private bool CanJumpCut(PlayerMovementManager movementManager)
     {
         return
-            manager.coyoteSystem.lastJumpExitTime > 0.0f &&
-            manager.jumpCount == 1 &&
-            manager.isJump;
+            movementManager.coyoteSystem.lastJumpExitTime > 0.0f &&
+            movementManager.jumpCount == 1 &&
+            movementManager.isJump;
     }
 
 

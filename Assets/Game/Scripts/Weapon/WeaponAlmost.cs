@@ -34,7 +34,7 @@ public class WeaponAlmost : WeaponBase
         int targetMask = 1 << collision.gameObject.layer;
         if((targetMask & hitLayerMask) != 0)
         {
-            collision.GetComponent<Health>().Hit(data.damage, (Vector2)transform.position);
+            //collision.GetComponent<Health>().Hit(data.damage, (Vector2)transform.position);
         }
     }
 

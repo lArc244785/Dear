@@ -3,37 +3,18 @@ using DG.Tweening;
 
 public class UnitPlayer : UnitBase
 {
-    [SerializeField]
-    private PlayerMovementManager m_movement;
-    public PlayerMovementManager movement
+    #region movementManger
+    private PlayerMovementManager m_movementManager;
+    public PlayerMovementManager movementManager
     {
         get
         {
-            return m_movement;
+            return m_movementManager;
         }
     }
+    #endregion
 
-    [SerializeField]
-    private GrapplingShooter m_grapplingShooter;
-    public GrapplingShooter grapplingShooter
-    {
-        get
-        {
-            return m_grapplingShooter;
-        }
-    }
-
-    [SerializeField]
-    private PlayerAnimation m_animation;
-    public PlayerAnimation animation
-    {
-        get
-        {
-            return m_animation;
-        }
-    }
-
-    [SerializeField]
+    #region shoulder
     private Shoulder m_shoulder;
     public Shoulder shoulder
     {
@@ -42,61 +23,77 @@ public class UnitPlayer : UnitBase
             return m_shoulder;
         }
     }
+    #endregion
 
-    [SerializeField]
-    private Transform m_model;
-    public Transform model { get { return m_model; } }
+    #region toolManager
+    private ToolManager m_toolManager;
+    public ToolManager toolManager
+    {
+        get
+        {
+            return m_toolManager;
+        }
+    }
+    #endregion
 
-    [SerializeField]
-    private PlayerSound m_sound;
-    public PlayerSound sound { get { return m_sound; } }
-
-    [SerializeField]
+    #region inputPlayer;
     private InputPlayer m_inputPlayer;
-    public InputPlayer inputPlayer { get { return m_inputPlayer; } }
+    public InputPlayer inputPlayer
+    {
+        get
+        {
+            return m_inputPlayer;
+        }
+    }
+    #endregion
+
+    #region sound
+    private PlayerSound m_sound;
+    public PlayerSound sound
+    {
+        get
+        {
+            return m_sound;
+        }
+    }
+
+    #endregion
+
+    #region animationManager
+    private PlayerAnimationManager m_animationManager;
+    public PlayerAnimationManager animationManager
+    {
+        get
+        {
+            return m_animationManager;
+        }
+    }
+    #endregion
 
     public override void Init()
     {
         base.Init();
-        m_movement.Init(this);
-        m_grapplingShooter.Init();
-        m_shoulder.Init();
-        m_sound.Init(this);
-        
+        isInit = true;
     }
 
-    public override void HitEvent(Vector2 hitPoint)
+    protected override void ComponentInit()
     {
-        base.HitEvent(hitPoint);
+        base.ComponentInit();
+        m_movementManager = GetComponent<PlayerMovementManager>();
+        m_inputPlayer = GetComponent<InputPlayer>();
+        m_sound = GetComponent<PlayerSound>();
+        m_animationManager = GetComponent<PlayerAnimationManager>();
+        m_shoulder = transform.Find("Shoulder").GetComponent<Shoulder>();
+        m_toolManager = GetComponent<ToolManager>();
 
-        Vector2 hitToUnitDir = (Vector2)m_model.position - hitPoint;
-        hitToUnitDir.Normalize();
+        shoulder.Init();
 
-        movement.HitMovement(hitToUnitDir);
-
-    }
-
-    private Vector2 m_oldMoveDir;
+        animationManager.Init(modelAnimator, shoulder);
+        movementManager.Init(this);
+        sound.Init(this);
+       inputPlayer.Init(movementManager, toolManager);
 
 
-    public override bool isControl 
-    { 
-        get => base.isControl;
-        set
-        {
-            if (!value)
-            {
-                m_oldMoveDir = inputPlayer.moveDir;
-                inputPlayer.moveDir = Vector2.zero;
-            }
-            else if(value && !isControl)
-            {
-                inputPlayer.moveDir = m_oldMoveDir;
-            }
-
-            base.isControl = value;
-
-        }
     }
 
 

@@ -12,7 +12,7 @@ public class InteractionSpring : InteractionBase
     {
         base.Enter(collision);
         PlayerMovementManager movement = collision.GetComponent<PlayerMovementManager>(); ;
-        Rigidbody2D rig2D = movement.rig2D;
+        Rigidbody2D rig2D = movement.player.rig2D;
 
         float power = m_power;
 

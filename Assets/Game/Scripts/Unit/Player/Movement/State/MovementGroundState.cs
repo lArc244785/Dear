@@ -7,39 +7,36 @@ public class MovementGroundState : I_MovementState
 {
     private IEnumerator m_footStepCoroutine;
 
-    public void Enter(PlayerMovementManager manager)
+    public void Enter(PlayerMovementManager movementManager)
     {
-        if (manager.playerManager.grapplingShooter.isNoneGrappling)
-            manager.playerManager.animation.TriggerLanding();
-        else
-            manager.playerManager.animation.ropeMovement = 0.5f;
-        manager.SetGravity(manager.movementData.gravityScale);
+        movementManager.player.animationManager.TriggerLanding();
+        movementManager.SetGravity(movementManager.movementData.gravityScale);
     }
 
-    public void Exit(PlayerMovementManager manager)
+    public void Exit(PlayerMovementManager movementManager)
     {
-        manager.playerManager.sound.footStepLoop = false;
+        movementManager.player.sound.footStepLoop = false;
     }
 
-    public void FixedExcute(PlayerMovementManager manager)
+    public void FixedExcute(PlayerMovementManager movementManager)
     {
-        manager.Resistance(manager.movementData.frictionAmount);
-        RunUpdate(manager);
+        movementManager.Resistance(movementManager.movementData.frictionAmount);
+        RunUpdate(movementManager);
     }
 
-    public void UpdateExcute(PlayerMovementManager manager)
+    public void UpdateExcute(PlayerMovementManager movementManager)
     {
-        TimeUpdate(manager.coyoteSystem);
-        PhysicUpdate(manager.groundSensor,manager.coyoteSystem);
+        TimeUpdate(movementManager.coyoteSystem);
+        PhysicUpdate(movementManager.groundSensor,movementManager.coyoteSystem);
 
-        manager.TrunUpdate();
+        movementManager.TrunUpdate();
 
-        JumpUpdate(manager);
+        JumpUpdate(movementManager);
 
 
-        if (manager.coyoteSystem.lastOnGroundTime <= 0.0f)
+        if (movementManager.coyoteSystem.lastOnGroundTime <= 0.0f)
         {
-            manager.currentState = PlayerMovementManager.State.Air;
+            movementManager.currentState = PlayerMovementManager.State.Air;
         }
 
     }
@@ -50,7 +47,7 @@ public class MovementGroundState : I_MovementState
         coyoteSystem.JumpCoyoteTime();
     }
 
-    private void PhysicUpdate(NewGroundSensor groundSensor, CoyoteSystem coyoteSystem)
+    private void PhysicUpdate(GroundSensor groundSensor, CoyoteSystem coyoteSystem)
     {
         if (groundSensor.IsGrounded())
         {
@@ -58,12 +55,12 @@ public class MovementGroundState : I_MovementState
         }
     }
 
-    private void JumpUpdate(PlayerMovementManager manager)
+    private void JumpUpdate(PlayerMovementManager movementManager)
     {
-        if(CanJump(manager))
+        if(CanJump(movementManager))
         {
-            manager.Jump(manager.movementData.jumpForce);
-            manager.currentState = PlayerMovementManager.State.Air;
+            movementManager.Jump(movementManager.movementData.jumpForce);
+            movementManager.currentState = PlayerMovementManager.State.Air;
         }
     }
 
@@ -72,22 +69,22 @@ public class MovementGroundState : I_MovementState
         return manager.coyoteSystem.lastJumpEnterTime > 0.0f && manager.coyoteSystem.lastOnGroundTime > 0.0f && manager.movementData.maxJumpCount > 0;
     }
 
-    private void RunUpdate(PlayerMovementManager manager)
+    private void RunUpdate(PlayerMovementManager movementManager)
     {
-        float moveDirXAbs = Mathf.Abs(manager.inputPlayer.moveDir.x);
+        float moveDirXAbs = Mathf.Abs(movementManager.player.inputPlayer.moveDir.x);
 
-        manager.playerManager.animation.movement = moveDirXAbs;
+        movementManager.player.animationManager.movement = moveDirXAbs;
 
         if (moveDirXAbs > 0)
         {
-            manager.playerManager.sound.footStepLoop  = true;
+            movementManager.player.sound.footStepLoop  = true;
         }
         else
         {
-            manager.playerManager.sound.footStepLoop = false;
+            movementManager.player.sound.footStepLoop = false;
         }
 
-        manager.Run(1.0f, true);
+        movementManager.Run(1.0f, true);
     }
 
 
