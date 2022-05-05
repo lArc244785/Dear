@@ -9,6 +9,23 @@ public class InputManager : SingleToon<InputManager>
     [SerializeField]
     private InputPlayer m_inputPlayer;
 
+    public enum InputContextState
+    {
+        start, cancle
+    };
+
+    private InputContextState m_leftMouseState;
+    public InputContextState leftMouseState
+    {
+        set
+        {
+            m_leftMouseState = value;
+        }
+        get
+        {
+            return m_leftMouseState;
+        }
+    }
 
 
     private void Awake()
@@ -44,20 +61,26 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
+
         if (context.started)
         {
-            m_inputPlayer.LeftMouseEnter();
+            leftMouseState = InputContextState.start;
+            m_inputPlayer.ToolUseLeft();
         }
-        else if (context.canceled)
+        else if(context.canceled)
         {
-            m_inputPlayer.LeftMouseUp();
+            m_leftMouseState = InputContextState.cancle;
+            m_inputPlayer.ToolCancleLeft();
         }
+
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
+        
 
         if (context.started)
             m_inputPlayer.JumpEnter();
@@ -75,26 +98,12 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnRightMouseButton(InputAction.CallbackContext context)
     {
-
-    }
-
-    public void OnRightRopeRebound(InputAction.CallbackContext context)
-    {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-        if (context.started)
-            m_inputPlayer.ReboundRight();
     }
 
-    public void OnLeftRopeRebound(InputAction.CallbackContext context)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
 
-        if (context.started)
-            m_inputPlayer.ReboundLeft();
-    }
 
     public void OnWallGrip(InputAction.CallbackContext context)
     {
@@ -112,7 +121,23 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
+    }
 
+
+    public void TestNoneTool(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if(context.started)
+        m_inputPlayer.SetTool(ToolManager.ActiveToolType.None);
+    }
+
+    public void TestGrappingTool(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (context.started)
+            m_inputPlayer.SetTool(ToolManager.ActiveToolType.GrappingGun);
     }
 
 

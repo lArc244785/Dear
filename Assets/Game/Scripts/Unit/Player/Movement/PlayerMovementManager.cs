@@ -34,10 +34,10 @@ public class PlayerMovementManager : MonoBehaviour
     #region State
     public enum State
     {
-        None = -1, Ground, Air, Wall, Rope,Hit,
+        None = -1, Ground, Air, Wall, Rope, Hit,
         Total
     }
-    
+
 
     private I_MovementState[] m_States;
 
@@ -48,12 +48,13 @@ public class PlayerMovementManager : MonoBehaviour
     {
         set
         {
-            if (value == State.None)
-                return;
+            if (m_currentState != State.None)
+                m_States[(int)m_currentState].Exit(this);
 
-            m_States[(int)m_currentState].Exit(this);
             m_currentState = value;
-            m_States[(int)m_currentState].Enter(this);
+
+            if (m_currentState != State.None)
+                m_States[(int)m_currentState].Enter(this);
         }
         get
         {
@@ -144,7 +145,7 @@ public class PlayerMovementManager : MonoBehaviour
 
 
         wallSensor.Init();
-      
+
     }
 
 
@@ -217,6 +218,19 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Run(float lerpAmount, bool isGetInput)
     {
+        if (Mathf.Abs(player.rig2D.velocity.x) > movementData.runMaxSpeed )
+        {
+            float maxVelocityX = movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.x);
+            player.rig2D.velocity = new Vector2(maxVelocityX, player.rig2D.velocity.y);
+        }
+        if(Mathf.Abs(player.rig2D.velocity.y) > movementData.runMaxSpeed)
+        {
+            float maxVelocityY = movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.y);
+            player.rig2D.velocity = new Vector2(player.rig2D.velocity.x, maxVelocityY);
+        }
+
+
+
         float inputMoveDirX = 0.0f;
         if (isGetInput)
             inputMoveDirX = player.inputPlayer.moveDir.x;
@@ -297,7 +311,7 @@ public class PlayerMovementManager : MonoBehaviour
         isJump = true;
 
         jumpCount++;
-       
+
     }
 
     public void JumpCut()
@@ -357,7 +371,7 @@ public class PlayerMovementManager : MonoBehaviour
         {
             m_hitImfectDir = value;
         }
-         get
+        get
         {
             return m_hitImfectDir;
         }

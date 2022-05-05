@@ -16,26 +16,34 @@ public class ActiveToolBase : MonoBehaviour
     #endregion
 
 
-    #region isUse
-    private bool m_isUse;
-    public bool IsUse
+    private UnitPlayer m_player;
+    public UnitPlayer player
+    {
+        get
+        {
+            return m_player;
+        }
+    }
+
+    private bool m_isControl;
+    public bool isControl
     {
         set
         {
-            m_isUse = value;
+            m_isControl = value;
         }
         get
         {
-            return m_isUse;
+            return m_isControl;
         }
     }
-    #endregion
 
-    public void Init(ToolInfo.Type type)
+
+    public virtual void Init(UnitPlayer player)
     {
         m_toolInfo = new ToolInfo();
-        toolInfo.Init(type);
-        IsUse = true;
+        toolInfo.Init(ToolInfo.Type.Active);
+        m_player = player;
     }
 
     public virtual void Enter()
@@ -53,7 +61,19 @@ public class ActiveToolBase : MonoBehaviour
     {
 
     }
+    
+    public virtual void LeftCancle()
+    {
+
+    }
+
+
     public virtual void RightUse()
+    {
+
+    }
+
+    public virtual void RightCancle()
     {
 
     }

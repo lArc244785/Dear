@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Forest
   - Asphalt
+  - HookShlingshot
+  - HookNormal
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Enemy
   - Wall
   - Ghost
-  - 
+  - HookPick
   - 
   - 
   - 

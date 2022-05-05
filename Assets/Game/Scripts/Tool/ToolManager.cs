@@ -63,11 +63,15 @@ public class ToolManager : MonoBehaviour
     }
 
 
-    public void Init()
+    public void Init(UnitPlayer player)
     {
         for(int i = 0; i > (int)PassiveToolType.Total; i ++)
             m_passiveToolList.Add(new ToolInfo());
-        
+
+        foreach(ActiveToolBase activeTool in m_activeToolList)
+            activeTool.Init(player);
+
+        currentActiveTool = ActiveToolType.None;
     }
 
 
@@ -98,16 +102,46 @@ public class ToolManager : MonoBehaviour
     #region UseMethod
     public void LeftUse()
     {
-        if(m_activeToolList[(int)currentActiveTool].IsUse)
+        if (currentActiveTool == ActiveToolType.None)
+            return;
+
+
             m_activeToolList[(int)currentActiveTool].LeftUse();
     }
 
     public void RightUse()
     {
-        if (m_activeToolList[(int)currentActiveTool].IsUse)
+        if (currentActiveTool == ActiveToolType.None)
+            return;
+
             m_activeToolList[(int)currentActiveTool].RightUse();
     }
     #endregion
+
+    #region CancleMethod
+
+    public void LeftCancle()
+    {
+        if (currentActiveTool == ActiveToolType.None)
+            return;
+
+            m_activeToolList[(int)currentActiveTool].LeftCancle();
+    }
+
+    public void RightCancle()
+    {
+        if (currentActiveTool == ActiveToolType.None)
+            return;
+
+
+            m_activeToolList[(int)currentActiveTool].RightCancle();
+    }
+
+    #endregion
+
+
+
+
 
     #region ChoiceMethod
     public void ChoiceTool()
@@ -117,8 +151,7 @@ public class ToolManager : MonoBehaviour
 
     public void SetTool(ActiveToolType activeTool)
     {
-        if (activeTool == ActiveToolType.None)
-            return;
+        
 
         if(currentActiveTool != ActiveToolType.None)
         {
@@ -131,6 +164,10 @@ public class ToolManager : MonoBehaviour
         }
 
         currentActiveTool = activeTool;
+        if (currentActiveTool == ActiveToolType.None)
+            return;
+
+
         int enterIndex = (int)currentActiveTool;
         m_activeToolList[enterIndex].transform.parent = handTr;
         m_activeToolList[enterIndex].transform.localRotation = Quaternion.identity;

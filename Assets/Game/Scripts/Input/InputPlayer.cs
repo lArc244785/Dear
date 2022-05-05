@@ -39,17 +39,33 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
+    private bool m_isMoveControl;
+
+    public bool isMoveControl
+    {
+        set
+        {
+            m_isMoveControl = value;
+        }
+        get
+        {
+            return m_isMoveControl;
+        }
+    }
+
+
 
     public void Init(PlayerMovementManager movementManger, ToolManager toolManager)
     {
        m_movementManager = movementManger;
         m_toolManager = toolManager;
         isControl = true;
+        isMoveControl = true;
     }
 
     public void JumpEnter()
     {
-        if (!isControl)
+        if (!isControl || !isMoveControl)
             return;
 
         movementManger.coyoteSystem.OnJumpEnterTime();        
@@ -57,7 +73,7 @@ public class InputPlayer : MonoBehaviour
 
     public void JumpUp()
     {
-        if (!isControl)
+        if (!isControl || !isMoveControl)
             return;
         movementManger.coyoteSystem.OnJumpExitTime();
     }
@@ -70,14 +86,14 @@ public class InputPlayer : MonoBehaviour
 
     public void WallGripEnter()
     {
-        if (!isControl)
+        if (!isControl || !isMoveControl)
             return;
         movementManger.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
-        if (!isControl)
+        if (!isControl || !isMoveControl)
             return;
         movementManger.isWallGrip = false;
     }
@@ -98,7 +114,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundRight()
     {
-        if (!isControl)
+        if (!isControl || !isMoveControl)
             return;
 
         if (movementManger.currentState != PlayerMovementManager.State.Rope)
@@ -109,7 +125,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundLeft()
     {
-        if (!isControl)
+        if (!isControl || !isMoveControl)
             return;
 
         if (movementManger.currentState != PlayerMovementManager.State.Rope)
@@ -117,6 +133,16 @@ public class InputPlayer : MonoBehaviour
         movementManger.isRopeReboundDirRight = false;
         movementManger.coyoteSystem.OnRopeReboundTime();
     }
+
+
+    public void SetTool(ToolManager.ActiveToolType type)
+    {
+        if (!isControl || !isMoveControl)
+            return;
+
+        toolManager.SetTool(type);
+    }
+
 
     public void ToolUseLeft()
     {
@@ -127,6 +153,17 @@ public class InputPlayer : MonoBehaviour
         toolManager.LeftUse();
     }
 
+    public void ToolCancleLeft()
+    {
+        if (!isControl)
+            return;
+
+
+        toolManager.LeftCancle();
+    }
+
+
+
     public void ToolUseRight()
     {
         if (!isControl)
@@ -135,12 +172,22 @@ public class InputPlayer : MonoBehaviour
         toolManager.RightUse();
     }
 
+    public void ToolCancleRight()
+    {
+        if (!isControl)
+            return;
+
+        toolManager.RightCancle();
+    }
+
+
 
 
     public Vector2 moveDir
     {
         set
         {
+
             m_moveDir = value;
 
             if (Mathf.Abs(m_moveDir.x) > 0.01f)

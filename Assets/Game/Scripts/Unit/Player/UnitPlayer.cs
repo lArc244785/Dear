@@ -1,6 +1,3 @@
-using UnityEngine;
-using DG.Tweening;
-
 public class UnitPlayer : UnitBase
 {
     #region movementManger
@@ -91,8 +88,8 @@ public class UnitPlayer : UnitBase
         animationManager.Init(modelAnimator, shoulder);
         movementManager.Init(this);
         sound.Init(this);
-       inputPlayer.Init(movementManager, toolManager);
-
+        inputPlayer.Init(movementManager, toolManager);
+        toolManager.Init(this);
 
     }
 
