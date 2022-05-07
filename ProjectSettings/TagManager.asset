@@ -10,6 +10,7 @@ TagManager:
   - Asphalt
   - HookShlingshot
   - HookNormal
+  - Grapping
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Wall
   - Ghost
   - HookPick
-  - 
-  - 
+  - ToolSensor
+  - ToolInteraction
   - 
   - 
   - 

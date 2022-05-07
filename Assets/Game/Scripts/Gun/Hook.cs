@@ -42,6 +42,22 @@ public class Hook : MonoBehaviour
         get { return m_rig2D;}
     }
 
+    private Vector2 m_targetPos;
+    private Vector2 targetPos
+    {
+        get { return m_targetPos; }
+    }
+
+    private Vector2 m_targetVelcoity;
+    private Vector2 targetVelcotiy
+    {
+        get
+        {
+            return m_targetVelcoity;
+        }
+    }
+
+
    public void Init(GrapplingGun grapplingGun)
     {
         m_grapplingGun = grapplingGun;
@@ -49,14 +65,21 @@ public class Hook : MonoBehaviour
     }
 
 
-    public void Fire(Vector2 dir, float speed)
+    public void Fire(Vector2 dir, Vector2 targetPos)
     {
+
         transform.parent = null;
 
-        rig2D.velocity = dir * speed;
+        rig2D.bodyType = RigidbodyType2D.Dynamic;
 
+        m_targetPos = targetPos;
+
+        m_targetVelcoity = dir * grapplingGun.data.hookMaxSpeed;
     }
 
+    private Vector2 m_nextMovePos;
+    private float m_playerToHookDistance;
+    private float m_nextPlayerToHookDistance;
 
     private void Update()
     {
@@ -65,15 +88,26 @@ public class Hook : MonoBehaviour
 
         if(grapplingGun.currentState == GrapplingGun.State.Fire)
         {
-            Collider2D pickCollider2D = Physics2D.OverlapCircle(transform.position, radius, pickLayerMask);
-            if (pickCollider2D != null)
+            grapplingGun.Acceleration(rig2D, grapplingGun.data.hookAcclelation, grapplingGun.data.hookVelocityPower, targetVelcotiy);
+
+
+            m_nextMovePos = rig2D.velocity * Time.deltaTime;
+
+            m_playerToHookDistance = Vector2.Distance((Vector2)transform.position, targetPos);
+            m_nextPlayerToHookDistance = Vector2.Distance((Vector2)transform.position + m_nextMovePos, targetPos);
+
+
+            if (m_playerToHookDistance  < m_nextPlayerToHookDistance)
             {
-                GrapplingGun.PickType pickType = grapplingGun.GetPickType(pickCollider2D.tag);
+                transform.position = targetPos;
+
+                GrapplingGun.PickType pickType = grapplingGun.GetPickType("HookShlingshot");
 
 
                 rig2D.velocity = Vector2.zero;
                 grapplingGun.HookPick(pickType);
             }
+
         }
      
     }

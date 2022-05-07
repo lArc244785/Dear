@@ -69,7 +69,11 @@ public class ToolManager : MonoBehaviour
             m_passiveToolList.Add(new ToolInfo());
 
         foreach(ActiveToolBase activeTool in m_activeToolList)
+        {
             activeTool.Init(player);
+            activeTool.gameObject.SetActive(false);
+        }
+
 
         currentActiveTool = ActiveToolType.None;
     }
@@ -158,6 +162,9 @@ public class ToolManager : MonoBehaviour
             int exitToolIndex = (int)currentActiveTool;
 
             m_activeToolList[exitToolIndex].Exit();
+
+            m_activeToolList[exitToolIndex].gameObject.SetActive(false);
+
             m_activeToolList[exitToolIndex].transform.parent = tools.transform;
             m_activeToolList[exitToolIndex].transform.localPosition = Vector3.zero;
             m_activeToolList[exitToolIndex].transform.localRotation = Quaternion.identity;
@@ -173,6 +180,8 @@ public class ToolManager : MonoBehaviour
         m_activeToolList[enterIndex].transform.localRotation = Quaternion.identity;
         m_activeToolList[enterIndex].transform.localPosition = Vector3.zero;
         m_activeToolList[enterIndex].Enter();
+
+        m_activeToolList[enterIndex].gameObject.SetActive(true);
     }
     #endregion
 
