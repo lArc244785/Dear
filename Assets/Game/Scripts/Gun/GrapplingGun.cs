@@ -221,6 +221,9 @@ public class GrapplingGun : ActiveToolBase
 
         base.LeftUse();
 
+        if (currentState != State.None)
+            return;
+
         RaycastHit2D hit2D = Physics2D.Raycast(InputManager.instance.inGameMousePosition2D, Vector2.zero, Mathf.Infinity, interactionGrappingLayerMask);
         if (!hit2D)
             return;
@@ -232,8 +235,6 @@ public class GrapplingGun : ActiveToolBase
         if (!handler.interactionGrapping.isCanInteraction)
             return;
 
-
-        if (currentState == State.None)
             Fire((Vector2)handler.interactionGrapping.transform.position);
 
     }

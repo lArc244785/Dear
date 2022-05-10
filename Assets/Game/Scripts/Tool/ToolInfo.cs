@@ -36,6 +36,4 @@ public class ToolInfo
         m_type = type;
         isAcheive = true;
     }
-
-
 }
