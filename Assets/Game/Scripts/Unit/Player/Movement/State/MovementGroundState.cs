@@ -66,7 +66,10 @@ public class MovementGroundState : I_MovementState
 
     private bool CanJump(PlayerMovementManager manager)
     {
-        return manager.coyoteSystem.lastJumpEnterTime > 0.0f && manager.coyoteSystem.lastOnGroundTime > 0.0f && manager.movementData.maxJumpCount > 0;
+        return !manager.isOnInteractionJumpObject && 
+            manager.coyoteSystem.lastJumpEnterTime > 0.0f && 
+            manager.coyoteSystem.lastOnGroundTime > 0.0f && 
+            manager.movementData.maxJumpCount > 0;
     }
 
     private void RunUpdate(PlayerMovementManager movementManager)

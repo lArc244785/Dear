@@ -85,6 +85,7 @@ public class MovementAirState : I_MovementState
         if (movementManager.isJump && movementManager.player.rig2D.velocity.y <= 0.0f)
         {
             movementManager.isJump = false;
+            movementManager.isInteractionJump = false;
         }
 
         if (CanJumpCut(movementManager))
@@ -94,7 +95,6 @@ public class MovementAirState : I_MovementState
 
         if (CanAirJump(movementManager))
         {
-
             movementManager.Jump(movementManager.movementData.airJumpForce);
         }
 
@@ -102,7 +102,7 @@ public class MovementAirState : I_MovementState
 
     private bool CanAirJump(PlayerMovementManager movementManager)
     {
-        return !movementManager.isJump &&
+        return !movementManager.isJump && !movementManager.isOnInteractionJumpObject &&
             movementManager.jumpCount < movementManager.movementData.maxJumpCount &&
             movementManager.coyoteSystem.lastJumpEnterTime > 0.0f;
     }
@@ -112,7 +112,8 @@ public class MovementAirState : I_MovementState
         return
             movementManager.coyoteSystem.lastJumpExitTime > 0.0f &&
             movementManager.jumpCount == 1 &&
-            movementManager.isJump;
+            movementManager.isJump &&
+            !movementManager.isInteractionJump;
     }
 
 

@@ -394,11 +394,32 @@ public class GrapplingGun : ActiveToolBase
         if (m_pullDistance < m_nextPullDistacne)
         {
             player.transform.position = hook.transform.position;
+            ClampPlayerVelocity();
             Cancle();
             return;
         }
 
     }
+
+    private void ClampPlayerVelocity()
+    {
+        PlayerMovementManager pmm = player.movementManager;
+        Rigidbody2D rig2D = player.rig2D;
+
+        if (Mathf.Abs(rig2D.velocity.x) > pmm.movementData.runMaxSpeed)
+        {
+            float maxVelocityX = pmm.movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.x);
+            player.rig2D.velocity = new Vector2(maxVelocityX, player.rig2D.velocity.y);
+        }
+
+        if (Mathf.Abs(rig2D.velocity.y) > pmm.movementData.runMaxSpeed)
+        {
+            float maxVelocityY = pmm.movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.y);
+            player.rig2D.velocity = new Vector2(player.rig2D.velocity.x, maxVelocityY);
+        }
+
+    }
+
 
 
 

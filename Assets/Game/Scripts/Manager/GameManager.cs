@@ -80,8 +80,8 @@ public class GameManager : SingleToon<GameManager>
 
     private void Start()
     {
-        NextState(1);
-        //gameState = GameSate.GameStart;
+        //NextState(1);
+        gameState = GameSate.GameStart;
     }
 
 

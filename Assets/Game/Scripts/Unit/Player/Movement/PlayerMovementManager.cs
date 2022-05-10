@@ -75,6 +75,9 @@ public class PlayerMovementManager : MonoBehaviour
     public bool isRopeRebound { set; get; }
 
     public bool isRopeReboundDirRight { set; get; }
+
+    public bool isOnInteractionJumpObject { set; get; }
+    public bool isInteractionJump { set; get; }
     #endregion
 
 
@@ -134,6 +137,9 @@ public class PlayerMovementManager : MonoBehaviour
 
         StatesInit();
         currentState = State.Ground;
+
+        isInteractionJump = false;
+        isJump = false;
     }
 
     private void ComponentInit()
@@ -218,15 +224,10 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Run(float lerpAmount, bool isGetInput)
     {
-        if (Mathf.Abs(player.rig2D.velocity.x) > movementData.runMaxSpeed )
+        if (Mathf.Abs(player.rig2D.velocity.x) > movementData.runMaxSpeed)
         {
             float maxVelocityX = movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.x);
             player.rig2D.velocity = new Vector2(maxVelocityX, player.rig2D.velocity.y);
-        }
-        if(Mathf.Abs(player.rig2D.velocity.y) > movementData.runMaxSpeed)
-        {
-            float maxVelocityY = movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.y);
-            player.rig2D.velocity = new Vector2(player.rig2D.velocity.x, maxVelocityY);
         }
 
 
@@ -235,7 +236,7 @@ public class PlayerMovementManager : MonoBehaviour
         if (isGetInput)
             inputMoveDirX = player.inputPlayer.moveDir.x;
 
-        Debug.Log(inputMoveDirX);
+        //Debug.Log(inputMoveDirX);
 
         float rigVelocityX = player.rig2D.velocity.x;
 
@@ -297,18 +298,26 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Jump(float force)
     {
+        Debug.Log("Jump: " + force);
         player.sound.Jump();
         player.animationManager.TriggerJump();
 
         if (player.rig2D.velocity.y < 0.0f)
             force -= player.rig2D.velocity.y;
-        Debug.Log("Jump " + jumpCount);
+        //Debug.Log("Jump " + jumpCount);
         player.rig2D.AddForce(force * Vector2.up, ForceMode2D.Impulse);
 
         coyoteSystem.ResetJumpEnterTime();
         coyoteSystem.ResetGroundTime();
 
+
         isJump = true;
+        if (isOnInteractionJumpObject)
+        {
+            isInteractionJump = true;
+            isOnInteractionJumpObject = false;
+        }
+
 
         jumpCount++;
 
