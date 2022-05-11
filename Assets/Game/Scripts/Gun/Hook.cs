@@ -4,76 +4,121 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
-    private Rigidbody2D m_rig2D;
-    private float m_speed;
-
-    private GrapplingGun m_grapplingGun;
-
-
+    [Header("Gizmos")]
     [SerializeField]
-    private LayerMask m_grapplingLayerMask;
-
-
-
-
-    private Vector2 m_dir;
-
-
-    public void init(float speed, GrapplingGun gun)
+    private Color m_gizmosColor;
+    private Color gizmosColor
     {
-        m_rig2D = GetComponent<Rigidbody2D>();
-        m_grapplingGun = gun;
-        m_speed = speed;
+        get
+        {
+            return m_gizmosColor;
+        }
     }
 
-    public void Fire(Vector2 dir)
+
+    [Header("Physics")]
+    [SerializeField]
+    private float m_radius;
+    [SerializeField]
+    private LayerMask m_pickLayerMask;
+    private LayerMask pickLayerMask
     {
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
+        get
+        {
+            return m_pickLayerMask;
+        }
+    }
+
+    private float radius { get { return m_radius; } }
+    private GrapplingGun m_grapplingGun;
+    private GrapplingGun grapplingGun
+    {
+        get { return m_grapplingGun; }
+    }
+
+    private Rigidbody2D m_rig2D;
+    public Rigidbody2D rig2D
+    {
+        get { return m_rig2D;}
+    }
+
+    private Vector2 m_targetPos;
+    private Vector2 targetPos
+    {
+        get { return m_targetPos; }
+    }
+
+    private Vector2 m_targetDir;
+    private Vector2 targetDir
+    {
+        get
+        {
+            return m_targetDir;
+        }
+    }
+
+
+   public void Init(GrapplingGun grapplingGun)
+    {
+        m_grapplingGun = grapplingGun;
+        m_rig2D = GetComponent<Rigidbody2D>();
+    }
+
+
+    public void Fire(Vector2 dir, Vector2 targetPos)
+    {
 
         transform.parent = null;
 
-        m_dir = dir;
-        m_rig2D.velocity = m_dir * m_speed;
+        rig2D.bodyType = RigidbodyType2D.Dynamic;
+        rig2D.velocity = Vector2.zero;
 
+        m_targetPos = targetPos;
 
+        m_targetDir = dir;
     }
 
+    private Vector2 m_nextMovePos;
+    private float m_playerToHookDistance;
+    private float m_nextPlayerToHookDistance;
 
     private void Update()
     {
         if (m_grapplingGun == null)
             return;
 
-        if (m_grapplingGun.m_eState == GrapplingGun.E_State.E_NONE)
-            return;
 
-        if(m_grapplingGun.m_eState == GrapplingGun.E_State.E_HOOKFIRE)
+        if(grapplingGun.currentState == GrapplingGun.State.Fire)
         {
-            if(Physics2D.Raycast(transform.position, m_dir, 0.3f,m_grapplingLayerMask))
+            if(grapplingGun.TargetAcceleration(
+                rig2D, 
+                grapplingGun.data.hookAcclelation, 
+                grapplingGun.data.hookVelocityPower, 
+                targetDir, 
+                grapplingGun.data.hookMaxSpeed,
+                targetPos))
             {
-                m_rig2D.velocity = Vector2.zero;
-                m_grapplingGun.Grappling();
+                GrapplingGun.PickType pickType = grapplingGun.GetPickType("HookShlingshot");
+
                 
+                rig2D.velocity = Vector2.zero;
+                rig2D.bodyType = RigidbodyType2D.Kinematic;
+                grapplingGun.HookPick(pickType);
             }
+
         }
-
-
+     
     }
 
-    public void Reset(Transform parent)
+
+    
+
+
+    private void OnDrawGizmos()
     {
-        transform.parent = parent;
-
-        transform.localPosition = Vector2.zero;
-        transform.localRotation = Quaternion.identity;
-
-        m_rig2D.velocity = Vector2.zero;
+        Gizmos.color = gizmosColor;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
-
-
-
-
 
 
 }

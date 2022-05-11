@@ -155,27 +155,27 @@ public class MovementData : ScriptableObject
 	public float dashBufferTime { get { return m_dashBufferTime; } }
 	*/
 
-    [Header("Rope")]
-    [SerializeField]
-    private float m_ropeReboundPower;
-    public float ropeReboundPower { get { return m_ropeReboundPower; } }
+ //   [Header("Rope")]
+ //   [SerializeField]
+ //   private float m_ropeReboundPower;
+ //   public float ropeReboundPower { get { return m_ropeReboundPower; } }
 
-    [SerializeField]
-    private float m_ropeReboundCoolTime;
-    public float ropeReboundCoolTime { get { return m_ropeReboundCoolTime; } }
+ //   [SerializeField]
+ //   private float m_ropeReboundCoolTime;
+ //   public float ropeReboundCoolTime { get { return m_ropeReboundCoolTime; } }
 
-	[Space(5)]
-	[SerializeField]
-    private Vector2 m_ropeCancleJumpForce;
-    public Vector2 ropeCancleJumpForce { get { return m_ropeCancleJumpForce; } }
+	//[Space(5)]
+	//[SerializeField]
+ //   private Vector2 m_ropeCancleJumpForce;
+ //   public Vector2 ropeCancleJumpForce { get { return m_ropeCancleJumpForce; } }
 
-    [SerializeField]
-    private float m_ropeCancleReboundTime;
-    public float ropeCancleReboundTime { get { return m_ropeCancleReboundTime; } }
-	[SerializeField]
-	[Range(0f, 1f)]
-	private float m_ropeCancleReboundRunLerp;
-	public float ropeCancleReboundRunLerp { get { return m_ropeCancleReboundRunLerp; } }
+ //   [SerializeField]
+ //   private float m_ropeCancleReboundTime;
+ //   public float ropeCancleReboundTime { get { return m_ropeCancleReboundTime; } }
+	//[SerializeField]
+	//[Range(0f, 1f)]
+	//private float m_ropeCancleReboundRunLerp;
+	//public float ropeCancleReboundRunLerp { get { return m_ropeCancleReboundRunLerp; } }
 
 	[Header("Hit")]
 	[SerializeField]
@@ -190,6 +190,19 @@ public class MovementData : ScriptableObject
 	[Range(0.0f, 1.0f)]
 	private float m_hitImfectRunLerp;
 	public float hitImfectRunLerp { get { return m_hitImfectRunLerp; } }
+
+
+	[Header("Ground Pound")]
+	[SerializeField]
+	private float m_groundPoundPower;
+	public float groundPoundPower
+    {
+        get
+        {
+			return m_groundPoundPower;
+		}
+    }
+
 
 }
 

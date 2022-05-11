@@ -80,8 +80,8 @@ public class GameManager : SingleToon<GameManager>
 
     private void Start()
     {
-        NextState(1);
-        //gameState = GameSate.GameStart;
+        //NextState(1);
+        gameState = GameSate.GameStart;
     }
 
 
@@ -155,14 +155,14 @@ public class GameManager : SingleToon<GameManager>
         stageManager = GameObject.FindObjectOfType<StageManager>();
         stageManager.Init();
 
-        stageManager.player.isControl = false;
+        stageManager.player.inputPlayer.isControl = false;
 
         GameManager.instance.stageManager.stageBgm.BgmStart();
 
         while (!UIManager.instance.produtionView.fade.fadeProcessed)
             yield return null;
 
-        stageManager.player.isControl = true;
+        stageManager.player.inputPlayer.isControl = true;
         gameState = GameSate.GamePlaying;
 
     }

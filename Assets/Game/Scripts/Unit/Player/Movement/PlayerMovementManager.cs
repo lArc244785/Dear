@@ -2,39 +2,14 @@ using UnityEngine;
 
 public class PlayerMovementManager : MonoBehaviour
 {
-    #region Rigidbody
-    private Rigidbody2D m_rig2D;
-    public Rigidbody2D rig2D 
-    { 
-        private set 
-        { 
-            m_rig2D = value; 
-        } 
-        get 
-        { 
-            return m_rig2D; 
-        } 
-    }
-    #endregion
-
-    #region Input
-    [Header("Input")]
-    [SerializeField]
-    private InputPlayer m_inputPlayer;
-    public InputPlayer inputPlayer { get { return m_inputPlayer; } }
-    #endregion
 
     #region UnitBase
-    private UnitPlayer m_playerManager;
-    public UnitPlayer playerManager
+    private UnitPlayer m_player;
+    public UnitPlayer player
     {
-        private set
-        {
-            m_playerManager = value;
-        }
         get
         {
-            return m_playerManager;
+            return m_player;
         }
     }
     #endregion
@@ -59,10 +34,10 @@ public class PlayerMovementManager : MonoBehaviour
     #region State
     public enum State
     {
-        None = -1, Ground, Air, Wall, Rope,Hit,
+        None = -1, Ground, Air, Wall, Rope, Hit,
         Total
     }
-    
+
 
     private I_MovementState[] m_States;
 
@@ -73,12 +48,13 @@ public class PlayerMovementManager : MonoBehaviour
     {
         set
         {
-            if (value == State.None)
-                return;
+            if (m_currentState != State.None)
+                m_States[(int)m_currentState].Exit(this);
 
-            m_States[(int)m_currentState].Exit(this);
             m_currentState = value;
-            m_States[(int)m_currentState].Enter(this);
+
+            if (m_currentState != State.None)
+                m_States[(int)m_currentState].Enter(this);
         }
         get
         {
@@ -99,18 +75,19 @@ public class PlayerMovementManager : MonoBehaviour
     public bool isRopeRebound { set; get; }
 
     public bool isRopeReboundDirRight { set; get; }
+
+    public bool isOnInteractionJumpObject { set; get; }
+    public bool isInteractionJump { set; get; }
     #endregion
 
 
     #region Sensor
-    [Header("Sensor")]
-    [SerializeField]
-    private NewGroundSensor m_groundSensor;
-    public NewGroundSensor groundSensor { get { return m_groundSensor; } }
 
-    [SerializeField]
-    private WallSensorManager m_wallSensor;
-    public WallSensorManager wallSensor { get { return m_wallSensor; } }
+    private GroundSensor m_groundSensor;
+    public GroundSensor groundSensor { get { return m_groundSensor; } }
+
+    private WallSensor m_wallSensor;
+    public WallSensor wallSensor { get { return m_wallSensor; } }
     #endregion
 
     #region Coyote System
@@ -132,57 +109,51 @@ public class PlayerMovementManager : MonoBehaviour
         set
         {
             m_jumpCount = Mathf.Clamp(value, 0, m_movementData.maxJumpCount);
-            playerManager.animation.jumpCount = m_jumpCount;
+
+            player.animationManager.jumpCount = m_jumpCount;
         }
     }
     #endregion
 
     #region Trun
-    [Header("Trun")]
-    [SerializeField]
-    private Transform m_modelTr;
-
-    private Vector2 m_oldLookDir;
+    private Vector2 m_lastLookDir;
     #endregion
 
-    public PlayerAnimation animation
-    {
-        get
-        {
-            return playerManager.animation;
-        }
-    }
-
-    public Shoulder shoulder
-    {
-        get
-        {
-            return playerManager.shoulder;
-        }
-    }
-
-    public GrapplingShooter grapplingShooter
-    {
-        get
-        {
-            return playerManager.grapplingShooter;
-        }
-    }
+    #region Shoulder
+    public Shoulder shoulder { get { return player.shoulder; } }
+    #endregion
 
 
-    public void Init(UnitPlayer unit)
+    public void Init(UnitPlayer player)
     {
-        playerManager = unit;
-        rig2D = unit.rig2D;
+        m_player = player;
+
+        ComponentInit();
 
         m_coyoteSystem = new CoyoteSystem();
         m_coyoteSystem.Init(m_movementData);
 
-        m_oldLookDir = Vector2.left;
+        m_lastLookDir = Vector2.left;
 
         StatesInit();
         currentState = State.Ground;
+
+        isInteractionJump = false;
+        isJump = false;
     }
+
+    private void ComponentInit()
+    {
+
+        Transform sensorsTr = transform.Find("Sensors");
+        m_wallSensor = sensorsTr.GetComponentInChildren<WallSensor>();
+        m_groundSensor = sensorsTr.GetComponentInChildren<GroundSensor>();
+
+
+        wallSensor.Init();
+
+    }
+
 
     private void StatesInit()
     {
@@ -203,7 +174,9 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void Update()
     {
-        if (playerManager == null)
+        if (player == null)
+            return;
+        if (!player.isInit)
             return;
 
         if (currentState == State.None)
@@ -215,7 +188,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (playerManager == null)
+        if (player == null)
             return;
 
         if (currentState == State.None)
@@ -226,7 +199,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void SetGravity(float gravitySclae)
     {
-        m_rig2D.gravityScale = gravitySclae;
+        player.rig2D.gravityScale = gravitySclae;
     }
 
     public bool IsGrounded()
@@ -251,13 +224,21 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Run(float lerpAmount, bool isGetInput)
     {
+        if (Mathf.Abs(player.rig2D.velocity.x) > movementData.runMaxSpeed)
+        {
+            float maxVelocityX = movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.x);
+            player.rig2D.velocity = new Vector2(maxVelocityX, player.rig2D.velocity.y);
+        }
+
+
+
         float inputMoveDirX = 0.0f;
         if (isGetInput)
-            inputMoveDirX = inputPlayer.moveDir.x;
+            inputMoveDirX = player.inputPlayer.moveDir.x;
 
-        Debug.Log(inputMoveDirX);
+        //Debug.Log(inputMoveDirX);
 
-        float rigVelocityX = rig2D.velocity.x;
+        float rigVelocityX = player.rig2D.velocity.x;
 
         float targetSpeed = inputMoveDirX * movementData.runMaxSpeed;
         float SpeedDif = targetSpeed - rigVelocityX;
@@ -297,74 +278,80 @@ public class PlayerMovementManager : MonoBehaviour
 
         float movement = Mathf.Pow(Mathf.Abs(SpeedDif) * accleRate, velocityPower) * Mathf.Sign(SpeedDif);
         movement = Mathf.Lerp(rigVelocityX, movement, lerpAmount);
-        //Debug.Log("Run");
-        rig2D.AddForce(movement * Vector2.right);
+        //Debug.Log("Run: " + movement);
+        player.rig2D.AddForce(movement * Vector2.right);
     }
 
     public void Resistance(float amount)
     {
-        Vector2 force = rig2D.velocity.normalized * amount;
-        force.x = Mathf.Min(Mathf.Abs(force.x), Mathf.Abs(rig2D.velocity.x));
-        force.y = Mathf.Min(Mathf.Abs(force.y), Mathf.Abs(rig2D.velocity.y));
+        Vector2 force = player.rig2D.velocity.normalized * amount;
+        force.x = Mathf.Min(Mathf.Abs(force.x), Mathf.Abs(player.rig2D.velocity.x));
+        force.y = Mathf.Min(Mathf.Abs(force.y), Mathf.Abs(player.rig2D.velocity.y));
 
-        force.x *= Mathf.Sign(rig2D.velocity.x);
-        force.y *= Mathf.Sign(rig2D.velocity.y);
+        force.x *= Mathf.Sign(player.rig2D.velocity.x);
+        force.y *= Mathf.Sign(player.rig2D.velocity.y);
 
         //Debug.Log("Resistance");
-        rig2D.AddForce(-force, ForceMode2D.Impulse);
+        player.rig2D.AddForce(-force, ForceMode2D.Impulse);
 
     }
 
     public void Jump(float force)
     {
-        playerManager.sound.Jump();
-        animation.TriggerJump();
+        Debug.Log("Jump: " + force);
+        player.sound.Jump();
+        player.animationManager.TriggerJump();
 
-        if (rig2D.velocity.y < 0.0f)
-            force -= rig2D.velocity.y;
-        Debug.Log("Jump " + jumpCount);
-        rig2D.AddForce(force * Vector2.up, ForceMode2D.Impulse);
+        if (player.rig2D.velocity.y < 0.0f)
+            force -= player.rig2D.velocity.y;
+        //Debug.Log("Jump " + jumpCount);
+        player.rig2D.AddForce(force * Vector2.up, ForceMode2D.Impulse);
 
         coyoteSystem.ResetJumpEnterTime();
         coyoteSystem.ResetGroundTime();
 
+
         isJump = true;
+        if (isOnInteractionJumpObject)
+        {
+            isInteractionJump = true;
+            isOnInteractionJumpObject = false;
+        }
+
 
         jumpCount++;
-       
+
     }
 
     public void JumpCut()
     {
-        rig2D.AddForce(Vector2.down * rig2D.velocity.y * (1 - movementData.jumpCutMultiplier), ForceMode2D.Impulse);
+        player.rig2D.AddForce(Vector2.down * player.rig2D.velocity.y * (1 - movementData.jumpCutMultiplier), ForceMode2D.Impulse);
         coyoteSystem.ResetJumpExitTime();
         Debug.Log("Jump Cut");
     }
 
     public void Trun(Vector2 lookDir)
     {
-        if (lookDir.x != m_oldLookDir.x)
+        if (lookDir.x != m_lastLookDir.x)
         {
-            Vector3 scale = m_modelTr.localScale;
-            scale.x *= -1;
-            m_modelTr.localScale = scale;
+            player.model.flipX = !player.model.flipX;
         }
-        m_oldLookDir = lookDir;
+        m_lastLookDir = lookDir;
     }
 
     public void TrunUpdate()
     {
-        if (inputPlayer.moveDir.x == 0.0f)
+        if (player.inputPlayer.moveDir.x == 0.0f)
             return;
 
-        Trun(inputPlayer.moveDir);
+        Trun(player.inputPlayer.moveDir);
     }
 
     public Vector2 lookDir
     {
         get
         {
-            return m_oldLookDir;
+            return m_lastLookDir;
         }
     }
 
@@ -372,18 +359,18 @@ public class PlayerMovementManager : MonoBehaviour
     {
         float targetSpeed = dirY * movementData.runMaxSpeed;
 
-        float speedDif = targetSpeed - rig2D.velocity.y;
+        float speedDif = targetSpeed - player.rig2D.velocity.y;
         float accleRate = targetSpeed > 0.01f ? movementData.climbingAccel : movementData.climbingDeccel;
         float velocityPower = movementData.accelPower;
 
-        if (Mathf.Abs(rig2D.velocity.y) > Mathf.Abs(targetSpeed))
+        if (Mathf.Abs(player.rig2D.velocity.y) > Mathf.Abs(targetSpeed))
             accleRate = 0.0f;
 
         float movement = Mathf.Pow(Mathf.Abs(speedDif) * accleRate, velocityPower) * Mathf.Sign(speedDif);
         Debug.Log(movement);
 
         Debug.Log("Climbing");
-        rig2D.AddForce(movement * Vector2.up);
+        player.rig2D.AddForce(movement * Vector2.up);
     }
 
     private Vector2 m_hitImfectDir;
@@ -393,7 +380,7 @@ public class PlayerMovementManager : MonoBehaviour
         {
             m_hitImfectDir = value;
         }
-         get
+        get
         {
             return m_hitImfectDir;
         }
@@ -401,12 +388,12 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void VectorJump(Vector2 force)
     {
-        if (Mathf.Sign(rig2D.velocity.x) != Mathf.Sign(force.x))
-            force.x -= rig2D.velocity.x;
+        if (Mathf.Sign(player.rig2D.velocity.x) != Mathf.Sign(force.x))
+            force.x -= player.rig2D.velocity.x;
 
-        if (rig2D.velocity.y < 0.0f)
-            force.y -= rig2D.velocity.y;
-        rig2D.AddForce(force, ForceMode2D.Impulse);
+        if (player.rig2D.velocity.y < 0.0f)
+            force.y -= player.rig2D.velocity.y;
+        player.rig2D.AddForce(force, ForceMode2D.Impulse);
     }
 
 
@@ -417,16 +404,13 @@ public class PlayerMovementManager : MonoBehaviour
         currentState = State.Hit;
     }
 
-    public void RopeToAirAnimation()
+    public void ClampJumpVelocity()
     {
-        shoulder.SetArmVisible(false);
-        animation.TriggerAir();
+        Debug.Log("A: " + player.rig2D.velocity);
+        player.rig2D.velocity = Vector2.ClampMagnitude(player.rig2D.velocity, 5.0f);
+        Debug.Log("B: " + player.rig2D.velocity);
     }
 
-    public void RopeAnimation()
-    {
-        shoulder.SetArmVisible(true);
-        animation.TriggerRope();
-    }
+
 
 }
