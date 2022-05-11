@@ -2,39 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParallaxBackGround : MonoBehaviour
+[ExecuteInEditMode]
+public class ParallaxBackground : MonoBehaviour
 {
-    private ParallaxLayer[] m_parallaxLayers;
+    public ParallaxCamera parallaxCamera;
+    List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
 
-    private Area m_area;
-    private Area area
+    void Start()
     {
-        get
+        if (parallaxCamera == null)
+            parallaxCamera = Camera.main.GetComponent<ParallaxCamera>();
+        if (parallaxCamera != null)
+            parallaxCamera.onCameraTranslate += Move;
+        SetLayers();
+
+    }
+
+    void SetLayers()
+    {
+        parallaxLayers.Clear();
+        for (int i = 0; i < transform.childCount; i++)
         {
-            return m_area;
+            ParallaxLayer layer = transform.GetChild(i).GetComponent<ParallaxLayer>();
+
+            if (layer != null)
+            {
+                layer.name = "Layer-" + i;
+                parallaxLayers.Add(layer);
+            }
         }
     }
-
-    public void Init(Area area)
+    void Move(Vector3 delta)
     {
-        m_area = area;
-
-        m_parallaxLayers = new ParallaxLayer[transform.childCount];
-
-        for (int i = 0; i < m_parallaxLayers.Length; i++)
+        foreach (ParallaxLayer layer in parallaxLayers)
         {
-            m_parallaxLayers[i] = transform.GetChild(i).GetComponent<ParallaxLayer>();
-            m_parallaxLayers[i].Init();
+            layer.Move(delta);
         }
-
     }
-
-
-
-    public void Move(Vector2 deltaMove)
-    {
-        foreach (ParallaxLayer layer in m_parallaxLayers)
-            layer.Move(deltaMove, m_area);
-    }
-
 }

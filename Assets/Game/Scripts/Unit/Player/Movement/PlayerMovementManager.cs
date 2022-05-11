@@ -255,7 +255,7 @@ public class PlayerMovementManager : MonoBehaviour
         if (isGetInput)
             inputMoveDirX = inputPlayer.moveDir.x;
 
-        Debug.Log(inputMoveDirX);
+   //     Debug.Log(inputMoveDirX);
 
         float rigVelocityX = rig2D.velocity.x;
 

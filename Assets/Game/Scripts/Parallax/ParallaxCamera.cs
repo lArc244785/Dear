@@ -2,38 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ParallaxCamera : MonoBehaviour
 {
-    [SerializeField]
-    private AreaManager m_areaManger;
-    private AreaManager areaManager
+    public delegate void ParallaxCameraDelegate(Vector3 deltaMovement);
+    public ParallaxCameraDelegate onCameraTranslate;
+    private Vector3 oldPosition;
+    void Start()
     {
-        get
+        oldPosition = transform.position;
+    }
+    void Update()
+    {
+        if (transform.position != oldPosition)
         {
-            return m_areaManger;
+            if (onCameraTranslate != null)
+            {
+                Vector3 delta = oldPosition - transform.position;
+                onCameraTranslate(delta);
+
+            }
+            oldPosition = transform.position;
         }
-    }
-
-    private Vector2 m_oldPos;
-
-    private void Start()
-    {
-        m_oldPos = (Vector2)transform.position;
-    }
-
-
-    private void LateUpdate()
-    {
-        if (areaManager == null)
-            return;
-
-        Vector2 currentPos = (Vector2)transform.position;
-        if (m_oldPos == currentPos)
-            return;
-
-        Vector2 deltaMove = currentPos - m_oldPos;
-
-
-        m_oldPos = currentPos;
     }
 }
