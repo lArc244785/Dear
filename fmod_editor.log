@@ -4,16 +4,78 @@
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002311CA75DA8 isAsync 0 updatePeriod 0.02
-[LOG] AsyncManager::init                       : done
-[LOG] PlaybackSystem::init                     : 
-[LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
-[LOG] PlaybackSystem::init                     : done
-[LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
-[LOG] Manager::init                            : done.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002D764D5E718
+[LOG] OutputWASAPI::init                       :     Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] Thread::initThread                       :     Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] Thread::initThread                       :     Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       :     manager 000002D76457E588 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       :     done
+[LOG] PlaybackSystem::init                     :     
+[LOG] Thread::initThread                       :     Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] PlaybackSystem::init                     :     done
+[LOG] Thread::initThread                       :     Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] Manager::init                            :     done.
+[LOG] Manager::readBank                        :     fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        :     fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        :     fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] PlaybackSystem::acquireMasterBus         :     Setting master channel group format to 3
+[LOG] Manager::readBank                        :     fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] Manager::readBank                        :     fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002D764D5E718
+[LOG] SoundI::release                          :  (000002D764EB93D8)
+[LOG] SoundI::release                          :     game_general_after_impact (000002D73F0D5228)
+[LOG] SoundI::release                          : AMBIENCE Birds Forest Quiet Wind Loop 02 (000002D76BF15078)
+[LOG] SoundI::release                          :     AMBIENCE Birds Forest Quiet Wind Loop 02 (000002D73F0D3B68)
+[LOG] SoundI::release                          :     AMBIENCE Birds Forest Quiet Wind Loop 02 (000002D764D5E718)
+[LOG] SoundI::release                          : env_amb_stage00_indoor (000002D76C119518)
+[LOG] SoundI::release                          :     env_amb_stage00_indoor (000002D73F0D5708)
+[LOG] SoundI::release                          :     env_amb_stage00_indoor (000002D764D5EA78)
+[LOG] SoundI::release                          :  (000002D764EB86E8)
+[LOG] SoundI::release                          :     556693__nachtmahrtv__metal-impact (000002D73F0D5088)
+[LOG] SoundI::release                          :  (000002D764EB20D8)
+[LOG] SoundI::release                          :     568298__sheyvan__sfx-whoosh-high-1-5 (000002D73F0CE548)
+[LOG] SoundI::release                          :  (000002D764EB2AE8)
+[LOG] SoundI::release                          :     384916__ali-6868__bow-release-bow-and-arrow-2 (000002D73F0CFF48)
+[LOG] SoundI::release                          :  (000002D764EB23B8)
+[LOG] SoundI::release                          :     Bluezone_BC0268_switch_button_click_small_005 (000002D73F0D46C8)
+[LOG] SoundI::release                          :  (000002D764EB2F38)
+[LOG] SoundI::release                          :     char_yuz_rope_accel_01 (000002D73F0CFDA8)
+[LOG] SoundI::release                          :  (000002D764EB2DC8)
+[LOG] SoundI::release                          :     char_yuz_rope_accel_02 (000002D73F0CF728)
+[LOG] SoundI::release                          :  (000002D764EB8B38)
+[LOG] SoundI::release                          :     game_general_spring (000002D73F0D4868)
+[LOG] SoundI::release                          :  (000002D764EB4918)
+[LOG] SoundI::release                          :     Whoosh_Cloth_Leather_Fight_174 (000002D73F0D4BA8)
+[LOG] SoundI::release                          :  (000002D764EB2978)
+[LOG] SoundI::release                          :     346373__denao270__throwing-whip-effect (000002D73F0CF588)
+[LOG] SoundI::release                          :  (000002D764EB6FE8)
+[LOG] SoundI::release                          :     Footstep_grass_01 (000002D6986C5B78)
+[LOG] SoundI::release                          :  (000002D764EB72C8)
+[LOG] SoundI::release                          :     Footstep_grass_02 (000002D73F0CF3E8)
+[LOG] SoundI::release                          :  (000002D764EB4A88)
+[LOG] SoundI::release                          :     Footstep_grass_03 (000002D73F0D31A8)
+[LOG] SoundI::release                          :  (000002D764EB44C8)
+[LOG] SoundI::release                          :     Footstep_grass_04 (000002D73F0CED68)
+[LOG] SoundI::release                          :  (000002D764EB6468)
+[LOG] SoundI::release                          :     Footstep_asphalt_05 (000002D6986C6BB8)
+[LOG] SoundI::release                          :  (000002D764EB4078)
+[LOG] SoundI::release                          :     Footstep_asphalt_01 (000002D73F0D4048)
+[LOG] SoundI::release                          :  (000002D764EB62F8)
+[LOG] SoundI::release                          :     Footstep_asphalt_02 (000002D6986C9AD8)
+[LOG] SoundI::release                          :  (000002D764EB7158)
+[LOG] SoundI::release                          :     Footstep_asphalt_03 (000002D73F0D27E8)
+[LOG] SoundI::release                          :  (000002D764EB4638)
+[LOG] SoundI::release                          :     Footstep_asphalt_04 (000002D73F0D3688)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
 [LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
 [LOG] Manager::readBank                        : fileversion = 141, compatVersion = 140 (oldest = 44, newest = 141)
@@ -28,3 +90,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
