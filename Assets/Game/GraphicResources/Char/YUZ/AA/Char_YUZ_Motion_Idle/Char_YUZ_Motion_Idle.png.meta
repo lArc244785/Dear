@@ -1,0 +1,323 @@
+fileFormatVersion: 2
+guid: 5bec488fe7f3a324a876974060b7597f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7222556195828936834
+    second: Char_YUZ_Motion_Idle0
+  - first:
+      213: 8211608602272262183
+    second: Char_YUZ_Motion_Idle1
+  - first:
+      213: -2795644478954930780
+    second: Char_YUZ_Motion_Idle2
+  - first:
+      213: 595559573107912546
+    second: Char_YUZ_Motion_Idle3
+  - first:
+      213: -4118349341120021408
+    second: Char_YUZ_Motion_Idle4
+  - first:
+      213: 1175868739036124989
+    second: Char_YUZ_Motion_Idle5
+  - first:
+      213: -5823925811022868220
+    second: Char_YUZ_Motion_Idle6
+  - first:
+      213: 65427037519107657
+    second: Char_YUZ_Motion_Idle7
+  - first:
+      213: 8188749718648458917
+    second: Char_YUZ_Motion_Idle8
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 165
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7fc159186354cb90800000000000000
+      internalID: -7222556195828936834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 165
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728eafc448e75f170800000000000000
+      internalID: 8211608602272262183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 165
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4adfb998820e339d0800000000000000
+      internalID: -2795644478954930780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 165
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f2eadb64ad34800800000000000000
+      internalID: 595559573107912546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 83
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06cb39d181fa8d6c0800000000000000
+      internalID: -4118349341120021408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 83
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d371cbc5366815010800000000000000
+      internalID: 1175868739036124989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 83
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401d0c3d4524d2fa0800000000000000
+      internalID: -5823925811022868220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 83
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94658024b8178e000800000000000000
+      internalID: 65427037519107657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion_Idle8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae0f96bb7844a170800000000000000
+      internalID: 8188749718648458917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Char_YUZ_Motion_Idle2: -2795644478954930780
+      Char_YUZ_Motion_Idle6: -5823925811022868220
+      Char_YUZ_Motion_Idle7: 65427037519107657
+      Char_YUZ_Motion_Idle3: 595559573107912546
+      Char_YUZ_Motion_Idle0: -7222556195828936834
+      Char_YUZ_Motion_Idle4: -4118349341120021408
+      Char_YUZ_Motion_Idle5: 1175868739036124989
+      Char_YUZ_Motion_Idle8: 8188749718648458917
+      Char_YUZ_Motion_Idle1: 8211608602272262183
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
