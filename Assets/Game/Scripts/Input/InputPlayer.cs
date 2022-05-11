@@ -102,7 +102,8 @@ public class InputPlayer : MonoBehaviour
     {
         if (!isControl)
             return;
-        
+        toolManager.LeftUse();
+
     }
 
     public void LeftMouseUp()

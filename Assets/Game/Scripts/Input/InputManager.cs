@@ -14,7 +14,7 @@ public class InputManager : SingleToon<InputManager>
     private void Awake()
     {
         Init();
-    
+
     }
 
 
@@ -28,7 +28,7 @@ public class InputManager : SingleToon<InputManager>
 
         m_inputPlayer = inputPlayer;
         m_brainCam = cam;
-        
+
     }
 
 
@@ -37,8 +37,7 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-
-        m_inputPlayer.moveDir = context.ReadValue<Vector2>();
+        m_inputPlayer.SetMoveDir(context.ReadValue<Vector2>());
     }
 
 
@@ -123,7 +122,7 @@ public class InputManager : SingleToon<InputManager>
 
         PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.inventory);
     }
-    public void ActivecharUI (InputAction.CallbackContext contex)
+    public void ActivecharUI(InputAction.CallbackContext contex)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
@@ -151,6 +150,26 @@ public class InputManager : SingleToon<InputManager>
             }
         }
 
+    }
+
+    public void OnToolNone(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (context.started)
+        {
+            m_inputPlayer.SetTool(ToolManager.ActiveToolType.None);
+        }
+    }
+
+    public void OnToolGrapping(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (context.started)
+        {
+            m_inputPlayer.SetTool(ToolManager.ActiveToolType.GrappingGun);
+        }
     }
 
 
