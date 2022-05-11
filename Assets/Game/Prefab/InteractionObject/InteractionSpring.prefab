@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 3930157879230469682}
   - component: {fileID: 3930157879230469683}
   - component: {fileID: 837019330193265805}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: InteractionSpring
   m_TagString: Spring
   m_Icon: {fileID: 0}
@@ -275,6 +275,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_force: 20
+  m_superJumpMul: 2
   m_InteractionJumpWait: 0.08
 --- !u!61 &3930157879230469683
 BoxCollider2D:

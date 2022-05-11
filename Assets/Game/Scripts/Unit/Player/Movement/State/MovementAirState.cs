@@ -1,14 +1,22 @@
 using UnityEngine;
+using DG.Tweening;
+using DG.Tweening.Plugins.Core.PathCore;
 
 public class MovementAirState : I_MovementState
 {
-    private bool isGroundPound { set; get; }
+
+    private enum GroundPoundType
+    {
+        None, Ready, Pound 
+    }
+
+    private GroundPoundType currentGroundPoundType { set; get; }
 
     public void Enter(PlayerMovementManager movementManager)
     {
         if (!movementManager.isJump)
             movementManager.player.animationManager.TriggerAir();
-        isGroundPound = false;
+        currentGroundPoundType = GroundPoundType.None;
     }
 
     public void Exit(PlayerMovementManager movementManager)
@@ -46,53 +54,105 @@ public class MovementAirState : I_MovementState
 
     private void GroundPoundUpdate(PlayerMovementManager movementManager)
     {
-        if(isGroundPound)
+        if(currentGroundPoundType == GroundPoundType.None)
         {
-            if(movementManager.player.rig2D.velocity.y >= 0.0f)
+            if (CanGroundPound(movementManager))
+            {
+                GroundPoundReady(movementManager);
+            }
+        }
+        else if(currentGroundPoundType == GroundPoundType.Pound)
+        {
+            Collider2D poundLapCollider2D = movementManager.groundPoundSensor.GetGroundCollider2D();
+            if (poundLapCollider2D != null)
             {
                 Debug.Log("Ground Pound End");
 
-                movementManager.player.inputPlayer.SetMoveControl( true);
-                movementManager.jumpCount = 0;
-                movementManager.currentState = PlayerMovementManager.State.Ground;
+                movementManager.player.inputPlayer.SetMoveControl(true);
+
+                if(poundLapCollider2D.gameObject.layer == LayerMask.NameToLayer("GroundPoundInteractionObject"))
+                {
+                    GroundPoundInteraction(movementManager, poundLapCollider2D);
+                }
+                else
+                {
+                    movementManager.currentState = PlayerMovementManager.State.Ground; 
+                }
+
+
+                currentGroundPoundType = GroundPoundType.None;
             }
         }
 
-        if(CanGroundPound(movementManager))
-        {
-            GroundPound(movementManager);
-        }
+
     }
 
-    private void GroundPound(PlayerMovementManager movementManager)
+    private void GroundPoundReady(PlayerMovementManager movementManager)
     {
         movementManager.isJump = false;
-        isGroundPound = true;
         movementManager.player.inputPlayer.SetMoveControl(false);
+        movementManager.player.rig2D.velocity = Vector2.zero;
 
-        movementManager.player.rig2D.velocity = Vector2.zero ;
+        currentGroundPoundType = GroundPoundType.Ready;
 
-        movementManager.player.rig2D.AddForce(Vector2.down * movementManager.movementData.groundPoundPower, ForceMode2D.Impulse);
+
+        float readyMoveY = CalculationGroundPoundReadyMoveY(
+            movementManager.player.GetModelColliderTop(),
+            movementManager.movementData.groundPoundMoveY,
+            movementManager.groundSensor.groundLayer);
+
+        
+
+        Vector3[] moveYPath = movementManager.CalculationGroundPoundPath(readyMoveY);
+
+        Path path = new Path(PathType.Linear, moveYPath, 1);
+
+        movementManager.player.transform.DOPath(
+            path,
+            movementManager.movementData.groundPoundReadyTime).OnComplete(() => 
+            {
+                movementManager.player.rig2D.velocity = Vector2.down * movementManager.movementData.groundPoundPower;
+                currentGroundPoundType = GroundPoundType.Pound;
+            }).Play();
+
     }
+
+    private float CalculationGroundPoundReadyMoveY(Vector2 colliderTopPos, float moveY, LayerMask groundLayer)
+    {
+        float readyMoveY = 0.0f;
+
+        RaycastHit2D hit2D = Physics2D.Raycast(colliderTopPos, Vector2.up, moveY, groundLayer);
+        if(hit2D.collider != null)
+        {
+            readyMoveY = hit2D.distance;
+        }
+        else
+        {
+            readyMoveY = moveY;
+        }
+        return readyMoveY;
+    }
+
+
+
 
     private bool CanGroundPound(PlayerMovementManager movementManager)
     {
         return movementManager.player.toolManager.IsPassiveToolAcheive(ToolManager.PassiveToolType.GroundPound) &&
-            !isGroundPound &&
+            currentGroundPoundType == GroundPoundType.None &&
             movementManager.player.inputPlayer.moveDir.y < 0.0f;
     }
 
 
     private void ChangeState(PlayerMovementManager movementManager)
     {
-        if (isGroundPound)
+        if (currentGroundPoundType != GroundPoundType.None)
             return;
 
         if (movementManager.IsWallGrouned())
             movementManager.currentState = PlayerMovementManager.State.Wall;
         else if (!movementManager.isJump && movementManager.IsGrounded())
         {
-            movementManager.jumpCount = 0;
             movementManager.currentState = PlayerMovementManager.State.Ground;
 
 
@@ -140,6 +200,8 @@ public class MovementAirState : I_MovementState
         if (CanAirJump(movementManager))
         {
             movementManager.Jump(movementManager.movementData.airJumpForce);
+            movementManager.jumpCount++;
+
         }
 
     }
@@ -160,7 +222,21 @@ public class MovementAirState : I_MovementState
             !movementManager.isInteractionJump;
     }
 
+    private void GroundPoundInteraction(PlayerMovementManager movementManager, Collider2D coll)
+    {
+        string tag = coll.gameObject.tag;
 
+        if(tag == "Spring")
+        {
+            coll.GetComponent<InteractionSpring>().SuperJump();
+ 
+        }
+        else if(tag == "GroundPoundBroken")
+        {
+            coll.GetComponent<InteractionGroundPoundBroken>().Broken();
+        }
+        
+    }
 
 
 }

@@ -11,6 +11,7 @@ public class MovementGroundState : I_MovementState
     {
         movementManager.player.animationManager.TriggerLanding();
         movementManager.SetGravity(movementManager.movementData.gravityScale);
+        movementManager.jumpCount = 0;
     }
 
     public void Exit(PlayerMovementManager movementManager)
@@ -47,9 +48,9 @@ public class MovementGroundState : I_MovementState
         coyoteSystem.JumpCoyoteTime();
     }
 
-    private void PhysicUpdate(GroundSensor groundSensor, CoyoteSystem coyoteSystem)
+    private void PhysicUpdate(CircleSensor groundSensor, CoyoteSystem coyoteSystem)
     {
-        if (groundSensor.IsGrounded())
+        if (groundSensor.IsOverlap())
         {
             coyoteSystem.OnGroundTimer();
         }
@@ -60,6 +61,7 @@ public class MovementGroundState : I_MovementState
         if(CanJump(movementManager))
         {
             movementManager.Jump(movementManager.movementData.jumpForce);
+            movementManager.jumpCount++;
             movementManager.currentState = PlayerMovementManager.State.Air;
         }
     }

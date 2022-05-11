@@ -83,8 +83,8 @@ public class PlayerMovementManager : MonoBehaviour
 
     #region Sensor
 
-    private GroundSensor m_groundSensor;
-    public GroundSensor groundSensor { get { return m_groundSensor; } }
+    private CircleSensor m_groundSensor;
+    public CircleSensor groundSensor { get { return m_groundSensor; } }
 
     private WallSensor m_wallSensor;
     public WallSensor wallSensor { get { return m_wallSensor; } }
@@ -123,6 +123,26 @@ public class PlayerMovementManager : MonoBehaviour
     public Shoulder shoulder { get { return player.shoulder; } }
     #endregion
 
+    #region GroundPound
+    private Vector3[] m_groundPoundPath;
+    public Vector3[] groundPoundPath
+    {
+        get
+        {
+            return m_groundPoundPath;
+        }
+    }
+
+    private CircleSensor m_groundPoundSensor;
+    public CircleSensor groundPoundSensor
+    {
+        get
+        {
+            return m_groundPoundSensor;
+        }
+    }
+    #endregion
+
 
     public void Init(UnitPlayer player)
     {
@@ -134,6 +154,8 @@ public class PlayerMovementManager : MonoBehaviour
         m_coyoteSystem.Init(m_movementData);
 
         m_lastLookDir = Vector2.left;
+
+        m_groundPoundPath = new Vector3[movementData.groundPoundReadyPathLenth];
 
         StatesInit();
         currentState = State.Ground;
@@ -147,8 +169,8 @@ public class PlayerMovementManager : MonoBehaviour
 
         Transform sensorsTr = transform.Find("Sensors");
         m_wallSensor = sensorsTr.GetComponentInChildren<WallSensor>();
-        m_groundSensor = sensorsTr.GetComponentInChildren<GroundSensor>();
-
+        m_groundSensor = sensorsTr.Find("GroundSensor").GetComponent<CircleSensor>();
+        m_groundPoundSensor = sensorsTr.Find("GroundPoundSensor").GetComponent<CircleSensor>();
 
         wallSensor.Init();
 
@@ -204,7 +226,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return m_groundSensor.IsGrounded();
+        return m_groundSensor.IsOverlap();
     }
 
     public bool IsWallGrouned()
@@ -318,9 +340,6 @@ public class PlayerMovementManager : MonoBehaviour
             isOnInteractionJumpObject = false;
         }
 
-
-        jumpCount++;
-
     }
 
     public void JumpCut()
@@ -411,6 +430,24 @@ public class PlayerMovementManager : MonoBehaviour
         Debug.Log("B: " + player.rig2D.velocity);
     }
 
+    public Vector3[] CalculationGroundPoundPath(float moveY)
+    {
+        Vector3 startPos = (Vector3)player.unitPos;
 
+        int length = movementData.groundPoundReadyPathLenth;
+
+        float ratio = 1.0f / length;
+
+        for(int i = 0; i < length; i++)
+        {
+            Vector3 pathPos = startPos;
+            float ratioY = moveY * movementData.groundPoundReadyMoveYCurve.Evaluate(ratio * i);
+            pathPos.y += ratioY;
+            groundPoundPath[i] = pathPos;
+            Debug.Log("Path[" + i + "] " + groundPoundPath[i]);
+        }
+
+        return groundPoundPath;
+    }
 
 }
