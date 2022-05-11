@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +22,7 @@ public class ToolManager : MonoBehaviour
         {
             return m_currentActiveTool;
         }
-    }   
+    }
     [SerializeField]
     private List<ActiveToolBase> m_activeToolList;
     #endregion
@@ -32,7 +31,7 @@ public class ToolManager : MonoBehaviour
     public enum PassiveToolType
     {
         None = -1,
-        Wall, GroundPound,
+        Wall = 0, GroundPound,
         Total
     }
 
@@ -65,10 +64,16 @@ public class ToolManager : MonoBehaviour
 
     public void Init(UnitPlayer player)
     {
-        for(int i = 0; i > (int)PassiveToolType.Total; i ++)
-            m_passiveToolList.Add(new ToolInfo());
+        for (int i = 0; i < (int)PassiveToolType.Total; i++)
+        {
+            ToolInfo info = new ToolInfo();
+            info.Init(ToolInfo.Type.Passive);
 
-        foreach(ActiveToolBase activeTool in m_activeToolList)
+            m_passiveToolList.Add(info);
+        }
+
+
+        foreach (ActiveToolBase activeTool in m_activeToolList)
         {
             activeTool.Init(player);
             activeTool.gameObject.SetActive(false);
@@ -110,7 +115,7 @@ public class ToolManager : MonoBehaviour
             return;
 
 
-            m_activeToolList[(int)currentActiveTool].LeftUse();
+        m_activeToolList[(int)currentActiveTool].LeftUse();
     }
 
     public void RightUse()
@@ -118,7 +123,7 @@ public class ToolManager : MonoBehaviour
         if (currentActiveTool == ActiveToolType.None)
             return;
 
-            m_activeToolList[(int)currentActiveTool].RightUse();
+        m_activeToolList[(int)currentActiveTool].RightUse();
     }
     #endregion
 
@@ -129,7 +134,7 @@ public class ToolManager : MonoBehaviour
         if (currentActiveTool == ActiveToolType.None)
             return;
 
-            m_activeToolList[(int)currentActiveTool].LeftCancle();
+        m_activeToolList[(int)currentActiveTool].LeftCancle();
     }
 
     public void RightCancle()
@@ -138,7 +143,7 @@ public class ToolManager : MonoBehaviour
             return;
 
 
-            m_activeToolList[(int)currentActiveTool].RightCancle();
+        m_activeToolList[(int)currentActiveTool].RightCancle();
     }
 
     #endregion
@@ -155,9 +160,9 @@ public class ToolManager : MonoBehaviour
 
     public void SetTool(ActiveToolType activeTool)
     {
-        
 
-        if(currentActiveTool != ActiveToolType.None)
+
+        if (currentActiveTool != ActiveToolType.None)
         {
             int exitToolIndex = (int)currentActiveTool;
 
@@ -185,7 +190,15 @@ public class ToolManager : MonoBehaviour
     }
     #endregion
 
+    public bool IsPassiveToolAcheive(PassiveToolType type)
+    {
+        bool isAcheive = false;
 
+        if (type == PassiveToolType.None)
+            return false;
+
+        return m_passiveToolList[(int)type].isAcheive;
+    }
 
 
 }

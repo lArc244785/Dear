@@ -15,8 +15,8 @@ MonoBehaviour:
   m_coolTime: 0.5
   m_maxDistance: 25
   m_hookMaxSpeed: 20
-  m_hookAcclelation: 1
-  m_hookVelocityPower: 2.01
+  m_hookAcclelation: 18
+  m_hookVelocityPower: 0.8
   m_pullMaxSpeed: 20
-  m_pullAcclelation: 1
-  m_pullVelcoityPower: 2.01
+  m_pullAcclelation: 12
+  m_pullVelcoityPower: 0.8

@@ -43,7 +43,7 @@ public class InputPlayer : MonoBehaviour
 
     public bool isMoveControl
     {
-        set
+        private set
         {
             m_isMoveControl = value;
         }
@@ -180,12 +180,18 @@ public class InputPlayer : MonoBehaviour
         toolManager.RightCancle();
     }
 
+    public void SetMoveDir(Vector2 dir)
+    {
+        if (!isControl || !isMoveControl)
+            return;
 
+        moveDir = dir;
+    }
 
 
     public Vector2 moveDir
     {
-        set
+        private set
         {
 
             m_moveDir = value;
@@ -201,6 +207,13 @@ public class InputPlayer : MonoBehaviour
         {
             return m_moveDir;
         }
+    }
+
+    public void SetMoveControl(bool isMove)
+    {
+        isMoveControl = isMove;
+        if (!isMoveControl)
+            m_moveDir = Vector2.zero;
     }
 
 

@@ -278,7 +278,7 @@ public class PlayerMovementManager : MonoBehaviour
 
         float movement = Mathf.Pow(Mathf.Abs(SpeedDif) * accleRate, velocityPower) * Mathf.Sign(SpeedDif);
         movement = Mathf.Lerp(rigVelocityX, movement, lerpAmount);
-        //Debug.Log("Run");
+        //Debug.Log("Run: " + movement);
         player.rig2D.AddForce(movement * Vector2.right);
     }
 
@@ -404,7 +404,12 @@ public class PlayerMovementManager : MonoBehaviour
         currentState = State.Hit;
     }
 
-
+    public void ClampJumpVelocity()
+    {
+        Debug.Log("A: " + player.rig2D.velocity);
+        player.rig2D.velocity = Vector2.ClampMagnitude(player.rig2D.velocity, 5.0f);
+        Debug.Log("B: " + player.rig2D.velocity);
+    }
 
 
 

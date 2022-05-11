@@ -49,7 +49,7 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-            m_inputPlayer.moveDir = context.ReadValue<Vector2>();
+        m_inputPlayer.SetMoveDir(context.ReadValue<Vector2>());
 
 
     }

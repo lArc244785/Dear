@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class MovementAirState : I_MovementState
 {
+    private bool isGroundPound { set; get; }
+
     public void Enter(PlayerMovementManager movementManager)
     {
         if (!movementManager.isJump)
             movementManager.player.animationManager.TriggerAir();
+        isGroundPound = false;
     }
 
     public void Exit(PlayerMovementManager movementManager)
@@ -28,6 +31,7 @@ public class MovementAirState : I_MovementState
 
         JumpUpdate(movementManager);
 
+        GroundPoundUpdate(movementManager);
 
         ChangeState(movementManager);
     }
@@ -40,11 +44,49 @@ public class MovementAirState : I_MovementState
         coyoteSystem.WallCoyoteTime();
     }
 
+    private void GroundPoundUpdate(PlayerMovementManager movementManager)
+    {
+        if(isGroundPound)
+        {
+            if(movementManager.player.rig2D.velocity.y >= 0.0f)
+            {
+                Debug.Log("Ground Pound End");
+
+                movementManager.player.inputPlayer.SetMoveControl( true);
+                movementManager.jumpCount = 0;
+                movementManager.currentState = PlayerMovementManager.State.Ground;
+            }
+        }
+
+        if(CanGroundPound(movementManager))
+        {
+            GroundPound(movementManager);
+        }
+    }
+
+    private void GroundPound(PlayerMovementManager movementManager)
+    {
+        movementManager.isJump = false;
+        isGroundPound = true;
+        movementManager.player.inputPlayer.SetMoveControl(false);
+
+        movementManager.player.rig2D.velocity = Vector2.zero ;
+
+        movementManager.player.rig2D.AddForce(Vector2.down * movementManager.movementData.groundPoundPower, ForceMode2D.Impulse);
+    }
+
+    private bool CanGroundPound(PlayerMovementManager movementManager)
+    {
+        return movementManager.player.toolManager.IsPassiveToolAcheive(ToolManager.PassiveToolType.GroundPound) &&
+            !isGroundPound &&
+            movementManager.player.inputPlayer.moveDir.y < 0.0f;
+    }
 
 
     private void ChangeState(PlayerMovementManager movementManager)
     {
-
+        if (isGroundPound)
+            return;
 
         if (movementManager.IsWallGrouned())
             movementManager.currentState = PlayerMovementManager.State.Wall;
@@ -67,6 +109,8 @@ public class MovementAirState : I_MovementState
             }
 
             movementManager.player.sound.Landing(value);
+
+
         }
 
     }

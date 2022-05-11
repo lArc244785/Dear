@@ -85,11 +85,12 @@ public class UnitPlayer : UnitBase
 
         shoulder.Init();
 
+        toolManager.Init(this);
         animationManager.Init(modelAnimator, shoulder);
         movementManager.Init(this);
         sound.Init(this);
         inputPlayer.Init(movementManager, toolManager);
-        toolManager.Init(this);
+
 
     }
 
