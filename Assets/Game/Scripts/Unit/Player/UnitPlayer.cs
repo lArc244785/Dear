@@ -78,12 +78,23 @@ public class UnitPlayer : UnitBase
         }
     }
 
+    #region Mad
+    private MadTrackingPoint m_madTrackingPoint;
+    public MadTrackingPoint madTrackingPoint
+    {
+        get { return m_madTrackingPoint; }
+    }
 
+    private Mad m_mad;
+    public Mad mad { get { return m_mad; } }
+
+    #endregion
 
     public override void Init()
     {
         base.Init();
         isInit = true;
+        
     }
 
     protected override void ComponentInit()
@@ -97,6 +108,10 @@ public class UnitPlayer : UnitBase
         m_toolManager = GetComponent<ToolManager>();
         m_modelCollider = GetComponent<CapsuleCollider2D>();
 
+        m_madTrackingPoint = transform.Find("MadTrackingPoint").GetComponent<MadTrackingPoint>();
+        m_mad = GameObject.Find("Mad").GetComponent<Mad>();
+
+
         shoulder.Init();
 
         toolManager.Init(this);
@@ -105,6 +120,8 @@ public class UnitPlayer : UnitBase
         sound.Init(this);
         inputPlayer.Init(movementManager, toolManager);
 
+        madTrackingPoint.Init(movementManager.IsLookDirRight(), mad);
+        mad.Init(this, madTrackingPoint);
 
     }
 
