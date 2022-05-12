@@ -187,7 +187,7 @@ public class InputPlayer : MonoBehaviour
             return;
 
         moveDir = dir;
-        Debug.Log("MoveDir: " + dir);
+       // Debug.Log("MoveDir: " + dir);
     }
 
 
