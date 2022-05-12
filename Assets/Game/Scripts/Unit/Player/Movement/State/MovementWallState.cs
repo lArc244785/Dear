@@ -4,18 +4,18 @@ public class MovementWallState : I_MovementState
 {
     private float m_wallJumpStartTime;
 
-    public void Enter(PlayerMovementManager manager)
+    public void Enter(PlayerMovementManager movementManager)
     {
-        manager.coyoteSystem.ResetJumpEnterTime();
-        manager.rig2D.velocity = new Vector2(manager.rig2D.velocity.x, 0.0f);
+        movementManager.coyoteSystem.ResetJumpEnterTime();
+        movementManager.player.rig2D.velocity = new Vector2(movementManager.player.rig2D.velocity.x, 0.0f);
 
-        if (manager.IsWallLeft())
-            manager.Trun(Vector2.left);
+        if (movementManager.IsWallLeft())
+            movementManager.Trun(Vector2.left);
         else
-            manager.Trun(Vector2.right);
+            movementManager.Trun(Vector2.right);
 
         
-        manager.playerManager.animation.TriggerWall();
+        movementManager.player.animationManager.TriggerWall();
 
 
     }
@@ -82,19 +82,19 @@ public class MovementWallState : I_MovementState
 
     }
 
-    private void ClimbingUpdate(PlayerMovementManager manager)
+    private void ClimbingUpdate(PlayerMovementManager movementManager)
     {
-        manager.Resistance(manager.movementData.frictionAmount);
-        if (CanClimbing(manager))
-            manager.Climbing(manager.movementData.climbingMaxSpeed, manager.inputPlayer.moveDir.y);
+        movementManager.Resistance(movementManager.movementData.frictionAmount);
+        if (CanClimbing(movementManager))
+            movementManager.Climbing(movementManager.movementData.climbingMaxSpeed, movementManager.player.inputPlayer.moveDir.y);
     }
 
-    private bool CanClimbing(PlayerMovementManager manager)
+    private bool CanClimbing(PlayerMovementManager movementManager)
     {
-        float moveDirY = manager.inputPlayer.moveDir.y;
+        float moveDirY = movementManager.player.inputPlayer.moveDir.y;
 
-        return (moveDirY > 0.0f && manager.wallSensor.UpSensorGrounded()) ||
-            (moveDirY < 0.0f && manager.wallSensor.DownSensorGrounded());
+        return (moveDirY > 0.0f && movementManager.wallSensor.UpSensorGrounded()) ||
+            (moveDirY < 0.0f && movementManager.wallSensor.DownSensorGrounded());
     }
 
 
@@ -115,90 +115,90 @@ public class MovementWallState : I_MovementState
 
     }
 
-    private void WallSildeUpdate(PlayerMovementManager manager)
+    private void WallSildeUpdate(PlayerMovementManager movementManager)
     {
-        manager.isWallSilde = false;
+        movementManager.isWallSilde = false;
 
 
-        if (manager.coyoteSystem.lastOnWallTime > 0.0f && !manager.isWallJump)
+        if (movementManager.coyoteSystem.lastOnWallTime > 0.0f && !movementManager.isWallJump)
         {
-            WallSilde(manager.rig2D, manager.movementData.wallSlideVelocity);
-            manager.isWallSilde = true;
+            WallSilde(movementManager.player.rig2D, movementManager.movementData.wallSlideVelocity);
+            movementManager.isWallSilde = true;
         }
     }
 
-    private void WallJumpUpdate(PlayerMovementManager manager)
+    private void WallJumpUpdate(PlayerMovementManager movementManager)
     {
-        if (manager.isWallJump)
+        if (movementManager.isWallJump)
         {
             float wallJumpDuringTime = Time.time - m_wallJumpStartTime;
-            if (wallJumpDuringTime >= manager.movementData.wallJumpTime)
-                manager.isWallJump = false;
+            if (wallJumpDuringTime >= movementManager.movementData.wallJumpTime)
+                movementManager.isWallJump = false;
         }
 
-        if (CanWallJump(manager))
+        if (CanWallJump(movementManager))
         {
-            Debug.Log("WW " + manager.coyoteSystem.lastJumpEnterTime);
+            Debug.Log("WW " + movementManager.coyoteSystem.lastJumpEnterTime);
 
             int dir = 1;
-            if (manager.coyoteSystem.lastOnWallRightTime > 0.0f)
+            if (movementManager.coyoteSystem.lastOnWallRightTime > 0.0f)
                 dir = -1;
 
-            WallJump(dir, manager);
+            WallJump(dir, movementManager);
         }
 
     }
 
-    private bool CanWallJump(PlayerMovementManager manager)
+    private bool CanWallJump(PlayerMovementManager movementManager)
     {
         return
-            manager.coyoteSystem.lastJumpEnterTime > 0.0f &&
-            manager.coyoteSystem.lastOnWallTime > 0.0f &&
-            !manager.isWallJump;
+            movementManager.coyoteSystem.lastJumpEnterTime > 0.0f &&
+            movementManager.coyoteSystem.lastOnWallTime > 0.0f &&
+            !movementManager.isWallJump;
     }
 
 
-    private void ChangeState(PlayerMovementManager manager)
+    private void ChangeState(PlayerMovementManager movementManager)
     {
-        if (manager.coyoteSystem.lastOnWallTime < 0.0f && !manager.isWallJump)
+        if (movementManager.coyoteSystem.lastOnWallTime < 0.0f && !movementManager.isWallJump)
         {
-            manager.currentState = PlayerMovementManager.State.Air;
+            movementManager.currentState = PlayerMovementManager.State.Air;
         }
-        else if (manager.IsGrounded())
-            manager.currentState = PlayerMovementManager.State.Ground;
+        else if (movementManager.IsGrounded())
+            movementManager.currentState = PlayerMovementManager.State.Ground;
     }
 
-    private void RunUpdate(PlayerMovementManager manager)
+    private void RunUpdate(PlayerMovementManager movementManager)
     {
-        if (!manager.isWallJump)
+        if (!movementManager.isWallJump)
         {
-            manager.Run(1.0f,true);
+            movementManager.Run(1.0f,true);
         }
         else
         {
-            manager.Run(manager.movementData.wallJumpRunLerp,true);
+            movementManager.Run(movementManager.movementData.wallJumpRunLerp,true);
         }
     }
 
-    private void GravityUpdate(PlayerMovementManager manager)
+    private void GravityUpdate(PlayerMovementManager movementManager)
     {
-        if ((manager.isWallGrip || manager.isWallGripInteraction) && !manager.isWallJump)
-            manager.SetGravity(0.0f);
+        if ((movementManager.isWallGrip || movementManager.isWallGripInteraction) && !movementManager.isWallJump)
+            movementManager.SetGravity(0.0f);
         else
-            manager.SetGravity(manager.movementData.gravityScale);
+            movementManager.SetGravity(movementManager.movementData.gravityScale);
     }
 
-    private void WallJump(int dir, PlayerMovementManager manager)
+    private void WallJump(int dir, PlayerMovementManager movementManager)
     {
-        manager.playerManager.animation.TriggerJump();
+        movementManager.player.animationManager.TriggerJump();
 
         if (dir == 1)
-            manager.playerManager.sound.WallJumpRight();
+            movementManager.player.sound.WallJumpRight();
         else
-            manager.playerManager.sound.WallJumpLeft();
+            movementManager.player.sound.WallJumpLeft();
 
         Debug.Log("WallJump | Dir: " + dir);
-        Vector2 force = manager.movementData.wallJumpForce;
+        Vector2 force = movementManager.movementData.wallJumpForce;
 
         force.x *= Mathf.Sign(dir);
 
@@ -211,24 +211,24 @@ public class MovementWallState : I_MovementState
 
         //manager.rig2D.AddForce(force, ForceMode2D.Impulse);
 
-        manager.VectorJump(force);
+        movementManager.VectorJump(force);
 
 
-        if (manager.coyoteSystem.lastOnWallLeftTime > 0.0f)
-            manager.Trun(Vector2.right);
+        if (movementManager.coyoteSystem.lastOnWallLeftTime > 0.0f)
+            movementManager.Trun(Vector2.right);
         else
-            manager.Trun(Vector2.left);
+            movementManager.Trun(Vector2.left);
 
 
-        manager.coyoteSystem.ResetWallLeftTime();
-        manager.coyoteSystem.ResetWallRightTime();
-        manager.coyoteSystem.ResetJumpEnterTime();
+        movementManager.coyoteSystem.ResetWallLeftTime();
+        movementManager.coyoteSystem.ResetWallRightTime();
+        movementManager.coyoteSystem.ResetJumpEnterTime();
 
-        manager.coyoteSystem.WallCoyoteTime();
-        Debug.Log("WallG : " + manager.coyoteSystem.lastOnWallTime);
+        movementManager.coyoteSystem.WallCoyoteTime();
+        Debug.Log("WallG : " + movementManager.coyoteSystem.lastOnWallTime);
 
 
-        manager.isWallJump = true;
+        movementManager.isWallJump = true;
         m_wallJumpStartTime = Time.time;
     }
 

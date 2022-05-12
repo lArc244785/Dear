@@ -44,7 +44,7 @@ public class Shoulder : MonoBehaviour
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-        m_hand.SetActive(m_shooter.CanShoot());
+        
 
         if (m_currentType == LookType.Mouse)
         {

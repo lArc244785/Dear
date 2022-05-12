@@ -8,6 +8,11 @@ TagManager:
   - Ground
   - Forest
   - Asphalt
+  - HookShlingshot
+  - HookNormal
+  - Grapping
+  - Spring
+  - GroundPoundBroken
   layers:
   - Default
   - TransparentFX
@@ -21,10 +26,10 @@ TagManager:
   - Enemy
   - Wall
   - Ghost
-  - 
-  - 
-  - 
-  - 
+  - HookPick
+  - ToolSensor
+  - ToolInteraction
+  - GroundPoundInteractionObject
   - 
   - 
   - 

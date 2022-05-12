@@ -14,7 +14,9 @@ public class InputManager : SingleToon<InputManager>
     private void Awake()
     {
         Init();
+
     }
+
 
     protected override bool Init()
     {
@@ -23,18 +25,19 @@ public class InputManager : SingleToon<InputManager>
 
     public void SetStage(InputPlayer inputPlayer, Camera cam)
     {
+
         m_inputPlayer = inputPlayer;
         m_brainCam = cam;
+
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-            m_inputPlayer.moveDir = context.ReadValue<Vector2>();
-
-
+        m_inputPlayer.SetMoveDir(context.ReadValue<Vector2>());
     }
 
 
@@ -106,13 +109,67 @@ public class InputManager : SingleToon<InputManager>
         else if (context.canceled)
             m_inputPlayer.WallGripUp();
     }
-
     public void OnInteraction(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
+    }
 
+    public void ActiveInventory(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
 
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.inventory);
+    }
+    public void ActivecharUI(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.character);
+    }
+
+    public void ActiveTestUI(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
+        Debug.Log("a");
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.test);
+    }
+    public void EscapeUI(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (contex.started)
+        {
+            if (PopUpManager.instance.activePopupList.Count > 0)
+            {
+                PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
+            }
+        }
+
+    }
+
+    public void OnToolNone(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (context.started)
+        {
+            m_inputPlayer.SetTool(ToolManager.ActiveToolType.None);
+        }
+    }
+
+    public void OnToolGrapping(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (context.started)
+        {
+            m_inputPlayer.SetTool(ToolManager.ActiveToolType.GrappingGun);
+        }
     }
 
 
@@ -139,4 +196,6 @@ public class InputManager : SingleToon<InputManager>
             return Mouse.current.position.ReadValue();
         }
     }
+
+
 }

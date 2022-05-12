@@ -54,7 +54,7 @@ public class PlayerSound : MonoBehaviour
     private string m_surfaceIndex = "surface_index";
     private string surfaceIndex { get { return m_surfaceIndex; } }
 
-    private NewGroundSensor m_groundSensor;
+    private CircleSensor m_groundSensor;
 
     public void Init(UnitPlayer player)
     {
@@ -70,7 +70,7 @@ public class PlayerSound : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(m_landingInstance, player.transform, player.rig2D);
         #endregion
 
-        m_groundSensor = player.movement.groundSensor;
+        m_groundSensor = player.movementManager.groundSensor;
 
         footStepLoop = false;
         m_footStepLoopCoroutine = FootStepCoroutine(footStepPlayTick);

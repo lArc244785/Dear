@@ -6,13 +6,13 @@ public class MovementHitState : I_MovementState
 {
     private float m_enterTime;
 
-    public void Enter(PlayerMovementManager manager)
+    public void Enter(PlayerMovementManager movementManager)
     {
         m_enterTime = Time.time;
 
-        Vector2 force = manager.hitImfectDir * manager.movementData.hitImfectPower;
-        manager.rig2D.velocity = Vector2.zero;
-        manager.VectorJump(force);
+        Vector2 force = movementManager.hitImfectDir * movementManager.movementData.hitImfectPower;
+        movementManager.player.rig2D.velocity = Vector2.zero;
+        movementManager.VectorJump(force);
     }
 
     public void Exit(PlayerMovementManager manager)
