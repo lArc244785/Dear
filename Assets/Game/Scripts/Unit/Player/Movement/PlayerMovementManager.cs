@@ -356,6 +356,8 @@ public class PlayerMovementManager : MonoBehaviour
             player.model.flipX = !player.model.flipX;
         }
         m_lastLookDir = lookDir;
+
+        player.madTrackingPoint.UpdateOffset(IsLookDirRight());
     }
 
     public void TrunUpdate()
@@ -366,7 +368,7 @@ public class PlayerMovementManager : MonoBehaviour
         Trun(player.inputPlayer.moveDir);
     }
 
-    public Vector2 lookDir
+    public Vector2 lastLookDir
     {
         get
         {
@@ -448,6 +450,16 @@ public class PlayerMovementManager : MonoBehaviour
         }
 
         return groundPoundPath;
+    }
+
+    public bool IsLookDirRight()
+    {
+        bool isRight = false;
+
+        if (lastLookDir == Vector2.right)
+            isRight = true;
+
+        return isRight;
     }
 
 }
