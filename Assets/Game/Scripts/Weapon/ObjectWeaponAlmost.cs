@@ -29,10 +29,12 @@ public class ObjectWeaponAlmost : WeaponBase
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         int targetMask = 1 << collision.gameObject.layer;
-        if((targetMask & hitLayerMask) != 0)
+        if ((targetMask & hitLayerMask) != 0)
         {
             collision.GetComponent<UnitBase>().OnHitObject(gameObject, data.damage);
         }

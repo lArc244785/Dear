@@ -249,7 +249,7 @@ public class MovementStateAir : I_MovementState
         }
         else if(tag == "GroundPoundBroken")
         {
-            coll.GetComponent<InteractionGroundPoundBroken>().Broken();
+            coll.GetComponent<InteractionGroundPoundBroken>().BrokenTrigger();
         }
         
     }
