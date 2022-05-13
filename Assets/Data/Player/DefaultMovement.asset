@@ -37,7 +37,7 @@ MonoBehaviour:
   m_climbingMaxSpeed: 12
   m_climbingAccel: 8
   m_climbingDeccel: 13
-  m_hitImfectPower: 3
+  m_hitImfectPower: 10
   m_hitImfectDuringTime: 0.3
   m_hitImfectRunLerp: 0.5
   m_groundPoundPower: 30
@@ -77,3 +77,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_groundPoundReadyPathLenth: 5
+  m_groundPoundLandingTime: 0.5

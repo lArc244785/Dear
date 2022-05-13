@@ -182,10 +182,10 @@ public class PlayerMovementManager : MonoBehaviour
         m_States = new I_MovementState[(int)State.Total];
 
         m_States[(int)State.Ground] = new MovementGroundState();
-        m_States[(int)State.Air] = new MovementAirState();
+        m_States[(int)State.Air] = new MovementStateAir();
         m_States[(int)State.Wall] = new MovementWallState();
         m_States[(int)State.Rope] = new MovementRopeState();
-        m_States[(int)State.Hit] = new MovementHitState();
+        m_States[(int)State.Hit] = new MovementStateHit();
 
 
     }

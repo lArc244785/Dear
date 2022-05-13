@@ -202,7 +202,7 @@ public class InputPlayer : MonoBehaviour
 
     public void SetMoveDir(Vector2 dir)
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         moveDir = dir;
@@ -226,6 +226,9 @@ public class InputPlayer : MonoBehaviour
         }
         get
         {
+            if (!isMoveControl)
+                return Vector2.zero;
+
             return m_moveDir;
         }
     }
@@ -233,9 +236,6 @@ public class InputPlayer : MonoBehaviour
     public void SetMoveControl(bool isMove)
     {
         isMoveControl = isMove;
-        if (!isMoveControl)
-            m_moveDir = Vector2.zero;
     }
-
 
 }
