@@ -10,6 +10,6 @@ public class NextRoomTrigger : InteractionBase
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-        GameManager.instance.stageManager.roomManager.NextRoom(m_nextRoomIndex);
+       // GameManager.instance.stageManager.roomManager.NextRoom(m_nextRoomIndex);
     }
 }
