@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class ParallaxBackground : MonoBehaviour
+public class ParallaxBackGround : MonoBehaviour
 {
     public ParallaxCamera parallaxCamera;
     List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
