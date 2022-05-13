@@ -25,4 +25,15 @@ public static class Utility
         return Quaternion.Euler(0.0f, 0.0f, angle);
     }
 
+    public static void V2Acceleration(Rigidbody2D rig2D, Vector2 targetVelocity ,float accelRate, float velocityPower, ref Vector2 returnMovement)
+    {
+
+        Vector2 velocityDif = targetVelocity - rig2D.velocity;
+
+        returnMovement.x = Mathf.Pow(Mathf.Abs(velocityDif.x) * accelRate, velocityPower) * Mathf.Sign(velocityDif.x);
+        returnMovement.y = Mathf.Pow(Mathf.Abs(velocityDif.y) * accelRate, velocityPower) * Mathf.Sign(velocityDif.y);
+    }
+
+
+
 }

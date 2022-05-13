@@ -23,6 +23,15 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
+    private Mad m_mad;
+    private Mad mad
+    {
+        get
+        {
+            return m_mad;
+        }
+    }
+
 
     private Vector2 m_moveDir;
 
@@ -55,10 +64,12 @@ public class InputPlayer : MonoBehaviour
 
 
 
-    public void Init(PlayerMovementManager movementManger, ToolManager toolManager)
+    public void Init(PlayerMovementManager movementManger, ToolManager toolManager, Mad mad)
     {
        m_movementManager = movementManger;
         m_toolManager = toolManager;
+        m_mad = mad;
+
         isControl = true;
         isMoveControl = true;
     }
@@ -161,6 +172,14 @@ public class InputPlayer : MonoBehaviour
 
 
         toolManager.LeftCancle();
+    }
+
+    public void MadAttack()
+    {
+        if (!isControl)
+            return;
+        if (movementManger.currentState == PlayerMovementManager.State.Ground)
+            mad.Attack();
     }
 
 

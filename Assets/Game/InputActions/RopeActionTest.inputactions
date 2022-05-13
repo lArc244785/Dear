@@ -24,36 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pull",
-                    "type": "Button",
-                    "id": "b6cac254-1a6f-429c-a955-a8b8ed9809b0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "LeftClick",
                     "type": "Button",
                     "id": "0ceeb75f-a4b7-4a37-bd9f-0549cb2e4f0f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightRebound",
-                    "type": "Button",
-                    "id": "3fe476e9-13a9-4bb4-8478-21b554b678df",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "LeftRebound",
-                    "type": "Button",
-                    "id": "900ed00c-618c-4e7f-8683-4b0d241000d5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -90,6 +63,15 @@
                     "name": "TestGrappingTool",
                     "type": "Button",
                     "id": "7ab945b9-2234-4be2-ad6b-e2db77ff632a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "b56e08f4-ce06-4d4c-a170-d1707e42ca0e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -242,45 +224,12 @@
                 },
                 {
                     "name": "",
-                    "id": "fb4525b1-e167-431e-a3e9-b53afcb3c513",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pull",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9a2b0e6d-65f2-4cca-b54a-a386e9c8b585",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "LeftClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "36ccd5a9-b4d7-4ab9-b836-aedf65dfa8f5",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightRebound",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9e21a098-ae17-49ee-955f-0cacc9d21b05",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftRebound",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -325,6 +274,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TestGrappingTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6dfbe422-a8e5-44c5-9077-72be179ecca9",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

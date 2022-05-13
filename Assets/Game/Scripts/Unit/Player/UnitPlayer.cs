@@ -118,10 +118,12 @@ public class UnitPlayer : UnitBase
         animationManager.Init(modelAnimator, shoulder);
         movementManager.Init(this);
         sound.Init(this);
-        inputPlayer.Init(movementManager, toolManager);
+
 
         madTrackingPoint.Init(movementManager.IsLookDirRight(), mad);
         mad.Init(this, madTrackingPoint);
+
+        inputPlayer.Init(movementManager, toolManager, mad);
 
     }
 
