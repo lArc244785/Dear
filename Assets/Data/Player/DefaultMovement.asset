@@ -37,11 +37,43 @@ MonoBehaviour:
   m_climbingMaxSpeed: 12
   m_climbingAccel: 8
   m_climbingDeccel: 13
-  m_ropeReboundPower: 40
-  m_ropeReboundCoolTime: 1
-  m_ropeCancleJumpForce: {x: 0, y: 10}
-  m_ropeCancleReboundTime: 0.5
-  m_ropeCancleReboundRunLerp: 0.5
   m_hitImfectPower: 3
   m_hitImfectDuringTime: 0.3
   m_hitImfectRunLerp: 0.5
+  m_groundPoundPower: 30
+  m_groundPoundMoveY: 1
+  m_groundPoundReadyTime: 0.5
+  m_groundPoundReadyMoveYCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.2356462
+      outSlope: 4.2356462
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10972979
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -0.007253647
+      outSlope: -0.007253647
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: -1.8747144
+      outSlope: -1.8747144
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21697056
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_groundPoundReadyPathLenth: 5

@@ -26,7 +26,7 @@ public class GrappingGunMovementData : ScriptableObject
     }
 
     #endregion
-
+            
     #region Hook
     [Header("Hook")]
     [SerializeField]
@@ -38,7 +38,6 @@ public class GrappingGunMovementData : ScriptableObject
             return m_hookMaxSpeed;
         }
     }
-    [Range(0.0f, 1.0f)]
     [SerializeField]
     private float m_hookAcclelation;
     public float hookAcclelation
@@ -71,7 +70,6 @@ public class GrappingGunMovementData : ScriptableObject
             return m_pullMaxSpeed;
         }
     }
-    [Range(0.0f, 1.0f)]
     [SerializeField]
     private float m_pullAcclelation;
     public float pullAcclelation
@@ -89,6 +87,16 @@ public class GrappingGunMovementData : ScriptableObject
         get
         {
             return m_pullVelcoityPower;
+        }
+    }
+
+    [SerializeField]
+    private float m_pullStopMaxLength;
+    public float pullStopMaxLength
+    {
+        get
+        {
+            return m_pullStopMaxLength;
         }
     }
 

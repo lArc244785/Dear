@@ -206,7 +206,7 @@ public class DialogueManager : SingleToon<DialogueManager>
             m_dataIndex++;
         }
 
-        //╟╪┤ч ╡е└╠┼═ │╗┐ы└╕╖╬ ▒█└┌ └╠║е╞о╕ж ┴°╟р
+        //я┐╜╪┤я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜╠║я┐╜╞оя┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜
 
         Debug.Log("Sentences : " + data);
     }

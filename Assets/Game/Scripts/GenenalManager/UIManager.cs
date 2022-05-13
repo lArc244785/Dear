@@ -13,7 +13,7 @@ public class UIManager : SingleToon<UIManager>
     [SerializeField]
     private UI_ProdutionView m_produtionView;
 
-
+    
 
     private List<UI_ViewBase> m_uiList;
 

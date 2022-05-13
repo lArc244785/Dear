@@ -43,6 +43,9 @@ public abstract class UnitBase : MonoBehaviour
             return m_rig2D;
         }
     }
+
+
+
     #endregion
 
 
