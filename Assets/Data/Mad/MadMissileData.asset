@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: MadMissileData
   m_EditorClassIdentifier: 
   m_lifeTime: 2
-  m_weaponData: {fileID: 11400000, guid: e9bf35e9198c0b444880b7a716e14a78, type: 2}
   m_maxSpeed: 20
   m_accle: 0.8
-  m_acclePower: 3
+  m_acclePower: 1
