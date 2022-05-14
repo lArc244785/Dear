@@ -15,7 +15,7 @@ public class InteractionTrapEvent : InteractionBase
     [SerializeField]
     private float m_trapActiveTime;
     [SerializeField]
-    private bool m_ropeTrap;
+    private bool m_lopeTrap;
     [SerializeField]
     private float m_resetTime;
 
@@ -61,7 +61,7 @@ public class InteractionTrapEvent : InteractionBase
 
         TrapOn();
 
-        if (m_ropeTrap)
+        if (m_lopeTrap)
         {
             time = 0.0f;
             while (time <= m_resetTime)

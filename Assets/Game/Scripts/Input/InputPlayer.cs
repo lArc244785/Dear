@@ -23,6 +23,15 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
+    private Mad m_mad;
+    private Mad mad
+    {
+        get
+        {
+            return m_mad;
+        }
+    }
+
 
     private Vector2 m_moveDir;
 
@@ -55,10 +64,12 @@ public class InputPlayer : MonoBehaviour
 
 
 
-    public void Init(PlayerMovementManager movementManger, ToolManager toolManager)
+    public void Init(PlayerMovementManager movementManger, ToolManager toolManager, Mad mad)
     {
        m_movementManager = movementManger;
         m_toolManager = toolManager;
+        m_mad = mad;
+
         isControl = true;
         isMoveControl = true;
     }
@@ -163,6 +174,14 @@ public class InputPlayer : MonoBehaviour
         toolManager.LeftCancle();
     }
 
+    public void MadAttack()
+    {
+        if (!isControl)
+            return;
+        if (movementManger.currentState == PlayerMovementManager.State.Ground)
+            mad.Attack();
+    }
+
 
 
     public void ToolUseRight()
@@ -183,10 +202,11 @@ public class InputPlayer : MonoBehaviour
 
     public void SetMoveDir(Vector2 dir)
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         moveDir = dir;
+       // Debug.Log("MoveDir: " + dir);
     }
 
 
@@ -206,6 +226,9 @@ public class InputPlayer : MonoBehaviour
         }
         get
         {
+            if (!isMoveControl)
+                return Vector2.zero;
+
             return m_moveDir;
         }
     }
@@ -213,9 +236,6 @@ public class InputPlayer : MonoBehaviour
     public void SetMoveControl(bool isMove)
     {
         isMoveControl = isMove;
-        if (!isMoveControl)
-            m_moveDir = Vector2.zero;
     }
-
 
 }

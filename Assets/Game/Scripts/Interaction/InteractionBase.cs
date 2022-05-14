@@ -5,7 +5,14 @@ using UnityEngine;
 public class InteractionBase : MonoBehaviour
 {
     [SerializeField]
-    private LayerMask m_layerMask;
+    private LayerMask m_targetLayerMask;
+    private LayerMask targetLayerMask
+    {
+        get
+        {
+            return m_targetLayerMask;
+        }
+    }
 
     protected virtual void Enter(Collider2D collision) { }
 
@@ -14,22 +21,22 @@ public class InteractionBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isTargetlayerInMask(collision.gameObject.layer))
+        if (Utility.IsTargetLayerInMask(targetLayerMask, collision.gameObject.layer))
             Enter(collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (isTargetlayerInMask(collision.gameObject.layer))
+        if (Utility.IsTargetLayerInMask(targetLayerMask, collision.gameObject.layer))
             Exit(collision);
     }
 
-    private bool isTargetlayerInMask(int targetLayer)
-    {
-        int targetMask = 1 << targetLayer;
+    //private bool isTargetlayerInMask(int targetLayer)
+    //{
+    //    int targetMask = 1 << targetLayer;
 
-        if ((m_layerMask & targetMask) != 0)
-            return true;
-        return false;
-    }
+    //    if ((m_layerMask & targetMask) != 0)
+    //        return true;
+    //    return false;
+    //}
 }

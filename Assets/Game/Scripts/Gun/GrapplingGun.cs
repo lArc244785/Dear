@@ -457,8 +457,7 @@ public class GrapplingGun : ActiveToolBase
 
         Vector2 velocityDif;
 
-        velocityDif.x = targetVelocity.x - rig.velocity.x;
-        velocityDif.y = targetVelocity.y - rig.velocity.y;
+        velocityDif = targetVelocity - rig.velocity;
 
         Vector2 movement;
 
