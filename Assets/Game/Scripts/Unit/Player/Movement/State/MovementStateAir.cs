@@ -106,7 +106,7 @@ public class MovementStateAir : I_MovementState
     {
         movementManager.player.SetGhostLayer();
         movementManager.isJump = false;
-        movementManager.player.inputPlayer.SetMoveControl(false);
+        movementManager.player.inputPlayer.SetControl(false);
         movementManager.player.rig2D.velocity = Vector2.zero;
 
         currentGroundPoundType = GroundPoundType.Ready;

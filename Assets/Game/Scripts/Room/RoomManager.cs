@@ -43,7 +43,7 @@ public class RoomManager : MonoBehaviour
         UIManager.instance.produtionView.Toggle(true);
         UIManager.instance.produtionView.fade.FadeOut();
 
-        while (!UIManager.instance.produtionView.fade.fadeProcessed)
+        while (!UIManager.instance.produtionView.fade.isfadeProcessed)
             yield return null;
 
         playerTransform.position = (Vector3)m_rooms[index].startPoint;

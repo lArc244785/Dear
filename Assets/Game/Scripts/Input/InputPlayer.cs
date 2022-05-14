@@ -48,19 +48,19 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
-    private bool m_isMoveControl;
+    //private bool m_isMoveControl;
 
-    public bool isMoveControl
-    {
-        private set
-        {
-            m_isMoveControl = value;
-        }
-        get
-        {
-            return m_isMoveControl;
-        }
-    }
+    //public bool isMoveControl
+    //{
+    //    private set
+    //    {
+    //        m_isMoveControl = value;
+    //    }
+    //    get
+    //    {
+    //        return m_isMoveControl;
+    //    }
+    //}
 
 
 
@@ -71,12 +71,12 @@ public class InputPlayer : MonoBehaviour
         m_mad = mad;
 
         isControl = true;
-        isMoveControl = true;
+        //isMoveControl = true;
     }
 
     public void JumpEnter()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         movementManger.coyoteSystem.OnJumpEnterTime();        
@@ -84,7 +84,7 @@ public class InputPlayer : MonoBehaviour
 
     public void JumpUp()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
         movementManger.coyoteSystem.OnJumpExitTime();
     }
@@ -97,14 +97,14 @@ public class InputPlayer : MonoBehaviour
 
     public void WallGripEnter()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
         movementManger.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
         movementManger.isWallGrip = false;
     }
@@ -126,7 +126,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundRight()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         if (movementManger.currentState != PlayerMovementManager.State.Rope)
@@ -137,7 +137,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundLeft()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         if (movementManger.currentState != PlayerMovementManager.State.Rope)
@@ -149,7 +149,7 @@ public class InputPlayer : MonoBehaviour
 
     public void SetTool(ToolManager.ActiveToolType type)
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         toolManager.SetTool(type);
@@ -202,8 +202,8 @@ public class InputPlayer : MonoBehaviour
 
     public void SetMoveDir(Vector2 dir)
     {
-        if (!isControl )
-            return;
+        //if (!isControl )
+        //    return;
 
         moveDir = dir;
        // Debug.Log("MoveDir: " + dir);
@@ -226,16 +226,18 @@ public class InputPlayer : MonoBehaviour
         }
         get
         {
-            if (!isMoveControl)
+            if (!isControl)
                 return Vector2.zero;
 
             return m_moveDir;
         }
     }
 
-    public void SetMoveControl(bool isMove)
+    public void SetControl(bool control)
     {
-        isMoveControl = isMove;
+        isControl = control;
     }
+
+    
 
 }
