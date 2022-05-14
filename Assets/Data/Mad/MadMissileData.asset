@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_lifeTime: 2
   m_maxSpeed: 20
-  m_accle: 0.8
-  m_acclePower: 1
+  m_accle: 0.5
+  m_acclePower: 1.2

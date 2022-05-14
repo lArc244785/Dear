@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3097806583614677382}
   - component: {fileID: 3097806583614677383}
   m_Layer: 15
-  m_Name: GroundPoundBrokenObject
+  m_Name: BrokenObject
   m_TagString: GroundPoundBroken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,9 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a26203e81e9c64408f43b215e3ea903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layerMask:
+  m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  m_brokenTime: 1
 --- !u!61 &3097806583614677383
 BoxCollider2D:
   m_ObjectHideFlags: 0

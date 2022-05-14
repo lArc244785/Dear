@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 3930157879230469683}
   - component: {fileID: 837019330193265805}
   m_Layer: 15
-  m_Name: InteractionSpring
+  m_Name: JumpPople
   m_TagString: Spring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,9 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df947442770a3ee489a84d28dd082375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layerMask:
+  m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 0
   m_force: 20
   m_superJumpMul: 2
   m_InteractionJumpWait: 0.08
@@ -315,9 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8341ec02380bc134bb2d5154272656b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layerMask:
+  m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 0
   m_imfectEvnet:
     Guid:
       Data1: 1174538439

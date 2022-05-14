@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2618566159868106851}
   - component: {fileID: 2618566159868106848}
   m_Layer: 0
-  m_Name: InteractionGrappingPull
+  m_Name: RopeObject_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e323315014be75640abcad0203ee2fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layerMask:
+  m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 8192
   m_icon: {fileID: 2618566159389209615}
