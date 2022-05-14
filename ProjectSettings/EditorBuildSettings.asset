@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Game/Scenes/DG/InsungSence.unity
     guid: 9c9a7c23d015c8848ae4f14a62038985
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: e82a0226f23cc9f4aa9bdbf5e197ead5, type: 2}

@@ -131,10 +131,6 @@ MonoBehaviour:
     m_ActionId: 034708ad-3850-4050-80a6-9e25ad9bcffb
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b6cac254-1a6f-429c-a955-a8b8ed9809b0
-    m_ActionName: Player/New action
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1220886431622341405}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
@@ -150,14 +146,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0ceeb75f-a4b7-4a37-bd9f-0549cb2e4f0f
     m_ActionName: Player/Cancel[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3fe476e9-13a9-4bb4-8478-21b554b678df
-    m_ActionName: Player/RightBuster[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 900ed00c-618c-4e7f-8683-4b0d241000d5
-    m_ActionName: Player/LeftBuster[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1220886431622341405}
@@ -210,6 +198,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7ab945b9-2234-4be2-ad6b-e2db77ff632a
     m_ActionName: Player/TestGrappingTool[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1220886431622341405}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnRightMouseButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b56e08f4-ce06-4d4c-a170-d1707e42ca0e
+    m_ActionName: Player/RightClick[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

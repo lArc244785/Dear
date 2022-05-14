@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 3634403823066101768}
   - component: {fileID: 6611995000469461227}
   - component: {fileID: 8979922405315631050}
+  - component: {fileID: 1386206793}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -737,6 +738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802d804c62887fc4aae491715314f6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_hitDuringTime: 0.2
+  m_ghostDuringTime: 0.8
 --- !u!114 &5869221002068608744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6d51ef6dfb0984fa15bbd5b817d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHP: 0
+  m_maxHP: 10
 --- !u!114 &6611995000469461227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +904,22 @@ MonoBehaviour:
   - {fileID: 8816093289685775874}
   m_handTr: {fileID: 8816093289897762560}
   m_tools: {fileID: 7430565861372534357}
+--- !u!114 &1386206793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816093289123873390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27e9734dce2dcf4cb8d9a8c66f17e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitColor: {r: 1, g: 0, b: 0, a: 1}
+  m_hitTickTime: 0.1
+  m_ghostColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.50980395}
+  m_ghostTickTime: 0.1
 --- !u!1 &8816093289278603218
 GameObject:
   m_ObjectHideFlags: 0

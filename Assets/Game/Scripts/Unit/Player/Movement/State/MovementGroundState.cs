@@ -17,6 +17,7 @@ public class MovementGroundState : I_MovementState
     public void Exit(PlayerMovementManager movementManager)
     {
         movementManager.player.sound.footStepLoop = false;
+        movementManager.player.animationManager.movement = 0.0f;
     }
 
     public void FixedExcute(PlayerMovementManager movementManager)
