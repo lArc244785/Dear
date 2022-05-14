@@ -285,7 +285,7 @@ public class GrapplingGun : ActiveToolBase
 
         hook.Fire(dir, targetPos);
 
-        player.inputPlayer.SetMoveControl(false);
+        player.inputPlayer.SetControl(false);
 
         ropeRenderer.isDraw = true;
     }
@@ -301,7 +301,7 @@ public class GrapplingGun : ActiveToolBase
             player.movementManager.currentState = PlayerMovementManager.State.Ground;
 
 
-        player.inputPlayer.SetMoveControl(true);
+        player.inputPlayer.SetControl(true);
 
         Invoke("CoolTime", data.coolTime);
     }

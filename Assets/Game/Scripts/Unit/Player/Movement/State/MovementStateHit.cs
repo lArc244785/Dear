@@ -8,7 +8,7 @@ public class MovementStateHit : I_MovementState
 
     public void Enter(PlayerMovementManager movementManager)
     {
-        movementManager.player.inputPlayer.SetMoveControl(false);
+        movementManager.player.inputPlayer.SetControl(false);
 
         m_enterTime = Time.time;
         Vector2 force = movementManager.hitImfectDir * movementManager.movementData.hitImfectPower;
@@ -19,7 +19,7 @@ public class MovementStateHit : I_MovementState
     public void Exit(PlayerMovementManager movementManager)
     {
         movementManager.jumpCount = 0;
-        movementManager.player.inputPlayer.SetMoveControl(true);
+        movementManager.player.inputPlayer.SetControl(true);
     }
 
     public void FixedExcute(PlayerMovementManager movementManager)

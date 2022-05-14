@@ -243,7 +243,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637881212470543994
+  lastModified: 637881318047984445
   FileSizes:
   - Name: Desktop
     Value: 766464
@@ -296,7 +296,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -5767179370999056414}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: -5876258557869627875}
@@ -553,7 +553,7 @@ MonoBehaviour:
   - {fileID: -7388096806387059401}
   StringsBanks:
   - {fileID: -1032161878875153274}
-  cacheTime: 637881212470543994
+  cacheTime: 637881318047984445
   cacheVersion: 10
 --- !u!114 &1373292245210737418
 MonoBehaviour:
