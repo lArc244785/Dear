@@ -18,6 +18,9 @@ MonoBehaviour:
   m_deadRangeYoyoRange: 1
   m_yoyoEffectTime: 1
   m_trackingSmoothTime: 0.5
+  m_targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   m_attackWaitTime: 1
   m_attackCoolTime: 2
   m_firePointDistance: 0.1

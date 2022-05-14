@@ -74,6 +74,15 @@ public class MadData : ScriptableObject
 
     [Header("Attack")]
     [SerializeField]
+    private LayerMask m_targetLayerMask;
+    public LayerMask targetLayerMask
+    {
+        get
+        {
+            return m_targetLayerMask;
+        }
+    }
+    [SerializeField]
     private float m_attackWaitTime;
     public float attackWaitTime
     {
@@ -101,5 +110,5 @@ public class MadData : ScriptableObject
             return m_firePointDistance;
         }
     }
-    
+
 }

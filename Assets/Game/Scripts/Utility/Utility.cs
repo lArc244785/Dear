@@ -15,6 +15,16 @@ public static class Utility
         return finalAngle;
     }
 
+    public static float GetRotaionAngleByDir(Vector2 dir, float pivotAngle)
+    {
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        float finalAngle = angle - pivotAngle;
+
+        return finalAngle;
+    }
+
+
     public static Vector2 IngamePosToViewPos(Vector2 position)
     {
         return InputManager.instance.brainCam.WorldToScreenPoint(position);
@@ -25,6 +35,8 @@ public static class Utility
         return Quaternion.Euler(0.0f, 0.0f, angle);
     }
 
+
+
     public static void V2Acceleration(Rigidbody2D rig2D, Vector2 targetVelocity ,float accelRate, float velocityPower, ref Vector2 returnMovement)
     {
 
@@ -34,6 +46,14 @@ public static class Utility
         returnMovement.y = Mathf.Pow(Mathf.Abs(velocityDif.y) * accelRate, velocityPower) * Mathf.Sign(velocityDif.y);
     }
 
+    public static bool IsTargetLayerInMask(LayerMask targetLayerMask, int targetLayer)
+    {
+        int targetMask = 1 << targetLayer;
 
+        if ((targetLayerMask & targetMask) != 0)
+            return true;
+
+        return false;
+    }
 
 }
