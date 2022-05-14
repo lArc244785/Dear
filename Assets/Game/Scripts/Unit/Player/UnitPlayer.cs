@@ -280,10 +280,10 @@ public class UnitPlayer : UnitBase
 
     private IEnumerator GhostFrozenEventCoroutine(float fTime)
     {
-        inputPlayer.SetMoveControl(false);
+        inputPlayer.SetControl(false);
         SetGhostLayer();
         yield return new WaitForSeconds(fTime);
-        inputPlayer.SetMoveControl(true);
+        inputPlayer.SetControl(true);
         SetDefaultLayer();
     }
 
