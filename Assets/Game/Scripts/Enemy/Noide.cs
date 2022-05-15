@@ -101,20 +101,43 @@ public class Noide : UnitBase
         Init();
     }
 
+
+
+
+
     private void Update()
     {
         m_stateMachine.Excute();
     }
+
+
+    protected override void HitUniqueEventUnit(UnitBase attackUnit)
+    {
+        base.HitUniqueEventUnit(attackUnit);
+    }
+    protected override void HitHp(int damage)
+    {
+        base.HitHp(damage);
+        health.OnDamage(damage);
+    }
+    public override void OnHitObject(GameObject attackObject, int damage)
+    {
+        base.OnHitObject(attackObject, damage);
+        Debug.Log("총에 맞음");
+    }
+
     public void ChangeState(enemyState newState)
     {
         m_stateMachine.ChangeState(m_states[(int)newState]);
     }
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Ground")
         {
-            Debug.Log("충돌");
+          
             m_wallCheck = true;
             m_moveSpeed = 0;
         }
@@ -123,4 +146,6 @@ public class Noide : UnitBase
     {
         m_wallCheck = false;
     }
+    
+
 }

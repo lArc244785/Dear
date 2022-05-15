@@ -7,6 +7,7 @@ public class ProjectileNormal : ProjectileBase
     [SerializeField]
     private float m_speed;
     private float speed { get { return m_speed; } }
+
     [SerializeField]
     private float m_lifeTime;
     private float lifeTime
@@ -30,6 +31,7 @@ public class ProjectileNormal : ProjectileBase
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
+      
         Destory();
     }
 
