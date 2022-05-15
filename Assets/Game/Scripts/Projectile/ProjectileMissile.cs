@@ -64,7 +64,7 @@ public class ProjectileMissile : ProjectileBase
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-        Debug.Log(gameObject.name + "  Hit");
+
         Destory();
     }
 
