@@ -94,7 +94,7 @@ public class Noide : UnitBase
 
         m_stateMachine = new StateMachine<Noide>();
 
-        m_stateMachine.SetUp(this, m_states[(int)enemyState.Idle]);
+        m_stateMachine.SetUp(this, m_states[(int)enemyState.Move]);
     }
     public void OnEnable()
     {
@@ -104,7 +104,6 @@ public class Noide : UnitBase
     private void Update()
     {
         m_stateMachine.Excute();
-
     }
     public void ChangeState(enemyState newState)
     {

@@ -14,10 +14,7 @@ namespace NoidOwnedState
         }
         public override void Excute(Noide enemy)
         {
-          
-
             s_curdelay += Time.deltaTime;
-
             if (s_curdelay >= enemy.patrolTime)
             {
                 switch (enemy.enemyMoveDirection)
@@ -29,7 +26,6 @@ namespace NoidOwnedState
                         enemy.enemyMoveDirection = movedirection.Left;
                         break;
                 }
-
                 enemy.ChangeState(enemyState.Move);
             }
         }
@@ -51,7 +47,6 @@ namespace NoidOwnedState
         }
         public override void Excute(Noide enemy)
         {
-
             switch (enemy.enemyMoveDirection) {
                 case movedirection.Left:
                     enemy.rig2D.velocity = new Vector2(enemy.moveSpeed*-1f, enemy.rig2D.velocity.y);
@@ -60,7 +55,6 @@ namespace NoidOwnedState
                     enemy.rig2D.velocity = new Vector2(enemy.moveSpeed, enemy.rig2D.velocity.y);
                     break;
             }
-            
             if(enemy.wallCheck)
             enemy.ChangeState(enemyState.Idle);
         }
