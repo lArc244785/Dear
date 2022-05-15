@@ -101,7 +101,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{30eb7e3b-b385-4bc4-89d0-1a090893f860}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-9</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -141,7 +141,7 @@
 	<object class="MixerBusFader" id="{ad90d057-0ab2-4ce2-a5ba-c1868e6d1956}" />
 	<object class="AutomationPoint" id="{6265a361-c825-49ff-a144-eefc879dc240}">
 		<property name="position">
-			<value>0.83999999999999997</value>
+			<value>0.60247536945812796</value>
 		</property>
 		<property name="value">
 			<value>1</value>
