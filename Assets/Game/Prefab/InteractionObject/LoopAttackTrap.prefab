@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10537cc60712e6e4a9dc2250268b1feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layerMask:
+  m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 0
   m_trapEvent:
     m_PersistentCalls:
       m_Calls:
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2328578f72955174f97ba97f0117649b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_gameObject: {fileID: 0}
+  m_gameObject: {fileID: 4784615235771420444, guid: d3eb1971b86cecb499cbb344511fde03, type: 3}
   m_startActive: 0
 --- !u!58 &8542246171640554825
 CircleCollider2D:
