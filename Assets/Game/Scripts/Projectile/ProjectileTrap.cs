@@ -58,7 +58,7 @@ public class ProjectileTrap : MonoBehaviour
 
     public void Init()
     {
-        m_firePointTransfrom = transform.FindChild("FirePoint");
+        m_firePointTransfrom = transform.Find("FirePoint");
 
         firePointTransfrom.localPosition = firePointOffset;
 
