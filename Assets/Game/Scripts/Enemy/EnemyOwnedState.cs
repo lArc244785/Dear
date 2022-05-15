@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace NoidOwnedState
 {
-    public class Idle : State<Enemy>
+    public class Idle : State<Noide>
     {
         static float s_curdelay;
-        public override void Enter(Enemy enemy)
+        public override void Enter(Noide enemy)
         {
             s_curdelay = 0;
             Debug.Log("idle Enter");
         }
-        public override void Excute(Enemy enemy)
+        public override void Excute(Noide enemy)
         {
           
 
@@ -33,15 +33,15 @@ namespace NoidOwnedState
                 enemy.ChangeState(enemyState.Move);
             }
         }
-        public override void Exit(Enemy enemy)
+        public override void Exit(Noide enemy)
         {
             enemy.moveSpeed = enemy.saveSpeed;
         }
     }
-    public class Move : State<Enemy>
+    public class Move : State<Noide>
     {
         static float s_curdelay;
-        public override void Enter(Enemy enemy)
+        public override void Enter(Noide enemy)
         {
             s_curdelay = 0;
             if (enemy.wallCheck)
@@ -49,7 +49,7 @@ namespace NoidOwnedState
 
             Debug.Log("Move Enter");
         }
-        public override void Excute(Enemy enemy)
+        public override void Excute(Noide enemy)
         {
 
             switch (enemy.enemyMoveDirection) {
@@ -64,7 +64,7 @@ namespace NoidOwnedState
             if(enemy.wallCheck)
             enemy.ChangeState(enemyState.Idle);
         }
-        public override void Exit(Enemy enemy)
+        public override void Exit(Noide enemy)
         {
         }
 

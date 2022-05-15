@@ -12,7 +12,7 @@ public enum enemyState
     Move
 }
 
-public class Enemy : UnitBase
+public class Noide : UnitBase
 {
     [SerializeField]
     private movedirection m_moveDirection;
@@ -80,19 +80,19 @@ public class Enemy : UnitBase
     }
 
 
-    private State<Enemy>[] m_states;
-    private StateMachine<Enemy> m_stateMachine;
+    private State<Noide>[] m_states;
+    private StateMachine<Noide> m_stateMachine;
 
     public override void Init()
     {
         base.Init();
         Debug.Log("init");
         m_saveSpeed = m_moveSpeed;
-        m_states = new State<Enemy>[2];
+        m_states = new State<Noide>[2];
         m_states[(int)enemyState.Idle] = new NoidOwnedState.Idle();
         m_states[(int)enemyState.Move] = new NoidOwnedState.Move();
 
-        m_stateMachine = new StateMachine<Enemy>();
+        m_stateMachine = new StateMachine<Noide>();
 
         m_stateMachine.SetUp(this, m_states[(int)enemyState.Idle]);
     }
