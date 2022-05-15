@@ -94,6 +94,8 @@ public class Mad : MonoBehaviour
     private bool m_isInit = false;
     public bool isInit { set { m_isInit = value; } get { return m_isInit; } }
 
+    public float gizmosTrackingDeadRange { set; get; }
+
     #endregion
 
     #region Attack
@@ -133,7 +135,7 @@ public class Mad : MonoBehaviour
         transform.position = trackingPoint.transform.position;
         SetLook(trackingPoint.isRight);
 
-
+        gizmosTrackingDeadRange = data.trackingDeadRange;
 
 
         StateInit();
@@ -216,7 +218,7 @@ public class Mad : MonoBehaviour
             return;
 
         Gizmos.color = gizmosDeadTrackingColor;
-        Gizmos.DrawWireSphere(player.transform.position, data.trackingDeadRange);
+        Gizmos.DrawWireSphere(player.transform.position, gizmosTrackingDeadRange);
 
         Gizmos.color = gizmosTrackingColor;
         Gizmos.DrawWireSphere(player.transform.position, data.trackingRange);

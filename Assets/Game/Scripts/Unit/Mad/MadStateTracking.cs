@@ -14,7 +14,7 @@ public class MadStateTracking : MadStateBase
     public override void Enter(Mad mad)
     {
         isOnDeadRangeYoyoEffect = false;
-        m_currentDeadRange = mad.data.trackingDeadRange;
+        SetDeadRange(mad, mad.data.trackingDeadRange);
     }
 
     public override void Exit(Mad mad)
@@ -60,7 +60,7 @@ public class MadStateTracking : MadStateBase
             float time = Time.time - m_deadRangeEnterTime;
 
             if (time <= mad.data.yoyoEffectTime)
-                m_currentDeadRange = GetYoyoEffectDeadRange(mad.data, time);
+                SetDeadRange(mad, GetYoyoEffectDeadRange(mad.data, time));
 
            // Debug.Log("dead : " + m_currentDeadRange);
         }
@@ -88,7 +88,8 @@ public class MadStateTracking : MadStateBase
             if (isOnDeadRangeYoyoEffect)
             {
                 isOnDeadRangeYoyoEffect = false;
-                m_currentDeadRange = mad.data.trackingDeadRange;
+                SetDeadRange(mad, mad.data.trackingDeadRange);
+                
             }
 
         }
@@ -96,6 +97,11 @@ public class MadStateTracking : MadStateBase
     }
 
 
+    private void SetDeadRange(Mad mad, float range)
+    {
+        m_currentDeadRange = range;
+        mad.gizmosTrackingDeadRange = m_currentDeadRange;
+    }
 
 
     private float GetYoyoEffectDeadRange(MadData data, float time)
