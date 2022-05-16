@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponData: {fileID: 11400000, guid: 95bd1507fb179b346a8252591a94a6b2, type: 2}
   m_speed: 11
-  m_lifeTime: 10
+  m_lifeTime: 9.7
 --- !u!1 &6356571644855964201
 GameObject:
   m_ObjectHideFlags: 0
