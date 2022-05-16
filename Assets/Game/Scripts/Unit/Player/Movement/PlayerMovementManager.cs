@@ -320,7 +320,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Jump(float force)
     {
-        Debug.Log("Jump: " + force);
+       // Debug.Log("Jump: " + force);
         player.sound.Jump();
         player.animationManager.TriggerJump();
 
@@ -346,7 +346,7 @@ public class PlayerMovementManager : MonoBehaviour
     {
         player.rig2D.AddForce(Vector2.down * player.rig2D.velocity.y * (1 - movementData.jumpCutMultiplier), ForceMode2D.Impulse);
         coyoteSystem.ResetJumpExitTime();
-        Debug.Log("Jump Cut");
+      //  Debug.Log("Jump Cut");
     }
 
     public void Trun(Vector2 lookDir)
