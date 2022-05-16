@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881734594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -1.371, z: 0}
+  m_LocalPosition: {x: 0, y: -1.371, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -177,7 +177,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32832
   m_gizomColor: {r: 0, g: 0.8431506, b: 1, a: 1}
-  m_radius: 0.2
+  m_radius: 0.18
 --- !u!1 &2058864681
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8671305845157470504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5699992, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -619,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8671305845681141993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.57, z: 0}
+  m_LocalPosition: {x: 0, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -723,8 +723,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09833717, y: 0.44824958}
-  m_Size: {x: 1.5807686, y: 3.6443696}
+  m_Offset: {x: 0.060796738, y: 0.43459916}
+  m_Size: {x: 0.9258766, y: 3.6170688}
   m_Direction: 0
 --- !u!114 &8558202496240581174
 MonoBehaviour:
@@ -808,49 +808,49 @@ MonoBehaviour:
       Data2: 1218770258
       Data3: -1827004019
       Data4: 1200290842
-    Path: event:/char/yuz/climb_jump_left
+    Path: event:/char/yuz/tools/climb_jump_left
   m_wallJumpRightEvent:
     Guid:
       Data1: 19044872
       Data2: 1105154933
       Data3: 504168595
       Data4: 1781228501
-    Path: event:/char/yuz/climb_jump_right
+    Path: event:/char/yuz/tools/climb_jump_right
   m_wallGripEvent:
     Guid:
       Data1: 1787239839
       Data2: 1142772132
       Data3: -1183673171
       Data4: -2002764612
-    Path: event:/char/yuz/hold_climb
+    Path: event:/char/yuz/tools/hold_climb
   m_ropeShoot:
     Guid:
       Data1: 986865551
       Data2: 1246281112
       Data3: 2131377853
       Data4: -1677824422
-    Path: event:/char/yuz/rope_shoot
+    Path: event:/char/yuz/tools/rope_shoot
   m_ropeCheckEvent:
     Guid:
       Data1: -1857528762
       Data2: 1273739780
       Data3: 1024485814
       Data4: -246441281
-    Path: event:/char/yuz/rope_attach
+    Path: event:/char/yuz/tools/rope_attach
   m_ropeAccelEvent:
     Guid:
       Data1: -2041877065
       Data2: 1307586988
       Data3: -1093674562
       Data4: -1714115620
-    Path: event:/char/yuz/rope_accel
+    Path: event:/char/yuz/tools/rope_accel
   m_ropeQuitEvent:
     Guid:
       Data1: 108437380
       Data2: 1286789652
       Data3: -898157942
       Data4: 1280256673
-    Path: event:/char/yuz/rope_quit
+    Path: event:/char/yuz/tools/rope_quit
 --- !u!114 &3693095787999177483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHP: 10
+  m_hp: 0
 --- !u!114 &6611995000469461227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,7 +946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816093289278603218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -1.371, z: 0}
+  m_LocalPosition: {x: 0, y: -1.371, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
