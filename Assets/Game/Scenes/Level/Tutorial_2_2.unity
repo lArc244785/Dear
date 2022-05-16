@@ -14554,6 +14554,22 @@ PrefabInstance:
       propertyPath: m_targetLayerMask.m_Bits
       value: 2304
       objectReference: {fileID: 0}
+    - target: {fileID: 3930157879230469683, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.90729856
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930157879230469683, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
+      propertyPath: m_Size.y
+      value: 0.38225555
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930157879230469683, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.016350105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930157879230469683, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.518074
+      objectReference: {fileID: 0}
     - target: {fileID: 3930157879230469684, guid: d7c753d38af55644aa653fb75b08a0b5, type: 3}
       propertyPath: m_Name
       value: JumpPople
