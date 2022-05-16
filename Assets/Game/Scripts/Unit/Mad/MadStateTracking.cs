@@ -7,14 +7,14 @@ public class MadStateTracking : MadStateBase
     private Vector2 m_targetPos;
 
     private float m_deadRangeEnterTime;
-    private bool isOnDeadRange { set; get; }
+    private bool isOnDeadRangeYoyoEffect { set; get; }
 
     private float m_currentDeadRange;
 
     public override void Enter(Mad mad)
     {
-        isOnDeadRange = false;
-        m_currentDeadRange = mad.data.trackingDeadRange;
+        isOnDeadRangeYoyoEffect = false;
+        SetDeadRange(mad, mad.data.trackingDeadRange);
     }
 
     public override void Exit(Mad mad)
@@ -55,9 +55,13 @@ public class MadStateTracking : MadStateBase
         mad.LookPlayer();
 
 
-        if (isOnDeadRange)
+        if (isOnDeadRangeYoyoEffect)
         {
-            m_currentDeadRange = GetYoyoDeadRange(mad.data);
+            float time = Time.time - m_deadRangeEnterTime;
+
+            if (time <= mad.data.yoyoEffectTime)
+                SetDeadRange(mad, GetYoyoEffectDeadRange(mad.data, time));
+
             Debug.Log("dead : " + m_currentDeadRange);
         }
 
@@ -65,10 +69,10 @@ public class MadStateTracking : MadStateBase
 
         if (mad.isTrackingRangeOver(m_currentDeadRange))
         {
-            if (!isOnDeadRange)
+            if (!isOnDeadRangeYoyoEffect)
             {
                 m_deadRangeEnterTime = Time.time;
-                isOnDeadRange = true;
+                isOnDeadRangeYoyoEffect = true;
             }
 
             Vector2 playerPos = mad.player.unitPos;
@@ -79,12 +83,13 @@ public class MadStateTracking : MadStateBase
 
             mad.transform.position = trackingDeadPos;
         }
-        else if(!mad.isTrackingDeadRangeOver())
+        else if (!mad.isTrackingDeadRangeOver())
         {
-            if (isOnDeadRange)
+            if (isOnDeadRangeYoyoEffect)
             {
-                isOnDeadRange = false;
-                m_currentDeadRange = mad.data.trackingDeadRange;
+                isOnDeadRangeYoyoEffect = false;
+                SetDeadRange(mad, mad.data.trackingDeadRange);
+                
             }
 
         }
@@ -92,16 +97,21 @@ public class MadStateTracking : MadStateBase
     }
 
 
-
-
-    private float GetYoyoDeadRange(MadData data)
+    private void SetDeadRange(Mad mad, float range)
     {
-        float currentTime = Time.time - m_deadRangeEnterTime;
-        float yoyoTimeInRange = currentTime % data.yoyoLoopTime;
-        Debug.Log("YoyoTimeInRange: " + yoyoTimeInRange + "\nC: " + currentTime + "\nL: " + data.yoyoLoopTime);
+        m_currentDeadRange = range;
+        mad.gizmosTrackingDeadRange = m_currentDeadRange;
+    }
 
 
-        float yoyoTimeLerp = yoyoTimeInRange / data.yoyoLoopTime;
+    private float GetYoyoEffectDeadRange(MadData data, float time)
+    {
+        //float currentTime = Time.time - m_deadRangeEnterTime;
+        float yoyoTimeInRange = time % data.yoyoEffectTime;
+        Debug.Log("YoyoTimeInRange: " + yoyoTimeInRange + "\nC: " + time + "\nL: " + data.yoyoEffectTime);
+
+
+        float yoyoTimeLerp = yoyoTimeInRange / data.yoyoEffectTime;
         float lerp = 0.0f;
         float addRange;
 

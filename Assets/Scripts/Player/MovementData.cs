@@ -236,6 +236,16 @@ public class MovementData : ScriptableObject
     {
         get { return m_groundPoundReadyPathLenth; }
     }
+    [SerializeField]
+    private float m_groundPoundLandingTime;
+    public float groundPoundLandingTime
+    {
+        get
+        {
+            return m_groundPoundLandingTime;
+        }
+    }
+    
 }
 
 

@@ -10,7 +10,7 @@ public class GameManager : SingleToon<GameManager>
 
     public enum GameSate
     {
-        None = -1, Title, Load, GameStart, GamePlaying, InGameUISetting , GameOver, GameClear,
+        None = -1, Title, Load, StageLoad, GameStart, GamePlaying, InGameUISetting , GameOver, GameClear, 
         Total
     }
 
@@ -67,8 +67,10 @@ public class GameManager : SingleToon<GameManager>
 
         m_changeGameStaet[(int)GameSate.GamePlaying] = ChangeGamePlaying;
         m_changeGameStaet[(int)GameSate.Load] = ChangeLoad;
+        m_changeGameStaet[(int)GameSate.StageLoad] = ChangeStageLoad;
         m_changeGameStaet[(int)GameSate.GameStart] = ChageGameStart;
         m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeGamePlaying;
+
     }
 
 
@@ -103,10 +105,17 @@ public class GameManager : SingleToon<GameManager>
         UIManager.instance.AllToggleFase();
     }
 
+    private void ChangeStageLoad()
+    {
+        UIManager.instance.AllToggleFase();
+        UIManager.instance.produtionView.Toggle(true);
+    }
+
     private void ChageGameStart()
     {
         StartCoroutine(GameStartProcessCoroutine());
     }
+
 
     #endregion
 
@@ -126,10 +135,30 @@ public class GameManager : SingleToon<GameManager>
 
     public void NextState(int index)
     {
-        gameState = GameSate.Load;
-        UIManager.instance.loadingView.Toggle(true);
-        StartCoroutine(SceneLoadCorutine(1));
+        GameManager.instance.stageManager.player.inputPlayer.SetControl(false);
+        gameState = GameSate.StageLoad;
+        StartCoroutine(SceneLoadCorutine(index));
     }
+
+    private IEnumerator StageLoadCorutine(int index)
+    {
+        UIManager.instance.produtionView.fade.FadeIn();
+
+        while (!UIManager.instance.produtionView.fade.isfadeProcessed)
+            yield return null;
+
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(index);
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        gameState = GameSate.GameStart;
+    }
+
+
 
     private IEnumerator SceneLoadCorutine(int index)
     {
@@ -159,7 +188,7 @@ public class GameManager : SingleToon<GameManager>
 
         GameManager.instance.stageManager.stageBgm.BgmStart();
 
-        while (!UIManager.instance.produtionView.fade.fadeProcessed)
+        while (!UIManager.instance.produtionView.fade.isfadeProcessed)
             yield return null;
 
         stageManager.player.inputPlayer.isControl = true;

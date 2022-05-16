@@ -111,20 +111,33 @@ public abstract class UnitBase : MonoBehaviour
 
 
     #region Hit Method
-    public virtual void OnHit(UnitBase attackUnit, int damage)
+    public virtual void OnHitUnit(UnitBase attackUnit, int damage)
     {
         HitHp(damage);
-        HitUniqueEvent(attackUnit);
+        HitUniqueEventUnit(attackUnit);
     }
+
+    public virtual void OnHitObject(GameObject attackObject, int damage)
+    {
+        HitHp(damage);
+        HitUniqueEventObject(attackObject);
+    }
+
 
     protected virtual void HitHp(int damage)
     {
     }
 
-    protected virtual void HitUniqueEvent(UnitBase attackUnit)
+    protected virtual void HitUniqueEventUnit(UnitBase attackUnit)
     {
 
     }
+
+    protected virtual void HitUniqueEventObject(GameObject attackObject)
+    {
+
+    }
+
     #endregion
 
     public bool IsDead()

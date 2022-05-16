@@ -20,24 +20,24 @@ public class UI_Fade : MonoBehaviour
     private Color m_fadeOutColor;
 
 
-    private bool m_fadeProcessed;
-    public bool fadeProcessed 
+    private bool m_isfadeProcessed;
+    public bool isfadeProcessed 
     {
         private set 
         { 
-            m_fadeProcessed = value; 
+            m_isfadeProcessed = value; 
         } 
         get 
         { 
-            return m_fadeProcessed; 
+            return m_isfadeProcessed; 
         }
     }
 
     public void FadeIn()
     {
         m_fadeBackGround.color = m_fadeOutColor;
-        fadeProcessed = false;
-        Tween fadeInTween = m_fadeBackGround.DOColor(m_fadeInColor, m_fadeInProcessTime).OnComplete(() => { fadeProcessed = true; });
+        isfadeProcessed = false;
+        Tween fadeInTween = m_fadeBackGround.DOColor(m_fadeInColor, m_fadeInProcessTime).OnComplete(() => { isfadeProcessed = true; });
         fadeInTween.Play();
 
     }
@@ -45,8 +45,8 @@ public class UI_Fade : MonoBehaviour
     public void FadeOut()
     {
         m_fadeBackGround.color = m_fadeInColor;
-        fadeProcessed = false;
-        Tween fadeOutTween = m_fadeBackGround.DOColor(m_fadeOutColor, m_fadeOutProcessTime).OnComplete(() => { fadeProcessed = true; });
+        isfadeProcessed = false;
+        Tween fadeOutTween = m_fadeBackGround.DOColor(m_fadeOutColor, m_fadeOutProcessTime).OnComplete(() => { isfadeProcessed = true; });
         fadeOutTween.Play();
 
     }
