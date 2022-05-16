@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EffectPreset" id="{61f1a103-2a09-4858-8aad-cf986c0bce84}">
+		<property name="name">
+			<value>3D for 2Dtimeline - mono</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a935e37d-0861-479e-8f4b-f9968bbf8e4c}</destination>
+		</relationship>
+		<relationship name="effect">
+			<destination>{0003d961-325b-4438-bf6a-ab8469ea3989}</destination>
+		</relationship>
+	</object>
+	<object class="SpatialiserEffect" id="{0003d961-325b-4438-bf6a-ab8469ea3989}">
+		<property name="minimumDistance">
+			<value>350</value>
+		</property>
+		<property name="maximumDistance">
+			<value>500</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>2</value>
+		</property>
+	</object>
+</objects>
