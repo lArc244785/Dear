@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{a39c65d1-147a-434a-9443-6bf342e76fc0}">
+		<property name="note">
+			<value>Bluezone_BC0268_switch_button_click_small_005</value>
+		</property>
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="assetPath">
-			<value>Bluezone_BC0268_switch_button_click_small_005.wav</value>
+			<value>char_yuz_rope_quit.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

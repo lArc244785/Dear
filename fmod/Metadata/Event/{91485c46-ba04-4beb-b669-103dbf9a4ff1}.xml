@@ -11,6 +11,9 @@
 4-stone
 </value>
 		</property>
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
 		<property name="name">
 			<value>rope_attach</value>
 		</property>
@@ -18,7 +21,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{46532440-c046-46a4-a1ef-d1bcd84c237c}</destination>
+			<destination>{80a0cc2b-288e-4be4-aadb-3fec387a31b4}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{38b82940-123c-47d4-bf6e-fb617902da81}</destination>
@@ -63,7 +66,7 @@
 			<destination>{59f66661-d118-46b1-b434-ed152b0d8876}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{f9f0aaa8-ed70-4c1d-a5e6-3a7a2b17f416}</destination>
+			<destination>{f2a0ad3a-e273-40bb-b038-ae182499440e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{39889bdd-faa1-4733-ab41-6a5a83423454}" />

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{2ff07ef4-a506-4308-a662-e3a100510acb}">
+		<property name="color">
+			<value>Magenta</value>
+		</property>
 		<property name="assetPath">
 			<value>AMBIENCE Birds Forest Quiet Wind Loop 02.wav</value>
 		</property>

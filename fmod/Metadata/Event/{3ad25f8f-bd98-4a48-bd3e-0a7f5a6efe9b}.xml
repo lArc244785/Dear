@@ -15,6 +15,9 @@ need surface type for layering surface type
 4-stone
 </value>
 		</property>
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
 		<property name="name">
 			<value>rope_shoot</value>
 		</property>
@@ -22,7 +25,7 @@ need surface type for layering surface type
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{46532440-c046-46a4-a1ef-d1bcd84c237c}</destination>
+			<destination>{80a0cc2b-288e-4be4-aadb-3fec387a31b4}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{c0638f57-c337-4325-a3c5-98d4f4d416b1}</destination>
@@ -67,7 +70,7 @@ need surface type for layering surface type
 			<destination>{bcf0544c-b58d-4687-9fb1-607d56199e11}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{f9f0aaa8-ed70-4c1d-a5e6-3a7a2b17f416}</destination>
+			<destination>{f2a0ad3a-e273-40bb-b038-ae182499440e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{71aa8ea2-a9c0-4e4c-ba19-4c855b7d4879}" />

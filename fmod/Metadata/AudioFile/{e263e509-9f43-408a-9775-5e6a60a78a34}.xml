@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e263e509-9f43-408a-9775-5e6a60a78a34}">
+		<property name="color">
+			<value>Magenta</value>
+		</property>
 		<property name="assetPath">
 			<value>171510__esperar__rollercoaster-ratchet.wav</value>
 		</property>
