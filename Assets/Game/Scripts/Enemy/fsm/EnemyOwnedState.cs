@@ -6,15 +6,16 @@ using UnityEngine;
 namespace NoidOwnedState
 {
     public class Idle : State<Noide>
-    {
+    {   
         static float s_curdelay;
         public override void Enter(Noide enemy)
         {
             s_curdelay = 0;
-           
         }
         public override void Excute(Noide enemy)
         {
+            if (enemy.IsDead()) enemy.ChangeState(enemyState.dead); 
+
             s_curdelay += Time.deltaTime;
             if (s_curdelay >= enemy.patrolTime)
             {
@@ -43,11 +44,13 @@ namespace NoidOwnedState
             s_curdelay = 0;
             if (enemy.wallCheck)
                 enemy.wallCheck = false;
-
-         
+            
         }
         public override void Excute(Noide enemy)
         {
+
+            if (enemy.IsDead()) enemy.ChangeState(enemyState.dead);
+
             switch (enemy.enemyMoveDirection) {
                 case movedirection.Left:
                     enemy.rig2D.velocity = new Vector2(enemy.moveSpeed*-1f, enemy.rig2D.velocity.y);
@@ -68,7 +71,7 @@ namespace NoidOwnedState
 
         public override void Enter(Noide enemy)
         {
-            throw new System.NotImplementedException();
+            GameObject.Destroy(enemy.gameObject);
         }
         public override void Excute(Noide enemy)
         {
@@ -79,6 +82,7 @@ namespace NoidOwnedState
             throw new System.NotImplementedException();
         }
     }
+
 }
 #endregion
 
