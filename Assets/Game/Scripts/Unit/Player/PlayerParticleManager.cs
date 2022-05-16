@@ -57,7 +57,7 @@ public class PlayerParticleManager : MonoBehaviour
     public void MoveEffect(float moveDirX)
     {
         bool isMoveDirLeft = false;
-        GameObject effect2_2 = effects[2].transform.GetChild(2).gameObject;
+        GameObject effect2_2 = effects[2].transform.GetChild(1).gameObject;
 
 
         if (moveDirX < 0.0f)
@@ -69,14 +69,14 @@ public class PlayerParticleManager : MonoBehaviour
 
     public void LandingEffect()
     {
-        GameObject effect2_1 = effects[2].transform.GetChild(1).gameObject;
+        GameObject effect2_1 = effects[2].transform.GetChild(0).gameObject;
         InstacneEffectParticle(effect2_1, spawnFootTransform.position);
     }
 
     public void WallJumpEffect(bool isRight)
     {
         GameObject effect1 = effects[1];
-        GameObject effect2_1 = effects[2].transform.GetChild(1).gameObject;
+        GameObject effect2_1 = effects[2].transform.GetChild(0).gameObject;
 
         Vector3 spawnPos = spawnWallLeftTransform.position;
         if (isRight)
@@ -100,7 +100,7 @@ public class PlayerParticleManager : MonoBehaviour
     public void GroundPoundEffect()
     {
         GameObject effect1 = effects[1];
-        GameObject effect2_1 = effects[2].transform.GetChild(1).gameObject;
+        GameObject effect2_1 = effects[2].transform.GetChild(0).gameObject;
         //GameObject effect4 = effects[4];
 
         Vector3 spawnPos = spawnFootTransform.position;
