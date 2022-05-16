@@ -105,6 +105,8 @@ MonoBehaviour:
   m_moveDirection: 1
   m_patrolTime: 4
   m_moveSpeed: 12
+  m_hitDuringTime: 0
+  m_ghostDuringTime: 0
 --- !u!114 &9073526965198746476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHP: 10
+  m_hp: 0
 --- !u!50 &9073526965198746472
 Rigidbody2D:
   serializedVersion: 4
@@ -368,7 +371,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 3837066731979436906, guid: 38855d91b4284ea4db1247ed5647a575, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ee2ec878654a66428d74241ffbf4906, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

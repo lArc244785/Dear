@@ -10,6 +10,9 @@ namespace NoidOwnedState
         static float s_curdelay;
         public override void Enter(Noide enemy)
         {
+
+           
+
             s_curdelay = 0;
         }
         public override void Excute(Noide enemy)
@@ -33,6 +36,11 @@ namespace NoidOwnedState
         }
         public override void Exit(Noide enemy)
         {
+            if (!enemy.model.GetComponent<SpriteRenderer>().flipX)
+                enemy.model.GetComponent<SpriteRenderer>().flipX = true;
+            else
+                enemy.model.GetComponent<SpriteRenderer>().flipX = false;
+
             enemy.moveSpeed = enemy.saveSpeed;
         }
     }
@@ -92,7 +100,6 @@ namespace WepSpiderOwnedState
     {
         public override void Enter(WebSpider enemy)
         {
-
             Debug.Log("IdleState");
         }
         public override void Excute(WebSpider enemy)
