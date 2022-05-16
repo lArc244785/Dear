@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{864b6db7-31ac-4df0-bed9-cfbedcabd499}">
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
 		<property name="name">
 			<value>rope_accel</value>
 		</property>
@@ -8,7 +11,7 @@
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{46532440-c046-46a4-a1ef-d1bcd84c237c}</destination>
+			<destination>{80a0cc2b-288e-4be4-aadb-3fec387a31b4}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{fd405df7-95b0-45b2-9416-6c3bd0142c11}</destination>
@@ -53,7 +56,7 @@
 			<destination>{28873469-27d9-4cb3-9ea8-42fc3e11b990}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{f9f0aaa8-ed70-4c1d-a5e6-3a7a2b17f416}</destination>
+			<destination>{f2a0ad3a-e273-40bb-b038-ae182499440e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d7763dcb-11cb-4e41-a1be-bd9c8030d75d}" />

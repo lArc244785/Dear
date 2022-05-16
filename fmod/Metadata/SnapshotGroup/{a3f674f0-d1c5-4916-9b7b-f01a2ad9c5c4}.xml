@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SnapshotGroup" id="{a3f674f0-d1c5-4916-9b7b-f01a2ad9c5c4}">
+		<property name="name">
+			<value>Indoor_state</value>
+		</property>
+		<relationship name="folder">
+			<destination>{6bb4e6c5-840b-4cf2-94e7-3274a7f8f189}</destination>
+		</relationship>
+		<relationship name="items">
+			<destination>{ff53198b-5912-481a-b41b-aeeb95c1dff5}</destination>
+		</relationship>
+	</object>
+</objects>

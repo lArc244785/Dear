@@ -74,7 +74,6 @@ public class ProjectileBase : MonoBehaviour
             return;
 
         unit.OnHitObject(gameObject, weaponData.damage);
-        
     }
 
 

@@ -5,12 +5,9 @@ using UnityEngine;
 public class MadStateIdle : MadStateBase
 {
 
-
-
-
     public override void Enter(Mad mad)
     {
-        Debug.Log("Idle");
+       // Debug.Log("Idle");
     }
 
     public override void Exit(Mad mad)

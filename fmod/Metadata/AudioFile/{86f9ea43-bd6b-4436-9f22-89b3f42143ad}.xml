@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{86f9ea43-bd6b-4436-9f22-89b3f42143ad}">
+		<property name="color">
+			<value>Magenta</value>
+		</property>
 		<property name="assetPath">
 			<value>519027__kinoton__industrial-conveyor-belt.wav</value>
 		</property>

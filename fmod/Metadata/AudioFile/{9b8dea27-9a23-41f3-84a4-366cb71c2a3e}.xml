@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{9b8dea27-9a23-41f3-84a4-366cb71c2a3e}">
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="assetPath">
-			<value>Footstep_asphalt_01.wav</value>
+			<value>char_yuz_Footstep_asphalt_01.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

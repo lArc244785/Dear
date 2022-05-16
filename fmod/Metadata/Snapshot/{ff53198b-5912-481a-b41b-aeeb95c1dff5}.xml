@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Snapshot" id="{ff53198b-5912-481a-b41b-aeeb95c1dff5}">
+		<property name="name">
+			<value>Indoor_SFX_Reverb</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{de84ba47-98a4-4c0c-8b6e-5f4290270b11}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{2285616b-60a0-498b-ab2a-c99e9da6deef}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{1b9700cc-429a-4382-bc57-3129ee8814c3}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{23ef44e6-a0b5-4187-bfe7-44eb89b0e231}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{0f916cf7-8663-4906-825d-81fad031750a}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{2285616b-60a0-498b-ab2a-c99e9da6deef}" />
+	<object class="MarkerTrack" id="{1b9700cc-429a-4382-bc57-3129ee8814c3}" />
+	<object class="Timeline" id="{23ef44e6-a0b5-4187-bfe7-44eb89b0e231}" />
+	<object class="SnapshotMasterTrack" id="{0f916cf7-8663-4906-825d-81fad031750a}" />
+</objects>

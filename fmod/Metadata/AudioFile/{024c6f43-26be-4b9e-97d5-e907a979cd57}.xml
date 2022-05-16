@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{024c6f43-26be-4b9e-97d5-e907a979cd57}">
+		<property name="note">
+			<value>568298__sheyvan__sfx-whoosh-high-1-5</value>
+		</property>
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="assetPath">
-			<value>568298__sheyvan__sfx-whoosh-high-1-5.wav</value>
+			<value>char_yuz_rope_shoot.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

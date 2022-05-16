@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{0834da40-53fb-46f0-8546-6adad1f5caa3}">
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="assetPath">
 			<value>char_yuz_rope_accel_02.wav</value>
 		</property>

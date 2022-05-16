@@ -62,7 +62,7 @@ public class MadStateTracking : MadStateBase
             if (time <= mad.data.yoyoEffectTime)
                 SetDeadRange(mad, GetYoyoEffectDeadRange(mad.data, time));
 
-            Debug.Log("dead : " + m_currentDeadRange);
+           // Debug.Log("dead : " + m_currentDeadRange);
         }
 
 
@@ -108,7 +108,7 @@ public class MadStateTracking : MadStateBase
     {
         //float currentTime = Time.time - m_deadRangeEnterTime;
         float yoyoTimeInRange = time % data.yoyoEffectTime;
-        Debug.Log("YoyoTimeInRange: " + yoyoTimeInRange + "\nC: " + time + "\nL: " + data.yoyoEffectTime);
+        //Debug.Log("YoyoTimeInRange: " + yoyoTimeInRange + "\nC: " + time + "\nL: " + data.yoyoEffectTime);
 
 
         float yoyoTimeLerp = yoyoTimeInRange / data.yoyoEffectTime;
@@ -121,7 +121,7 @@ public class MadStateTracking : MadStateBase
         else
             lerp = 1 - ((yoyoTimeLerp - 0.5f) * 2.0f);
 
-        Debug.Log("Lerp :" + lerp + "Yoyo :" + yoyoTimeLerp);
+       // Debug.Log("Lerp :" + lerp + "Yoyo :" + yoyoTimeLerp);
 
 
         addRange = data.deadRangeYoyoRange * lerp;

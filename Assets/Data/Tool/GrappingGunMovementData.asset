@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_coolTime: 0.5
   m_maxDistance: 40
-  m_hookMaxSpeed: 20
-  m_hookAcclelation: 15
+  m_hookMaxSpeed: 40
+  m_hookAcclelation: 20
   m_hookVelocityPower: 0.8
   m_pullMaxSpeed: 25
   m_pullAcclelation: 12
   m_pullVelcoityPower: 0.8
-  m_pullStopMaxLength: 20
+  m_pullStopMaxLength: 16
