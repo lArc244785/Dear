@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{da0ea0f3-3ba7-4520-95bc-5dc0232664d9}">
+		<property name="assetPath">
+			<value>impact_wood_debris_fall_hit_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1439999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0c963700-a798-4bc7-aa73-7080f677600c}</destination>
+		</relationship>
+	</object>
+</objects>
