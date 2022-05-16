@@ -143,6 +143,29 @@ public class UnitPlayer : UnitBase
 
     #endregion
 
+    #region ParticleSystem
+    private PlayerParticleManager m_playerParticleManager;
+    public PlayerParticleManager particleManager
+
+    {
+        get
+        {
+            return m_playerParticleManager;
+        }
+    }
+    #endregion
+
+    #region FootStep
+    private IEnumerator m_footStepLoopCoroutine;
+    private bool m_footStepLoop;
+    public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
+    #endregion
+
+    #region 
+    private IEnumerator m_wallSlideLoopCoroutine;
+    private bool m_wallSlideLoop;
+    public bool wallSlideLoop { set { m_wallSlideLoop = value; } get { return m_wallSlideLoop; } }
+    #endregion
 
     public override void Init()
     {
@@ -156,6 +179,18 @@ public class UnitPlayer : UnitBase
         hitLayerEvent = null;
 
         SetLayer(defaultLayer);
+
+        footStepLoop = false;
+        m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
+
+        wallSlideLoop = false;
+        m_wallSlideLoopCoroutine = WillSlideCoroutine(0.2f);
+
+
+        StartCoroutine(m_footStepLoopCoroutine);
+
+        StartCoroutine(m_wallSlideLoopCoroutine);
+
     }
 
     protected override void ComponentInit()
@@ -169,7 +204,7 @@ public class UnitPlayer : UnitBase
         m_toolManager = GetComponent<ToolManager>();
         m_modelCollider = GetComponent<CapsuleCollider2D>();
         m_hitImfect = GetComponent<StateImfectTween>();
-
+        m_playerParticleManager = transform.Find("ParticleManager").GetComponent<PlayerParticleManager>();
 
         m_madTrackingPoint = transform.Find("MadTrackingPoint").GetComponent<MadTrackingPoint>();
         m_mad = GameObject.Find("Mad").GetComponent<Mad>();
@@ -286,5 +321,59 @@ public class UnitPlayer : UnitBase
         inputPlayer.SetControl(true);
         SetDefaultLayer();
     }
+
+
+
+
+
+    private IEnumerator FootStepCoroutine(float tickTime)
+    {
+        float value;
+
+        while (true)
+        {
+            if (footStepLoop)
+            {
+                Collider2D groundCollider = movementManager.groundSensor.GetGroundCollider2D();
+                value = 0.0f;
+
+                if (groundCollider != null)
+                {
+                    if (groundCollider.tag == "Forest")
+                    {
+                        value = 1.0f;
+                    }
+                    else if (groundCollider.tag == "Asphalt")
+                    {
+                        value = 2.0f;
+                    }
+                }
+
+                particleManager.MoveEffect(inputPlayer.moveDir.x);
+                sound.FootStep(value);
+            }
+            yield return new WaitForSeconds(tickTime);
+        }
+
+    }
+
+    private IEnumerator WillSlideCoroutine(float tickTime)
+    {
+        bool isRight;
+        while (true)
+        {
+            if (wallSlideLoop)
+            {
+                isRight = movementManager.IsWallRight();
+
+                particleManager.WallSlideEffect(isRight);
+                //sound.FootStep(value);
+            }
+            yield return new WaitForSeconds(tickTime);
+        }
+    }
+
+
+
 
 }
