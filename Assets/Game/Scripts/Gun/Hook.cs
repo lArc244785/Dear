@@ -48,12 +48,12 @@ public class Hook : MonoBehaviour
         get { return m_targetPos; }
     }
 
-    private Vector2 m_targetVelcoity;
-    private Vector2 targetVelcotiy
+    private Vector2 m_targetDir;
+    private Vector2 targetDir
     {
         get
         {
-            return m_targetVelcoity;
+            return m_targetDir;
         }
     }
 
@@ -71,10 +71,11 @@ public class Hook : MonoBehaviour
         transform.parent = null;
 
         rig2D.bodyType = RigidbodyType2D.Dynamic;
+        rig2D.velocity = Vector2.zero;
 
         m_targetPos = targetPos;
 
-        m_targetVelcoity = dir * grapplingGun.data.hookMaxSpeed;
+        m_targetDir = dir;
     }
 
     private Vector2 m_nextMovePos;
@@ -86,25 +87,22 @@ public class Hook : MonoBehaviour
         if (m_grapplingGun == null)
             return;
 
+
         if(grapplingGun.currentState == GrapplingGun.State.Fire)
         {
-            grapplingGun.Acceleration(rig2D, grapplingGun.data.hookAcclelation, grapplingGun.data.hookVelocityPower, targetVelcotiy);
-
-
-            m_nextMovePos = rig2D.velocity * Time.deltaTime;
-
-            m_playerToHookDistance = Vector2.Distance((Vector2)transform.position, targetPos);
-            m_nextPlayerToHookDistance = Vector2.Distance((Vector2)transform.position + m_nextMovePos, targetPos);
-
-
-            if (m_playerToHookDistance  < m_nextPlayerToHookDistance)
+            if(grapplingGun.TargetAcceleration(
+                rig2D, 
+                grapplingGun.data.hookAcclelation, 
+                grapplingGun.data.hookVelocityPower, 
+                targetDir, 
+                grapplingGun.data.hookMaxSpeed,
+                targetPos))
             {
-                transform.position = targetPos;
-
                 GrapplingGun.PickType pickType = grapplingGun.GetPickType("HookShlingshot");
 
-
+                
                 rig2D.velocity = Vector2.zero;
+                rig2D.bodyType = RigidbodyType2D.Kinematic;
                 grapplingGun.HookPick(pickType);
             }
 

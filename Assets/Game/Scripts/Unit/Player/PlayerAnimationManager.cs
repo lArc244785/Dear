@@ -87,7 +87,7 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void TriggerAir()
     {
-        Debug.Log("Air Ani");
+        //Debug.Log("Air Ani");
 
         ResetTrigger("LandingA");
         SetTrigger("Air");

@@ -13,6 +13,16 @@ public class InteractionSpring : InteractionBase
             return m_force;
         }
     }
+    [SerializeField]
+    private float m_superJumpMul;
+    private float superJumpMul
+    {
+        get
+        {
+            return m_superJumpMul;
+        }
+    }
+
 
     [SerializeField]
     private float m_InteractionJumpWait;
@@ -55,29 +65,35 @@ public class InteractionSpring : InteractionBase
         if (m_movement == null)
             return;
 
-        if(m_currentWaitTime > 0.0f)
+        if(m_currentWaitTime <= 0.0f)
         {
-            if (m_movement.coyoteSystem.lastJumpEnterTime > 0.0f)
-            {
-                Debug.Log("A");
-                float jumpForce = force + m_movement.movementData.jumpForce;
-                m_movement.player.rig2D.velocity = Vector2.zero;
-                m_movement.Jump(jumpForce);
-                m_movement = null;
-            }
+            NormalJump();
         }
-        else
-        {
-            Debug.Log("B");
-            m_movement.player.rig2D.velocity = Vector2.zero;
-            m_movement.Jump(force);
-            m_movement = null;
-        }
+
         m_currentWaitTime -= Time.deltaTime;
 
 
     }
 
 
+    private void NormalJump()
+    {
+        if (m_movement == null)
+            return;
+
+        m_movement.player.rig2D.velocity = Vector2.zero;
+        m_movement.Jump(force);
+        m_movement = null;
+    }
+
+    public void SuperJump()
+    {
+        if (m_movement == null)
+            return;
+
+        m_movement.player.rig2D.velocity = Vector2.zero;
+        m_movement.Jump(force * superJumpMul);
+        m_movement = null;
+    }
 
 }

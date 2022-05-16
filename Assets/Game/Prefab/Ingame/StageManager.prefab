@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4241520126860329967}
   - component: {fileID: 4241520126860329966}
+  - component: {fileID: 1833929067}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -27,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,5 +47,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
   m_inputPlayer: {fileID: 0}
-  m_roomManager: {fileID: 0}
   m_brainCam: {fileID: 0}
+  m_stageBgm: {fileID: 1833929067}
+--- !u!114 &1833929067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241520126860329965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c4b410bc3167c46ad7bbbc148e6a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_bgmEvent:
+    Guid:
+      Data1: 321810891
+      Data2: 1260256598
+      Data3: -1977935696
+      Data4: -1126173207
+    Path: event:/env/amb/stage00
+  m_id: inout_index

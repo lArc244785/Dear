@@ -1,3 +1,6 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 public class UnitPlayer : UnitBase
 {
     #region movementManger
@@ -67,10 +70,92 @@ public class UnitPlayer : UnitBase
     }
     #endregion
 
+    private CapsuleCollider2D m_modelCollider;
+    public CapsuleCollider2D modelCollider
+    {
+        get
+        {
+            return m_modelCollider;
+        }
+    }
+
+    #region Mad
+    private MadTrackingPoint m_madTrackingPoint;
+    public MadTrackingPoint madTrackingPoint
+    {
+        get { return m_madTrackingPoint; }
+    }
+
+    private Mad m_mad;
+    public Mad mad { get { return m_mad; } }
+
+    #endregion
+
+    #region Hit
+    private StateImfectTween m_hitImfect;
+    private StateImfectTween hitImfect
+    {
+        get
+        {
+            return m_hitImfect;
+        }
+    }
+
+
+    [Header("Hit")]
+    private int m_ghostLayer;
+    private int ghostLayer
+    {
+        get
+        {
+            return m_ghostLayer;
+        }
+    }
+    private int m_defaultLayer;
+    private int defaultLayer
+    {
+        get
+        {
+            return m_defaultLayer;
+        }
+    }
+
+    [Header("Hit")]
+    [SerializeField]
+    private float m_hitDuringTime;
+    private float hitDuringTime
+    {
+        get
+        {
+            return m_hitDuringTime;
+        }
+    }
+    [SerializeField]
+    private float m_ghostDuringTime;
+
+    private float ghostDuringTime
+    {
+        get
+        {
+            return m_ghostDuringTime;
+        }
+    }
+
+    #endregion
+
+
     public override void Init()
     {
         base.Init();
         isInit = true;
+        
+        m_defaultLayer = LayerMask.NameToLayer("Player");
+        m_ghostLayer = LayerMask.NameToLayer("Ghost");
+
+        ghostFrozenEvent = null;
+        hitLayerEvent = null;
+
+        SetLayer(defaultLayer);
     }
 
     protected override void ComponentInit()
@@ -82,17 +167,124 @@ public class UnitPlayer : UnitBase
         m_animationManager = GetComponent<PlayerAnimationManager>();
         m_shoulder = transform.Find("Shoulder").GetComponent<Shoulder>();
         m_toolManager = GetComponent<ToolManager>();
+        m_modelCollider = GetComponent<CapsuleCollider2D>();
+        m_hitImfect = GetComponent<StateImfectTween>();
+
+
+        m_madTrackingPoint = transform.Find("MadTrackingPoint").GetComponent<MadTrackingPoint>();
+        m_mad = GameObject.Find("Mad").GetComponent<Mad>();
+
 
         shoulder.Init();
 
+        toolManager.Init(this);
         animationManager.Init(modelAnimator, shoulder);
         movementManager.Init(this);
         sound.Init(this);
-        inputPlayer.Init(movementManager, toolManager);
-        toolManager.Init(this);
+        m_hitImfect.Init(model);
+
+        madTrackingPoint.Init(movementManager.IsLookDirRight(), mad);
+        mad.Init(this, madTrackingPoint);
+
+        inputPlayer.Init(movementManager, toolManager, mad);
 
     }
 
+    public Vector2 GetModelColliderTop()
+    {
+        Vector2 modelTopPos = new Vector2();
 
+        modelTopPos = unitPos + modelCollider.offset;
+        modelTopPos.y += transform.localScale.y * (modelCollider.size.y * 0.5f);
+
+        return modelTopPos;
+    }
+
+
+    protected override void HitHp(int damage)
+    {
+        base.HitHp(damage);
+        health.OnDamage(damage);
+    }
+
+    protected override void HitUniqueEventUnit(UnitBase attackUnit)
+    {
+        base.HitUniqueEventUnit(attackUnit);
+
+        Vector2 playerToAttackUnitDir = unitPos - attackUnit.unitPos ;
+        playerToAttackUnitDir.Normalize();
+
+        movementManager.HitMovement(playerToAttackUnitDir);
+        hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
+
+        HitLayer();
+    }
+
+    public override void OnHitObject(GameObject attackObject, int damage)
+    {
+        base.OnHitObject(attackObject, damage);
+
+        Vector2 playerToAttackUnitDir = unitPos -(Vector2)attackObject.transform.position ;
+        playerToAttackUnitDir.Normalize();
+
+        movementManager.HitMovement(playerToAttackUnitDir);
+        hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
+
+        HitLayer();
+    }
+
+    private IEnumerator hitLayerEvent { set; get; }
+
+    private void HitLayer()
+    {
+        if (hitLayerEvent != null)
+            StopCoroutine(hitLayerEvent);
+
+        hitLayerEvent = HitLayerEventCoroutine();
+        StartCoroutine(hitLayerEvent);
+    }
+
+    private IEnumerator HitLayerEventCoroutine()
+    {
+        SetGhostLayer();
+        yield return new WaitForSeconds(hitDuringTime + ghostDuringTime);
+        SetDefaultLayer();
+    }
+
+    private void SetLayer(int layer)
+    {
+        gameObject.layer = layer;
+    }
+
+    public void SetGhostLayer()
+    {
+        SetLayer(ghostLayer);
+    }
+
+    public void SetDefaultLayer()
+    {
+        SetLayer(defaultLayer);
+    }
+
+
+    private IEnumerator ghostFrozenEvent { set; get; }
+    public void GhostFrozen(float fTime)
+    {
+        if (ghostFrozenEvent != null)
+            StopCoroutine(ghostFrozenEvent);
+
+        ghostFrozenEvent = GhostFrozenEventCoroutine(fTime);
+
+        StartCoroutine(ghostFrozenEvent);
+    }
+
+    private IEnumerator GhostFrozenEventCoroutine(float fTime)
+    {
+        inputPlayer.SetControl(false);
+        SetGhostLayer();
+        yield return new WaitForSeconds(fTime);
+        inputPlayer.SetControl(true);
+        SetDefaultLayer();
+    }
 
 }

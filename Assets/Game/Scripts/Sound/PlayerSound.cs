@@ -54,7 +54,7 @@ public class PlayerSound : MonoBehaviour
     private string m_surfaceIndex = "surface_index";
     private string surfaceIndex { get { return m_surfaceIndex; } }
 
-    private GroundSensor m_groundSensor;
+    private CircleSensor m_groundSensor;
 
     public void Init(UnitPlayer player)
     {

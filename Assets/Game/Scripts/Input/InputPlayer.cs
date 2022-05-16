@@ -23,6 +23,15 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
+    private Mad m_mad;
+    private Mad mad
+    {
+        get
+        {
+            return m_mad;
+        }
+    }
+
 
     private Vector2 m_moveDir;
 
@@ -39,33 +48,35 @@ public class InputPlayer : MonoBehaviour
         }
     }
 
-    private bool m_isMoveControl;
+    //private bool m_isMoveControl;
 
-    public bool isMoveControl
-    {
-        set
-        {
-            m_isMoveControl = value;
-        }
-        get
-        {
-            return m_isMoveControl;
-        }
-    }
+    //public bool isMoveControl
+    //{
+    //    private set
+    //    {
+    //        m_isMoveControl = value;
+    //    }
+    //    get
+    //    {
+    //        return m_isMoveControl;
+    //    }
+    //}
 
 
 
-    public void Init(PlayerMovementManager movementManger, ToolManager toolManager)
+    public void Init(PlayerMovementManager movementManger, ToolManager toolManager, Mad mad)
     {
        m_movementManager = movementManger;
         m_toolManager = toolManager;
+        m_mad = mad;
+
         isControl = true;
-        isMoveControl = true;
+        //isMoveControl = true;
     }
 
     public void JumpEnter()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         movementManger.coyoteSystem.OnJumpEnterTime();        
@@ -73,7 +84,7 @@ public class InputPlayer : MonoBehaviour
 
     public void JumpUp()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
         movementManger.coyoteSystem.OnJumpExitTime();
     }
@@ -86,14 +97,14 @@ public class InputPlayer : MonoBehaviour
 
     public void WallGripEnter()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
         movementManger.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
         movementManger.isWallGrip = false;
     }
@@ -102,7 +113,8 @@ public class InputPlayer : MonoBehaviour
     {
         if (!isControl)
             return;
-        
+        toolManager.LeftUse();
+
     }
 
     public void LeftMouseUp()
@@ -114,7 +126,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundRight()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         if (movementManger.currentState != PlayerMovementManager.State.Rope)
@@ -125,7 +137,7 @@ public class InputPlayer : MonoBehaviour
 
     public void ReboundLeft()
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         if (movementManger.currentState != PlayerMovementManager.State.Rope)
@@ -137,7 +149,7 @@ public class InputPlayer : MonoBehaviour
 
     public void SetTool(ToolManager.ActiveToolType type)
     {
-        if (!isControl || !isMoveControl)
+        if (!isControl )
             return;
 
         toolManager.SetTool(type);
@@ -162,6 +174,14 @@ public class InputPlayer : MonoBehaviour
         toolManager.LeftCancle();
     }
 
+    public void MadAttack()
+    {
+        if (!isControl)
+            return;
+        if (movementManger.currentState == PlayerMovementManager.State.Ground)
+            mad.Attack();
+    }
+
 
 
     public void ToolUseRight()
@@ -180,12 +200,19 @@ public class InputPlayer : MonoBehaviour
         toolManager.RightCancle();
     }
 
+    public void SetMoveDir(Vector2 dir)
+    {
+        //if (!isControl )
+        //    return;
 
+        moveDir = dir;
+       // Debug.Log("MoveDir: " + dir);
+    }
 
 
     public Vector2 moveDir
     {
-        set
+        private set
         {
 
             m_moveDir = value;
@@ -199,9 +226,18 @@ public class InputPlayer : MonoBehaviour
         }
         get
         {
+            if (!isControl)
+                return Vector2.zero;
+
             return m_moveDir;
         }
     }
 
+    public void SetControl(bool control)
+    {
+        isControl = control;
+    }
+
+    
 
 }

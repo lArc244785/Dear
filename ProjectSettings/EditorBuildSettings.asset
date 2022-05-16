@@ -6,15 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Scenes/Title.unity
-    guid: ca6e5ab9303bf3943b00d1339cd3ac9d
+    path: Assets/Game/Scenes/Level/Prolog_1_1.unity
+    guid: 2ec89062824d12f4c876e5413f1f5a0c
   - enabled: 1
-    path: Assets/Game/Scenes/Tutorial.unity
-    guid: 7811c04d693b85e46baaaf00ec41bfa1
-  - enabled: 0
-    path: Assets/Game/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Game/Scenes/InsungSence.unity
-    guid: 9c9a7c23d015c8848ae4f14a62038985
-  m_configObjects: {}
+    path: Assets/Game/Scenes/Level/Tutorial_1_1.unity
+    guid: 530be1a20472e724aa63872f7341df5e
+  - enabled: 1
+    path: Assets/Game/Scenes/Level/Tutorial_2_1.unity
+    guid: dc87885283feef7458d86231fedc6416
+  - enabled: 1
+    path: Assets/Game/Scenes/Level/Tutorial_2_2.unity
+    guid: c6b0f836f0f7cf540bc69fe127eff73e
+  - enabled: 1
+    path: Assets/Game/Scenes/Level/Tutorial_2_3.unity
+    guid: abff1ed0bf70f1b4ebfb19787560627d
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: e82a0226f23cc9f4aa9bdbf5e197ead5, type: 2}

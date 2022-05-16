@@ -9,29 +9,14 @@ public class InputManager : SingleToon<InputManager>
     [SerializeField]
     private InputPlayer m_inputPlayer;
 
-    public enum InputContextState
-    {
-        start, cancle
-    };
-
-    private InputContextState m_leftMouseState;
-    public InputContextState leftMouseState
-    {
-        set
-        {
-            m_leftMouseState = value;
-        }
-        get
-        {
-            return m_leftMouseState;
-        }
-    }
 
 
     private void Awake()
     {
         Init();
+
     }
+
 
     protected override bool Init()
     {
@@ -40,18 +25,19 @@ public class InputManager : SingleToon<InputManager>
 
     public void SetStage(InputPlayer inputPlayer, Camera cam)
     {
+
         m_inputPlayer = inputPlayer;
         m_brainCam = cam;
+
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-            m_inputPlayer.moveDir = context.ReadValue<Vector2>();
-
-
+        m_inputPlayer.SetMoveDir(context.ReadValue<Vector2>());
     }
 
 
@@ -61,26 +47,20 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
-
         if (context.started)
         {
-            leftMouseState = InputContextState.start;
-            m_inputPlayer.ToolUseLeft();
+            m_inputPlayer.LeftMouseEnter();
         }
-        else if(context.canceled)
+        else if (context.canceled)
         {
-            m_leftMouseState = InputContextState.cancle;
-            m_inputPlayer.ToolCancleLeft();
+            m_inputPlayer.LeftMouseUp();
         }
-
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
-        
 
         if (context.started)
             m_inputPlayer.JumpEnter();
@@ -101,6 +81,8 @@ public class InputManager : SingleToon<InputManager>
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
+        if (context.started)
+            m_inputPlayer.MadAttack();
     }
 
 
@@ -115,29 +97,67 @@ public class InputManager : SingleToon<InputManager>
         else if (context.canceled)
             m_inputPlayer.WallGripUp();
     }
-
     public void OnInteraction(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
-
     }
 
-
-    public void TestNoneTool(InputAction.CallbackContext context)
+    public void ActiveInventory(InputAction.CallbackContext contex)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
-        if(context.started)
-        m_inputPlayer.SetTool(ToolManager.ActiveToolType.None);
+
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.inventory);
+    }
+    public void ActivecharUI(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.character);
     }
 
-    public void TestGrappingTool(InputAction.CallbackContext context)
+    public void ActiveTestUI(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
+        Debug.Log("a");
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.test);
+    }
+    public void EscapeUI(InputAction.CallbackContext contex)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (contex.started)
+        {
+            if (PopUpManager.instance.activePopupList.Count > 0)
+            {
+                PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
+            }
+        }
+
+    }
+
+    public void OnToolNone(InputAction.CallbackContext context)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
         if (context.started)
+        {
+            m_inputPlayer.SetTool(ToolManager.ActiveToolType.None);
+        }
+    }
+
+    public void OnToolGrapping(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+        if (context.started)
+        {
             m_inputPlayer.SetTool(ToolManager.ActiveToolType.GrappingGun);
+        }
     }
 
 
@@ -164,4 +184,6 @@ public class InputManager : SingleToon<InputManager>
             return Mouse.current.position.ReadValue();
         }
     }
+
+
 }

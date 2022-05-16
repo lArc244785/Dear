@@ -23,7 +23,7 @@ public class GrapplingGun : ActiveToolBase
         }
     }
 
-    
+
     private List<InteractionGrapping> m_rangeInteractionObjectList = new List<InteractionGrapping>();
     private List<InteractionGrapping> rangeInteractionObjectList
     {
@@ -82,7 +82,7 @@ public class GrapplingGun : ActiveToolBase
             return m_ropeRenderer;
         }
     }
-   
+
 
     #region FireTr
     private Transform m_fireTr;
@@ -106,7 +106,7 @@ public class GrapplingGun : ActiveToolBase
     #region state
     public enum State
     {
-        None, Fire, Grapping, Pull
+        None, Fire, Grapping, Pull, A
     }
 
     private State m_currentState;
@@ -235,7 +235,7 @@ public class GrapplingGun : ActiveToolBase
         if (!handler.interactionGrapping.isCanInteraction)
             return;
 
-            Fire((Vector2)handler.interactionGrapping.transform.position);
+        Fire((Vector2)handler.interactionGrapping.transform.position);
 
     }
 
@@ -285,12 +285,14 @@ public class GrapplingGun : ActiveToolBase
 
         hook.Fire(dir, targetPos);
 
-        player.inputPlayer.isMoveControl = false;
+        player.inputPlayer.SetControl(false);
+
         ropeRenderer.isDraw = true;
     }
 
     private void Cancle()
     {
+
         GrappingReset();
 
         if (!player.movementManager.IsGrounded())
@@ -298,8 +300,9 @@ public class GrapplingGun : ActiveToolBase
         else
             player.movementManager.currentState = PlayerMovementManager.State.Ground;
 
-        player.movementManager.currentState = PlayerMovementManager.State.Air;
-        player.inputPlayer.isMoveControl = true;
+
+        player.inputPlayer.SetControl(true);
+
         Invoke("CoolTime", data.coolTime);
     }
 
@@ -311,8 +314,10 @@ public class GrapplingGun : ActiveToolBase
 
     private void GrappingReset()
     {
+        currentState = State.None;
         player.shoulder.SetMouse();
         player.animationManager.RopeToAirAnimation();
+
 
         hook.rig2D.velocity = Vector2.zero;
         hook.rig2D.bodyType = RigidbodyType2D.Kinematic;
@@ -324,7 +329,6 @@ public class GrapplingGun : ActiveToolBase
         ropeRenderer.isDraw = false;
 
         pickType = PickType.None;
-        currentState = State.None;
     }
 
 
@@ -354,6 +358,9 @@ public class GrapplingGun : ActiveToolBase
 
     private void Update()
     {
+        if (currentState == State.None)
+            return;
+
         if (currentState == State.Fire)
         {
             FireUpdate();
@@ -378,49 +385,27 @@ public class GrapplingGun : ActiveToolBase
     private float m_pullDistance;
     private float m_nextPullDistacne;
 
+
+
     private void PullUpdate()
     {
-        Acceleration(player.rig2D, data.pullAcclelation, data.pullVelcoityPower, pullTargetVelocity);
-
-
-
-
-        m_nextPullPos = player.rig2D.velocity * Time.deltaTime;
-        m_pullDistance = GetHookDistance();
-        m_nextPullDistacne = Vector2.Distance((Vector2)hook.transform.position, player.unitPos + m_nextPullPos);
-
-
-
-        if (m_pullDistance < m_nextPullDistacne)
+        if (TargetAcceleration(
+            player.rig2D,
+            data.pullAcclelation,
+            data.pullVelcoityPower,
+            pullDir,
+            data.pullMaxSpeed,
+            hook.transform.position))
         {
-            player.transform.position = hook.transform.position;
-            ClampPlayerVelocity();
             Cancle();
-            return;
-        }
-
-    }
-
-    private void ClampPlayerVelocity()
-    {
-        PlayerMovementManager pmm = player.movementManager;
-        Rigidbody2D rig2D = player.rig2D;
-
-        if (Mathf.Abs(rig2D.velocity.x) > pmm.movementData.runMaxSpeed)
-        {
-            float maxVelocityX = pmm.movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.x);
-            player.rig2D.velocity = new Vector2(maxVelocityX, player.rig2D.velocity.y);
-        }
-
-        if (Mathf.Abs(rig2D.velocity.y) > pmm.movementData.runMaxSpeed)
-        {
-            float maxVelocityY = pmm.movementData.runMaxSpeed * Mathf.Sign(player.rig2D.velocity.y);
-            player.rig2D.velocity = new Vector2(player.rig2D.velocity.x, maxVelocityY);
+            Debug.Log("RR: " + player.rig2D.velocity);
+            player.rig2D.velocity = Vector2.ClampMagnitude(player.rig2D.velocity, data.pullStopMaxLength);
         }
 
     }
 
 
+    private Vector2 pullDir { set; get; }
 
 
     private void PullSetting()
@@ -428,12 +413,13 @@ public class GrapplingGun : ActiveToolBase
         Vector2 hookPos = (Vector2)hook.transform.position;
 
 
-        Vector2 pullDir = hookPos - player.unitPos;
+        pullDir = hookPos - player.unitPos;
         pullDir.Normalize();
 
-        m_pullTargetVelcoity = pullDir * data.pullMaxSpeed;
 
         currentState = State.Pull;
+
+        //Cancle();
 
     }
 
@@ -451,19 +437,37 @@ public class GrapplingGun : ActiveToolBase
         return resultType;
     }
 
-    public void Acceleration(Rigidbody2D rig, float accelRate,float velcoityPower, Vector2 targetVelocity)
+    public bool TargetAcceleration(Rigidbody2D rig, float accelRate, float velcoityPower, Vector2 targetDir, float targetSpeed, Vector2 targetPos)
     {
+        Vector2 currentPos = (Vector2)rig.transform.position;
+        Vector2 nextMovePos = currentPos + (rig.velocity * Time.deltaTime);
+
+        float currentDistance = Vector2.Distance(currentPos, targetPos);
+        float nextDistacen = Vector2.Distance(nextMovePos, targetPos);
+
+        if (currentDistance < nextDistacen)
+        {
+            rig.transform.position = targetPos;
+            return true;
+        }
+
+
+
+        Vector2 targetVelocity = targetDir * targetSpeed;
+
         Vector2 velocityDif;
 
-        velocityDif.x = targetVelocity.x - rig.velocity.x;
-        velocityDif.y = targetVelocity.y - rig.velocity.y;
+        velocityDif = targetVelocity - rig.velocity;
 
         Vector2 movement;
+
 
         movement.x = Mathf.Pow(Mathf.Abs(velocityDif.x) * accelRate, velcoityPower) * Mathf.Sign(velocityDif.x);
         movement.y = Mathf.Pow(Mathf.Abs(velocityDif.y) * accelRate, velcoityPower) * Mathf.Sign(velocityDif.y);
 
         rig.AddForce(movement);
+
+        return false;
 
 
     }
