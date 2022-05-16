@@ -107,6 +107,8 @@ public class MovementStateAir : I_MovementState
 
     private void GroundPoundReady(PlayerMovementManager movementManager)
     {
+        movementManager.player.sound.GroundPound();
+
         movementManager.player.SetGhostLayer();
         movementManager.isJump = false;
         movementManager.player.inputPlayer.SetControl(false);
@@ -174,7 +176,7 @@ public class MovementStateAir : I_MovementState
         {
             movementManager.currentState = PlayerMovementManager.State.Ground;
 
-
+            movementManager.player.particleManager.LandingEffect();
             Collider2D groundCollider = movementManager.groundSensor.GetGroundCollider2D();
 
             float value = 0.0f;

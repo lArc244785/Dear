@@ -62,10 +62,13 @@ public class MadStateAttack : MadStateBase
     {
         GameObject goMissile = GameObject.Instantiate(mad.missileObject);
 
+        mad.SoundFire();
+
         Vector2 spawnPoint = (Vector2)mad.firePointTransform.position;
         Vector2 fireDir = InputManager.instance.inGameMousePosition2D - spawnPoint;
         fireDir.Normalize();
 
         goMissile.GetComponent<ProjectileMissile>().HandleSpawn(spawnPoint, fireDir, mad.data.targetLayerMask);
+
     }
 }

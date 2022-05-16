@@ -120,7 +120,10 @@ public class Mad : MonoBehaviour
     }
     #endregion
 
-
+    #region
+    [SerializeField]
+    private FMODUnity.EventReference m_fireEvent;
+    #endregion
 
     public void Init(UnitPlayer player, MadTrackingPoint madTrackingPoint)
     {
@@ -268,6 +271,12 @@ public class Mad : MonoBehaviour
     private void SetFirePointDir(Vector2 dir)
     {
         firePointTransform.localPosition = dir * data.firePointDistance;
+    }
+
+
+    public void SoundFire()
+    {
+        SoundManager.instance.SoundOneShot(m_fireEvent);
     }
 
 }
