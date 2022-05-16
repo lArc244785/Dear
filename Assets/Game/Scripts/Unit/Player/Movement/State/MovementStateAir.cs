@@ -174,7 +174,7 @@ public class MovementStateAir : I_MovementState
         {
             movementManager.currentState = PlayerMovementManager.State.Ground;
 
-
+            movementManager.player.particleManager.LandingEffect();
             Collider2D groundCollider = movementManager.groundSensor.GetGroundCollider2D();
 
             float value = 0.0f;

@@ -45,12 +45,12 @@ public class PlayerParticleManager : MonoBehaviour
     }
 
     [SerializeField]
-    private Transform m_spawnHitTransform;
-    private Transform spawnHitTransform
+    private Transform m_spawnCenterTransform;
+    private Transform spawnCenterTransform
     {
         get
         {
-            return m_spawnHitTransform;
+            return m_spawnCenterTransform;
         }
     }
 
@@ -63,11 +63,11 @@ public class PlayerParticleManager : MonoBehaviour
         if (moveDirX < 0.0f)
             isMoveDirLeft = true;
 
-        InstanceEffect0(spawnFootTransform.position, isMoveDirLeft);
+        InstanceEffect0(spawnCenterTransform.position, isMoveDirLeft);
         InstacneEffectParticle(effect2_2, spawnFootTransform.position);
     }
 
-    public void JumpEffect()
+    public void LandingEffect()
     {
         GameObject effect2_1 = effects[2].transform.GetChild(1).gameObject;
         InstacneEffectParticle(effect2_1, spawnFootTransform.position);
@@ -110,14 +110,14 @@ public class PlayerParticleManager : MonoBehaviour
         //InstacneEffectParticle(effect4, spawnPos);
     }
 
-    public void HitEffect()
-    {
-        GameObject effect3 = effects[3];
+    //public void HitEffect()
+    //{
+    //    GameObject effect3 = effects[3];
 
-        Vector3 spawnPos = spawnHitTransform.position;
+    //    Vector3 spawnPos = spawnHitTransform.position;
 
-        InstacneEffectParticle(effect3, spawnPos);
-    }
+    //    InstacneEffectParticle(effect3, spawnPos);
+    //}
 
 
 
