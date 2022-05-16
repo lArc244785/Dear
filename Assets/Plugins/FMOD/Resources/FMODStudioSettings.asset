@@ -128,7 +128,15 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - b7716510a1f36934c87976f3a81dbf3d
+  - 46fbfdf3fc43db0458918377fd40293e
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - fd7c55dab0fce234b8c25f6ffca523c1
   - e7a046c753c3c3d4aacc91f6597f310d
+  - 2c5177b11d81d824dbb064f9ac8527da
+  - 52eb9df5db46521439908db3a29a1bbb
+  - 0f8eb3f400726694eb47beb1a9f94ce8
 --- !u!114 &-7542204215074147793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,8 +472,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/fmod/fmod.fspro
-  sourceBankPath: Assets/fmod/Build
+  sourceProjectPath: fmod/fmod.fspro
+  sourceBankPath: fmod/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -473,8 +481,8 @@ MonoBehaviour:
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
-  ImportType: 1
-  TargetAssetPath: FMODBanks
+  ImportType: 0
+  TargetAssetPath: 
   TargetBankFolder: 
   EventLinkage: 0
   LoggingLevel: 2
@@ -508,17 +516,17 @@ MonoBehaviour:
   HideSetupWizard: 0
   LastEventReferenceScanVersion: 131588
   Platforms:
-  - {fileID: 2591944866723169042}
   - {fileID: -8744957073516169295}
-  - {fileID: -5349234155321540625}
-  - {fileID: 2539738398754708557}
+  - {fileID: -7692350400317259461}
   - {fileID: -7542204215074147793}
-  - {fileID: -5477285615875374954}
   - {fileID: -6728252752917896303}
+  - {fileID: -5477285615875374954}
+  - {fileID: -5349234155321540625}
+  - {fileID: -5208835286759765741}
+  - {fileID: 2539738398754708557}
+  - {fileID: 2591944866723169042}
   - {fileID: 7490588560837335390}
   - {fileID: 7939408351902475445}
-  - {fileID: -7692350400317259461}
-  - {fileID: -5208835286759765741}
   MigratedPlatforms: 120000000b0000000c0000000500000006000000150000000a00000008000000090000000200000001000000
 --- !u!114 &2539738398754708557
 MonoBehaviour:
