@@ -1,0 +1,230 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.1f1 (3b70a0754835) revision 3895456'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'ko' Physical Memory: 32697 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/DOWEN/Documents/Unity/Dear
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+14016
+Successfully changed project path to: C:/Users/DOWEN/Documents/Unity/Dear
+C:/Users/DOWEN/Documents/Unity/Dear
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 100.19 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.1f1 (3b70a0754835)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/DOWEN/Documents/Unity/Dear/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2070 SUPER (ID=0x1e84)
+    Vendor:   NVIDIA
+    VRAM:     8011 MB
+    Driver:   27.21.14.5671
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56900
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.011203 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 82.20 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.627 seconds
+Domain Reload Profiling:
+	ReloadAssembly (627ms)
+		BeginReloadAssembly (95ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (418ms)
+			LoadAssemblies (93ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (92ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (251ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (82ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (107ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013224 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 86.99 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.295 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1296ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1069ms)
+			LoadAssemblies (133ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (218ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (618ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (87ms)
+				BeforeProcessingInitializeOnLoad (109ms)
+				ProcessInitializeOnLoadAttributes (320ms)
+				ProcessInitializeOnLoadMethodAttributes (78ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.36 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4578 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 109 unused Assets / (0.8 MB). Loaded Objects now: 4989.
+Memory consumption went from 199.7 MB to 199.0 MB.
+Total: 4.014000 ms (FindLiveObjects: 0.400400 ms CreateObjectMapping: 0.106100 ms MarkObjects: 3.097800 ms  DeleteObjects: 0.408400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 261838.980338 seconds.
+  path: Assets/Game/GraphicResources/Object/5506BBB4-6C22-46D3-A887-F833AC3A0A28.png
+  artifactKey: Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/5506BBB4-6C22-46D3-A887-F833AC3A0A28.png using Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a77845fdd0329ad5726c5b17535174bb') in 0.148626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.458394 seconds.
+  path: Assets/Game/GraphicResources/Object/Spring_Forest.png
+  artifactKey: Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/Spring_Forest.png using Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb271e3159323749af77287258df0d61') in 0.017258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.558552 seconds.
+  path: Assets/Game/GraphicResources/Object/Spring_WasteBuilding.png
+  artifactKey: Guid(cc675ad348119bb49951b650635bd908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/Spring_WasteBuilding.png using Guid(cc675ad348119bb49951b650635bd908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a6cab6944650665b175f8b55d304146') in 0.015273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.839184 seconds.
+  path: Assets/Game/GraphicResources/Object/Spring_Forest.png
+  artifactKey: Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/Spring_Forest.png using Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47c8ca773914bdc9fc62779dfe4c6909') in 0.012474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.569372 seconds.
+  path: Assets/Game/GraphicResources/Object/Spring_Forest.png
+  artifactKey: Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/Spring_Forest.png using Guid(1eec69045afdfcd4489cd5707d30a98d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '653107be43322dafda3b36eee17fddc3') in 0.019601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.192736 seconds.
+  path: Assets/Game/GraphicResources/Object/Forest
+  artifactKey: Guid(c7eb7b2cdeb38f4449c2097c8603a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/Forest using Guid(c7eb7b2cdeb38f4449c2097c8603a1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edb423aff2a8262b0be1fd51e06cae30') in 0.006634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.110017 seconds.
+  path: Assets/Game/GraphicResources/Object/Waste_Building
+  artifactKey: Guid(7260f1a47be0fde429c7fb36d5ba4c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/GraphicResources/Object/Waste_Building using Guid(7260f1a47be0fde429c7fb36d5ba4c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0e3dcddd21139154c56482a784e9060') in 0.006448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.675226 seconds.
+  path: Assets/Game/Scenes/Level/Tutorial_1_1.unity
+  artifactKey: Guid(530be1a20472e724aa63872f7341df5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/Level/Tutorial_1_1.unity using Guid(530be1a20472e724aa63872f7341df5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b962c6143abedb34d0ba318969d7bc1') in 0.006414 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 291.135058 seconds.
+  path: Assets/Game/Scenes/Level/5506BBB4-6C22-46D3-A887-F833AC3A0A28.png
+  artifactKey: Guid(2ad3f02f935a21a40b3b0c1b836bd57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/Level/5506BBB4-6C22-46D3-A887-F833AC3A0A28.png using Guid(2ad3f02f935a21a40b3b0c1b836bd57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b149d828c1a6fa369916a0def6633eb2') in 0.017132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1758.925081 seconds.
+  path: Assets/Game/Scenes/Level/Tutorial_1_1.unity
+  artifactKey: Guid(530be1a20472e724aa63872f7341df5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/Level/Tutorial_1_1.unity using Guid(530be1a20472e724aa63872f7341df5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79b563c73c2f2e14934c8b87272bbc15') in 0.003253 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.587084 seconds.
+  path: Assets/Game/Scenes/Level/Tutorial_2_1.unity
+  artifactKey: Guid(dc87885283feef7458d86231fedc6416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/Level/Tutorial_2_1.unity using Guid(dc87885283feef7458d86231fedc6416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9d7d36241f99c3c1896c8c763cbefe3') in 0.003613 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.555130 seconds.
+  path: Assets/Game/Scenes/Level/Tutorial_2_3.unity
+  artifactKey: Guid(abff1ed0bf70f1b4ebfb19787560627d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game/Scenes/Level/Tutorial_2_3.unity using Guid(abff1ed0bf70f1b4ebfb19787560627d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ad0e8de6cef6e6d7b2547f73366e98f') in 0.003280 seconds 
