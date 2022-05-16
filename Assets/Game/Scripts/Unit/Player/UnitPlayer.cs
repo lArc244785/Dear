@@ -246,6 +246,8 @@ public class UnitPlayer : UnitBase
     {
         base.HitUniqueEventUnit(attackUnit);
 
+        sound.Hit();
+
         Vector2 playerToAttackUnitDir = unitPos - attackUnit.unitPos ;
         playerToAttackUnitDir.Normalize();
 
@@ -258,6 +260,7 @@ public class UnitPlayer : UnitBase
     public override void OnHitObject(GameObject attackObject, int damage)
     {
         base.OnHitObject(attackObject, damage);
+        sound.Hit();
 
         Vector2 playerToAttackUnitDir = unitPos -(Vector2)attackObject.transform.position ;
         playerToAttackUnitDir.Normalize();
