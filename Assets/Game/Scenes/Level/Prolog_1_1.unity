@@ -10625,6 +10625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 3247539187689054192, guid: ea67fe93f636b614f9e78f326d689ffc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea67fe93f636b614f9e78f326d689ffc, type: 3}
 --- !u!4 &990327733 stripped
@@ -10835,8 +10839,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406135789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: -7, z: 0}
-  m_LocalScale: {x: 120, y: 14, z: 1}
+  m_LocalPosition: {x: 20, y: -3.5, z: 0}
+  m_LocalScale: {x: 120, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 990327734}
