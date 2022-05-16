@@ -1033,6 +1033,13 @@ MonoBehaviour:
       Data3: -898157942
       Data4: 1280256673
     Path: event:/char/yuz/tools/rope_quit
+  m_groundPoundEvent:
+    Guid:
+      Data1: -1271139632
+      Data2: 1324430131
+      Data3: 881193655
+      Data4: -165099593
+    Path: event:/char/yuz/tools/groundpound
 --- !u!114 &3693095787999177483
 MonoBehaviour:
   m_ObjectHideFlags: 0

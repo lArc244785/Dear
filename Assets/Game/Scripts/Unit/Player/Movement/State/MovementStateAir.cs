@@ -107,6 +107,8 @@ public class MovementStateAir : I_MovementState
 
     private void GroundPoundReady(PlayerMovementManager movementManager)
     {
+        movementManager.player.sound.GroundPound();
+
         movementManager.player.SetGhostLayer();
         movementManager.isJump = false;
         movementManager.player.inputPlayer.SetControl(false);
