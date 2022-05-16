@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 8
   m_Name: SpawnWallLeft
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -86,9 +86,9 @@ GameObject:
   m_Component:
   - component: {fileID: 735427274}
   m_Layer: 8
-  m_Name: SpawnHit
+  m_Name: SpawnCenter
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -203,7 +203,7 @@ GameObject:
   m_Layer: 8
   m_Name: SpawnWallRight
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -283,7 +283,7 @@ GameObject:
   m_Layer: 8
   m_Name: SpawnFoot
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_spawnFootTransform: {fileID: 1981882168}
   m_spawnWallLeftTransform: {fileID: 181634121}
   m_spawnWallRightTransform: {fileID: 1801411040}
-  m_spawnHitTransform: {fileID: 735427274}
+  m_spawnCenterTransform: {fileID: 735427274}
 --- !u!1 &7338048278161414748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_notXReboundAngleRange: 20
   m_drawRange: 1
   m_isDebugDraw: 1
-  m_gizomColor: {r: 0, g: 0, b: 0, a: 1}
+  m_gizomColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8816093289897762563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3000
+  m_SortingOrder: 3001
   m_Sprite: {fileID: 1681157173, guid: 8398b90201b5931469b787fe64fe573a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
