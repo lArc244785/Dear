@@ -163,11 +163,6 @@ public class Noide : UnitBase
         ComponentInit();
 
     }
-
-
-
-
-
     private void Update()
     {
        m_stateMachine.Excute();
@@ -175,16 +170,15 @@ public class Noide : UnitBase
 
     protected override void HitUniqueEventObject(GameObject attackObject)
     {
-        if (model == null) return;
         base.HitUniqueEventObject(attackObject);
-        hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
+        if (model == null) return;
     }
 
     protected override void HitUniqueEventUnit(UnitBase attackUnit)
     {
-        if (model == null) return;
         base.HitUniqueEventUnit(attackUnit);
-        hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
+
+        if (model == null) return;
     }
     protected override void HitHp(int damage)
     {
@@ -195,69 +189,14 @@ public class Noide : UnitBase
     {
         base.OnHitObject(attackObject, damage);
         Debug.Log("총에 맞음");
+        if(health.hp > 0)
+        hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
     }
-
-    
 
     public void ChangeState(enemyState newState)
     {
         m_stateMachine.ChangeState(m_states[(int)newState]);
     }
-
-
-    private IEnumerator hitLayerEvent { set; get; }
-
-    private void HitLayer()
-    {
-        if (hitLayerEvent != null)
-            StopCoroutine(hitLayerEvent);
-
-        hitLayerEvent = HitLayerEventCoroutine();
-        StartCoroutine(hitLayerEvent);
-    }
-
-    private IEnumerator HitLayerEventCoroutine()
-    {
-        SetGhostLayer();
-        yield return new WaitForSeconds(hitDuringTime + ghostDuringTime);
-        SetDefaultLayer();
-    }
-
-    private void SetLayer(int layer)
-    {
-        gameObject.layer = layer;
-    }
-
-    public void SetGhostLayer()
-    {
-        SetLayer(ghostLayer);
-    }
-
-    public void SetDefaultLayer()
-    {
-        SetLayer(defaultLayer);
-    }
-
-
-    private IEnumerator ghostFrozenEvent { set; get; }
-    public void GhostFrozen(float fTime)
-    {
-        if (ghostFrozenEvent != null)
-            StopCoroutine(ghostFrozenEvent);
-
-        ghostFrozenEvent = GhostFrozenEventCoroutine(fTime);
-
-        StartCoroutine(ghostFrozenEvent);
-    }
-
-    private IEnumerator GhostFrozenEventCoroutine(float fTime)
-    {
-        SetGhostLayer();
-        yield return new WaitForSeconds(fTime);
-        SetDefaultLayer();
-    }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
