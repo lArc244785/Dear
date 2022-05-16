@@ -72,9 +72,9 @@ public class PlayerSound : MonoBehaviour
 
         m_groundSensor = player.movementManager.groundSensor;
 
-        footStepLoop = false;
-        m_footStepLoopCoroutine = FootStepCoroutine(footStepPlayTick);
-        StartCoroutine(m_footStepLoopCoroutine);
+        //footStepLoop = false;
+        //m_footStepLoopCoroutine = FootStepCoroutine(footStepPlayTick);
+        //StartCoroutine(m_footStepLoopCoroutine);
     }
 
 
@@ -116,41 +116,41 @@ public class PlayerSound : MonoBehaviour
         SoundManager.instance.SoundPlay(m_landingInstance);
     }
 
-    private IEnumerator m_footStepLoopCoroutine;
-    private bool m_footStepLoop;
-    public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
+    //private IEnumerator m_footStepLoopCoroutine;
+    //private bool m_footStepLoop;
+    //public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
 
 
-    private IEnumerator FootStepCoroutine(float tickTime)
-    {
-        float value;
+    //private IEnumerator FootStepCoroutine(float tickTime)
+    //{
+    //    float value;
 
-        while (true)
-        {
-            if (footStepLoop)
-            {
-                Collider2D groundCollider = m_groundSensor.GetGroundCollider2D();
-                value = 0.0f;
+    //    while (true)
+    //    {
+    //        if (footStepLoop)
+    //        {
+    //            Collider2D groundCollider = m_groundSensor.GetGroundCollider2D();
+    //            value = 0.0f;
 
-                if (groundCollider != null)
-                {
-                    if (groundCollider.tag == "Forest")
-                    {
-                        value = 1.0f;
-                    }
-                    else if (groundCollider.tag == "Asphalt")
-                    {
-                        value = 2.0f;
-                    }
-                }
+    //            if (groundCollider != null)
+    //            {
+    //                if (groundCollider.tag == "Forest")
+    //                {
+    //                    value = 1.0f;
+    //                }
+    //                else if (groundCollider.tag == "Asphalt")
+    //                {
+    //                    value = 2.0f;
+    //                }
+    //            }
 
 
-                FootStep(value);
-            }
-            yield return new WaitForSeconds(tickTime);
-        }
+    //            FootStep(value);
+    //        }
+    //        yield return new WaitForSeconds(tickTime);
+    //    }
 
-    }
+    //}
 
 
 

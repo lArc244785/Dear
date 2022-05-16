@@ -77,6 +77,8 @@ public class MovementStateAir : I_MovementState
                     GroundPoundInteraction(movementManager, poundLapCollider2D);
                 }
                 GroundPoundLanding(movementManager);
+
+
             }
         }
 
@@ -86,6 +88,7 @@ public class MovementStateAir : I_MovementState
 
     private void GroundPoundLanding(PlayerMovementManager movementManager)
     {
+        movementManager.player.particleManager.GroundPoundEffect();
         movementManager.player.GhostFrozen(movementManager.movementData.groundPoundLandingTime);
         currentGroundPoundType = GroundPoundType.None;
     }
