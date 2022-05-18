@@ -82,6 +82,13 @@ MonoBehaviour:
   m_gizmosTrackingColor: {r: 0.17515779, g: 1, b: 0, a: 1}
   m_gizmosDeadTrackingColor: {r: 1, g: 0, b: 0, a: 1}
   m_missileObject: {fileID: 2794227655303801860, guid: 97b61dd19812bcb4c88bd0b1b1d6d70f, type: 3}
+  m_fireEvent:
+    Guid:
+      Data1: -990266117
+      Data2: 1083313912
+      Data3: 1056753059
+      Data4: -661402584
+    Path: event:/char/mad/shoot
 --- !u!1 &2009695998170262269
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 60
+  m_SortingOrder: 3002
   m_Sprite: {fileID: -194380258, guid: bfcc8f4ce4d10b04e9e4f8d2b82cf921, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

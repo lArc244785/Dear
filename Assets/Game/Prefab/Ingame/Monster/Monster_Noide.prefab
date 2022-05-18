@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 9073526965198746472}
   - component: {fileID: 9073526965198746473}
   - component: {fileID: 9073526965198746470}
-  m_Layer: 0
+  - component: {fileID: 1037070635840970372}
+  m_Layer: 9
   m_Name: monsterDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089b014fa781b3240b7d4d4413d7e923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveDirection: 1
+  m_moveDirection: 0
   m_patrolTime: 4
   m_moveSpeed: 12
   m_hitDuringTime: 0
@@ -186,6 +187,22 @@ MonoBehaviour:
     m_Bits: 256
   m_hitCollider: {fileID: 9073526965198746473}
   m_exitTime: 0.5
+--- !u!114 &1037070635840970372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073526965198746479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27e9734dce2dcf4cb8d9a8c66f17e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitColor: {r: 1, g: 0, b: 0, a: 1}
+  m_hitTickTime: 0.1
+  m_ghostColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0.4745098}
+  m_ghostTickTime: 0.1
 --- !u!1 &9073526966055286370
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +325,7 @@ GameObject:
   - component: {fileID: 9073526966503417130}
   - component: {fileID: 9073526966503417128}
   - component: {fileID: 9073526966503417131}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

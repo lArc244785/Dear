@@ -32,6 +32,7 @@ public class PlayerSound : MonoBehaviour
     private FMOD.Studio.PARAMETER_ID m_landingID;
     #endregion
 
+    #region Wall
     [Header("Wall Sound")]
     [SerializeField]
     private FMODUnity.EventReference m_wallJumpLeftEvent;
@@ -39,7 +40,9 @@ public class PlayerSound : MonoBehaviour
     private FMODUnity.EventReference m_wallJumpRightEvent;
     [SerializeField]
     private FMODUnity.EventReference m_wallGripEvent;
+    #endregion
 
+    #region rope
     [Header("Rope")]
     [SerializeField]
     private FMODUnity.EventReference m_ropeShoot;
@@ -49,6 +52,13 @@ public class PlayerSound : MonoBehaviour
     private FMODUnity.EventReference m_ropeAccelEvent;
     [SerializeField]
     private FMODUnity.EventReference m_ropeQuitEvent;
+    #endregion
+
+    #region groundPound
+    [Header("GroundPound")]
+    [SerializeField]
+    private FMODUnity.EventReference m_groundPoundEvent;
+    #endregion
 
 
     private string m_surfaceIndex = "surface_index";
@@ -195,4 +205,10 @@ public class PlayerSound : MonoBehaviour
     }
     #endregion
 
+    #region GroundPound Sound Funtion
+    public void GroundPound()
+    {
+        SoundManager.instance.SoundOneShot(m_groundPoundEvent);
+    }
+    #endregion
 }
