@@ -13,10 +13,19 @@ public class DialogueManager : SingleToon<DialogueManager>
     private char m_commandHeader = '$';
     #endregion
 
+    #region EventDictionary
     private Dictionary<string, DialogueCoroutine> m_dialogueEventDictionary;
+    private Dictionary<string, DialogueCoroutine> dialogueEventDictionary
+    {
+        get
+        {
+            return m_dialogueEventDictionary;
+        }
+    }
+    #endregion
+
     private delegate IEnumerator DialogueCoroutine();
 
-    private Stack<IEnumerator> m_runDialogueCoroutineStack = new Stack<IEnumerator>();
 
     #region DialogueEvent Paramater
     private string[] m_datas;
@@ -26,14 +35,28 @@ public class DialogueManager : SingleToon<DialogueManager>
     #endregion
 
     #region Reference
-    [Header("Reference")]
     private UI_DialogueView m_uiDialogue;
+    private UI_DialogueView uiDialoge
+    {
+        get
+        {
+            return m_uiDialogue;
+        }
+    }
     #endregion
 
     #region Text
     [SerializeField]
     [Range(0f, 1f)]
     private float m_textDuration;
+    #endregion
+
+    #region ImageManager
+    private DialogeImageManager m_imageManager;
+    private DialogeImageManager imageManager
+    {
+        get { return m_imageManager; }
+    }
     #endregion
 
 
@@ -46,6 +69,9 @@ public class DialogueManager : SingleToon<DialogueManager>
 
         DialogueEventInit();
         m_uiDialogue = UIManager.instance.dialogueView;
+        m_imageManager = GetComponent<DialogeImageManager>();
+
+        imageManager.Init();
 
         return true;
     }
@@ -56,7 +82,7 @@ public class DialogueManager : SingleToon<DialogueManager>
     private void Start()
     {
         Init();
-        StartDialogue(inputData.node);
+        //StartDialogue(inputData.node);
 
     }
 
@@ -65,10 +91,13 @@ public class DialogueManager : SingleToon<DialogueManager>
     {
         m_dialogueEventDictionary = new Dictionary<string, DialogueCoroutine>();
 
-        m_dialogueEventDictionary.Add("Name", GetNameCoroutine);
-        m_dialogueEventDictionary.Add("Sentences", GetSentenesCoroutine);
-        m_dialogueEventDictionary.Add("UI_ON", GetDialogueUIOnCoroutine);
-        m_dialogueEventDictionary.Add("UI_OFF", GetDialogueUIOffCoroutine);
+        dialogueEventDictionary.Add("Name", GetNameCoroutine);
+        dialogueEventDictionary.Add("Sentences", GetSentenesCoroutine);
+        dialogueEventDictionary.Add("UI_ON", GetDialogueUIOnCoroutine);
+        dialogueEventDictionary.Add("UI_OFF", GetDialogueUIOffCoroutine);
+        dialogueEventDictionary.Add("UI_LeftImage", GetSetLeftImageCoroutine);
+        dialogueEventDictionary.Add("UI_RightImage", GetSetRightImageCoroutine);
+        dialogueEventDictionary.Add("UI_BackGroundImage", GetSetBackgroundImageCoroutine);
     }
 
 
@@ -95,7 +124,7 @@ public class DialogueManager : SingleToon<DialogueManager>
         }
 
         m_currentNode = m_currentNode.nextNode[0];
-
+       
 
         StartCoroutine(DialogueEventCoroutine());
     }
@@ -121,15 +150,11 @@ public class DialogueManager : SingleToon<DialogueManager>
         m_datas = m_currentNode.data.Split(m_filterDatas, System.StringSplitOptions.RemoveEmptyEntries);
         m_dataIndex = 0;
 
-        m_uiDialogue.nameText = null;
-        m_uiDialogue.sentencesText = null;
+        uiDialoge.SetNameText(null);
+        uiDialoge.SetSentenceText(null);
         m_uiDialogue.LeftImageOff();
         m_uiDialogue.RightImageOff();
-
-        while(m_runDialogueCoroutineStack.Count > 0)
-        {
-            StopCoroutine(m_runDialogueCoroutineStack.Pop());
-        }
+        m_uiDialogue.BackGroundOff();
 
 
         while (m_dataIndex < m_datas.Length)
@@ -151,8 +176,7 @@ public class DialogueManager : SingleToon<DialogueManager>
         string commandID = GetCommandID(m_datas[m_dataIndex]);
         m_dataIndex++;
 
-        m_runDialogueCoroutineStack.Push(m_dialogueEventDictionary[commandID]());
-        yield return StartCoroutine(m_runDialogueCoroutineStack.Peek()); 
+        yield return StartCoroutine(m_dialogueEventDictionary[commandID]()); 
     }
 
     #region NameCoroutine
@@ -173,8 +197,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
             m_dataIndex++;
         }
-
-       m_uiDialogue.nameText = data;
+        uiDialoge.SetNameText(data);
 
         yield return null;
     }
@@ -221,10 +244,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
     private IEnumerator DialogueUIOnCoroutine()
     {
-        m_uiDialogue.Toggle(true);
-
-
-
+        uiDialoge.Toggle(true);
         yield return null;
     }
     #endregion
@@ -239,7 +259,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
     private IEnumerator DialogueUIOffCoroutine()
     {
-        m_uiDialogue.Toggle(false);
+        uiDialoge.Toggle(false);
         yield return null;
     }
     #endregion
@@ -258,18 +278,62 @@ public class DialogueManager : SingleToon<DialogueManager>
 
     #endregion
 
-    #region ImageChange
-    //private IEnumerator ImageSettingCoroutine()
-    //{
+    #region SetLeftImageCoroutine
+    private IEnumerator GetSetLeftImageCoroutine()
+    {
+        string id = m_datas[m_dataIndex++];
+        yield return SetLeftImageCoroutine(id);
+    }
 
-    //}
+    private IEnumerator SetLeftImageCoroutine(string id)
+    {
+        Sprite sprite = imageManager.dialogeImageDictionary[id];
+        UIManager.instance.dialogueView.LeftImageOn(sprite);
+        m_dataIndex++;
+        yield return null;
+    }
+
+    #endregion
+
+    #region SetRightImageCoroutine
+    private IEnumerator GetSetRightImageCoroutine()
+    {
+        string id = m_datas[m_dataIndex++];
+        yield return SetRightImageCoroutine(id);
+    }
+
+    private IEnumerator SetRightImageCoroutine(string id)
+    {
+        Sprite sprite = imageManager.dialogeImageDictionary[id];
+        UIManager.instance.dialogueView.RightImageOn(sprite);
+        m_dataIndex++;
+        yield return null;
+    }
+
+    #endregion
+
+    #region SetBackGroundImageCoroutine
+    private IEnumerator GetSetBackgroundImageCoroutine()
+    {
+        string id = m_datas[m_dataIndex++];
+        yield return SetBackgroundImageCoroutine(id);
+    }
+
+    private IEnumerator SetBackgroundImageCoroutine(string id)
+    {
+        Sprite sprite = imageManager.dialogeImageDictionary[id];
+        UIManager.instance.dialogueView.BackGroundOn(sprite);
+        m_dataIndex++;
+        yield return null;
+    }
+
     #endregion
 
     private IEnumerator TextDurlationCoroutine(string data)
     {
         foreach (char letter in data.ToCharArray())
         {
-            m_uiDialogue.sentencesText += letter;
+            uiDialoge.AddSentenceText(letter.ToString());
             yield return new WaitForSeconds(m_textDuration);
         }
     }

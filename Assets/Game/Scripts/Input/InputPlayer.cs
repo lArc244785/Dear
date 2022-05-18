@@ -178,7 +178,7 @@ public class InputPlayer : MonoBehaviour
     {
         if (!isControl)
             return;
-        if (movementManger.currentState == PlayerMovementManager.State.Ground)
+        //if (movementManger.currentState == PlayerMovementManager.State.Ground)
             mad.Attack();
     }
 

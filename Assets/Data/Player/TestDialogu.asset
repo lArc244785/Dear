@@ -15,15 +15,21 @@ MonoBehaviour:
   node:
     data: '<$UI_ON>
 
+      <$UI_LeftImage>T1</>
+
       <$Name>Test</Name>
 
       <$Sentences>Sentences....</Sentences>'
     nextNode:
-    - data: '<$Name>Test1</Name>
+    - data: '<$UI_RightImage>T2</>
+
+        <$Name>Test1</Name>
 
         <$Sentences>Sentences....</Sentences>'
       nextNode:
-      - data: '<$Name>Test2</Name>
+      - data: '<$UI_BackGroundImage>B1</>
+
+          <$Name>Test2</Name>
 
           <$Sentences>Seasdasdasdasdasdasd
 

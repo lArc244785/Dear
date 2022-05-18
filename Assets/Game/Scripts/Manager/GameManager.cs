@@ -69,7 +69,7 @@ public class GameManager : SingleToon<GameManager>
         m_changeGameStaet[(int)GameSate.Load] = ChangeLoad;
         m_changeGameStaet[(int)GameSate.StageLoad] = ChangeStageLoad;
         m_changeGameStaet[(int)GameSate.GameStart] = ChageGameStart;
-        m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeGamePlaying;
+        m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeInGameUISetting;
 
     }
 
@@ -91,13 +91,13 @@ public class GameManager : SingleToon<GameManager>
 
     private void ChangeGamePlaying()
     {
-        //Player.isControl = true;
+        stageManager.player.inputPlayer.isControl = true;
         
     }
 
     private void ChangeInGameUISetting()
     {
-        //Player.isControl = false;
+        stageManager.player.inputPlayer.isControl = false;
     }
 
     private void ChangeLoad()

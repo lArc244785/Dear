@@ -120,7 +120,7 @@ public class Mad : MonoBehaviour
     }
     #endregion
 
-    #region
+    #region fire
     [SerializeField]
     private FMODUnity.EventReference m_fireEvent;
     #endregion
@@ -243,7 +243,7 @@ public class Mad : MonoBehaviour
 
     public void Attack()
     {
-        if(lastAttackTime < 0.0f && currentState != State.Attack)
+        if( currentState != State.Attack)
         {
             ChangeState(State.Attack);
         }
