@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponData: {fileID: 11400000, guid: 95bd1507fb179b346a8252591a94a6b2, type: 2}
-  m_missileData: {fileID: 11400000, guid: caf45dfd3e5466e488f7d568c0ee8400, type: 2}
+  m_missileData: {fileID: 11400000, guid: c40091e2b421aa048a60a796dfa2dcbc, type: 2}
 --- !u!1 &4365779349590421809
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : InteractionBase
 {
     [SerializeField]
-    private DialoguData data;
+    private DialogueData data;
 
     protected override void Enter(Collider2D collision)
     {

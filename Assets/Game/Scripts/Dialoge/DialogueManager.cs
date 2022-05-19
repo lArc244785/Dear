@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueManager : SingleToon<DialogueManager>
 {
-    public DialoguData inputData;
+    public DialogueData inputData;
 
     private DialogueNode m_currentNode;
 
@@ -51,13 +51,6 @@ public class DialogueManager : SingleToon<DialogueManager>
     private float m_textDuration;
     #endregion
 
-    #region ImageManager
-    private DialogeImageManager m_imageManager;
-    private DialogeImageManager imageManager
-    {
-        get { return m_imageManager; }
-    }
-    #endregion
 
 
     protected override bool Init()
@@ -69,9 +62,6 @@ public class DialogueManager : SingleToon<DialogueManager>
 
         DialogueEventInit();
         m_uiDialogue = UIManager.instance.dialogueView;
-        m_imageManager = GetComponent<DialogeImageManager>();
-
-        imageManager.Init();
 
         return true;
     }
@@ -222,7 +212,7 @@ public class DialogueManager : SingleToon<DialogueManager>
             {
                 yield return StartCoroutine(StartCommandCoroutine());
             }
-            else
+            else if(m_datas[m_dataIndex] != "/" )
             {
                 yield return StartCoroutine(TextDurlationCoroutine(m_datas[m_dataIndex]));
             }
@@ -287,7 +277,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
     private IEnumerator SetLeftImageCoroutine(string id)
     {
-        Sprite sprite = imageManager.dialogeImageDictionary[id];
+        Sprite sprite = ImageManager.instance.dialogeImageDictionary[id];
         UIManager.instance.dialogueView.LeftImageOn(sprite);
         m_dataIndex++;
         yield return null;
@@ -298,13 +288,13 @@ public class DialogueManager : SingleToon<DialogueManager>
     #region SetRightImageCoroutine
     private IEnumerator GetSetRightImageCoroutine()
     {
-        string id = m_datas[m_dataIndex++];
+        string id = m_datas[m_dataIndex];
         yield return SetRightImageCoroutine(id);
     }
 
     private IEnumerator SetRightImageCoroutine(string id)
     {
-        Sprite sprite = imageManager.dialogeImageDictionary[id];
+        Sprite sprite = ImageManager.instance.dialogeImageDictionary[id];
         UIManager.instance.dialogueView.RightImageOn(sprite);
         m_dataIndex++;
         yield return null;
@@ -315,15 +305,15 @@ public class DialogueManager : SingleToon<DialogueManager>
     #region SetBackGroundImageCoroutine
     private IEnumerator GetSetBackgroundImageCoroutine()
     {
-        string id = m_datas[m_dataIndex++];
+        string id = m_datas[m_dataIndex];
         yield return SetBackgroundImageCoroutine(id);
     }
 
     private IEnumerator SetBackgroundImageCoroutine(string id)
     {
-        Sprite sprite = imageManager.dialogeImageDictionary[id];
+        Sprite sprite = ImageManager.instance.dialogeImageDictionary[id];
         UIManager.instance.dialogueView.BackGroundOn(sprite);
-        m_dataIndex++;
+        //m_dataIndex++;
         yield return null;
     }
 

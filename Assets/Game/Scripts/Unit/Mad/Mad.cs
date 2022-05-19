@@ -243,10 +243,12 @@ public class Mad : MonoBehaviour
 
     public void Attack()
     {
-        if( currentState != State.Attack)
+        if (currentState != State.Attack && lastAttackTime <= 0.0f)
         {
             ChangeState(State.Attack);
         }
+
+
     }
 
     public void OnLastOnCoolTime()
