@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d13a6e21a18c004388aed70cc7383d0, type: 3}
+  m_Name: New Dialogue Data
+  m_EditorClassIdentifier: 
+  node:
+    data: "<$UI_ON>\n<$UI_BackGroundImage>B1</>\n<$UI_LeftImage>T1</>\n<$Name>\uC774\uB9841</Name>\n<$Sentences>\uB300\uD6541</Sentences>"
+    nextNode:
+    - data: "<$UI_RightImage>T2</>\n<$Name>\uC774\uB9842</Name>\n<$Sentences>\uB300\uD654<$UI_BackGroundImage>B1</>2</Sentences>"
+      nextNode: []
