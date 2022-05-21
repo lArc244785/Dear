@@ -377,6 +377,13 @@ public class UnitPlayer : UnitBase
     }
 
 
+    public void Trun(bool isRight)
+    {
+        Vector2 lookDir = Vector2.left;
+        if (isRight)
+            lookDir = Vector2.right;
 
+        movementManager.Trun(lookDir);
+    }
 
 }

@@ -6,13 +6,19 @@ using UnityEngine.Events;
 public class Interaction_Event : InteractionBase
 {
     [SerializeField]
-    private UnityEvent m_interactionEvent;
+    private UnityEvent m_enterEvent;
+    private UnityEvent enterEvent { get { return m_enterEvent; } }
+
+    [SerializeField]
+    private UnityEvent m_exitEvent;
+    private UnityEvent exitEvent { get { return m_exitEvent; } }
 
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-            collision.gameObject.GetComponent<PlayerInteraction>().InteractionEvent = m_interactionEvent;
-       
+        enterEvent.Invoke();
+
+
     }
 
 
@@ -20,7 +26,7 @@ public class Interaction_Event : InteractionBase
     protected override void Exit(Collider2D collision)
     {
         base.Exit(collision);
-        collision.gameObject.GetComponent<PlayerInteraction>().InteractionEvent = null;
+        exitEvent.Invoke();
     }
 
 

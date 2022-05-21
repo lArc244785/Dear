@@ -11982,6 +11982,10 @@ PrefabInstance:
       propertyPath: m_inputPlayer
       value: 
       objectReference: {fileID: 1502391028}
+    - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_playerDirRight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4241520126860329967, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
       propertyPath: m_RootOrder
       value: 4

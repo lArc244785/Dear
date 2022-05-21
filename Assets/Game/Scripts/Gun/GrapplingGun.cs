@@ -86,7 +86,7 @@ public class GrapplingGun : ActiveToolBase
 
     #region FireTr
     private Transform m_fireTr;
-    private Transform fireTr
+    public Transform fireTr
     {
         get { return m_fireTr; }
     }
@@ -94,7 +94,7 @@ public class GrapplingGun : ActiveToolBase
 
     #region Hook
     private Hook m_hook;
-    private Hook hook
+    public Hook hook
     {
         get { return m_hook; }
     }
@@ -152,6 +152,16 @@ public class GrapplingGun : ActiveToolBase
     }
 
 
+    private Vector2 m_targetPos;
+    public Vector2 targetPos
+    {
+        get
+        {
+            return m_targetPos;
+        }
+    }
+
+
     public override void Init(UnitPlayer player)
     {
         base.Init(player);
@@ -170,6 +180,7 @@ public class GrapplingGun : ActiveToolBase
         m_interactionSensorCollider = m_interactionSensorTr.GetComponent<CircleCollider2D>();
 
         hook.Init(this);
+        ropeRenderer.Init(this);
         interactionSensorCollider.radius = interactionSensorRadiuse;
 
     }
@@ -269,6 +280,7 @@ public class GrapplingGun : ActiveToolBase
     private void Fire(Vector2 targetPos)
     {
         currentState = State.Fire;
+        m_targetPos = targetPos;
 
         AllInteractionOff();
 
@@ -287,7 +299,7 @@ public class GrapplingGun : ActiveToolBase
 
         player.inputPlayer.SetControl(false);
 
-        ropeRenderer.isDraw = true;
+        ropeRenderer.DrawInit(fireTr.position, dir);
     }
 
     private void Cancle()
@@ -326,7 +338,7 @@ public class GrapplingGun : ActiveToolBase
         hook.transform.localRotation = Quaternion.identity;
 
 
-        ropeRenderer.isDraw = false;
+        ropeRenderer.OffDraw();
 
         pickType = PickType.None;
     }
