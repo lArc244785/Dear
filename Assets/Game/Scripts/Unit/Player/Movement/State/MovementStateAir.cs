@@ -30,6 +30,7 @@ public class MovementStateAir : I_MovementState
     {
         movementManager.Resistance(movementManager.movementData.resistanceInAirAmount);
         movementManager.Run(1.0f, true);
+        DownVelocityCalmpY(movementManager);
     }
 
     public void UpdateExcute(PlayerMovementManager movementManager)
@@ -53,6 +54,16 @@ public class MovementStateAir : I_MovementState
         coyoteSystem.JumpCutCoyoteTime();
         coyoteSystem.WallCoyoteTime();
     }
+
+    private void DownVelocityCalmpY(PlayerMovementManager movementManager)
+    {
+        Vector2 currentVelocity = movementManager.player.rig2D.velocity;
+        if (currentVelocity.y < -movementManager.movementData.downClampVelocityY)
+            currentVelocity.y = Mathf.Clamp(currentVelocity.y, -movementManager.movementData.downClampVelocityY, 0.0f);
+
+        movementManager.player.rig2D.velocity = currentVelocity;
+    }
+
 
     private void GroundPoundUpdate(PlayerMovementManager movementManager)
     {

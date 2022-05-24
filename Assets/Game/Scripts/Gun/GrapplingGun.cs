@@ -162,6 +162,16 @@ public class GrapplingGun : ActiveToolBase
     }
 
 
+    private Vector2 m_startPos;
+    public Vector2 startPos 
+    {
+        get
+        {
+            return m_startPos;
+        }
+    }
+
+
     public override void Init(UnitPlayer player)
     {
         base.Init(player);
@@ -272,14 +282,30 @@ public class GrapplingGun : ActiveToolBase
     {
         foreach (InteractionGrapping interaction in rangeInteractionObjectList)
         {
+            if(IsOnInteractionRange(interaction.transform.position))
             interaction.OnInteraction();
         }
     }
 
 
+    private void UpdateInteraction()
+    {
+        foreach (InteractionGrapping interaction in rangeInteractionObjectList)
+        {
+            if (IsOnInteractionRange(interaction.transform.position))
+                interaction.OnInteraction();
+            else
+                interaction.OffInteraction();
+        }
+    }
+
+
+
     private void Fire(Vector2 targetPos)
     {
         currentState = State.Fire;
+
+        m_startPos = (Vector2)fireTr.position;
         m_targetPos = targetPos;
 
         AllInteractionOff();
@@ -295,7 +321,7 @@ public class GrapplingGun : ActiveToolBase
         dir.Normalize();
 
 
-        hook.Fire(dir, targetPos);
+        hook.Fire(startPos, targetPos);
 
         player.inputPlayer.SetControl(false);
 
@@ -312,6 +338,8 @@ public class GrapplingGun : ActiveToolBase
         else
             player.movementManager.currentState = PlayerMovementManager.State.Ground;
 
+
+        player.rig2D.gravityScale = 1.0f;
 
         player.inputPlayer.SetControl(true);
 
@@ -330,9 +358,6 @@ public class GrapplingGun : ActiveToolBase
         player.shoulder.SetMouse();
         player.animationManager.RopeToAirAnimation();
 
-
-        hook.rig2D.velocity = Vector2.zero;
-        hook.rig2D.bodyType = RigidbodyType2D.Kinematic;
         hook.transform.parent = fireTr;
         hook.transform.localPosition = Vector3.zero;
         hook.transform.localRotation = Quaternion.identity;
@@ -371,11 +396,8 @@ public class GrapplingGun : ActiveToolBase
     private void Update()
     {
         if (currentState == State.None)
-            return;
-
-        if (currentState == State.Fire)
         {
-            FireUpdate();
+            UpdateInteraction();
         }
 
         if (currentState == State.Pull)
@@ -393,46 +415,30 @@ public class GrapplingGun : ActiveToolBase
             Cancle();
     }
 
-    private Vector2 m_nextPullPos;
-    private float m_pullDistance;
-    private float m_nextPullDistacne;
-
 
 
     private void PullUpdate()
     {
-        if (TargetAcceleration(
-            player.rig2D,
-            data.pullAcclelation,
-            data.pullVelcoityPower,
-            pullDir,
-            data.pullMaxSpeed,
-            hook.transform.position))
+        if(isContant(player.transform.position, targetPos))
         {
             Cancle();
-            Debug.Log("RR: " + player.rig2D.velocity);
-            player.rig2D.velocity = Vector2.ClampMagnitude(player.rig2D.velocity, data.pullStopMaxLength);
+            player.movementManager.currentState = PlayerMovementManager.State.RopeJump;
         }
+
+        Pull();
 
     }
 
 
-    private Vector2 pullDir { set; get; }
 
 
     private void PullSetting()
     {
         Vector2 hookPos = (Vector2)hook.transform.position;
 
-
-        pullDir = hookPos - player.unitPos;
-        pullDir.Normalize();
-
+        currentPullTime = 0.0f;
 
         currentState = State.Pull;
-
-        //Cancle();
-
     }
 
 
@@ -449,40 +455,40 @@ public class GrapplingGun : ActiveToolBase
         return resultType;
     }
 
-    public bool TargetAcceleration(Rigidbody2D rig, float accelRate, float velcoityPower, Vector2 targetDir, float targetSpeed, Vector2 targetPos)
+    private float currentPullTime { set; get; }
+
+
+    private void Pull()
     {
-        Vector2 currentPos = (Vector2)rig.transform.position;
-        Vector2 nextMovePos = currentPos + (rig.velocity * Time.deltaTime);
+        currentPullTime += Time.deltaTime;
 
-        float currentDistance = Vector2.Distance(currentPos, targetPos);
-        float nextDistacen = Vector2.Distance(nextMovePos, targetPos);
-
-        if (currentDistance < nextDistacen)
-        {
-            rig.transform.position = targetPos;
-            return true;
-        }
-
-
-
-        Vector2 targetVelocity = targetDir * targetSpeed;
-
-        Vector2 velocityDif;
-
-        velocityDif = targetVelocity - rig.velocity;
-
-        Vector2 movement;
-
-
-        movement.x = Mathf.Pow(Mathf.Abs(velocityDif.x) * accelRate, velcoityPower) * Mathf.Sign(velocityDif.x);
-        movement.y = Mathf.Pow(Mathf.Abs(velocityDif.y) * accelRate, velcoityPower) * Mathf.Sign(velocityDif.y);
-
-        rig.AddForce(movement);
-
-        return false;
-
-
+        LerpMovement(player.transform, startPos, targetPos, currentPullTime, data.pullSpeed, data.pullProgessionCurve);
     }
 
+
+    public void LerpMovement(Transform moveTr, Vector2 startPos, Vector2 targetPos, float currentTime, float speed, AnimationCurve progessionCurve)
+    {
+        float delta = currentTime * speed;
+        if (delta > 1.0f)
+            delta = 1.0f;
+        float progession = progessionCurve.Evaluate(delta);
+        Vector2 CurrentPos = Vector2.Lerp(startPos, targetPos, progession);
+
+        moveTr.position = CurrentPos;
+    }
+
+
+
+    public bool isContant(Vector2 currentPos, Vector2 targetPos)
+    {
+        return Vector2.Equals(currentPos, targetPos);
+    }
+
+    public bool IsOnInteractionRange(Vector2 interactionPos)
+    {
+        float distance = Vector2.Distance(player.transform.position, interactionPos);
+
+        return distance > 5.0f;
+    }
 
 }

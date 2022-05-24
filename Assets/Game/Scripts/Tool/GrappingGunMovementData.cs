@@ -24,37 +24,36 @@ public class GrappingGunMovementData : ScriptableObject
     {
         get { return m_maxDistance; }
     }
+    [SerializeField]
+    private AnimationCurve m_ropeAnimationCurve;
+    public AnimationCurve ropeAnimationCurve
+    {
+        get
+        {
+            return m_ropeAnimationCurve;
+        }
+    }
 
     #endregion
-            
+
     #region Hook
     [Header("Hook")]
     [SerializeField]
-    private float m_hookMaxSpeed;
-    public float hookMaxSpeed
+    private AnimationCurve m_hookProgessionCurve;
+    public AnimationCurve hookProgessionCurve
     {
         get
         {
-            return m_hookMaxSpeed;
+            return m_hookProgessionCurve;
         }
     }
     [SerializeField]
-    private float m_hookAcclelation;
-    public float hookAcclelation
+    private float m_hookSpeed;
+    public float hookSpeed
     {
         get
         {
-            return m_hookAcclelation;
-        }
-    }
-    [Range(0.0f, 3.0f)]
-    [SerializeField]
-    private float m_hookVelocityPower;
-    public float hookVelocityPower
-    {
-        get
-        {
-            return m_hookVelocityPower;
+            return m_hookSpeed;
         }
     }
     #endregion
@@ -62,46 +61,23 @@ public class GrappingGunMovementData : ScriptableObject
     #region Pull
     [Header("Pull")]
     [SerializeField]
-    private float m_pullMaxSpeed;
-    public float pullMaxSpeed
+    private AnimationCurve m_pullProgessionCurve;
+    public AnimationCurve pullProgessionCurve
     {
         get
         {
-            return m_pullMaxSpeed;
+            return m_pullProgessionCurve;
         }
     }
     [SerializeField]
-    private float m_pullAcclelation;
-    public float pullAcclelation
+    private float m_pullSpeed;
+    public float pullSpeed
     {
         get
         {
-            return m_pullAcclelation;
-        }
-    }
-    [Range(0.0f, 3.0f)]
-    [SerializeField]
-    private float m_pullVelcoityPower;
-    public float pullVelcoityPower
-    {
-        get
-        {
-            return m_pullVelcoityPower;
-        }
-    }
-
-    [SerializeField]
-    private float m_pullStopMaxLength;
-    public float pullStopMaxLength
-    {
-        get
-        {
-            return m_pullStopMaxLength;
+            return m_pullSpeed;
         }
     }
 
     #endregion
-
-
-
 }

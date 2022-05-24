@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bed5c7267858a4439ee60834134adbb, type: 3}
   m_Name: DefaultMovement
   m_EditorClassIdentifier: 
-  m_gravityScale: 1
-  m_fallGravityMult: 1.5
+  m_gravityScale: 1.2
+  m_fallGravityMult: 2.5
   m_resistanceInAirAmount: 0.1
   m_frictionAmount: 0.85
   m_coyoteTime: 0.1
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_hitImfectPower: 10
   m_hitImfectDuringTime: 0.3
   m_hitImfectRunLerp: 0.5
-  m_groundPoundPower: 30
+  m_groundPoundPower: 26.97
   m_groundPoundMoveY: 1
   m_groundPoundReadyTime: 0.5
   m_groundPoundReadyMoveYCurve:
@@ -78,3 +78,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_groundPoundReadyPathLenth: 5
   m_groundPoundLandingTime: 0.5
+  m_ropeJumpDuringTime: 0.3
+  m_ropeJumpGravityScale: 1.5
+  m_ropeJumpXMultiply: 0.6
+  m_ropeJumpForce: 22.5

@@ -39,17 +39,6 @@ public class RopeRenderer : MonoBehaviour
     }
     #endregion
 
-    #region ropeAnimationCurve
-    [SerializeField]
-    private AnimationCurve m_ropeAnimationCurve;
-    private AnimationCurve ropeAnimationCurve
-    {
-        get
-        {
-            return m_ropeAnimationCurve;
-        }
-    }
-    #endregion
 
     #region precisionDeltas
     private float[] m_precisionDeltas;
@@ -136,7 +125,7 @@ public class RopeRenderer : MonoBehaviour
 
         for (int i = 0; i < precisionDeltas.Length; i++)
         {
-            offset = dirPerpendicular * ropeAnimationCurve.Evaluate(precisionDeltas[i]) * waveSize;
+            offset = dirPerpendicular * grapplingGun.data.ropeAnimationCurve.Evaluate(precisionDeltas[i]) * waveSize;
             m_targetPoss[i] = Vector2.Lerp(firePoint, grapplingGun.targetPos, precisionDeltas[i]) + offset;
         }
 
