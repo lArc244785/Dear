@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gravityScale: 1.2
   m_fallGravityMult: 2.5
+  m_downVelocityY: 50
   m_resistanceInAirAmount: 0.1
   m_frictionAmount: 0.85
   m_coyoteTime: 0.1
