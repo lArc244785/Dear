@@ -247,7 +247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881734594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.371, z: 0}
+  m_LocalPosition: {x: 0, y: -1.384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -888,7 +888,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 93b29035a279e8d4c83bb3b6770751ca, type: 2}
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -1692,9 +1692,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1762,10 +1760,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65cc68dcddbef2b40a27b1b85342ea65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LineRenderer: {fileID: 8816093290764117484}
-  m_width: 1
-  m_firePoint: {fileID: 8816093289420583278}
-  m_hook: {fileID: 8816093290829004243}
+  m_precision: 40
+  m_waveSize: 2
+  m_ropeAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -1.2756748
+      outSlope: -1.2756748
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.11778149
+      value: -0.15025088
+      inSlope: 0.74691725
+      outSlope: 0.74691725
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.34775865
+      value: 0.486673
+      inSlope: 0.13151324
+      outSlope: 0.13151324
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.83215785
+      value: -0.72746533
+      inSlope: 0.9138702
+      outSlope: 0.9138702
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 4.3342233
+      outSlope: 4.3342233
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_width: 0.2
 --- !u!1 &8816093290821381703
 GameObject:
   m_ObjectHideFlags: 0

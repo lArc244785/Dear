@@ -49,6 +49,7 @@ MonoBehaviour:
   m_inputPlayer: {fileID: 0}
   m_brainCam: {fileID: 0}
   m_stageBgm: {fileID: 1833929067}
+  m_playerDirRight: 1
 --- !u!114 &1833929067
 MonoBehaviour:
   m_ObjectHideFlags: 0

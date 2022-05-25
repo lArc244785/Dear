@@ -17,10 +17,16 @@ public class StageManager : MonoBehaviour
 
     public StageBgm stageBgm { get { return m_stageBgm; } }
 
-    public void Init()
+    [SerializeField]
+    private bool m_playerDirRight;
+    private bool playerDirRight { get { return m_playerDirRight; } }
+
+
+    public void Init(/*bool playerDirRight*/)
     {
         m_player.Init();
         m_stageBgm.Init();
         InputManager.instance.SetStage(m_inputPlayer, m_brainCam);
+        player.Trun(playerDirRight);
     }
 }
