@@ -386,4 +386,12 @@ public class UnitPlayer : UnitBase
         movementManager.Trun(lookDir);
     }
 
+
+    public void OnRespawnHit(Vector2 respawnPos, int damage)
+    {
+        inputPlayer.isControl = false;
+        movementManager.currentState = PlayerMovementManager.State.None;
+        rig2D.velocity = Vector2.zero;
+        rig2D.gravityScale = 0.0f;
+    }
 }
