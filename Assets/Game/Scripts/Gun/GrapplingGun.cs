@@ -419,14 +419,12 @@ public class GrapplingGun : ActiveToolBase
 
     private void PullUpdate()
     {
-        if(isContant(player.transform.position, targetPos))
+        Pull();
+        if (isContant(player.transform.position, targetPos))
         {
             Cancle();
             player.movementManager.currentState = PlayerMovementManager.State.RopeJump;
         }
-
-        Pull();
-
     }
 
 
@@ -490,5 +488,16 @@ public class GrapplingGun : ActiveToolBase
 
         return distance > 5.0f;
     }
+
+    private void OnDrawGizmos()
+    {
+        if (player == null)
+            return;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(player.transform.position, interactionSensorRadiuse);
+
+    }
+
 
 }

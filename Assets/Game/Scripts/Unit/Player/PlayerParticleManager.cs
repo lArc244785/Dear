@@ -134,16 +134,12 @@ public class PlayerParticleManager : MonoBehaviour
     {
         GameObject effect0 = InstacneEffectParticle(effects[0], spawnPos);
 
-        ParticleSystem subEffect0 = effect0.transform.GetChild(0).GetComponent<ParticleSystem>();
-        ParticleSystem subEffect1 = effect0.transform.GetChild(1).GetComponent<ParticleSystem>();
+        ParticleSystem subEffect0 = effect0.transform.GetComponent<ParticleSystem>();
 
         if (isLeft)
         {
             var shape0 = subEffect0.shape;
-            var shape1 = subEffect1.shape;
-
             shape0.rotation = -shape0.rotation;
-            shape1.rotation = -shape1.rotation;
         }
 
 
