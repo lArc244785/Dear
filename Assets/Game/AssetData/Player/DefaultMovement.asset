@@ -31,9 +31,9 @@ MonoBehaviour:
   m_jumpBufferTime: 0.08
   m_maxJumpCount: 1
   m_airJumpForce: 13
-  m_wallJumpForce: {x: 12, y: 17}
-  m_wallJumpRunLerp: 0.3
-  m_wallJumpTime: 0.35
+  m_wallJumpForce: {x: 15, y: 19}
+  m_wallJumpRunLerp: 0.15
+  m_wallJumpTime: 0.5
   m_wallSlideVelocity: 0.8
   m_climbingMaxSpeed: 12
   m_climbingAccel: 8
@@ -41,38 +41,29 @@ MonoBehaviour:
   m_hitImfectPower: 10
   m_hitImfectDuringTime: 0.3
   m_hitImfectRunLerp: 0.5
-  m_groundPoundPower: 40
-  m_groundPoundMoveY: 2
-  m_groundPoundReadyTime: 0.5
+  m_groundPoundPower: 25
+  m_groundPoundMoveY: 1
+  m_groundPoundReadyTime: 0.2
   m_groundPoundReadyMoveYCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 4.2356462
-      outSlope: 4.2356462
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.10972979
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.5
+      time: 1
       value: 1
-      inSlope: -0.007253647
-      outSlope: -0.007253647
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 0.99983674
-      value: 0.5023585
-      inSlope: -1.8747144
-      outSlope: -1.8747144
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.21697056
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
