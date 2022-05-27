@@ -69,6 +69,5 @@ public class MadStateAttack : MadStateBase
         fireDir.Normalize();
 
         goMissile.GetComponent<ProjectileMissile>().HandleSpawn(spawnPoint, fireDir, mad.data.targetLayerMask);
-
     }
 }

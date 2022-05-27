@@ -39,6 +39,10 @@ public class ProjectileBase : MonoBehaviour
         {
             return m_dir;
         }
+        set
+        {
+            m_dir = value;
+        }
     }
 
 
@@ -51,7 +55,7 @@ public class ProjectileBase : MonoBehaviour
 
         float lookRotation = Utility.GetRotaionAngleByDir(dir, 0.0f);
 
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, lookRotation);
+        transform.rotation = Quaternion.Euler(0f, 0f, lookRotation);
     }
 
     public void HandleSpawn(Vector2 spawnPoint, Vector2 fireDir, LayerMask targetLayerMask)

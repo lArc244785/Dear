@@ -104,6 +104,9 @@ namespace WepSpiderOwnedState
         }
         public override void Excute(WebSpider enemy)
         {
+            if (enemy.health.hp <= 0)
+                enemy.ChangeState(WebSpiderState.Die);
+
             if (enemy.serch.isserch) 
                 enemy.ChangeState(WebSpiderState.Attack);
         }
@@ -111,23 +114,132 @@ namespace WepSpiderOwnedState
         {
           
         }
+
+       
+
     }
     public class Attack : State<WebSpider>
     {
+        private float nextTime = 0.0f;
+
+
         public override void Enter(WebSpider enemy)
         {
             Debug.Log("attackState");
+            
         }
         public override void Excute(WebSpider enemy)
         {
-            
+
+            if (enemy.health.hp <= 0)
+                enemy.ChangeState(WebSpiderState.Die);
+
+            if (Time.time > nextTime)
+            {
+                nextTime = Time.time + enemy.fireCycle;
+                enemy.Attack();
+            }
             if (!enemy.serch.isserch)
+            {
                 enemy.ChangeState(WebSpiderState.Idle);
+            }
         }
         public override void Exit(WebSpider enemy)
         {
            
         }
+    }
+    public class Die : State<WebSpider>
+    {
+        private float nextTime = 0.0f;
+
+
+        public override void Enter(WebSpider enemy)
+        {
+            GameObject.Destroy(enemy.gameObject);
+        }
+        public override void Excute(WebSpider enemy)
+        {
+           
+        }
+        public override void Exit(WebSpider enemy)
+        {
+
+        }
+    }
+
+}
+
+
+namespace JumpSpiderOwnedState
+{
+    public class Idle : State<JumpSpider>
+    {
+        public override void Enter(JumpSpider enemy)
+        {
+            Debug.Log("IdleState");
+        }
+        public override void Excute(JumpSpider enemy)
+        {
+
+            if (enemy.health.hp <= 0)
+                enemy.ChangeState(jumpSpiderState.Dead);
+
+            if (enemy.areaCollider.isserch)
+                enemy.ChangeState(jumpSpiderState.Atack);
+
+        }
+        public override void Exit(JumpSpider enemy)
+        {
+
+        }
+
+
 
     }
+    public class Attack : State<JumpSpider>
+    {
+        private float nextTime = 0.0f;
+
+        public override void Enter(JumpSpider enemy)
+        {
+            Debug.Log("attackState");
+        }
+        public override void Excute(JumpSpider enemy)
+        {
+            if (Time.time > nextTime)
+            {
+                nextTime = Time.time + enemy.jumpDelay;
+                enemy.Jump();
+            }
+
+            if (enemy.health.hp <= 0)
+                enemy.ChangeState(jumpSpiderState.Dead);
+
+            if (!enemy.areaCollider.isserch)
+                enemy.ChangeState(jumpSpiderState.Idle);
+
+        }
+        public override void Exit(JumpSpider enemy)
+        {
+
+        }
+    }
+    public class Die : State<JumpSpider>
+    {
+        public override void Enter(JumpSpider enemy)
+        {
+            GameObject.Destroy(enemy.gameObject);
+        }
+        public override void Excute(JumpSpider enemy)
+        {
+
+        }
+        public override void Exit(JumpSpider enemy)
+        {
+
+        }
+    }
+
 }
+
