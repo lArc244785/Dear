@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_effects:
-  - {fileID: 5486605255595975907, guid: 09293c34dd38ef848b0be2182b225448, type: 3}
+  - {fileID: 6940866913823852783, guid: 35ca1cde7cda7bb4ebf0648dbd9bec29, type: 3}
   - {fileID: 7068393975298741655, guid: 057aa867fa08be3498df9bcc0ae52c6d, type: 3}
   - {fileID: 7107181891835107103, guid: 38c7b11387d0c3d44973e68adc72c6bd, type: 3}
   - {fileID: 3922768069812603845, guid: 1f0e2dba82d12dc4ab7f1b2e8522c7fe, type: 3}
@@ -1762,57 +1762,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_precision: 40
   m_waveSize: 2
-  m_ropeAnimationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: -1.2756748
-      outSlope: -1.2756748
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.11778149
-      value: -0.15025088
-      inSlope: 0.74691725
-      outSlope: 0.74691725
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.34775865
-      value: 0.486673
-      inSlope: 0.13151324
-      outSlope: 0.13151324
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.83215785
-      value: -0.72746533
-      inSlope: 0.9138702
-      outSlope: 0.9138702
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 4.3342233
-      outSlope: 4.3342233
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   m_width: 0.2
 --- !u!1 &8816093290821381703
 GameObject:
@@ -1916,10 +1865,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gizmosColor: {r: 0, g: 1, b: 0.63137245, a: 1}
-  m_radius: 0.02
-  m_pickLayerMask:
-    serializedVersion: 2
-    m_Bits: 4096
 --- !u!1 &8816093290993904103
 GameObject:
   m_ObjectHideFlags: 0
