@@ -39,6 +39,8 @@ public class InteractionSpring : InteractionBase
 
     private PlayerMovementManager m_movement;
 
+    private bool m_isSuperJump;
+
 
     protected override void Enter(Collider2D collision)
     {
@@ -57,6 +59,7 @@ public class InteractionSpring : InteractionBase
         if (m_movement == null)
             return;
 
+        m_isSuperJump = false;
         m_movement.isOnInteractionJumpObject = false;
     }
 
@@ -67,7 +70,10 @@ public class InteractionSpring : InteractionBase
 
         if(m_currentWaitTime <= 0.0f)
         {
-            NormalJump();
+            if (!m_isSuperJump)
+                NormalJump();
+            else
+                SuperJump();
         }
 
         m_currentWaitTime -= Time.deltaTime;
@@ -86,7 +92,7 @@ public class InteractionSpring : InteractionBase
         m_movement = null;
     }
 
-    public void SuperJump()
+    private void SuperJump()
     {
         if (m_movement == null)
             return;
@@ -95,5 +101,11 @@ public class InteractionSpring : InteractionBase
         m_movement.Jump(force * superJumpMul);
         m_movement = null;
     }
+
+    public void OnSuperJump()
+    {
+        m_isSuperJump = true;
+    }
+
 
 }

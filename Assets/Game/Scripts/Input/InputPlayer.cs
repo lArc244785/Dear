@@ -129,7 +129,7 @@ public class InputPlayer : MonoBehaviour
         if (!isControl )
             return;
 
-        if (movementManger.currentState != PlayerMovementManager.State.Rope)
+        if (movementManger.currentState != PlayerMovementManager.State.RopeJump)
             return;
         movementManger.isRopeReboundDirRight = true;
         movementManger.coyoteSystem.OnRopeReboundTime();
@@ -140,7 +140,7 @@ public class InputPlayer : MonoBehaviour
         if (!isControl )
             return;
 
-        if (movementManger.currentState != PlayerMovementManager.State.Rope)
+        if (movementManger.currentState != PlayerMovementManager.State.RopeJump)
             return;
         movementManger.isRopeReboundDirRight = false;
         movementManger.coyoteSystem.OnRopeReboundTime();
@@ -178,7 +178,7 @@ public class InputPlayer : MonoBehaviour
     {
         if (!isControl)
             return;
-        if (movementManger.currentState == PlayerMovementManager.State.Ground)
+        //if (movementManger.currentState == PlayerMovementManager.State.Ground)
             mad.Attack();
     }
 

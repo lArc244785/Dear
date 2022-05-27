@@ -132,7 +132,11 @@ public class MovementWallState : I_MovementState
         {
             float wallJumpDuringTime = Time.time - m_wallJumpStartTime;
             if (wallJumpDuringTime >= movementManager.movementData.wallJumpTime)
+            {
                 movementManager.isWallJump = false;
+               // movementManager.player.inputPlayer.SetControl(true);
+            }
+
         }
 
         if (CanWallJump(movementManager))
@@ -240,6 +244,8 @@ public class MovementWallState : I_MovementState
 
         movementManager.isWallJump = true;
         movementManager.player.wallSlideLoop = false;
+
+       // movementManager.player.inputPlayer.SetControl(false);
 
         m_wallJumpStartTime = Time.time;
     }

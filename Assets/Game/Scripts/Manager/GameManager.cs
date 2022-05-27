@@ -10,7 +10,7 @@ public class GameManager : SingleToon<GameManager>
 
     public enum GameSate
     {
-        None = -1, Title, Load, StageLoad, GameStart, GamePlaying, InGameUISetting , GameOver, GameClear, 
+        None = -1, Title, Load, StageLoad, GameStart, GamePlaying, InGameUISetting , GameOver, GameClear, Pause,
         Total
     }
 
@@ -19,9 +19,15 @@ public class GameManager : SingleToon<GameManager>
     {
         private set
         {
+            if(m_gameState == GameSate.Pause)
+            {
+                Time.timeScale = 1.0f;
+            }
+
             m_gameState = value;
             if (m_gameState == GameSate.None)
                 return;
+
             m_changeGameStaet[(int)m_gameState]();
         }
 
@@ -68,9 +74,9 @@ public class GameManager : SingleToon<GameManager>
         m_changeGameStaet[(int)GameSate.GamePlaying] = ChangeGamePlaying;
         m_changeGameStaet[(int)GameSate.Load] = ChangeLoad;
         m_changeGameStaet[(int)GameSate.StageLoad] = ChangeStageLoad;
-        m_changeGameStaet[(int)GameSate.GameStart] = ChageGameStart;
-        m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeGamePlaying;
-
+        m_changeGameStaet[(int)GameSate.GameStart] = ChangeGameStart;
+        m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeInGameUISetting;
+        m_changeGameStaet[(int)GameSate.Pause] = ChangeGamePause;
     }
 
 
@@ -91,13 +97,13 @@ public class GameManager : SingleToon<GameManager>
 
     private void ChangeGamePlaying()
     {
-        //Player.isControl = true;
+        stageManager.player.inputPlayer.isControl = true;
         
     }
 
     private void ChangeInGameUISetting()
     {
-        //Player.isControl = false;
+        stageManager.player.inputPlayer.isControl = false;
     }
 
     private void ChangeLoad()
@@ -111,9 +117,14 @@ public class GameManager : SingleToon<GameManager>
         UIManager.instance.produtionView.Toggle(true);
     }
 
-    private void ChageGameStart()
+    private void ChangeGameStart()
     {
         StartCoroutine(GameStartProcessCoroutine());
+    }
+
+    private void ChangeGamePause()
+    {
+        Time.timeScale = 0.0f;
     }
 
 

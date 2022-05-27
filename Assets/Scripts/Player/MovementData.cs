@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "PlayerMovementDatas/MovementData")]
 public class MovementData : ScriptableObject
@@ -14,6 +12,10 @@ public class MovementData : ScriptableObject
     [SerializeField]
     private float m_fallGravityMult;//떨어질때의 중력값
     public float fallGravityMult { get { return m_fallGravityMult; } }
+    [Header("DownVelocityY")]
+    [SerializeField]
+    private float m_downVelocityY;
+    public float downClampVelocityY { get { return m_downVelocityY; } }
 
     [Header("Resistance")]
     [SerializeField]
@@ -245,7 +247,47 @@ public class MovementData : ScriptableObject
             return m_groundPoundLandingTime;
         }
     }
+
+    [Header("RopeJump")]
+    [SerializeField]
+    private float m_ropeJumpDuringTime;
+    public float ropeJumpDuringTime
+    {
+        get
+        {
+            return m_ropeJumpDuringTime;
+        }
+    }
+
+    [SerializeField]
+    private float m_ropeJumpGravityScale;
+    public float ropeJumpGravityScale
+    { 
+        get
+        {
+            return m_ropeJumpGravityScale;
+        } 
+    }
     
+    [SerializeField]
+    private float m_ropeJumpXMultiply;
+    public float ropeJumpXMultiply
+    {
+        get
+        {
+            return m_ropeJumpXMultiply;
+        }
+    }
+    [SerializeField]
+    private float m_ropeJumpForce;
+    public float ropeJumpForce
+    {
+        get
+        {
+            return m_ropeJumpForce;
+        }
+    }
+
 }
 
 

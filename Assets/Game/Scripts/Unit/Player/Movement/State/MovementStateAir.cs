@@ -1,6 +1,6 @@
-using UnityEngine;
 using DG.Tweening;
 using DG.Tweening.Plugins.Core.PathCore;
+using UnityEngine;
 
 public class MovementStateAir : I_MovementState
 {
@@ -30,6 +30,9 @@ public class MovementStateAir : I_MovementState
     {
         movementManager.Resistance(movementManager.movementData.resistanceInAirAmount);
         movementManager.Run(1.0f, true);
+
+
+        DownVelocityCalmpY(movementManager);
     }
 
     public void UpdateExcute(PlayerMovementManager movementManager)
@@ -54,16 +57,29 @@ public class MovementStateAir : I_MovementState
         coyoteSystem.WallCoyoteTime();
     }
 
+    private void DownVelocityCalmpY(PlayerMovementManager movementManager)
+    {
+        if (currentGroundPoundType != GroundPoundType.None)
+            return;
+
+        Vector2 currentVelocity = movementManager.player.rig2D.velocity;
+        if (currentVelocity.y < -movementManager.movementData.downClampVelocityY)
+            currentVelocity.y = Mathf.Clamp(currentVelocity.y, -movementManager.movementData.downClampVelocityY, 0.0f);
+
+        movementManager.player.rig2D.velocity = currentVelocity;
+    }
+
+
     private void GroundPoundUpdate(PlayerMovementManager movementManager)
     {
-        if(currentGroundPoundType == GroundPoundType.None)
+        if (currentGroundPoundType == GroundPoundType.None)
         {
             if (CanGroundPound(movementManager))
             {
                 GroundPoundReady(movementManager);
             }
         }
-        else if(currentGroundPoundType == GroundPoundType.Pound)
+        else if (currentGroundPoundType == GroundPoundType.Pound)
         {
             Collider2D poundLapCollider2D = movementManager.groundPoundSensor.GetGroundCollider2D();
             if (poundLapCollider2D != null)
@@ -72,7 +88,7 @@ public class MovementStateAir : I_MovementState
 
 
 
-                if(poundLapCollider2D.gameObject.layer == LayerMask.NameToLayer("GroundPoundInteractionObject"))
+                if (poundLapCollider2D.gameObject.layer == LayerMask.NameToLayer("GroundPoundInteractionObject"))
                 {
                     GroundPoundInteraction(movementManager, poundLapCollider2D);
                 }
@@ -122,7 +138,7 @@ public class MovementStateAir : I_MovementState
             movementManager.movementData.groundPoundMoveY,
             movementManager.groundSensor.groundLayer);
 
-        
+
 
         Vector3[] moveYPath = movementManager.CalculationGroundPoundPath(readyMoveY);
 
@@ -130,7 +146,7 @@ public class MovementStateAir : I_MovementState
 
         movementManager.player.transform.DOPath(
             path,
-            movementManager.movementData.groundPoundReadyTime).OnComplete(() => 
+            movementManager.movementData.groundPoundReadyTime).OnComplete(() =>
             {
                 movementManager.player.rig2D.velocity = Vector2.down * movementManager.movementData.groundPoundPower;
                 currentGroundPoundType = GroundPoundType.Pound;
@@ -143,7 +159,7 @@ public class MovementStateAir : I_MovementState
         float readyMoveY = 0.0f;
 
         RaycastHit2D hit2D = Physics2D.Raycast(colliderTopPos, Vector2.up, moveY, groundLayer);
-        if(hit2D.collider != null)
+        if (hit2D.collider != null)
         {
             readyMoveY = hit2D.distance;
         }
@@ -247,16 +263,16 @@ public class MovementStateAir : I_MovementState
     {
         string tag = coll.gameObject.tag;
 
-        if(tag == "Spring")
+        if (tag == "Spring")
         {
-            coll.GetComponent<InteractionSpring>().SuperJump();
- 
+            coll.GetComponent<InteractionSpring>().OnSuperJump();
+
         }
-        else if(tag == "GroundPoundBroken")
+        else if (tag == "GroundPoundBroken")
         {
             coll.GetComponent<InteractionGroundPoundBroken>().BrokenTrigger();
         }
-        
+
     }
 
 

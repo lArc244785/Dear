@@ -34,7 +34,7 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+        if (GameManager.instance.stageManager.player == null)
             return;
 
         m_inputPlayer.SetMoveDir(context.ReadValue<Vector2>());
