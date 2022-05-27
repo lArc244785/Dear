@@ -246,8 +246,16 @@ public class UnitPlayer : UnitBase
     {
         base.HitUniqueEventUnit(attackUnit);
 
+        if(IsDead())
+        {
+            OnDead();
+            return;
+        }
+
+
+
         sound.Hit();
-        GameManager.instance.stageManager.cameraManager.Shake(1, 1.0f);
+        GameManager.instance.stageManager.cameraManager.PlayerHitShake();
 
         Vector2 playerToAttackUnitDir = unitPos - attackUnit.unitPos ;
         playerToAttackUnitDir.Normalize();
@@ -262,7 +270,7 @@ public class UnitPlayer : UnitBase
     {
         base.OnHitObject(attackObject, damage);
         sound.Hit();
-        GameManager.instance.stageManager.cameraManager.Shake(10, 0.05f);
+        GameManager.instance.stageManager.cameraManager.PlayerHitShake();
 
         Vector2 playerToAttackUnitDir = unitPos -(Vector2)attackObject.transform.position ;
         playerToAttackUnitDir.Normalize();
@@ -402,6 +410,18 @@ public class UnitPlayer : UnitBase
         rig2D.velocity = Vector2.zero;
         rig2D.gravityScale = 0.0f;
 
+        GameManager.instance.stageManager.cameraManager.PlayerRespawnShake();
+        HitHp(damage);
+
+        if (IsDead())
+        {
+            OnDead();
+
+            yield break;
+        }
+
+
+
 
         UIManager.instance.produtionView.Toggle(true);
         UIManager.instance.produtionView.fade.FadeOut();
@@ -420,6 +440,13 @@ public class UnitPlayer : UnitBase
             yield return null;
         inputPlayer.isControl = true;
 
+    }
+
+
+    private void OnDead()
+    {
+        inputPlayer.SetControl(false);
+        Debug.Log("Dead");
     }
 
 }

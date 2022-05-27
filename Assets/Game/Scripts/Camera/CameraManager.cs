@@ -25,6 +25,12 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
+    private CameraShakeData m_playerHitShake;
+
+    [SerializeField]
+    private CameraShakeData m_playerRespawnShake;
+
 
     public void Init()
     {
@@ -80,4 +86,13 @@ public class CameraManager : MonoBehaviour
             intensity, time);
     }
 
+    public bool PlayerHitShake()
+    {
+        return Shake(m_playerHitShake.Intensity, m_playerHitShake.time);
+    }
+
+    public bool PlayerRespawnShake()
+    {
+        return Shake(m_playerRespawnShake.Intensity, m_playerRespawnShake.time);
+    }
 }

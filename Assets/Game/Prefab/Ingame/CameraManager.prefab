@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc55cadbd6074c469b6bc4555c96c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playerHitShake: {fileID: 11400000, guid: eed4ff4d2ccecd74b8284b29a1a1da42, type: 2}
+  m_playerRespawnShake: {fileID: 11400000, guid: 8b03bbd97b1167f4fb039a91a204518a, type: 2}
 --- !u!1 &2944663026358882723
 GameObject:
   m_ObjectHideFlags: 0
