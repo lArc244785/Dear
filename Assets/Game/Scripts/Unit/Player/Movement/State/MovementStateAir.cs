@@ -265,7 +265,7 @@ public class MovementStateAir : I_MovementState
 
         if (tag == "Spring")
         {
-            coll.GetComponent<InteractionSpring>().SuperJump();
+            coll.GetComponent<InteractionSpring>().OnSuperJump();
 
         }
         else if (tag == "GroundPoundBroken")

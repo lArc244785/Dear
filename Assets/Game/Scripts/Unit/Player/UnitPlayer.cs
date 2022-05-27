@@ -247,6 +247,7 @@ public class UnitPlayer : UnitBase
         base.HitUniqueEventUnit(attackUnit);
 
         sound.Hit();
+        GameManager.instance.stageManager.cameraManager.Shake(1, 1.0f);
 
         Vector2 playerToAttackUnitDir = unitPos - attackUnit.unitPos ;
         playerToAttackUnitDir.Normalize();
@@ -261,6 +262,7 @@ public class UnitPlayer : UnitBase
     {
         base.OnHitObject(attackObject, damage);
         sound.Hit();
+        GameManager.instance.stageManager.cameraManager.Shake(10, 0.05f);
 
         Vector2 playerToAttackUnitDir = unitPos -(Vector2)attackObject.transform.position ;
         playerToAttackUnitDir.Normalize();
@@ -389,9 +391,35 @@ public class UnitPlayer : UnitBase
 
     public void OnRespawnHit(Vector2 respawnPos, int damage)
     {
+        StartCoroutine(RespawnHitCoroutine(respawnPos, damage));
+
+    }
+
+    private IEnumerator RespawnHitCoroutine(Vector2 respawnPos, int damage)
+    {
         inputPlayer.isControl = false;
         movementManager.currentState = PlayerMovementManager.State.None;
         rig2D.velocity = Vector2.zero;
         rig2D.gravityScale = 0.0f;
+
+
+        UIManager.instance.produtionView.Toggle(true);
+        UIManager.instance.produtionView.fade.FadeOut();
+
+        while (!UIManager.instance.produtionView.fade.isfadeProcessed)
+            yield return null;
+
+        transform.position = respawnPos;
+        movementManager.currentState = PlayerMovementManager.State.Ground;
+
+
+
+        UIManager.instance.produtionView.fade.FadeIn();
+
+        while (!UIManager.instance.produtionView.fade.isfadeProcessed)
+            yield return null;
+        inputPlayer.isControl = true;
+
     }
+
 }

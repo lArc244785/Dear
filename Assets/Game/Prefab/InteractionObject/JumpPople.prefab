@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2304
   m_force: 20
   m_superJumpMul: 2
   m_InteractionJumpWait: 0.08
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2304
   m_imfectEvnet:
     Guid:
       Data1: 1174538439
