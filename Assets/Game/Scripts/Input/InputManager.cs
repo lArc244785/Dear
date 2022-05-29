@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class InputManager : SingleToon<InputManager>
 {
 
@@ -14,6 +14,7 @@ public class InputManager : SingleToon<InputManager>
     private void Awake()
     {
         Init();
+        if (!m_brainCam|| !m_inputPlayer) return; 
 
     }
 
@@ -103,29 +104,7 @@ public class InputManager : SingleToon<InputManager>
             return;
     }
 
-    public void ActiveInventory(InputAction.CallbackContext contex)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
-
-        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.inventory);
-    }
-    public void ActivecharUI(InputAction.CallbackContext contex)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
-
-        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.character);
-    }
-
-    public void ActiveTestUI(InputAction.CallbackContext contex)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
-
-        Debug.Log("a");
-        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.test);
-    }
+    
     public void EscapeUI(InputAction.CallbackContext contex)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
@@ -134,15 +113,29 @@ public class InputManager : SingleToon<InputManager>
         {
             if (PopUpManager.instance.activePopupList.Count > 0)
             {
+                GameManager.instance.gameState = GameManager.GameSate.GamePlaying;
                 PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
-            }
+            }   
             else
             {
+                GameManager.instance.gameState = GameManager.GameSate.Pause;
                 PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
             }
         }
-
     }
+
+
+    public void gameStart(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.Title)
+            return;
+        if (context.started)
+        {
+            GameManager.instance.gameState = GameManager.GameSate.GameStart;
+            SceneManager.LoadScene("Sh_test_1");
+        }
+    }
+
 
     public void OnToolNone(InputAction.CallbackContext context)
     {

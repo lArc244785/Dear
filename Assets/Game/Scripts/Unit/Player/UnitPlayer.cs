@@ -167,6 +167,10 @@ public class UnitPlayer : UnitBase
     public bool wallSlideLoop { set { m_wallSlideLoop = value; } get { return m_wallSlideLoop; } }
     #endregion
 
+
+    [SerializeField]
+    private HpUI m_hpui;
+
     public override void Init()
     {
         base.Init();
@@ -179,6 +183,8 @@ public class UnitPlayer : UnitBase
         hitLayerEvent = null;
 
         SetLayer(defaultLayer);
+
+        m_hpui = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
 
         footStepLoop = false;
         m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
@@ -240,6 +246,7 @@ public class UnitPlayer : UnitBase
     {
         base.HitHp(damage);
         health.OnDamage(damage);
+        m_hpui.OnDamage(damage);
     }
 
     protected override void HitUniqueEventUnit(UnitBase attackUnit)
