@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class MovementGroundState : I_MovementState
 {
@@ -16,7 +14,8 @@ public class MovementGroundState : I_MovementState
 
     public void Exit(PlayerMovementManager movementManager)
     {
-        movementManager.player.sound.footStepLoop = false;
+        movementManager.player.footStepLoop = false;
+        movementManager.player.animationManager.movement = 0.0f;
     }
 
     public void FixedExcute(PlayerMovementManager movementManager)
@@ -28,7 +27,7 @@ public class MovementGroundState : I_MovementState
     public void UpdateExcute(PlayerMovementManager movementManager)
     {
         TimeUpdate(movementManager.coyoteSystem);
-        PhysicUpdate(movementManager.groundSensor,movementManager.coyoteSystem);
+        PhysicUpdate(movementManager.groundSensor, movementManager.coyoteSystem);
 
         movementManager.TrunUpdate();
 
@@ -58,7 +57,7 @@ public class MovementGroundState : I_MovementState
 
     private void JumpUpdate(PlayerMovementManager movementManager)
     {
-        if(CanJump(movementManager))
+        if (CanJump(movementManager))
         {
             movementManager.Jump(movementManager.movementData.jumpForce);
             movementManager.jumpCount++;
@@ -68,9 +67,9 @@ public class MovementGroundState : I_MovementState
 
     private bool CanJump(PlayerMovementManager manager)
     {
-        return !manager.isOnInteractionJumpObject && 
-            manager.coyoteSystem.lastJumpEnterTime > 0.0f && 
-            manager.coyoteSystem.lastOnGroundTime > 0.0f && 
+        return !manager.isOnInteractionJumpObject &&
+            manager.coyoteSystem.lastJumpEnterTime > 0.0f &&
+            manager.coyoteSystem.lastOnGroundTime > 0.0f &&
             manager.movementData.maxJumpCount > 0;
     }
 
@@ -82,11 +81,11 @@ public class MovementGroundState : I_MovementState
 
         if (moveDirXAbs > 0)
         {
-            movementManager.player.sound.footStepLoop  = true;
+            movementManager.player.footStepLoop = true;
         }
         else
         {
-            movementManager.player.sound.footStepLoop = false;
+            movementManager.player.footStepLoop = false;
         }
 
         movementManager.Run(1.0f, true);

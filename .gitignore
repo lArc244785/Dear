@@ -1,7 +1,10 @@
+# Created by https://www.toptal.com/developers/gitignore/api/unity
+# Edit at https://www.toptal.com/developers/gitignore?templates=unity
+
+### Unity ###
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -70,3 +73,30 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# End of https://www.toptal.com/developers/gitignore/api/unity
+
+# FMOD
+/Assets/FMODStudioCache.asset
+/Assets/FMODStudioCache.asset.meta
+fmod.log
+fmod_editor.log
+
+# FMOD studio (In folder FMOD)
+/FMOD/**.user
+/FMOD/**.unsaved
+/FMOD/**.cache
+/FMOD/**.restore
+
+# Custom
+/Builds/**
+/Data/**
+/Assets/_Project/Preferences/Editor/Credentials/**
+/Assets/_Project/Preferences/Editor/Credentials.meta
+/Assets/Temp/**
+/Assets/Temp.meta
+
+/Logs/
+Logs/
+Logs/shadercompiler-UnityShaderCompiler.exe0
+fmod_editor.log

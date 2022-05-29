@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{a9f2fab6-4ab7-43f2-b309-d6bb11e9a51e}">
+		<property name="note">
+			<value>489364__bolkmar__ruler-long-bounce</value>
+		</property>
 		<property name="assetPath">
 			<value>game_general_spring.wav</value>
 		</property>

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,14 +15,14 @@ public class Mad : MonoBehaviour
     private MadTrackingPoint m_trackingPoint;
     public MadTrackingPoint trackingPoint
     {
-        get { return m_trackingPoint;}
+        get { return m_trackingPoint; }
     }
     #endregion
 
     #region State
     public enum State
     {
-        None = -1 ,Idle, Tracking, Attack
+        None = -1, Idle, Tracking, Attack
     }
 
     [SerializeField]
@@ -76,8 +75,6 @@ public class Mad : MonoBehaviour
     }
     #endregion
 
-
-
     #region Gizmos
     [Header("Gizmos")]
     [SerializeField]
@@ -97,23 +94,52 @@ public class Mad : MonoBehaviour
     private bool m_isInit = false;
     public bool isInit { set { m_isInit = value; } get { return m_isInit; } }
 
+    public float gizmosTrackingDeadRange { set; get; }
+
     #endregion
 
+    #region Attack
+    private float lastAttackTime { set; get; }
 
-    
+    private Transform m_firePointTransform;
+    public Transform firePointTransform
+    {
+        get
+        {
+            return m_firePointTransform;
+        }
+    }
+    [SerializeField]
+    private GameObject m_missileObject;
+    public GameObject missileObject
+    {
+        get
+        {
+            return m_missileObject;
+        }
+    }
+    #endregion
 
+    #region fire
+    [SerializeField]
+    private FMODUnity.EventReference m_fireEvent;
+    #endregion
 
     public void Init(UnitPlayer player, MadTrackingPoint madTrackingPoint)
     {
-        m_player = player; 
+        m_player = player;
         m_trackingPoint = madTrackingPoint;
 
         m_model = transform.Find("Model").GetComponent<SpriteRenderer>();
+        m_firePointTransform = transform.Find("FirePoint");
 
         currentState = State.Idle;
 
         transform.position = trackingPoint.transform.position;
         SetLook(trackingPoint.isRight);
+
+        gizmosTrackingDeadRange = data.trackingDeadRange;
+
 
         StateInit();
 
@@ -126,6 +152,7 @@ public class Mad : MonoBehaviour
     {
         stateList.Add(new MadStateIdle());
         stateList.Add(new MadStateTracking());
+        stateList.Add(new MadStateAttack());
     }
 
 
@@ -134,7 +161,15 @@ public class Mad : MonoBehaviour
         if (currentState == State.None)
             return;
 
+        CoyoteTimeUpdate();
+
         stateList[(int)currentState].UpdateProcesses(this);
+    }
+
+    private void CoyoteTimeUpdate()
+    {
+        if (lastAttackTime >= 0.0f)
+            lastAttackTime -= Time.deltaTime;
     }
 
 
@@ -172,11 +207,11 @@ public class Mad : MonoBehaviour
     public void ChangeState(State state)
     {
         if (state != State.None)
-        stateList[(int)currentState].Exit(this);
+            stateList[(int)currentState].Exit(this);
 
         currentState = state;
 
-        if(state != State.None)
+        if (state != State.None)
             stateList[(int)currentState].Enter(this);
     }
 
@@ -186,7 +221,7 @@ public class Mad : MonoBehaviour
             return;
 
         Gizmos.color = gizmosDeadTrackingColor;
-        Gizmos.DrawWireSphere(player.transform.position, data.trackingDeadRange);
+        Gizmos.DrawWireSphere(player.transform.position, gizmosTrackingDeadRange);
 
         Gizmos.color = gizmosTrackingColor;
         Gizmos.DrawWireSphere(player.transform.position, data.trackingRange);
@@ -199,12 +234,51 @@ public class Mad : MonoBehaviour
 
     public void LookPlayer()
     {
-        float dif =  player.transform.position.x - transform.position.x;
+        float dif = player.transform.position.x - transform.position.x;
         if (dif > 0)
             SetLook(true);
         else
             SetLook(false);
+    }
 
+    public void Attack()
+    {
+        if (currentState != State.Attack && lastAttackTime <= 0.0f)
+        {
+            ChangeState(State.Attack);
+        }
+
+
+    }
+
+    public void OnLastOnCoolTime()
+    {
+        lastAttackTime = data.attackCoolTime;
+    }
+
+    public void SetLookPoint(Vector2 point)
+    {
+        Vector2 madToPointDir = point - (Vector2)transform.position;
+        madToPointDir.Normalize();
+
+
+        if (madToPointDir.x > 0.0f)
+            SetLook(true);
+        else
+            SetLook(false);
+
+        SetFirePointDir(madToPointDir);
+    }
+
+    private void SetFirePointDir(Vector2 dir)
+    {
+        firePointTransform.localPosition = dir * data.firePointDistance;
+    }
+
+
+    public void SoundFire()
+    {
+        SoundManager.instance.SoundOneShot(m_fireEvent);
     }
 
 }

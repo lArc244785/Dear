@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{8059d538-c06c-46a6-b6d7-cef9e4a6b8cd}">
+		<property name="color">
+			<value>Magenta</value>
+		</property>
 		<property name="assetPath">
 			<value>env_amb_stage00_indoor.wav</value>
 		</property>

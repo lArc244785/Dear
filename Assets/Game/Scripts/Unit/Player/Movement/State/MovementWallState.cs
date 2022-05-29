@@ -41,7 +41,7 @@ public class MovementWallState : I_MovementState
         {
             manager.Run(1.0f,true);
             WallSildeUpdate(manager);
-
+            
         }
 
     }
@@ -108,10 +108,9 @@ public class MovementWallState : I_MovementState
     }
 
 
-    private void WallSilde(Rigidbody2D rig2D, float wallSlideVelocity)
+    private void WallSilde(PlayerMovementManager movementManager)
     {
-        rig2D.velocity = new Vector2(rig2D.velocity.x, -wallSlideVelocity);
-
+        movementManager.player.rig2D.velocity = new Vector2(movementManager.player.rig2D.velocity.x, -movementManager.movementData.wallSlideVelocity);
 
     }
 
@@ -119,11 +118,11 @@ public class MovementWallState : I_MovementState
     {
         movementManager.isWallSilde = false;
 
-
         if (movementManager.coyoteSystem.lastOnWallTime > 0.0f && !movementManager.isWallJump)
         {
-            WallSilde(movementManager.player.rig2D, movementManager.movementData.wallSlideVelocity);
+            WallSilde(movementManager);
             movementManager.isWallSilde = true;
+            movementManager.player.wallSlideLoop = true;
         }
     }
 
@@ -133,7 +132,11 @@ public class MovementWallState : I_MovementState
         {
             float wallJumpDuringTime = Time.time - m_wallJumpStartTime;
             if (wallJumpDuringTime >= movementManager.movementData.wallJumpTime)
+            {
                 movementManager.isWallJump = false;
+               // movementManager.player.inputPlayer.SetControl(true);
+            }
+
         }
 
         if (CanWallJump(movementManager))
@@ -163,9 +166,15 @@ public class MovementWallState : I_MovementState
         if (movementManager.coyoteSystem.lastOnWallTime < 0.0f && !movementManager.isWallJump)
         {
             movementManager.currentState = PlayerMovementManager.State.Air;
+            movementManager.player.wallSlideLoop = false;
         }
         else if (movementManager.IsGrounded())
+        {
             movementManager.currentState = PlayerMovementManager.State.Ground;
+            movementManager.player.wallSlideLoop = false;
+        }
+
+
     }
 
     private void RunUpdate(PlayerMovementManager movementManager)
@@ -190,9 +199,14 @@ public class MovementWallState : I_MovementState
 
     private void WallJump(int dir, PlayerMovementManager movementManager)
     {
-        movementManager.player.animationManager.TriggerJump();
+        bool isRight = true;
+        if (dir == -1)
+            isRight = false;
 
-        if (dir == 1)
+        movementManager.player.animationManager.TriggerJump();
+        movementManager.player.particleManager.WallJumpEffect(isRight);
+
+        if (isRight)
             movementManager.player.sound.WallJumpRight();
         else
             movementManager.player.sound.WallJumpLeft();
@@ -229,6 +243,10 @@ public class MovementWallState : I_MovementState
 
 
         movementManager.isWallJump = true;
+        movementManager.player.wallSlideLoop = false;
+
+       // movementManager.player.inputPlayer.SetControl(false);
+
         m_wallJumpStartTime = Time.time;
     }
 

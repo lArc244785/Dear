@@ -44,19 +44,19 @@ public class MadData : ScriptableObject
     }
 
     [SerializeField]
-    private float m_yoyoLoopTime;
-    public float yoyoLoopTime
+    private float m_yoyoEffectTime;
+    public float yoyoEffectTime
     {
         get
         {
-            return m_yoyoLoopTime;
+            return m_yoyoEffectTime;
         }
     }
     public float yoyoLoopHalfTime
     {
         get
         {
-            return yoyoLoopTime * 0.5f;
+            return yoyoEffectTime * 0.5f;
         }
     }
 
@@ -72,5 +72,63 @@ public class MadData : ScriptableObject
         }
     }
 
+    [Header("Attack")]
+    [SerializeField]
+    private LayerMask m_targetLayerMask;
+    public LayerMask targetLayerMask
+    {
+        get
+        {
+            return m_targetLayerMask;
+        }
+    }
+    [SerializeField]
+    private float m_attackWaitTime;
+    public float attackWaitTime
+    {
+        get
+        {
+            return m_attackWaitTime;
+        }
+    }
+    [SerializeField]
+    private float m_attackEndWaitTime;
+    public float attackEndWaitTime
+    {
+        get
+        {
+            return m_attackEndWaitTime;
+        }
+    }
+
+    [SerializeField]
+    private int m_attackAmount;
+    public int attackAmount
+    {
+        get
+        {
+            return m_attackAmount;
+        }
+    }
+
+    [SerializeField]
+    private float m_attackCoolTime;
+    public float attackCoolTime
+    {
+        get
+        {
+            return m_attackCoolTime;
+        }
+    }
+    [SerializeField]
+    [Range(0.0f , 2.0f)]
+    private float m_firePointDistance;
+    public float firePointDistance
+    {
+        get
+        {
+            return m_firePointDistance;
+        }
+    }
 
 }

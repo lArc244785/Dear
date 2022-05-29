@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{9ee289a0-d29c-42f4-a4be-ea218cd5b525}">
+		<property name="color">
+			<value>Magenta</value>
+		</property>
 		<property name="assetPath">
 			<value>air_conditioner_unit_exterior_01.wav</value>
 		</property>

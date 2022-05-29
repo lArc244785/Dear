@@ -34,7 +34,7 @@ public class PlayerMovementManager : MonoBehaviour
     #region State
     public enum State
     {
-        None = -1, Ground, Air, Wall, Rope, Hit,
+        None = -1, Ground, Air, Wall, RopeJump, Hit,
         Total
     }
 
@@ -182,10 +182,10 @@ public class PlayerMovementManager : MonoBehaviour
         m_States = new I_MovementState[(int)State.Total];
 
         m_States[(int)State.Ground] = new MovementGroundState();
-        m_States[(int)State.Air] = new MovementAirState();
+        m_States[(int)State.Air] = new MovementStateAir();
         m_States[(int)State.Wall] = new MovementWallState();
-        m_States[(int)State.Rope] = new MovementRopeState();
-        m_States[(int)State.Hit] = new MovementHitState();
+        m_States[(int)State.RopeJump] = new MovementRopeJumpState();
+        m_States[(int)State.Hit] = new MovementStateHit();
 
 
     }
@@ -320,9 +320,10 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Jump(float force)
     {
-        Debug.Log("Jump: " + force);
+       // Debug.Log("Jump: " + force);
         player.sound.Jump();
         player.animationManager.TriggerJump();
+
 
         if (player.rig2D.velocity.y < 0.0f)
             force -= player.rig2D.velocity.y;
@@ -346,7 +347,7 @@ public class PlayerMovementManager : MonoBehaviour
     {
         player.rig2D.AddForce(Vector2.down * player.rig2D.velocity.y * (1 - movementData.jumpCutMultiplier), ForceMode2D.Impulse);
         coyoteSystem.ResetJumpExitTime();
-        Debug.Log("Jump Cut");
+      //  Debug.Log("Jump Cut");
     }
 
     public void Trun(Vector2 lookDir)

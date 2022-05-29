@@ -52,8 +52,9 @@ public class InteractionGrapping : InteractionBase
         OffInteraction();
         grappingRangeIndex = handler.grapplingGun.AddInteraction(this);
 
-        if (handler.grapplingGun.currentState == GrapplingGun.State.None)
-            OnInteraction();
+        //if (handler.grapplingGun.currentState == GrapplingGun.State.None && 
+        //    handler.grapplingGun.IsOnInteractionRange(transform.position))
+        //    OnInteraction();
 
     }
 

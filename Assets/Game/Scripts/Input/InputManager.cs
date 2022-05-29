@@ -34,7 +34,7 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+        if (GameManager.instance.stageManager.player == null)
             return;
 
         m_inputPlayer.SetMoveDir(context.ReadValue<Vector2>());
@@ -78,26 +78,14 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnRightMouseButton(InputAction.CallbackContext context)
     {
-
-    }
-
-    public void OnRightRopeRebound(InputAction.CallbackContext context)
-    {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
 
         if (context.started)
-            m_inputPlayer.ReboundRight();
+            m_inputPlayer.MadAttack();
     }
 
-    public void OnLeftRopeRebound(InputAction.CallbackContext context)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
 
-        if (context.started)
-            m_inputPlayer.ReboundLeft();
-    }
 
     public void OnWallGrip(InputAction.CallbackContext context)
     {

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{00c30abd-07bf-402f-995b-b8edc245a713}">
+		<property name="note">
+			<value>Whoosh_Cloth_Leather_Fight_174</value>
+		</property>
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="assetPath">
-			<value>Whoosh_Cloth_Leather_Fight_174.wav</value>
+			<value>char_yuz_WallJump.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
