@@ -101,6 +101,10 @@ public class InputManager : SingleToon<InputManager>
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
+
+        if (context.started)
+            m_inputPlayer.Interaction();
+
     }
 
     public void ActiveInventory(InputAction.CallbackContext contex)

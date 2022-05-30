@@ -11957,8 +11957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf96cb1d1ff5a4384fce655367b89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputData: {fileID: 11400000, guid: 88267e34f009f0a4c83942d1f4397e04, type: 2}
-  m_textDuration: 0.1
+  m_textDuration: 0.05
 --- !u!1001 &1437722531
 PrefabInstance:
   m_ObjectHideFlags: 0

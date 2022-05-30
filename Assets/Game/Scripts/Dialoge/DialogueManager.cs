@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DialogueManager : SingleToon<DialogueManager>
 {
-    public DialogueData inputData;
 
-    private DialogueNode m_currentNode;
+    private DialogueData m_dialogueData;
+    private int m_dialogueIndex;
 
     #region Command Parameter
     private char[] m_filterDatas = { '<', '>'};
@@ -91,12 +91,12 @@ public class DialogueManager : SingleToon<DialogueManager>
     }
 
 
-    public void StartDialogue(DialogueNode rootNode)
+    public void StartDialogue(DialogueData data)
     {
         GameManager.instance.ChangeStateUISetting();
 
-        m_currentNode = rootNode;
-
+        m_dialogueData = data;
+        m_dialogueIndex = 0;
 
         StartCoroutine(DialogueEventCoroutine());
     }
@@ -106,14 +106,14 @@ public class DialogueManager : SingleToon<DialogueManager>
         if (!isCanNext)
             return;
 
-        if(!m_currentNode.CanNextNode())
+        m_dialogueIndex++;
+
+        if (m_dialogueIndex >= m_dialogueData.nodes.Length)
         {
             m_uiDialogue.Toggle(false);
             GameManager.instance.ChangeStateChangeGamePlaying();
             return;
         }
-
-        m_currentNode = m_currentNode.nextNode[0];
        
 
         StartCoroutine(DialogueEventCoroutine());
@@ -137,7 +137,7 @@ public class DialogueManager : SingleToon<DialogueManager>
     private IEnumerator DialogueEventCoroutine()
     {
         isCanNext = false;
-        m_datas = m_currentNode.data.Split(m_filterDatas, System.StringSplitOptions.RemoveEmptyEntries);
+        m_datas = m_dialogueData.nodes[m_dialogueIndex].data.Split(m_filterDatas, System.StringSplitOptions.RemoveEmptyEntries);
         m_dataIndex = 0;
 
         uiDialoge.SetNameText(null);

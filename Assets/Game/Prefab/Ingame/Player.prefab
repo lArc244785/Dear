@@ -759,6 +759,7 @@ GameObject:
   - component: {fileID: 6611995000469461227}
   - component: {fileID: 8979922405315631050}
   - component: {fileID: 1386206793}
+  - component: {fileID: 7963385106373309372}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1028,6 +1029,18 @@ MonoBehaviour:
   m_hitTickTime: 0.1
   m_ghostColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.50980395}
   m_ghostTickTime: 0.1
+--- !u!114 &7963385106373309372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816093289123873390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e1363b5e472194c9f70c513233ddd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8816093289278603218
 GameObject:
   m_ObjectHideFlags: 0
