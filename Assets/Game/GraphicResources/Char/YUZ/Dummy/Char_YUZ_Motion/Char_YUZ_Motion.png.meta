@@ -1,0 +1,848 @@
+fileFormatVersion: 2
+guid: 6bfd14980857a7647a92d2709694e18b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3744056825682599936
+    second: Char_YUZ_Motion00
+  - first:
+      213: 3751584990848129845
+    second: Char_YUZ_Motion01
+  - first:
+      213: 5853181653866414195
+    second: Char_YUZ_Motion02
+  - first:
+      213: 278153108626645950
+    second: Char_YUZ_Motion03
+  - first:
+      213: 5379169739288804555
+    second: Char_YUZ_Motion04
+  - first:
+      213: 5642514773755724296
+    second: Char_YUZ_Motion05
+  - first:
+      213: 2068506854727126898
+    second: Char_YUZ_Motion06
+  - first:
+      213: -8040326069529516648
+    second: Char_YUZ_Motion07
+  - first:
+      213: -4125336402734128470
+    second: Char_YUZ_Motion08
+  - first:
+      213: -6588871603980309423
+    second: Char_YUZ_Motion09
+  - first:
+      213: -1569307697442120846
+    second: Char_YUZ_Motion10
+  - first:
+      213: 5837124788159526289
+    second: Char_YUZ_Motion11
+  - first:
+      213: -545123428613845564
+    second: Char_YUZ_Motion12
+  - first:
+      213: 2782597073788536386
+    second: Char_YUZ_Motion13
+  - first:
+      213: -2761549453909195956
+    second: Char_YUZ_Motion14
+  - first:
+      213: -2771122811869065181
+    second: Char_YUZ_Motion15
+  - first:
+      213: -8524655476627412773
+    second: Char_YUZ_Motion16
+  - first:
+      213: 6872697254624468897
+    second: Char_YUZ_Motion17
+  - first:
+      213: -6298272609090708994
+    second: Char_YUZ_Motion18
+  - first:
+      213: -1132203512783508396
+    second: Char_YUZ_Motion19
+  - first:
+      213: -7531266568363512438
+    second: Char_YUZ_Motion20
+  - first:
+      213: 4493651425641441597
+    second: Char_YUZ_Motion21
+  - first:
+      213: 5022136681555309071
+    second: Char_YUZ_Motion22
+  - first:
+      213: 3259890698733359715
+    second: Char_YUZ_Motion23
+  - first:
+      213: -1419728893747152103
+    second: Char_YUZ_Motion24
+  - first:
+      213: 1093558845844302018
+    second: Char_YUZ_Motion25
+  - first:
+      213: 4681081872349250957
+    second: Char_YUZ_Motion26
+  - first:
+      213: -3883954162337415483
+    second: Char_YUZ_Motion27
+  - first:
+      213: 6283888591410879027
+    second: Char_YUZ_Motion28
+  - first:
+      213: -3628290555540956815
+    second: Char_YUZ_Motion29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char_YUZ_Motion00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.8426125, y: 0.4262734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000ef4667207a0cc0800000000000000
+      internalID: -3744056825682599936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion01
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.42839873, y: 0.30858022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b90342cae401430800000000000000
+      internalID: 3751584990848129845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion02
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.43555903, y: 0.32018155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3708a84e3bdaa3150800000000000000
+      internalID: 5853181653866414195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion03
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.44271946, y: 0.30277997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3acd057c23cd300800000000000000
+      internalID: 278153108626645950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion04
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.44271898, y: 0.30277997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccf6d8b066a6aa40800000000000000
+      internalID: 5379169739288804555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion05
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.43555975, y: 0.29117864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8028a999a4d3e4e40800000000000000
+      internalID: 5642514773755724296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion06
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 325
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5071616, y: 0.2969797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f88736600d4bc10800000000000000
+      internalID: 2068506854727126898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5214802, y: 0.33178285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 895616b0a060b6090800000000000000
+      internalID: -8040326069529516648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion08
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5429609, y: 0.26797602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa26b00166cdfb6c0800000000000000
+      internalID: -4125336402734128470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion09
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.44271922, y: 0.3433838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c681e7f20af84a0800000000000000
+      internalID: -6588871603980309423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion10
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.46419978, y: 0.3259822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b1da6b6f2b83ae0800000000000000
+      internalID: -1569307697442120846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion11
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.47851992, y: 0.25057405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19530e38112a10150800000000000000
+      internalID: 5837124788159526289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion12
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.4785204, y: 0.2853776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd8abe31255f68f0800000000000000
+      internalID: -545123428613845564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion13
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 244
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.37827826, y: 0.39558932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2460538bb45cd9620800000000000000
+      internalID: 2782597073788536386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.37111762, y: 0.40139}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43811a27610da9d0800000000000000
+      internalID: -2761549453909195956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion15
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.42123854, y: 0.3375835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32010911c7efa89d0800000000000000
+      internalID: -2771122811869065181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion16
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.43555903, y: 0.17516626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8e803720752b980800000000000000
+      internalID: -8524655476627412773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion17
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.44987965, y: 0.29117844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af91be6db9b06f50800000000000000
+      internalID: 6872697254624468897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion18
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5071602, y: 0.34338436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef953948e6a0898a0800000000000000
+      internalID: -6298272609090708994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion19
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5859227, y: 0.3375835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ce61f57ea9940f0800000000000000
+      internalID: -1132203512783508396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion20
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 163
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.50000095, y: 0.3839882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8deaeb55f09b7790800000000000000
+      internalID: -7531266568363512438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.4928397, y: 0.3839885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3929c9c928ac5e30800000000000000
+      internalID: 4493651425641441597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5071602, y: 0.18676719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02309514b632b540800000000000000
+      internalID: 5022136681555309071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion23
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.82936645, y: 0.40719053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3621a90a1557d3d20800000000000000
+      internalID: 3259890698733359715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion24
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.8436868, y: 0.40719053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91bb7dad71c1c4ce0800000000000000
+      internalID: -1419728893747152103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion25
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.7434449, y: 0.5116016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c82983f9f91d2f00800000000000000
+      internalID: 1093558845844302018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion26
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.614563, y: 0.58700967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85c5e5592b86f040800000000000000
+      internalID: 4681081872349250957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion27
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 82
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.8293667, y: 0.43619365}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce7af5744c691ac0800000000000000
+      internalID: -3883954162337415483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion28
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.8651666, y: 0.39558908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33adc23616bd43750800000000000000
+      internalID: 6283888591410879027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion29
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 64
+        height: 79
+      alignment: 9
+      pivot: {x: 0.8508465, y: 0.4071903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179931796f8b5adc0800000000000000
+      internalID: -3628290555540956815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Char_YUZ_Motion26: 4681081872349250957
+      Char_YUZ_Motion03: 278153108626645950
+      Char_YUZ_Motion15: -2771122811869065181
+      Char_YUZ_Motion27: -3883954162337415483
+      Char_YUZ_Motion04: 5379169739288804555
+      Char_YUZ_Motion24: -1419728893747152103
+      Char_YUZ_Motion29: -3628290555540956815
+      Char_YUZ_Motion10: -1569307697442120846
+      Char_YUZ_Motion01: 3751584990848129845
+      Char_YUZ_Motion05: 5642514773755724296
+      Char_YUZ_Motion18: -6298272609090708994
+      Char_YUZ_Motion13: 2782597073788536386
+      Char_YUZ_Motion11: 5837124788159526289
+      Char_YUZ_Motion23: 3259890698733359715
+      Char_YUZ_Motion09: -6588871603980309423
+      Char_YUZ_Motion19: -1132203512783508396
+      Char_YUZ_Motion17: 6872697254624468897
+      Char_YUZ_Motion00: -3744056825682599936
+      Char_YUZ_Motion25: 1093558845844302018
+      Char_YUZ_Motion28: 6283888591410879027
+      Char_YUZ_Motion07: -8040326069529516648
+      Char_YUZ_Motion02: 5853181653866414195
+      Char_YUZ_Motion12: -545123428613845564
+      Char_YUZ_Motion21: 4493651425641441597
+      Char_YUZ_Motion06: 2068506854727126898
+      Char_YUZ_Motion22: 5022136681555309071
+      Char_YUZ_Motion14: -2761549453909195956
+      Char_YUZ_Motion08: -4125336402734128470
+      Char_YUZ_Motion20: -7531266568363512438
+      Char_YUZ_Motion16: -8524655476627412773
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

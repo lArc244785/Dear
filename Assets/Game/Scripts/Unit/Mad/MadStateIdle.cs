@@ -7,12 +7,12 @@ public class MadStateIdle : MadStateBase
 
     public override void Enter(Mad mad)
     {
-       // Debug.Log("Idle");
+       
     }
 
     public override void Exit(Mad mad)
     {
-        
+       
     }
 
     public override void UpdateProcesses(Mad mad)

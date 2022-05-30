@@ -40,6 +40,8 @@ public class InteractionSpring : InteractionBase
     private PlayerMovementManager m_movement;
 
     private bool m_isSuperJump;
+    [SerializeField]
+    private Animator m_animator;
 
 
     protected override void Enter(Collider2D collision)
@@ -50,17 +52,12 @@ public class InteractionSpring : InteractionBase
         m_movement.isOnInteractionJumpObject = true;
          m_currentWaitTime = InteractionJumpWait;
 
+        m_animator.SetTrigger("Action");
     }
 
     protected override void Exit(Collider2D collision)
     {
         base.Exit(collision);
-
-        if (m_movement == null)
-            return;
-
-        m_isSuperJump = false;
-        m_movement.isOnInteractionJumpObject = false;
     }
 
     private void Update()
@@ -89,6 +86,8 @@ public class InteractionSpring : InteractionBase
 
         m_movement.player.rig2D.velocity = Vector2.zero;
         m_movement.Jump(force);
+        m_movement.isOnInteractionJumpObject = false;
+        m_isSuperJump = false;
         m_movement = null;
     }
 
@@ -99,6 +98,8 @@ public class InteractionSpring : InteractionBase
 
         m_movement.player.rig2D.velocity = Vector2.zero;
         m_movement.Jump(force * superJumpMul);
+        m_movement.isOnInteractionJumpObject = false;
+        m_isSuperJump = false;
         m_movement = null;
     }
 

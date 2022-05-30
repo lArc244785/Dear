@@ -110,6 +110,8 @@ public class MovementWallState : I_MovementState
 
     private void WallSilde(PlayerMovementManager movementManager)
     {
+        
+
         movementManager.player.rig2D.velocity = new Vector2(movementManager.player.rig2D.velocity.x, -movementManager.movementData.wallSlideVelocity);
 
     }
@@ -120,6 +122,16 @@ public class MovementWallState : I_MovementState
 
         if (movementManager.coyoteSystem.lastOnWallTime > 0.0f && !movementManager.isWallJump)
         {
+            if (!movementManager.isWallSilde)
+            {
+                Vector2 lookDir = Vector2.left;
+
+                if (movementManager.coyoteSystem.lastOnWallLeftTime > 0.0f)
+                    lookDir = Vector2.right;
+
+                movementManager.Trun(lookDir);
+            }
+
             WallSilde(movementManager);
             movementManager.isWallSilde = true;
             movementManager.player.wallSlideLoop = true;
@@ -203,7 +215,7 @@ public class MovementWallState : I_MovementState
         if (dir == -1)
             isRight = false;
 
-        movementManager.player.animationManager.TriggerJump();
+        movementManager.player.animationManager.TriggerWallJump();
         movementManager.player.particleManager.WallJumpEffect(isRight);
 
         if (isRight)
