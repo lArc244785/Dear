@@ -50,7 +50,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_force: 20
+  m_force: 22
   m_superJumpMul: 2
   m_InteractionJumpWait: 0.08
   m_animator: {fileID: 1762843900799286321}
