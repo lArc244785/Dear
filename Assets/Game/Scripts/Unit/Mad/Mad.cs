@@ -125,6 +125,13 @@ public class Mad : MonoBehaviour
     private FMODUnity.EventReference m_fireEvent;
     #endregion
 
+
+    [SerializeField]
+    private Animator m_animator;
+
+    private bool m_isCoolTime;
+
+
     public void Init(UnitPlayer player, MadTrackingPoint madTrackingPoint)
     {
         m_player = player;
@@ -161,7 +168,19 @@ public class Mad : MonoBehaviour
         if (currentState == State.None)
             return;
 
-        CoyoteTimeUpdate();
+        if(m_isCoolTime)
+        {
+            CoyoteTimeUpdate();
+            if (lastAttackTime < 0.0f)
+            {
+                SetTriggerIdle();
+                m_isCoolTime = false;
+            }
+
+        }
+
+
+
 
         stateList[(int)currentState].UpdateProcesses(this);
     }
@@ -254,6 +273,7 @@ public class Mad : MonoBehaviour
     public void OnLastOnCoolTime()
     {
         lastAttackTime = data.attackCoolTime;
+        m_isCoolTime = true;
     }
 
     public void SetLookPoint(Vector2 point)
@@ -280,5 +300,23 @@ public class Mad : MonoBehaviour
     {
         SoundManager.instance.SoundOneShot(m_fireEvent);
     }
+
+    public void SetTriggerIdle()
+    {
+        m_animator.SetTrigger("Idle");
+    }
+
+    public void SetTriggerTeleport()
+    {
+        m_animator.SetTrigger("Teleport");
+    }
+
+    public void SetTriggerAttack()
+    {
+        m_animator.SetTrigger("Attack");
+    }
+
+
+
 
 }

@@ -209,7 +209,7 @@ public class UnitPlayer : UnitBase
         sound.Init(this);
         m_hitImfect.Init(model);
 
-        madTrackingPoint.Init(movementManager.IsLookDirRight(), mad);
+        madTrackingPoint.Init(!movementManager.IsLookDirRight(), mad);
         mad.Init(this, madTrackingPoint);
 
         animationManager.Init();
