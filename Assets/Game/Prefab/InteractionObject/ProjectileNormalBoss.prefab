@@ -255,8 +255,8 @@ MonoBehaviour:
   m_weaponData: {fileID: 11400000, guid: 95bd1507fb179b346a8252591a94a6b2, type: 2}
   m_hitLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  m_speed: 200
+    m_Bits: 1344
+  m_speed: 300
   m_lifeTime: 9.7
 --- !u!1 &6356571644855964201
 GameObject:

@@ -23,7 +23,7 @@ public class ProjectileNormal : ProjectileBase
     protected override void Init(Vector2 fireDir, LayerMask targetLayerMask)
     {
         base.Init(fireDir, targetLayerMask);
-        rig2D.AddForce(dir * 200f);
+        rig2D.AddForce(dir * speed);
         m_currentLifeTime = 0.0f;
     }
 
