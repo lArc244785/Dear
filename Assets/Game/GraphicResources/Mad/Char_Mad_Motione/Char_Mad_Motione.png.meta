@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: 23d6e37ac75782f449243f33da6abd1c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1627950680578343885
+    second: Char_Mad_Motione00
+  - first:
+      213: -1744631847909170093
+    second: Char_Mad_Motione01
+  - first:
+      213: -6815007094874452223
+    second: Char_Mad_Motione02
+  - first:
+      213: 8089776494441399088
+    second: Char_Mad_Motione03
+  - first:
+      213: 6053065536250675289
+    second: Char_Mad_Motione04
+  - first:
+      213: 5225863177472974017
+    second: Char_Mad_Motione05
+  - first:
+      213: -2690734310338937900
+    second: Char_Mad_Motione06
+  - first:
+      213: -5007937385574638576
+    second: Char_Mad_Motione07
+  - first:
+      213: -30822029641952424
+    second: Char_Mad_Motione08
+  - first:
+      213: 2150194108228504578
+    second: Char_Mad_Motione09
+  - first:
+      213: 4469927563110608761
+    second: Char_Mad_Motione10
+  - first:
+      213: 4402729206214383288
+    second: Char_Mad_Motione11
+  - first:
+      213: -6505230379393974791
+    second: Char_Mad_Motione12
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Char_Mad_Motione00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 157
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.42, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cb5443b7b5869e0800000000000000
+      internalID: -1627950680578343885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione01
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 157
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.42, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3546a89e392d9c7e0800000000000000
+      internalID: -1744631847909170093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione02
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 157
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.42, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fcd38972b3c61a0800000000000000
+      internalID: -6815007094874452223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione03
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 157
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.42, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0330c773cd8a44070800000000000000
+      internalID: 8089776494441399088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 105
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.42, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9508162e80fc00450800000000000000
+      internalID: 6053065536250675289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione05
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 105
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.42, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc12124fdef58840800000000000000
+      internalID: 5225863177472974017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione06
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 105
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.45, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbba4f966798aad0800000000000000
+      internalID: -2690734310338937900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione07
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 105
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.45, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01cdc632b7b308ab0800000000000000
+      internalID: -5007937385574638576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione08
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 53
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.45, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8535feff68f729ff0800000000000000
+      internalID: -30822029641952424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione09
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 53
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.49, y: 0.49}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c0913362607dd10800000000000000
+      internalID: 2150194108228504578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione10
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 53
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.49, y: 0.49}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f6fea9f6f580e30800000000000000
+      internalID: 4469927563110608761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione11
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 53
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.49, y: 0.49}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b655aae2e2a91d30800000000000000
+      internalID: 4402729206214383288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_Mad_Motione12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 50
+        height: 50
+      alignment: 9
+      pivot: {x: 0.48915443, y: 0.46901447}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd7426af67c8b5a0800000000000000
+      internalID: -6505230379393974791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Char_Mad_Motione04: 6053065536250675289
+      Char_Mad_Motione12: -6505230379393974791
+      Char_Mad_Motione06: -2690734310338937900
+      Char_Mad_Motione07: -5007937385574638576
+      Char_Mad_Motione08: -30822029641952424
+      Char_Mad_Motione11: 4402729206214383288
+      Char_Mad_Motione00: -1627950680578343885
+      Char_Mad_Motione01: -1744631847909170093
+      Char_Mad_Motione05: 5225863177472974017
+      Char_Mad_Motione02: -6815007094874452223
+      Char_Mad_Motione03: 8089776494441399088
+      Char_Mad_Motione10: 4469927563110608761
+      Char_Mad_Motione09: 2150194108228504578
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
