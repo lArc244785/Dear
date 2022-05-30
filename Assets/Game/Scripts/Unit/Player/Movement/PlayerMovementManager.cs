@@ -119,9 +119,7 @@ public class PlayerMovementManager : MonoBehaviour
     private Vector2 m_lastLookDir;
     #endregion
 
-    #region Shoulder
-    public Shoulder shoulder { get { return player.shoulder; } }
-    #endregion
+
 
     #region GroundPound
     private Vector3[] m_groundPoundPath;
@@ -352,7 +350,7 @@ public class PlayerMovementManager : MonoBehaviour
 
     public void Trun(Vector2 lookDir)
     {
-        if (lookDir.x != m_lastLookDir.x)
+        if (!Mathf.Equals(lookDir.x, m_lastLookDir.x))
         {
             player.model.flipX = !player.model.flipX;
         }
@@ -415,7 +413,9 @@ public class PlayerMovementManager : MonoBehaviour
 
         if (player.rig2D.velocity.y < 0.0f)
             force.y -= player.rig2D.velocity.y;
+
         player.rig2D.AddForce(force, ForceMode2D.Impulse);
+        
     }
 
 

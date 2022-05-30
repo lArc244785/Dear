@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: 485a36a94c3a5014d89584002cc98dc4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8620188506070964051
+    second: Object_Spring_Motion00
+  - first:
+      213: 3031032460997852271
+    second: Object_Spring_Motion01
+  - first:
+      213: -6752538364991184491
+    second: Object_Spring_Motion02
+  - first:
+      213: 6239589308878802907
+    second: Object_Spring_Motion03
+  - first:
+      213: 8980285132684462669
+    second: Object_Spring_Motion04
+  - first:
+      213: 3498858145655998918
+    second: Object_Spring_Motion05
+  - first:
+      213: -8300556145014311538
+    second: Object_Spring_Motion06
+  - first:
+      213: -8352815746725275979
+    second: Object_Spring_Motion07
+  - first:
+      213: 1873019778768162925
+    second: Object_Spring_Motion08
+  - first:
+      213: 7702450161595191755
+    second: Object_Spring_Motion09
+  - first:
+      213: -1847952092381403234
+    second: Object_Spring_Motion10
+  - first:
+      213: 7361008203689465931
+    second: Object_Spring_Motion11
+  - first:
+      213: 4281111830286035593
+    second: Object_Spring_Motion12
+  - first:
+      213: 264898801010756154
+    second: Object_Spring_Motion13
+  - first:
+      213: -7530216556865930693
+    second: Object_Spring_Motion14
+  - first:
+      213: 6587255194382835649
+    second: Object_Spring_Motion15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Object_Spring_Motion00
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 405
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357d34946cf01a770800000000000000
+      internalID: 8620188506070964051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion01
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 405
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c7474d6f3601a20800000000000000
+      internalID: 3031032460997852271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion02
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 405
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591e08e222a2a42a0800000000000000
+      internalID: -6752538364991184491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion03
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 405
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdfcb0cea69779650800000000000000
+      internalID: 6239589308878802907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 304
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a0163afb160ac70800000000000000
+      internalID: 8980285132684462669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion05
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 304
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9ce4b12f07e8030800000000000000
+      internalID: 3498858145655998918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion06
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 304
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e857c321a208ecc80800000000000000
+      internalID: -8300556145014311538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion07
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 304
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6962e5556d41c80800000000000000
+      internalID: -8352815746725275979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion08
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 203
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60d1caa09d4ef910800000000000000
+      internalID: 1873019778768162925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion09
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 203
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc11806dc9994ea60800000000000000
+      internalID: 7702450161595191755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion10
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 203
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97aaa3ec51ca56e0800000000000000
+      internalID: -1847952092381403234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion11
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 203
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4895a106fd872660800000000000000
+      internalID: 7361008203689465931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 102
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98aebeff680996b30800000000000000
+      internalID: 4281111830286035593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion13
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 102
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a4ca75e0c1da300800000000000000
+      internalID: 264898801010756154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion14
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 102
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3abd3630fb4f7790800000000000000
+      internalID: -7530216556865930693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Object_Spring_Motion15
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 102
+        width: 154
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf1902d2b1aa6b50800000000000000
+      internalID: 6587255194382835649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Object_Spring_Motion04: 8980285132684462669
+      Object_Spring_Motion03: 6239589308878802907
+      Object_Spring_Motion15: 6587255194382835649
+      Object_Spring_Motion05: 3498858145655998918
+      Object_Spring_Motion02: -6752538364991184491
+      Object_Spring_Motion07: -8352815746725275979
+      Object_Spring_Motion12: 4281111830286035593
+      Object_Spring_Motion09: 7702450161595191755
+      Object_Spring_Motion08: 1873019778768162925
+      Object_Spring_Motion14: -7530216556865930693
+      Object_Spring_Motion10: -1847952092381403234
+      Object_Spring_Motion13: 264898801010756154
+      Object_Spring_Motion00: 8620188506070964051
+      Object_Spring_Motion11: 7361008203689465931
+      Object_Spring_Motion01: 3031032460997852271
+      Object_Spring_Motion06: -8300556145014311538
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,16 +14,7 @@ public class UnitPlayer : UnitBase
     }
     #endregion
 
-    #region shoulder
-    private Shoulder m_shoulder;
-    public Shoulder shoulder
-    {
-        get
-        {
-            return m_shoulder;
-        }
-    }
-    #endregion
+
 
     #region toolManager
     private ToolManager m_toolManager;
@@ -200,7 +191,7 @@ public class UnitPlayer : UnitBase
         m_inputPlayer = GetComponent<InputPlayer>();
         m_sound = GetComponent<PlayerSound>();
         m_animationManager = GetComponent<PlayerAnimationManager>();
-        m_shoulder = transform.Find("Shoulder").GetComponent<Shoulder>();
+        
         m_toolManager = GetComponent<ToolManager>();
         m_modelCollider = GetComponent<CapsuleCollider2D>();
         m_hitImfect = GetComponent<StateImfectTween>();
@@ -210,16 +201,18 @@ public class UnitPlayer : UnitBase
         m_mad = GameObject.Find("Mad").GetComponent<Mad>();
 
 
-        shoulder.Init();
+        
 
         toolManager.Init(this);
-        animationManager.Init(modelAnimator, shoulder);
+        
         movementManager.Init(this);
         sound.Init(this);
         m_hitImfect.Init(model);
 
         madTrackingPoint.Init(movementManager.IsLookDirRight(), mad);
         mad.Init(this, madTrackingPoint);
+
+        animationManager.Init();
 
         inputPlayer.Init(movementManager, toolManager, mad);
 
