@@ -30,7 +30,10 @@ public class FadeText : MonoBehaviour
     private fadeType type;
     private TextMeshProUGUI Tmp;
 
-
+    private void Awake()
+    {
+        init();
+    }
     public void init()
     { 
         Tmp = GetComponent<TextMeshProUGUI>();
@@ -74,6 +77,8 @@ public class FadeText : MonoBehaviour
             Color color = Tmp.color;
             color.a = Mathf.Lerp(start, end, m_fadeCurve.Evaluate(percent));
             Tmp.color = color;
+
+           
 
             yield return null;
         }

@@ -18,9 +18,11 @@ public class SoundManager : SingleToon<SoundManager>
     {
         if(FMOD.Studio.PLAYBACK_STATE.PLAYING == GetPlayState(eventInstance))
         {
+           
             Debug.LogWarning("Sound Overlap : " + eventInstance);
             return;
         }
+        
 
         eventInstance.start();
     }

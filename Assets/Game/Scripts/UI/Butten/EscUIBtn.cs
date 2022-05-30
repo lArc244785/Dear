@@ -22,6 +22,8 @@ public class EscUIBtn : MonoBehaviour
     }
     public void OptionBtn()
     {
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.option);
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
     }
     public void ExitBtn()
     {

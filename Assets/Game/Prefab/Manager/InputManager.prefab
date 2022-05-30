@@ -214,6 +214,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b56e08f4-ce06-4d4c-a170-d1707e42ca0e
     m_ActionName: Player/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1220886431622341405}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: EscapeUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4b85e162-9439-42da-9c07-52727ad2b26e
+    m_ActionName: Player/escapeUI[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f441033-da94-480c-a5d8-5f2eb5c867f7
+    m_ActionName: Player/anyKey[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
