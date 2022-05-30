@@ -136,6 +136,10 @@ public class InputManager : SingleToon<InputManager>
             {
                 PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
             }
+            else
+            {
+                PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
+            }
         }
 
     }

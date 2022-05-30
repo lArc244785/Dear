@@ -46,6 +46,21 @@ public class PopUpManager : SingleToon<PopUpManager>
 
     }
 
+    [SerializeField]
+    private PopupUI m_Esc;
+    public PopupUI esc
+    {
+        get
+        {
+            return m_Esc;
+        }
+        set
+        {
+            m_Esc = value;
+        }
+
+    }
+
 
     private LinkedList<PopupUI> m_activePopupList;
     private List<PopupUI> m_popupUIs;
@@ -80,7 +95,7 @@ public class PopUpManager : SingleToon<PopUpManager>
     {
         m_popupUIs = new List<PopupUI>()
         {
-            m_inventory,m_character,m_test
+            m_inventory,m_character,m_test,m_Esc
         };
      
         foreach (var popup in m_popupUIs)
@@ -91,6 +106,7 @@ public class PopUpManager : SingleToon<PopUpManager>
                 m_activePopupList.AddFirst(popup);
                 RefreshAllPopupDepth();
             };
+            if (!popup.closeBtn) return;
             popup.closeBtn.onClick.AddListener(() => ClosePopup(popup));   
         }
     }

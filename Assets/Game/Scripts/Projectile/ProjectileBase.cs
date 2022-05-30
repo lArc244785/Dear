@@ -39,7 +39,15 @@ public class ProjectileBase : MonoBehaviour
         {
             return m_dir;
         }
+        set
+        {
+            m_dir = value;
+        }
     }
+    [SerializeField]
+    private LayerMask m_hitLayerMask;
+
+
 
 
     protected virtual void Init(Vector2 fireDir, LayerMask targetLayerMask)
@@ -51,7 +59,7 @@ public class ProjectileBase : MonoBehaviour
 
         float lookRotation = Utility.GetRotaionAngleByDir(dir, 0.0f);
 
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, lookRotation);
+        transform.rotation = Quaternion.Euler(0f, 0f, lookRotation);
     }
 
     public void HandleSpawn(Vector2 spawnPoint, Vector2 fireDir, LayerMask targetLayerMask)
@@ -70,10 +78,11 @@ public class ProjectileBase : MonoBehaviour
     protected virtual void Enter(Collider2D collision) 
     {
         UnitBase unit = collision.GetComponent<UnitBase>();
-        if (unit == null)
-            return;
-
-        unit.OnHitObject(gameObject, weaponData.damage);
+        if (unit != null)
+        {
+            unit.OnHitObject(gameObject, weaponData.damage);
+        }
+        Destory();
     }
 
 
