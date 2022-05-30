@@ -19,11 +19,12 @@ public class MadStateAttack : MadStateBase
         currentAttack = 0;
         attackPoint = InputManager.instance.inGameMousePosition2D;
         mad.SetLookPoint(attackPoint);
-
+        mad.SetTriggerAttack();
     }
 
     public override void Exit(Mad mad)
     {
+        
         mad.OnLastOnCoolTime();
     }
 
@@ -57,6 +58,9 @@ public class MadStateAttack : MadStateBase
             }
             else
             {
+                mad.SetTriggerTeleport();
+
+
                 isAttackEndWait = true;
                 OnAttackEndWaitTime(mad.data);
             }
