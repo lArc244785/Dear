@@ -8,14 +8,14 @@ public class EscUIBtn : MonoBehaviour
   
     public void ingameBtn()
     {
-        GameManager.instance.gameState = GameManager.GameSate.GamePlaying;
+        GameManager.instance.ChaneGameState(GameManager.GameSate.GamePlaying);
         PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
 
     }
     public void GotitleBtn()
     {
 
-        GameManager.instance.gameState = GameManager.GameSate.Title;
+        GameManager.instance.Gotitle();
 
         PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
         SceneManager.LoadScene("Title");

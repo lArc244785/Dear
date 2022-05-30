@@ -5,14 +5,15 @@ using UnityEngine;
 public class UIManager : SingleToon<UIManager>
 {
     [SerializeField]
-    private UI_IngameView m_ingameView;
-    [SerializeField]
     private UI_DialogueView m_dialogueView;
     [SerializeField]
     private UI_LoadingView m_loadingView;
     [SerializeField]
     private UI_ProdutionView m_produtionView;
-
+    [SerializeField]
+    private IngameHpUI m_ingameUIView;
+    [SerializeField]
+    private UI_title m_titleView;
     
 
     private List<UI_ViewBase> m_uiList;
@@ -24,14 +25,16 @@ public class UIManager : SingleToon<UIManager>
         if (returnValue)
         {
             m_uiList = new List<UI_ViewBase>();
-            m_ingameView.Init();
-            m_uiList.Add(m_ingameView);
             m_dialogueView.Init();
             m_uiList.Add(dialogueView);
             loadingView.Init();
             m_uiList.Add(loadingView);
             produtionView.Init();
             m_uiList.Add(produtionView);
+            m_ingameUIView.Init();
+            m_uiList.Add(m_ingameUIView);
+            m_titleView.Init();
+            m_uiList.Add(m_titleView);
         }
         return returnValue;
     }
@@ -48,13 +51,7 @@ public class UIManager : SingleToon<UIManager>
             ui.Toggle(false);
     }
 
-    public UI_IngameView inGameView
-    {
-        get
-        {
-            return m_ingameView;
-        }
-    }
+
 
     public UI_DialogueView dialogueView
     { 
@@ -76,4 +73,12 @@ public class UIManager : SingleToon<UIManager>
             return m_produtionView; 
         } 
     }
+     public IngameHpUI ingameHpUI
+    {
+        get
+        {
+            return m_ingameUIView;
+        }
+    }
+     
 }

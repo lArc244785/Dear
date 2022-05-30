@@ -13,11 +13,11 @@ public class GameManager : SingleToon<GameManager>
         None = -1, Title, Load, StageLoad, GameStart, GamePlaying, InGameUISetting , GameOver, GameClear, Pause,
         Total
     }
-
+    [SerializeField]
     private GameSate m_gameState;
     public GameSate gameState
     {
-        set
+        private set
         {
             if(m_gameState == GameSate.Pause)
             {
@@ -71,6 +71,7 @@ public class GameManager : SingleToon<GameManager>
     {
         m_changeGameStaet = new ChangeGameState[(int)GameSate.Total];
 
+        m_changeGameStaet[(int)GameSate.Title] = ChangeGameTitle;
         m_changeGameStaet[(int)GameSate.GamePlaying] = ChangeGamePlaying;
         m_changeGameStaet[(int)GameSate.Load] = ChangeLoad;
         m_changeGameStaet[(int)GameSate.StageLoad] = ChangeStageLoad;
@@ -90,7 +91,7 @@ public class GameManager : SingleToon<GameManager>
     private void Start()
     {
         //NextState(1);
-        gameState = GameSate.GameStart;
+        gameState = GameSate.Title;
     }
 
 
@@ -128,6 +129,11 @@ public class GameManager : SingleToon<GameManager>
         Time.timeScale = 0.0f;
     }
 
+    private void ChangeGameTitle()
+    {
+        UIManager.instance.AllToggleFase();
+        //UIManager.instance.titleView.Toggle(true)
+    }
 
     #endregion
 
@@ -147,9 +153,19 @@ public class GameManager : SingleToon<GameManager>
 
     public void NextState(int index)
     {
-        GameManager.instance.stageManager.player.inputPlayer.SetControl(false);
+        //GameManager.instance.stageManager.player.inputPlayer.SetControl(false);
         gameState = GameSate.StageLoad;
         StartCoroutine(SceneLoadCorutine(index));
+    }
+    public void Gotitle()
+    {
+       
+        gameState = GameSate.StageLoad;
+        StartCoroutine(GotitleCorutine());
+    }
+    public void ChaneGameState(GameSate nextState)
+    {
+        gameState = nextState;
     }
 
     private IEnumerator StageLoadCorutine(int index)
@@ -185,11 +201,22 @@ public class GameManager : SingleToon<GameManager>
 
         gameState = GameSate.GameStart;
     }
+    private IEnumerator GotitleCorutine()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(0);
+        UIManager.instance.loadingView.LoadingProduction();
+        while (!operation.isDone || !UIManager.instance.loadingView.fakeLoadingEnd)
+        {
+            yield return null;
+        }
+        gameState = GameSate.Title;
+
+    }
 
     private IEnumerator GameStartProcessCoroutine()
     {
         UIManager.instance.AllToggleFase();
-        UIManager.instance.inGameView.Toggle(true);
+        UIManager.instance.ingameHpUI.Toggle(true);
         UIManager.instance.produtionView.Toggle(true);
         UIManager.instance.produtionView.fade.FadeIn();
 

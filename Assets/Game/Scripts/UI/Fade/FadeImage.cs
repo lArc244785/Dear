@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 
-public enum fadeState { fadeIn = 0, fadeout, fadeinout, fadeLoop}
-public class StartBtn : MonoBehaviour
+public class FadeImage : MonoBehaviour
 {
     [SerializeField]
     [Range(0.01f, 10f)]
@@ -14,7 +13,6 @@ public class StartBtn : MonoBehaviour
     [SerializeField]
     private AnimationCurve m_fadeCurve;
     private Image m_image;
-    private fadeState m_fadeState;
 
     private void Start()
     {

@@ -35,6 +35,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (GameManager.instance.stageManager.player == null)
             return;
 
@@ -113,12 +116,13 @@ public class InputManager : SingleToon<InputManager>
         {
             if (PopUpManager.instance.activePopupList.Count > 0)
             {
-                GameManager.instance.gameState = GameManager.GameSate.GamePlaying;
+                GameManager.instance.ChaneGameState(GameManager.GameSate.GamePlaying);
                 PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
             }   
             else
             {
-                GameManager.instance.gameState = GameManager.GameSate.Pause;
+
+                GameManager.instance.ChaneGameState(GameManager.GameSate.Pause);
                 PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
             }
         }
@@ -131,8 +135,9 @@ public class InputManager : SingleToon<InputManager>
             return;
         if (context.started)
         {
-            GameManager.instance.gameState = GameManager.GameSate.GameStart;
-            SceneManager.LoadScene("Sh_test_1");
+
+            GameManager.instance.NextState(6);
+       
         }
     }
 

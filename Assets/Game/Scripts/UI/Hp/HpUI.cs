@@ -15,13 +15,10 @@ public class HpUI : MonoBehaviour
     [SerializeField]
     private Transform parent;
     
-    private void OnEnable()
+   
+    public void init()
     {
-        init();
-    }
-
-    private void init()
-    {
+       
         m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
         m_HP = new List<SingleHpUI>();
         for(int i = 0; i < m_playerHealth.maxhp; i++)

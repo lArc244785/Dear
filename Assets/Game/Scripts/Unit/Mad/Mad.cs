@@ -158,6 +158,9 @@ public class Mad : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (currentState == State.None)
             return;
 

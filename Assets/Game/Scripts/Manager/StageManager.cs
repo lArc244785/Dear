@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StageManager : MonoBehaviour
 {
@@ -31,16 +32,29 @@ public class StageManager : MonoBehaviour
     private bool playerDirRight { get { return m_playerDirRight; } }
     #endregion
 
+    [SerializeField]
+    private string m_stage_name;
+    [SerializeField]
+    private TextMeshProUGUI m_stageText;
+
     public void Init(/*bool playerDirRight*/)
     {
         ComponentSetting();
 
+        if (m_stage_name == null) m_stage_name = "";
+
+
+        m_stageText.GetComponent<FadeText>().init();
+
         player.Init();
         stageBgm.Init();
         cameraManager.Init();
+        m_stageText.text = m_stage_name;
+
 
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
+        
     }
 
     private void ComponentSetting()
