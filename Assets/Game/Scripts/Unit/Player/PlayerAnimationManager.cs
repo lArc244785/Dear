@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAnimationManager : MonoBehaviour
 {
     #region animation
+    [SerializeField]
     private Animator m_animation;
     public Animator animation
     {
@@ -13,13 +14,10 @@ public class PlayerAnimationManager : MonoBehaviour
     #endregion
 
 
-    private Shoulder m_shoulder;
-    private Shoulder shoulder { get { return m_shoulder; } }
 
-    public void Init(Animator ani, Shoulder shoulder)
+
+    public void Init()
     {
-        m_animation = ani;
-        m_shoulder = shoulder;
     }
 
     public float movement
@@ -33,17 +31,7 @@ public class PlayerAnimationManager : MonoBehaviour
             return animation.GetFloat("Movement");
         }
     }
-    public float ropeMovement
-    {
-        set
-        {
-            animation.SetFloat("RopeMovement", value);
-        }
-        get
-        {
-            return animation.GetFloat("RopeMovement");
-        }
-    }
+
     public int jumpCount
     {
         set
@@ -60,40 +48,51 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void TriggerLanding()
     {
-        ResetTrigger("Air");
+        ResetAllTrigger();
         SetTrigger("LandingA");
     }
 
     public void TriggerWall()
     {
+        ResetAllTrigger();
         SetTrigger("Wall");
-        
+    }
+    public void TriggerWallJump()
+    {
+        ResetAllTrigger();
+        SetTrigger("WallJump");
     }
 
     public void TriggerJump()
     {
-        ResetTrigger("Wall");
+        ResetAllTrigger();
         SetTrigger("Jump");
     }
 
-    public void TriggerRope()
+    public void TriggerRopeFire()
     {
-        Debug.Log("Rope Ani");
-        ResetTrigger("Air");
-        ResetTrigger("Wall");
-        ResetTrigger("Jump");
-        SetTrigger("Rope");
+        ResetAllTrigger();
+        SetTrigger("RopeFire");
     }
 
+    public void TriggerRopeMove()
+    {
+        ResetAllTrigger();
+        SetTrigger("RopeMove");
+    }
+
+    
     public void TriggerAir()
     {
-        //Debug.Log("Air Ani");
-
         ResetTrigger("LandingA");
         SetTrigger("Air");
     }
 
-
+    public void TriggerGroundPound()
+    {
+        ResetAllTrigger();
+        SetTrigger("GroundPound");
+    }
 
 
     private void SetTrigger(string id)
@@ -109,13 +108,20 @@ public class PlayerAnimationManager : MonoBehaviour
 
     public void RopeToAirAnimation()
     {
-        shoulder.SetArmVisible(false);
         TriggerAir();
     }
 
-    public void RopeAnimation()
+
+
+    private void ResetAllTrigger()
     {
-        shoulder.SetArmVisible(true);
-        TriggerRope();
+        foreach(var param in animation.parameters)
+        {
+            if(param.type == AnimatorControllerParameterType.Trigger)
+                ResetTrigger(param.name);
+        }
     }
+
+
 }
+ 
