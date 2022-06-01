@@ -63,16 +63,14 @@ public class ProjectileTrap : MonoBehaviour
         firePointTransfrom.localPosition = firePointOffset;
 
         m_fireDir = (Vector2)(m_firePointTransfrom.position - transform.position);
-        fireDir.Normalize();
-
-        
+        m_fireDir.Normalize();
     }
 
 
     public void Fire()
     {
         GameObject projectile = GameObject.Instantiate(projectilePrefab);
-        projectile.GetComponent<ProjectileBase>().HandleSpawn(firePointTransfrom.position, fireDir, targetLayerMask);
+        projectile.GetComponent<ProjectileBase>().HandleSpawn(firePointTransfrom.position, m_fireDir, targetLayerMask);
     }
 
     

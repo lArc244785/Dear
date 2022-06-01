@@ -101,6 +101,10 @@ public class InputManager : SingleToon<InputManager>
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
+
+        if (context.started)
+            m_inputPlayer.Interaction();
+
     }
 
     public void ActiveInventory(InputAction.CallbackContext contex)
@@ -135,6 +139,10 @@ public class InputManager : SingleToon<InputManager>
             if (PopUpManager.instance.activePopupList.Count > 0)
             {
                 PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
+            }
+            else
+            {
+                PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
             }
         }
 
