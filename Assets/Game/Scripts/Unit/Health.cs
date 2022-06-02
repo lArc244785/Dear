@@ -7,8 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int m_maxHP;
-    [SerializeField]
-    private HpUI m_hpui;
+    
     public int maxhp
     {
         get
@@ -36,19 +35,19 @@ public class Health : MonoBehaviour
     {
       
         hp = m_maxHP;
+       
     }
 
     public void OnRecovery(int recovery)
     {
         hp = recovery;
-
-        m_hpui.OnHeal(recovery);
+        
     }
 
     public void OnDamage(int damage)
     {
-        m_hpui.OnDamage(damage);
         hp -= damage;
+       
     }
 
 }

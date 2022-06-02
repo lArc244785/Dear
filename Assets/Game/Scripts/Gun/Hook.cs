@@ -41,10 +41,15 @@ public class Hook : MonoBehaviour
         }
     }
 
+    private GameObject m_gameObjectModel;
+
+
 
     public void Init(GrapplingGun grapplingGun)
     {
         m_grapplingGun = grapplingGun;
+
+        m_gameObjectModel = transform.Find("Model").gameObject;
     }
 
 
@@ -53,9 +58,14 @@ public class Hook : MonoBehaviour
         transform.parent = null;
         m_startPos = startPos;
 
+        transform.position = startPos;
+
+
         currentTime = 0.0f;
 
         m_targetPos = targetPos;
+
+        SetGameObjectActive(true);
     }
 
     private void Update()
@@ -80,7 +90,10 @@ public class Hook : MonoBehaviour
     }
 
 
-
+    public void SetGameObjectActive(bool isActive)
+    {
+        m_gameObjectModel.SetActive(isActive);
+    }
 }
 
 

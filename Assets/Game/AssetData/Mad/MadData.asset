@@ -21,8 +21,5 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  m_attackWaitTime: 0.1
-  m_attackEndWaitTime: 1
-  m_attackAmount: 1
-  m_attackCoolTime: 0.5
+  m_attackWaitTime: 0.3
   m_firePointDistance: 0.1

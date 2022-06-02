@@ -303,8 +303,11 @@ public class GrapplingGun : ActiveToolBase
 
     private void Fire(Vector2 targetPos)
     {
-        currentState = State.Fire;
 
+        float r = Utility.GetRotaionAngleByTargetPosition(player.transform.position, targetPos, 90.0f);
+        player.transform.rotation = Utility.GetRoationZ(r);
+        
+       
         m_startPos = (Vector2)fireTr.position;
         m_targetPos = targetPos;
 
@@ -331,18 +334,23 @@ public class GrapplingGun : ActiveToolBase
         else
             player.movementManager.Trun(Vector2.left);
 
-        
 
-        
-
-
+     
         ropeRenderer.DrawInit(fireTr.position, dir);
+
+
+
+        player.sound.RopeShoot();
+
+        currentState = State.Fire;
     }
 
     private void Cancle()
     {
 
         GrappingReset();
+
+        player.transform.rotation = Quaternion.identity;
 
         if (!player.movementManager.IsGrounded())
             player.movementManager.currentState = PlayerMovementManager.State.Air;
@@ -375,6 +383,7 @@ public class GrapplingGun : ActiveToolBase
 
 
         ropeRenderer.OffDraw();
+        hook.SetGameObjectActive(false);
 
         pickType = PickType.None;
     }
@@ -447,7 +456,7 @@ public class GrapplingGun : ActiveToolBase
         Vector2 hookPos = (Vector2)hook.transform.position;
 
         currentPullTime = 0.0f;
-
+        player.sound.RopeMove();
         currentState = State.Pull;
     }
 

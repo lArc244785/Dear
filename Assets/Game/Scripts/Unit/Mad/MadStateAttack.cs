@@ -25,7 +25,7 @@ public class MadStateAttack : MadStateBase
     public override void Exit(Mad mad)
     {
         
-        mad.OnLastOnCoolTime();
+        mad.OnLastAttackTime();
     }
 
     public override void FixedProcesses(Mad mad)
@@ -49,21 +49,21 @@ public class MadStateAttack : MadStateBase
 
         if (lastAttackWaitTime <= 0.0f)
         {
-            if (currentAttack < mad.data.attackAmount)
-            {
-                Attack(mad, attackPoint);
-                OnAttackWaitTime(mad.data);
-                currentAttack++;
+            //if (currentAttack < mad.data.attackAmount)
+            //{
+            //    Attack(mad, attackPoint);
+            //    OnAttackWaitTime(mad.data);
+            //    currentAttack++;
 
-            }
-            else
-            {
-                mad.SetTriggerTeleport();
+            //}
+            //else
+            //{
+            //    mad.SetTriggerTeleport();
 
 
-                isAttackEndWait = true;
-                OnAttackEndWaitTime(mad.data);
-            }
+            //    isAttackEndWait = true;
+            //    OnAttackEndWaitTime(mad.data);
+            //}
         }
 
     }
@@ -85,7 +85,7 @@ public class MadStateAttack : MadStateBase
 
     private void OnAttackEndWaitTime(MadData data)
     {
-        lastAttackEndWaitTime = data.attackEndWaitTime;
+       // lastAttackEndWaitTime = data.attackEndWaitTime;
     }
 
     private void AttackEndWaitCoyoteTime()

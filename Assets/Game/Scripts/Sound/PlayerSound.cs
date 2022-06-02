@@ -47,11 +47,7 @@ public class PlayerSound : MonoBehaviour
     [SerializeField]
     private FMODUnity.EventReference m_ropeShoot;
     [SerializeField]
-    private FMODUnity.EventReference m_ropeCheckEvent;
-    [SerializeField]
-    private FMODUnity.EventReference m_ropeAccelEvent;
-    [SerializeField]
-    private FMODUnity.EventReference m_ropeQuitEvent;
+    private FMODUnity.EventReference m_ropeMove;
     #endregion
 
     #region groundPound
@@ -189,20 +185,11 @@ public class PlayerSound : MonoBehaviour
         SoundManager.instance.SoundOneShot(m_ropeShoot);
     }
 
-    public void RopeCheck()
+    public void RopeMove()
     {
-        SoundManager.instance.SoundOneShot(m_ropeCheckEvent);
+        SoundManager.instance.SoundOneShot(m_ropeMove);
     }
 
-    public void RopeAccel()
-    {
-        SoundManager.instance.SoundOneShot(m_ropeAccelEvent);
-    }
-
-    public void RopeQuit()
-    {
-        SoundManager.instance.SoundOneShot(m_ropeQuitEvent);
-    }
     #endregion
 
     #region GroundPound Sound Funtion
