@@ -52,6 +52,7 @@ public class MadStateTracking : MadStateBase
 
         mad.transform.position = m_currentPos;
 
+        if(!mad.isAttackAble)
         mad.LookPlayer();
 
 
@@ -128,6 +129,7 @@ public class MadStateTracking : MadStateBase
 
         return data.trackingDeadRange + addRange;
     }
+
 
 
 }

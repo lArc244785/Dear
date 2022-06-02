@@ -17,7 +17,7 @@ public class GameManager : SingleToon<GameManager>
     private GameSate m_gameState;
     public GameSate gameState
     {
-        private set
+        set
         {
             if(m_gameState == GameSate.Pause)
             {
@@ -83,6 +83,7 @@ public class GameManager : SingleToon<GameManager>
 
     private void Awake()
     {
+        
         Init();
     }
 

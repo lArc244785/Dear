@@ -91,35 +91,7 @@ public class MadData : ScriptableObject
             return m_attackWaitTime;
         }
     }
-    [SerializeField]
-    private float m_attackEndWaitTime;
-    public float attackEndWaitTime
-    {
-        get
-        {
-            return m_attackEndWaitTime;
-        }
-    }
-
-    [SerializeField]
-    private int m_attackAmount;
-    public int attackAmount
-    {
-        get
-        {
-            return m_attackAmount;
-        }
-    }
-
-    [SerializeField]
-    private float m_attackCoolTime;
-    public float attackCoolTime
-    {
-        get
-        {
-            return m_attackCoolTime;
-        }
-    }
+   
     [SerializeField]
     [Range(0.0f , 2.0f)]
     private float m_firePointDistance;
