@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class InputPlayer : MonoBehaviour
 {
-
-    private PlayerMovementManager m_movementManager;
-    private PlayerMovementManager movementManger
+    private UnitPlayer m_player;
+    private UnitPlayer player
     {
         get
         {
-            return m_movementManager;
+            return m_player;
         }
     }
 
-    private ToolManager m_toolManager;
-    private ToolManager toolManager
-    {
-        get
-        {
-            return m_toolManager;
-        }
-    }
 
     private Mad m_mad;
     private Mad mad
@@ -64,10 +55,10 @@ public class InputPlayer : MonoBehaviour
 
 
 
-    public void Init(PlayerMovementManager movementManger, ToolManager toolManager, Mad mad)
+    public void Init(UnitPlayer player, Mad mad)
     {
-       m_movementManager = movementManger;
-        m_toolManager = toolManager;
+        m_player = player;
+
         m_mad = mad;
 
         isControl = true;
@@ -79,14 +70,14 @@ public class InputPlayer : MonoBehaviour
         if (!isControl )
             return;
 
-        movementManger.coyoteSystem.OnJumpEnterTime();        
+        player.movementManager.coyoteSystem.OnJumpEnterTime();        
     }
 
     public void JumpUp()
     {
         if (!isControl )
             return;
-        movementManger.coyoteSystem.OnJumpExitTime();
+        player.movementManager.coyoteSystem.OnJumpExitTime();
     }
 
     public void JumpPressed()
@@ -99,21 +90,21 @@ public class InputPlayer : MonoBehaviour
     {
         if (!isControl )
             return;
-        movementManger.isWallGrip = true;
+        player.movementManager.isWallGrip = true;
     }
 
     public void WallGripUp()
     {
         if (!isControl )
             return;
-        movementManger.isWallGrip = false;
+        player.movementManager.isWallGrip = false;
     }
 
     public void LeftMouseEnter()
     {
         if (!isControl)
             return;
-        toolManager.LeftUse();
+        player.toolManager.LeftUse();
 
     }
 
@@ -129,10 +120,10 @@ public class InputPlayer : MonoBehaviour
         if (!isControl )
             return;
 
-        if (movementManger.currentState != PlayerMovementManager.State.RopeJump)
+        if (player.movementManager.currentState != PlayerMovementManager.State.RopeJump)
             return;
-        movementManger.isRopeReboundDirRight = true;
-        movementManger.coyoteSystem.OnRopeReboundTime();
+        player.movementManager.isRopeReboundDirRight = true;
+        player.movementManager.coyoteSystem.OnRopeReboundTime();
     }
 
     public void ReboundLeft()
@@ -140,10 +131,10 @@ public class InputPlayer : MonoBehaviour
         if (!isControl )
             return;
 
-        if (movementManger.currentState != PlayerMovementManager.State.RopeJump)
+        if (player.movementManager.currentState != PlayerMovementManager.State.RopeJump)
             return;
-        movementManger.isRopeReboundDirRight = false;
-        movementManger.coyoteSystem.OnRopeReboundTime();
+        player.movementManager.isRopeReboundDirRight = false;
+        player.movementManager.coyoteSystem.OnRopeReboundTime();
     }
 
 
@@ -152,7 +143,7 @@ public class InputPlayer : MonoBehaviour
         if (!isControl )
             return;
 
-        toolManager.SetTool(type);
+        player.toolManager.SetTool(type);
     }
 
 
@@ -162,7 +153,7 @@ public class InputPlayer : MonoBehaviour
             return;
 
 
-        toolManager.LeftUse();
+        player.toolManager.LeftUse();
     }
 
     public void ToolCancleLeft()
@@ -171,15 +162,15 @@ public class InputPlayer : MonoBehaviour
             return;
 
 
-        toolManager.LeftCancle();
+        player.toolManager.LeftCancle();
     }
 
-    public void MadAttack()
+    public void MadAttackAble(bool isAttackAble)
     {
-        if (!isControl)
+        if (!isControl && isAttackAble)
             return;
-        //if (movementManger.currentState == PlayerMovementManager.State.Ground)
-            mad.Attack();
+
+        mad.SetAttackAble(isAttackAble);
     }
 
 
@@ -189,7 +180,7 @@ public class InputPlayer : MonoBehaviour
         if (!isControl)
             return;
 
-        toolManager.RightUse();
+        player.toolManager.RightUse();
     }
 
     public void ToolCancleRight()
@@ -197,7 +188,7 @@ public class InputPlayer : MonoBehaviour
         if (!isControl)
             return;
 
-        toolManager.RightCancle();
+        player.toolManager.RightCancle();
     }
 
     public void SetMoveDir(Vector2 dir)
@@ -208,6 +199,14 @@ public class InputPlayer : MonoBehaviour
         moveDir = dir;
        // Debug.Log("MoveDir: " + dir);
     }
+
+    public void Interaction()
+    {
+        if (player.interaction.CanInteracion())
+            player.interaction.Interaction();
+    }
+
+
 
 
     public Vector2 moveDir

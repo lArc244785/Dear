@@ -152,15 +152,18 @@ public class UnitPlayer : UnitBase
     public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
     #endregion
 
-    #region 
+    #region  Wall
     private IEnumerator m_wallSlideLoopCoroutine;
     private bool m_wallSlideLoop;
     public bool wallSlideLoop { set { m_wallSlideLoop = value; } get { return m_wallSlideLoop; } }
     #endregion
 
+    #region Interaction
 
-    [SerializeField]
-    private HpUI m_hpui;
+    private PlayerInteraction m_interaction;
+    public PlayerInteraction interaction { get { return m_interaction; } }
+    #endregion
+
 
     public override void Init()
     {
@@ -174,8 +177,6 @@ public class UnitPlayer : UnitBase
         hitLayerEvent = null;
 
         SetLayer(defaultLayer);
-
-        m_hpui = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
 
         footStepLoop = false;
         m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
@@ -206,7 +207,7 @@ public class UnitPlayer : UnitBase
         m_madTrackingPoint = transform.Find("MadTrackingPoint").GetComponent<MadTrackingPoint>();
         m_mad = GameObject.Find("Mad").GetComponent<Mad>();
 
-
+        m_interaction = GetComponent<PlayerInteraction>();
         
 
         toolManager.Init(this);
@@ -220,8 +221,8 @@ public class UnitPlayer : UnitBase
 
         animationManager.Init();
 
-        inputPlayer.Init(movementManager, toolManager, mad);
-
+        inputPlayer.Init(this, mad);
+        interaction.Init();
     }
 
     public Vector2 GetModelColliderTop()
@@ -239,7 +240,6 @@ public class UnitPlayer : UnitBase
     {
         base.HitHp(damage);
         health.OnDamage(damage);
-        m_hpui.OnDamage(damage);
     }
 
     protected override void HitUniqueEventUnit(UnitBase attackUnit)
