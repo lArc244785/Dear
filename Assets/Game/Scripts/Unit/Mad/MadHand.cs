@@ -24,9 +24,15 @@ public class MadHand : MonoBehaviour
 
     private bool m_isInit =false ;
 
+    private float frontLocalPoint = 0.8f;
+    private float backLocalPoint  = 1.0f;
+    private float targetLocalY;
+
     public void Init()
     {
         transform.position = m_targetTr.position;
+        targetLocalY = transform.localPosition.y;
+
         m_currentPos = transform.position;
         m_isInit = true;
     }
@@ -71,10 +77,14 @@ public class MadHand : MonoBehaviour
         if(m_isPivotRight && !m_model.flipX || !m_isPivotRight && m_model.flipX)
         {
             m_model.sortingOrder = 3001;
+            float frontPoint = frontLocalPoint * Mathf.Sign(m_targetTr.localPosition.x);
+            m_targetTr.localPosition = new Vector2(frontPoint, targetLocalY);
         }
         else
         {
             m_model.sortingOrder = 3003;
+            float backPoint = backLocalPoint * Mathf.Sign(m_targetTr.localPosition.x);
+            m_targetTr.localPosition = new Vector2(backPoint, targetLocalY);
         }
 
     }

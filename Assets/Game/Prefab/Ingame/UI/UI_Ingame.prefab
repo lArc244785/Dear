@@ -165,6 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5889559702840415813}
   - component: {fileID: 5889559702840415810}
+  - component: {fileID: 68060236610041102}
   m_Layer: 5
   m_Name: UI_Ingame
   m_TagString: Untagged
@@ -211,7 +212,22 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &68060236610041102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889559702840415812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e5a7ce0e8143248bf2f48732f70ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fullHPUI: {fileID: 5889559701818288243}
+  m_emptyHPUI: {fileID: 5889559702798038459}
+  m_fadeText: {fileID: 0}

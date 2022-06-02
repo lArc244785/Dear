@@ -22,4 +22,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   m_attackWaitTime: 0.3
+  m_attackAfterPlayerLookTime: 0.2
   m_firePointDistance: 0.1

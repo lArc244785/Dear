@@ -35,6 +35,22 @@ public class PopUpManager : SingleToon<PopUpManager>
 
     }
 
+    [SerializeField]
+    private PopupUI m_option;
+    public PopupUI option
+    {
+        get
+        {
+            return m_option;
+        }
+        set
+        {
+            m_option = value;
+        }
+
+    }
+
+
 
     private LinkedList<PopupUI> m_activePopupList;
     private List<PopupUI> m_popupUIs;
@@ -69,7 +85,7 @@ public class PopUpManager : SingleToon<PopUpManager>
     {
         m_popupUIs = new List<PopupUI>()
         {
-            m_Esc,m_check
+            m_Esc,m_check,m_option
         };
      
         foreach (var popup in m_popupUIs)
