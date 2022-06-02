@@ -929,27 +929,13 @@ MonoBehaviour:
       Data3: 2131377853
       Data4: -1677824422
     Path: event:/char/yuz/tools/rope_shoot
-  m_ropeCheckEvent:
+  m_ropeMove:
     Guid:
-      Data1: -1857528762
-      Data2: 1273739780
-      Data3: 1024485814
-      Data4: -246441281
-    Path: event:/char/yuz/tools/rope_attach
-  m_ropeAccelEvent:
-    Guid:
-      Data1: -2041877065
-      Data2: 1307586988
-      Data3: -1093674562
-      Data4: -1714115620
-    Path: event:/char/yuz/tools/rope_accel
-  m_ropeQuitEvent:
-    Guid:
-      Data1: 108437380
-      Data2: 1286789652
-      Data3: -898157942
-      Data4: 1280256673
-    Path: event:/char/yuz/tools/rope_quit
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   m_groundPoundEvent:
     Guid:
       Data1: -1271139632
@@ -983,7 +969,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxHP: 10
-  m_hpui: {fileID: 0}
   m_hp: 0
 --- !u!114 &6611995000469461227
 MonoBehaviour:
@@ -1419,7 +1404,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.5625, y: 5.1875}
+  m_Size: {x: 3, y: 3.8125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

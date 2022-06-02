@@ -52,7 +52,7 @@ public class MadStateTracking : MadStateBase
 
         mad.transform.position = m_currentPos;
 
-        if(!mad.isAttackAble)
+        if(mad.CanPlayerLook())
         mad.LookPlayer();
 
 
