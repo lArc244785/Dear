@@ -56471,6 +56471,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1833929067, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_bgmEvent.Path
+      value: event:/music/stage/stage01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833929067, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_bgmEvent.Guid.Data1
+      value: -2070102748
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833929067, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_bgmEvent.Guid.Data2
+      value: 1287645313
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833929067, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_bgmEvent.Guid.Data3
+      value: 427732156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833929067, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_bgmEvent.Guid.Data4
+      value: 2128641169
+      objectReference: {fileID: 0}
     - target: {fileID: 4241520126860329965, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
       propertyPath: m_Name
       value: StageManager

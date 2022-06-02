@@ -338,6 +338,10 @@ public class GrapplingGun : ActiveToolBase
      
         ropeRenderer.DrawInit(fireTr.position, dir);
 
+
+
+        player.sound.RopeShoot();
+
         currentState = State.Fire;
     }
 
@@ -452,7 +456,7 @@ public class GrapplingGun : ActiveToolBase
         Vector2 hookPos = (Vector2)hook.transform.position;
 
         currentPullTime = 0.0f;
-
+        player.sound.RopeMove();
         currentState = State.Pull;
     }
 
