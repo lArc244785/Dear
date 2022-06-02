@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9002323869998481307}
   - component: {fileID: 9002323869998481306}
+  - component: {fileID: 3443493841322677705}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -27,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,3 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2885c22494a9c4f4985b5cabdb0c3e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3443493841322677705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002323869998481305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c4b410bc3167c46ad7bbbc148e6a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_bgmEvent:
+    Guid:
+      Data1: -2070102748
+      Data2: 1287645313
+      Data3: 427732156
+      Data4: 2128641169
+    Path: event:/music/stage/stage01
+  m_id: prograss
