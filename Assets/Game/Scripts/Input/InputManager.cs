@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class InputManager : SingleToon<InputManager>
 {
 
@@ -14,6 +14,7 @@ public class InputManager : SingleToon<InputManager>
     private void Awake()
     {
         Init();
+        if (!m_brainCam|| !m_inputPlayer) return; 
 
     }
 
@@ -34,6 +35,9 @@ public class InputManager : SingleToon<InputManager>
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         if (GameManager.instance.stageManager.player == null)
             return;
 
@@ -82,7 +86,10 @@ public class InputManager : SingleToon<InputManager>
             return;
 
         if (context.started)
-            m_inputPlayer.MadAttack();
+            m_inputPlayer.MadAttackAble(true);
+        else if(context.canceled)
+            m_inputPlayer.MadAttackAble(false);
+
     }
 
 
@@ -107,29 +114,7 @@ public class InputManager : SingleToon<InputManager>
 
     }
 
-    public void ActiveInventory(InputAction.CallbackContext contex)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
-
-        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.inventory);
-    }
-    public void ActivecharUI(InputAction.CallbackContext contex)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
-
-        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.character);
-    }
-
-    public void ActiveTestUI(InputAction.CallbackContext contex)
-    {
-        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
-            return;
-
-        Debug.Log("a");
-        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.test);
-    }
+    
     public void EscapeUI(InputAction.CallbackContext contex)
     {
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
@@ -138,15 +123,31 @@ public class InputManager : SingleToon<InputManager>
         {
             if (PopUpManager.instance.activePopupList.Count > 0)
             {
+                GameManager.instance.ChaneGameState(GameManager.GameSate.GamePlaying);
                 PopUpManager.instance.ClosePopup(PopUpManager.instance.activePopupList.First.Value);
-            }
+            }   
             else
             {
+
+                GameManager.instance.ChaneGameState(GameManager.GameSate.Pause);
                 PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
             }
         }
-
     }
+
+
+    public void gameStart(InputAction.CallbackContext context)
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.Title)
+            return;
+        if (context.started)
+        {
+
+            GameManager.instance.NextState(6);
+       
+        }
+    }
+
 
     public void OnToolNone(InputAction.CallbackContext context)
     {

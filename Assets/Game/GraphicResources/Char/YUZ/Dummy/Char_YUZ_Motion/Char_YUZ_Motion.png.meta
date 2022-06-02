@@ -83,15 +83,6 @@ TextureImporter:
   - first:
       213: 4681081872349250957
     second: Char_YUZ_Motion26
-  - first:
-      213: -3883954162337415483
-    second: Char_YUZ_Motion27
-  - first:
-      213: 6283888591410879027
-    second: Char_YUZ_Motion28
-  - first:
-      213: -3628290555540956815
-    second: Char_YUZ_Motion29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -174,11 +165,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.8426125, y: 0.4262734}
+        y: 253
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,12 +185,12 @@ TextureImporter:
       name: Char_YUZ_Motion01
       rect:
         serializedVersion: 2
-        x: 67
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.42839873, y: 0.30858022}
+        x: 51
+        y: 253
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,12 +206,12 @@ TextureImporter:
       name: Char_YUZ_Motion02
       rect:
         serializedVersion: 2
-        x: 133
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.43555903, y: 0.32018155}
+        x: 101
+        y: 253
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,12 +227,12 @@ TextureImporter:
       name: Char_YUZ_Motion03
       rect:
         serializedVersion: 2
-        x: 199
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.44271946, y: 0.30277997}
+        x: 151
+        y: 253
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,12 +248,12 @@ TextureImporter:
       name: Char_YUZ_Motion04
       rect:
         serializedVersion: 2
-        x: 265
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.44271898, y: 0.30277997}
+        x: 201
+        y: 253
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,12 +269,12 @@ TextureImporter:
       name: Char_YUZ_Motion05
       rect:
         serializedVersion: 2
-        x: 331
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.43555975, y: 0.29117864}
+        x: 251
+        y: 253
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,12 +290,12 @@ TextureImporter:
       name: Char_YUZ_Motion06
       rect:
         serializedVersion: 2
-        x: 397
-        y: 325
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.5071616, y: 0.2969797}
+        x: 1
+        y: 190
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,12 +311,12 @@ TextureImporter:
       name: Char_YUZ_Motion07
       rect:
         serializedVersion: 2
-        x: 1
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.5214802, y: 0.33178285}
+        x: 51
+        y: 190
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,12 +332,12 @@ TextureImporter:
       name: Char_YUZ_Motion08
       rect:
         serializedVersion: 2
-        x: 67
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.5429609, y: 0.26797602}
+        x: 101
+        y: 190
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,12 +353,12 @@ TextureImporter:
       name: Char_YUZ_Motion09
       rect:
         serializedVersion: 2
-        x: 133
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.44271922, y: 0.3433838}
+        x: 151
+        y: 190
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,12 +374,12 @@ TextureImporter:
       name: Char_YUZ_Motion10
       rect:
         serializedVersion: 2
-        x: 199
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.46419978, y: 0.3259822}
+        x: 201
+        y: 190
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,12 +395,12 @@ TextureImporter:
       name: Char_YUZ_Motion11
       rect:
         serializedVersion: 2
-        x: 265
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.47851992, y: 0.25057405}
+        x: 251
+        y: 190
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,12 +416,12 @@ TextureImporter:
       name: Char_YUZ_Motion12
       rect:
         serializedVersion: 2
-        x: 331
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.4785204, y: 0.2853776}
+        x: 1
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,12 +437,12 @@ TextureImporter:
       name: Char_YUZ_Motion13
       rect:
         serializedVersion: 2
-        x: 397
-        y: 244
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.37827826, y: 0.39558932}
+        x: 51
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,12 +458,12 @@ TextureImporter:
       name: Char_YUZ_Motion14
       rect:
         serializedVersion: 2
-        x: 1
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.37111762, y: 0.40139}
+        x: 101
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,12 +479,12 @@ TextureImporter:
       name: Char_YUZ_Motion15
       rect:
         serializedVersion: 2
-        x: 67
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.42123854, y: 0.3375835}
+        x: 151
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,12 +500,12 @@ TextureImporter:
       name: Char_YUZ_Motion16
       rect:
         serializedVersion: 2
-        x: 133
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.43555903, y: 0.17516626}
+        x: 201
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,12 +521,12 @@ TextureImporter:
       name: Char_YUZ_Motion17
       rect:
         serializedVersion: 2
-        x: 199
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.44987965, y: 0.29117844}
+        x: 251
+        y: 127
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,12 +542,12 @@ TextureImporter:
       name: Char_YUZ_Motion18
       rect:
         serializedVersion: 2
-        x: 265
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.5071602, y: 0.34338436}
+        x: 1
+        y: 64
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -572,12 +563,12 @@ TextureImporter:
       name: Char_YUZ_Motion19
       rect:
         serializedVersion: 2
-        x: 331
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.5859227, y: 0.3375835}
+        x: 51
+        y: 64
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,12 +584,12 @@ TextureImporter:
       name: Char_YUZ_Motion20
       rect:
         serializedVersion: 2
-        x: 397
-        y: 163
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.50000095, y: 0.3839882}
+        x: 101
+        y: 64
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,12 +605,12 @@ TextureImporter:
       name: Char_YUZ_Motion21
       rect:
         serializedVersion: 2
-        x: 1
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.4928397, y: 0.3839885}
+        x: 151
+        y: 64
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -635,12 +626,12 @@ TextureImporter:
       name: Char_YUZ_Motion22
       rect:
         serializedVersion: 2
-        x: 67
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.5071602, y: 0.18676719}
+        x: 201
+        y: 64
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -656,12 +647,12 @@ TextureImporter:
       name: Char_YUZ_Motion23
       rect:
         serializedVersion: 2
-        x: 133
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.82936645, y: 0.40719053}
+        x: 251
+        y: 64
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -677,12 +668,12 @@ TextureImporter:
       name: Char_YUZ_Motion24
       rect:
         serializedVersion: 2
-        x: 199
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.8436868, y: 0.40719053}
+        x: 1
+        y: 1
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -698,12 +689,12 @@ TextureImporter:
       name: Char_YUZ_Motion25
       rect:
         serializedVersion: 2
-        x: 265
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.7434449, y: 0.5116016}
+        x: 51
+        y: 1
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -719,12 +710,12 @@ TextureImporter:
       name: Char_YUZ_Motion26
       rect:
         serializedVersion: 2
-        x: 331
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.614563, y: 0.58700967}
+        x: 101
+        y: 1
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -732,69 +723,6 @@ TextureImporter:
       bones: []
       spriteID: d85c5e5592b86f040800000000000000
       internalID: 4681081872349250957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion27
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 82
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.8293667, y: 0.43619365}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ce7af5744c691ac0800000000000000
-      internalID: -3883954162337415483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion28
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.8651666, y: 0.39558908}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33adc23616bd43750800000000000000
-      internalID: 6283888591410879027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion29
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 1
-        width: 64
-        height: 79
-      alignment: 9
-      pivot: {x: 0.8508465, y: 0.4071903}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 179931796f8b5adc0800000000000000
-      internalID: -3628290555540956815
       vertices: []
       indices: 
       edges: []
@@ -813,10 +741,8 @@ TextureImporter:
       Char_YUZ_Motion26: 4681081872349250957
       Char_YUZ_Motion03: 278153108626645950
       Char_YUZ_Motion15: -2771122811869065181
-      Char_YUZ_Motion27: -3883954162337415483
       Char_YUZ_Motion04: 5379169739288804555
       Char_YUZ_Motion24: -1419728893747152103
-      Char_YUZ_Motion29: -3628290555540956815
       Char_YUZ_Motion10: -1569307697442120846
       Char_YUZ_Motion01: 3751584990848129845
       Char_YUZ_Motion05: 5642514773755724296
@@ -829,17 +755,16 @@ TextureImporter:
       Char_YUZ_Motion17: 6872697254624468897
       Char_YUZ_Motion00: -3744056825682599936
       Char_YUZ_Motion25: 1093558845844302018
-      Char_YUZ_Motion28: 6283888591410879027
-      Char_YUZ_Motion07: -8040326069529516648
       Char_YUZ_Motion02: 5853181653866414195
+      Char_YUZ_Motion07: -8040326069529516648
+      Char_YUZ_Motion06: 2068506854727126898
       Char_YUZ_Motion12: -545123428613845564
       Char_YUZ_Motion21: 4493651425641441597
-      Char_YUZ_Motion06: 2068506854727126898
-      Char_YUZ_Motion22: 5022136681555309071
       Char_YUZ_Motion14: -2761549453909195956
+      Char_YUZ_Motion22: 5022136681555309071
       Char_YUZ_Motion08: -4125336402734128470
-      Char_YUZ_Motion20: -7531266568363512438
       Char_YUZ_Motion16: -8524655476627412773
+      Char_YUZ_Motion20: -7531266568363512438
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -15,13 +15,11 @@ public class HpUI : MonoBehaviour
     [SerializeField]
     private Transform parent;
     
-    private void OnEnable()
+   
+    public void init()
     {
-        init();
-    }
-
-    private void init()
-    {
+       
+        m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
         m_HP = new List<SingleHpUI>();
         for(int i = 0; i < m_playerHealth.maxhp; i++)
         {
@@ -34,10 +32,16 @@ public class HpUI : MonoBehaviour
         }
         size = m_HP.Count;
     }
-
+    private void Update()
+    {
+        if (GameManager.instance.gameState == GameManager.GameSate.GameOver)
+        {
+            init();
+        }
+    }
     public void OnDamage(int dmg)
     {
-        if (m_playerHealth.hp == 0) return;
+        //if (m_playerHealth.hp == 0) return;
         Destroy(transform.GetChild(0).gameObject);
     }
     public void OnHeal(int dmg)

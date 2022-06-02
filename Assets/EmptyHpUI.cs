@@ -14,13 +14,12 @@ public class EmptyHpUI : MonoBehaviour
     private Health m_playerHealth;
 
 
-    private void OnEnable()
+    public void init()
     {
-        init();
-    }
 
-    void init()
-    {
+       
+        m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
+       
         m_HP = new List<SingleHpUI>();
         for (int i = 0; i < m_playerHealth.maxhp; i++)
         {
