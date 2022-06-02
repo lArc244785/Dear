@@ -78,36 +78,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "dummyUI_1",
-                    "type": "Button",
-                    "id": "76672089-f8a3-4f1a-82c7-edb3d93ef8d7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "dummyUI_2",
-                    "type": "Button",
-                    "id": "4871e4dd-226c-45c6-8bd3-56050c597661",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "dummyUI_3",
-                    "type": "Button",
-                    "id": "aa722848-5480-42c5-8adb-0f203ec10b2a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "escapeUI",
                     "type": "Button",
                     "id": "4b85e162-9439-42da-9c07-52727ad2b26e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "anyKey",
+                    "type": "Button",
+                    "id": "9f441033-da94-480c-a5d8-5f2eb5c867f7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -326,45 +308,23 @@
                 },
                 {
                     "name": "",
-                    "id": "4f9a0bc4-856d-4c59-afa8-8dff1f4fe0b5",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dummyUI_1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7bc9ebed-05de-4191-902e-ab7a827ed7c9",
-                    "path": "<Keyboard>/o",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dummyUI_2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b704c631-ba08-414d-81f3-f2cbe3b65ecd",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "dummyUI_3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "966229a2-db20-471c-8140-ee2d6042b4eb",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "escapeUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b83b7faf-af20-4a33-bc4b-e734f5cf5c73",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "anyKey",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

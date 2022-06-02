@@ -4,47 +4,7 @@ using UnityEngine;
 
 public class PopUpManager : SingleToon<PopUpManager>
 {
-    [SerializeField]
-    private PopupUI m_inventory;
-    public PopupUI inventory{
 
-        get 
-        { 
-            return m_inventory; 
-        }
-        set
-        {
-            m_inventory = value;
-        }
-    }
-    [SerializeField]
-    private PopupUI m_character;
-    public PopupUI character
-    {
-        get
-        {
-            return m_character;
-        }
-        set
-        {
-            m_character = value;
-        }
-
-    }
-    [SerializeField]
-    private PopupUI m_test;
-    public PopupUI test
-    {
-        get
-        {
-            return m_test;
-        }
-        set
-        {
-            m_test = value;
-        }
-
-    }
 
     [SerializeField]
     private PopupUI m_Esc;
@@ -57,6 +17,20 @@ public class PopUpManager : SingleToon<PopUpManager>
         set
         {
             m_Esc = value;
+        }
+
+    }
+    [SerializeField]
+    private PopupUI m_check;
+    public PopupUI check
+    {
+        get
+        {
+            return m_check;
+        }
+        set
+        {
+            m_check = value;
         }
 
     }
@@ -95,7 +69,7 @@ public class PopUpManager : SingleToon<PopUpManager>
     {
         m_popupUIs = new List<PopupUI>()
         {
-            m_inventory,m_character,m_test,m_Esc
+            m_Esc,m_check
         };
      
         foreach (var popup in m_popupUIs)
