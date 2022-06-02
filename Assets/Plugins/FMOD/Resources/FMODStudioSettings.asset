@@ -502,6 +502,7 @@ MonoBehaviour:
   - Music
   - no_use
   - SFX
+  - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
