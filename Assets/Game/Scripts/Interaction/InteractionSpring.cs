@@ -24,15 +24,7 @@ public class InteractionSpring : InteractionBase
     }
 
 
-    [SerializeField]
-    private float m_InteractionJumpWait;
-    private float InteractionJumpWait 
-    { 
-        get 
-        {
-            return m_InteractionJumpWait;
-        } 
-    }
+
 
     private float m_currentWaitTime;
 
@@ -50,7 +42,6 @@ public class InteractionSpring : InteractionBase
         m_movement = collision.GetComponent<PlayerMovementManager>(); ;
 
         m_movement.isOnInteractionJumpObject = true;
-         m_currentWaitTime = InteractionJumpWait;
 
         m_animator.SetTrigger("Action");
     }
@@ -65,13 +56,10 @@ public class InteractionSpring : InteractionBase
         if (m_movement == null)
             return;
 
-        if(m_currentWaitTime <= 0.0f)
-        {
-            if (!m_isSuperJump)
-                NormalJump();
-            else
-                SuperJump();
-        }
+        if (!m_isSuperJump)
+            NormalJump();
+        else
+            SuperJump();
 
         m_currentWaitTime -= Time.deltaTime;
 
