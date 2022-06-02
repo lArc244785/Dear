@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageBgm : MonoBehaviour
+public class Bgm : MonoBehaviour
 {
     [SerializeField]
     private FMODUnity.EventReference m_bgmEvent;
@@ -12,14 +12,13 @@ public class StageBgm : MonoBehaviour
     private FMOD.Studio.EventInstance m_bgmInstance;
     private FMOD.Studio.PARAMETER_ID m_bgmID;
 
-    [SerializeField]
-    private float a;
 
     public void Init()
     {
         m_bgmInstance = FMODUnity.RuntimeManager.CreateInstance(m_bgmEvent);
         SoundManager.instance.GetID(m_bgmInstance, m_id, out m_bgmID);
-        
+
+        BgmStart();
     }
 
     public void BgmStart()
@@ -32,9 +31,5 @@ public class StageBgm : MonoBehaviour
         m_bgmInstance.setParameterByID(m_bgmID, value);
     }
 
-    private void Update()
-    {
-        SetParamater(a);
-    }
 
 }

@@ -10,7 +10,7 @@ public class InteractionBgmChange : InteractionBase
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-        GameManager.instance.stageManager.stageBgm.SetParamater(m_enterChangeIndex);
+       // GameManager.instance.stageManager.stageBgm.SetParamater(m_enterChangeIndex);
 
     }
 }

@@ -91,6 +91,15 @@ public class MadData : ScriptableObject
             return m_attackWaitTime;
         }
     }
+    [SerializeField]
+    private float m_attackAfterPlayerLookTime;
+    public float attackAfterPlayerLookTime
+    {
+        get
+        {
+            return m_attackAfterPlayerLookTime;
+        }
+    }
    
     [SerializeField]
     [Range(0.0f , 2.0f)]

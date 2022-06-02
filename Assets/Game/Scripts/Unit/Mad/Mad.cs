@@ -103,6 +103,8 @@ public class Mad : MonoBehaviour
     private bool m_isAttack;
     private float m_lastAttackTime { set; get; }
 
+    private float m_attackLookResetTime;
+
     private Transform m_firePointTransform;
     public Transform firePointTransform
     {
@@ -135,6 +137,8 @@ public class Mad : MonoBehaviour
 
     private MadHand m_handLeft;
     private MadHand m_handRight;
+
+
 
 
     public void Init(UnitPlayer player, MadTrackingPoint madTrackingPoint)
@@ -187,16 +191,19 @@ public class Mad : MonoBehaviour
         if (currentState == State.None)
             return;
 
+        CoyoteTime();
         AttackUpdate();
 
 
         stateList[(int)currentState].UpdateProcesses(this);
     }
 
-    private void AttackCoyoteTime()
+    private void CoyoteTime()
     {
         if (m_lastAttackTime >= 0.0f)
             m_lastAttackTime -= Time.deltaTime;
+        if (m_attackLookResetTime >= 0.0f)
+            m_attackLookResetTime -= Time.deltaTime;
     }
 
 
@@ -351,8 +358,6 @@ public class Mad : MonoBehaviour
         {
             LookMouse();
 
-            AttackCoyoteTime();
-
             if (m_lastAttackTime <= 0.0f)
             {
                 if(!CanAttack())
@@ -361,6 +366,7 @@ public class Mad : MonoBehaviour
 
                     m_handLeft.SetModelEnable(true);
                     m_handRight.SetModelEnable(true);
+                    OnAttackLookResetTime();
                     SetTriggerIdle();
                 }
                 else
@@ -383,10 +389,19 @@ public class Mad : MonoBehaviour
         }
     }
 
+    private void OnAttackLookResetTime()
+    {
+        m_attackLookResetTime = data.attackAfterPlayerLookTime;
+    }
 
     private bool CanAttack()
     {
         return player.inputPlayer.isControl && isAttackAble;
+    }
+
+    public bool CanPlayerLook()
+    {
+        return !isAttackAble && m_lastAttackTime <= 0.0f && m_attackLookResetTime <= 0.0f;
     }
 
 }

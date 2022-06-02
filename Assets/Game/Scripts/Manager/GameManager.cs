@@ -153,9 +153,9 @@ public class GameManager : SingleToon<GameManager>
 
     public void NextState(int index)
     {
-        //GameManager.instance.stageManager.player.inputPlayer.SetControl(false);
+        stageManager.player.inputPlayer.SetControl(false);
         gameState = GameSate.StageLoad;
-        StartCoroutine(SceneLoadCorutine(index));
+        StartCoroutine(StageLoadCorutine(index));
     }
     public void Gotitle()
     {
@@ -170,7 +170,7 @@ public class GameManager : SingleToon<GameManager>
 
     private IEnumerator StageLoadCorutine(int index)
     {
-        UIManager.instance.produtionView.fade.FadeIn();
+        UIManager.instance.produtionView.fade.FadeOut();
 
         while (!UIManager.instance.produtionView.fade.isfadeProcessed)
             yield return null;
@@ -185,6 +185,7 @@ public class GameManager : SingleToon<GameManager>
 
         gameState = GameSate.GameStart;
     }
+
 
 
 
@@ -224,8 +225,6 @@ public class GameManager : SingleToon<GameManager>
         stageManager.Init();
 
         stageManager.player.inputPlayer.isControl = false;
-
-        GameManager.instance.stageManager.stageBgm.BgmStart();
 
         while (!UIManager.instance.produtionView.fade.isfadeProcessed)
             yield return null;

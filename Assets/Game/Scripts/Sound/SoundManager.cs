@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class SoundManager : SingleToon<SoundManager>
 {
+    private Bgm m_bgm;
+
+    public Bgm bgm
+    {
+        get
+        {
+            return m_bgm;
+        }
+    }
+
     private void Awake()
     {
         Init();
@@ -11,7 +21,14 @@ public class SoundManager : SingleToon<SoundManager>
 
     protected override bool Init()
     {
-        return base.Init();
+        bool isNotOverlap = base.Init();
+        if (!isNotOverlap) 
+            return false;
+
+        m_bgm = GetComponent<Bgm>();
+        m_bgm.Init();
+
+        return true;
     }
 
     public void SoundPlay(FMOD.Studio.EventInstance eventInstance)

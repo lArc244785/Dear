@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4241520126860329967}
   - component: {fileID: 4241520126860329966}
-  - component: {fileID: 1833929067}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -49,26 +48,6 @@ MonoBehaviour:
   m_playerDirRight: 1
   m_stage_name: dsaojghaikgjha
   m_stageText: {fileID: 3517179347594327020}
---- !u!114 &1833929067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241520126860329965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8c4b410bc3167c46ad7bbbc148e6a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_bgmEvent:
-    Guid:
-      Data1: 321810891
-      Data2: 1260256598
-      Data3: -1977935696
-      Data4: -1126173207
-    Path: event:/env/amb/stage00
-  m_id: inout_index
 --- !u!1 &5170192352330147815
 GameObject:
   m_ObjectHideFlags: 0

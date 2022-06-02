@@ -21,10 +21,7 @@ public class StageManager : MonoBehaviour
     }
     #endregion
 
-    #region stageBgm
-    private StageBgm m_stageBgm;
-    public StageBgm stageBgm { get { return m_stageBgm; } }
-    #endregion
+
 
     #region playerDirRight
     [SerializeField]
@@ -36,6 +33,8 @@ public class StageManager : MonoBehaviour
     private string m_stage_name;
     [SerializeField]
     private TextMeshProUGUI m_stageText;
+    [SerializeField]
+    private float m_bgmProgress;
 
     public void Init(/*bool playerDirRight*/)
     {
@@ -47,20 +46,20 @@ public class StageManager : MonoBehaviour
         m_stageText.GetComponent<FadeText>().init();
 
         player.Init();
-        stageBgm.Init();
         cameraManager.Init();
         m_stageText.text = m_stage_name;
 
 
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
-        
+
+
+       SoundManager.instance.bgm.SetParamater(m_bgmProgress);
     }
 
     private void ComponentSetting()
     {
         m_player = GameObject.Find("Player").GetComponent<UnitPlayer>();
-        m_stageBgm = GetComponent<StageBgm>();
         m_cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
 
     }
