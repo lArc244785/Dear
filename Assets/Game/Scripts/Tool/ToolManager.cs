@@ -23,6 +23,7 @@ public class ToolManager : MonoBehaviour
             return m_currentActiveTool;
         }
     }
+
     [SerializeField]
     private List<ActiveToolBase> m_activeToolList;
     #endregion
@@ -42,12 +43,12 @@ public class ToolManager : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private Transform m_handTr;
-    public Transform handTr
+    private Transform m_graplingGunPointTr;
+    public Transform graplingGunPointTr
     {
         get
         {
-            return m_handTr;
+            return m_graplingGunPointTr;
         }
     }
 
@@ -62,8 +63,19 @@ public class ToolManager : MonoBehaviour
     }
 
 
+    private UnitPlayer m_player;
+    private UnitPlayer player
+    {
+        get
+        {
+            return m_player;
+        }
+    }
+
+
     public void Init(UnitPlayer player)
     {
+        m_player = player;
         for (int i = 0; i < (int)PassiveToolType.Total; i++)
         {
             ToolInfo info = new ToolInfo();
@@ -181,7 +193,11 @@ public class ToolManager : MonoBehaviour
 
 
         int enterIndex = (int)currentActiveTool;
-        m_activeToolList[enterIndex].transform.parent = handTr;
+
+
+
+
+        m_activeToolList[enterIndex].transform.parent = GetToolPointTr(currentActiveTool);
         m_activeToolList[enterIndex].transform.localRotation = Quaternion.identity;
         m_activeToolList[enterIndex].transform.localPosition = Vector3.zero;
         m_activeToolList[enterIndex].Enter();
@@ -199,6 +215,15 @@ public class ToolManager : MonoBehaviour
 
         return m_passiveToolList[(int)type].isAcheive;
     }
+
+    private Transform GetToolPointTr(ActiveToolType type)
+    {
+        if (type == ActiveToolType.GrappingGun)
+            return graplingGunPointTr;
+
+        return null;
+    }
+
 
 
 }

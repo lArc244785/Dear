@@ -18,6 +18,7 @@ public class MovementStateAir : I_MovementState
     {
         if (!movementManager.isJump)
             movementManager.player.animationManager.TriggerAir();
+
         currentGroundPoundType = GroundPoundType.None;
     }
 
@@ -124,6 +125,7 @@ public class MovementStateAir : I_MovementState
     private void GroundPoundReady(PlayerMovementManager movementManager)
     {
         movementManager.player.sound.GroundPound();
+        movementManager.player.animationManager.TriggerGroundPound();
 
         movementManager.player.SetGhostLayer();
         movementManager.isJump = false;
@@ -227,6 +229,7 @@ public class MovementStateAir : I_MovementState
         {
             movementManager.isJump = false;
             movementManager.isInteractionJump = false;
+            movementManager.player.animationManager.TriggerAir();
         }
 
         if (CanJumpCut(movementManager))
@@ -265,7 +268,7 @@ public class MovementStateAir : I_MovementState
 
         if (tag == "Spring")
         {
-            coll.GetComponent<InteractionSpring>().SuperJump();
+            coll.GetComponent<InteractionSpring>().OnSuperJump();
 
         }
         else if (tag == "GroundPoundBroken")

@@ -44,7 +44,7 @@ public class ProjectileMissile : ProjectileBase
             return;
         }
 
-        Acceleration();
+       Acceleration();
 
         m_currentTime += Time.deltaTime;
     }
@@ -56,8 +56,7 @@ public class ProjectileMissile : ProjectileBase
 
         m_movement.x = Mathf.Pow(Mathf.Abs(velocityDif.x) * missileData.accele, missileData.acclePower) * Mathf.Sign(velocityDif.x);
         m_movement.y = Mathf.Pow(Mathf.Abs(velocityDif.y) * missileData.accele, missileData.acclePower) * Mathf.Sign(velocityDif.y);
-
-
+  
         rig2D.AddForce(m_movement);
     }
 

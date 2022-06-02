@@ -314,8 +314,8 @@ public class GrapplingGun : ActiveToolBase
         player.rig2D.gravityScale = 0.0f;
         player.rig2D.velocity = Vector2.zero;
 
-        player.animationManager.RopeAnimation();
-        player.shoulder.setLookPosition(targetPos);
+        player.animationManager.TriggerRopeFire();
+        
 
         Vector2 dir = targetPos - (Vector2)hook.transform.position;
         dir.Normalize();
@@ -324,6 +324,17 @@ public class GrapplingGun : ActiveToolBase
         hook.Fire(startPos, targetPos);
 
         player.inputPlayer.SetControl(false);
+
+        Vector2 playerTarget = targetPos - (Vector2)player.transform.position;
+        if (playerTarget.x > 0)
+            player.movementManager.Trun(Vector2.right);
+        else
+            player.movementManager.Trun(Vector2.left);
+
+        
+
+        
+
 
         ropeRenderer.DrawInit(fireTr.position, dir);
     }
@@ -355,7 +366,7 @@ public class GrapplingGun : ActiveToolBase
     private void GrappingReset()
     {
         currentState = State.None;
-        player.shoulder.SetMouse();
+
         player.animationManager.RopeToAirAnimation();
 
         hook.transform.parent = fireTr;
@@ -380,6 +391,7 @@ public class GrapplingGun : ActiveToolBase
         if (pickType == PickType.Slingshot)
         {
             PullSetting();
+            player.animationManager.TriggerRopeMove();
         }
 
 

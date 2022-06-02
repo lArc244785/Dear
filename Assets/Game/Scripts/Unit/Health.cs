@@ -8,6 +8,16 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int m_maxHP;
     [SerializeField]
+    private HpUI m_hpui;
+    public int maxhp
+    {
+        get
+        {
+            return m_maxHP;
+        }
+    }
+
+    [SerializeField]
     private int m_hp;
     public int hp
     {
@@ -24,16 +34,20 @@ public class Health : MonoBehaviour
 
     public void Init()
     {
+      
         hp = m_maxHP;
     }
 
     public void OnRecovery(int recovery)
     {
         hp = recovery;
+
+        m_hpui.OnHeal(recovery);
     }
 
     public void OnDamage(int damage)
     {
+        m_hpui.OnDamage(damage);
         hp -= damage;
     }
 

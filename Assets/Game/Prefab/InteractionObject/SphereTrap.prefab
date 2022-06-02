@@ -258,7 +258,7 @@ MonoBehaviour:
   m_projectilePrefab: {fileID: 4784615235771420444, guid: d3eb1971b86cecb499cbb344511fde03, type: 3}
   m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1344
   m_firePointOffset: {x: 1, y: 0}
 --- !u!1 &8701707484156707547
 GameObject:

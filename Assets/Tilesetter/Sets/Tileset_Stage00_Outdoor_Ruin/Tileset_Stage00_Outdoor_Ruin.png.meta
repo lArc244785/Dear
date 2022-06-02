@@ -503,7 +503,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15.9
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -522,6 +522,30 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -3818,8 +3842,8 @@ TextureImporter:
       Tileset_Stage00_Outdoor_Ruin_67: 21300134
       Tileset_Stage00_Outdoor_Ruin_90: 21300180
       Tileset_Stage00_Outdoor_Ruin_14: 21300028
-      Tileset_Stage00_Outdoor_Ruin_36: 21300072
       Tileset_Stage00_Outdoor_Ruin_33: 21300066
+      Tileset_Stage00_Outdoor_Ruin_36: 21300072
       Tileset_Stage00_Outdoor_Ruin_86: 21300172
       Tileset_Stage00_Outdoor_Ruin_76: 21300152
       Tileset_Stage00_Outdoor_Ruin_99: 21300198
