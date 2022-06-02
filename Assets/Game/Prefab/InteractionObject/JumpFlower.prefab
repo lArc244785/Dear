@@ -50,7 +50,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_force: 20
+  m_force: 22
   m_superJumpMul: 2
   m_InteractionJumpWait: 0.08
   m_animator: {fileID: 2940698045885193393}
@@ -67,7 +67,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16210175, y: 2.1845264}
+  m_Offset: {x: -0.20678711, y: 2.340765}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -78,7 +78,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.285309, y: 0.5896416}
+  m_Size: {x: 7.142212, y: 0.9021187}
   m_EdgeRadius: 0
 --- !u!114 &4261571690338251789
 MonoBehaviour:
@@ -201,7 +201,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04607582, y: -1.3640022}
+  m_Offset: {x: -0.012608528, y: -1.3640022}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -212,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7296638, y: 3.3235245}
+  m_Size: {x: 7.1891384, y: 3.3235245}
   m_EdgeRadius: 0
 --- !u!95 &2940698045885193393
 Animator:
