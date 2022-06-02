@@ -52150,6 +52150,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 317664657}
     m_Modifications:
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: 4b85e162-9439-42da-9c07-52727ad2b26e
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: 9f441033-da94-480c-a5d8-5f2eb5c867f7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player/escapeUI[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: Player/anyKey[/Keyboard/anyKey]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 983218208}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EscapeUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220886431622341394, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1220886431622341395, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -53476,6 +53524,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &983218208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1220886431622341405, guid: 3909f92fefee98d4584947dae07f8e98, type: 3}
+  m_PrefabInstance: {fileID: 563876528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425b925f67beb1040a39739f9537979e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &984530054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3634403823066101768, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+  m_PrefabInstance: {fileID: 745369419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d51ef6dfb0984fa15bbd5b817d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &990327732
@@ -55144,6 +55214,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8841503409121334027, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
+      propertyPath: m_playerHealth
+      value: 
+      objectReference: {fileID: 984530054}
+    - target: {fileID: 8841503410176642755, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
+      propertyPath: m_playerHealth
+      value: 
+      objectReference: {fileID: 984530054}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
 --- !u!224 &1303397616 stripped
