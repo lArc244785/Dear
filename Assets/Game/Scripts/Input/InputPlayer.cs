@@ -165,12 +165,11 @@ public class InputPlayer : MonoBehaviour
         player.toolManager.LeftCancle();
     }
 
-    public void MadAttack()
+    public void MadAttackAble(bool isAttackAble)
     {
         if (!isControl)
             return;
-        //if (movementManger.currentState == PlayerMovementManager.State.Ground)
-            mad.Attack();
+        mad.SetAttackAble(isAttackAble);
     }
 
 

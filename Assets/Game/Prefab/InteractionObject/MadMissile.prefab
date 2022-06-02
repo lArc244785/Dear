@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3895518282334111081}
   - component: {fileID: 1472701178524344301}
   - component: {fileID: 374662257399195476}
-  - component: {fileID: 3535974739780284375}
+  - component: {fileID: 6682397334993653410}
   m_Layer: 0
   m_Name: MadMissile
   m_TagString: Untagged
@@ -72,7 +72,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3535974739780284375
+--- !u!114 &6682397334993653410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,14 +81,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2794227655303801860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac9eb7d3cd83d74f8fbec2facec9a03, type: 3}
+  m_Script: {fileID: 11500000, guid: b98cf81ce5aa7fb4bbd0702000379f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponData: {fileID: 11400000, guid: 95bd1507fb179b346a8252591a94a6b2, type: 2}
   m_hitLayerMask:
     serializedVersion: 2
     m_Bits: 1600
-  m_missileData: {fileID: 11400000, guid: c40091e2b421aa048a60a796dfa2dcbc, type: 2}
+  m_speed: 1500
+  m_lifeTime: 10
 --- !u!1 &4365779349590421809
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,7 +82,10 @@ public class InputManager : SingleToon<InputManager>
             return;
 
         if (context.started)
-            m_inputPlayer.MadAttack();
+            m_inputPlayer.MadAttackAble(true);
+        else if(context.canceled)
+            m_inputPlayer.MadAttackAble(false);
+
     }
 
 
