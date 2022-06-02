@@ -55783,6 +55783,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8841503409121334026, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841503409121334026, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 308.86
+      objectReference: {fileID: 0}
     - target: {fileID: 8841503409121334027, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
       propertyPath: m_playerHealth
       value: 
@@ -55790,6 +55798,14 @@ PrefabInstance:
     - target: {fileID: 8841503409152225520, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841503410176642754, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120.2887
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841503410176642754, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 308.85565
       objectReference: {fileID: 0}
     - target: {fileID: 8841503410176642755, guid: 8d13ab36120e99a45afa2dedcb52610b, type: 3}
       propertyPath: m_playerHealth
@@ -78717,6 +78733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 317664657}
     m_Modifications:
+    - target: {fileID: 376501061406202446, guid: c65f7648315253e45aa810a95d48e5dc, type: 3}
+      propertyPath: m_gameState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 376501061406202447, guid: c65f7648315253e45aa810a95d48e5dc, type: 3}
       propertyPath: m_RootOrder
       value: 0

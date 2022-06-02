@@ -239,6 +239,7 @@ public class UnitPlayer : UnitBase
     protected override void HitHp(int damage)
     {
         base.HitHp(damage);
+        GameObject.Find("Hpcontainer").GetComponent<HpUI>().OnDamage(damage);
         health.OnDamage(damage);
     }
 
