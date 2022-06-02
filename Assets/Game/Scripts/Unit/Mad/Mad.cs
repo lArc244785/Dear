@@ -22,7 +22,7 @@ public class Mad : MonoBehaviour
     #region State
     public enum State
     {
-        None = -1, Idle, Tracking, Attack
+        None = -1, Idle, Tracking
     }
 
     [SerializeField]
@@ -99,7 +99,9 @@ public class Mad : MonoBehaviour
     #endregion
 
     #region Attack
-    private float lastAttackTime { set; get; }
+    public bool isAttackAble {private set; get; }
+    private bool m_isAttack;
+    private float m_lastAttackTime { set; get; }
 
     private Transform m_firePointTransform;
     public Transform firePointTransform
@@ -125,13 +127,23 @@ public class Mad : MonoBehaviour
     private FMODUnity.EventReference m_fireEvent;
     #endregion
 
+
+    [SerializeField]
+    private Animator m_animator;
+
+    private bool m_isCoolTime;
+
+    private MadHand m_handLeft;
+    private MadHand m_handRight;
+
+
     public void Init(UnitPlayer player, MadTrackingPoint madTrackingPoint)
     {
         m_player = player;
         m_trackingPoint = madTrackingPoint;
 
-        m_model = transform.Find("Model").GetComponent<SpriteRenderer>();
-        m_firePointTransform = transform.Find("FirePoint");
+        ComponentInit();
+
 
         currentState = State.Idle;
 
@@ -148,11 +160,22 @@ public class Mad : MonoBehaviour
         isInit = true;
     }
 
+    private void ComponentInit()
+    {
+        m_model = transform.Find("Model").GetComponent<SpriteRenderer>();
+        m_firePointTransform = transform.Find("FirePoint");
+
+        m_handLeft = transform.Find("MadHandLeft").GetComponent<MadHand>();
+        m_handRight = transform.Find("MadHandRight").GetComponent<MadHand>();
+
+        m_handLeft.Init();
+        m_handRight.Init();
+    }
+
     private void StateInit()
     {
         stateList.Add(new MadStateIdle());
         stateList.Add(new MadStateTracking());
-        stateList.Add(new MadStateAttack());
     }
 
 
@@ -161,15 +184,16 @@ public class Mad : MonoBehaviour
         if (currentState == State.None)
             return;
 
-        CoyoteTimeUpdate();
+        AttackUpdate();
+
 
         stateList[(int)currentState].UpdateProcesses(this);
     }
 
-    private void CoyoteTimeUpdate()
+    private void AttackCoyoteTime()
     {
-        if (lastAttackTime >= 0.0f)
-            lastAttackTime -= Time.deltaTime;
+        if (m_lastAttackTime >= 0.0f)
+            m_lastAttackTime -= Time.deltaTime;
     }
 
 
@@ -241,19 +265,36 @@ public class Mad : MonoBehaviour
             SetLook(false);
     }
 
-    public void Attack()
+    private void LookMouse()
     {
-        if (currentState != State.Attack && lastAttackTime <= 0.0f)
-        {
-            ChangeState(State.Attack);
-        }
-
-
+        float dif = InputManager.instance.inGameMousePosition2D.x - transform.position.x;
+        if (dif > 0)
+            SetLook(true);
+        else
+            SetLook(false);
     }
 
-    public void OnLastOnCoolTime()
+
+    private void Attack(Vector2 targetPoint)
     {
-        lastAttackTime = data.attackCoolTime;
+        SetTriggerAttack();
+
+        GameObject goMissile = GameObject.Instantiate(missileObject);
+
+        SoundFire();
+
+        Vector2 spawnPoint = (Vector2)firePointTransform.position;
+        Vector2 fireDir = targetPoint - spawnPoint;
+        fireDir.Normalize();
+
+        goMissile.GetComponent<ProjectileNormal>().HandleSpawn(spawnPoint, fireDir, data.targetLayerMask);
+        
+    }
+
+    public void OnLastAttackTime()
+    {
+        m_lastAttackTime = data.attackWaitTime;
+        m_isCoolTime = true;
     }
 
     public void SetLookPoint(Vector2 point)
@@ -279,6 +320,70 @@ public class Mad : MonoBehaviour
     public void SoundFire()
     {
         SoundManager.instance.SoundOneShot(m_fireEvent);
+    }
+
+    public void SetTriggerIdle()
+    {
+        m_animator.SetTrigger("Idle");
+    }
+
+    public void SetTriggerTeleport()
+    {
+        m_animator.SetTrigger("Teleport");
+    }
+
+    public void SetTriggerAttack()
+    {
+        m_animator.SetTrigger("Attack");
+    }
+
+    public void SetAttackAble(bool isAttackAble)
+    {
+        this.isAttackAble = isAttackAble;
+    }
+
+    private void AttackUpdate()
+    {
+        if(m_isAttack)
+        {
+            LookMouse();
+
+            AttackCoyoteTime();
+
+            if (m_lastAttackTime <= 0.0f)
+            {
+                if(!CanAttack())
+                {
+                    m_isAttack = false;
+
+                    m_handLeft.SetModelEnable(true);
+                    m_handRight.SetModelEnable(true);
+                    SetTriggerIdle();
+                }
+                else
+                {
+                    Attack(InputManager.instance.inGameMousePosition2D);
+                    OnLastAttackTime();
+                }
+            }
+        }
+        else
+        {
+            if(CanAttack())
+            {
+                Attack(InputManager.instance.inGameMousePosition2D);
+                m_handLeft.SetModelEnable(false);
+                m_handRight.SetModelEnable(false);
+                OnLastAttackTime();
+                m_isAttack = true;
+            }
+        }
+    }
+
+
+    private bool CanAttack()
+    {
+        return player.inputPlayer.isControl && isAttackAble;
     }
 
 }

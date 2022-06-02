@@ -19,12 +19,13 @@ public class MadStateAttack : MadStateBase
         currentAttack = 0;
         attackPoint = InputManager.instance.inGameMousePosition2D;
         mad.SetLookPoint(attackPoint);
-
+        mad.SetTriggerAttack();
     }
 
     public override void Exit(Mad mad)
     {
-        mad.OnLastOnCoolTime();
+        
+        mad.OnLastAttackTime();
     }
 
     public override void FixedProcesses(Mad mad)
@@ -48,18 +49,21 @@ public class MadStateAttack : MadStateBase
 
         if (lastAttackWaitTime <= 0.0f)
         {
-            if (currentAttack < mad.data.attackAmount)
-            {
-                Attack(mad, attackPoint);
-                OnAttackWaitTime(mad.data);
-                currentAttack++;
+            //if (currentAttack < mad.data.attackAmount)
+            //{
+            //    Attack(mad, attackPoint);
+            //    OnAttackWaitTime(mad.data);
+            //    currentAttack++;
 
-            }
-            else
-            {
-                isAttackEndWait = true;
-                OnAttackEndWaitTime(mad.data);
-            }
+            //}
+            //else
+            //{
+            //    mad.SetTriggerTeleport();
+
+
+            //    isAttackEndWait = true;
+            //    OnAttackEndWaitTime(mad.data);
+            //}
         }
 
     }
@@ -81,7 +85,7 @@ public class MadStateAttack : MadStateBase
 
     private void OnAttackEndWaitTime(MadData data)
     {
-        lastAttackEndWaitTime = data.attackEndWaitTime;
+       // lastAttackEndWaitTime = data.attackEndWaitTime;
     }
 
     private void AttackEndWaitCoyoteTime()

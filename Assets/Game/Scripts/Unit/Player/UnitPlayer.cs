@@ -14,16 +14,7 @@ public class UnitPlayer : UnitBase
     }
     #endregion
 
-    #region shoulder
-    private Shoulder m_shoulder;
-    public Shoulder shoulder
-    {
-        get
-        {
-            return m_shoulder;
-        }
-    }
-    #endregion
+
 
     #region toolManager
     private ToolManager m_toolManager;
@@ -161,15 +152,18 @@ public class UnitPlayer : UnitBase
     public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
     #endregion
 
-    #region 
+    #region  Wall
     private IEnumerator m_wallSlideLoopCoroutine;
     private bool m_wallSlideLoop;
     public bool wallSlideLoop { set { m_wallSlideLoop = value; } get { return m_wallSlideLoop; } }
     #endregion
 
+    #region Interaction
 
-    [SerializeField]
-    private HpUI m_hpui;
+    private PlayerInteraction m_interaction;
+    public PlayerInteraction interaction { get { return m_interaction; } }
+    #endregion
+
 
     public override void Init()
     {
@@ -183,8 +177,6 @@ public class UnitPlayer : UnitBase
         hitLayerEvent = null;
 
         SetLayer(defaultLayer);
-
-        m_hpui = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
 
         footStepLoop = false;
         m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
@@ -206,7 +198,7 @@ public class UnitPlayer : UnitBase
         m_inputPlayer = GetComponent<InputPlayer>();
         m_sound = GetComponent<PlayerSound>();
         m_animationManager = GetComponent<PlayerAnimationManager>();
-        m_shoulder = transform.Find("Shoulder").GetComponent<Shoulder>();
+        
         m_toolManager = GetComponent<ToolManager>();
         m_modelCollider = GetComponent<CapsuleCollider2D>();
         m_hitImfect = GetComponent<StateImfectTween>();
@@ -215,20 +207,22 @@ public class UnitPlayer : UnitBase
         m_madTrackingPoint = transform.Find("MadTrackingPoint").GetComponent<MadTrackingPoint>();
         m_mad = GameObject.Find("Mad").GetComponent<Mad>();
 
-
-        shoulder.Init();
+        m_interaction = GetComponent<PlayerInteraction>();
+        
 
         toolManager.Init(this);
-        animationManager.Init(modelAnimator, shoulder);
+        
         movementManager.Init(this);
         sound.Init(this);
         m_hitImfect.Init(model);
 
-        madTrackingPoint.Init(movementManager.IsLookDirRight(), mad);
+        madTrackingPoint.Init(!movementManager.IsLookDirRight(), mad);
         mad.Init(this, madTrackingPoint);
 
-        inputPlayer.Init(movementManager, toolManager, mad);
+        animationManager.Init();
 
+        inputPlayer.Init(this, mad);
+        interaction.Init();
     }
 
     public Vector2 GetModelColliderTop()
@@ -246,7 +240,6 @@ public class UnitPlayer : UnitBase
     {
         base.HitHp(damage);
         health.OnDamage(damage);
-        m_hpui.OnDamage(damage);
     }
 
     protected override void HitUniqueEventUnit(UnitBase attackUnit)
