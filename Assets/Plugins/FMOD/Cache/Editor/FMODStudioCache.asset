@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637897881958974595
+  lastModified: 637898044358628710
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -720,8 +720,8 @@ MonoBehaviour:
     Data3: 1005122993
     Data4: -405664050
   Banks:
-  - {fileID: -1560887060218833763}
   - {fileID: 5206846048107690288}
+  - {fileID: -1560887060218833763}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1006,8 +1006,8 @@ MonoBehaviour:
     Data3: -285770575
     Data4: 1500452454
   Banks:
-  - {fileID: 1058050915198027970}
   - {fileID: 5206846048107690288}
+  - {fileID: 1058050915198027970}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1061,8 +1061,8 @@ MonoBehaviour:
     Data3: 1814210717
     Data4: 1295054852
   Banks:
-  - {fileID: -1560887060218833763}
   - {fileID: 5206846048107690288}
+  - {fileID: -1560887060218833763}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637897881962065293
+  lastModified: 637898044358758749
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637897881962065293
+  cacheTime: 637898044358758749
   cacheVersion: 10
 --- !u!114 &450412387528571343
 MonoBehaviour:
