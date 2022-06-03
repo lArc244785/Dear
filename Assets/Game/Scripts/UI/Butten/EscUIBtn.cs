@@ -33,7 +33,7 @@ public class EscUIBtn : MonoBehaviour
     public void ExitCheckBtn()
     {
 
-        UnityEditor.EditorApplication.isPlaying = false;
+       // UnityEditor.EditorApplication.isPlaying = false;
     }
 
 }
