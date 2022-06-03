@@ -31,8 +31,6 @@ public class ProjectileNormal : ProjectileBase
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
-      
-        Destory();
     }
 
     private void Update()
