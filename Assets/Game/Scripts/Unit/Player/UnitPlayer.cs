@@ -414,12 +414,12 @@ public class UnitPlayer : UnitBase
         GameManager.instance.stageManager.cameraManager.PlayerRespawnShake();
         HitHp(damage);
 
-        //if (IsDead())
-        //{
-        //    OnDead();
+        if (IsDead())
+        {
+            OnDead();
 
-        //    yield break;
-        //}
+            yield break;
+        }
 
 
 

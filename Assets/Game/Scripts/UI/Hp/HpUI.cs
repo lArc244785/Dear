@@ -41,12 +41,8 @@ public class HpUI : MonoBehaviour
     }
     public void OnDamage(int dmg)
     {
-        if (m_playerHealth.hp == 0) return;
-
-        for(int i = 0; i < dmg || (dmg > transform.childCount &&  i < transform.childCount) ; i++)
-        {
-            Destroy(transform.GetChild(i).gameObject);
-        } 
+        //if (m_playerHealth.hp == 0) return;
+        Destroy(transform.GetChild(0).gameObject);
     }
     public void OnHeal(int dmg)
     {

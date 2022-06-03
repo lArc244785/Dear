@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bed5c7267858a4439ee60834134adbb, type: 3}
+  m_Name: SwampMovement
+  m_EditorClassIdentifier: 
+  m_gravityScale: 1
+  m_fallGravityMult: 1.5
+  m_resistanceInAirAmount: 0.1
+  m_frictionAmount: 0.85
+  m_coyoteTime: 0.1
+  m_runMaxSpeed: 10
+  m_runAccel: 9
+  m_runDeccel: 15
+  m_accelInAir: 0.65
+  m_deccelInAir: 0.65
+  m_accelPower: 1.05
+  m_stopPower: 1.2
+  m_turnPower: 1.13
+  m_jumpForce: 12
+  m_jumpCutMultiplier: 0.5
+  m_jumpBufferTime: 0.08
+  m_maxJumpCount: 0
+  m_airJumpForce: 8
+  m_wallJumpForce: {x: 10, y: 14}
+  m_wallJumpRunLerp: 0.3
+  m_wallJumpTime: 0.35
+  m_wallSlideVelocity: 0.8
+  m_climbingMaxSpeed: 0
+  m_climbingAccel: 8
+  m_climbingDeccel: 13
+  m_ropeReboundPower: 50
+  m_ropeReboundCoolTime: 0
+  m_ropeCancleJumpForce: {x: 0, y: 5}
+  m_ropeCancleReboundTime: 0.5
+  m_ropeCancleReboundRunLerp: 0.5
+  m_hitImfectPower: 0
+  m_hitImfectDuringTime: 0
+  m_hitImfectRunLerp: 0
