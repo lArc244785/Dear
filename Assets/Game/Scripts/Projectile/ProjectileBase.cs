@@ -44,8 +44,6 @@ public class ProjectileBase : MonoBehaviour
             m_dir = value;
         }
     }
-    [SerializeField]
-    private LayerMask m_hitLayerMask;
 
 
 
