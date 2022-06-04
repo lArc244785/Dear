@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637899613777372455
+  lastModified: 637899617795753364
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -874,7 +874,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637899613783183770
+  lastModified: 637899617714815063
   FileSizes:
   - Name: Desktop
     Value: 9984
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637899613781133311
+  lastModified: 637899617799304168
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637899613780033062
+  lastModified: 637899617799144131
   FileSizes:
   - Name: Desktop
     Value: 20422560
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637899613783183770
+  cacheTime: 637899617799304168
   cacheVersion: 10
 --- !u!114 &397148116521282081
 MonoBehaviour:
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637899613777532497
+  lastModified: 637899617795763380
   FileSizes:
   - Name: Desktop
     Value: 4878
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637899613782733665
+  lastModified: 637899617799294178
   FileSizes:
   - Name: Desktop
     Value: 1444128
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637899613778172643
+  lastModified: 637899617795773376
   FileSizes:
   - Name: Desktop
     Value: 4134
