@@ -48,6 +48,9 @@ public class PlayerSound : MonoBehaviour
     private FMODUnity.EventReference m_ropeShoot;
     [SerializeField]
     private FMODUnity.EventReference m_ropeMove;
+    private FMOD.Studio.EventInstance m_ropeInstance;
+    private FMOD.Studio.PARAMETER_ID m_parameterIndex;
+    private string m_ropeIndexID = "rope_index";
     #endregion
 
     #region groundPound
@@ -78,6 +81,9 @@ public class PlayerSound : MonoBehaviour
 
         m_groundSensor = player.movementManager.groundSensor;
 
+        m_ropeInstance = FMODUnity.RuntimeManager.CreateInstance(m_ropeMove);
+        SoundManager.instance.GetID(m_ropeInstance, m_ropeIndexID, out m_parameterIndex);
+
         //footStepLoop = false;
         //m_footStepLoopCoroutine = FootStepCoroutine(footStepPlayTick);
         //StartCoroutine(m_footStepLoopCoroutine);
@@ -88,6 +94,7 @@ public class PlayerSound : MonoBehaviour
     public void Hit()
     {
         SoundManager.instance.SoundOneShot(m_hitEvent);
+        SoundManager.instance.bgm.SetParamaterHitIndexID(1.0f);
     }
 
     public void Death()
@@ -187,7 +194,14 @@ public class PlayerSound : MonoBehaviour
 
     public void RopeMove()
     {
-        SoundManager.instance.SoundOneShot(m_ropeMove);
+        SoundManager.instance.SoundStop(m_ropeInstance);
+        m_ropeInstance.setParameterByID(m_parameterIndex, 0.0f);
+        SoundManager.instance.SoundPlay(m_ropeInstance);
+    }
+
+    public void RopeJump()
+    {
+        m_ropeInstance.setParameterByID(m_parameterIndex, 1.0f);
     }
 
     #endregion
