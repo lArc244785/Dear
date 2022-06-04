@@ -13,7 +13,7 @@ public class ProjectileBase : MonoBehaviour
             return m_weaponData; 
         } 
     }
-
+    [SerializeField]
     private LayerMask m_targetLayerMask;
     private LayerMask targetLayerMask
     {
@@ -44,11 +44,6 @@ public class ProjectileBase : MonoBehaviour
             m_dir = value;
         }
     }
-    [SerializeField]
-    private LayerMask m_hitLayerMask;
-
-
-
 
     protected virtual void Init(Vector2 fireDir, LayerMask targetLayerMask)
     {
@@ -56,6 +51,7 @@ public class ProjectileBase : MonoBehaviour
         m_targetLayerMask = targetLayerMask;
 
         m_dir = fireDir;
+
 
         float lookRotation = Utility.GetRotaionAngleByDir(dir, 0.0f);
 
