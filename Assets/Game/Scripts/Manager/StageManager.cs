@@ -54,7 +54,7 @@ public class StageManager : MonoBehaviour
         player.Trun(playerDirRight);
 
 
-       SoundManager.instance.bgm.SetParamater(m_bgmProgress);
+       SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
     }
 
     private void ComponentSetting()

@@ -444,6 +444,7 @@ public class GrapplingGun : ActiveToolBase
         if (isContant(player.transform.position, targetPos))
         {
             Cancle();
+            player.sound.RopeJump();
             player.movementManager.currentState = PlayerMovementManager.State.RopeJump;
         }
     }

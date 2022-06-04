@@ -298,6 +298,7 @@ public class UnitPlayer : UnitBase
         SetGhostLayer();
         yield return new WaitForSeconds(hitDuringTime + ghostDuringTime);
         SetDefaultLayer();
+        SoundManager.instance.bgm.SetParamaterHitIndexID(0.0f);
     }
 
     private void SetLayer(int layer)

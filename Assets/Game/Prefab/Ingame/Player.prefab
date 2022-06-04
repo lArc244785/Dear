@@ -924,18 +924,18 @@ MonoBehaviour:
     Path: event:/char/yuz/tools/hold_climb
   m_ropeShoot:
     Guid:
-      Data1: 986865551
-      Data2: 1246281112
-      Data3: 2131377853
-      Data4: -1677824422
-    Path: event:/char/yuz/tools/rope_shoot
+      Data1: -359350216
+      Data2: 1126670066
+      Data3: 1267286427
+      Data4: 1190333477
+    Path: event:/char/yuz/tools/grapple_shoot
   m_ropeMove:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 512182778
+      Data2: 1213922615
+      Data3: -1558689127
+      Data4: 25929878
+    Path: event:/char/yuz/tools/grapple_move
   m_groundPoundEvent:
     Guid:
       Data1: -1271139632

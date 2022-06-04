@@ -242,7 +242,9 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 1344
-  m_firePointOffset: {x: 1, y: 0}
+  m_ani: {fileID: 0}
+  m_fireImfect: {fileID: 0}
+  m_fireDirType: 1
 --- !u!1 &8377796252645011814
 GameObject:
   m_ObjectHideFlags: 0
