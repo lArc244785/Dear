@@ -275,6 +275,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4907442362909914817, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907442362909914817, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907442362909914817, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 65150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907442362909914817, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907442362909914817, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907442362909914817, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc566e8cd781da4ca348357f7275892, type: 3}
 --- !u!4 &3082327058121865026 stripped
