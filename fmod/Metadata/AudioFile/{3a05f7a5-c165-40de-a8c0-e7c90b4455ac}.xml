@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{2965a383-77f7-4054-825d-4406c9ef6a67}">
+	<object class="AudioFile" id="{3a05f7a5-c165-40de-a8c0-e7c90b4455ac}">
 		<property name="assetPath">
-			<value>impact_wood_debris_fall_hit_02.wav</value>
+			<value>Bodyfall_BeastOnDirt.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.1439999999999999</value>
+			<value>0.8531972789115646</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{0c963700-a798-4bc7-aa73-7080f677600c}</destination>
