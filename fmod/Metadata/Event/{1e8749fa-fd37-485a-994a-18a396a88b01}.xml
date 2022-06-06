@@ -220,6 +220,9 @@
 		<property name="attackTime">
 			<value>0</value>
 		</property>
+		<property name="releaseTime">
+			<value>4230.77002</value>
+		</property>
 		<property name="finalValue">
 			<value>-80</value>
 		</property>
