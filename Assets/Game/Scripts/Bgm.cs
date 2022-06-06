@@ -7,17 +7,19 @@ public class Bgm : MonoBehaviour
     [SerializeField]
     private FMODUnity.EventReference m_bgmEvent;
     [SerializeField]
-    private string m_id;
+    private string m_prograssID;
+    [SerializeField]
+    private string m_hitIndexID;
 
     private FMOD.Studio.EventInstance m_bgmInstance;
-    private FMOD.Studio.PARAMETER_ID m_bgmID;
-
+    private FMOD.Studio.PARAMETER_ID m_parameterPrograss;
+    private FMOD.Studio.PARAMETER_ID m_parameterHitIndexID;
 
     public void Init()
     {
         m_bgmInstance = FMODUnity.RuntimeManager.CreateInstance(m_bgmEvent);
-        SoundManager.instance.GetID(m_bgmInstance, m_id, out m_bgmID);
-
+        SoundManager.instance.GetID(m_bgmInstance, m_prograssID, out m_parameterPrograss);
+        SoundManager.instance.GetID(m_bgmInstance, m_hitIndexID, out m_parameterHitIndexID);
         BgmStart();
     }
 
@@ -26,9 +28,14 @@ public class Bgm : MonoBehaviour
         SoundManager.instance.SoundPlay(m_bgmInstance);
     }
 
-    public void SetParamater(float value)
+    public void SetParamaterPrograss(float value)
     {
-        m_bgmInstance.setParameterByID(m_bgmID, value);
+        m_bgmInstance.setParameterByID(m_parameterPrograss, value);
+    }
+
+    public void SetParamaterHitIndexID(float value)
+    {
+        m_bgmInstance.setParameterByID(m_parameterHitIndexID, value);
     }
 
 

@@ -33,7 +33,9 @@ public class Health : MonoBehaviour
 
     public void Init()
     {
-      
+
+        m_maxHP = 5;
+
         hp = m_maxHP;
        
     }

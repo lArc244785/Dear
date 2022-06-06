@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerDirRight: 1
-  m_stage_name: dsaojghaikgjha
+  m_stage_name: TestMap_0
   m_stageText: {fileID: 3517179347594327020}
+  m_bgmProgress: 0
 --- !u!1 &5170192352330147815
 GameObject:
   m_ObjectHideFlags: 0
