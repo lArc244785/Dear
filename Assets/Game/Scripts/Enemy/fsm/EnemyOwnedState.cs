@@ -10,9 +10,6 @@ namespace NoidOwnedState
         static float s_curdelay;
         public override void Enter(Noide enemy)
         {
-
-           
-
             s_curdelay = 0;
         }
         public override void Excute(Noide enemy)
@@ -194,8 +191,6 @@ namespace JumpSpiderOwnedState
 
         }
 
-
-
     }
     public class Attack : State<JumpSpider>
     {
@@ -243,3 +238,112 @@ namespace JumpSpiderOwnedState
 
 }
 
+namespace SpiderBossState
+{
+
+    public class Idle : State<BossSpieder>
+    {
+        static float s_curdelay;
+        public override void Enter(BossSpieder enemy)
+        {
+            s_curdelay = 0;
+            enemy.ChangeState(BossSpiderState.SlowMove);
+
+        }
+        public override void Excute(BossSpieder enemy)
+        {
+            if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
+        }
+        public override void Exit(BossSpieder enemy)
+        {
+
+        }
+    }
+    public class FastMove : State<BossSpieder>
+    {
+        static float s_curdelay;
+        public override void Enter(BossSpieder enemy)
+        {
+
+            s_curdelay = 0;
+
+            enemy.BossMovementFast();
+        }
+        public override void Excute(BossSpieder enemy)
+        {
+
+            if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
+            s_curdelay += Time.deltaTime;
+            if (s_curdelay >= 1.5)
+            {
+                enemy.ChangeState(BossSpiderState.SlowMove);
+            }
+        }
+        public override void Exit(BossSpieder enemy)
+        {
+
+        }
+    }
+    public class SlowMove : State<BossSpieder>
+    {
+        static float s_curdelay;
+
+        public override void Enter(BossSpieder enemy)
+        {
+            s_curdelay = 0;
+            enemy.BossMovementSlow();
+        }
+        public override void Excute(BossSpieder enemy)
+        {
+
+            if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
+            s_curdelay += Time.deltaTime;
+            if (s_curdelay >= 1.5)
+            {
+                enemy.ChangeState(BossSpiderState.FastMove);
+            }
+        }
+        public override void Exit(BossSpieder enemy)
+        {
+
+        }
+    }
+    public class CamOutMove : State<BossSpieder>
+    {
+        static float s_curdelay;
+        public override void Enter(BossSpieder enemy)
+        {
+            s_curdelay = 0;
+            enemy.BossMovementCamOut();
+        }
+        public override void Excute(BossSpieder enemy)
+        {
+            s_curdelay += Time.deltaTime;
+            if (s_curdelay >= 1)
+            {
+               if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
+               else  enemy.ChangeState(BossSpiderState.FastMove);
+
+            }
+        }
+        public override void Exit(BossSpieder enemy)
+        {
+
+        }
+    }
+
+    public class Die : State<BossSpieder>
+    {
+        public override void Enter(BossSpieder enemy)
+        {
+        }
+        public override void Excute(BossSpieder enemy)
+        {
+        }
+        public override void Exit(BossSpieder enemy)
+        {
+        }
+    }
+
+
+}

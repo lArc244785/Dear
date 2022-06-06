@@ -36,15 +36,9 @@ public class EnemyBase : UnitBase
     }
 
 
-    
-
-
     public override void Init()
     {
-        base.Init();
-        Debug.Log("init");
-
-      
+        base.Init();     
     }
     protected override void ComponentInit()
     {
@@ -78,5 +72,7 @@ public class EnemyBase : UnitBase
         if (health.hp > 0)
             hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
     }
+
+
 
 }
