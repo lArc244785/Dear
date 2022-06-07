@@ -36,6 +36,15 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private float m_bgmProgress;
 
+    [SerializeField]
+    private GameObject m_deathBackGround;
+
+
+    private void Awake()
+    {
+        DeathBackGroundActive(false);
+    }
+
     public void Init(/*bool playerDirRight*/)
     {
         ComponentSetting();
@@ -62,6 +71,12 @@ public class StageManager : MonoBehaviour
         m_player = GameObject.Find("Player").GetComponent<UnitPlayer>();
         m_cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
 
+    }
+
+
+    public void DeathBackGroundActive(bool isActive)
+    {
+        m_deathBackGround.SetActive(false);
     }
 
 

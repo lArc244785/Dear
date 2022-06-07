@@ -78,6 +78,7 @@ public class GameManager : SingleToon<GameManager>
         m_changeGameStaet[(int)GameSate.GameStart] = ChangeGameStart;
         m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeInGameUISetting;
         m_changeGameStaet[(int)GameSate.Pause] = ChangeGamePause;
+        m_changeGameStaet[(int)GameSate.GameOver] = ChangeGameOver;
     }
 
 
@@ -135,6 +136,13 @@ public class GameManager : SingleToon<GameManager>
         //UIManager.instance.titleView.Toggle(true)
     }
 
+    private void ChangeGameOver()
+    {
+        stageManager.DeathBackGroundActive(true);
+        
+    }
+
+
     #endregion
 
     #region State Change
@@ -149,6 +157,13 @@ public class GameManager : SingleToon<GameManager>
     {
         gameState = GameSate.GamePlaying;
     }
+
+
+    public void ChangeStateChangeGameOver()
+    {
+        gameState = GameSate.GameOver;
+    }
+
     #endregion
 
     public void NextState(int index)
@@ -233,5 +248,7 @@ public class GameManager : SingleToon<GameManager>
         gameState = GameSate.GamePlaying;
 
     }
+
+
 
 }

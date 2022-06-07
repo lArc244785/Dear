@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d13a6e21a18c004388aed70cc7383d0, type: 3}
-  m_Name: New Dialogue Data
+  m_Name: CutScene_1_1
   m_EditorClassIdentifier: 
   nodes:
-  - data: "<$UI_ON>\n<$Name>\uC720\uC988</Name>\n<$Sentences>\uB9C8\uD0C0? \uB2E4\uB140\uC654\uC5B4,
-      \uC65C \uAC00\uB9CC\uD788 \uC549\uC544 \uC788\uC5B4?</Sentences>"
+  - data: "<$UI_ON>\n<$Name>\uC720\uC988</Name>\n<$UI_RightImage>Yuz_curious</>\n<$Sentences>\uB9C8\uD0C0?
+      \uB2E4\uB140\uC654\uC5B4, \uC65C \uAC00\uB9CC\uD788 \uC549\uC544 \uC788\uC5B4?</Sentences>"
   - data: "<$Name>\uB9C8\uD0C0</Name>\n<$Sentences>\u2026</Sentences>"
   - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\uB9C8\uD0C0, \uC790?</Sentences>"
   - data: "<$Name>\uB9C8\uD0C0</Name>\n<$Sentences>\u2026..</Sentences>"
   - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\u2026</Sentences>"
-  - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\uB9E4\uB4DC, \uB9C8\uD0C0\uAC00
-      \uC774\uC0C1\uD574.</Sentences>"
-  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>\uC0C1\uD0DC\uB97C \uD655\uC778\uD569\uB2C8\uB2E4.</Sentences>"
-  - data: "<$Sentences>(\uB9E4\uB4DC\uAC00 \uB9C8\uD0C0\uC758 \uBAB8\uC744 \uC2A4\uCE94)</Sentences>"
-  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>Mata-Type H \uC791\uB3D9\uC815\uC9C0\uAC00
-      \uD655\uC778\uB418\uC5C8\uC2B5\uB2C8\uB2E4. \uBB38\uC81C \uD574\uACB0 \uB9C8\uBC95\uC0AC\uB97C
-      \uC2DC\uD589\uD569\uB2C8\uB2E4.</Sentences>"
+  - data: "<$Name>\uC720\uC988</Name>\n<$UI_RightImage>Yuz_nervous</>\n<$Sentences>\uB9E4\uB4DC,
+      \uB9C8\uD0C0\uAC00 \uC774\uC0C1\uD574.</Sentences>"
+  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$UI_LeftImage>Mad_normal</>\n<$Sentences>\uC0C1\uD0DC\uB97C
+      \uD655\uC778\uD569\uB2C8\uB2E4.</Sentences>"
+  - data: <$UI_LeftImage>Mad_screen</>
+  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$UI_LeftImage>Mad_normal</>\n<$Sentences>Mata-Type
+      H \uC791\uB3D9\uC815\uC9C0\uAC00 \uD655\uC778\uB418\uC5C8\uC2B5\uB2C8\uB2E4.
+      \uBB38\uC81C \uD574\uACB0 \uB9C8\uBC95\uC0AC\uB97C \uC2DC\uD589\uD569\uB2C8\uB2E4.</Sentences>"
   - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\uC815\u2026\uC9C0?</Sentences>"
   - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>\uB178\uC2EC \uAE30\uB2A5 \uC815\uC9C0
       \uD655\uC778. \uAD50\uCCB4\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4.</Sentences>"
