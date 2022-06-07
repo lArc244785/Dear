@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Spine.Unity;
 using UnityEngine;
 public enum movedirection
 {
@@ -10,7 +11,15 @@ public enum enemyState
 {
     Idle,
     Move,
-    dead
+    dead,
+    DeadAni,
+    Atk
+}
+public enum AniState
+{
+    idle,
+    Move,
+    Dead
 }
 
 public class Noide : UnitBase
@@ -52,8 +61,6 @@ public class Noide : UnitBase
             return m_saveSpeed;
         }
     }
-
-
     private int m_ghostLayer;
     private int ghostLayer
     {
@@ -90,18 +97,6 @@ public class Noide : UnitBase
             return m_ghostDuringTime;
         }
     }
-
-
-    private StateImfectTween m_hitImfect;
-    private StateImfectTween hitImfect
-    {
-        get
-        {
-            return m_hitImfect;
-        }
-    }
-
-
     private bool m_wallCheck;
     public bool wallCheck
     {
@@ -113,8 +108,6 @@ public class Noide : UnitBase
         }
     }
     
-
-
     public float moveSpeed
     {
         get
@@ -129,8 +122,70 @@ public class Noide : UnitBase
     }
 
 
+
+    private AniState m_animationState;
+    public AniState animationState
+    {
+        get
+        {
+            return m_animationState;
+        }
+        set
+        {
+            m_animationState = value;
+        }
+    }
+
+    [SerializeField]
+    private PlayerSerch m_serch;
+    public PlayerSerch serch
+    {
+        get
+        {
+            return m_serch;
+        }
+    }
+
+    [SerializeField]
+    private float m_fireCycle;
+
+    public float fireCycle
+    {
+        get
+        {
+            return m_fireCycle;
+        }
+    }
+
+    [SerializeField]
+    private GameObject m_missileObject;
+    public GameObject missileObject
+    {
+        get
+        {
+            return m_missileObject;
+        }
+    }
+
+
+    [SerializeField]
+    private LayerMask m_targetLayerMask;
+    public LayerMask targetLayerMask
+    {
+        get
+        {
+            return m_targetLayerMask;
+        }
+    }
+
+
+
     private State<Noide>[] m_states;
     private StateMachine<Noide> m_stateMachine;
+
+    [SerializeField]
+    private Animator m_animator;
+
 
     public override void Init()
     {
@@ -141,21 +196,23 @@ public class Noide : UnitBase
         m_ghostLayer = LayerMask.NameToLayer("Ghost");
 
         m_saveSpeed = m_moveSpeed;
-        m_states = new State<Noide>[3];
+        m_states = new State<Noide>[5];
         m_states[(int)enemyState.Idle] = new NoidOwnedState.Idle();
         m_states[(int)enemyState.Move] = new NoidOwnedState.Move();
         m_states[(int)enemyState.dead] = new NoidOwnedState.Die();
+        m_states[(int)enemyState.DeadAni] = new NoidOwnedState.DieAni();
 
         m_stateMachine = new StateMachine<Noide>();
 
+
         m_stateMachine.SetUp(this, m_states[(int)enemyState.Move]);
+        m_animationState = AniState.idle;
+      
+    
     }
     protected override void ComponentInit()
     {
         base.ComponentInit();
-        m_hitImfect = GetComponent<StateImfectTween>();
-
-        m_hitImfect.Init(model);
     }
     public void OnEnable()
     {
@@ -163,9 +220,24 @@ public class Noide : UnitBase
         ComponentInit();
 
     }
+    public void Attack()
+    {
+        GameObject goMissile = GameObject.Instantiate(missileObject);
+
+
+        Vector2 spawnPoint = (Vector2)transform.position;
+        Vector2 fireDir = (Vector2)m_serch.player.transform.position - spawnPoint;
+        fireDir.Normalize();
+
+        goMissile.GetComponent<ProjectileMissile>().HandleSpawn(spawnPoint, fireDir, targetLayerMask);
+
+    }
+
     private void Update()
     {
        m_stateMachine.Excute();
+       m_animator.SetInteger("state", (int)m_animationState);
+       
     }
 
     protected override void HitUniqueEventObject(GameObject attackObject)
@@ -184,13 +256,14 @@ public class Noide : UnitBase
     {
         base.HitHp(damage);
         health.OnDamage(damage);
+
     }
     public override void OnHitObject(GameObject attackObject, int damage)
     {
         base.OnHitObject(attackObject, damage);
         Debug.Log("총에 맞음");
-        if(health.hp > 0)
-        hitImfect.HitImfect(hitDuringTime, ghostDuringTime);
+        
+        m_animator.SetBool("OnHit", true);  
     }
 
     public void ChangeState(enemyState newState)
@@ -212,5 +285,4 @@ public class Noide : UnitBase
         m_wallCheck = false;
     }
     
-
 }

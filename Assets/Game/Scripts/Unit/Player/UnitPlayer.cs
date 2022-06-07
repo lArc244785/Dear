@@ -463,7 +463,7 @@ public class UnitPlayer : UnitBase
 
 
         GameManager.instance.ChaneGameState(GameManager.GameSate.GameOver);
-        Debug.Log("»ç¸Á ¾Ö´Ï¸ÞÀÌ¼Ç ON");
+        Debug.Log("ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ON");
 
     }
 

@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int m_maxHP;
-    
     public int maxhp
     {
         get
@@ -33,11 +32,8 @@ public class Health : MonoBehaviour
 
     public void Init()
     {
-        if(this.tag == "Player")
-        m_maxHP = 5;
+            hp = m_maxHP;
 
-        hp = m_maxHP;
-       
     }
 
     public void OnRecovery(int recovery)

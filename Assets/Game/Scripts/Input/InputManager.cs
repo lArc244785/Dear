@@ -8,6 +8,8 @@ public class InputManager : SingleToon<InputManager>
     private Camera m_brainCam;
     [SerializeField]
     private InputPlayer m_inputPlayer;
+    [SerializeField]
+    private GameObject m_PopUpUI;
 
 
 
@@ -117,6 +119,8 @@ public class InputManager : SingleToon<InputManager>
     
     public void EscapeUI(InputAction.CallbackContext contex)
     {
+        if (GameObject.Find("PopUpUIManager") == null) Instantiate(m_PopUpUI);
+
         if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             return;
         if (contex.started)
@@ -193,6 +197,5 @@ public class InputManager : SingleToon<InputManager>
             return Mouse.current.position.ReadValue();
         }
     }
-
 
 }
