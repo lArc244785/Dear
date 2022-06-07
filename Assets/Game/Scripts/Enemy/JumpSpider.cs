@@ -9,7 +9,6 @@ public enum jumpSpiderState
     Dead
 
 }
-
 public class JumpSpider : EnemyBase
 {
     [SerializeField]
@@ -55,9 +54,8 @@ public class JumpSpider : EnemyBase
     }
     public override void Init()
     {
+        
         base.Init();
-        base.Init();
-        Debug.Log("init");
 
         m_defaultLayer = LayerMask.NameToLayer("Player");
         m_ghostLayer = LayerMask.NameToLayer("Ghost");
@@ -79,7 +77,6 @@ public class JumpSpider : EnemyBase
         playerCheck();
         if (m_isRight) model.flipX = false;
         else model.flipX = true;
-       
     }
     public void OnEnable()
     {

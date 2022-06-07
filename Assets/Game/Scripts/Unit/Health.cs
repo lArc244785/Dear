@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
 
     public void Init()
     {
-
+        if(this.tag == "Player")
         m_maxHP = 5;
 
         hp = m_maxHP;
