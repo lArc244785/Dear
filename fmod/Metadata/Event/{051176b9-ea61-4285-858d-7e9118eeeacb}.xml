@@ -84,7 +84,11 @@ related with footstep
 			<destination>{1ed119bf-d10d-4e87-9394-9b74226cc615}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{2847077f-825d-4417-8e90-2c5a6576331c}" />
+	<object class="Timeline" id="{2847077f-825d-4417-8e90-2c5a6576331c}">
+		<property name="isProxyEnabled">
+			<value>false</value>
+		</property>
+	</object>
 	<object class="ParameterProxy" id="{c8ac958a-13f1-4d46-acb1-93e346d9cdfb}">
 		<relationship name="modules">
 			<destination>{5ad6f8bb-c0fc-4bb4-aa8b-82e9ea0b57a1}</destination>
