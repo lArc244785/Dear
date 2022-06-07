@@ -35,6 +35,11 @@ public class StageManager : MonoBehaviour
     private TextMeshProUGUI m_stageText;
     [SerializeField]
     private float m_bgmProgress;
+    [SerializeField]
+    private bool m_isSave;
+
+
+
 
     public void Init(/*bool playerDirRight*/)
     {
@@ -53,6 +58,16 @@ public class StageManager : MonoBehaviour
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
 
+        if(GameManager.instance.CanLoad())
+        {
+            GameManager.instance.LoadPos();
+        }
+        else if(m_isSave)
+        {
+            GameManager.instance.TempSave(player.unitPos);
+        }
+
+
 
        SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
     }
@@ -63,6 +78,9 @@ public class StageManager : MonoBehaviour
         m_cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
 
     }
+
+   
+
 
 
 }

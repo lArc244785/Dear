@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
 
     public void Init()
     {
-
+        if(this.tag == "Player")
         m_maxHP = 5;
 
         hp = m_maxHP;
@@ -50,6 +50,11 @@ public class Health : MonoBehaviour
     {
         hp -= damage;
        
+    }
+
+    public void SetHP(int hp)
+    {
+        this.hp = hp;
     }
 
 }

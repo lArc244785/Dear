@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d13a6e21a18c004388aed70cc7383d0, type: 3}
+  m_Name: CutScene_1_2_1
+  m_EditorClassIdentifier: 
+  nodes:
+  - data: "<$UI_ON>\n<$Name>\uC720\uC988</Name>\n<$Sentences>\uC5EC\uAE34 \uBB50\uD558\uB294
+      \uACF3\uC774\uC600\uC744\uAE4C?</Sentences>\n"
+  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>\uC8FC\uBCC0 \uD658\uACBD\uC758
+      \uBB3C\uD488 \uB4F1\uC744 \uD1B5\uD574 \uB85C\uBD07 \uC81C\uC870 \uACF5\uC7A5\uC73C\uB85C
+      \uCD94\uCE21\uB429\uB2C8\uB2E4.</Sentences>\n"
+  - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\uC800\uAE30 \uC544\uC2AC\uC544\uC2AC\uD574\uBCF4\uC774\uB294
+      \uB2E4\uB9AC\uAC00 \uC788\uC5B4. \uC800\uAC78 \uD1B5\uD574\uC11C \uAC00\uBA74
+      \uBE60\uB974\uACA0\uC9C0?</Sentences>\n"
+  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>\uB2E4\uB9AC\uAC00 \uC544\uB2CC
+      \uCCA0\uADFC\uC785\uB2C8\uB2E4. \uADF8\uB9AC\uACE0 \uCD5C\uB2E8\uB8E8\uD2B8\uB294
+      \uB9DE\uC2B5\uB2C8\uB2E4.\r\n</Sentences>\n"
+  - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\uBB54\uAC00 \uD754\uB4E4\uB9AC\uB294\uAC8C
+      \uBB34\uC11C\uC6CC.</Sentences>\n"
+  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>\uBC1F\uACE0 \uC788\uB294 \uC9C0\uD615
+      \uC548\uC815\uC131 \uD3C9\uAC00 \uC2E4\uD589. \uB2E4\uD589\uC774\uB3C4 \uC774\uC0C1\uC740
+      \uC5C6\uC2B5\uB2C8\uB2E4.</Sentences>\n"
+  - data: "<$Name>\uC720\uC988</Name>\n<$Sentences>\uADF8\uB807\uB2E4\uBA74 \uB2E4\uD589\u2026</Sentences>\n"
+  - data: "<$Name>\uB9E4\uB4DC</Name>\n<$Sentences>\uD558\uC9C0\uB9CC \uCCA0\uADFC\uC744
+      \uC9C0\uC9C0\uD558\uB358 \uC904\uC740 \uB04A\uC5B4\uC9C0\uAE30 \uC9C1\uC804\uC774\uB124\uC694.</Sentences>\n"
+  - data: "<$Name>\uC720\uC988 </Name>\n<$Sentences>\uBB50? \uADF8\uAC78\u2026</Sentences>\n"
+  - data: "<$Name>\uB9E4\uB4DC </Name>\n<$Sentences>\uCD94\uB77D\uD569\uB2C8\uB2E4.</Sentences>\n"
+  - data: "<$Name>\uC720\uC988 </Name>\n<$Sentences>\uC65C \uC774\uC81C\uB9D0\uD574\u3150\u3150\u3150\u3150!!!</Sentences>\n"

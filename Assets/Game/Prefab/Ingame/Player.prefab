@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 8979922405315631050}
   - component: {fileID: 1386206793}
   - component: {fileID: 7963385106373309372}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6d51ef6dfb0984fa15bbd5b817d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHP: 10
+  m_maxHP: 5
   m_hp: 0
 --- !u!114 &6611995000469461227
 MonoBehaviour:
@@ -1234,7 +1234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816093289897762563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.317, y: 1.512, z: 0}
+  m_LocalPosition: {x: 0, y: 1.783, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1351,7 +1351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816093290287426407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.102, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1396,10 +1396,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -204880281
+  m_SortingLayer: 2
   m_SortingOrder: 3001
-  m_Sprite: {fileID: -6298272609090708994, guid: 6bfd14980857a7647a92d2709694e18b, type: 3}
+  m_Sprite: {fileID: -3744056825682599936, guid: cb2fc5c821b6d854794a458f39dbb5db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1674,7 +1674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8816093290821381700
 Transform:
   m_ObjectHideFlags: 0

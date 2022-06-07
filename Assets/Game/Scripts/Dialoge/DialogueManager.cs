@@ -93,7 +93,7 @@ public class DialogueManager : SingleToon<DialogueManager>
 
     public void StartDialogue(DialogueData data)
     {
-        GameManager.instance.ChangeStateUISetting();
+        GameManager.instance.ChaneGameState(GameManager.GameSate.InGameUISetting);
 
         m_dialogueData = data;
         m_dialogueIndex = 0;
@@ -111,7 +111,7 @@ public class DialogueManager : SingleToon<DialogueManager>
         if (m_dialogueIndex >= m_dialogueData.nodes.Length)
         {
             m_uiDialogue.Toggle(false);
-            GameManager.instance.ChangeStateChangeGamePlaying();
+            GameManager.instance.ChaneGameState(GameManager.GameSate.GamePlaying);
             return;
         }
        

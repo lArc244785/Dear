@@ -42,6 +42,10 @@ public class GameManager : SingleToon<GameManager>
     private delegate void ChangeGameState();
     private ChangeGameState[] m_changeGameStaet;
     private StageManager m_stageManager;
+
+    private DeathProduction m_deathProduction;
+
+
     public StageManager stageManager
     {
         private set
@@ -54,6 +58,17 @@ public class GameManager : SingleToon<GameManager>
         }
     }
 
+    private int m_nextStageIndex;
+
+    private struct PlayerTempSave
+    {
+        public int stageIndex;
+        public int hp;
+        public Vector3 savePos; 
+    }
+
+    private PlayerTempSave m_tempSave;
+
     protected override bool Init()
     {
         if (!base.Init())
@@ -63,6 +78,12 @@ public class GameManager : SingleToon<GameManager>
 
         DOTween.Init(false, false, LogBehaviour.Default);
         DOTween.defaultAutoPlay = AutoPlay.None;
+
+        m_deathProduction = transform.GetChild(0).GetComponent<DeathProduction>();
+        m_deathProduction.Init();
+
+        m_tempSave.stageIndex = -1;
+        m_tempSave.savePos = Vector3.zero;
 
         return true;
     }
@@ -78,6 +99,7 @@ public class GameManager : SingleToon<GameManager>
         m_changeGameStaet[(int)GameSate.GameStart] = ChangeGameStart;
         m_changeGameStaet[(int)GameSate.InGameUISetting] = ChangeInGameUISetting;
         m_changeGameStaet[(int)GameSate.Pause] = ChangeGamePause;
+        m_changeGameStaet[(int)GameSate.GameOver] = ChangeGameOver;
     }
 
 
@@ -111,12 +133,19 @@ public class GameManager : SingleToon<GameManager>
     private void ChangeLoad()
     {
         UIManager.instance.AllToggleFase();
+        UIManager.instance.produtionView.Toggle(true);
+        UIManager.instance.produtionView.fade.FadeOutSkip();
+        m_deathProduction.SetDeathBackGroundActive(false);
+
+        StartCoroutine(LoadCorutine(m_nextStageIndex));
+
     }
 
     private void ChangeStageLoad()
     {
         UIManager.instance.AllToggleFase();
         UIManager.instance.produtionView.Toggle(true);
+        StartCoroutine(StageLoadCorutine(m_nextStageIndex));
     }
 
     private void ChangeGameStart()
@@ -135,28 +164,26 @@ public class GameManager : SingleToon<GameManager>
         //UIManager.instance.titleView.Toggle(true)
     }
 
-    #endregion
-
-    #region State Change
-
-    public void ChangeStateUISetting()
+    private void ChangeGameOver()
     {
-        gameState = GameSate.InGameUISetting;
-    }
-
-
-    public void ChangeStateChangeGamePlaying()
-    {
-        gameState = GameSate.GamePlaying;
+        Debug.Log("Death");
+        StartCoroutine(GameOverProcessCoroutine());  
     }
     #endregion
+
+
 
     public void NextState(int index)
     {
         stageManager.player.inputPlayer.SetControl(false);
+        m_nextStageIndex = index;
         gameState = GameSate.StageLoad;
-        StartCoroutine(StageLoadCorutine(index));
+
     }
+
+
+
+
     public void Gotitle()
     {
        
@@ -175,7 +202,11 @@ public class GameManager : SingleToon<GameManager>
         while (!UIManager.instance.produtionView.fade.isfadeProcessed)
             yield return null;
 
+        yield return StartCoroutine(LoadCorutine(index));
+    }
 
+    private IEnumerator LoadCorutine(int index)
+    {
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
 
         while (!operation.isDone)
@@ -202,6 +233,9 @@ public class GameManager : SingleToon<GameManager>
 
         gameState = GameSate.GameStart;
     }
+
+
+
     private IEnumerator GotitleCorutine()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(0);
@@ -233,5 +267,44 @@ public class GameManager : SingleToon<GameManager>
         gameState = GameSate.GamePlaying;
 
     }
+
+
+    private IEnumerator GameOverProcessCoroutine()
+    {
+        UIManager.instance.AllToggleFase();
+        m_deathProduction.SetDeathBackGroundActive(true);
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(1.0f);
+        stageManager.cameraManager.SetVitrualCamera("vcam_Death");
+        yield return new WaitForSeconds(1.0f);
+
+
+        m_nextStageIndex = m_tempSave.stageIndex;
+        ChaneGameState(GameSate.Load);
+        Time.timeScale = 1.0f;
+
+        yield return null;
+    }
+
+
+    public void TempSave(Vector3 savePos)
+    {
+        Debug.Log("SAVE:Temp Save");
+        m_tempSave.stageIndex = SceneManager.GetActiveScene().buildIndex;
+        m_tempSave.hp = stageManager.player.health.hp;
+        m_tempSave.savePos = savePos;
+    }
+
+    public bool CanLoad()
+    {
+        return SceneManager.GetActiveScene().buildIndex == m_tempSave.stageIndex;
+    }
+
+    public void LoadPos()
+    {
+        stageManager.player.transform.position = m_tempSave.savePos;
+        stageManager.player.health.SetHP(m_tempSave.hp);
+    }
+
 
 }
