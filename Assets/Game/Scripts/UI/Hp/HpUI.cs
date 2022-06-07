@@ -34,15 +34,16 @@ public class HpUI : MonoBehaviour
     }
     private void Update()
     {
-        if (GameManager.instance.gameState == GameManager.GameSate.GameOver)
-        {
-            init();
-        }
+       
     }
     public void OnDamage(int dmg)
     {
-        //if (m_playerHealth.hp == 0) return;
-        Destroy(transform.GetChild(0).gameObject);
+        if (m_playerHealth.hp == 0) return;
+        for (int i = 0; i < dmg; i++)
+        {
+           
+            Destroy(transform.GetChild(i).gameObject);
+        }
     }
     public void OnHeal(int dmg)
     {

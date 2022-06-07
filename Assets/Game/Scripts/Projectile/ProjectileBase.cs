@@ -55,8 +55,31 @@ public class ProjectileBase : MonoBehaviour
 
         float lookRotation = Utility.GetRotaionAngleByDir(dir, 0.0f);
 
-        transform.rotation = Quaternion.Euler(0f, 0f, lookRotation);
+        if (fireDir.x > 0.0f)
+            FilpObject();
     }
+
+    private void FilpObject()
+    {
+        Transform modelTr = transform.Find("Model");
+        Vector3 local = modelTr.localScale;
+        local.x *= -1.0f;
+        modelTr.localScale = local;
+
+        for(int i = 0; i < modelTr.childCount; i++)
+        {
+            Transform child = modelTr.GetChild(i);
+            if(child.GetComponent<ParticleSystem>() != null)
+            {
+                local = child.localScale;
+                local.x *= -1.0f;
+                child.localScale = local;
+            }
+        }
+
+    }
+
+
 
     public void HandleSpawn(Vector2 spawnPoint, Vector2 fireDir, LayerMask targetLayerMask)
     {

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: imageData
   m_EditorClassIdentifier: 
   m_datas:
-  - id: T1
-    img: {fileID: 21300000, guid: fa6d71b9e22df244fa7ea571c8eee99e, type: 3}
-  - id: T2
-    img: {fileID: 21300000, guid: 4db20ddf932f93544bf8b2e67e535712, type: 3}
-  - id: T3
-    img: {fileID: 21300000, guid: febe3092fb55eaa43a3fa3d47ec4338c, type: 3}
-  - id: T4
-    img: {fileID: 21300000, guid: daf6e6b67cd1761498405607cae47db8, type: 3}
-  - id: B1
-    img: {fileID: 21300000, guid: 98f4131df553cb441a8c3a2081db9c1d, type: 3}
+  - id: Mad_normal
+    img: {fileID: 21300000, guid: 069b24e77b1e93c46b242a0b819e18e3, type: 3}
+  - id: Mad_screen
+    img: {fileID: 21300000, guid: c4cb3a6cae91e024ea281f7faf20d94d, type: 3}
+  - id: Yuz_curious
+    img: {fileID: 21300000, guid: f7911ac3e853f8c41b57bfa25a451a7e, type: 3}
+  - id: Yuz_nervous
+    img: {fileID: 21300000, guid: a7951e214b548c34ebaab865121c808e, type: 3}
+  - id: Yuz_normal
+    img: {fileID: 21300000, guid: 5ce5bffe3ebc8b0489b2bd87f81e23f9, type: 3}

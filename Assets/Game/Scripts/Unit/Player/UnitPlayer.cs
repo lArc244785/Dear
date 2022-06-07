@@ -270,6 +270,14 @@ public class UnitPlayer : UnitBase
     public override void OnHitObject(GameObject attackObject, int damage)
     {
         base.OnHitObject(attackObject, damage);
+
+
+        if (IsDead())
+        {
+            OnDead();
+            return;
+        }
+
         sound.Hit();
         GameManager.instance.stageManager.cameraManager.PlayerHitShake();
 
@@ -448,7 +456,15 @@ public class UnitPlayer : UnitBase
     private void OnDead()
     {
         inputPlayer.SetControl(false);
-        Debug.Log("Dead");
+        SetGhostLayer();
+        movementManager.currentState = PlayerMovementManager.State.None;
+        rig2D.gravityScale = 0.0f;
+        rig2D.velocity = Vector2.zero;
+
+
+        GameManager.instance.ChaneGameState(GameManager.GameSate.GameOver);
+        Debug.Log("사망 애니메이션 ON");
+
     }
 
 }

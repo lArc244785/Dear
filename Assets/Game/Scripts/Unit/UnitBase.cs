@@ -106,19 +106,24 @@ public abstract class UnitBase : MonoBehaviour
         m_rig2D = GetComponent<Rigidbody2D>();
 
         health.Init();
-        
     }
 
 
     #region Hit Method
     public virtual void OnHitUnit(UnitBase attackUnit, int damage)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         HitHp(damage);
         HitUniqueEventUnit(attackUnit);
     }
 
     public virtual void OnHitObject(GameObject attackObject, int damage)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         HitHp(damage);
         HitUniqueEventObject(attackObject);
     }
