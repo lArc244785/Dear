@@ -106,7 +106,6 @@ public abstract class UnitBase : MonoBehaviour
         m_rig2D = GetComponent<Rigidbody2D>();
 
         health.Init();
-        
     }
 
 

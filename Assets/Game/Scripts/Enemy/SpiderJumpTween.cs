@@ -37,22 +37,17 @@ public class SpiderJumpTween : MonoBehaviour
         m_jumpTween.Kill();
         m_jumpTween = null;
     }
-    private static Tween a;
+    private static Tween s_jumpTween;
     public void Jump(bool isRight)
     {
         JumpTweenReset();
         Sequence sequence = DOTween.Sequence();
+
+        s_jumpTween = transform.DOJump(new Vector2(station.position.x, transform.position.y), m_jumpPower, 1, 0.7f, false);
         
-        
-        
-        a = transform.DOJump(new Vector2(station.position.x, transform.position.y), m_jumpPower, 1, 0.7f, false);
-        
-        sequence.Append(a);
+        sequence.Append(s_jumpTween);
         m_jumpTween = sequence;
         m_jumpTween.Play();
-
-
-        Debug.Log("점프");
 
     }
 }
