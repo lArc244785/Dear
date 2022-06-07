@@ -52,7 +52,6 @@ MonoBehaviour:
     m_Bits: 2304
   m_force: 22
   m_superJumpMul: 2
-  m_InteractionJumpWait: 0.08
   m_animator: {fileID: 2940698045885193393}
 --- !u!61 &446751083911116467
 BoxCollider2D:
@@ -177,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8620188506070964051, guid: 485a36a94c3a5014d89584002cc98dc4, type: 3}
+  m_Sprite: {fileID: 8620188506070964051, guid: 2dd7c796f63836542bf224780ad8fc3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

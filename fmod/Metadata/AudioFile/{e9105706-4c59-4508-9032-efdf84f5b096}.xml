@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e9105706-4c59-4508-9032-efdf84f5b096}">
+		<property name="assetPath">
+			<value>GiantBeetle_Spit3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.49503401360544219</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0c963700-a798-4bc7-aa73-7080f677600c}</destination>
+		</relationship>
+	</object>
+</objects>

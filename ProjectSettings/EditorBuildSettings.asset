@@ -6,24 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Game/Scenes/Level/Prolog_1_1.unity
-    guid: 2ec89062824d12f4c876e5413f1f5a0c
-  - enabled: 0
-    path: Assets/Game/Scenes/Level/Tutorial_1_1.unity
-    guid: 530be1a20472e724aa63872f7341df5e
-  - enabled: 0
-    path: Assets/Game/Scenes/Level/Tutorial_2_1.unity
-    guid: dc87885283feef7458d86231fedc6416
-  - enabled: 0
-    path: Assets/Game/Scenes/Level/Tutorial_2_2.unity
-    guid: c6b0f836f0f7cf540bc69fe127eff73e
-  - enabled: 0
-    path: Assets/Game/Scenes/Level/Tutorial_2_3.unity
-    guid: 3b07417f747d6c14da86c051723c7c59
-  - enabled: 0
     path: Assets/Game/Scenes/Level/Boss/BossRoom1.unity
     guid: abff1ed0bf70f1b4ebfb19787560627d
   - enabled: 0
@@ -32,11 +14,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Game/Scenes/Level/Boss/BossRoom3.unity
     guid: c146c07f507ef254e8825970f1983677
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Test/TestMap_Froset.unity
     guid: d08804d69d360dc42a3256b8cb23a842
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Test/TestMap_Factory.unity
     guid: 82af881c6505b394ca1152f726b3409b
+  - enabled: 1
+    path: Assets/Game/Scenes/Level/Stage_1/Stage_1_1.unity
+    guid: 89d85897d32a0e24697429a415b01105
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e82a0226f23cc9f4aa9bdbf5e197ead5, type: 2}
