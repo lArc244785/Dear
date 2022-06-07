@@ -53,10 +53,14 @@ public class ProjectileBase : MonoBehaviour
         m_dir = fireDir;
 
 
+
         float lookRotation = Utility.GetRotaionAngleByDir(dir, 0.0f);
 
         if (fireDir.x > 0.0f)
             FilpObject();
+
+
+
     }
 
     private void FilpObject()
