@@ -52,4 +52,9 @@ public class Health : MonoBehaviour
        
     }
 
+    public void SetHP(int hp)
+    {
+        this.hp = hp;
+    }
+
 }

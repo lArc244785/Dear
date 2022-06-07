@@ -112,12 +112,18 @@ public abstract class UnitBase : MonoBehaviour
     #region Hit Method
     public virtual void OnHitUnit(UnitBase attackUnit, int damage)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         HitHp(damage);
         HitUniqueEventUnit(attackUnit);
     }
 
     public virtual void OnHitObject(GameObject attackObject, int damage)
     {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            return;
+
         HitHp(damage);
         HitUniqueEventObject(attackObject);
     }
