@@ -456,12 +456,14 @@ public class UnitPlayer : UnitBase
     private void OnDead()
     {
         inputPlayer.SetControl(false);
+        SetGhostLayer();
         movementManager.currentState = PlayerMovementManager.State.None;
         rig2D.gravityScale = 0.0f;
         rig2D.velocity = Vector2.zero;
 
-        Debug.Log("DeadUI On");
-        GameManager.instance.ChangeStateChangeGameOver();
+
+        GameManager.instance.ChaneGameState(GameManager.GameSate.GameOver);
+        Debug.Log("사망 애니메이션 ON");
 
     }
 

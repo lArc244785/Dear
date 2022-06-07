@@ -39,8 +39,13 @@ public class UI_Fade : MonoBehaviour
         isfadeProcessed = false;
         Tween fadeInTween = m_fadeBackGround.DOColor(m_fadeInColor, m_fadeInProcessTime).OnComplete(() => { isfadeProcessed = true; });
         fadeInTween.Play();
-
     }
+
+    public void FadeInSkip()
+    {
+        m_fadeBackGround.color = m_fadeInColor;
+    }
+
 
     public void FadeOut()
     {
@@ -50,5 +55,9 @@ public class UI_Fade : MonoBehaviour
         fadeOutTween.Play();
     }
 
+    public void FadeOutSkip()
+    {
+        m_fadeBackGround.color = m_fadeOutColor;
+    }
 
 }

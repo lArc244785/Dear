@@ -35,15 +35,11 @@ public class StageManager : MonoBehaviour
     private TextMeshProUGUI m_stageText;
     [SerializeField]
     private float m_bgmProgress;
-
     [SerializeField]
-    private GameObject m_deathBackGround;
+    private bool m_isSave;
 
 
-    private void Awake()
-    {
-        DeathBackGroundActive(false);
-    }
+
 
     public void Init(/*bool playerDirRight*/)
     {
@@ -62,6 +58,16 @@ public class StageManager : MonoBehaviour
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
 
+        if(GameManager.instance.CanLoad())
+        {
+            GameManager.instance.LoadPos();
+        }
+        else if(m_isSave)
+        {
+            GameManager.instance.TempSave(player.unitPos);
+        }
+
+
 
        SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
     }
@@ -73,11 +79,8 @@ public class StageManager : MonoBehaviour
 
     }
 
+   
 
-    public void DeathBackGroundActive(bool isActive)
-    {
-        m_deathBackGround.SetActive(false);
-    }
 
 
 }
