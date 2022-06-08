@@ -1,68 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1833253375068607758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1774295235406726967}
-  - component: {fileID: 2325985997489378963}
-  - component: {fileID: 583335354421411297}
-  m_Layer: 0
-  m_Name: area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1774295235406726967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833253375068607758}
-  m_LocalRotation: {x: -0, y: -0, z: 0.15289964, w: 0.98824173}
-  m_LocalPosition: {x: 12.169998, y: -5.4600005, z: 0}
-  m_LocalScale: {x: 1.5000006, y: 1.5000006, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9073526967114519500}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2325985997489378963
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833253375068607758}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.8115869, y: 7.2806425}
-  serializedVersion: 2
-  m_Radius: 9.838793
---- !u!114 &583335354421411297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833253375068607758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ededa156aee52634bb24010b9248b444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_enemyTransform: {fileID: 9073526965198746475}
-  m_isFollowModel: 0
 --- !u!1 &4391918830850740134
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +252,7 @@ MonoBehaviour:
   m_moveSpeed: 12
   m_hitDuringTime: 0
   m_ghostDuringTime: 0
-  m_serch: {fileID: 583335354421411297}
+  m_serch: {fileID: 0}
   m_fireCycle: 1.5
   m_missileObject: {fileID: 2794227655303801860, guid: 89e440046f480f34da1a19c5b9b62876, type: 3}
   m_targetLayerMask:
@@ -334,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6d51ef6dfb0984fa15bbd5b817d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHP: 5
+  m_maxHP: 40
   m_hp: 0
 --- !u!50 &9073526965198746472
 Rigidbody2D:
@@ -686,7 +623,6 @@ Transform:
   - {fileID: 9073526966819406078}
   - {fileID: 9073526966055286369}
   - {fileID: 9073526965198746475}
-  - {fileID: 1774295235406726967}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

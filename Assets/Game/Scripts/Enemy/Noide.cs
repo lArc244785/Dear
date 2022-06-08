@@ -178,6 +178,7 @@ public class Noide : UnitBase
         }
     }
 
+    private float m_speedSave;
 
 
     private State<Noide>[] m_states;
@@ -196,6 +197,8 @@ public class Noide : UnitBase
         m_ghostLayer = LayerMask.NameToLayer("Ghost");
 
         m_saveSpeed = m_moveSpeed;
+        m_speedSave = moveSpeed;
+
         m_states = new State<Noide>[5];
         m_states[(int)enemyState.Idle] = new NoidOwnedState.Idle();
         m_states[(int)enemyState.Move] = new NoidOwnedState.Move();
@@ -203,7 +206,7 @@ public class Noide : UnitBase
         m_states[(int)enemyState.DeadAni] = new NoidOwnedState.DieAni();
 
         m_stateMachine = new StateMachine<Noide>();
-
+        
 
         m_stateMachine.SetUp(this, m_states[(int)enemyState.Move]);
         m_animationState = AniState.idle;
@@ -256,7 +259,8 @@ public class Noide : UnitBase
     {
         base.HitHp(damage);
         health.OnDamage(damage);
-
+        moveSpeed = 0;
+        StartCoroutine(delay(1f));
     }
     public override void OnHitObject(GameObject attackObject, int damage)
     {
@@ -283,6 +287,13 @@ public class Noide : UnitBase
     private void OnTriggerExit2D(Collider2D collision)
     {
         m_wallCheck = false;
+    }
+    private IEnumerator delay(float delay)
+    {
+        
+        yield return new WaitForSeconds(delay);
+        moveSpeed = saveSpeed;
+        
     }
     
 }

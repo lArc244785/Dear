@@ -22,6 +22,9 @@ public class StageManager : MonoBehaviour
     #endregion
 
 
+    [SerializeField]
+    private HpUI m_fullHPUI;
+
 
     #region playerDirRight
     [SerializeField]
@@ -53,7 +56,7 @@ public class StageManager : MonoBehaviour
         player.Init();
         cameraManager.Init();
         m_stageText.text = m_stage_name;
-
+        m_fullHPUI.init();
 
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
@@ -76,6 +79,7 @@ public class StageManager : MonoBehaviour
     {
         m_player = GameObject.Find("Player").GetComponent<UnitPlayer>();
         m_cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
+        m_fullHPUI = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
 
     }
 
