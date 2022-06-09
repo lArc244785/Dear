@@ -354,23 +354,33 @@ public class UnitPlayer : UnitBase
         {
             if (footStepLoop)
             {
-                GroundInfo info = movementManager.groundSensor.GetGroundCollider2D().GetComponent<GroundInfo>();
-                value = 0.0f;
-
-                if (info != null)
+                Collider2D coll = movementManager.groundSensor.GetGroundCollider2D();
+                if(coll != null)
                 {
-                    if (info.type == GroundInfo.Type.Forest)
+
+                    GroundInfo info = coll.GetComponent<GroundInfo>();
+                    Debug.Log("Foot " + info);
+
+
+                    value = 0.0f;
+
+                    if (info != null)
                     {
-                        value = 1.0f;
+                        if (info.type == GroundInfo.Type.Forest)
+                        {
+                            value = 1.0f;
+                        }
+                        else if (info.type == GroundInfo.Type.Fectory)
+                        {
+                            value = 2.0f;
+                        }
                     }
-                    else if (info.type == GroundInfo.Type.Fectory)
-                    {
-                        value = 2.0f;
-                    }
+
+                    particleManager.MoveEffect(inputPlayer.moveDir.x);
+                    sound.FootStep(value);
                 }
 
-                particleManager.MoveEffect(inputPlayer.moveDir.x);
-                sound.FootStep(value);
+
             }
             yield return new WaitForSeconds(tickTime);
         }
