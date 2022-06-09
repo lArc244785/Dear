@@ -23,6 +23,12 @@ public class ProjectileBase : MonoBehaviour
         }
     }
 
+    [Header("HitSound")]
+    [SerializeField]
+    private OneSound m_hitSound;
+
+
+
     private Rigidbody2D m_rig2D;
     protected Rigidbody2D rig2D
     {
@@ -103,6 +109,9 @@ public class ProjectileBase : MonoBehaviour
         UnitBase unit = collision.GetComponent<UnitBase>();
         if (unit != null)
         {
+            if (m_hitSound != null)
+                m_hitSound.Play();
+
             unit.OnHitObject(gameObject, weaponData.damage);
         }
         Destory();

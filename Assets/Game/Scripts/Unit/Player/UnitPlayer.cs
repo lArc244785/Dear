@@ -152,11 +152,7 @@ public class UnitPlayer : UnitBase
     public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
     #endregion
 
-    #region  Wall
-    private IEnumerator m_wallSlideLoopCoroutine;
-    private bool m_wallSlideLoop;
-    public bool wallSlideLoop { set { m_wallSlideLoop = value; } get { return m_wallSlideLoop; } }
-    #endregion
+
 
     #region Interaction
 
@@ -181,13 +177,13 @@ public class UnitPlayer : UnitBase
         footStepLoop = false;
         m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
 
-        wallSlideLoop = false;
-        m_wallSlideLoopCoroutine = WillSlideCoroutine(0.2f);
+       
+
 
 
         StartCoroutine(m_footStepLoopCoroutine);
 
-        StartCoroutine(m_wallSlideLoopCoroutine);
+
 
     }
 
@@ -254,7 +250,7 @@ public class UnitPlayer : UnitBase
         }
 
 
-
+        particleManager.HitEffect();
         sound.Hit();
         GameManager.instance.stageManager.cameraManager.PlayerHitShake();
 
@@ -279,6 +275,7 @@ public class UnitPlayer : UnitBase
         }
 
         sound.Hit();
+        particleManager.HitEffect();
         GameManager.instance.stageManager.cameraManager.PlayerHitShake();
 
         Vector2 playerToAttackUnitDir = unitPos -(Vector2)attackObject.transform.position ;
@@ -357,16 +354,16 @@ public class UnitPlayer : UnitBase
         {
             if (footStepLoop)
             {
-                Collider2D groundCollider = movementManager.groundSensor.GetGroundCollider2D();
+                GroundInfo info = movementManager.groundSensor.GetGroundCollider2D().GetComponent<GroundInfo>();
                 value = 0.0f;
 
-                if (groundCollider != null)
+                if (info != null)
                 {
-                    if (groundCollider.tag == "Forest")
+                    if (info.type == GroundInfo.Type.Forest)
                     {
                         value = 1.0f;
                     }
-                    else if (groundCollider.tag == "Asphalt")
+                    else if (info.type == GroundInfo.Type.Fectory)
                     {
                         value = 2.0f;
                     }
@@ -380,21 +377,7 @@ public class UnitPlayer : UnitBase
 
     }
 
-    private IEnumerator WillSlideCoroutine(float tickTime)
-    {
-        bool isRight;
-        while (true)
-        {
-            if (wallSlideLoop)
-            {
-                isRight = movementManager.IsWallRight();
 
-                particleManager.WallSlideEffect(isRight);
-                //sound.FootStep(value);
-            }
-            yield return new WaitForSeconds(tickTime);
-        }
-    }
 
 
     public void Trun(bool isRight)
@@ -457,6 +440,7 @@ public class UnitPlayer : UnitBase
     {
         inputPlayer.SetControl(false);
         SetGhostLayer();
+        model.sortingLayerName = "GameOver";
         movementManager.currentState = PlayerMovementManager.State.None;
         rig2D.gravityScale = 0.0f;
         rig2D.velocity = Vector2.zero;

@@ -321,7 +321,7 @@ public class PlayerMovementManager : MonoBehaviour
        // Debug.Log("Jump: " + force);
         player.sound.Jump();
         player.animationManager.TriggerJump();
-
+        player.particleManager.JumpEffect();
 
         if (player.rig2D.velocity.y < 0.0f)
             force -= player.rig2D.velocity.y;

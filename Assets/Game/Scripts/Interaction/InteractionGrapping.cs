@@ -4,13 +4,8 @@ public class InteractionGrapping : InteractionBase
 {
     [SerializeField]
     private GameObject m_icon;
-    private GameObject icon
-    {
-        get
-        {
-            return m_icon;
-        }
-    }
+    [SerializeField]
+    private CircleCollider2D m_clickAbleCollider;
 
     private bool m_isCanInteraction;
     public bool isCanInteraction
@@ -75,16 +70,21 @@ public class InteractionGrapping : InteractionBase
 
     public void OffInteraction()
     {
-        icon.SetActive(false);
+        m_icon.SetActive(false);
         isCanInteraction = false;
     }
 
     public void OnInteraction()
     {
-        icon.SetActive(true);
+        m_icon.SetActive(true);
 
         isCanInteraction = true;
 
+    }
+
+    public float GetClickRange()
+    {
+        return m_clickAbleCollider.radius;
     }
 
 }

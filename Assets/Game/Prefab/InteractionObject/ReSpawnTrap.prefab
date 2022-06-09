@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 2879418030034192625}
   - component: {fileID: 2879418030034192626}
   - component: {fileID: 2879418030034192627}
+  - component: {fileID: 5012066978572561471}
   m_Layer: 0
   m_Name: ReSpawnTrap
   m_TagString: Untagged
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
+  m_oneSound: {fileID: 5012066978572561471}
 --- !u!61 &2879418030034192627
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,6 +169,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 114.89496, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5012066978572561471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879418030034192624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: 1464430974
+      Data2: 1106504000
+      Data3: -1845928558
+      Data4: 161437147
+    Path: event:/char/yuz/Underwater
 --- !u!1 &2879418030404752206
 GameObject:
   m_ObjectHideFlags: 0

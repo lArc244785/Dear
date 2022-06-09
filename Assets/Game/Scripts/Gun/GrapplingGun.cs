@@ -290,20 +290,38 @@ public class GrapplingGun : ActiveToolBase
 
     private void UpdateInteraction()
     {
+        UIManager.instance.mouseCursor.SetMouseCursor(CustomMouseCursor.CursorType.Aim);
+
+
         foreach (InteractionGrapping interaction in rangeInteractionObjectList)
         {
             if (IsOnInteractionRange(interaction.transform.position))
+            {
                 interaction.OnInteraction();
+                if(CanInteraction(interaction))
+                {
+                    UIManager.instance.mouseCursor.SetMouseCursor(CustomMouseCursor.CursorType.Hook);
+                }
+            }
             else
                 interaction.OffInteraction();
         }
     }
 
+    private bool CanInteraction(InteractionGrapping interaction)
+    {
+        float distance = Vector2.Distance(
+            InputManager.instance.inGameMousePosition2D,
+            (Vector2)interaction.transform.position);
+        
+
+        return distance < interaction.GetClickRange();
+    }
 
 
     private void Fire(Vector2 targetPos)
     {
-
+        UIManager.instance.mouseCursor.SetImageVisible(false);
         float r = Utility.GetRotaionAngleByTargetPosition(player.transform.position, targetPos, 90.0f);
         player.transform.rotation = Utility.GetRoationZ(r);
         
@@ -362,6 +380,10 @@ public class GrapplingGun : ActiveToolBase
 
         player.inputPlayer.SetControl(true);
 
+        UIManager.instance.mouseCursor.SetMouseCursor(CustomMouseCursor.CursorType.Aim);
+        UIManager.instance.mouseCursor.SetImageVisible(true);
+
+
         Invoke("CoolTime", data.coolTime);
     }
 
@@ -401,6 +423,7 @@ public class GrapplingGun : ActiveToolBase
         {
             PullSetting();
             player.animationManager.TriggerRopeMove();
+            player.particleManager.RopePickEffect(hook.transform.position);
         }
 
 
@@ -426,8 +449,9 @@ public class GrapplingGun : ActiveToolBase
             PullUpdate();
         }
 
-
     }
+
+
 
 
     private void FireUpdate()
