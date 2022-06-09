@@ -24,18 +24,30 @@ public class RaySensor : MonoBehaviour
     [SerializeField]
     private Color m_gizomColor;
 
+    private RaycastHit2D m_hit2D;
+
     public void Init(WallSensor manager)
     {
         m_manager = manager;
     }
 
-    public bool isWallGrounded
+
+
+    public GameObject SensorContact()
     {
-        get
+        m_hit2D = Physics2D.Raycast((Vector2)transform.position, direction, distance, m_layer);
+
+        if (m_hit2D.collider == null)
         {
-            return Physics2D.Raycast((Vector2)transform.position, direction, distance, m_layer);
+            return null;
         }
+
+
+
+        return m_hit2D.collider.gameObject;
     }
+
+
 
     private Vector2 direction
     {
@@ -55,5 +67,7 @@ public class RaySensor : MonoBehaviour
         Vector3 endPoint = (transform.position + (Vector3)(direction * drawDistance));
         Gizmos.DrawLine(transform.position, endPoint);
     }
+
+
 
 }

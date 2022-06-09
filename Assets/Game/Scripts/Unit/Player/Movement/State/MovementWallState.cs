@@ -4,6 +4,10 @@ public class MovementWallState : I_MovementState
 {
     private float m_wallJumpStartTime;
 
+    private float m_currentWallEffectTime;
+
+    private bool m_isWallSlideRight;
+    private GroundInfo m_wallSlideInfo;
     public void Enter(PlayerMovementManager movementManager)
     {
         movementManager.coyoteSystem.ResetJumpEnterTime();
@@ -16,7 +20,8 @@ public class MovementWallState : I_MovementState
 
         
         movementManager.player.animationManager.TriggerWall();
-
+        m_currentWallEffectTime = 0.0f;
+        movementManager.isWallSilde = false;
 
     }
 
@@ -118,25 +123,63 @@ public class MovementWallState : I_MovementState
 
     private void WallSildeUpdate(PlayerMovementManager movementManager)
     {
-        movementManager.isWallSilde = false;
+        
 
         if (movementManager.coyoteSystem.lastOnWallTime > 0.0f && !movementManager.isWallJump)
         {
             if (!movementManager.isWallSilde)
             {
                 Vector2 lookDir = Vector2.left;
+                m_isWallSlideRight = true;
+                m_wallSlideInfo = movementManager.wallSensor.lastContactRightWallInfo;
 
                 if (movementManager.coyoteSystem.lastOnWallLeftTime > 0.0f)
+                {
                     lookDir = Vector2.right;
+                    m_isWallSlideRight = false;
+                    m_wallSlideInfo = movementManager.wallSensor.lastContactLeftWallInfo;
+                }
+  
 
                 movementManager.Trun(lookDir);
+
+                WallSlideEffect(movementManager);
+
+            }
+            else
+            {//effect
+                m_currentWallEffectTime -= Time.deltaTime;
+                if (m_currentWallEffectTime <= 0.0f)
+                    WallSlideEffect(movementManager);
             }
 
             WallSilde(movementManager);
+
             movementManager.isWallSilde = true;
-            movementManager.player.wallSlideLoop = true;
+        }
+        else
+        {
+            movementManager.isWallSilde = false;
         }
     }
+
+
+
+
+    private void WallSlideEffect(PlayerMovementManager movementManager)
+    {
+        movementManager.player.particleManager.WallSlideEffect(m_isWallSlideRight, m_wallSlideInfo.type);
+        OnEffectTimmer(movementManager);
+
+    }
+
+    private void OnEffectTimmer(PlayerMovementManager movementManager)
+    {
+        m_currentWallEffectTime = 0.5f;
+    }
+
+    
+
 
     private void WallJumpUpdate(PlayerMovementManager movementManager)
     {
@@ -178,12 +221,12 @@ public class MovementWallState : I_MovementState
         if (movementManager.coyoteSystem.lastOnWallTime < 0.0f && !movementManager.isWallJump)
         {
             movementManager.currentState = PlayerMovementManager.State.Air;
-            movementManager.player.wallSlideLoop = false;
+
         }
         else if (movementManager.IsGrounded())
         {
             movementManager.currentState = PlayerMovementManager.State.Ground;
-            movementManager.player.wallSlideLoop = false;
+
         }
 
 
@@ -212,11 +255,15 @@ public class MovementWallState : I_MovementState
     private void WallJump(int dir, PlayerMovementManager movementManager)
     {
         bool isRight = true;
+
         if (dir == -1)
+        {
             isRight = false;
+        }
+
 
         movementManager.player.animationManager.TriggerWallJump();
-        movementManager.player.particleManager.WallJumpEffect(isRight);
+        movementManager.player.particleManager.WallJumpEffect(isRight, m_wallSlideInfo.type);
 
         if (isRight)
             movementManager.player.sound.WallJumpRight();
@@ -255,7 +302,7 @@ public class MovementWallState : I_MovementState
 
 
         movementManager.isWallJump = true;
-        movementManager.player.wallSlideLoop = false;
+
 
        // movementManager.player.inputPlayer.SetControl(false);
 
