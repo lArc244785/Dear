@@ -59,6 +59,7 @@ public class CoyoteSystem
             m_lastOnWallTime = value;
         }
     }
+
     #endregion
 
     #region Jump Time
@@ -142,7 +143,6 @@ public class CoyoteSystem
     #region Wall
     public void OnWallLeftTime()
     {
-        Debug.Log("L");
         lastOnWallLeftTime = Time.deltaTime;
         lastOnWallTime = lastOnWallLeftTime;
     }
@@ -173,6 +173,9 @@ public class CoyoteSystem
 
         lastOnWallTime = Mathf.Max(lastOnWallLeftTime, lastOnWallRightTime);
     }
+
+
+
 
     #endregion
 

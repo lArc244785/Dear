@@ -22,7 +22,7 @@ public class CustomMouseCursor : MonoBehaviour
     public void Init()
     {
         m_rect = GetComponent<RectTransform>();
-        Cursor.visible = false;
+        //Cursor.visible = false;
         m_image = GetComponent<Image>();
     
         SetMouseCursor(CursorType.Aim);

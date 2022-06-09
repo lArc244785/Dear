@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 3247539187326561409}
   - component: {fileID: 3247539187326561535}
   - component: {fileID: 3247539187326561408}
+  - component: {fileID: 3074395362682357862}
   m_Layer: 10
   m_Name: WallCollider
   m_TagString: Climbing
@@ -379,6 +380,19 @@ CompositeCollider2D:
     m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!114 &3074395362682357862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247539187326561410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f15bda9207dae4889603d8c728fdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 1
 --- !u!1 &3247539187341065165
 GameObject:
   m_ObjectHideFlags: 0

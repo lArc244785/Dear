@@ -2,16 +2,26 @@ using UnityEngine;
 
 public class PlayerParticleManager : MonoBehaviour
 {
+    [Header("ImfeactObject")]
     [SerializeField]
-    private GameObject[] m_effects;
+    private GameObject m_move;
+    [SerializeField]
+    private GameObject m_jump;
+    [SerializeField]
+    private GameObject m_landing;
+    [SerializeField]
+    private GameObject m_wallJump;
+    [SerializeField]
+    private GameObject m_wallSlide;
+    [SerializeField]
+    private GameObject m_groundPound;
+    [SerializeField]
+    private GameObject m_hit;
+    [SerializeField]
+    private GameObject m_ropePick;
 
-    private GameObject[] effects
-    {
-        get
-        {
-            return m_effects;
-        }
-    }
+
+
 
     [Header("SpawnTransform")]
     [SerializeField]
@@ -56,68 +66,96 @@ public class PlayerParticleManager : MonoBehaviour
 
     public void MoveEffect(float moveDirX)
     {
-        bool isMoveDirLeft = false;
-        GameObject effect2_2 = effects[2].transform.GetChild(1).gameObject;
 
+        GameObject Imfect = InstacneEffectParticle(m_move, spawnFootTransform.position);
+        if (moveDirX > 0.0f)
+        {
+            Vector3 scale = Imfect.transform.localScale;
+            scale.x *= -1.0f;
+            Imfect.transform.localScale = scale;
+        }
 
-        if (moveDirX < 0.0f)
-            isMoveDirLeft = true;
-
-        InstanceEffect0(spawnCenterTransform.position, isMoveDirLeft);
-        InstacneEffectParticle(effect2_2, spawnFootTransform.position);
     }
 
-    public void LandingEffect()
+    public void JumpEffect()
     {
-        GameObject effect2_1 = effects[2].transform.GetChild(0).gameObject;
-        InstacneEffectParticle(effect2_1, spawnFootTransform.position);
+        GameObject Imfect = InstacneEffectParticle(m_jump, spawnCenterTransform.position);
+        Imfect.transform.parent = spawnCenterTransform;
     }
 
-    public void WallJumpEffect(bool isRight)
-    {
-        GameObject effect1 = effects[1];
-        GameObject effect2_1 = effects[2].transform.GetChild(0).gameObject;
 
+    public void LandingEffect(float lookDirX)
+    {
+        GameObject Imfect = InstacneEffectParticle(m_landing, spawnFootTransform.position);
+        if (lookDirX > 0.0f)
+        {
+            Vector3 scale = Imfect.transform.localScale;
+            scale.x *= -1.0f;
+            Imfect.transform.localScale = scale;
+        }
+    }
+
+    public void WallJumpEffect(bool isRight, GroundInfo.Type type)
+    {
         Vector3 spawnPos = spawnWallLeftTransform.position;
         if (isRight)
             spawnPos = spawnWallRightTransform.position;
 
-        InstacneEffectParticle(effect1, spawnPos);
-        InstacneEffectParticle(effect2_1, spawnPos);
+
+        GameObject Imfect = InstacneEffectParticle(m_wallJump, spawnPos);
+        ParticleSystem particle = Imfect.GetComponent<ParticleSystem>();
+
+        //타입에 따라서 파티클 색상을 변경해야된다.
+        particle.startColor = GetGroundTypeColor(type);
     }
 
-    public void WallSlideEffect(bool isRight)
-    {
-        GameObject effect1 = effects[1];
-
+    public void WallSlideEffect(bool isRight, GroundInfo.Type type)
+    { 
         Vector3 spawnPos = spawnWallLeftTransform.position;
         if (isRight)
             spawnPos = spawnWallRightTransform.position;
 
-        InstacneEffectParticle(effect1, spawnPos);
+        GameObject Imfect = InstacneEffectParticle(m_wallJump, spawnPos);
+        ParticleSystem particle = Imfect.GetComponent<ParticleSystem>();
+
+        //타입에 따라서 파티클 색상을 변경해야된다.
+        particle.startColor = GetGroundTypeColor(type);
     }
 
-    public void GroundPoundEffect()
+    public void GroundPoundEffect(GroundInfo.Type type)
     {
-        GameObject effect1 = effects[1];
-        GameObject effect2_1 = effects[2].transform.GetChild(0).gameObject;
-        //GameObject effect4 = effects[4];
+        GameObject Imfect =  InstacneEffectParticle(m_groundPound, m_spawnFootTransform.position);
+        ParticleSystem particle = Imfect.GetComponent<ParticleSystem>();
 
-        Vector3 spawnPos = spawnFootTransform.position;
-
-        InstacneEffectParticle(effect1, spawnPos);
-        InstacneEffectParticle(effect2_1, spawnPos);
-        //InstacneEffectParticle(effect4, spawnPos);
+        particle.startColor = GetGroundTypeColor(type);
     }
 
-    //public void HitEffect()
-    //{
-    //    GameObject effect3 = effects[3];
+    public void HitEffect()
+    {
+        InstacneEffectParticle(m_hit, m_spawnCenterTransform.position);
+    }
 
-    //    Vector3 spawnPos = spawnHitTransform.position;
+    public void RopePickEffect(Vector3 pos)
+    {
+        InstacneEffectParticle(m_ropePick, pos);
+    }
 
-    //    InstacneEffectParticle(effect3, spawnPos);
-    //}
+
+    private Color GetGroundTypeColor(GroundInfo.Type type)
+    {
+        Color color = Color.white;
+
+        switch (type)
+        {
+            case GroundInfo.Type.Forest:
+                color = Color.red;
+                break;
+            case GroundInfo.Type.Fectory:
+                color = Color.blue;
+                break;
+        }
+        return color;
+    }
 
 
 
@@ -130,19 +168,6 @@ public class PlayerParticleManager : MonoBehaviour
     }
 
 
-    private void InstanceEffect0(Vector3 spawnPos, bool isLeft)
-    {
-        GameObject effect0 = InstacneEffectParticle(effects[0], spawnPos);
 
-        ParticleSystem subEffect0 = effect0.transform.GetComponent<ParticleSystem>();
-
-        if (isLeft)
-        {
-            var shape0 = subEffect0.shape;
-            shape0.rotation = -shape0.rotation;
-        }
-
-
-    }
 
 }

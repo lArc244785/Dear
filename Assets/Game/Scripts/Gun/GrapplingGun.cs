@@ -423,6 +423,7 @@ public class GrapplingGun : ActiveToolBase
         {
             PullSetting();
             player.animationManager.TriggerRopeMove();
+            player.particleManager.RopePickEffect(hook.transform.position);
         }
 
 

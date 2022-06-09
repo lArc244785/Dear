@@ -350,11 +350,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff186c711d9273546bfb5b4b39e6f0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_effects:
-  - {fileID: 6940866913823852783, guid: 35ca1cde7cda7bb4ebf0648dbd9bec29, type: 3}
-  - {fileID: 7068393975298741655, guid: 057aa867fa08be3498df9bcc0ae52c6d, type: 3}
-  - {fileID: 7107181891835107103, guid: 38c7b11387d0c3d44973e68adc72c6bd, type: 3}
-  - {fileID: 3922768069812603845, guid: 1f0e2dba82d12dc4ab7f1b2e8522c7fe, type: 3}
+  m_move: {fileID: 4486808558428199500, guid: 2fac1994a7d71b14ba49168e420922ff, type: 3}
+  m_jump: {fileID: 7784882132443398825, guid: 5a6f8e0bd2eab8e4fbd9c9e6bae0720d, type: 3}
+  m_landing: {fileID: 4953949218519033078, guid: 2bcb16412bd3b384e9628142bd5dcf94, type: 3}
+  m_wallJump: {fileID: 5773723278397462534, guid: 014720e44b11bff4e913b13e13625dbf, type: 3}
+  m_wallSlide: {fileID: 2174008739561280024, guid: 141eb0e124c45244f96733e88f61e170, type: 3}
+  m_groundPound: {fileID: 2965962431988649673, guid: 695373d23986afc4fb11fdc6245d70a4, type: 3}
+  m_hit: {fileID: 7759634127538165361, guid: 97f53821b383c2f428fc62613eaa6314, type: 3}
+  m_ropePick: {fileID: 2520672737856638263, guid: b13c94f2315c45941b97d07345884436, type: 3}
   m_spawnFootTransform: {fileID: 1981882168}
   m_spawnWallLeftTransform: {fileID: 181634121}
   m_spawnWallRightTransform: {fileID: 1801411040}
@@ -478,6 +481,8 @@ MonoBehaviour:
   - {fileID: 8671305845681142007}
   - {fileID: 8671305845160493488}
   m_distance: 1
+  m_lastContactRightWallInfo: {fileID: 0}
+  m_lastContactLeftWallInfo: {fileID: 0}
 --- !u!1 &8671305844842988722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816093289420583265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.238, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1242,7 +1247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816093289897762563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.783, z: 0}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1575,7 +1580,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bcc8c64214746b74e9e685ccf2e93b36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1617,8 +1622,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.073209524, b: 1, a: 1}
-      key1: {r: 0, g: 0.25360346, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1626,7 +1631,7 @@ LineRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65150
+      ctime1: 65535
       ctime2: 0
       ctime3: 0
       ctime4: 0
