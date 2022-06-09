@@ -457,6 +457,7 @@ public class UnitPlayer : UnitBase
     {
         inputPlayer.SetControl(false);
         SetGhostLayer();
+        model.sortingLayerName = "GameOver";
         movementManager.currentState = PlayerMovementManager.State.None;
         rig2D.gravityScale = 0.0f;
         rig2D.velocity = Vector2.zero;

@@ -894,6 +894,14 @@ MonoBehaviour:
       Data3: 1777226676
       Data4: -1080097460
     Path: event:/char/yuz/jump
+  m_jumpVoiceEvent:
+    Guid:
+      Data1: -892341159
+      Data2: 1234213612
+      Data3: 962766214
+      Data4: -1550834636
+    Path: event:/char/yuz/jump_voice
+  m_jumpVoiceRandomRange: 0.5
   m_landingEvent:
     Guid:
       Data1: 85030585
@@ -1396,8 +1404,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -204880281
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 3001
   m_Sprite: {fileID: -3744056825682599936, guid: cb2fc5c821b6d854794a458f39dbb5db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

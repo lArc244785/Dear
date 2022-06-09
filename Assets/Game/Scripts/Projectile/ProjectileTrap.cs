@@ -29,7 +29,9 @@ public class ProjectileTrap : MonoBehaviour
     [Header("FireImfect")]
     [SerializeField]
     private GameObject m_fireImfect;
-
+    [Header("Sound")]
+    [SerializeField]
+    private OneSound m_fireSound;
 
     private Transform m_firePointTransfrom;
     private Transform firePointTransfrom
@@ -102,6 +104,8 @@ public class ProjectileTrap : MonoBehaviour
         {
             FireImfect();
         }
+        if (m_fireSound != null)
+            m_fireSound.Play();
     }
 
     public void AnimationFire()
@@ -114,9 +118,6 @@ public class ProjectileTrap : MonoBehaviour
     {
         GameObject fireImfect = GameObject.Instantiate(m_fireImfect);
         fireImfect.transform.position = firePointTransfrom.position;
-
-        
-
 
     }
 

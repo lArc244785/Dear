@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InteractionRespwanTrap : InteractionBase
 {
+    [SerializeField]
+    private OneSound m_oneSound;
+
     private Vector2 m_lastPlayerGroundPos;
     private Vector2 lastPlayerGroundPos
     {
@@ -24,7 +27,8 @@ public class InteractionRespwanTrap : InteractionBase
         UnitPlayer player = collision.GetComponent<UnitPlayer>();
         if (player == null)
             return;
-
+        if (m_oneSound != null)
+            m_oneSound.Play();
         player.OnRespawnHit(lastPlayerGroundPos, 1);
 
     }

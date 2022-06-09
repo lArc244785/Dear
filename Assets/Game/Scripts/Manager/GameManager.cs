@@ -273,7 +273,7 @@ public class GameManager : SingleToon<GameManager>
     {
         UIManager.instance.AllToggleFase();
         m_deathProduction.SetDeathBackGroundActive(true);
-        Time.timeScale = 0.5f;
+        Time.timeScale = 1.0f;
         yield return new WaitForSeconds(1.0f);
         stageManager.cameraManager.SetVitrualCamera("vcam_Death");
         yield return new WaitForSeconds(1.0f);

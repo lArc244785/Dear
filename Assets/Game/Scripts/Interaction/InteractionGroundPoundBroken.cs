@@ -10,6 +10,9 @@ public class InteractionGroundPoundBroken : InteractionBase
 
     private IEnumerator m_brokenEvent = null;
 
+    [SerializeField]
+    private OneSound m_oneSound;
+
     protected override void Enter(Collider2D collision)
     {
         base.Enter(collision);
@@ -33,6 +36,8 @@ public class InteractionGroundPoundBroken : InteractionBase
         yield return new WaitForSeconds(brokenTime);
 
         Debug.Log(gameObject.name + " Broken");
+        if(m_oneSound != null)
+        m_oneSound.Play();
         gameObject.SetActive(false);
     } 
 }

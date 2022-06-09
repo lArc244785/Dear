@@ -22,8 +22,16 @@ public class PlayerSound : MonoBehaviour
     public float footStepPlayTick { get { return m_footStepPlayTick; } }
     #endregion
 
+    #region Jump
+    [Header("Jump Sound")]
     [SerializeField]
     private FMODUnity.EventReference m_jumpEvent;
+    [SerializeField]
+    private FMODUnity.EventReference m_jumpVoiceEvent;
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    private float m_jumpVoiceRandomRange;
+    #endregion
 
     #region Landing
     [SerializeField]
@@ -117,6 +125,8 @@ public class PlayerSound : MonoBehaviour
     public void Jump()
     {
         SoundManager.instance.SoundOneShot(m_jumpEvent);
+        if (Random.Range(0.0f, 1.0f) < m_jumpVoiceRandomRange)
+            SoundManager.instance.SoundOneShot(m_jumpVoiceEvent);
     }
 
     public void Landing(float index)
