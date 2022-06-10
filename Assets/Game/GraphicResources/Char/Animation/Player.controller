@@ -140,7 +140,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WallGrip
+  m_Name: WallSlide
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -153,7 +153,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 64d75ab3caa13224daf1ddc7a2ca4dfe, type: 2}
+  m_Motion: {fileID: 7400000, guid: be9a77698be34e047a3494f6fb0c3bca, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
