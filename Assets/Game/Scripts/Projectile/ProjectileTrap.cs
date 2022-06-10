@@ -57,6 +57,7 @@ public class ProjectileTrap : MonoBehaviour
         Left, Right
     }
     [SerializeField]
+    [Header ("Fire Dir")]
     private FireDirType m_fireDirType;
     #endregion
 
