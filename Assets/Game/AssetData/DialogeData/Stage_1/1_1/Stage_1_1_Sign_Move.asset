@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d13a6e21a18c004388aed70cc7383d0, type: 3}
-  m_Name: TestDialogu 1
+  m_Name: Stage_1_1_Sign_Move
   m_EditorClassIdentifier: 
   nodes:
-  - data: '<$UI_ON>
-
-      <$UI_LeftImage>Mad_normal</>'
-  - data: <$UI_LeftImage>Mad_screen</>
-  - data: <$UI_LeftImage>Yuz_curious</>
-  - data: <$UI_LeftImage>Yuz_nervous</>
-  - data: <$UI_LeftImage>Yuz_normal</>
+  - data: "<$UI_ON>\n<$Name>\uD45C\uC9C0\uD310</Name>\n<$Sentences>\uC774\uB3D9 :
+      A / D \uC785\uB825.\n\uC810\uD504 : Space Bar \uC785\uB825.\n\uACF5\uACA9 :
+      \uB9C8\uC6B0\uC2A4 \uC6B0\uD074\uB9AD. </Sentences>\n"
