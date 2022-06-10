@@ -121,6 +121,15 @@ public class Noide : UnitBase
 
     }
 
+    private NoidSound m_sound;
+    public NoidSound sound
+    {
+        get
+        {
+            return m_sound;
+        }
+    }
+
 
 
     private AniState m_animationState;
@@ -215,6 +224,7 @@ public class Noide : UnitBase
     }
     protected override void ComponentInit()
     {
+        m_sound = GetComponent<NoidSound>();
         base.ComponentInit();
     }
     public void OnEnable()
@@ -258,6 +268,7 @@ public class Noide : UnitBase
     protected override void HitHp(int damage)
     {
         base.HitHp(damage);
+        sound.Hit();
         health.OnDamage(damage);
         moveSpeed = 0;
         StartCoroutine(delay(1f));

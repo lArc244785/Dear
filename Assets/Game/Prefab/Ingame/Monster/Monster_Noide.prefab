@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 9073526965198746472}
   - component: {fileID: 9073526965198746473}
   - component: {fileID: 9073526965198746470}
+  - component: {fileID: 5097610811693238238}
   m_Layer: 9
   m_Name: Noid
   m_TagString: Untagged
@@ -338,6 +339,32 @@ MonoBehaviour:
     m_Bits: 256
   m_hitCollider: {fileID: 9073526965198746473}
   m_exitTime: 0.5
+--- !u!114 &5097610811693238238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073526965198746479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acdaa2701d87601419f96871ac800ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEvent:
+    Guid:
+      Data1: -455040500
+      Data2: 1140374941
+      Data3: -924257104
+      Data4: -1552278617
+    Path: event:/game/monster/noid_hit
+  m_deathEvent:
+    Guid:
+      Data1: 1215395261
+      Data2: 1279749273
+      Data3: -2007140476
+      Data4: -667110974
+    Path: event:/game/monster/noid_death
 --- !u!1 &9073526966055286370
 GameObject:
   m_ObjectHideFlags: 0

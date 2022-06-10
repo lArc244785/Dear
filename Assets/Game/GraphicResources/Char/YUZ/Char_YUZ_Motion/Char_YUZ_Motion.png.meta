@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cb2fc5c821b6d854794a458f39dbb5db
+guid: ca68f5c9106d31c4c892290906130983
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,6 +134,12 @@ TextureImporter:
   - first:
       213: 229140961922012585
     second: Char_YUZ_Motion43
+  - first:
+      213: -4712657672305679400
+    second: Char_YUZ_Motion44
+  - first:
+      213: 3127640073032571304
+    second: Char_YUZ_Motion45
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1135,6 +1141,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion44
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1
+        width: 80
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d36336d0d6499eb0800000000000000
+      internalID: -4712657672305679400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Char_YUZ_Motion45
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1
+        width: 80
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a91262531c976b20800000000000000
+      internalID: 3127640073032571304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1148,6 +1196,7 @@ TextureImporter:
     nameFileIdTable:
       Char_YUZ_Motion26: 4681081872349250957
       Char_YUZ_Motion35: -6013709837675655480
+      Char_YUZ_Motion44: -4712657672305679400
       Char_YUZ_Motion15: -2771122811869065181
       Char_YUZ_Motion29: -3628290555540956815
       Char_YUZ_Motion04: 5379169739288804555
@@ -1170,6 +1219,7 @@ TextureImporter:
       Char_YUZ_Motion33: -8597743065030551365
       Char_YUZ_Motion06: 2068506854727126898
       Char_YUZ_Motion30: 3616471824193158861
+      Char_YUZ_Motion45: 3127640073032571304
       Char_YUZ_Motion03: 278153108626645950
       Char_YUZ_Motion42: 4966780687899872305
       Char_YUZ_Motion27: -3883954162337415483
@@ -1184,9 +1234,9 @@ TextureImporter:
       Char_YUZ_Motion21: 4493651425641441597
       Char_YUZ_Motion40: 8435456000666793841
       Char_YUZ_Motion12: -545123428613845564
+      Char_YUZ_Motion38: -4181759021753459208
       Char_YUZ_Motion14: -2761549453909195956
       Char_YUZ_Motion22: 5022136681555309071
-      Char_YUZ_Motion38: -4181759021753459208
       Char_YUZ_Motion08: -4125336402734128470
       Char_YUZ_Motion16: -8524655476627412773
       Char_YUZ_Motion20: -7531266568363512438
