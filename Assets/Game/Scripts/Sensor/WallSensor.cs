@@ -9,6 +9,25 @@ public class WallSensor : MonoBehaviour
     [SerializeField]
     private float m_distance;
 
+    [SerializeField]
+    private GroundInfo m_lastContactRightWallInfo;
+    public GroundInfo lastContactRightWallInfo
+    {
+        get
+        {
+            return m_lastContactRightWallInfo;
+        }
+    }
+    [SerializeField]
+    private GroundInfo m_lastContactLeftWallInfo;
+    public GroundInfo lastContactLeftWallInfo
+    {
+        get
+        {
+            return m_lastContactLeftWallInfo;
+        }
+    }
+
 
     private void Start()
     {
@@ -33,27 +52,51 @@ public class WallSensor : MonoBehaviour
 
     public bool IsRightSensorGrounded()
     {
-        bool isGrounded = false;
+        GameObject contactObject = null;
         foreach (RaySensor sensor in m_rightSensors)
-            isGrounded = sensor.isWallGrounded;
-        return isGrounded;
+        {
+             contactObject = sensor.SensorContact();
+        }
 
+
+        if (contactObject == null)
+            return false ;
+
+
+        m_lastContactRightWallInfo = contactObject.GetComponent<GroundInfo>();
+        return true;
     }
+
+
+
+
+
     public bool IsLeftSensorGrounded()
     {
-        bool isGrounded = false;
+        GameObject contactObject = null;
         foreach (RaySensor sensor in m_leftSensors)
-            isGrounded = sensor.isWallGrounded;
-        return isGrounded;
+        {
+            contactObject = sensor.SensorContact();
+        }
+
+
+        if (contactObject == null)
+            return false;
+
+
+        m_lastContactLeftWallInfo = contactObject.GetComponent<GroundInfo>();
+        return true;
     }
+
     public bool UpSensorGrounded()
     {
-        return m_rightSensors[0].isWallGrounded || m_leftSensors[0].isWallGrounded;
+        return (m_rightSensors[0].SensorContact() != null) || (m_leftSensors[0].SensorContact() != null);
     }
     public bool DownSensorGrounded()
     {
-        return m_rightSensors[1].isWallGrounded || m_leftSensors[1].isWallGrounded;
+        return (m_rightSensors[1].SensorContact() != null) || (m_leftSensors[1].SensorContact() != null);
     }
+
 
 
 

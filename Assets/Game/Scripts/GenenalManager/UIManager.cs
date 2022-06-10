@@ -14,7 +14,8 @@ public class UIManager : SingleToon<UIManager>
     private IngameHpUI m_ingameUIView;
     [SerializeField]
     private UI_title m_titleView;
-    
+    [SerializeField]
+    private CustomMouseCursor m_mosueCursor;
 
     private List<UI_ViewBase> m_uiList;
 
@@ -35,6 +36,8 @@ public class UIManager : SingleToon<UIManager>
             m_uiList.Add(m_ingameUIView);
             m_titleView.Init();
             m_uiList.Add(m_titleView);
+
+            m_mosueCursor.Init();
         }
         return returnValue;
     }
@@ -49,6 +52,8 @@ public class UIManager : SingleToon<UIManager>
     {
         foreach (UI_ViewBase ui in m_uiList)
             ui.Toggle(false);
+
+        //dialogueView.Toggle(true);
     }
 
 
@@ -81,4 +86,11 @@ public class UIManager : SingleToon<UIManager>
         }
     }
      
+    public CustomMouseCursor mouseCursor
+    {
+        get
+        {
+            return m_mosueCursor;
+        }
+    }
 }

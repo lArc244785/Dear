@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 3097806583614677377}
   - component: {fileID: 3097806583614677382}
   - component: {fileID: 3097806583614677383}
+  - component: {fileID: 3747104686474092872}
   m_Layer: 15
   m_Name: BrokenObject
   m_TagString: GroundPoundBroken
@@ -161,6 +162,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   m_brokenTime: 1
+  m_oneSound: {fileID: 3747104686474092872}
 --- !u!61 &3097806583614677383
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,3 +189,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.059921, y: 1.203367}
   m_EdgeRadius: 0
+--- !u!114 &3747104686474092872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097806583614677380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: -1284150245
+      Data2: 1145168232
+      Data3: 1609568650
+      Data4: -1743912643
+    Path: event:/game/general/groundpound_break

@@ -170,6 +170,7 @@ public class InputPlayer : MonoBehaviour
         if (!isControl && isAttackAble)
             return;
 
+
         mad.SetAttackAble(isAttackAble);
     }
 

@@ -11,11 +11,11 @@ namespace NoidOwnedState
         public override void Enter(Noide enemy)
         {
             s_curdelay = 0;
+            enemy.animationState = AniState.idle;
         }
         public override void Excute(Noide enemy)
         {
-            if (enemy.IsDead()) enemy.ChangeState(enemyState.dead); 
-
+            if (enemy.IsDead()) enemy.ChangeState(enemyState.DeadAni);
             s_curdelay += Time.deltaTime;
             if (s_curdelay >= enemy.patrolTime)
             {
@@ -33,29 +33,29 @@ namespace NoidOwnedState
         }
         public override void Exit(Noide enemy)
         {
-            if (!enemy.model.GetComponent<SpriteRenderer>().flipX)
-                enemy.model.GetComponent<SpriteRenderer>().flipX = true;
+            if (enemy.transform.localScale != new Vector3(-2, 2))
+                enemy.transform.localScale = new Vector3(-2, 2);
             else
-                enemy.model.GetComponent<SpriteRenderer>().flipX = false;
+                enemy.transform.localScale = new Vector3(2, 2);
 
             enemy.moveSpeed = enemy.saveSpeed;
         }
     }
     public class Move : State<Noide>
     {
-        static float s_curdelay;
         public override void Enter(Noide enemy)
         {
-            s_curdelay = 0;
+
+            enemy.animationState = AniState.Move;
             if (enemy.wallCheck)
                 enemy.wallCheck = false;
             
         }
         public override void Excute(Noide enemy)
         {
-
-            if (enemy.IsDead()) enemy.ChangeState(enemyState.dead);
-
+            if (enemy.wallCheck)
+                enemy.ChangeState(enemyState.Idle);
+            if (enemy.IsDead()) enemy.ChangeState(enemyState.DeadAni);
             switch (enemy.enemyMoveDirection) {
                 case movedirection.Left:
                     enemy.rig2D.velocity = new Vector2(enemy.moveSpeed*-1f, enemy.rig2D.velocity.y);
@@ -64,9 +64,33 @@ namespace NoidOwnedState
                     enemy.rig2D.velocity = new Vector2(enemy.moveSpeed, enemy.rig2D.velocity.y);
                     break;
             }
-            if(enemy.wallCheck)
-            enemy.ChangeState(enemyState.Idle);
+          
         }
+        public override void Exit(Noide enemy)
+        {
+        }
+    }
+    public class DieAni : State<Noide> //죽었을때
+    {
+
+        static float s_dcurdelay;
+        public override void Enter(Noide enemy)
+        {
+            enemy.moveSpeed = 0;
+            s_dcurdelay = 0;
+            enemy.GetComponent<BoxCollider2D>().enabled = false;
+            enemy.animationState = AniState.Dead;
+        }
+        public override void Excute(Noide enemy)
+        {
+            s_dcurdelay += Time.deltaTime;
+            if (s_dcurdelay >= 3)
+            {
+                Debug.Log("사망");
+                enemy.ChangeState(enemyState.dead);
+            }
+
+         }
         public override void Exit(Noide enemy)
         {
         }
@@ -80,14 +104,13 @@ namespace NoidOwnedState
         }
         public override void Excute(Noide enemy)
         {
-            throw new System.NotImplementedException();
+
         }
         public override void Exit(Noide enemy)
         {
             throw new System.NotImplementedException();
         }
     }
-
 }
 #endregion
 
