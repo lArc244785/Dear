@@ -23,3 +23,9 @@ MonoBehaviour:
     img: {fileID: 21300000, guid: a7951e214b548c34ebaab865121c808e, type: 3}
   - id: Yuz_normal
     img: {fileID: 21300000, guid: 5ce5bffe3ebc8b0489b2bd87f81e23f9, type: 3}
+  - id: Yuz_hit
+    img: {fileID: 21300000, guid: d80b343d48c5dc849b7c046e51ec00af, type: 3}
+  - id: Yuz_panic
+    img: {fileID: 21300000, guid: 21028134bf7374d4dbb823750c22bc05, type: 3}
+  - id: Mata_close
+    img: {fileID: 21300000, guid: 7a405b770c321044baa44eec697cd99e, type: 3}
