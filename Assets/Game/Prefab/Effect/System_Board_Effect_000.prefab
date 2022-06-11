@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7068393975298741649}
   - component: {fileID: 7068393975298741654}
   m_Layer: 0
-  m_Name: Char_Yuz_Effect_001
+  m_Name: System_Board_Effect_000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,7 +1649,7 @@ ParticleSystem:
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
     tilesX: 1
-    tilesY: 6
+    tilesY: 2
     animationType: 1
     rowIndex: 0
     cycles: 1
@@ -4935,7 +4935,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bba987d4bf9909541b688bd51dd71db8, type: 2}
+  - {fileID: 2100000, guid: c9ec3c3acd4850640b713fe4ef7d5591, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
