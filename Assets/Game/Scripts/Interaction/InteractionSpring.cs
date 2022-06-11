@@ -77,7 +77,7 @@ public class InteractionSpring : InteractionBase
         m_isSuperJump = false;
         m_movement = null;
 
-        m_animator.SetTrigger("Nomal");
+        m_animator.SetTrigger("Normal");
 
     }
 
@@ -92,7 +92,7 @@ public class InteractionSpring : InteractionBase
         m_isSuperJump = false;
         m_movement = null;
 
-        m_animator.SetTrigger("Super");
+        m_animator.SetTrigger("Super");      
     }
 
     public void OnSuperJump()

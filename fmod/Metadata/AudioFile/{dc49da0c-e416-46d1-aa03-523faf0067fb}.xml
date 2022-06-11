@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dc49da0c-e416-46d1-aa03-523faf0067fb}">
+		<property name="assetPath">
+			<value>Scrape_MetalOnMetal06.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.2602721088435374</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0c963700-a798-4bc7-aa73-7080f677600c}</destination>
+		</relationship>
+	</object>
+</objects>
