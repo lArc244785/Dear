@@ -5,7 +5,7 @@
 			<value>shoot_trap_plant_spit</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{81595bed-6646-4b9e-b5a2-40d8cf155694}</destination>
@@ -57,10 +57,17 @@
 			<destination>{e7898c7e-6f16-4bf6-8603-2265b2bbe8f6}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{99dfa489-0a63-4997-b9c3-19c96f11ff62}</destination>
+			<destination>{c5093803-5f0f-4dfa-b06b-04157b62d43d}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{bfc0ae21-2ddb-4832-8a0e-fe65c02963fa}" />
+	<object class="EventAutomatableProperties" id="{bfc0ae21-2ddb-4832-8a0e-fe65c02963fa}">
+		<property name="minimumDistance">
+			<value>350</value>
+		</property>
+		<property name="maximumDistance">
+			<value>500</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{5b2946fd-af30-456d-bfee-165e8c13ee3e}" />
 	<object class="GroupTrack" id="{754ed4c2-6521-4fcb-86ea-2e2cce229aa6}">
 		<relationship name="modules">
@@ -271,6 +278,7 @@
 	<object class="MixerBusEffectChain" id="{b0c3df23-4c29-4095-aa06-51f4f4f038d1}">
 		<relationship name="effects">
 			<destination>{1afccb0f-1182-4b79-9299-3276267c2131}</destination>
+			<destination>{ac509fa2-a46a-4c87-8006-c7deae8d157a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ec80236d-c4c4-4aa1-b0e6-8b8696147a84}" />
@@ -368,6 +376,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{bf88e25a-0c96-424a-88e0-ec18e84b065e}" />
 	<object class="MixerBusFader" id="{1afccb0f-1182-4b79-9299-3276267c2131}" />
+	<object class="ProxyEffect" id="{ac509fa2-a46a-4c87-8006-c7deae8d157a}">
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="preset">
+			<destination>{33042a7f-d169-4b66-9b76-a53bb8b87375}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{2555fd2f-ed87-4585-890a-f5c3259c2e63}" />
 	<object class="MixerBusFader" id="{50f39827-3707-404a-97de-0d3489b767f4}" />
 	<object class="MixerBusFader" id="{974c121b-089b-4698-a749-8cb181c75dc3}" />
