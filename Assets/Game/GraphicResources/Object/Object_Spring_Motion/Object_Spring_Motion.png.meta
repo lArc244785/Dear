@@ -150,7 +150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 506
+        y: 405
         width: 154
         height: 99
       alignment: 0
@@ -171,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 157
-        y: 506
+        y: 405
         width: 154
         height: 99
       alignment: 0
@@ -192,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 313
-        y: 506
+        y: 405
         width: 154
         height: 99
       alignment: 0
@@ -213,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 469
-        y: 506
+        y: 405
         width: 154
         height: 99
       alignment: 0
@@ -234,7 +234,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 405
+        y: 304
         width: 154
         height: 99
       alignment: 0
@@ -255,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 157
-        y: 405
+        y: 304
         width: 154
         height: 99
       alignment: 0
@@ -276,7 +276,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 313
-        y: 405
+        y: 304
         width: 154
         height: 99
       alignment: 0
@@ -297,7 +297,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 469
-        y: 405
+        y: 304
         width: 154
         height: 99
       alignment: 0
@@ -318,7 +318,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 304
+        y: 203
         width: 154
         height: 99
       alignment: 0
@@ -339,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 157
-        y: 304
+        y: 203
         width: 154
         height: 99
       alignment: 0
@@ -360,7 +360,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 313
-        y: 304
+        y: 203
         width: 154
         height: 99
       alignment: 0
@@ -381,7 +381,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 469
-        y: 304
+        y: 203
         width: 154
         height: 99
       alignment: 0
@@ -402,7 +402,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 203
+        y: 102
         width: 154
         height: 99
       alignment: 0
@@ -423,7 +423,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 157
-        y: 203
+        y: 102
         width: 154
         height: 99
       alignment: 0
@@ -444,7 +444,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 313
-        y: 203
+        y: 102
         width: 154
         height: 99
       alignment: 0
@@ -465,7 +465,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 469
-        y: 203
+        y: 102
         width: 154
         height: 99
       alignment: 0
@@ -477,132 +477,6 @@ TextureImporter:
       bones: []
       spriteID: 1cf1902d2b1aa6b50800000000000000
       internalID: 6587255194382835649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Object_Spring_Motion16
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 102
-        width: 154
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e99e302acf0761fb0800000000000000
-      internalID: -4677426932625446498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Object_Spring_Motion17
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 102
-        width: 154
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e313d6738dc30fce0800000000000000
-      internalID: -1373530987007495874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Object_Spring_Motion18
-      rect:
-        serializedVersion: 2
-        x: 313
-        y: 102
-        width: 154
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 60047943bea0300b0800000000000000
-      internalID: -5763751092788183034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Object_Spring_Motion19
-      rect:
-        serializedVersion: 2
-        x: 469
-        y: 102
-        width: 154
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc214b4edb03af7e0800000000000000
-      internalID: -1731017514626575665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Object_Spring_Motion20
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 154
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 400749f563f36b100800000000000000
-      internalID: 123355542563614724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Object_Spring_Motion21
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 1
-        width: 154
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 037d8021861a917e0800000000000000
-      internalID: -1794225508179192016
       vertices: []
       indices: 
       edges: []
