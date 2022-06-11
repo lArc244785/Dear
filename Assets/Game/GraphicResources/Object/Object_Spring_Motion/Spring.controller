@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Nomal
+    m_ConditionEvent: Normal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 244330729674722090}
@@ -60,7 +60,7 @@ AnimatorController:
   m_Name: Spring
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Nomal
+  - m_Name: Normal
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
