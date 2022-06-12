@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1012131051121764355}
   - component: {fileID: 1012131051121764364}
+  - component: {fileID: 6222209043651574166}
   m_Layer: 0
   m_Name: ProjectileTrap
   m_TagString: Untagged
@@ -51,7 +52,27 @@ MonoBehaviour:
     m_Bits: 1344
   m_ani: {fileID: 5023411995049257893}
   m_fireImfect: {fileID: 0}
+  m_fireSound: {fileID: 6222209043651574166}
   m_fireDirType: 0
+--- !u!114 &6222209043651574166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012131051121764354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: -1409585124
+      Data2: 1233882981
+      Data3: -26617211
+      Data4: -1140975251
+    Path: event:/game/general/shoot_trap_plant_spit
 --- !u!1 &1012131052622671697
 GameObject:
   m_ObjectHideFlags: 0

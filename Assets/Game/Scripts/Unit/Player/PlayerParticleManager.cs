@@ -64,6 +64,11 @@ public class PlayerParticleManager : MonoBehaviour
         }
     }
 
+    //GroundInfo에 맞추어서 넣어주세요
+    [Header("GroundInfoColors")]
+    [SerializeField]
+    private Color[] m_groundInfoColors;
+
     public void MoveEffect(float moveDirX)
     {
 
@@ -145,15 +150,10 @@ public class PlayerParticleManager : MonoBehaviour
     {
         Color color = Color.white;
 
-        switch (type)
-        {
-            case GroundInfo.Type.Forest:
-                color = Color.red;
-                break;
-            case GroundInfo.Type.Fectory:
-                color = Color.blue;
-                break;
-        }
+
+        if(m_groundInfoColors.Length > (int)type)
+        color = m_groundInfoColors[(int)type];
+        
         return color;
     }
 
