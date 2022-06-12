@@ -68,6 +68,9 @@ public class PlayerSound : MonoBehaviour
     #endregion
 
 
+
+
+
     private string m_surfaceIndex = "surface_index";
     private string surfaceIndex { get { return m_surfaceIndex; } }
 
@@ -91,6 +94,9 @@ public class PlayerSound : MonoBehaviour
 
         m_ropeInstance = FMODUnity.RuntimeManager.CreateInstance(m_ropeMove);
         SoundManager.instance.GetID(m_ropeInstance, m_ropeIndexID, out m_parameterIndex);
+
+
+
 
         //footStepLoop = false;
         //m_footStepLoopCoroutine = FootStepCoroutine(footStepPlayTick);
@@ -222,4 +228,6 @@ public class PlayerSound : MonoBehaviour
         SoundManager.instance.SoundOneShot(m_groundPoundEvent);
     }
     #endregion
+
+
 }

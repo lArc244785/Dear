@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4611290201883341938}
   - component: {fileID: 4611290201883341941}
   - component: {fileID: 4611290201883341898}
+  - component: {fileID: 7537805434559957635}
   m_Layer: 0
   m_Name: SphereTrap_Missile
   m_TagString: Untagged
@@ -152,10 +153,10 @@ MonoBehaviour:
   m_trapResetEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameObjectControl, Assembly-CSharp
-        m_MethodName: Active
-        m_Mode: 6
+      - m_Target: {fileID: 7537805434559957635}
+        m_TargetAssemblyTypeName: OneSound, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -193,6 +194,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.341885, y: 6.8859253}
   m_EdgeRadius: 0
+--- !u!114 &7537805434559957635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611290201883341943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: -1720163421
+      Data2: 1191881647
+      Data3: 349004929
+      Data4: 284287034
+    Path: event:/game/general/shoot_trap_reload
 --- !u!1 &8377796251151185461
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8377796251151185460}
   - component: {fileID: 8377796251151185467}
+  - component: {fileID: 7345888293134590077}
   m_Layer: 0
   m_Name: ProjectileTrap
   m_TagString: Untagged
@@ -243,8 +264,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1344
   m_ani: {fileID: 0}
-  m_fireImfect: {fileID: 4145833243368905742, guid: af8a4ef9c519c10489a82f2678f91895, type: 3}
+  m_fireImfect: {fileID: 0}
+  m_fireSound: {fileID: 7345888293134590077}
   m_fireDirType: 1
+--- !u!114 &7345888293134590077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8377796251151185461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: 1477356615
+      Data2: 1265280834
+      Data3: -2077233266
+      Data4: -1578561004
+    Path: event:/game/general/shoot_trap_shoot
 --- !u!1 &8377796252645011814
 GameObject:
   m_ObjectHideFlags: 0

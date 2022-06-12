@@ -43,7 +43,6 @@ public class InteractionSpring : InteractionBase
 
         m_movement.isOnInteractionJumpObject = true;
 
-        m_animator.SetTrigger("Action");
     }
 
     protected override void Exit(Collider2D collision)
@@ -77,6 +76,9 @@ public class InteractionSpring : InteractionBase
         m_movement.isOnInteractionJumpObject = false;
         m_isSuperJump = false;
         m_movement = null;
+
+        m_animator.SetTrigger("Normal");
+
     }
 
     private void SuperJump()
@@ -89,6 +91,8 @@ public class InteractionSpring : InteractionBase
         m_movement.isOnInteractionJumpObject = false;
         m_isSuperJump = false;
         m_movement = null;
+
+        m_animator.SetTrigger("Super");      
     }
 
     public void OnSuperJump()

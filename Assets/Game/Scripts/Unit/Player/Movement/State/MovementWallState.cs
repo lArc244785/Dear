@@ -149,7 +149,7 @@ public class MovementWallState : I_MovementState
             else
             {//effect
                 m_currentWallEffectTime -= Time.deltaTime;
-                if (m_currentWallEffectTime <= 0.0f)
+                 if (m_currentWallEffectTime <= 0.0f)
                     WallSlideEffect(movementManager);
             }
 

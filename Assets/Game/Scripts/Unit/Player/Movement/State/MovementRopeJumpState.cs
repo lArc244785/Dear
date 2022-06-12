@@ -19,9 +19,15 @@ public class MovementRopeJumpState : I_MovementState
 
         duringTime = movementManager.movementData.ropeJumpDuringTime;
 
+        movementManager.TrunUpdate();
+
         movementManager.player.inputPlayer.isControl = false;
 
         movementManager.player.animationManager.TriggerJump();
+
+
+        
+
     }
 
     public void Exit(PlayerMovementManager movementManager)

@@ -56,18 +56,18 @@ MonoBehaviour:
   m_resetTime: 1
   m_shakeEvent:
     Guid:
-      Data1: -1126777754
-      Data2: 1329463775
-      Data3: 1527986838
-      Data4: 109027660
-    Path: event:/game/general/falling_shake
+      Data1: 628295298
+      Data2: 1262980283
+      Data3: 582649004
+      Data4: 5043089
+    Path: event:/game/general/falling_shake_metal
   m_impactEvent:
     Guid:
-      Data1: -2088370331
-      Data2: 1126004461
-      Data3: -351675484
-      Data4: 738323879
-    Path: event:/game/general/falling_impact
+      Data1: -62807781
+      Data2: 1125947963
+      Data3: -1821380723
+      Data4: 419966521
+    Path: event:/game/general/falling_metal
 --- !u!61 &3490423383665135352
 BoxCollider2D:
   m_ObjectHideFlags: 0

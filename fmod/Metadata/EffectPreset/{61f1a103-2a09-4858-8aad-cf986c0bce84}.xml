@@ -21,8 +21,14 @@
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
-		<property name="extentMode">
-			<value>2</value>
+		<property name="panBlend">
+			<value>0</value>
+		</property>
+		<property name="userPanDirection">
+			<value>-36.1703796</value>
+		</property>
+		<property name="userPanExtent">
+			<value>351.268524</value>
 		</property>
 	</object>
 </objects>
