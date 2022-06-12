@@ -18178,6 +18178,10 @@ PrefabInstance:
       value: "Stage 1 : \uC0C1\uC810\uAC00\uB85C \uAC00\uB294 \uAE38"
       objectReference: {fileID: 0}
     - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_bgmProgress
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
       propertyPath: m_inputPlayer
       value: 
       objectReference: {fileID: 745369420}

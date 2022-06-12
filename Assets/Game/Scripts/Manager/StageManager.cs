@@ -41,7 +41,10 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private bool m_isSave;
 
-
+    private void Start()
+    {
+        SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
+    }
 
 
     public void Init(/*bool playerDirRight*/)
@@ -72,7 +75,7 @@ public class StageManager : MonoBehaviour
 
 
 
-       SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
+
     }
 
     private void ComponentSetting()

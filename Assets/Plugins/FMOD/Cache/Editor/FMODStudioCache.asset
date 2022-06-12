@@ -21,7 +21,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637906292865784552
+  lastModified: 637906348473511174
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -171,7 +171,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -466,9 +466,36 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
+  MinDistance: 350
+  MaxDistance: 500
+  Length: 894
+--- !u!114 &-6189862724677085161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/falling_shake_metal
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/falling_shake_metal
+  Guid:
+    Data1: 628295298
+    Data2: 1262980283
+    Data3: 582649004
+    Data4: 5043089
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 894
+  Length: 1996
 --- !u!114 &-6134567426206205830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +568,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters:
   - {fileID: 6648124307623785297}
@@ -645,11 +672,11 @@ MonoBehaviour:
   - {fileID: -539227402111353610}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 239716
+  Length: 105988
 --- !u!114 &-5102592106116579674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +832,7 @@ MonoBehaviour:
   - {fileID: -1560887060218833763}
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -856,7 +883,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -8560472383153989564}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -982,7 +1009,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637906292868740722
+  lastModified: 637906348519069725
   FileSizes:
   - Name: Desktop
     Value: 9984
@@ -1090,7 +1117,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1149,7 +1176,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 236477
+  Length: 97764
 --- !u!114 &-1874951358909476453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,7 +1326,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637906292868750726
+  lastModified: 637906348503281085
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1366,10 +1393,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637906292868559423
+  lastModified: 637906348502320877
   FileSizes:
   - Name: Desktop
-    Value: 20422560
+    Value: 13800992
   Exists: 1
 --- !u!114 &-477331076014990808
 MonoBehaviour:
@@ -1529,15 +1556,12 @@ MonoBehaviour:
   - {fileID: -4036694188124470161}
   - {fileID: -7069871682896644173}
   - {fileID: 5341233809373286929}
-  - {fileID: 7854827566939369871}
   - {fileID: -1615593724602801467}
-  - {fileID: 8729172919155308028}
   - {fileID: -6386235182664629331}
   - {fileID: 4504144781773612485}
   - {fileID: -8448789267111697226}
   - {fileID: -1877327251723893371}
   - {fileID: -5387198648687943785}
-  - {fileID: 561351496269374371}
   - {fileID: -2599608170771549015}
   - {fileID: 4181131048442755689}
   - {fileID: -8265763677114786526}
@@ -1549,12 +1573,17 @@ MonoBehaviour:
   - {fileID: -4605490484203466678}
   - {fileID: -3267880391215639496}
   - {fileID: -7980368822375572640}
+  - {fileID: 7137917189489564406}
+  - {fileID: 3232642329404622958}
+  - {fileID: 5906733731623137528}
+  - {fileID: -6189862724677085161}
+  - {fileID: 5028008659598689220}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637906292868750726
+  cacheTime: 637906348519069725
   cacheVersion: 10
 --- !u!114 &397148116521282081
 MonoBehaviour:
@@ -1606,33 +1635,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &561351496269374371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/music/stage/stage04
-  m_EditorClassIdentifier: 
-  Path: event:/music/stage/stage04
-  Guid:
-    Data1: 1050117075
-    Data2: 1113056982
-    Data3: -272383351
-    Data4: 58723661
-  Banks:
-  - {fileID: -539227402111353610}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &786073520097338621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,7 +1678,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637906292865804557
+  lastModified: 637906348473711213
   FileSizes:
   - Name: Desktop
     Value: 4878
@@ -1780,7 +1782,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1864,6 +1866,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &3232642329404622958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/falling_metal
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/falling_metal
+  Guid:
+    Data1: -62807781
+    Data2: 1125947963
+    Data3: -1821380723
+    Data4: 419966521
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1048
 --- !u!114 &3259441381565070064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,6 +2128,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5028008659598689220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/shoot_trap_reload
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/shoot_trap_reload
+  Guid:
+    Data1: -1720163421
+    Data2: 1191881647
+    Data3: 349004929
+    Data4: 284287034
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 525
 --- !u!114 &5206846048107690288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2114,10 +2170,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637906292868730725
+  lastModified: 637906348518469576
   FileSizes:
   - Name: Desktop
-    Value: 1570272
+    Value: 2192192
   Exists: 1
 --- !u!114 &5225624307608652621
 MonoBehaviour:
@@ -2167,12 +2223,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3000
+  MinDistance: 350
+  MaxDistance: 500
+  Length: 1420
 --- !u!114 &5370142671418089140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,6 +2339,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 55998
+--- !u!114 &5906733731623137528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/shoot_trap_projectil
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/shoot_trap_projectil
+  Guid:
+    Data1: 1257190761
+    Data2: 1156993669
+    Data3: 1711334792
+    Data4: -217139961
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1212
 --- !u!114 &6543505234794622578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2334,6 +2417,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7137917189489564406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music/stage/stageBoss
+  m_EditorClassIdentifier: 
+  Path: event:/music/stage/stageBoss
+  Guid:
+    Data1: 1050117075
+    Data2: 1113056982
+    Data3: -272383351
+    Data4: 58723661
+  Banks:
+  - {fileID: -539227402111353610}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 97764
 --- !u!114 &7643015463839910659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,33 +2491,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 5065600
   Exists: 1
---- !u!114 &7854827566939369871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/game/general/shoot_trap_projectil_destroy
-  m_EditorClassIdentifier: 
-  Path: event:/game/general/shoot_trap_projectil_destroy
-  Guid:
-    Data1: 1257190761
-    Data2: 1156993669
-    Data3: 1711334792
-    Data4: -217139961
-  Banks:
-  - {fileID: 5206846048107690288}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3000
 --- !u!114 &7863057296823421409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2429,7 +2512,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -2514,33 +2597,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8729172919155308028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/game/general/shoot_trap_charge
-  m_EditorClassIdentifier: 
-  Path: event:/game/general/shoot_trap_charge
-  Guid:
-    Data1: -1590531913
-    Data2: 1226440444
-    Data3: 1846929320
-    Data4: -1244364407
-  Banks:
-  - {fileID: 5206846048107690288}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3000
 --- !u!114 &8788152413582050615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,8 +2639,8 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637906292865804557
+  lastModified: 637906348473741225
   FileSizes:
   - Name: Desktop
-    Value: 4320
+    Value: 4410
   Exists: 1

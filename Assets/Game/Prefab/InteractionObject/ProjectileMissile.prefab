@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1908667761759917918}
   - component: {fileID: 1908667761759917917}
   - component: {fileID: 584770401878083321}
+  - component: {fileID: 7480750904186906070}
   m_Layer: 0
   m_Name: ProjectileMissile
   m_TagString: Untagged
@@ -101,11 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98cf81ce5aa7fb4bbd0702000379f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponData: {fileID: 11400000, guid: 95bd1507fb179b346a8252591a94a6b2, type: 2}
+  m_weaponData: {fileID: 11400000, guid: ffec05681c63bd040a78d8c52cf49c21, type: 2}
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  m_hitSound: {fileID: 0}
+  m_hitSound: {fileID: 7480750904186906070}
   m_model: 0
   m_speed: 1500
   m_HitParticle: {fileID: 198790189302652513, guid: 1baa283b089b0da48aa40d581c9215d5, type: 3}
@@ -126,6 +127,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.37
+--- !u!114 &7480750904186906070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145833243368905742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: 1257190761
+      Data2: 1156993669
+      Data3: 1711334792
+      Data4: -217139961
+    Path: event:/game/general/shoot_trap_projectil
 --- !u!1 &7667169243513101906
 GameObject:
   m_ObjectHideFlags: 0

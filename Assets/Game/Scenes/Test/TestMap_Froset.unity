@@ -18401,11 +18401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026358882735, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.612397
+      value: -15.359999
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026358882735, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.053843
+      value: 12.969999
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026669038112, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Follow
@@ -19509,6 +19509,26 @@ PrefabInstance:
     - target: {fileID: 1981882167, guid: 2329f432f095696468cf3892a23ace87, type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Path
+      value: event:/game/general/falling_metal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data1
+      value: -62807781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data2
+      value: 1125947963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data3
+      value: -1821380723
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data4
+      value: 419966521
       objectReference: {fileID: 0}
     - target: {fileID: 8816093289123873390, guid: 2329f432f095696468cf3892a23ace87, type: 3}
       propertyPath: m_Name
