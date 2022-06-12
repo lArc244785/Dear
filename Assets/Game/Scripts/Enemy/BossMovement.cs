@@ -62,6 +62,24 @@ public class BossMovement : MonoBehaviour
     }
 
     [SerializeField]
+    private float m_camOutDistance;
+    public float camOutdistance
+    {
+        get { 
+            return m_camOutDistance;
+        }
+    }
+    [SerializeField]
+    private float m_camOutMoveDistance;
+    public float camOutMoveDistance
+    {
+        get
+        {
+            return m_camOutMoveDistance;
+        }
+    }
+
+    [SerializeField]
     private AnimationCurve m_movementCurve;
 
 

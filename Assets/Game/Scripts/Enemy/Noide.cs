@@ -271,12 +271,11 @@ public class Noide : UnitBase
         sound.Hit();
         health.OnDamage(damage);
         moveSpeed = 0;
-        StartCoroutine(delay(1f));
+        StartCoroutine(delay(0.3f));
     }
     public override void OnHitObject(GameObject attackObject, int damage)
     {
         base.OnHitObject(attackObject, damage);
-        Debug.Log("총에 맞음");
         
         m_animator.SetBool("OnHit", true);  
     }

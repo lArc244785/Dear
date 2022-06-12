@@ -362,6 +362,7 @@ MonoBehaviour:
   m_spawnWallLeftTransform: {fileID: 181634121}
   m_spawnWallRightTransform: {fileID: 1801411040}
   m_spawnCenterTransform: {fileID: 735427274}
+  m_groundInfoColors: []
 --- !u!1 &7338048278161414748
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6d51ef6dfb0984fa15bbd5b817d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHP: 5
+  m_maxHP: 6
   m_hp: 0
 --- !u!114 &6611995000469461227
 MonoBehaviour:
