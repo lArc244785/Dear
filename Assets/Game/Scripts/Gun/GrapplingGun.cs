@@ -208,7 +208,7 @@ public class GrapplingGun : ActiveToolBase
         m_interactionSensorTr.localPosition = Vector2.zero;
     }
 
-    //¹ÝÈ¯°ªÀ¸·Î ÇØ´ç Index¸¦ ³Ñ°ÜÁÜ
+    //ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ Indexï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½ï¿½
     public int AddInteraction(InteractionGrapping interaction)
     {
         rangeInteractionObjectList.Add(interaction);

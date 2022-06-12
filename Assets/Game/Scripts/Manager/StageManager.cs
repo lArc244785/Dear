@@ -56,7 +56,10 @@ public class StageManager : MonoBehaviour
         player.Init();
         cameraManager.Init();
         m_stageText.text = m_stage_name;
+      
+
         m_fullHPUI.init();
+        m_fullHPUI.initCnt = true;
 
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
@@ -69,9 +72,6 @@ public class StageManager : MonoBehaviour
         {
             GameManager.instance.TempSave(player.unitPos);
         }
-
-
-
        SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
     }
 
@@ -80,7 +80,6 @@ public class StageManager : MonoBehaviour
         m_player = GameObject.Find("Player").GetComponent<UnitPlayer>();
         m_cameraManager = GameObject.Find("CameraManager").GetComponent<CameraManager>();
         m_fullHPUI = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
-
     }
 
    

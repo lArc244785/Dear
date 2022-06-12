@@ -32,7 +32,7 @@ public class CustomMouseCursor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(InputManager.instance != null)
+        if(InputManager.instance != null&&GameManager.instance.gameState != GameManager.GameSate.StageLoad)
         m_rect.transform.position = InputManager.instance.screenViewMousePos;
     }
 

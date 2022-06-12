@@ -14,12 +14,31 @@ public class HpUI : MonoBehaviour
     private int size;
     [SerializeField]
     private Transform parent;
-    
-   
+
+    private bool m_initCnt;
+
+    public bool initCnt
+    {
+        get
+        {
+            return m_initCnt;
+        }
+        set
+        {
+            m_initCnt = value;
+        }
+    }
+
+
+    public void Awake()
+    {
+        m_initCnt = false;
+    }
+
     public void init()
     {
-       
-        m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
+       if (m_initCnt == true) return;
+         m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
         m_HP = new List<SingleHpUI>();
         for(int i = 0; i < m_playerHealth.hp; i++)
         {
@@ -32,6 +51,7 @@ public class HpUI : MonoBehaviour
         }
         size = m_HP.Count;
     }
+
     private void Update()
     {
        

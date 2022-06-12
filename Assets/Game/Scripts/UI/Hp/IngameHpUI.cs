@@ -11,7 +11,6 @@ public class IngameHpUI : UI_ViewBase
     {
         base.Init();
         m_fullHPUI.GetComponent<HpUI>().init();
-      
     }
 
 
