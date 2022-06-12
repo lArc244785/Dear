@@ -13,8 +13,10 @@ public class NoidSound : MonoBehaviour
     public void Hit()
     {
         SoundManager.instance.SoundOneShot(m_hitEvent);
-        SoundManager.instance.bgm.SetParamaterHitIndexID(1.0f);
+       // SoundManager.instance.bgm.SetParamaterHitIndexID(1.0f);
     }
+
+
     public void Death()
     {
         SoundManager.instance.SoundOneShot(m_deathEvent);

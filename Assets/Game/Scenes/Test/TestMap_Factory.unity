@@ -12853,10 +12853,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SphereTrap_Missile
       objectReference: {fileID: 0}
-    - target: {fileID: 8377796251151185467, guid: b415094fee7353c41b637146581729e9, type: 3}
-      propertyPath: m_targetLayerMask.m_Bits
-      value: 1088
-      objectReference: {fileID: 0}
     - target: {fileID: 8377796252645011813, guid: b415094fee7353c41b637146581729e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.2
