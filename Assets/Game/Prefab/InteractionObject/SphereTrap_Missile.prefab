@@ -262,7 +262,7 @@ MonoBehaviour:
   m_projectilePrefab: {fileID: 4145833243368905742, guid: af8a4ef9c519c10489a82f2678f91895, type: 3}
   m_targetLayerMask:
     serializedVersion: 2
-    m_Bits: 1344
+    m_Bits: 66880
   m_ani: {fileID: 0}
   m_fireImfect: {fileID: 0}
   m_fireSound: {fileID: 7345888293134590077}

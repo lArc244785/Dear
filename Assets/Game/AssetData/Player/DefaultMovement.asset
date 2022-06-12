@@ -33,7 +33,7 @@ MonoBehaviour:
   m_airJumpForce: 13
   m_wallJumpForce: {x: 15, y: 19}
   m_wallJumpRunLerp: 0.15
-  m_wallJumpTime: 0.5
+  m_wallJumpTime: 0.35
   m_wallSlideVelocity: 0.8
   m_climbingMaxSpeed: 12
   m_climbingAccel: 8
