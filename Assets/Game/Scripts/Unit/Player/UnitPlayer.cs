@@ -68,7 +68,7 @@ public class UnitPlayer : UnitBase
         {
             return m_modelCollider;
         }
-    }
+    }   
 
     #region Mad
     private MadTrackingPoint m_madTrackingPoint;
@@ -152,6 +152,7 @@ public class UnitPlayer : UnitBase
     public bool footStepLoop { set { m_footStepLoop = value; } get { return m_footStepLoop; } }
     #endregion
 
+    private HpUI m_hpui;
 
 
     #region Interaction
@@ -177,8 +178,8 @@ public class UnitPlayer : UnitBase
         footStepLoop = false;
         m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
 
-       
 
+        m_hpui = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
 
 
         StartCoroutine(m_footStepLoopCoroutine);
@@ -235,8 +236,8 @@ public class UnitPlayer : UnitBase
     protected override void HitHp(int damage)
     {
         base.HitHp(damage);
-        GameObject.Find("Hpcontainer").GetComponent<HpUI>().OnDamage(damage);
         health.OnDamage(damage);
+        m_hpui.OnDamage(damage);
     }
 
     protected override void HitUniqueEventUnit(UnitBase attackUnit)

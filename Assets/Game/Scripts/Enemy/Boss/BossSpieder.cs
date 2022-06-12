@@ -30,9 +30,24 @@ public class BossSpieder : EnemyBase
         }
     }
 
+    [SerializeField]
+    private Animator m_animator;
+    public Animator animator
+    {
+        get
+        {
+            return m_animator;
+        }
+        set
+        {
+            m_animator = value;
+        }
+    }
 
     private State<BossSpieder>[] m_state;
     private StateMachine<BossSpieder> m_stateMachine;
+
+
 
     private bool m_camOut;
     public bool camOut
@@ -75,7 +90,7 @@ public class BossSpieder : EnemyBase
     private void Update()
     {
         m_stateMachine.Excute();
-        if (PlayerDistance() >= 30) m_camOut = true;
+        if (PlayerDistance() >= m_bossMovmentTween.camOutdistance) m_camOut = true;
         else m_camOut = false;
     }
 
@@ -95,7 +110,8 @@ public class BossSpieder : EnemyBase
     }
     public void BossMovementCamOut()
     {
-        m_bossMovmentTween.SpiderBossMove_CamOut(areaCollider.player.transform.position.y - 15);
+        m_bossMovmentTween.SpiderBossMove_CamOut(areaCollider.player.transform.position.y
+            - m_bossMovmentTween.camOutMoveDistance);
     }
     public float PlayerDistance()
     {

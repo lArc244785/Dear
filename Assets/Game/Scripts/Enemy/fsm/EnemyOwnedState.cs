@@ -271,12 +271,17 @@ namespace SpiderBossState
         public override void Enter(BossSpieder enemy)
         {
             s_curdelay = 0;
-            enemy.ChangeState(BossSpiderState.SlowMove);
 
         }
         public override void Excute(BossSpieder enemy)
         {
-            if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
+            s_curdelay += Time.deltaTime;
+            if (s_curdelay >= 2)
+            {
+                 if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
+                  enemy.ChangeState(BossSpiderState.SlowMove);
+            }
+               
         }
         public override void Exit(BossSpieder enemy)
         {
@@ -289,8 +294,8 @@ namespace SpiderBossState
         public override void Enter(BossSpieder enemy)
         {
 
+            enemy.animator.SetBool("MoveOn", true);
             s_curdelay = 0;
-
             enemy.BossMovementFast();
         }
         public override void Excute(BossSpieder enemy)
@@ -298,8 +303,9 @@ namespace SpiderBossState
 
             if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
             s_curdelay += Time.deltaTime;
-            if (s_curdelay >= 1.5)
+            if (s_curdelay >= 1)
             {
+
                 enemy.ChangeState(BossSpiderState.SlowMove);
             }
         }
@@ -314,6 +320,7 @@ namespace SpiderBossState
 
         public override void Enter(BossSpieder enemy)
         {
+            enemy.animator.SetBool("MoveOn", true);
             s_curdelay = 0;
             enemy.BossMovementSlow();
         }
@@ -322,8 +329,9 @@ namespace SpiderBossState
 
             if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
             s_curdelay += Time.deltaTime;
-            if (s_curdelay >= 1.5)
+            if (s_curdelay >= 1)
             {
+
                 enemy.ChangeState(BossSpiderState.FastMove);
             }
         }
@@ -338,6 +346,7 @@ namespace SpiderBossState
         public override void Enter(BossSpieder enemy)
         {
             s_curdelay = 0;
+            enemy.animator.SetBool("MoveOn", true);
             enemy.BossMovementCamOut();
         }
         public override void Excute(BossSpieder enemy)
