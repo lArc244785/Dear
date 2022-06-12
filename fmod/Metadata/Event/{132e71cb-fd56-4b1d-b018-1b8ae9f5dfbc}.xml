@@ -304,15 +304,15 @@ outdoor = 0</value>
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-18.8999996</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{664c6057-e3fd-4ad4-9864-f8e05868e5af}">
 		<property name="position">
-			<value>0.59999999999999998</value>
+			<value>0.60999999999999999</value>
 		</property>
 		<property name="value">
-			<value>-18.8999996</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{0046011c-4bd0-4957-8d16-1971147501b6}">
@@ -320,7 +320,7 @@ outdoor = 0</value>
 			<value>0.20000000000000001</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-50</value>
 		</property>
 		<property name="curveShape">
 			<value>0.436786532</value>
@@ -331,7 +331,7 @@ outdoor = 0</value>
 			<value>0.59934318555008204</value>
 		</property>
 		<property name="value">
-			<value>-12</value>
+			<value>-6</value>
 		</property>
 	</object>
 </objects>

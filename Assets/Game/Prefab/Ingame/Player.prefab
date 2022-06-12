@@ -357,7 +357,7 @@ MonoBehaviour:
   m_wallSlide: {fileID: 2174008739561280024, guid: 141eb0e124c45244f96733e88f61e170, type: 3}
   m_groundPound: {fileID: 2965962431988649673, guid: 695373d23986afc4fb11fdc6245d70a4, type: 3}
   m_hit: {fileID: 7759634127538165361, guid: 97f53821b383c2f428fc62613eaa6314, type: 3}
-  m_ropePick: {fileID: 2520672737856638263, guid: b13c94f2315c45941b97d07345884436, type: 3}
+  m_ropePick: {fileID: 2520672737856638263, guid: 763a6d42232f1d04c91863e52e2fd4d3, type: 3}
   m_spawnFootTransform: {fileID: 1981882168}
   m_spawnWallLeftTransform: {fileID: 181634121}
   m_spawnWallRightTransform: {fileID: 1801411040}

@@ -80,6 +80,7 @@ namespace NoidOwnedState
             s_dcurdelay = 0;
             enemy.GetComponent<BoxCollider2D>().enabled = false;
             enemy.animationState = AniState.Dead;
+            enemy.sound.Death();
         }
         public override void Excute(Noide enemy)
         {

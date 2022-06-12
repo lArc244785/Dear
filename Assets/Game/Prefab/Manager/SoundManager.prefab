@@ -57,12 +57,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c4b410bc3167c46ad7bbbc148e6a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bgmEvent:
-    Guid:
+  m_currentBgm: 0
+  m_bgmEvents:
+  - Guid:
       Data1: -2070102748
       Data2: 1287645313
       Data3: 427732156
       Data4: 2128641169
     Path: event:/music/stage/stage01
+  - Guid:
+      Data1: 1605621083
+      Data2: 1104438008
+      Data3: -2009030523
+      Data4: -928073465
+    Path: event:/music/stage/stage02
   m_prograssID: prograss
   m_hitIndexID: Hit_index

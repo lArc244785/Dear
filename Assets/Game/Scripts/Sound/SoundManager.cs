@@ -52,7 +52,7 @@ public class SoundManager : SingleToon<SoundManager>
             return;
         }
 
-        eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+         eventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void SoundOneShot(FMODUnity.EventReference reference)

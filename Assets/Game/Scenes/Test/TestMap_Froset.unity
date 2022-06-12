@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51769669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33621532, y: -0.6413538, z: 0}
+  m_LocalPosition: {x: -0.41116735, y: -0.6630306, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17582,7 +17582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104062133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16810766, y: -0.3206769, z: 0}
+  m_LocalPosition: {x: -0.20558368, y: -0.3315153, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18401,11 +18401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026358882735, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.612397
+      value: -15.359999
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026358882735, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.053843
+      value: 12.969999
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026669038112, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Follow
@@ -19106,30 +19106,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9080d100ed6466b4f971667d30122dee, type: 3}
---- !u!1 &1344562011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1012131051121764354, guid: 0ed02664a74336847a9ea7231bd3029e, type: 3}
-  m_PrefabInstance: {fileID: 7727996674279133937}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1344562014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344562011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_soundEvent:
-    Guid:
-      Data1: -1409585124
-      Data2: 1233882981
-      Data3: -26617211
-      Data4: -1140975251
-    Path: event:/game/general/shoot_trap_plant_spit
 --- !u!1 &1379693532
 GameObject:
   m_ObjectHideFlags: 0
@@ -19155,7 +19131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379693532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08405383, y: -0.16033845, z: 0}
+  m_LocalPosition: {x: -0.10279184, y: -0.16575766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19533,6 +19509,26 @@ PrefabInstance:
     - target: {fileID: 1981882167, guid: 2329f432f095696468cf3892a23ace87, type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Path
+      value: event:/game/general/falling_metal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data1
+      value: -62807781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data2
+      value: 1125947963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data3
+      value: -1821380723
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693607979317208333, guid: 2329f432f095696468cf3892a23ace87, type: 3}
+      propertyPath: m_airEvent.Guid.Data4
+      value: 419966521
       objectReference: {fileID: 0}
     - target: {fileID: 8816093289123873390, guid: 2329f432f095696468cf3892a23ace87, type: 3}
       propertyPath: m_Name
@@ -20801,9 +20797,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1012131051121764364, guid: 0ed02664a74336847a9ea7231bd3029e, type: 3}
-      propertyPath: m_fireSound
-      value: 
-      objectReference: {fileID: 1344562014}
+      propertyPath: m_fireDirType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012131051121764364, guid: 0ed02664a74336847a9ea7231bd3029e, type: 3}
+      propertyPath: m_targetLayerMask.m_Bits
+      value: 1088
+      objectReference: {fileID: 0}
     - target: {fileID: 5023411995786390080, guid: 0ed02664a74336847a9ea7231bd3029e, type: 3}
       propertyPath: m_Name
       value: SphereTrap_Nepenthes
