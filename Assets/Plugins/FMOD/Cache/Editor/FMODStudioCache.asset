@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637906348473511174
+  lastModified: 637906404791999313
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -673,7 +673,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 2067341907023572767}
   MinDistance: 1
   MaxDistance: 20
   Length: 105988
@@ -1009,7 +1010,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637906348519069725
+  lastModified: 637906404796032828
   FileSizes:
   - Name: Desktop
     Value: 9984
@@ -1326,7 +1327,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637906348503281085
+  lastModified: 637906404793925338
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1378,6 +1379,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5982
+--- !u!114 &-616628347409551425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/monster/noid_move
+  m_EditorClassIdentifier: 
+  Path: event:/game/monster/noid_move
+  Guid:
+    Data1: 109417407
+    Data2: 1282461106
+    Data3: 2022724495
+    Data4: -1126595770
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3889745500680613162}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1566
 --- !u!114 &-539227402111353610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,10 +1422,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637906348502320877
+  lastModified: 637906404792989530
   FileSizes:
   - Name: Desktop
-    Value: 13800992
+    Value: 11125824
   Exists: 1
 --- !u!114 &-477331076014990808
 MonoBehaviour:
@@ -1424,7 +1453,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 6852
 --- !u!114 &-440121618570974306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,12 +1607,13 @@ MonoBehaviour:
   - {fileID: 5906733731623137528}
   - {fileID: -6189862724677085161}
   - {fileID: 5028008659598689220}
+  - {fileID: -616628347409551425}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637906348519069725
+  cacheTime: 637906404796032828
   cacheVersion: 10
 --- !u!114 &397148116521282081
 MonoBehaviour:
@@ -1678,7 +1708,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637906348473711213
+  lastModified: 637906404792179353
   FileSizes:
   - Name: Desktop
     Value: 4878
@@ -1788,6 +1818,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 900
+--- !u!114 &2067341907023572767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/stage02/prograss
+  m_EditorClassIdentifier: 
+  Name: prograss
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3161910409
+    data2: 1808187239
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2270070472538134775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,6 +1998,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3889745500680613162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/noid_move/Mob_Speed
+  m_EditorClassIdentifier: 
+  Name: Mob_Speed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 2958250033
+    data2: 486028856
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4181131048442755689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1970,7 +2048,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1007
+  Length: 510
 --- !u!114 &4362894004034638485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,10 +2248,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637906348518469576
+  lastModified: 637906404795755746
   FileSizes:
   - Name: Desktop
-    Value: 2192192
+    Value: 2402560
   Exists: 1
 --- !u!114 &5225624307608652621
 MonoBehaviour:
@@ -2639,8 +2717,8 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637906348473741225
+  lastModified: 637906404792199364
   FileSizes:
   - Name: Desktop
-    Value: 4410
+    Value: 4486
   Exists: 1
