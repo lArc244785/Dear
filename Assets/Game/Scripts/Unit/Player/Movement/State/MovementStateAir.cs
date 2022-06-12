@@ -98,7 +98,10 @@ public class MovementStateAir : I_MovementState
 
                 GroundInfo info = poundLapCollider2D.GetComponent<GroundInfo>();
 
-                GroundPoundLanding(movementManager, info);
+                if (info != null)
+                    movementManager.player.particleManager.GroundPoundEffect(info.type); 
+
+                GroundPoundLanding(movementManager);
 
 
             }
@@ -108,14 +111,11 @@ public class MovementStateAir : I_MovementState
 
     }
 
-    private void GroundPoundLanding(PlayerMovementManager movementManager, GroundInfo info)
+    private void GroundPoundLanding(PlayerMovementManager movementManager)
     {
-        movementManager.player.particleManager.GroundPoundEffect(info.type);
         movementManager.player.GhostFrozen(movementManager.movementData.groundPoundLandingTime);
         currentGroundPoundType = GroundPoundType.None;
         m_isGroundPoundLanding = true;
-
-
     }
 
 

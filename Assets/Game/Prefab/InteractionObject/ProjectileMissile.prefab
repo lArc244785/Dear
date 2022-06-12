@@ -105,8 +105,10 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  m_hitSound: {fileID: 0}
+  m_model: 0
   m_speed: 1500
-  m_HitParticle: {fileID: 2064351406260083099, guid: d3bd598d96509c2429cd929b3c915ec4, type: 3}
+  m_HitParticle: {fileID: 198790189302652513, guid: 1baa283b089b0da48aa40d581c9215d5, type: 3}
   m_lifeTime: 9.7
 --- !u!58 &584770401878083321
 CircleCollider2D:

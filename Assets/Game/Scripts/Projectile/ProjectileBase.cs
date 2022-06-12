@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileBase : MonoBehaviour
@@ -8,10 +6,11 @@ public class ProjectileBase : MonoBehaviour
     [SerializeField]
     private WeaponData m_weaponData;
     protected WeaponData weaponData
-    { 
-        get {
-            return m_weaponData; 
-        } 
+    {
+        get
+        {
+            return m_weaponData;
+        }
     }
     [SerializeField]
     private LayerMask m_targetLayerMask;
@@ -27,6 +26,14 @@ public class ProjectileBase : MonoBehaviour
     [SerializeField]
     private OneSound m_hitSound;
 
+    private enum ModelType
+    {
+        Missile, Nependerth, EnergeBoll
+    }
+
+    [Header("ModelType")]
+    [SerializeField]
+    private ModelType m_model;
 
 
     private Rigidbody2D m_rig2D;
@@ -62,24 +69,36 @@ public class ProjectileBase : MonoBehaviour
 
         float lookRotation = Utility.GetRotaionAngleByDir(dir, 0.0f);
 
+
         if (fireDir.x > 0.0f)
-            FilpObject();
+        {
+            if (m_model == ModelType.Missile)
+            {
+                MissileFilp();
+            }
+            else if (m_model == ModelType.Nependerth)
+            {
+                PosisonFilp();
+            }
+        }
+
+
 
 
 
     }
 
-    private void FilpObject()
+    private void MissileFilp()
     {
         Transform modelTr = transform.Find("Model");
         Vector3 local = modelTr.localScale;
         local.x *= -1.0f;
         modelTr.localScale = local;
 
-        for(int i = 0; i < modelTr.childCount; i++)
+        for (int i = 0; i < modelTr.childCount; i++)
         {
             Transform child = modelTr.GetChild(i);
-            if(child.GetComponent<ParticleSystem>() != null)
+            if (child.GetComponent<ParticleSystem>() != null)
             {
                 local = child.localScale;
                 local.x *= -1.0f;
@@ -87,6 +106,13 @@ public class ProjectileBase : MonoBehaviour
             }
         }
 
+    }
+
+
+    private void PosisonFilp()
+    {
+        ParticleSystemRenderer renderer = transform.Find("Model").GetComponentInChildren<ParticleSystem>().GetComponent<ParticleSystemRenderer>();
+        renderer.flip = Vector2.right;
     }
 
 
@@ -104,7 +130,7 @@ public class ProjectileBase : MonoBehaviour
             Enter(collision);
     }
 
-    protected virtual void Enter(Collider2D collision) 
+    protected virtual void Enter(Collider2D collision)
     {
         UnitBase unit = collision.GetComponent<UnitBase>();
         if (unit != null)
