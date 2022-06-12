@@ -89,7 +89,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   m_hitSound: {fileID: 0}
-  m_speed: 1500
+  m_model: 0
+  m_speed: 2000
   m_HitParticle: {fileID: 2051729190530211657, guid: fc0656674c3d1b745aa56ab2c2db6b4c, type: 3}
   m_lifeTime: 10
 --- !u!1 &4365779349590421809

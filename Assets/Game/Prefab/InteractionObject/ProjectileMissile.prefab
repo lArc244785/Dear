@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Bits: 0
   m_hitSound: {fileID: 7480750904186906070}
   m_model: 0
-  m_speed: 1500
+  m_speed: 1750
   m_HitParticle: {fileID: 198790189302652513, guid: 1baa283b089b0da48aa40d581c9215d5, type: 3}
   m_lifeTime: 9.7
 --- !u!58 &584770401878083321

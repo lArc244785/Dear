@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c848544a38f4d0048b34620658b0f505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_projectilePrefab: {fileID: 4784615235771420444, guid: 2be993ca120daa7449a4f7dad4e3011f, type: 3}
+  m_projectilePrefab: {fileID: 4145833243368905742, guid: af8a4ef9c519c10489a82f2678f91895, type: 3}
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 1344

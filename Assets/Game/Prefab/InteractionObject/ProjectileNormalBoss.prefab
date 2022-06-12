@@ -257,7 +257,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   m_hitSound: {fileID: 0}
-  m_speed: 750
+  m_model: 0
+  m_speed: 1500
   m_HitParticle: {fileID: 0}
   m_lifeTime: 9.7
 --- !u!1 &6356571644855964201
