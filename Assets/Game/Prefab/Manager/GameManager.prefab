@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2aa792aab60c84fb5be21b8f04508e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_gameState: 0
+  m_gameState: 3
 --- !u!1 &4937129525462409094
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +160,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95fa5c3c4ad48d41bfb24f07da581b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_deathEvent:
+    Guid:
+      Data1: 1887810245
+      Data2: 1284363618
+      Data3: 1596923838
+      Data4: 307497687
+    Path: event:/char/yuz/death
 --- !u!1 &8634411811902873274
 GameObject:
   m_ObjectHideFlags: 0

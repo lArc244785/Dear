@@ -36,11 +36,31 @@ public class StageManager : MonoBehaviour
     private string m_stage_name;
     [SerializeField]
     private TextMeshProUGUI m_stageText;
+
+
+    [Header("BGM")]
+    [SerializeField]
+    private Bgm.BgmType m_stageBgm;
     [SerializeField]
     private float m_bgmProgress;
+
+
+    [Header("Save")]
     [SerializeField]
     private bool m_isSave;
 
+
+    private void Start()
+    {
+
+        SoundManager.instance.bgm.BgmChange(m_stageBgm);
+        SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
+
+        if (SoundManager.instance.bgm.IsSoundStop())
+        {
+            SoundManager.instance.bgm.BgmStart();
+        }
+    }
 
 
 
@@ -75,7 +95,9 @@ public class StageManager : MonoBehaviour
         {
             GameManager.instance.TempSavePos(player.unitPos);
         }
-       SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
+
+        GameManager.instance.deathProduction.RenderCameraSettting(cameraManager.camera);
+
     }
 
     private void ComponentSetting()

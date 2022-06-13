@@ -100,6 +100,12 @@ public class PlayerAnimationManager : MonoBehaviour
         SetTrigger("GroundPoundLanding");
     }
 
+    public void TriggerDeath()
+    {
+        ResetAllTrigger();
+        SetTrigger("Death");
+    }
+
 
 
     private void SetTrigger(string id)
