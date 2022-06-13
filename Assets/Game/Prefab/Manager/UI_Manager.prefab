@@ -41,7 +41,7 @@ RectTransform:
   - {fileID: 8634969538876520007}
   - {fileID: 1982909734049278227}
   m_Father: {fileID: 5899882952797111327}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1296,7 +1296,7 @@ RectTransform:
   - {fileID: 1103662357}
   - {fileID: 260629192}
   m_Father: {fileID: 5899882952797111327}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1436,7 +1436,7 @@ RectTransform:
   m_Children:
   - {fileID: 5899882952929597548}
   m_Father: {fileID: 5899882952797111327}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1495,7 +1495,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5899882952797111327}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5899882951776940581
 MonoBehaviour:
@@ -1572,13 +1572,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5899882951747342796}
   - {fileID: 4924042019413050347}
   - {fileID: 237367271440872988}
   - {fileID: 5899882951776940587}
   - {fileID: 8841503409152225527}
   - {fileID: 101377511}
   - {fileID: 4567746666392922290}
+  - {fileID: 5899882951747342796}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1833,7 +1833,7 @@ RectTransform:
   m_Children:
   - {fileID: 5649499007988323044}
   m_Father: {fileID: 5899882952797111327}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2216,7 +2216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3545774070833076728, guid: 95c4451be061d0e4bb12c8abab1993d4, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3545774070833076728, guid: 95c4451be061d0e4bb12c8abab1993d4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2357,7 +2357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5889559702840415813, guid: 0315ca1ef83d8114f883887eb25bd884, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5889559702840415813, guid: 0315ca1ef83d8114f883887eb25bd884, type: 3}
       propertyPath: m_AnchorMax.x

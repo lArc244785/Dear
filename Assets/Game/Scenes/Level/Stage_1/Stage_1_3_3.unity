@@ -121269,6 +121269,22 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 65565994d357af340bfa55d6d82465f7, type: 2}
+    - target: {fileID: 464584482713206922, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_Size.x
+      value: 18.51242
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584482713206922, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_Size.y
+      value: 6.6388016
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584482713206922, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_Offset.x
+      value: -4.3571963
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584482713206922, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.8194008
+      objectReference: {fileID: 0}
     - target: {fileID: 464584482713206923, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -121316,6 +121332,26 @@ PrefabInstance:
     - target: {fileID: 464584482713206924, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
       propertyPath: m_Name
       value: DialogeObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584483134078136, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 03686670af02ab74da5db89a4fbe47b1, type: 3}
+    - target: {fileID: 464584483134078137, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584483134078137, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9659259
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584483134078137, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.258819
+      objectReference: {fileID: 0}
+    - target: {fileID: 464584483134078137, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6cba0b5308ae04a947b7466d6ea516, type: 3}
