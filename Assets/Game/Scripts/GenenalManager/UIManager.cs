@@ -37,8 +37,6 @@ public class UIManager : SingleToon<UIManager>
             m_uiList.Add(m_ingameUIView);
             m_titleView.Init();
             m_uiList.Add(m_titleView);
-
-
         }
         return returnValue;
     }
@@ -46,7 +44,6 @@ public class UIManager : SingleToon<UIManager>
     private void Awake()
     {
         Init();
-
     }
 
     public void AllToggleFase()

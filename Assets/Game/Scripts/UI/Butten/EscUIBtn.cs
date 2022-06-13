@@ -10,15 +10,14 @@ public class EscUIBtn : MonoBehaviour
     {
         GameManager.instance.ChaneGameState(GameManager.GameSate.GamePlaying);
         PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
-
     }
     public void GotitleBtn()
     {
-
-        GameManager.instance.Gotitle();
-
         PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.esc);
-        SceneManager.LoadScene("Title");
+        UIManager.instance.AllToggleFase();
+        GameManager.instance.ChaneGameState(GameManager.GameSate.Title);
+        GameManager.instance.NextState(7);
+
     }
     public void OptionBtn()
     {
@@ -32,8 +31,11 @@ public class EscUIBtn : MonoBehaviour
     }
     public void ExitCheckBtn()
     {
-
-        //UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
 }

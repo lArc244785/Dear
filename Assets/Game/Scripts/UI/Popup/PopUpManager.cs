@@ -49,8 +49,20 @@ public class PopUpManager : SingleToon<PopUpManager>
         }
 
     }
+    [SerializeField]
+    private PopupUI m_gameOver;
+    public PopupUI gameOver
+    {
+        get
+        {
+            return m_gameOver;
+        }
+        set
+        {
+            m_gameOver = value;
+        }
 
-
+    }
 
     private LinkedList<PopupUI> m_activePopupList;
     private List<PopupUI> m_popupUIs;
@@ -85,7 +97,7 @@ public class PopUpManager : SingleToon<PopUpManager>
     {
         m_popupUIs = new List<PopupUI>()
         {
-            m_Esc,m_check,m_option
+            m_Esc,m_check,m_option,m_gameOver
         };
      
         foreach (var popup in m_popupUIs)

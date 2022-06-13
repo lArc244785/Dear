@@ -488,6 +488,9 @@ public class UnitPlayer : UnitBase
 
 
         GameManager.instance.ChaneGameState(GameManager.GameSate.GameOver);
+       // PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.gameOver);
+
+
         Debug.Log("��� �ִϸ��̼� ON");
 
     }

@@ -112,7 +112,6 @@ public class GameManager : SingleToon<GameManager>
 
     private void Start()
     {
-        
         gameState = m_gameState;
     }
 
@@ -186,7 +185,6 @@ public class GameManager : SingleToon<GameManager>
 
     public void Gotitle()
     {
-       
         gameState = GameSate.StageLoad;
         StartCoroutine(GotitleCorutine());
     }
