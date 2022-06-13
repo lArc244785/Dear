@@ -175,14 +175,14 @@ public class UnitPlayer : UnitBase
 
         SetLayer(defaultLayer);
 
-        footStepLoop = false;
-        m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
+        //footStepLoop = false;
+        //m_footStepLoopCoroutine = FootStepCoroutine(sound.footStepPlayTick);
 
 
         m_hpui = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
 
 
-        StartCoroutine(m_footStepLoopCoroutine);
+        //StartCoroutine(m_footStepLoopCoroutine);
 
 
 
@@ -347,45 +347,75 @@ public class UnitPlayer : UnitBase
 
 
 
-    private IEnumerator FootStepCoroutine(float tickTime)
+    //private IEnumerator FootStepCoroutine(float tickTime)
+    //{
+    //    float value;
+
+    //    while (true)
+    //    {
+    //        if (footStepLoop)
+    //        {
+    //            Collider2D coll = movementManager.groundSensor.GetGroundCollider2D();
+    //            if(coll != null)
+    //            {
+
+    //                GroundInfo info = coll.GetComponent<GroundInfo>();
+    //                Debug.Log("Foot " + info);
+
+
+    //                value = 0.0f;
+
+    //                if (info != null)
+    //                {
+    //                    if (info.type == GroundInfo.Type.Forest)
+    //                    {
+    //                        value = 1.0f;
+    //                    }
+    //                    else if (info.type == GroundInfo.Type.Fectory)
+    //                    {
+    //                        value = 2.0f;
+    //                    }
+    //                }
+
+    //                particleManager.MoveEffect(inputPlayer.moveDir.x);
+    //                sound.FootStep(value);
+    //            }
+
+
+    //        }
+    //        yield return new WaitForSeconds(tickTime);
+    //    }
+
+    //}
+
+    public void FootStep()
     {
         float value;
-
-        while (true)
+        Collider2D coll = movementManager.groundSensor.GetGroundCollider2D();
+        if (coll != null)
         {
-            if (footStepLoop)
+
+            GroundInfo info = coll.GetComponent<GroundInfo>();
+            Debug.Log("Foot " + info);
+
+
+            value = 0.0f;
+
+            if (info != null)
             {
-                Collider2D coll = movementManager.groundSensor.GetGroundCollider2D();
-                if(coll != null)
+                if (info.type == GroundInfo.Type.Forest)
                 {
-
-                    GroundInfo info = coll.GetComponent<GroundInfo>();
-                    Debug.Log("Foot " + info);
-
-
-                    value = 0.0f;
-
-                    if (info != null)
-                    {
-                        if (info.type == GroundInfo.Type.Forest)
-                        {
-                            value = 1.0f;
-                        }
-                        else if (info.type == GroundInfo.Type.Fectory)
-                        {
-                            value = 2.0f;
-                        }
-                    }
-
-                    particleManager.MoveEffect(inputPlayer.moveDir.x);
-                    sound.FootStep(value);
+                    value = 1.0f;
                 }
-
-
+                else if (info.type == GroundInfo.Type.Fectory)
+                {
+                    value = 2.0f;
+                }
             }
-            yield return new WaitForSeconds(tickTime);
-        }
 
+            particleManager.MoveEffect(inputPlayer.moveDir.x);
+            sound.FootStep(value);
+        }
     }
 
 
