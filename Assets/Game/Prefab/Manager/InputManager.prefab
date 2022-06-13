@@ -134,7 +134,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1220886431622341405}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnLeftMouseButton
+        m_MethodName: OnRightMouseButton
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1220886431622341405}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnRightMouseButton
+        m_MethodName: OnLeftMouseButton
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
