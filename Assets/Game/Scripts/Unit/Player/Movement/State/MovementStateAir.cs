@@ -6,7 +6,7 @@ public class MovementStateAir : I_MovementState
 {
     //private float lastGroundPoundLandingTime { set; get; }
 
-    private bool m_isGroundPoundLanding;
+    
 
     private enum GroundPoundType
     {
@@ -21,7 +21,7 @@ public class MovementStateAir : I_MovementState
             movementManager.player.animationManager.TriggerAir();
 
         currentGroundPoundType = GroundPoundType.None;
-        m_isGroundPoundLanding = false;
+        movementManager.isGroundPoundLanding = false;
     }
 
     public void Exit(PlayerMovementManager movementManager)
@@ -113,9 +113,11 @@ public class MovementStateAir : I_MovementState
 
     private void GroundPoundLanding(PlayerMovementManager movementManager)
     {
+        
         movementManager.player.GhostFrozen(movementManager.movementData.groundPoundLandingTime);
         currentGroundPoundType = GroundPoundType.None;
-        m_isGroundPoundLanding = true;
+
+        movementManager.isGroundPoundLanding = true;
     }
 
 
@@ -202,7 +204,7 @@ public class MovementStateAir : I_MovementState
         {
             movementManager.currentState = PlayerMovementManager.State.Ground;
 
-            if (!m_isGroundPoundLanding)
+            if (!movementManager.isGroundPoundLanding)
                 movementManager.player.particleManager.LandingEffect(movementManager.lastLookDir.x);
 
             Collider2D groundCollider = movementManager.groundSensor.GetGroundCollider2D();

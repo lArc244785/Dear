@@ -12,6 +12,34 @@ public class InteractionMoveObject : InteractionBase
     private Transform m_endPointTr;
     [SerializeField]
     private float m_moveTime;
+    [SerializeField]
+    private Ease m_moveEase;
+
+
+    [Header("Animation")]
+    [SerializeField]
+    private Animator m_ani;
+    [SerializeField]
+    private Transform m_aniTr;
+
+
+    private UnitPlayer m_player;
+
+    [Header("Sound")]
+    [SerializeField]
+    private FMODUnity.EventReference m_rideEvent;
+
+    [SerializeField]
+    private FMODUnity.EventReference m_moveEvent;
+
+    [SerializeField]
+    private FMODUnity.EventReference m_moveEndEvent;
+    [SerializeField]
+    private float m_moveTick;
+
+
+    private bool m_isMove = false;
+
 
     protected override void Enter(Collider2D collision)
     {
@@ -19,25 +47,68 @@ public class InteractionMoveObject : InteractionBase
             return;
 
         base.Enter(collision);
-        Move();
+
+        m_player = GameManager.instance.stageManager.player;
+
+        m_player.inputPlayer.SetControl(false);
+        m_player.rig2D.velocity = Vector2.zero;
+
+        m_player.rig2D.bodyType = RigidbodyType2D.Static;
+        m_player.transform.parent = m_aniTr;
+
+        m_ani.SetTrigger("Contact");
     }
 
 
-    private void Move()
+    public void Move()
     {
-        UnitPlayer player = GameManager.instance.stageManager.player;
-        player.transform.parent = m_moveObjectTr;
-        player.inputPlayer.SetControl(false);
+        m_isMove = true;
+
+        StartCoroutine(MoveSoundEventCoroutine());
 
 
         m_moveObjectTr.DOMove(m_endPointTr.position, m_moveTime).OnComplete(() =>
         {
-            GameManager.instance.stageManager.player.inputPlayer.SetControl(true);
+            m_player.inputPlayer.SetControl(true);
+            m_player.rig2D.bodyType = RigidbodyType2D.Dynamic;
+            m_player.transform.parent = null;
+
+
             m_isAction = true;
-        }).Play();
+            m_isMove = false;
+
+        }).SetEase(m_moveEase).Play();
+
+        Invoke("StopAnimation", m_moveTime - 0.4f);
 
     }
 
+    private void StopAnimation()
+    {
+        m_ani.SetTrigger("End");
+    }
+
+    public void RideSound()
+    {
+        SoundManager.instance.SoundOneShot(m_rideEvent);
+    }
+
+    private IEnumerator MoveSoundEventCoroutine()
+    {
+
+        while(m_isMove)
+        {
+            SoundManager.instance.SoundOneShot(m_moveEvent);
+
+            yield return new WaitForSeconds(m_moveTick);
+        }
+    }
+
+
+    public void MoveStopSound()
+    {
+        SoundManager.instance.SoundOneShot(m_moveEndEvent);
+    }
 
 
 }

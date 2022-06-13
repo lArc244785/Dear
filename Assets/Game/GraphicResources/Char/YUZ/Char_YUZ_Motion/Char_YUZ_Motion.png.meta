@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4e9ba6503a852342a097b000b121359
+guid: fa68166ba829e4649b330492821faa6f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -125,21 +125,6 @@ TextureImporter:
   - first:
       213: 8435456000666793841
     second: Char_YUZ_Motion40
-  - first:
-      213: 9032511160477716043
-    second: Char_YUZ_Motion41
-  - first:
-      213: 4966780687899872305
-    second: Char_YUZ_Motion42
-  - first:
-      213: 229140961922012585
-    second: Char_YUZ_Motion43
-  - first:
-      213: -4712657672305679400
-    second: Char_YUZ_Motion44
-  - first:
-      213: 3127640073032571304
-    second: Char_YUZ_Motion45
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1078,111 +1063,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion41
-      rect:
-        serializedVersion: 2
-        x: 493
-        y: 88
-        width: 80
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4e860e4b0de95d70800000000000000
-      internalID: 9032511160477716043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion42
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 80
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 13cca8378bc8de440800000000000000
-      internalID: 4966780687899872305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion43
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 1
-        width: 80
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a55ad6ad721e2300800000000000000
-      internalID: 229140961922012585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion44
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 1
-        width: 80
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d36336d0d6499eb0800000000000000
-      internalID: -4712657672305679400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Char_YUZ_Motion45
-      rect:
-        serializedVersion: 2
-        x: 247
-        y: 1
-        width: 80
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a91262531c976b20800000000000000
-      internalID: 3127640073032571304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1194,15 +1074,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Char_YUZ_Motion08: -4125336402734128470
+      Char_YUZ_Motion30: 3616471824193158861
       Char_YUZ_Motion26: 4681081872349250957
       Char_YUZ_Motion35: -6013709837675655480
+      Char_YUZ_Motion33: -8597743065030551365
+      Char_YUZ_Motion28: 6283888591410879027
+      Char_YUZ_Motion16: -8524655476627412773
+      Char_YUZ_Motion03: 278153108626645950
+      Char_YUZ_Motion20: -7531266568363512438
       Char_YUZ_Motion15: -2771122811869065181
-      Char_YUZ_Motion29: -3628290555540956815
+      Char_YUZ_Motion27: -3883954162337415483
       Char_YUZ_Motion04: 5379169739288804555
+      Char_YUZ_Motion24: -1419728893747152103
+      Char_YUZ_Motion29: -3628290555540956815
+      Char_YUZ_Motion10: -1569307697442120846
+      Char_YUZ_Motion01: 3751584990848129845
       Char_YUZ_Motion05: 5642514773755724296
+      Char_YUZ_Motion18: -6298272609090708994
       Char_YUZ_Motion34: 5211947371408044700
-      Char_YUZ_Motion43: 229140961922012585
+      Char_YUZ_Motion13: 2782597073788536386
       Char_YUZ_Motion11: 5837124788159526289
       Char_YUZ_Motion23: 3259890698733359715
       Char_YUZ_Motion31: -2304216928209375218
@@ -1211,35 +1101,20 @@ TextureImporter:
       Char_YUZ_Motion19: -1132203512783508396
       Char_YUZ_Motion37: -6326573073198316224
       Char_YUZ_Motion17: 6872697254624468897
+      Char_YUZ_Motion32: 7158309022343864666
+      Char_YUZ_Motion00: -3744056825682599936
       Char_YUZ_Motion25: 1093558845844302018
       Char_YUZ_Motion39: -4511871272036073568
       Char_YUZ_Motion07: -8040326069529516648
-      Char_YUZ_Motion02: 5853181653866414195
-      Char_YUZ_Motion28: 6283888591410879027
-      Char_YUZ_Motion33: -8597743065030551365
-      Char_YUZ_Motion06: 2068506854727126898
-      Char_YUZ_Motion30: 3616471824193158861
-      Char_YUZ_Motion45: 3127640073032571304
-      Char_YUZ_Motion03: 278153108626645950
-      Char_YUZ_Motion42: 4966780687899872305
-      Char_YUZ_Motion27: -3883954162337415483
-      Char_YUZ_Motion24: -1419728893747152103
-      Char_YUZ_Motion10: -1569307697442120846
-      Char_YUZ_Motion01: 3751584990848129845
-      Char_YUZ_Motion41: 9032511160477716043
-      Char_YUZ_Motion18: -6298272609090708994
-      Char_YUZ_Motion13: 2782597073788536386
-      Char_YUZ_Motion32: 7158309022343864666
-      Char_YUZ_Motion00: -3744056825682599936
-      Char_YUZ_Motion21: 4493651425641441597
       Char_YUZ_Motion40: 8435456000666793841
       Char_YUZ_Motion12: -545123428613845564
-      Char_YUZ_Motion14: -2761549453909195956
-      Char_YUZ_Motion22: 5022136681555309071
       Char_YUZ_Motion38: -4181759021753459208
-      Char_YUZ_Motion44: -4712657672305679400
-      Char_YUZ_Motion20: -7531266568363512438
-      Char_YUZ_Motion16: -8524655476627412773
+      Char_YUZ_Motion02: 5853181653866414195
+      Char_YUZ_Motion22: 5022136681555309071
+      Char_YUZ_Motion21: 4493651425641441597
+      Char_YUZ_Motion08: -4125336402734128470
+      Char_YUZ_Motion06: 2068506854727126898
+      Char_YUZ_Motion14: -2761549453909195956
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
