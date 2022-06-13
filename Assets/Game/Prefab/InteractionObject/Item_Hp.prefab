@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2950124009735881466}
   - component: {fileID: 2950124009735881413}
   - component: {fileID: 2950124009735881412}
+  - component: {fileID: 2122955338082974493}
   m_Layer: 0
   m_Name: Item_Hp
   m_TagString: Untagged
@@ -98,6 +99,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2122955338082974493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950124009735881415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f679d871b5b7f4ca343fe9125223ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundEvent:
+    Guid:
+      Data1: -1289815458
+      Data2: 1196908920
+      Data3: 564815498
+      Data4: 1190841713
+    Path: event:/ui/HPup
 --- !u!1 &2950124009906226105
 GameObject:
   m_ObjectHideFlags: 0
