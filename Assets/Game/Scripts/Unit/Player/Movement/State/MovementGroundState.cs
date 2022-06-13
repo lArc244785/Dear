@@ -7,7 +7,15 @@ public class MovementGroundState : I_MovementState
 
     public void Enter(PlayerMovementManager movementManager)
     {
-        movementManager.player.animationManager.TriggerLanding();
+        if(movementManager.isGroundPoundLanding)
+        {
+            movementManager.player.animationManager.TriggerGroundPoundLanding();
+        }
+        else
+        {
+            movementManager.player.animationManager.TriggerLanding();
+        }
+
         movementManager.SetGravity(movementManager.movementData.gravityScale);
         movementManager.jumpCount = 0;
     }

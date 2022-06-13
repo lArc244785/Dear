@@ -78,6 +78,9 @@ public class PlayerMovementManager : MonoBehaviour
 
     public bool isOnInteractionJumpObject { set; get; }
     public bool isInteractionJump { set; get; }
+
+
+    public bool isGroundPoundLanding { set; get; }
     #endregion
 
 
