@@ -50011,7 +50011,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_nextStageIndex: 3
+  m_nextStageIndex: 4
 --- !u!4 &1493837279
 Transform:
   m_ObjectHideFlags: 0
@@ -50812,6 +50812,10 @@ PrefabInstance:
       propertyPath: m_brainCam
       value: 
       objectReference: {fileID: 826581198836500910}
+    - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
+      propertyPath: m_stageBgm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
       propertyPath: m_stage_name
       value: "STAGE 1 : \uD3D0\uACF5\uC7A5"

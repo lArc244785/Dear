@@ -117984,6 +117984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3443493841322677705, guid: 56658b028e8aea24597943d3fd34cee7, type: 3}
+      propertyPath: m_currentBgm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9002323869998481305, guid: 56658b028e8aea24597943d3fd34cee7, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -121911,7 +121915,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_nextStageIndex: 5
+  m_nextStageIndex: 6
 --- !u!4 &1493837279
 Transform:
   m_ObjectHideFlags: 0
