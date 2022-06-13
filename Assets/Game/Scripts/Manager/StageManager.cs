@@ -24,6 +24,13 @@ public class StageManager : MonoBehaviour
 
     [SerializeField]
     private HpUI m_fullHPUI;
+    public HpUI fullHPUI
+    {
+        get
+        {
+            return m_fullHPUI;
+        }
+    }
 
 
     #region playerDirRight

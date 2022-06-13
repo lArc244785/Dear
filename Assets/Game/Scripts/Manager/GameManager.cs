@@ -332,6 +332,7 @@ public class GameManager : SingleToon<GameManager>
 
     public void Continue()
     {
+        m_stageManager.fullHPUI.initCnt = false;
         m_nextStageIndex = m_tempSave.stageIndex;
         gameState = GameSate.Load;
     }

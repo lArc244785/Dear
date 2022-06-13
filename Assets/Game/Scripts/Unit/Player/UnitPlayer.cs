@@ -236,8 +236,8 @@ public class UnitPlayer : UnitBase
     protected override void HitHp(int damage)
     {
         base.HitHp(damage);
-        health.OnDamage(damage);
         m_hpui.OnDamage(damage);
+        health.OnDamage(damage);
     }
 
     public void HealHp(int heal)
