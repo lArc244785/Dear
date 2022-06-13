@@ -93,7 +93,9 @@ public class ToolManager : MonoBehaviour
 
 
         currentActiveTool = ActiveToolType.None;
-        SetTool(ActiveToolType.GrappingGun);
+
+        if (GameManager.instance.IsGetGrapplingGun())
+            SetTool(ActiveToolType.GrappingGun);
     }
 
 
