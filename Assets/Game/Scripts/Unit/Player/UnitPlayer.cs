@@ -488,6 +488,13 @@ public class UnitPlayer : UnitBase
     {
         inputPlayer.SetControl(false);
         SetGhostLayer();
+
+
+
+
+
+
+        animationManager.TriggerDeath();
         model.sortingLayerName = "GameOver";
         movementManager.currentState = PlayerMovementManager.State.None;
         rig2D.gravityScale = 0.0f;
@@ -495,7 +502,7 @@ public class UnitPlayer : UnitBase
 
 
         GameManager.instance.ChaneGameState(GameManager.GameSate.GameOver);
-       // PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.gameOver);
+       
 
 
         Debug.Log("��� �ִϸ��̼� ON");

@@ -127945,6 +127945,10 @@ PrefabInstance:
       propertyPath: m_TrackedObjectOffset.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 659024029096338246, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 745369421}
     - target: {fileID: 2082077165944942826, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Name
       value: CameraManager

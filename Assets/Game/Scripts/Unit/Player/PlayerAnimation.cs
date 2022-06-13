@@ -81,6 +81,8 @@ public class PlayerAnimation : MonoBehaviour
 
 
 
+
+
     private void SetTrigger(string id)
     {
         m_animation.SetTrigger(id);
