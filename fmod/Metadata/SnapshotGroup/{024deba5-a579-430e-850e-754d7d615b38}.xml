@@ -8,6 +8,7 @@
 			<destination>{6bb4e6c5-840b-4cf2-94e7-3274a7f8f189}</destination>
 		</relationship>
 		<relationship name="items">
+			<destination>{c669b27c-6231-4c7f-b302-ce8576e1ba01}</destination>
 			<destination>{12b98a67-095a-4562-b17c-f7ee66166f59}</destination>
 		</relationship>
 	</object>
