@@ -123507,7 +123507,7 @@ PrefabInstance:
       objectReference: {fileID: 826581198836500910}
     - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
       propertyPath: m_stage_name
-      value: "\uD3D0\uACF5\uC7A5 \uB0B4\uBD80"
+      value: "STAGE 1 : \uD3D0\uACF5\uC7A5 \uB0B4\uBD80"
       objectReference: {fileID: 0}
     - target: {fileID: 4241520126860329966, guid: 45c42995c6ac05d47ab5916245de3f9b, type: 3}
       propertyPath: m_inputPlayer
