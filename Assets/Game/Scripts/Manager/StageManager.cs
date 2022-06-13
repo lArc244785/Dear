@@ -58,6 +58,7 @@ public class StageManager : MonoBehaviour
 
 
     [Header("Test")]
+    [SerializeField]
     private bool m_isTest;
     public bool isTest
     {
