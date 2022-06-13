@@ -40,13 +40,13 @@ public class HpUI : MonoBehaviour
         m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
         parent = GameObject.Find("Hpcontainer").transform;
 
-        Debug.Log(parent.childCount);
+       
 
         for(int i =0; i<parent.childCount; i++)
         {
             Destroy(parent.GetChild(i).gameObject);
         }
-        if (m_initCnt == true) return;
+      
         m_HP = new List<SingleHpUI>();
         for(int i = 0; i < m_playerHealth.hp; i++)
         {

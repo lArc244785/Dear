@@ -13,8 +13,7 @@ public class IngameHpUI : UI_ViewBase
     {
         base.Init();
         m_fullHPUI.GetComponent<HpUI>().init();
-        m_faceImg = transform.GetChild(2).GetComponent<FaceImage>();
-        m_faceImg.init();
+      
     }
     private void Update()
     {
