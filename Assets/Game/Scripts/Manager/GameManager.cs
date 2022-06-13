@@ -84,6 +84,8 @@ public class GameManager : SingleToon<GameManager>
 
         m_tempSave.stageIndex = -1;
         m_tempSave.savePos = Vector3.zero;
+        m_tempSave.hp = 6;
+
 
         return true;
     }
@@ -174,6 +176,7 @@ public class GameManager : SingleToon<GameManager>
 
     public void NextState(int index)
     {
+        TempSaveHp();
         stageManager.player.inputPlayer.SetControl(false);
         m_nextStageIndex = index;
         gameState = GameSate.StageLoad;
@@ -285,13 +288,19 @@ public class GameManager : SingleToon<GameManager>
     }
 
 
-    public void TempSave(Vector3 savePos)
+    public void TempSavePos(Vector3 savePos)
     {
         Debug.Log("SAVE:Temp Save");
         m_tempSave.stageIndex = SceneManager.GetActiveScene().buildIndex;
-        m_tempSave.hp = stageManager.player.health.hp;
         m_tempSave.savePos = savePos;
     }
+
+    public void TempSaveHp()
+    {
+        m_tempSave.hp = stageManager.player.health.hp;
+    }
+
+
 
     public bool CanLoad()
     {
@@ -301,8 +310,13 @@ public class GameManager : SingleToon<GameManager>
     public void LoadPos()
     {
         stageManager.player.transform.position = m_tempSave.savePos;
+    }
+
+    public void LoadHp()
+    {
         stageManager.player.health.SetHP(m_tempSave.hp);
     }
+
 
 
 }

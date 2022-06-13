@@ -54,9 +54,12 @@ public class StageManager : MonoBehaviour
         m_stageText.GetComponent<FadeText>().init();
 
         player.Init();
+        GameManager.instance.LoadHp();
+        
         cameraManager.Init();
         m_stageText.text = m_stage_name;
       
+       
 
         m_fullHPUI.init();
         m_fullHPUI.initCnt = true;
@@ -70,7 +73,7 @@ public class StageManager : MonoBehaviour
         }
         else if(m_isSave)
         {
-            GameManager.instance.TempSave(player.unitPos);
+            GameManager.instance.TempSavePos(player.unitPos);
         }
        SoundManager.instance.bgm.SetParamaterPrograss(m_bgmProgress);
     }

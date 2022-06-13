@@ -240,6 +240,13 @@ public class UnitPlayer : UnitBase
         m_hpui.OnDamage(damage);
     }
 
+    public void HealHp(int heal)
+    {
+        health.OnHeal(heal);
+        m_hpui.OnHeal(heal);
+    }
+
+
     protected override void HitUniqueEventUnit(UnitBase attackUnit)
     {
         base.HitUniqueEventUnit(attackUnit);
