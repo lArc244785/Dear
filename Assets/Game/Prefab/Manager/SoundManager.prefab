@@ -73,3 +73,10 @@ MonoBehaviour:
     Path: event:/music/stage/stage02
   m_prograssID: prograss
   m_hitIndexID: Hit_index
+  m_ambientEvent:
+    Guid:
+      Data1: 321810891
+      Data2: 1260256598
+      Data3: -1977935696
+      Data4: -1126173207
+    Path: event:/env/amb/stage00
