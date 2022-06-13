@@ -13,10 +13,10 @@
 	</object>
 	<object class="SpatialiserEffect" id="{7593540d-dda7-4223-a2f8-69266d4bde38}">
 		<property name="minimumDistance">
-			<value>350</value>
+			<value>0.100000001</value>
 		</property>
 		<property name="maximumDistance">
-			<value>500</value>
+			<value>30</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
@@ -26,6 +26,9 @@
 		</property>
 		<property name="userStereoSeparation">
 			<value>0</value>
+		</property>
+		<property name="userStereoAxis">
+			<value>-5.70692825</value>
 		</property>
 	</object>
 </objects>
