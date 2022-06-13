@@ -16,6 +16,13 @@ public class BossSpieder : EnemyBase
 {
     [SerializeField]
     private BossMovement m_bossMovmentTween;
+    public BossMovement bossMovementTween
+    {
+        get
+        {
+            return m_bossMovmentTween;
+        }
+    }
     [SerializeField]
     private PlayerSerch m_AreaCollider;
     public PlayerSerch areaCollider
