@@ -146,8 +146,8 @@ public class InputManager : SingleToon<InputManager>
             return;
         if (context.started)
         {
-            GameManager.instance.ChaneGameState(GameManager.GameSate.GameStart);
-            GameManager.instance.NextState(0);    
+            //GameManager.instance.ChaneGameState(GameManager.GameSate.GameStart);
+            GameManager.instance.GameStart();    
         }
     }
 

@@ -6,11 +6,18 @@ public class IngameHpUI : UI_ViewBase
 {
     [SerializeField]
     private GameObject m_fullHPUI;
+    [SerializeField]
+    private FaceImage m_faceImg;
   
     public override void Init()
     {
         base.Init();
         m_fullHPUI.GetComponent<HpUI>().init();
+      
+    }
+    private void Update()
+    {
+       // m_faceImg.imgUpdate();
     }
 
 

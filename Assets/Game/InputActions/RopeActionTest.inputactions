@@ -327,6 +327,28 @@
                     "action": "anyKey",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8de10f4c-5faa-4375-89ab-3f278f25a28d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "anyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "748bea5f-6893-49f4-986e-9c1245c5a66b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "anyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
