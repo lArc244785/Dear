@@ -44,6 +44,14 @@ public class GameManager : SingleToon<GameManager>
     private StageManager m_stageManager;
 
     private DeathProduction m_deathProduction;
+    public DeathProduction deathProduction
+    {
+        get
+        {
+            return m_deathProduction;
+        }
+    }
+
 
 
     public StageManager stageManager
@@ -114,7 +122,6 @@ public class GameManager : SingleToon<GameManager>
 
     private void Start()
     {
-        
         gameState = m_gameState;
     }
 
@@ -189,7 +196,6 @@ public class GameManager : SingleToon<GameManager>
 
     public void Gotitle()
     {
-       
         gameState = GameSate.StageLoad;
         StartCoroutine(GotitleCorutine());
     }
@@ -220,7 +226,7 @@ public class GameManager : SingleToon<GameManager>
         gameState = GameSate.GameStart;
     }
 
-
+    
 
 
     private IEnumerator SceneLoadCorutine(int index)
@@ -275,16 +281,21 @@ public class GameManager : SingleToon<GameManager>
     private IEnumerator GameOverProcessCoroutine()
     {
         UIManager.instance.AllToggleFase();
+
+        SoundManager.instance.bgm.BgmStop();
+        yield return new WaitForSeconds(0.5f);
+
+        m_deathProduction.SoundPlay();
+
         m_deathProduction.SetDeathBackGroundActive(true);
         Time.timeScale = 1.0f;
         yield return new WaitForSeconds(1.0f);
         stageManager.cameraManager.SetVitrualCamera("vcam_Death");
         yield return new WaitForSeconds(1.0f);
 
+        PopUpManager.instance.ToggleOpenClosePopup(PopUpManager.instance.gameOver);
 
-        m_nextStageIndex = m_tempSave.stageIndex;
-        ChaneGameState(GameSate.Load);
-        Time.timeScale = 1.0f;
+
 
         yield return null;
     }
@@ -319,6 +330,10 @@ public class GameManager : SingleToon<GameManager>
         stageManager.player.health.SetHP(m_tempSave.hp);
     }
 
-
+    public void Continue()
+    {
+        m_nextStageIndex = m_tempSave.stageIndex;
+        gameState = GameSate.Load;
+    }
 
 }

@@ -117992,6 +117992,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3443493841322677705, guid: 56658b028e8aea24597943d3fd34cee7, type: 3}
+      propertyPath: m_currentBgm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9002323869998481305, guid: 56658b028e8aea24597943d3fd34cee7, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -121927,7 +121931,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_nextStageIndex: 5
+  m_nextStageIndex: 6
 --- !u!4 &1493837279
 Transform:
   m_ObjectHideFlags: 0
@@ -127778,6 +127782,10 @@ PrefabInstance:
       propertyPath: m_TrackedObjectOffset.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 659024029096338246, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 745369421}
     - target: {fileID: 2082077165944942826, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Name
       value: CameraManager

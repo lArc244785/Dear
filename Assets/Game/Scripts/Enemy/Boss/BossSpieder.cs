@@ -108,8 +108,10 @@ public class BossSpieder : EnemyBase
         m_state[(int)BossSpiderState.CamOutMove] = new SpiderBossState.CamOutMove();
         m_state[(int)BossSpiderState.Dead] = new SpiderBossState.Die();
 
+
+       
         m_stateMachine = new StateMachine<BossSpieder>();
-        m_AreaCollider = GameObject.Find("playerSerchArea").GetComponent<PlayerSerch>();
+       // m_AreaCollider = GameObject.Find("playerSerchArea").GetComponent<PlayerSerch>();
         m_sound = GetComponent<SpiderBossSound>();
         m_sound.init();
 
@@ -143,9 +145,11 @@ public class BossSpieder : EnemyBase
         m_bossMovmentTween.SpiderBossMove_CamOut(areaCollider.player.transform.position.y
             - m_bossMovmentTween.camOutMoveDistance);
     }
-    public float PlayerDistance()
+    private float PlayerDistance()
     {
-        return areaCollider.player.transform.position.y - transform.position.y; 
+
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying) return 0;
+        return areaCollider.player.transform.position.y - this.transform.position.y; 
     }
     public void BossMovementExit()
     {

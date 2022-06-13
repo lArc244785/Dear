@@ -37,7 +37,6 @@ public class HpUI : MonoBehaviour
 
     public void init()
     {
-        if (GameManager.instance.gameState == GameManager.GameSate.Title) return;
         m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
         parent = GameObject.Find("Hpcontainer").transform;
         if (m_initCnt == true) return;

@@ -46,7 +46,10 @@ public class SoundManager : SingleToon<SoundManager>
 
     public void SoundStop(FMOD.Studio.EventInstance eventInstance)
     {
-        if (FMOD.Studio.PLAYBACK_STATE.PLAYING != GetPlayState(eventInstance))
+        FMOD.Studio.PLAYBACK_STATE state = GetPlayState(eventInstance);
+
+        if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED  ||
+            state == FMOD.Studio.PLAYBACK_STATE.STOPPING)
         {
             Debug.LogWarning("Sound Not Play : " + eventInstance);
             return;

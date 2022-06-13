@@ -4,7 +4,7 @@ public class Bgm : MonoBehaviour
 {
     public enum BgmType
     {
-        Forest, Factory, Total
+        None = -1, Forest, Factory, Boss, Total
     }
     [SerializeField]
     private BgmType m_currentBgm;
@@ -55,14 +55,14 @@ public class Bgm : MonoBehaviour
 
     public void BgmChange(BgmType type)
     {
-        if (type == m_currentBgm)
+        if (type == m_currentBgm || type == BgmType.None)
             return;
 
         float ambient = 0.0f;
 
         BgmStop();
         m_currentBgm = type;
-        if (m_currentBgm == BgmType.Factory)
+        if (m_currentBgm == BgmType.Factory || m_currentBgm == BgmType.Boss)
             ambient = 1.0f;
 
         SetParamaterAmbient(ambient);
@@ -71,13 +71,19 @@ public class Bgm : MonoBehaviour
 
     public void BgmStart()
     {
+        if (m_currentBgm == BgmType.None)
+            return;
+
         SoundManager.instance.SoundPlay(m_bgmInstances[(int)m_currentBgm]);
         SoundManager.instance.SoundPlay(m_ambientEventInstances);
     }
 
 
-    private void BgmStop()
+    public void BgmStop()
     {
+        if (m_currentBgm == BgmType.None)
+            return;
+
         SoundManager.instance.SoundStop(m_bgmInstances[(int)m_currentBgm]);
         SoundManager.instance.SoundStop(m_ambientEventInstances);
     }
@@ -97,5 +103,16 @@ public class Bgm : MonoBehaviour
     {
         m_ambientEventInstances.setParameterByID(m_parameterAmbient, value);
     }
+
+    public bool IsSoundStop()
+    {
+        if (m_currentBgm == BgmType.None)
+            return false;
+
+        FMOD.Studio.PLAYBACK_STATE state = SoundManager.instance.GetPlayState(m_bgmInstances[(int)m_currentBgm]);
+
+        return state == FMOD.Studio.PLAYBACK_STATE.STOPPED || state == FMOD.Studio.PLAYBACK_STATE.STOPPING;
+    }
+
 
 }

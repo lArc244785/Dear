@@ -71,6 +71,12 @@ MonoBehaviour:
       Data3: -2009030523
       Data4: -928073465
     Path: event:/music/stage/stage02
+  - Guid:
+      Data1: 1050117075
+      Data2: 1113056982
+      Data3: -272383351
+      Data4: 58723661
+    Path: event:/music/stage/stageBoss
   m_prograssID: prograss
   m_hitIndexID: Hit_index
   m_ambientEvent:

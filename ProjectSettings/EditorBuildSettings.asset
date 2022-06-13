@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/PG/Sh/Title.unity
+    guid: 2a2f9df551e73c04382478a54b13afac
+  - enabled: 1
     path: Assets/Game/Scenes/Level/Stage_1/Stage_1_1.unity
     guid: 89d85897d32a0e24697429a415b01105
   - enabled: 1
@@ -23,8 +26,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Level/Stage_1/Stage_1_3_4.unity
     guid: ae9f7ff3efce0cc44bd6ba6598e51529
-  - enabled: 1
-    path: Assets/Game/Scenes/Level/Stage_1/Stage_1_BossRoom.unity
-    guid: e276f69e8ceeb4b49a8237d1c07e2fdd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e82a0226f23cc9f4aa9bdbf5e197ead5, type: 2}

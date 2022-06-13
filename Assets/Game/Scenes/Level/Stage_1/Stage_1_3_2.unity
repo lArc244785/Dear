@@ -478,7 +478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54525430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.785645, y: 14.2339945, z: 0}
+  m_LocalPosition: {x: 52.646046, y: 13.900095, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -918,7 +918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542292124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30057824, y: -0.074849755, z: 0}
+  m_LocalPosition: {x: 0.23077825, y: -0.24179974, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23345,6 +23345,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3443493841322677705, guid: 56658b028e8aea24597943d3fd34cee7, type: 3}
+      propertyPath: m_currentBgm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9002323869998481305, guid: 56658b028e8aea24597943d3fd34cee7, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -24374,7 +24378,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_nextStageIndex: 4
+  m_nextStageIndex: 5
 --- !u!4 &1493837279
 Transform:
   m_ObjectHideFlags: 0
@@ -24749,7 +24753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814395963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.8, y: 13.7, z: 0}
+  m_LocalPosition: {x: 51.520798, y: 13.0322, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24890,7 +24894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920458849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 103.26901, y: 14.804801, z: 0}
+  m_LocalPosition: {x: 102.85021, y: 13.803101, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25275,17 +25279,21 @@ PrefabInstance:
       propertyPath: m_TrackedObjectOffset.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 659024029096338246, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 745369421}
     - target: {fileID: 2082077165944942826, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Name
       value: CameraManager
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026358882735, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.359999
+      value: -1.3999991
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026358882735, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.969999
+      value: 46.36
       objectReference: {fileID: 0}
     - target: {fileID: 2944663026669038112, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Follow
@@ -25302,6 +25310,14 @@ PrefabInstance:
     - target: {fileID: 2944663026669038113, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 44.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400770841770465921, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3999991
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400770841770465921, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 46.36
       objectReference: {fileID: 0}
     - target: {fileID: 6893961623670690412, guid: 66cb98e3d192ba34699fe520eb4907a2, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
