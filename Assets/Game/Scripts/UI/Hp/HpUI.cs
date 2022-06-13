@@ -39,6 +39,13 @@ public class HpUI : MonoBehaviour
     {
         m_playerHealth = GameObject.Find("Player").GetComponent<Health>();
         parent = GameObject.Find("Hpcontainer").transform;
+
+        Debug.Log(parent.childCount);
+
+        for(int i =0; i<parent.childCount; i++)
+        {
+            Destroy(parent.GetChild(i).gameObject);
+        }
         if (m_initCnt == true) return;
         m_HP = new List<SingleHpUI>();
         for(int i = 0; i < m_playerHealth.hp; i++)
@@ -59,7 +66,7 @@ public class HpUI : MonoBehaviour
     public void OnDamage(int dmg)
     {
         Debug.Log("체력 닳음");
-        if (m_playerHealth.hp == 0) return;
+        if (m_playerHealth.hp <= 0) return;
         for (int i = 0; i < dmg; i++)
         {
            
