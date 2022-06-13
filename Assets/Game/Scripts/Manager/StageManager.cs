@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
@@ -59,6 +57,17 @@ public class StageManager : MonoBehaviour
     private PopUpManager m_PopUpUI;
 
 
+    [Header("Test")]
+    private bool m_isTest;
+    public bool isTest
+    {
+        get
+        {
+            return m_isTest;
+        }
+
+    }
+
     private void Start()
     {
 
@@ -89,8 +98,8 @@ public class StageManager : MonoBehaviour
 
         cameraManager.Init();
         m_stageText.text = m_stage_name;
-      
-       
+
+
 
         m_fullHPUI.init();
         m_fullHPUI.initCnt = true;
@@ -98,11 +107,11 @@ public class StageManager : MonoBehaviour
         InputManager.instance.SetStage(player.inputPlayer, cameraManager.camera);
         player.Trun(playerDirRight);
 
-        if(GameManager.instance.CanLoad())
+        if (GameManager.instance.CanLoad())
         {
             GameManager.instance.LoadPos();
         }
-        else if(m_isSave)
+        else if (m_isSave)
         {
             GameManager.instance.TempSavePos(player.unitPos);
         }
@@ -118,7 +127,7 @@ public class StageManager : MonoBehaviour
         m_fullHPUI = GameObject.Find("Hpcontainer").GetComponent<HpUI>();
     }
 
-   
+
 
 
 
