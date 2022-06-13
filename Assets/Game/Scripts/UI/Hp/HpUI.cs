@@ -45,12 +45,11 @@ public class HpUI : MonoBehaviour
         {
             m_HP.Add(new SingleHpUI());
         }
-        foreach (var singleHp in m_HP)
+        for (int i = 0; i < m_playerHealth.hp; i++)
         {
+            Debug.Log("생성");
             Instantiate(m_hpPrefab, parent);
-        
         }
-        size = m_HP.Count;
     }
 
     private void Update()
