@@ -21,7 +21,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637907569593583971
+  lastModified: 637907701109877785
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -171,7 +171,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -595,7 +595,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters:
   - {fileID: 6648124307623785297}
@@ -699,7 +699,7 @@ MonoBehaviour:
   - {fileID: -539227402111353610}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: 2067341907023572767}
   MinDistance: 1
@@ -911,7 +911,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -8560472383153989564}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637907630203033091
+  lastModified: 637907701113418577
   FileSizes:
   - Name: Desktop
     Value: 38880
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637907569594884039
+  lastModified: 637907701113438586
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 3889745500680613162}
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637907569594694021
+  lastModified: 637907701112668414
   FileSizes:
   - Name: Desktop
     Value: 19810848
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637907630203033091
+  cacheTime: 637907701113438586
   cacheVersion: 10
 --- !u!114 &247293511808592093
 MonoBehaviour:
@@ -1878,7 +1878,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637907569593603993
+  lastModified: 637907701109897792
   FileSizes:
   - Name: Desktop
     Value: 4730
@@ -2009,7 +2009,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -2500,10 +2500,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637907630203013075
+  lastModified: 637907701113028491
   FileSizes:
   - Name: Desktop
-    Value: 3271648
+    Value: 3272416
   Exists: 1
 --- !u!114 &5225624307608652621
 MonoBehaviour:
@@ -2663,7 +2663,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -2796,11 +2796,11 @@ MonoBehaviour:
   - {fileID: 5206846048107690288}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 30000
+  Length: 26500
 --- !u!114 &7137917189489564406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2924,7 +2924,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 5206846048107690288}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -3051,7 +3051,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637907630202843064
+  lastModified: 637907701109907793
   FileSizes:
   - Name: Desktop
     Value: 5060
