@@ -36,17 +36,19 @@ public class Health : MonoBehaviour
 
     }
 
-    public void OnRecovery(int recovery)
+    public void OnHeal(int heal)
     {
-        hp = recovery;
+        hp += heal;
         
     }
 
     public void OnDamage(int damage)
     {
-        hp -= damage;
-       
+        hp -= damage;  
     }
+
+    
+
 
     public void SetHP(int hp)
     {
