@@ -95,8 +95,7 @@ public class BossMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.gameState == GameManager.GameSate.GameOver||
-            GameManager.instance.gameState == GameManager.GameSate.StageLoad)
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
             TweenReset();
     }
 
