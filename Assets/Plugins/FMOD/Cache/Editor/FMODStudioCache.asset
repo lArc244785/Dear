@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637907440146382401
+  lastModified: 637907494244481635
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -360,6 +360,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 744
+--- !u!114 &-7003921664619832111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/lotusLeaf_move_end
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/lotusLeaf_move_end
+  Guid:
+    Data1: 1257079111
+    Data2: 1326244105
+    Data3: -825042537
+    Data4: 954193446
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1400
 --- !u!114 &-6937164433100599755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,7 +726,7 @@ MonoBehaviour:
   - {fileID: -539227402111353610}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters:
   - {fileID: 2067341907023572767}
   MinDistance: 1
@@ -1037,7 +1064,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637907440149744609
+  lastModified: 637907494332599017
   FileSizes:
   - Name: Desktop
     Value: 26592
@@ -1378,7 +1405,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637907440149754616
+  lastModified: 637907494297052406
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1473,7 +1500,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637907440149454541
+  lastModified: 637907494294811901
   FileSizes:
   - Name: Desktop
     Value: 19810848
@@ -1586,6 +1613,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 248
+--- !u!114 &-37410937001826856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/lotusLeaf_moving
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/lotusLeaf_moving
+  Guid:
+    Data1: 446743506
+    Data2: 1095583577
+    Data3: -1800354682
+    Data4: -10961570
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,7 +1664,6 @@ MonoBehaviour:
   - {fileID: -3424647561777957509}
   - {fileID: -2802732121358206989}
   - {fileID: -1936575774321902206}
-  - {fileID: 5370142671418089140}
   - {fileID: -7379603922575109734}
   - {fileID: -4131019110255668963}
   - {fileID: -1570960029425259804}
@@ -1667,12 +1720,15 @@ MonoBehaviour:
   - {fileID: -7516246461790296880}
   - {fileID: 6371002832739916490}
   - {fileID: 7262211916516662076}
+  - {fileID: 8407434324746502182}
+  - {fileID: -7003921664619832111}
+  - {fileID: -37410937001826856}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637907440149754616
+  cacheTime: 637907494332599017
   cacheVersion: 10
 --- !u!114 &247293511808592093
 MonoBehaviour:
@@ -1821,10 +1877,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637907440146402411
+  lastModified: 637907494244641678
   FileSizes:
   - Name: Desktop
-    Value: 5642
+    Value: 4730
   Exists: 1
 --- !u!114 &1373292245210737418
 MonoBehaviour:
@@ -2416,10 +2472,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637907440149724605
+  lastModified: 637907494331678769
   FileSizes:
   - Name: Desktop
-    Value: 3149568
+    Value: 3289856
   Exists: 1
 --- !u!114 &5225624307608652621
 MonoBehaviour:
@@ -2475,33 +2531,6 @@ MonoBehaviour:
   MinDistance: 350
   MaxDistance: 500
   Length: 1420
---- !u!114 &5370142671418089140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Indoor_state/Indoor_SFX_Reverb
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Indoor_state/Indoor_SFX_Reverb
-  Guid:
-    Data1: -11331189
-    Data2: 1209686290
-    Data3: -340911180
-    Data4: -169885291
-  Banks:
-  - {fileID: 1058050915198027970}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &5405481364169010571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2712,7 +2741,7 @@ MonoBehaviour:
   - {fileID: 5206846048107690288}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -2874,6 +2903,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8407434324746502182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/lotusLeaf_ride
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/lotusLeaf_ride
+  Guid:
+    Data1: -768372960
+    Data2: 1263583102
+    Data3: -1703854201
+    Data4: 113410183
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1240
 --- !u!114 &8430155514934445113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,8 +3023,8 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637907440146412416
+  lastModified: 637907494244671678
   FileSizes:
   - Name: Desktop
-    Value: 4920
+    Value: 5026
   Exists: 1
