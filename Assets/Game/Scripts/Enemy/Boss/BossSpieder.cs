@@ -43,6 +43,15 @@ public class BossSpieder : EnemyBase
             m_animator = value;
         }
     }
+    [SerializeField]
+    private float m_bossMovementDelay;
+    public float bossMovementDelay
+    {
+        get
+        {
+            return m_bossMovementDelay;
+        }
+    }
 
     private State<BossSpieder>[] m_state;
     private StateMachine<BossSpieder> m_stateMachine;
@@ -61,6 +70,25 @@ public class BossSpieder : EnemyBase
             m_camOut = value;
         }
     }
+    private SpiderBossSound m_sound;
+    public SpiderBossSound sound
+    {
+        get
+        {
+            return m_sound;
+        }
+       
+    }
+    [SerializeField]
+    private PlayerExit m_isPlayerExit;
+    public PlayerExit isPlayerExit
+    {
+        get
+        {
+            return m_isPlayerExit;
+        }
+    }
+
     public void OnEnable()
     {
         Init();
@@ -82,6 +110,8 @@ public class BossSpieder : EnemyBase
 
         m_stateMachine = new StateMachine<BossSpieder>();
         m_AreaCollider = GameObject.Find("playerSerchArea").GetComponent<PlayerSerch>();
+        m_sound = GetComponent<SpiderBossSound>();
+        m_sound.init();
 
         m_camOut = false;
 
@@ -117,4 +147,13 @@ public class BossSpieder : EnemyBase
     {
         return areaCollider.player.transform.position.y - transform.position.y; 
     }
+    public void BossMovementExit()
+    {
+        m_bossMovmentTween.SpiderBossMove_Exit();
+    }
+    public bool PlayerExit()
+    {
+        return m_isPlayerExit.isPlayerExit;
+    }
+
 }

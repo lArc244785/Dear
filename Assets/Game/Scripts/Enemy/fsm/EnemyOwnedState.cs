@@ -270,13 +270,15 @@ namespace SpiderBossState
         static float s_curdelay;
         public override void Enter(BossSpieder enemy)
         {
+            enemy.sound.Amb();
             s_curdelay = 0;
 
         }
         public override void Excute(BossSpieder enemy)
         {
+           // if (enemy.PlayerExit().Equals(true)) enemy.ChangeState(BossSpiderState.Dead);
             s_curdelay += Time.deltaTime;
-            if (s_curdelay >= 2)
+            if (s_curdelay >= enemy.bossMovementDelay)
             {
                  if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
                   enemy.ChangeState(BossSpiderState.SlowMove);
@@ -294,6 +296,7 @@ namespace SpiderBossState
         public override void Enter(BossSpieder enemy)
         {
 
+            enemy.sound.LeftArm();
             enemy.animator.SetBool("MoveOn", true);
             s_curdelay = 0;
             enemy.BossMovementFast();
@@ -301,9 +304,10 @@ namespace SpiderBossState
         public override void Excute(BossSpieder enemy)
         {
 
+            if (enemy.PlayerExit().Equals(true)) enemy.ChangeState(BossSpiderState.Dead);
             if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
             s_curdelay += Time.deltaTime;
-            if (s_curdelay >= 1)
+            if (s_curdelay >= enemy.bossMovementDelay)
             {
 
                 enemy.ChangeState(BossSpiderState.SlowMove);
@@ -320,6 +324,8 @@ namespace SpiderBossState
 
         public override void Enter(BossSpieder enemy)
         {
+
+            enemy.sound.RightArm();
             enemy.animator.SetBool("MoveOn", true);
             s_curdelay = 0;
             enemy.BossMovementSlow();
@@ -327,9 +333,10 @@ namespace SpiderBossState
         public override void Excute(BossSpieder enemy)
         {
 
+            if (enemy.PlayerExit()) enemy.ChangeState(BossSpiderState.Dead);
             if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
             s_curdelay += Time.deltaTime;
-            if (s_curdelay >= 1)
+            if (s_curdelay >= enemy.bossMovementDelay)
             {
 
                 enemy.ChangeState(BossSpiderState.FastMove);
@@ -345,14 +352,17 @@ namespace SpiderBossState
         static float s_curdelay;
         public override void Enter(BossSpieder enemy)
         {
+
+            enemy.sound.MoveUp();
             s_curdelay = 0;
             enemy.animator.SetBool("MoveOn", true);
             enemy.BossMovementCamOut();
         }
         public override void Excute(BossSpieder enemy)
         {
+            if (enemy.PlayerExit().Equals(true)) enemy.ChangeState(BossSpiderState.Dead);
             s_curdelay += Time.deltaTime;
-            if (s_curdelay >= 1)
+            if (s_curdelay >= enemy.bossMovementDelay)
             {
                if (enemy.camOut) enemy.ChangeState(BossSpiderState.CamOutMove);
                else  enemy.ChangeState(BossSpiderState.FastMove);
@@ -369,10 +379,13 @@ namespace SpiderBossState
     {
         public override void Enter(BossSpieder enemy)
         {
+            enemy.sound.PassWay();
+            enemy.BossMovementExit();
         }
         public override void Excute(BossSpieder enemy)
         {
-        }
+           
+          }
         public override void Exit(BossSpieder enemy)
         {
         }

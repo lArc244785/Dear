@@ -105,6 +105,11 @@ public class BossMovement : MonoBehaviour
     {
         m_moveTween = transform.DOMoveY(pos, m_slowtime).SetEase(m_movementCurve).Play();
     }
+    public void SpiderBossMove_Exit()
+    {
+        m_moveTween = transform.DOLocalMoveY(m_slowdistance+120, m_slowtime*7).SetRelative().SetEase(Ease.OutExpo).SetRelative().Play();
+
+    }
 
 
 }
