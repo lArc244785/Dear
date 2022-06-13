@@ -128,9 +128,20 @@ public class BossSpieder : EnemyBase
     }
     private void Update()
     {
+        if (GameManager.instance.stageManager.player.IsDead())
+        {
+            sound.AmbStop();
+            BossSpieder bs = this;
+            bs.enabled = false;
+            return;
+        }
+
         m_stateMachine.Excute();
         if (PlayerDistance() >= m_bossMovmentTween.camOutdistance) m_camOut = true;
         else m_camOut = false;
+
+
+
     }
 
     public void ChangeState(BossSpiderState newState)
