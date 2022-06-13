@@ -32,12 +32,13 @@ public class UIManager : SingleToon<UIManager>
             m_uiList.Add(loadingView);
             produtionView.Init();
             m_uiList.Add(produtionView);
+            m_mosueCursor.Init();
             m_ingameUIView.Init();
             m_uiList.Add(m_ingameUIView);
             m_titleView.Init();
             m_uiList.Add(m_titleView);
 
-            m_mosueCursor.Init();
+
         }
         return returnValue;
     }

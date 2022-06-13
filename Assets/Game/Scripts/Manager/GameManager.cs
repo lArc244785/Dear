@@ -112,8 +112,8 @@ public class GameManager : SingleToon<GameManager>
 
     private void Start()
     {
-        //NextState(1);
-        gameState = GameSate.GameStart;
+        
+        gameState = m_gameState;
     }
 
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bgm : MonoBehaviour
@@ -23,19 +21,32 @@ public class Bgm : MonoBehaviour
     private FMOD.Studio.PARAMETER_ID[] m_parameterPrograss;
     private FMOD.Studio.PARAMETER_ID[] m_parameterHitIndexIDs;
 
+
+    [Header("Ambient")]
+    [SerializeField]
+    private FMODUnity.EventReference m_ambientEvent;
+    private FMOD.Studio.EventInstance m_ambientEventInstances;
+    private FMOD.Studio.PARAMETER_ID m_parameterAmbient;
+
+    private string m_ambientID = "inout_index";
+
+
     public void Init()
     {
         m_bgmInstances = new FMOD.Studio.EventInstance[(int)BgmType.Total];
         m_parameterPrograss = new FMOD.Studio.PARAMETER_ID[(int)BgmType.Total];
         m_parameterHitIndexIDs = new FMOD.Studio.PARAMETER_ID[(int)BgmType.Total];
 
-        for (int i = 0; i < m_bgmEvents.Length ; i ++)
+        for (int i = 0; i < m_bgmEvents.Length; i++)
         {
             m_bgmInstances[i] = FMODUnity.RuntimeManager.CreateInstance(m_bgmEvents[i]);
             SoundManager.instance.GetID(m_bgmInstances[i], m_prograssID, out m_parameterPrograss[i]);
             SoundManager.instance.GetID(m_bgmInstances[i], m_hitIndexID, out m_parameterHitIndexIDs[i]);
         }
-        
+
+
+        m_ambientEventInstances = FMODUnity.RuntimeManager.CreateInstance(m_ambientEvent);
+        SoundManager.instance.GetID(m_ambientEventInstances, m_ambientID, out m_parameterAmbient);
 
 
         BgmStart();
@@ -47,19 +58,28 @@ public class Bgm : MonoBehaviour
         if (type == m_currentBgm)
             return;
 
+        float ambient = 0.0f;
+
         BgmStop();
         m_currentBgm = type;
+        if (m_currentBgm == BgmType.Factory)
+            ambient = 1.0f;
+
+        SetParamaterAmbient(ambient);
         BgmStart();
     }
 
     public void BgmStart()
     {
         SoundManager.instance.SoundPlay(m_bgmInstances[(int)m_currentBgm]);
+        SoundManager.instance.SoundPlay(m_ambientEventInstances);
     }
+
 
     private void BgmStop()
     {
         SoundManager.instance.SoundStop(m_bgmInstances[(int)m_currentBgm]);
+        SoundManager.instance.SoundStop(m_ambientEventInstances);
     }
 
 
@@ -73,5 +93,9 @@ public class Bgm : MonoBehaviour
         m_bgmInstances[(int)m_currentBgm].setParameterByID(m_parameterHitIndexIDs[(int)m_currentBgm], value);
     }
 
+    public void SetParamaterAmbient(float value)
+    {
+        m_ambientEventInstances.setParameterByID(m_parameterAmbient, value);
+    }
 
 }
