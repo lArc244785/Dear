@@ -14,6 +14,7 @@ public class GameOverUIBtn : MonoBehaviour
     }
     public void ReTryBtn()
     {
+      
         PopUpManager.instance.ClosePopup(PopUpManager.instance.gameOver);
         GameManager.instance.Continue();
     }

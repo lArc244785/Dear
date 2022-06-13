@@ -55,6 +55,8 @@ public class StageManager : MonoBehaviour
     [Header("Save")]
     [SerializeField]
     private bool m_isSave;
+    [SerializeField]
+    private PopUpManager m_PopUpUI;
 
 
     private void Start()
@@ -82,7 +84,9 @@ public class StageManager : MonoBehaviour
 
         player.Init();
         GameManager.instance.LoadHp();
-        
+
+        if (GameObject.Find("PopUpUIManager") == null) Instantiate(m_PopUpUI);
+
         cameraManager.Init();
         m_stageText.text = m_stage_name;
       

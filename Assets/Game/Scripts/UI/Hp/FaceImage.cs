@@ -7,6 +7,7 @@ public class FaceImage : MonoBehaviour
 {
     [SerializeField]
     private Sprite m_highHPimage;
+
     [SerializeField]
     private Sprite m_midleHPimage;
     [SerializeField]
@@ -17,15 +18,19 @@ public class FaceImage : MonoBehaviour
     [SerializeField]
     private Image faceImage;
 
-    private void Awake()
+   
+    public void init()
     {
         m_playerHp = GameObject.Find("Player").GetComponent<Health>();
+        faceImage = GameObject.Find("faceImage").GetComponent<Image>();
+        faceImage.sprite = m_highHPimage;
     }
-
-    private void Update()
+  
+    public void imgUpdate()
     {
+        
         if (m_playerHp.hp >= 4) faceImage.sprite = m_highHPimage;
-        else if (m_playerHp.hp < 2)faceImage.sprite = m_lowHPimage;
+        else if (m_playerHp.hp < 2) faceImage.sprite = m_lowHPimage;
         else faceImage.sprite = m_midleHPimage;
     }
 
