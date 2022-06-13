@@ -128,6 +128,14 @@ public class PlayerSound : MonoBehaviour
         SoundManager.instance.SoundPlay(m_footStepInstance);
     }
 
+    public void SetFootStopIndex(float index)
+    {
+        m_footStepInstance.setParameterByID(m_footStepID, index);
+    }
+    
+
+
+
     public void Jump()
     {
         SoundManager.instance.SoundOneShot(m_jumpEvent);
