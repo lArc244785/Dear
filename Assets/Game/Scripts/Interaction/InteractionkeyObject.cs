@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractionkeyObject : InteractionBase
 {
@@ -11,6 +12,8 @@ public class InteractionkeyObject : InteractionBase
 
     UnitPlayer m_player;
 
+    [SerializeField]
+    private GetTool m_getTool;
 
 
     private void Awake()
@@ -31,6 +34,9 @@ public class InteractionkeyObject : InteractionBase
 
         m_player.interaction.AddInteraction(m_onInteractionEvent.InteractionEvent);
         m_player.interaction.AddInteraction(OffInteracion);
+        if (m_getTool != null)
+            m_player.interaction.AddInteraction(m_getTool.Get);
+
 
         m_onInteractionObject.SetActive(true);
 

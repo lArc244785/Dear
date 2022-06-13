@@ -72,7 +72,8 @@ public class GameManager : SingleToon<GameManager>
     {
         public int stageIndex;
         public int hp;
-        public Vector3 savePos; 
+        public Vector3 savePos;
+        public bool isGetGrappling;
     }
 
     private PlayerTempSave m_tempSave;
@@ -93,7 +94,7 @@ public class GameManager : SingleToon<GameManager>
         m_tempSave.stageIndex = -1;
         m_tempSave.savePos = Vector3.zero;
         m_tempSave.hp = 6;
-
+        m_tempSave.isGetGrappling = false;
 
         return true;
     }
@@ -189,6 +190,12 @@ public class GameManager : SingleToon<GameManager>
         m_nextStageIndex = index;
         gameState = GameSate.StageLoad;
 
+    }
+
+    public void GameStart()
+    {
+        m_nextStageIndex = 1;
+        gameState = GameSate.StageLoad;
     }
 
 
@@ -336,5 +343,16 @@ public class GameManager : SingleToon<GameManager>
         m_nextStageIndex = m_tempSave.stageIndex;
         gameState = GameSate.Load;
     }
+
+    public bool IsGetGrapplingGun()
+    {
+       return m_tempSave.isGetGrappling;
+    }
+
+    public void GetGrapplingGun()
+    {
+        m_tempSave.isGetGrappling = true;
+    }
+
 
 }
