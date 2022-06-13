@@ -94,6 +94,13 @@ public class PlayerAnimationManager : MonoBehaviour
         SetTrigger("GroundPound");
     }
 
+    public void TriggerGroundPoundLanding()
+    {
+        ResetAllTrigger();
+        SetTrigger("GroundPoundLanding");
+    }
+
+
 
     private void SetTrigger(string id)
     {

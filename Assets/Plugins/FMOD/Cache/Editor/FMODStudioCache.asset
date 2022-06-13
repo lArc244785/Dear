@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 637906423979696807
+  lastModified: 637907509324104870
   FileSizes:
   - Name: Desktop
     Value: 3502336
@@ -232,6 +232,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7516246461790296880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/Boss/Boss_MoveUp
+  m_EditorClassIdentifier: 
+  Path: event:/game/Boss/Boss_MoveUp
+  Guid:
+    Data1: -955653421
+    Data2: 1198265854
+    Data3: 1821602986
+    Data4: 413675888
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1600
 --- !u!114 &-7502982796050061030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +360,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 744
+--- !u!114 &-7003921664619832111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/lotusLeaf_move_end
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/lotusLeaf_move_end
+  Guid:
+    Data1: 1257079111
+    Data2: 1326244105
+    Data3: -825042537
+    Data4: 954193446
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1400
 --- !u!114 &-6937164433100599755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,10 +1064,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637905851387004656
+  lastModified: 637907509330606321
   FileSizes:
   - Name: Desktop
-    Value: 9984
+    Value: 26592
   Exists: 1
 --- !u!114 &-2802732121358206989
 MonoBehaviour:
@@ -1043,6 +1097,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 55998
+--- !u!114 &-2632930400262455285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/stageBoss/Hit_index
+  m_EditorClassIdentifier: 
+  Name: Hit_index
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1847105283
+    data2: 2769511384
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2599608170771549015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,7 +1405,7 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/no_use.bank
   Name: no_use
   StudioPath: bank:/no_use
-  lastModified: 637906423980259892
+  lastModified: 637907509327425603
   FileSizes:
   - Name: Desktop
     Value: 38144
@@ -1422,10 +1500,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637906423980113094
+  lastModified: 637907509326435391
   FileSizes:
   - Name: Desktop
-    Value: 11125824
+    Value: 19810848
   Exists: 1
 --- !u!114 &-477331076014990808
 MonoBehaviour:
@@ -1535,6 +1613,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 248
+--- !u!114 &-37410937001826856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/lotusLeaf_moving
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/lotusLeaf_moving
+  Guid:
+    Data1: 446743506
+    Data2: 1095583577
+    Data3: -1800354682
+    Data4: -10961570
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,7 +1664,6 @@ MonoBehaviour:
   - {fileID: -3424647561777957509}
   - {fileID: -2802732121358206989}
   - {fileID: -1936575774321902206}
-  - {fileID: 5370142671418089140}
   - {fileID: -7379603922575109734}
   - {fileID: -4131019110255668963}
   - {fileID: -1570960029425259804}
@@ -1608,13 +1712,51 @@ MonoBehaviour:
   - {fileID: -6189862724677085161}
   - {fileID: 5028008659598689220}
   - {fileID: -616628347409551425}
+  - {fileID: 2996205652560629560}
+  - {fileID: 6747186528836466632}
+  - {fileID: 247293511808592093}
+  - {fileID: 3072111226260810988}
+  - {fileID: 962828471675453553}
+  - {fileID: -7516246461790296880}
+  - {fileID: 6371002832739916490}
+  - {fileID: 7262211916516662076}
+  - {fileID: 8407434324746502182}
+  - {fileID: -7003921664619832111}
+  - {fileID: -37410937001826856}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1058050915198027970}
   StringsBanks:
   - {fileID: 9095012795226390954}
-  cacheTime: 637906423980259892
+  cacheTime: 637907509330606321
   cacheVersion: 10
+--- !u!114 &247293511808592093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/Boss/Boss_LegR
+  m_EditorClassIdentifier: 
+  Path: event:/game/Boss/Boss_LegR
+  Guid:
+    Data1: -982870953
+    Data2: 1202590878
+    Data3: -121271634
+    Data4: -1182911839
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1700
 --- !u!114 &397148116521282081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,6 +1835,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7800
+--- !u!114 &962828471675453553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/Boss/Boss_Amb
+  m_EditorClassIdentifier: 
+  Path: event:/game/Boss/Boss_Amb
+  Guid:
+    Data1: -822817880
+    Data2: 1253808360
+    Data3: -1381811836
+    Data4: 371156936
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &1058050915198027970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,10 +1877,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637905851385385043
+  lastModified: 637907509324294900
   FileSizes:
   - Name: Desktop
-    Value: 4878
+    Value: 4730
   Exists: 1
 --- !u!114 &1373292245210737418
 MonoBehaviour:
@@ -1893,6 +2062,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &2996205652560629560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/States/Boss_getaway
+  m_EditorClassIdentifier: 
+  Path: snapshot:/States/Boss_getaway
+  Guid:
+    Data1: -966151556
+    Data2: 1283416625
+    Data3: -2050096461
+    Data4: 29024630
+  Banks:
+  - {fileID: 1058050915198027970}
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &3009692524156255757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,6 +2117,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140
+--- !u!114 &3072111226260810988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/Boss/Boss_LegL
+  m_EditorClassIdentifier: 
+  Path: event:/game/Boss/Boss_LegL
+  Guid:
+    Data1: 1803128688
+    Data2: 1231129419
+    Data3: 1362977971
+    Data4: -435572325
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1700
 --- !u!114 &3232642329404622958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,10 +2472,10 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637906423980229884
+  lastModified: 637907509330016189
   FileSizes:
   - Name: Desktop
-    Value: 2402560
+    Value: 3271648
   Exists: 1
 --- !u!114 &5225624307608652621
 MonoBehaviour:
@@ -2307,33 +2531,6 @@ MonoBehaviour:
   MinDistance: 350
   MaxDistance: 500
   Length: 1420
---- !u!114 &5370142671418089140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Indoor_state/Indoor_SFX_Reverb
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Indoor_state/Indoor_SFX_Reverb
-  Guid:
-    Data1: -11331189
-    Data2: 1209686290
-    Data3: -340911180
-    Data4: -169885291
-  Banks:
-  - {fileID: 1058050915198027970}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &5405481364169010571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,6 +2641,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1212
+--- !u!114 &6371002832739916490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ui/Mouseover
+  m_EditorClassIdentifier: 
+  Path: event:/ui/Mouseover
+  Guid:
+    Data1: -1365914096
+    Data2: 1112569695
+    Data3: -1906917471
+    Data4: 676720004
+  Banks:
+  - {fileID: -3028857787396157903}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 147
 --- !u!114 &6543505234794622578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2495,6 +2719,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &6747186528836466632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/Boss/Boss_Passaway
+  m_EditorClassIdentifier: 
+  Path: event:/game/Boss/Boss_Passaway
+  Guid:
+    Data1: -977060084
+    Data2: 1269645343
+    Data3: 1255372990
+    Data4: -438345780
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
 --- !u!114 &7137917189489564406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2517,11 +2768,39 @@ MonoBehaviour:
   - {fileID: -539227402111353610}
   IsStream: 1
   Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2632930400262455285}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7262211916516662076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ui/Button_click
+  m_EditorClassIdentifier: 
+  Path: event:/ui/Button_click
+  Guid:
+    Data1: -618051503
+    Data2: 1263884554
+    Data3: -238162260
+    Data4: -163521255
+  Banks:
+  - {fileID: -3028857787396157903}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 97764
+  Length: 142
 --- !u!114 &7643015463839910659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2624,6 +2903,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8407434324746502182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/game/general/lotusLeaf_ride
+  m_EditorClassIdentifier: 
+  Path: event:/game/general/lotusLeaf_ride
+  Guid:
+    Data1: -768372960
+    Data2: 1263583102
+    Data3: -1703854201
+    Data4: 113410183
+  Banks:
+  - {fileID: 5206846048107690288}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1240
 --- !u!114 &8430155514934445113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2717,8 +3023,8 @@ MonoBehaviour:
   Path: fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637906423979726812
+  lastModified: 637907509324324919
   FileSizes:
   - Name: Desktop
-    Value: 4486
+    Value: 5026
   Exists: 1
