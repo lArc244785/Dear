@@ -32,6 +32,8 @@ public class InteractionFalling : InteractionBase
     [SerializeField]
     private FMODUnity.EventReference m_impactEvent;
 
+    private bool m_isFalling;
+
 
     protected override void Enter(Collider2D collision)
     {
@@ -43,7 +45,7 @@ public class InteractionFalling : InteractionBase
         m_enterTime = Time.time;
         m_evnetRun = true;
         m_trapActive = false;
-
+        m_isFalling = false;
         SoundManager.instance.SoundOneShot(m_shakeEvent);
     }
 
@@ -54,22 +56,45 @@ public class InteractionFalling : InteractionBase
 
     private void Update()
     {
-        if(m_evnetRun)
+
+        if (m_evnetRun)
         {
             float runTime = Time.time - m_enterTime;
             if(runTime >= m_eventTime)
             {
                 m_rig2D.bodyType = RigidbodyType2D.Dynamic;
                 SoundManager.instance.SoundOneShot(m_impactEvent);
-
+                m_isFalling = true;
                 if (m_isReset)
                     Invoke("Reset", m_resetTime);
                 m_evnetRun = false;
+                StartCoroutine(FallingCheckEventCoroutine());
             }
 
 
         }
     }
+
+    private IEnumerator FallingCheckEventCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+
+        while (m_isFalling)
+        {
+            if (m_rig2D.bodyType == RigidbodyType2D.Dynamic)
+            {
+                if (m_rig2D.velocity.y >= 0.0f)
+                {
+                    m_isFalling = false;
+                    m_rig2D.bodyType = RigidbodyType2D.Static;
+                }
+            }
+            yield return null;
+        }
+    }
+
+
 
     private void Reset()
     {

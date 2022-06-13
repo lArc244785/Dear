@@ -16,6 +16,13 @@ public class BossSpieder : EnemyBase
 {
     [SerializeField]
     private BossMovement m_bossMovmentTween;
+    public BossMovement bossMovementTween
+    {
+        get
+        {
+            return m_bossMovmentTween;
+        }
+    }
     [SerializeField]
     private PlayerSerch m_AreaCollider;
     public PlayerSerch areaCollider
@@ -121,9 +128,20 @@ public class BossSpieder : EnemyBase
     }
     private void Update()
     {
+      //  if (GameManager.instance.stageManager.player.IsDead())
+      //  {
+      //      sound.AmbStop();
+      //      BossSpieder bs = this;
+      //      bs.enabled = false;
+      //      return;
+      //  }
+
         m_stateMachine.Excute();
         if (PlayerDistance() >= m_bossMovmentTween.camOutdistance) m_camOut = true;
         else m_camOut = false;
+
+
+
     }
 
     public void ChangeState(BossSpiderState newState)

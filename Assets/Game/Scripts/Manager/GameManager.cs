@@ -320,6 +320,10 @@ public class GameManager : SingleToon<GameManager>
         m_tempSave.hp = stageManager.player.health.hp;
     }
 
+    public int GetStageIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
 
 
     public bool CanLoad()

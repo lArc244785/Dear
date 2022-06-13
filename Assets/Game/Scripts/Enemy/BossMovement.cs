@@ -5,8 +5,6 @@ using DG.Tweening;
 
 public class BossMovement : MonoBehaviour
 {
-    private Tween m_moveTween;
-
     [SerializeField]
     private float m_fastdistance;
     public float fastdistance
@@ -65,7 +63,7 @@ public class BossMovement : MonoBehaviour
     private float m_camOutDistance;
     public float camOutdistance
     {
-        get { 
+        get {
             return m_camOutDistance;
         }
     }
@@ -83,31 +81,43 @@ public class BossMovement : MonoBehaviour
     private AnimationCurve m_movementCurve;
 
 
+    private Tween m_moveTween_fast;
 
 
     public void TweenReset()
     {
-        if (m_moveTween == null) return;
-        m_moveTween.Kill();
-        m_moveTween = null;
+        if (m_moveTween_fast == null)
+            return;
+        m_moveTween_fast.Kill();
+        m_moveTween_fast = null;
+       
     }
+
+    private void Update()
+    {
+        if (GameManager.instance.gameState != GameManager.GameSate.GamePlaying)
+            TweenReset();
+    }
+
     public void SpiderBossMove_Fast()
     {
-        m_moveTween = transform.DOLocalMoveY(m_fastdistance, m_fasttime).SetEase(m_movementCurve).SetRelative().Play();
-       
+        m_moveTween_fast = transform.DOLocalMoveY(m_fastdistance, m_fasttime).SetEase(m_movementCurve).SetRelative().Play();
     }
     public void SpiderBossMove_Slow()
     {
-        m_moveTween = transform.DOLocalMoveY(m_slowdistance, m_slowtime).SetRelative().SetEase(m_movementCurve).SetRelative().Play();
-       
+
+        m_moveTween_fast = transform.DOLocalMoveY(m_slowdistance, m_slowtime).SetRelative().SetEase(m_movementCurve).SetRelative().Play();
+
     }
     public void SpiderBossMove_CamOut(float pos)
     {
-        m_moveTween = transform.DOMoveY(pos, m_slowtime).SetEase(m_movementCurve).Play();
+        m_moveTween_fast = transform.DOMoveY(pos, m_slowtime).SetEase(m_movementCurve).Play();
+       
+
     }
     public void SpiderBossMove_Exit()
     {
-        m_moveTween = transform.DOLocalMoveY(m_slowdistance+120, m_slowtime*7).SetRelative().SetEase(Ease.OutExpo).SetRelative().Play();
+        m_moveTween_fast = transform.DOLocalMoveY(m_slowdistance + 120, m_slowtime * 7).SetRelative().SetEase(Ease.OutExpo).SetRelative().Play();
 
     }
 

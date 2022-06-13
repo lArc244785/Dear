@@ -86,6 +86,9 @@ public class Bgm : MonoBehaviour
 
         SoundManager.instance.SoundStop(m_bgmInstances[(int)m_currentBgm]);
         SoundManager.instance.SoundStop(m_ambientEventInstances);
+
+
+
     }
 
 
