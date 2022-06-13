@@ -59,7 +59,6 @@ public class SoundManager : SingleToon<SoundManager>
     {
         FMODUnity.RuntimeManager.PlayOneShot(reference);
     }
-
     public FMOD.Studio.PLAYBACK_STATE GetPlayState(FMOD.Studio.EventInstance eventInstance)
     {
         FMOD.Studio.PLAYBACK_STATE state;

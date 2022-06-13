@@ -95,7 +95,7 @@ public class PlayerSound : MonoBehaviour
         m_ropeInstance = FMODUnity.RuntimeManager.CreateInstance(m_ropeMove);
         SoundManager.instance.GetID(m_ropeInstance, m_ropeIndexID, out m_parameterIndex);
 
-
+        
 
 
         //footStepLoop = false;
