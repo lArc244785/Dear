@@ -242,8 +242,13 @@ public class UnitPlayer : UnitBase
 
     public void HealHp(int heal)
     {
-        health.OnHeal(heal);
-        m_hpui.OnHeal(heal);
+        int addMaxHeal = health.maxhp - health.hp;
+        int addHeal = Mathf.Min(heal, addMaxHeal);
+
+
+
+        health.OnHeal(addHeal);
+        m_hpui.OnHeal(addHeal);
     }
 
 

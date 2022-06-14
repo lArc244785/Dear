@@ -27,15 +27,25 @@ public class CustomMouseCursor : MonoBehaviour
     
         SetMouseCursor(CursorType.Aim);
         SetImageVisible(true);
+
+
+        StartCoroutine(MouseUpdateCoroutine());
+
     }
 
 
-    private void FixedUpdate()
+
+
+    private IEnumerator MouseUpdateCoroutine()
     {
-        if(InputManager.instance != null && (GameManager.instance.gameState != GameManager.GameSate.StageLoad  && GameManager.instance.gameState != GameManager.GameSate.Load))
-        m_rect.transform.position = InputManager.instance.screenViewMousePos;
-        
+        while(true)
+        {
+            if (InputManager.instance != null && (GameManager.instance.gameState != GameManager.GameSate.StageLoad && GameManager.instance.gameState != GameManager.GameSate.Load))
+                m_rect.transform.position = InputManager.instance.screenViewMousePos;
+            yield return null;
+        }
     }
+
 
     public void SetMouseCursor(CursorType type)
     {

@@ -37,11 +37,11 @@ public class SpiderBossSound : MonoBehaviour
     }
     public void Amb()
     {
-        SoundManager.instance.SoundPlay(m_ambInstance);
+        //SoundManager.instance.SoundPlay(m_ambInstance);
     }
     public void AmbStop()
     {
-        SoundManager.instance.SoundStop(m_ambInstance);
+        //SoundManager.instance.SoundStop(m_ambInstance);
 
     }
 

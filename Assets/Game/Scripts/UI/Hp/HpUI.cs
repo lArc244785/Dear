@@ -75,7 +75,10 @@ public class HpUI : MonoBehaviour
     }
     public void OnHeal(int dmg)
     {
-        Instantiate(m_hpPrefab, parent);
+        for (int i = 0; i < dmg; i++)
+        {
+            Instantiate(m_hpPrefab, parent);
+        }
     }
 
 }

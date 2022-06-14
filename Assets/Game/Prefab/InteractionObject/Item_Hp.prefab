@@ -82,7 +82,7 @@ MonoBehaviour:
   m_targetLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_heal: 1
+  m_heal: 5
 --- !u!58 &2950124009735881412
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -22,7 +22,10 @@ public class IntecationHp : InteractionBase
         if (player == null)
             return;
 
+
+
         player.HealHp(m_heal);
+        
         m_healSound.Play();
 
 
