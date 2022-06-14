@@ -92,6 +92,7 @@ MonoBehaviour:
     m_Bits: 2304
   m_onInteractionObject: {fileID: 8937604335615333886}
   m_onInteractionEvent: {fileID: 8937604334855482079}
+  m_getTool: {fileID: 0}
 --- !u!1 &8937604335275579116
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +282,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5000
+  m_SortingOrder: 3008
   m_Sprite: {fileID: 21300000, guid: da97399fee344c243a7b626dcf48571f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
